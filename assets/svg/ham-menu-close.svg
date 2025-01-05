@@ -1,0 +1,17 @@
+<!-- Questo codice SVG disegna un'icona di una "X" ( di solito usata per indicare chiusura o cancellazione ).
+- <svg ...>: crea l'elemento SVG con dimensioni di 24x24 pixel, uno spazio di visualizzazione definito da viewBox="0 0 24 24", e alcune proprietà stilistiche ( colore, spessore della linea, arrotondamento dei bordi ).
+- xmlns="http://www.w3.org/2000/svg": specifica che questo è un file SVG.
+- width="24" e height="24": impostano la larghezza e altezza dell'icona a 24 pixel.
+- viewBox="0 0 24 24": definisce un'area di visualizzazione di 24x24 unità per adattare il disegno.
+- stroke="#333": imposta il colore delle linee a un grigio scuro ( #333 ).
+- stroke-width="2": imposta lo spessore delle linee a 2 unità. 
+- stroke-linecap="round": arrotonda le estremità delle linee.
+- stroke-linejoin="round": arrotonda gli angoli dove le linee si uniscono.
+- <line x1="18" y1="6" x2="6" y2="18">: disegna una linea diagonale da ( 18, 6 ) a ( 6, 18 ).
+- <line x1="6" y1="6" x2="18" y2="18">: disegna un'altra linea diagonale da ( 6, 6) a ( 18, 18 ).
+Combinando le due linee, si forma la "X". La classe feather feather-x suggerisce che potrebbe far parte di una libreria di icone, come Freather Icons. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
