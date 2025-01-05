@@ -378,7 +378,7 @@ Se desideri inviare i dati del modulo via email, ti consiglio vivamente di utili
 
 ### STEP 2 - Pagina del Progetto: 
 
-Ogni progetto avrà una pagina dedicata, che conterrà dettagli importanti come il titolo del progetto, una descrizione, le tecnologie utilizzate, i collegamenti al progetto e altre informazioni rilevanti.
+Ogni progetto disporrà di una pagina dedicata, progettata per presentare in modo dettagliato e professionale tutte le informazioni essenziali. Queste pagine permettono di evidenziare il lavoro svolto e il valore che ciascun progetto aggiunge al portfolio. Ogni pagina includerà il titolo del progetto per una chiara identificazione, accompagnato da una descrizione che ne illustra gli obiettivi, le funzionalità principali e il contesto in cui è stato sviluppato.
 
 ### Sezione Hero: 
 
