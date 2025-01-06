@@ -819,13 +819,13 @@ textarea {
 }
 
 .header__sm-menu--active {
-  display: none;
+  display: block;
   opacity: 0;
 }
 
 @media only screen and (max-width: 37.5em) {
   .header__sm-menu--active {
-    display: block;
+    visibility: visible;
     opacity: 1;
   }
 }
