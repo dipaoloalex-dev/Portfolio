@@ -492,7 +492,7 @@ Se ti piace questo progetto, dagli una stella su Github cliccando sul pulsante S
 
 ### Autore:
 
-- **Alex Di Paolo** - [LinkedIn](https://www.linkedin.com/in/alex-di-paolo-3a2943342), [GitHub](https://github.com/dipaoloalex-dev), [Instagram](https://www.instagram.com/alexdp3/?igsh=Z3J1aTlvcG00cnNo), [TikTok](https://www.tiktok.com/@alexdipaolo21?_t=8sR06QOlhwk&_r=1)
+- **Alex Di Paolo** - [LinkedIn](https://www.linkedin.com/in/alex-di-paolo-3a2943342), [GitHub](https://github.com/dipaoloalex-dev)
 
 Attualmente sono alla ricerca di **opportunità professionali** sia **da remoto** (a livello globale) che **in sede** (in qualsiasi parte della Campania, Italy). Se hai un'opportunità che corrisponde alle mie competenze ed esperienze, puoi contattarmi tramite il mio [LinkedIn](https://www.linkedin.com/in/alex-di-paolo-3a2943342) o via email all'indirizzo: dipaoloalex.dev@gmail.com.
 
