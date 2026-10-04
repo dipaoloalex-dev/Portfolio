@@ -51,12 +51,24 @@
 }
 
 /*
- * Sugli schermi piccoli disattiva il blur d'ingresso: su alcuni dispositivi
- * mobile il `filter` dell'animazione rende il testo poco nitido.
+ * Sugli schermi piccoli (e sui dispositivi touch) disattiva il blur
+ * d'ingresso: su alcuni dispositivi mobile il `filter` dell'animazione
+ * rende il testo poco nitido.
  */
-@media (max-width: 767px) {
+@media (max-width: 767px), (hover: none) {
     :root {
         --animation-blur: 0px;
+    }
+}
+
+/*
+ * Rete di sicurezza per i touch: se per qualche motivo un effetto
+ * `hover:scale-*` resta attivo dopo un tap, annulla la scala (che rende
+ * il testo sfocato).
+ */
+@media (hover: none) {
+    [class*="hover:scale-"]:hover {
+        transform: none !important;
     }
 }
 
