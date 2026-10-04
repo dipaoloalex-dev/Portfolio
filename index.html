@@ -37,6 +37,15 @@
     <title>Alex - Portfolio</title>
     <!-- Tailwind via CDN: genera le utility a runtime nel browser. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /*
+         * Sui dispositivi touch gli effetti `hover:` non devono rimanere
+         * "attaccati" dopo un tap: la card resterebbe scalata e con sfondo
+         * trasparente, facendo apparire il testo sfuocato. Con questo flag
+         * gli `hover:` si applicano solo dove esiste un vero mouse.
+         */
+        tailwind.config = { future: { hoverOnlyWhenSupported: true } };
+    </script>
     <!-- Iconify: icone vettoriali usate tramite <iconify-icon icon="...">. -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- Lucide: icone SVG usate tramite <i data-lucide="...">. -->
@@ -47,11 +56,11 @@
     <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <!-- Stili del banner di consenso cookie (GDPR). -->
-    <link rel="stylesheet" href="banner/cookie_banner.css?v=3">
+    <link rel="stylesheet" href="banner/cookie_banner.css?v=4">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
-    <script src="script.js?v=3" defer></script>
+    <script src="script.js?v=4" defer></script>
     <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
          cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
 </head>
@@ -1069,7 +1078,7 @@
     </div>
 
     <!-- Logica del banner di consenso cookie -->
-    <script src="banner/cookie_banner.js?v=3"></script>
+    <script src="banner/cookie_banner.js?v=4"></script>
 
 </body>
 

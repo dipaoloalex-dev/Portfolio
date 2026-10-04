@@ -37,7 +37,7 @@
     0% {
         opacity: 0;
         transform: translateY(30px);
-        filter: blur(8px);
+        filter: blur(var(--animation-blur, 8px));
     }
 
     /* 100%: stato finale -> pienamente visibile, in posizione e a fuoco.
@@ -47,6 +47,16 @@
         opacity: 1;
         transform: none;
         filter: none;
+    }
+}
+
+/*
+ * Sugli schermi piccoli disattiva il blur d'ingresso: su alcuni dispositivi
+ * mobile il `filter` dell'animazione rende il testo poco nitido.
+ */
+@media (max-width: 767px) {
+    :root {
+        --animation-blur: 0px;
     }
 }
 
