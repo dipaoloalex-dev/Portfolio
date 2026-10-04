@@ -17,7 +17,7 @@
 
 ---
 
-## 📌 Il Progetto
+## 📌 Panoramica del Progetto
 
 Questo è il mio **portfolio online**: una vetrina web che raccoglie il mio profilo professionale, i progetti a cui ho lavorato e i miei canali di contatto.
 
@@ -67,6 +67,10 @@ Un sito **statico, veloce e senza tempi di caricamento superflui**, progettato c
 ## 📄 License
 
 © 2026 **Alex Di Paolo**. Tutti i diritti riservati.
+
+Questo repository è pubblico per mostrare il codice sorgente e la demo: puoi studiarlo e prenderne spunto (citando il repository), ma **non** copiarlo e presentarlo come tuo, né usarlo "così com'è" per scopi commerciali. I contenuti personali (nome, immagini, testi, recapiti) **non** sono riutilizzabili.
+
+Leggi i termini completi in [LICENSE](LICENSE).
 
 ---
 
