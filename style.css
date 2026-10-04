@@ -40,11 +40,13 @@
         filter: blur(8px);
     }
 
-    /* 100%: stato finale -> pienamente visibile, in posizione e a fuoco. */
+    /* 100%: stato finale -> pienamente visibile, in posizione e a fuoco.
+       Usare `none` (e non `blur(0px)`/`translateY(0)`) evita che il layer
+       resti applicato dopo l'animazione, causa del testo sfuocato su mobile. */
     100% {
         opacity: 1;
-        transform: translateY(0);
-        filter: blur(0px);
+        transform: none;
+        filter: none;
     }
 }
 

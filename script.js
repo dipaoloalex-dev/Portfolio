@@ -68,14 +68,23 @@
 
                     /*
                      * A fine animazione rimuove del tutto il layer dell'animazione.
-                     * Il `filter: blur(0px)` e il `transform` finali restano applicati
-                     * per via di `fill-mode: both`: su mobile questo fa rasterizzare
-                     * l'elemento a risoluzione più bassa, rendendo il testo sfuocato.
+                     * Il `filter` e il `transform` finali restano applicati per via di
+                     * `fill-mode: both`: su mobile questo fa rasterizzare l'elemento a
+                     * risoluzione più bassa, rendendo il testo sfuocato.
                      * La classe `anim-complete` azzera l'animazione (vedi style.css).
                      */
-                    el.addEventListener("animationend", () => {
-                        el.classList.add("anim-complete");
-                    }, { once: true });
+                    const complete = () => el.classList.add("anim-complete");
+                    el.addEventListener("animationend", complete, { once: true });
+
+                    /*
+                     * Rete di sicurezza: se `animationend` non scatta (es. il browser
+                     * mette in pausa l'animazione di un elemento fuori schermo), la
+                     * classe viene applicata comunque dopo ritardo + durata.
+                     */
+                    const cs = getComputedStyle(el);
+                    const delay = parseFloat(cs.animationDelay) || 0;
+                    const duration = parseFloat(cs.animationDuration) || 0;
+                    window.setTimeout(complete, (delay + duration) * 1000 + 100);
 
                     // Se l'animazione è "one shot", smetti di osservare l'elemento.
                     if (once) window.__inViewIO.unobserve(el);
