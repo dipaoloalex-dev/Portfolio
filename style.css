@@ -1,0 +1,127 @@
+/**
+ * ============================================================================
+ * style.css
+ * ============================================================================
+ * Fogli di stile personalizzati del portfolio di Alex Di Paolo.
+ *
+ * La pagina usa TailwindCSS (caricato via CDN) per la stragrande maggioranza
+ * del layout e delle utility. Questo file contiene SOLO ciò che Tailwind non
+ * copre agevolmente, ovvero:
+ *
+ *   1) Le animazioni @keyframes (usate inline da Tailwind).
+ *   2) Gli effetti "glassmorphism" (vetro sfumato).
+ *   3) La personalizzazione della scrollbar dei browser WebKit.
+ *
+ * Nota: le classi definite qui NON hanno prefissi Tailwind, quindi vanno
+ * usate direttamente come `class="glass-card"`, ecc.
+ * ============================================================================
+ */
+
+/*
+ * ============================================================================
+ * 1) ANIMAZIONI CSS
+ * ============================================================================
+ * La pagina anima gli elementi in ingresso (fade + slide + blur) sfruttando
+ * la sintassi arbitraria di Tailwind, ad esempio:
+ *
+ *     class="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll"
+ *
+ * dove i parametri sono: <nome> <durata> <curva> <ritardo> <fill-mode>.
+ * Il "play/pause" dell'animazione è invece gestito da script.js tramite la
+ * classe `.animate` (vedi in fondo al commento).
+ */
+
+/* Animazione d'ingresso: l'elemento compare dal basso, sfocato e trasparente. */
+@keyframes animationIn {
+    /* 0%: stato iniziale -> invisibile, spostato in basso di 30px e sfocato di 8px. */
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+    }
+
+    /* 100%: stato finale -> pienamente visibile, in posizione e a fuoco. */
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
+
+/*
+ * ============================================================================
+ * 2) EFFETTI VETRO (GLASSMORPHISM)
+ * ============================================================================
+ * Coppia di classi che, combinate, simulano una superficie di vetro:
+ *  - `.glass-card`      -> il pannello (sfondo, bordi, ombre, raggio).
+ *  - `.glass-highlight` -> il riflesso di luce sovrapposto.
+ * Le immagini della hero section usano entrambe.
+ */
+
+/*
+ * `.glass-card`
+ * Pannello semitrasparente con sfocatura dello sfondo (backdrop-filter).
+ * Nota: `-webkit-backdrop-filter` è il prefisso per Safari.
+ */
+.glass-card {
+    /* Sfondo bianco quasi impercettibile (3% di opacità). */
+    background: rgba(255, 255, 255, 0.03);
+    /* Sfoca ciò che sta dietro al pannello per l'effetto "vetro smerigliato". */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    /* Bordo chiaro sottile che definisce il perimetro del vetro. */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /*
+     * Mix di ombre:
+     *  - la prima è un'ombra esterna profonda (dà distacco dal fondo);
+     *  - le due `inset` sono luci/ombre interne (danno rilievo 3D).
+     */
+    box-shadow:
+        0 30px 60px -15px rgba(0, 0, 0, 0.8),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 1.5rem;
+}
+
+/*
+ * `.glass-highlight`
+ * Riflesso diagonale (dall'alto a sinistra verso il basso a destra) che
+ * simula la luce che colpisce il vetro. Va posizionato dentro un contenitore
+ * `relative` perché usa `position: absolute`.
+ */
+.glass-highlight {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 1.5rem;
+    /* Sopra il contenuto, ma sotto eventuali elementi con z-index maggiore. */
+    z-index: 10;
+    /* Lascia passare i click: è puramente decorativo. */
+    pointer-events: none;
+}
+
+/*
+ * ============================================================================
+ * 3) SCROLLBAR PERSONALIZZATA (classe ".dash-scroll")
+ * ============================================================================
+ * Personalizza la barra di scorrimento dei contenitori con classe
+ * `.dash-scroll`. Funziona solo su browser basati su WebKit/Blink
+ * (Chrome, Edge, Safari). Firefox e altri useranno la scrollbar di sistema.
+ */
+
+/* Rende la barra molto sottile (4px). */
+.dash-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Rende trasparente il binario (la pista) della scrollbar. */
+.dash-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Il "cursore" è bianco semitrasparente con angoli arrotondati. */
+.dash-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}

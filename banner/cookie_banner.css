@@ -1,0 +1,307 @@
+/**
+ * cookie_banner.css
+ *
+ * Stili del banner di consenso cookie (GDPR) e del modal
+ * "Preferenze Cookie". Il banner compare in basso a sinistra
+ * e usa lo stesso linguaggio visivo scuro del portfolio.
+ */
+
+/* ==========================================================================
+   1) BANNER DI CONSENSO (IN BASSO A SINISTRA)
+   ========================================================================== */
+
+.cookie-banner {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 9999;
+    width: 100%;
+    max-width: 380px;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    background: rgba(14, 14, 17, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 30px 60px -15px rgba(0, 0, 0, 0.8),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    color: #fafafa;
+    font-family: "Inter", sans-serif;
+    /* Stato iniziale nascosto: viene rivelato via JS con una transizione */
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+/* Classe aggiunta da JS quando il banner deve essere mostrato */
+.cookie-banner.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.cookie-banner__title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+}
+
+.cookie-banner__text {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #a1a1aa;
+    margin: 0 0 1.25rem;
+}
+
+/* Il link eredita lo stile del testo circostante (nessun colore bianco né sottolineatura) */
+.cookie-banner__text a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* ==========================================================================
+   2) PULSANTI
+   ========================================================================== */
+
+.cookie-btn {
+    flex: 1 1 auto;
+    min-width: 110px;
+    cursor: pointer;
+    border-radius: 9999px;
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cookie-btn--primary {
+    background: #fafafa;
+    color: #09090b;
+    border: 1px solid #fafafa;
+}
+
+.cookie-btn--primary:hover {
+    background: #d4d4d8;
+    border-color: #d4d4d8;
+}
+
+.cookie-btn--ghost {
+    background: transparent;
+    color: #e4e4e7;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cookie-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn--link {
+    flex: 1 0 100%;
+    background: transparent;
+    color: #71717a;
+    border: none;
+    padding: 0.25rem 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.cookie-btn--link:hover {
+    color: #a1a1aa;
+}
+
+/* ==========================================================================
+   3) MODAL "PREFERENZE COOKIE"
+   ========================================================================== */
+
+.cookie-prefs {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cookie-prefs.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-prefs__modal {
+    width: 100%;
+    max-width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1.75rem;
+    border-radius: 1.5rem;
+    background: #0e0e11;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
+    color: #fafafa;
+    font-family: "Inter", sans-serif;
+    transform: scale(0.96);
+    transition: transform 0.3s ease;
+}
+
+.cookie-prefs.is-visible .cookie-prefs__modal {
+    transform: scale(1);
+}
+
+.cookie-prefs__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cookie-prefs__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.cookie-prefs__close {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #71717a;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.cookie-prefs__close:hover {
+    color: #fafafa;
+}
+
+.cookie-prefs__intro {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #a1a1aa;
+    margin: 0 0 1.5rem;
+}
+
+.cookie-prefs__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cookie-prefs__item-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0 0 0.25rem;
+}
+
+.cookie-prefs__item-desc {
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: #71717a;
+    margin: 0;
+}
+
+.cookie-prefs__badge {
+    font-size: 0.6875rem;
+    color: #52525b;
+    white-space: nowrap;
+    padding-top: 0.125rem;
+}
+
+.cookie-prefs__footer {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   4) SWITCH (INTERRUTTORE ON/OFF)
+   ========================================================================== */
+
+.cookie-switch {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 42px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.cookie-switch input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cookie-switch__slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: background-color 0.25s ease;
+}
+
+.cookie-switch__slider::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    background: #fafafa;
+    transition: transform 0.25s ease;
+}
+
+.cookie-switch input:checked + .cookie-switch__slider {
+    background: #fafafa;
+}
+
+.cookie-switch input:checked + .cookie-switch__slider::before {
+    transform: translateX(18px);
+    background: #09090b;
+}
+
+.cookie-switch input:disabled + .cookie-switch__slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   5) RESPONSIVE (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 640px) {
+    .cookie-banner {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        max-width: none;
+        width: auto;
+    }
+}

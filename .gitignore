@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Node (utile per il build locale di Tailwind)
+node_modules/
+npm-debug.log*
+
+# Build output generato
+dist/
+*.css.map
+
+# Ambienti e segreti
+.env
+.env.*

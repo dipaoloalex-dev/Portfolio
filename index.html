@@ -1,0 +1,1076 @@
+<!--
+  ============================================================================
+  index.html - Portfolio di Alex Di Paolo
+  ============================================================================
+  Struttura della pagina (dall'alto verso il basso):
+    - <head>          : metadati e dipendenze esterne (Tailwind, font, icone).
+    - Sfondo/glow     : effetti decorativi dietro al contenuto.
+    - Hero section    : presentazione principale con immagine "glass".
+    - Progetti        : griglia delle schede "My Projects".
+    - Processo        : spiegazione in 3 step.
+    - Footer          : contatti (WhatsApp, Email, LinkedIn, GitHub).
+    - Cookie banner   : consenso GDPR + modal preferenze.
+
+  Tecnologie: TailwindCSS (CDN), font Inter, icone Iconify + Lucide,
+  animazioni custom definite in style.css e gestite da script.js.
+  ============================================================================
+-->
+<html lang="en" class="antialiased">
+
+<head>
+    <!-- ==========================================
+         METADATI E DIPENDENZE ESTERNE (HEAD)
+         ==========================================
+         - Referral Promotekit: comunica al sito host il codice di invito,
+           ma solo se la pagina è dentro un iframe (window.parent !== window).
+           Il try/catch evita errori quando l'accesso cross-origin è bloccato.
+         - TailwindCSS: framework utility-first per lo stile.
+         - Iconify + Lucide: due librerie di icone (sintassi diverse).
+         - Font Inter da Google Fonts (con preconnect per la performance).
+         - style.css: stili personalizzati; script.js: logica interattiva.
+         - La pagina è in singolo file HTML con asset locali ed esterni. -->
+    <script>
+        try { if (window.parent && window.parent !== window) { window.parent.promotekit_referral = "1fd2949a-d22c-431b-92bf-02d4ad04ee24"; window.parent.document.cookie = "promotekit_referral=1fd2949a-d22c-431b-92bf-02d4ad04ee24;path=/;domain=.aura.build;max-age=31536000" } } catch (e) { }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex - Portfolio</title>
+    <!-- Tailwind via CDN: genera le utility a runtime nel browser. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconify: icone vettoriali usate tramite <iconify-icon icon="...">. -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Lucide: icone SVG usate tramite <i data-lucide="...">. -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Preconnect: apre in anticipo le connessioni verso Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Stili del banner di consenso cookie (GDPR). -->
+    <link rel="stylesheet" href="banner/cookie_banner.css">
+    <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
+    <script src="script.js" defer></script>
+    <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
+         cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
+</head>
+
+<body class="min-h-screen overflow-x-hidden selection:bg-white/10 text-white font-sans bg-[#09090b] relative"
+    style="font-family: 'Inter', sans-serif;">
+
+    <!-- ==========================================
+         SFONDO E GLOW (BACKGROUND)
+         ==========================================
+         Due livelli decorativi fissi, sempre dietro al contenuto (-z-10):
+           1) "aura-background-component": sfondo animato di UnicornStudio
+              (inizializzato dallo script inline qui sotto).
+           2) Glow: linee e aloni sfumati che danno profondità futuristica.
+         `pointer-events-none` assicura che non blocchino i click. -->
+    <!-- Sfondo animato di terze parti (UnicornStudio). La mask-image lo
+         dissolvenza in alto e in basso per fonderlo col nero di fondo. -->
+    <div class="aura-background-component top-0 w-full h-screen -z-10 brightness-75 mix-blend-screen absolute"
+        data-alpha-mask="80"
+        style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+            <!-- Contenitore del progetto UnicornStudio (identificato dal data-us-project). -->
+            <div data-us-project="uFY4IYPs2LU8fWm96Im2" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+            <!-- Carica e inizializza UnicornStudio una sola volta (evita doppio init). -->
+            <script type="text/javascript">
+                !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+            </script>
+        </div>
+    </div>
+
+    <!-- Effetti di luminescenza (Glow) di sfondo.
+         Insieme di linee verticali, anelli ellittici e sfere sfocate che
+         creano l'alone luminoso centrale. Tutto puramente decorativo. -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-[60vh] bg-gradient-to-b from-zinc-400/30 via-zinc-500/5 to-transparent z-10">
+        </div>
+        <div
+            class="absolute top-[10%] left-1/2 -translate-x-1/2 w-48 h-56 bg-zinc-400/10 blur-[100px] rounded-full z-10">
+        </div>
+        <div
+            class="absolute -top-[50vh] w-[150vw] h-[100vh] rounded-[100%] border border-zinc-500/10 shadow-[0_0_120px_rgba(161,161,170,0.1)]">
+        </div>
+        <div
+            class="absolute top-[20vh] w-[120vw] h-[120vh] rounded-[100%] border border-zinc-600/5 shadow-[0_0_80px_rgba(161,161,170,0.05)]">
+        </div>
+        <div class="absolute top-[30%] left-[15%] w-64 h-64 bg-zinc-500/5 blur-[80px] rounded-full"></div>
+        <div class="absolute bottom-[20%] right-[20%] w-80 h-80 bg-zinc-400/5 blur-[100px] rounded-full"></div>
+    </div>
+
+    <!-- ==========================================
+         SEZIONE EROE (HERO SECTION)
+         ==========================================
+         Contenuto principale "above the fold". È una griglia a 2 colonne
+         (su desktop, 1 colonna su mobile):
+           - Sinistra: nome, ruolo e lista delle competenze.
+           - Destra  : composizione di immagini "glass" sovrapposte e ruotate.
+         Note: il <main> ha pointer-events-none per lasciar passare il mouse
+         verso lo sfondo; i figli interattivi lo riattivano pointer-events-auto. -->
+    <main
+        class="relative z-20 container mx-auto px-6 md:px-12 flex flex-col justify-center pt-32 pb-10 md:pb-16 pointer-events-none">
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 pointer-events-auto gap-x-16 gap-y-16 items-center min-h-[70vh]">
+
+            <!-- Colonna Sinistra (Testo e Competenze) -->
+            <div class="flex flex-col gap-10 text-left lg:pr-8">
+                <!-- Titolo principale: nome + ruolo (ruolo in grigio, più piccolo).
+                     Le classi arbitrarie [animation:...] e `animate-on-scroll`
+                     attivano l'animazione d'ingresso gestita da script.js. -->
+                <h1
+                    class="sm:text-6xl md:text-7xl leading-[1.1] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate text-5xl font-medium text-white/95 tracking-tight">
+                    Alex Di Paolo <br>
+                    <span class="block text-2xl sm:text-3xl md:text-4xl leading-snug text-zinc-500">Software Developer
+                        - IT System Designer</span>
+                </h1>
+
+                <!-- Lista delle funzionalità (Features): 3 punti con icona
+                     di spunta. Il `group` sul contenitore permette all'icona
+                     di cambiare colore al passaggio del mouse (group-hover). -->
+                <div class="flex flex-col gap-5 pt-4 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
+                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                        <iconify-icon icon="solar:check-circle-linear"
+                            class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                        <span><span class="text-zinc-200 font-medium">Full-Stack Development</span><span
+                                class="text-zinc-600 mx-2.5">|</span>Software Developer and IT System Designer with
+                            experience in designing and developing complex web ecosystems within engineering
+                            environments.</span>
+                    </div>
+                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                        <iconify-icon icon="solar:check-circle-linear"
+                            class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                        <span class=""><span class="text-zinc-200 font-medium">Software Architecture &amp;
+                                SDLC</span><span class="text-zinc-600 mx-2.5">|</span>Backed by a strong academic and
+                            professional background, I manage the entire software development life cycle (SDLC), from
+                            architecture to production deployment.</span>
+                    </div>
+                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                        <iconify-icon icon="solar:check-circle-linear"
+                            class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                        <span class=""><span class="text-zinc-200 font-medium">Scalable Platform Engineering</span><span
+                                class="text-zinc-600 mx-2.5">|</span>I build custom management platforms that combine
+                            structural robustness, scalability, and interoperability with an excellent end-user
+                            experience.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonna Destra: Gruppo di Immagini Fluttuanti (Floating Image Cluster)
+                 Sei "glass-card" posizionate in modo assoluto, con rotazioni
+                 e z-index diversi per dare l'effetto di foto sparse su un piano.
+                 Al passaggio del mouse, ogni card si ingrandisce e sale in
+                 primo piano tramite hover:scale-105 e hover:z-[100]. -->
+            <div
+                class="lg:h-[650px] block [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate w-full h-[500px] z-50 pointer-events-auto relative">
+                <!-- Immagine 1: in alto a sinistra. Ogni blocco segue lo stesso
+                     schema: glass-card > contenitore immagine + overlay scuro
+                     sfumato + riflesso .glass-highlight. -->
+                <div
+                    class="glass-card absolute top-[5%] left-[5%] w-40 lg:w-48 aspect-square rotate-[-4deg] p-2 md:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_1.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div
+                            class="bg-gradient-to-tr from-black/40 to-transparent absolute top-0 right-0 bottom-0 left-0">
+                        </div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+                <div
+                    class="glass-card absolute top-[15%] right-[5%] w-48 lg:w-56 aspect-[4/3] rotate-[3deg] p-2 md:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_2.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+                <div
+                    class="glass-card lg:w-44 aspect-[3/4] md:p-3 w-36 z-[63] pt-2 pr-2 pb-2 pl-2 absolute top-[40%] left-[0%] rotate-[-2deg] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_3.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+                <div
+                    class="glass-card absolute top-[35%] right-[15%] w-52 lg:w-64 aspect-square rotate-[2deg] p-2 md:p-3 z-[64] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_4.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+                <div
+                    class="glass-card absolute bottom-[5%] left-[20%] w-44 lg:w-52 aspect-square rotate-[4deg] p-2 md:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_5.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+                <div
+                    class="glass-card absolute bottom-[0%] right-[10%] w-36 lg:w-44 aspect-[4/3] rotate-[-3deg] p-2 md:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    <div
+                        class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        <img src="images/image_6.png" alt=""
+                            class="absolute inset-0 w-full h-full object-cover opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="glass-highlight"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         SEZIONE PROGETTI ("My Projects")
+         ==========================================
+         Griglia responsive (1 / 2 / 3 colonne) di schede progetto.
+         Ogni scheda ha la stessa struttura:
+           - un'anteprima visiva (mockup HTML/CSS, non un'immagine reale)
+             che illustra il funzionamento del software;
+           - titolo + link esterno (dove disponibile);
+           - breve descrizione.
+         Ogni scheda entra con un ritardo d'animazione leggermente diverso
+         (0.1s, 0.2s, ...) per creare un effetto a cascata. -->
+    <section class="relative z-20 container mx-auto px-6 md:px-12 py-16 pointer-events-auto">
+        <!-- Badge/Etichetta ovale "My Projects" sopra le schede -->
+        <div class="flex justify-center mb-10 [animation:animationIn_0.8s_ease-out_0.05s_both] animate-on-scroll">
+            <div
+                class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
+                My Projects
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Scheda: AutoTriage NLP -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: classificazione e prioritizzazione automatica dei ticket -->
+                    <div class="relative w-[90%] max-w-[300px] flex flex-col gap-2.5 z-10">
+                        <div class="flex items-center gap-2 text-xs text-zinc-500 px-1">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#4ade80]" stroke-width="1.5"></i>
+                            <span>AutoTriage engine</span>
+                            <span
+                                class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-[#4ade80]/10 text-[#4ade80]">NLP</span>
+                        </div>
+
+                        <div
+                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                                <i data-lucide="printer" class="w-4 h-4" stroke-width="1.5"></i>
+                            </div>
+                            <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-xs font-medium text-zinc-200 truncate">Printer not working · Floor
+                                    3</span>
+                                <span class="text-[10px] text-zinc-500">Classified as Hardware</span>
+                            </div>
+                            <span
+                                class="text-[10px] font-medium px-2 py-0.5 rounded bg-red-500/15 text-red-400 shrink-0">High</span>
+                        </div>
+
+                        <div
+                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                                <i data-lucide="key-round" class="w-4 h-4" stroke-width="1.5"></i>
+                            </div>
+                            <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-xs font-medium text-zinc-200 truncate">VPN access request</span>
+                                <span class="text-[10px] text-zinc-500">Classified as IT / Access</span>
+                            </div>
+                            <span
+                                class="text-[10px] font-medium px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400 shrink-0">Medium</span>
+                        </div>
+
+                        <div
+                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3 opacity-50">
+                            <div
+                                class="w-8 h-8 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-zinc-400 shrink-0">
+                                <i data-lucide="mail" class="w-4 h-4" stroke-width="1.5"></i>
+                            </div>
+                            <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-xs font-medium text-zinc-200 truncate">Password reset</span>
+                                <span class="text-[10px] text-zinc-500">Classified as Account</span>
+                            </div>
+                            <span
+                                class="text-[10px] font-medium px-2 py-0.5 rounded bg-green-500/15 text-green-400 shrink-0">Low</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <a href="https://github.com/dipaoloalex-dev/AutoTriageNLP" target="_blank" rel="noopener noreferrer"
+                        class="group/link inline-flex items-center gap-1.5 text-xl font-medium text-white tracking-tight hover:text-zinc-300 transition-colors">AutoTriage
+                        NLP
+                        <iconify-icon icon="solar:arrow-right-up-linear"
+                            class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                    </a>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Intelligent system for ticket
+                        classification and prioritization for enterprise support.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: Athena -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: validazione accesso museo -->
+                    <div class="relative w-[90%] max-w-[280px] flex flex-col items-center gap-3 z-10">
+                        <div
+                            class="w-full bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-medium text-zinc-200">Museum Pass</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">#01842</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-14 h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="qr-code" class="w-8 h-8 text-zinc-300" stroke-width="1.5"></i>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[11px] text-zinc-300 font-medium">Valid · Adult</span>
+                                    <span class="text-[11px] text-zinc-400">Abbonamento Musei</span>
+                                    <span class="text-[10px] text-zinc-600">Turin · 12:30</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#4ade80]/10 border border-[#4ade80]/20 text-[#4ade80] text-xs font-medium">
+                            <i data-lucide="check" class="w-3.5 h-3.5" stroke-width="2"></i>
+                            Access granted
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <a href="https://athena.abbonamentomusei.it/login" target="_blank" rel="noopener noreferrer"
+                        class="group/link inline-flex items-center gap-1.5 text-xl font-medium text-white tracking-tight hover:text-zinc-300 transition-colors">Athena
+                        <iconify-icon icon="solar:arrow-right-up-linear"
+                            class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                    </a>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Multi-level platform centralizing
+                        sales, management, and access control for museum services.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: EasyWork -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: workflow di approvazione e gestione presenze -->
+                    <div
+                        class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-4 z-10">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-medium text-zinc-200">Leave request</span>
+                            <span
+                                class="text-[10px] px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400">Pending</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-zinc-400">
+                            <i data-lucide="calendar-days" class="w-4 h-4 text-zinc-500" stroke-width="1.5"></i>
+                            <span>3 days · 12–14 Jun</span>
+                        </div>
+                        <div class="flex flex-col gap-3 mt-1">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-[#4ade80]/15 border border-[#4ade80]/30 flex items-center justify-center text-[#4ade80] shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3" stroke-width="2"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-zinc-300">Manager approved</span>
+                                    <span class="text-[10px] text-zinc-600">09 Jun · 10:12</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 shrink-0">
+                                    <i data-lucide="clock" class="w-3 h-3" stroke-width="2"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-zinc-400">HR review pending</span>
+                                    <span class="text-[10px] text-zinc-600">Awaiting approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <h3 class="text-xl font-medium text-white tracking-tight">EasyWork</h3>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">All-in-one cloud platform for
+                        business process digitization, with web and native mobile apps.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: Akerus S.C.A.R.L -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: log operativo firmato per impianto di depurazione -->
+                    <div
+                        class="relative w-[92%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-medium text-zinc-200">Plant reading #1042</span>
+                            <span
+                                class="flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-[#4ade80]/10 text-[#4ade80]">
+                                <i data-lucide="lock" class="w-3 h-3" stroke-width="2"></i> Signed
+                            </span>
+                        </div>
+                        <div class="flex items-end gap-2">
+                            <span class="text-2xl font-semibold tracking-tight text-white">7.4</span>
+                            <span class="text-xs text-zinc-500 mb-1">pH · Line A</span>
+                        </div>
+                        <div class="h-px w-full bg-white/5"></div>
+                        <div class="flex items-center justify-between text-[10px] text-zinc-500">
+                            <span>Operator · M. Rossi</span>
+                            <span class="font-mono">09 Jun 14:22</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-[11px] text-zinc-400 bg-white/[0.02] border border-white/5 rounded-lg px-2.5 py-1.5">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-500" stroke-width="1.5"></i>
+                            PDF report generated
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <h3 class="text-xl font-medium text-white tracking-tight">Akerus S.C.A.R.L</h3>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Software modules for digitizing
+                        operational logs and service requests in wastewater treatment.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: SkyFly -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: tracciabilità ricambio aeronautico -->
+                    <div
+                        class="relative w-[92%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
+                                <i data-lucide="plane" class="w-4 h-4" stroke-width="1.5"></i>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-medium text-zinc-200">Life-Limited Part</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">P/N A320-32-11 · S/N 0042</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-white/[0.02] border border-white/5 rounded-lg p-2">
+                                <span class="block text-[10px] text-zinc-500">Time remaining</span>
+                                <span class="text-sm font-semibold text-white">1,240 h</span>
+                            </div>
+                            <div class="bg-white/[0.02] border border-white/5 rounded-lg p-2">
+                                <span class="block text-[10px] text-zinc-500">Cycles remaining</span>
+                                <span class="text-sm font-semibold text-white">860</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-[10px] px-2 py-1 rounded bg-[#4ade80]/10 border border-[#4ade80]/20 text-[#4ade80] w-fit">
+                            <i data-lucide="shield-check" class="w-3 h-3" stroke-width="2"></i>
+                            EAR / ITAR compliant
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <a href="https://skyfly.netcaring.it/" target="_blank" rel="noopener noreferrer"
+                        class="group/link inline-flex items-center gap-1.5 text-xl font-medium text-white tracking-tight hover:text-zinc-300 transition-colors">SkyFly
+                        <iconify-icon icon="solar:arrow-right-up-linear"
+                            class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                    </a>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">End-to-end management system for the
+                        international trading of aeronautical spare parts.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: ESGATE -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Inner Graphic: cruscotto KPI ESG -->
+                    <div
+                        class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-medium text-zinc-200">ESG assessment</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-zinc-400">CSRD · ESRS</span>
+                        </div>
+                        <div class="flex flex-col gap-2.5 mt-1">
+                            <div class="flex items-center gap-3">
+                                <span class="text-[10px] text-zinc-500 w-12">Environment</span>
+                                <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                                    <div class="h-full bg-[#4ade80] rounded-full" style="width: 82%"></div>
+                                </div>
+                                <span class="text-[10px] text-zinc-300 w-7 text-right">82</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-[10px] text-zinc-500 w-12">Social</span>
+                                <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                                    <div class="h-full bg-blue-400 rounded-full" style="width: 74%"></div>
+                                </div>
+                                <span class="text-[10px] text-zinc-300 w-7 text-right">74</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-[10px] text-zinc-500 w-12">Governance</span>
+                                <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                                    <div class="h-full bg-purple-400 rounded-full" style="width: 91%"></div>
+                                </div>
+                                <span class="text-[10px] text-zinc-300 w-7 text-right">91</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 text-[10px] text-zinc-500 border-t border-white/5 pt-2">
+                            <i data-lucide="file-check" class="w-3 h-3 text-zinc-500" stroke-width="1.5"></i>
+                            Technical dossier · versioned KPIs
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <h3 class="text-xl font-medium text-white tracking-tight">ESGATE</h3>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Platform for collecting, assessing,
+                        and tracing ESG parameters with deterministic reproducibility.</p>
+                </div>
+            </div>
+
+            <!-- Scheda: Kairos TechLab -->
+            <div
+                class="flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 hover:bg-white/[0.02] transition-all duration-500 ease-out hover:scale-[1.02] hover:z-10 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll">
+                <div
+                    class="h-64 rounded-[1.25rem] relative overflow-hidden flex items-center justify-center bg-[#131316] border border-white/5">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
+                    </div>
+
+                    <!-- Mockup di un sito web a pagina singola -->
+                    <div
+                        class="relative w-[90%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl overflow-hidden shadow-2xl z-10">
+                        <!-- Barra del browser -->
+                        <div class="flex items-center gap-1.5 px-3 py-2 border-b border-white/5 bg-white/[0.02]">
+                            <span class="w-2 h-2 rounded-full bg-red-400/60"></span>
+                            <span class="w-2 h-2 rounded-full bg-yellow-400/60"></span>
+                            <span class="w-2 h-2 rounded-full bg-green-400/60"></span>
+                            <span class="ml-2 flex-1 h-2 rounded-full bg-white/5"></span>
+                        </div>
+                        <!-- Contenuto della pagina -->
+                        <div class="p-4 flex flex-col gap-3">
+                            <div class="h-3 w-2/5 rounded-full bg-white/10"></div>
+                            <div class="h-2 w-3/5 rounded-full bg-white/5"></div>
+                            <div class="grid grid-cols-3 gap-2 mt-1">
+                                <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
+                                <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
+                                <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
+                            </div>
+                            <div
+                                class="h-8 rounded-lg bg-[#4ade80]/20 border border-[#4ade80]/20 mt-1 flex items-center justify-center">
+                                <span class="text-[10px] font-medium text-[#4ade80]">Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 py-6 flex flex-col gap-2">
+                    <a href="https://kairostechlab.it/" target="_blank" rel="noopener noreferrer"
+                        class="group/link inline-flex items-center gap-1.5 text-xl font-medium text-white tracking-tight hover:text-zinc-300 transition-colors">Kairos
+                        TechLab
+                        <iconify-icon icon="solar:arrow-right-up-linear"
+                            class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            style="stroke-width: 1.5;"></iconify-icon>
+                    </a>
+                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Corporate WordPress website with
+                        single-page navigation and a fully custom contact form.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SEZIONE "IL PROCESSO IN 3 STEP"
+         ==========================================
+         Spiega il valore del passaggio "offline -> online" in tre blocchi
+         numerati (1, 2, 3) collegati da frecce decorative SVG.
+         Layout:
+           - su mobile: i blocchi sono impilati in verticale;
+           - su desktop (md:): i blocchi diventano `absolute` e formano un
+             percorso diagonale (i posizionamenti md:top/left li dispongono).
+         Lo z-index crescente (10 -> 20 -> 30) e hover:z-40 fanno emergere
+         il blocco sotto il mouse. -->
+    <section
+        class="relative z-20 container mx-auto px-6 md:px-8 py-24 md:py-32 pointer-events-auto flex flex-col items-center">
+
+        <!-- Intestazione della sezione (Titoli) -->
+        <div
+            class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 md:mb-28 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+            <!-- Badge/Etichetta ovale decorativa -->
+            <div
+                class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white mb-8">
+                From offline to online
+            </div>
+
+            <!-- Titolo (Heading) -->
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 leading-tight">
+                <span class="text-white">A website is essential</span> <span class="text-zinc-500">for your
+                    business</span>
+            </h2>
+
+            <!-- Sottotitolo -->
+            <p class="text-lg md:text-xl font-normal text-zinc-400 max-w-2xl leading-relaxed">
+                It increases your chances of selling your products and services. Here are the main advantages of going
+                online.
+            </p>
+        </div>
+
+        <!-- Sezione Layout Dimostrativo (A step/passaggi visivi) -->
+        <div
+            class="relative w-full max-w-5xl mx-auto flex flex-col md:block gap-20 md:gap-0 h-auto md:h-[650px] px-4 md:px-0">
+
+            <!-- Effetto Glow di sfumatura posteriore -->
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)] pointer-events-none hidden md:block">
+            </div>
+
+            <!-- Freccia decorativa dal Nodo 1 al 2 -->
+            <div class="absolute top-[30%] left-[32%] w-16 h-16 hidden md:block z-0">
+                <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
+                    <div class="w-full h-full text-zinc-700 -rotate-12">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="w-full h-full stroke-current opacity-40" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M10,10 Q50,0 80,60"></path>
+                            <path d="M65,55 L80,60 L75,45"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Freccia decorativa dal Nodo 2 al 3 -->
+            <div class="absolute bottom-[20%] right-[32%] w-16 h-16 hidden md:block z-0">
+                <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
+                    <div class="w-full h-full text-zinc-700 -rotate-[10deg]">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="w-full h-full stroke-current opacity-40" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M10,80 Q50,90 80,20"></path>
+                            <path d="M65,30 L80,20 L85,35"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blocco 1 - "Benefits of going online"
+                 Elenca i vantaggi di avere un sito (statistiche, credibilità,
+                 monetizzazione, SEO...). -->
+            <div
+                class="relative md:absolute md:left-0 lg:left-[5%] md:top-[12%] w-full max-w-[340px] mx-auto z-10 hover:z-40">
+                <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                    <div
+                        class="w-full h-full md:-rotate-3 transition-transform hover:-translate-y-2 duration-300 group">
+                        <div class="absolute -top-10 left-4 flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
+                                1</div>
+                            <span class="text-white font-medium text-base">Why you need a website?</span>
+                        </div>
+
+                        <div
+                            class="bg-[#18181b] border border-white/5 rounded-2xl p-6 shadow-2xl flex flex-col gap-5 backdrop-blur-xl transition-colors group-hover:bg-[#1a1a1e]">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:monitor-bold-duotone"
+                                    class="text-red-500 w-6 h-6 text-2xl flex items-center justify-center"></iconify-icon>
+                                <span class="text-white font-semibold text-xl tracking-tight">Benefits of going
+                                    online</span>
+                            </div>
+
+                            <div class="flex flex-col gap-3 mt-1">
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:chart-2-bold-duotone"
+                                        class="text-blue-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Track your statistics</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:eye-bold-duotone"
+                                        class="text-purple-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Understand your website's
+                                        impact</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:verified-check-bold-duotone"
+                                        class="text-green-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Give your business
+                                        credibility</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:cloud-upload-bold-duotone"
+                                        class="text-cyan-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Digitize your business</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:wallet-money-bold-duotone"
+                                        class="text-emerald-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Monetize your website</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:magnifer-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Rank on Google</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:rocket-bold-duotone"
+                                        class="text-red-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Support your project online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blocco 2 - "Managing a service business?" / "Common problems"
+                 Elenca i problemi tipici della gestione offline manuale
+                 (cancellazioni last-minute, sovrapposizioni, ecc.). -->
+            <div
+                class="relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-[55%] w-full max-w-[360px] mx-auto z-20 hover:z-40">
+                <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
+                    <div class="w-full h-full md:rotate-2 transition-transform hover:-translate-y-2 duration-300 group">
+                        <!-- L'etichetta cambia posizione fra Mobile e Desktop -->
+                        <div
+                            class="absolute -top-10 md:top-auto md:-bottom-12 left-4 md:left-1/2 md:-translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
+                            <div
+                                class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
+                                2</div>
+                            <span class="text-white font-medium text-base">Managing a service business?</span>
+                        </div>
+
+                        <div
+                            class="bg-[#18181b] border border-white/5 rounded-2xl p-6 shadow-2xl flex flex-col gap-5 backdrop-blur-xl transition-colors group-hover:bg-[#1a1a1e]">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:user-speak-bold-duotone"
+                                    class="text-red-500 w-6 h-6 text-2xl flex items-center justify-center"></iconify-icon>
+                                <span class="text-white font-semibold text-xl tracking-tight">Common
+                                    problems</span>
+                            </div>
+
+                            <div class="flex flex-col gap-3 mt-1">
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:danger-circle-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Late product purchases</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:danger-circle-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Last-minute cancellations</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:danger-circle-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Overlapping staff
+                                        availability</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:danger-circle-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Unknown appointment calendar</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:danger-circle-bold-duotone"
+                                        class="text-orange-400 w-5 h-5 shrink-0"></iconify-icon>
+                                    <span class="text-zinc-300 font-normal text-sm">Bookings scattered across social
+                                        media</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blocco 3 - "All automated"
+                 Mostra un feed di elementi automatizzati (Web App, Website,
+                 ecc.) con lo stato di completamento. -->
+            <div
+                class="relative md:absolute md:right-0 lg:right-[5%] md:top-[5%] w-full max-w-[380px] mx-auto z-30 hover:z-40">
+                <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
+                    <div class="w-full h-full md:rotate-2 transition-transform hover:-translate-y-2 duration-300 group">
+                        <div class="absolute -top-10 left-4 md:left-10 flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
+                                3</div>
+                            <span class="text-white font-medium text-base">Ready to automate?</span>
+                        </div>
+
+                        <div
+                            class="bg-[#1f1f22] border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] flex flex-col gap-6 backdrop-blur-2xl relative overflow-hidden transition-colors group-hover:bg-[#222226]">
+
+                            <h3 class="text-2xl tracking-tight font-semibold text-white flex items-center gap-2">
+                                <span class="text-red-500">All</span> automated
+                            </h3>
+
+                            <div class="flex flex-col gap-3 relative z-10">
+                                <!-- Elemento del Feed #1 -->
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-pointer group/card">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
+                                        <iconify-icon icon="solar:widget-5-bold-duotone"
+                                            class="text-white text-base flex items-center justify-center"></iconify-icon>
+                                    </div>
+                                    <div class="flex flex-col flex-1 min-w-0">
+                                        <span class="text-white font-medium text-sm truncate">Web App</span>
+                                        <span class="text-zinc-500 font-normal text-xs truncate">Appointments &amp;
+                                            purchases</span>
+                                    </div>
+                                    <div
+                                        class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs font-medium flex items-center gap-0.5 shrink-0">
+                                        100% <iconify-icon icon="solar:check-circle-bold-duotone"
+                                            class="text-xs"></iconify-icon>
+                                    </div>
+                                </div>
+
+                                <!-- Elemento del Feed #2 -->
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-pointer group/card">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center shrink-0">
+                                        <iconify-icon icon="solar:sun-bold-duotone"
+                                            class="text-white text-base flex items-center justify-center"></iconify-icon>
+                                    </div>
+                                    <div class="flex flex-col flex-1 min-w-0">
+                                        <span class="text-white font-medium text-sm truncate">Website</span>
+                                        <span class="text-zinc-500 font-normal text-xs truncate">Customers from social,
+                                            phone &amp; web</span>
+                                    </div>
+                                    <div
+                                        class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs font-medium flex items-center gap-0.5 shrink-0">
+                                        100% <iconify-icon icon="solar:check-circle-bold-duotone"
+                                            class="text-xs"></iconify-icon>
+                                    </div>
+                                </div>
+
+                                <!-- Elemento del Feed #3 -->
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-pointer group/card relative">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center shrink-0">
+                                        <iconify-icon icon="solar:bolt-bold-duotone"
+                                            class="text-white text-base flex items-center justify-center"></iconify-icon>
+                                    </div>
+                                    <div class="flex flex-col flex-1 min-w-0">
+                                        <span class="text-white font-medium text-sm truncate">Manual booking</span>
+                                        <span class="text-zinc-500 font-normal text-xs truncate">No more last-minute
+                                            chaos</span>
+                                    </div>
+                                    <div
+                                        class="bg-white/5 text-zinc-400 px-2 py-0.5 rounded text-xs font-medium flex items-center gap-0.5 shrink-0">
+                                        0% <iconify-icon icon="solar:close-circle-bold-duotone"
+                                            class="text-xs"></iconify-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ombra sfumata dal basso verso l'alto (Effetto fade-out) -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#1f1f22] to-transparent pointer-events-none group-hover:from-[#222226] transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER / CONTATTI
+         ==========================================
+         Sezione finale con i canali di contatto:
+         WhatsApp, Email, LinkedIn e GitHub.
+         Ogni link apre in una nuova scheda (target="_blank") con
+         rel="noopener noreferrer" per motivi di sicurezza. -->
+    <footer class="relative z-20 container mx-auto px-6 md:px-12 pt-8 pb-20 pointer-events-auto">
+        <div
+            class="bg-[#0e0e11] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+            <div class="flex flex-col items-center gap-4">
+                <div
+                    class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
+                    Contact
+                </div>
+                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white">Let's build something together
+                </h2>
+                <p class="text-base font-normal text-zinc-400 max-w-xl leading-relaxed">Whether it's a project, a
+                    collaboration, or just a hello, I'd love to hear from you.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/393314643804?text=Hi%20Alex!%20I%20visited%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you."
+                    target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
+                    <span
+                        class="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <img src="images/icons_whatsapp.png" alt="WhatsApp" class="w-6 h-6 object-contain invert">
+                    </span>
+                    <span class="text-sm font-medium text-zinc-200">WhatsApp</span>
+                </a>
+
+                <!-- Email: apre Gmail in composizione con destinatario e oggetto precompilati -->
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dipaoloalex.dev@gmail.com&amp;su=Let%27s%20work%20together"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
+                    <span
+                        class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <img src="images/icons_email.png" alt="Email" class="w-6 h-6 object-contain invert">
+                    </span>
+                    <span class="text-sm font-medium text-zinc-200">Email</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/alex-di-paolo" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
+                    <span
+                        class="w-12 h-12 rounded-full bg-sky-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <img src="images/icons_linkedin.png" alt="LinkedIn" class="w-6 h-6 object-contain invert">
+                    </span>
+                    <span class="text-sm font-medium text-zinc-200">LinkedIn</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/dipaoloalex-dev" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
+                    <span
+                        class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <img src="images/icons_github.png" alt="GitHub" class="w-6 h-6 object-contain invert">
+                    </span>
+                    <span class="text-sm font-medium text-zinc-200">GitHub</span>
+                </a>
+            </div>
+
+            <!-- Riga finale: riapertura preferenze cookie + copyright -->
+            <div class="flex flex-col items-center gap-2">
+                <button type="button"
+                    class="text-xs text-zinc-500 hover:text-zinc-300 underline underline-offset-2 transition-colors"
+                    onclick="window.CookieConsent && window.CookieConsent.openPreferences()">Cookie preferences</button>
+                <p class="text-xs text-zinc-600 font-light">© 2026 Alex Di Paolo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         BANNER DI CONSENSO COOKIE (GDPR)
+         Banner in basso a sinistra + modal "Preferenze Cookie".
+         La logica di consenso e il caricamento di Google Analytics
+         sono gestiti da cookie_banner.js.
+         ========================================== -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+        <h3 class="cookie-banner__title">Cookies &amp; Privacy</h3>
+        <p class="cookie-banner__text">
+            This portfolio uses anonymous analytics cookies (Google Analytics) to understand how visitors use the
+            site. No personal data is stored or sold. When you choose to get in touch — with your phone number on
+            <a href="https://wa.me/393314643804" target="_blank" rel="noopener noreferrer">WhatsApp</a> or your email
+            address — your details are used only to reply to you.
+        </p>
+        <div class="cookie-banner__actions">
+            <button class="cookie-btn cookie-btn--primary" id="cookieBannerAcceptAll">Accept all</button>
+            <button class="cookie-btn cookie-btn--ghost" id="cookieBannerNecessary">Only necessary</button>
+            <button class="cookie-btn cookie-btn--link" id="cookieBannerManage">Manage preferences</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL "PREFERENZE COOKIE"
+         Permette di scegliere categoria per categoria.
+         ========================================== -->
+    <div class="cookie-prefs" id="cookiePreferences" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+        <div class="cookie-prefs__modal">
+            <div class="cookie-prefs__header">
+                <h3 class="cookie-prefs__title">Cookie Preferences</h3>
+                <button class="cookie-prefs__close" id="cookiePrefsClose" aria-label="Close">&times;</button>
+            </div>
+            <p class="cookie-prefs__intro">
+                Choose which cookies you allow. Necessary cookies are always active because the site cannot work
+                without them.
+            </p>
+
+            <!-- Categoria: cookie necessari (sempre attivi) -->
+            <div class="cookie-prefs__item">
+                <div>
+                    <p class="cookie-prefs__item-name">Necessary</p>
+                    <p class="cookie-prefs__item-desc">Required for the site to function and to remember your consent
+                        choice.</p>
+                </div>
+                <span class="cookie-prefs__badge">Always active</span>
+            </div>
+
+            <!-- Categoria: cookie analitici (opzionali) -->
+            <div class="cookie-prefs__item">
+                <div>
+                    <p class="cookie-prefs__item-name">Analytics</p>
+                    <p class="cookie-prefs__item-desc">Anonymous statistics (Google Analytics 4) about how visitors use
+                        the portfolio. No personal data is collected.</p>
+                </div>
+                <label class="cookie-switch">
+                    <input type="checkbox" id="cookiePrefsAnalytics">
+                    <span class="cookie-switch__slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-prefs__footer">
+                <button class="cookie-btn cookie-btn--primary" id="cookiePrefsSave">Save preferences</button>
+                <button class="cookie-btn cookie-btn--ghost" id="cookiePrefsAcceptAll">Accept all</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logica del banner di consenso cookie -->
+    <script src="banner/cookie_banner.js"></script>
+
+</body>
+
+</html>
