@@ -61,11 +61,24 @@
             // `entries` contiene tutti gli elementi osservati il cui stato è cambiato.
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
+                    const el = entry.target;
+
                     // L'elemento è (almeno parzialmente) visibile: avvia l'animazione.
-                    entry.target.classList.add("animate");
+                    el.classList.add("animate");
+
+                    /*
+                     * A fine animazione rimuove del tutto il layer dell'animazione.
+                     * Il `filter: blur(0px)` e il `transform` finali restano applicati
+                     * per via di `fill-mode: both`: su mobile questo fa rasterizzare
+                     * l'elemento a risoluzione più bassa, rendendo il testo sfuocato.
+                     * La classe `anim-complete` azzera l'animazione (vedi style.css).
+                     */
+                    el.addEventListener("animationend", () => {
+                        el.classList.add("anim-complete");
+                    }, { once: true });
 
                     // Se l'animazione è "one shot", smetti di osservare l'elemento.
-                    if (once) window.__inViewIO.unobserve(entry.target);
+                    if (once) window.__inViewIO.unobserve(el);
                 }
             });
         // threshold 0.2 = scatta quando è visibile almeno il 20% dell'elemento.

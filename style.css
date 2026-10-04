@@ -49,6 +49,18 @@
 }
 
 /*
+ * Fix rendering mobile: quando l'animazione è terminata (classe aggiunta da
+ * script.js) azzera l'animazione, così `filter` e `transform` non restano
+ * applicati. Senza questo, il testo degli elementi animati può risultare
+ * sfuocato sui telefoni (layer rasterizzato a risoluzione inferiore).
+ */
+.animate-on-scroll.anim-complete {
+    animation: none !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+/*
  * ============================================================================
  * 2) EFFETTI VETRO (GLASSMORPHISM)
  * ============================================================================
