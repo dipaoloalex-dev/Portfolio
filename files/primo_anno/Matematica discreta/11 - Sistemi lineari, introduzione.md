@@ -43,8 +43,8 @@ colonne (entrambi nulli solo per la matrice nulla). Il criterio diventa:
 compatibilità se e solo se `Col(A) = Col(B)`, cioè aggiungere la colonna dei
 termini noti non allarga lo spazio colonne.
 
-Esempio nuovo: il sistema `x + 2y = 3`, `2x − y = 0` ha colonne `(1, 2)` e
-`(2, −1)`, non proporzionali, e termini noti `(3, 0) = 1·(1, 2) + 1·(2, −1)`:
+Esempio nuovo: il sistema `x + 2y = 3`, `2x − y = 1` ha colonne `(1, 2)` e
+`(2, −1)`, non proporzionali, e termini noti `(3, 1) = 1·(1, 2) + 1·(2, −1)`:
 compatibile con soluzione `(1, 1)`. Se invece i termini noti fossero `(0, 5)` con
 le stesse colonne, servirebbero coefficienti che soddisfano insieme `x + 2y = 0`
 e `2x − y = 5`, cioè `(2, −1)`: verificando, la seconda dà `2·2 −(−1) = 5`. OK,

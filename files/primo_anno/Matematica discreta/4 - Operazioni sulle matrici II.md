@@ -32,7 +32,7 @@ stesso numero di elementi.
 Esempio nuovo: con `A` di righe `(2,1)` e `(0,3)` (tipo `(2, 2)`) e `B` di righe
 `(4,5)` e `(−1,2)` (tipo `(2, 2)`), il prodotto `AB` ha righe `(2·4+1·(−1),
 2·5+1·2) = (7,12)` e `(0·4+3·(−1), 0·5+3·2) = (−3,6)`. Il prodotto `BA` invece
-dà righe diverse: `(8,19)` e `(−2,−1)`: già qui si vede che l'ordine conta.
+dà righe diverse: `(8,19)` e `(−2,5)`: già qui si vede che l'ordine conta.
 
 **Il prodotto non commuta.** Anche quando entrambi i versi sono definiti e
 hanno lo stesso tipo, in generale `AB ≠ BA`. Se i tipi incrociati danno ordini
@@ -46,8 +46,8 @@ Per misurare la mancata commutazione si introduce il **commutatore**
 
 **Seconda sorpresa: niente legge di annullamento.** Con i numeri, se il prodotto
 è zero almeno un fattore è zero; con le matrici no: esistono `A, B` entrambe non
-nulle con `AB = O`. Esempio nuovo: `A` con righe `(1,0)` e `(0,0)`, `B` con righe
-`(0,0)` e `(0,1)`: entrambe non nulle, ma `AB` ha tutte le combinazioni nulle ed
+nulle con `AB = O`. Esempio nuovo: `A` con righe `(0,1)` e `(0,0)`, `B` con righe
+`(1,0)` e `(0,0)`: entrambe non nulle, ma `AB` ha tutte le combinazioni nulle ed
 è `O₂`. Quindi dal prodotto nullo non si deduce nulla sui fattori.
 
 ### 1.3 Proprietà del prodotto matriciale

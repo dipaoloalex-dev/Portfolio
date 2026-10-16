@@ -121,8 +121,7 @@ colonna dà `det A = 2·(-1)^{2+2}·det M` con
 M = [[1, 2, 1], [0, 1, 4], [2, 3, 1]]
 ```
 
-Per `M`, con Sarrus o Laplace, `det M = (1 - 24 + 0) - (2 + 12 + 0)` con
-segni sviluppati dà `3`: infatti `1·(1-12) - 2·(0-8) + 1·(0-2) = -11 + 16 - 2 = 3`.
+Per `M`, con Sarrus o Laplace, `det M = 3`: infatti `1·(1-12) - 2·(0-8) + 1·(0-2) = -11 + 16 - 2 = 3`.
 Quindi `det A = 2·3 = 6`.
 
 Errore tipico: sbagliare l'esponente `(-1)^{i+j}` o dimenticarlo, e

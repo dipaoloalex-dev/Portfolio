@@ -153,7 +153,7 @@ d) `3` parametri liberi
 
 ### Soluzioni ragionate
 
-**1 — b.** RigAlternano `3` righe esterne per `2` colonne esterne. La a) ne
+**1 — b.** Si alternano `3` righe esterne per `2` colonne esterne. La a) ne
 cita uno solo, la c) ne conta uno, la d) conta tutte le coppie senza
 escludere quelle interne.
 

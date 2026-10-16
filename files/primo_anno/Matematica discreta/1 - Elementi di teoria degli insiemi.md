@@ -14,9 +14,9 @@ Convenzioni di notazione:
 Ci sono due modi standard per descrivere un insieme.
 
 **1) Per elencazione.** Si scrivono gli elementi fra parentesi graffe, separati da
-virgole. Esempio: `A = {x, y, p, q}` è l'insieme composto dalle quattro lettere
-x, y, p, q. L'ordine di scrittura non conta e le ripetizioni non aggiungono nulla:
-`{1, 3, 8}`, `{3, 8, 1}` e `{3, 1, 8}` sono lo stesso insieme.
+virgole. Esempio: `A = {a, b, r, s}` è l'insieme composto dalle quattro lettere
+a, b, r, s. L'ordine di scrittura non conta e le ripetizioni non aggiungono nulla:
+`{2, 4, 9}`, `{9, 4, 2}` e `{4, 2, 9}` sono lo stesso insieme.
 
 **2) Per proprietà caratteristica.** Si descrive la regola che gli elementi devono
 soddisfare, con la forma:
@@ -78,9 +78,9 @@ l'inclusione.
 sbagliate: `1` è un elemento, `{1}` è l'insieme che contiene solo `1`. Sono due
 oggetti di tipo diverso.
 
-**Un esempio con insiemi dentro insiemi.** Sia `B = {1, {2, 3}}`: `B` ha due
-elementi, il numero `1` e l'insieme `{2, 3}`. Quindi `1 ∈ B` e `{2, 3} ∈ B` sono
-vere, mentre `2 ∈ B` è falsa (il `2` è "dentro" l'elemento `{2, 3}`, non è un
+**Un esempio con insiemi dentro insiemi.** Sia `B = {0, {4, 5}}`: `B` ha due
+elementi, il numero `0` e l'insieme `{4, 5}`. Quindi `0 ∈ B` e `{4, 5} ∈ B` sono
+vere, mentre `4 ∈ B` è falsa (il `4` è "dentro" l'elemento `{4, 5}`, non è un
 elemento diretto di `B`).
 
 Catena fondamentale fra insiemi numerici: `N ⊆ Z ⊆ Q ⊆ R`.
@@ -106,11 +106,11 @@ Gli elementi di un insieme possono essere a loro volta degli insiemi. Un insieme
 i cui elementi sono insiemi si chiama **famiglia** (o **classe**); valgono per le
 famiglie gli stessi concetti di sottofamiglia visti per i sottoinsiemi.
 
-Esempio: `F = {{−1}, {1, 0}, {3, 5, 2}}` è una famiglia con tre elementi, che sono
-gli insiemi `A = {−1}`, `B = {1, 0}`, `C = {3, 5, 2}`. Si può scrivere `F = {A, B, C}`.
+Esempio: `F = {{−2}, {2, 1}, {4, 6, 3}}` è una famiglia con tre elementi, che sono
+gli insiemi `A = {−2}`, `B = {2, 1}`, `C = {4, 6, 3}`. Si può scrivere `F = {A, B, C}`.
 
 Un altro modo tipico di costruire famiglie è per indice: ad esempio, per ogni
-`n ∈ N`, sia `Jn = [2n+1, 2n+2]`; allora `G = {Jn : n ∈ N}` è la famiglia di tutti
+`n ∈ N`, sia `Jn = [3n, 3n+1]`; allora `G = {Jn : n ∈ N}` è la famiglia di tutti
 questi intervalli chiusi di lunghezza unitaria.
 
 **Insieme potenza (insieme delle parti).** Dato un insieme `X`, l'insieme di
@@ -120,13 +120,13 @@ questi intervalli chiusi di lunghezza unitaria.
 A ∈ P(X)  ⟺  A ⊆ X
 ```
 
-Esempio: se `X = {x, y, z}`, allora `P(X)` contiene i tre singoletti `{x}`, `{y}`,
-`{z}`, le tre coppie `{x, y}`, `{x, z}`, `{y, z}`, più `X` stesso e l'insieme vuoto:
+Esempio: se `X = {r, s, t}`, allora `P(X)` contiene i tre singoletti `{r}`, `{s}`,
+`{t}`, le tre coppie `{r, s}`, `{r, t}`, `{s, t}`, più `X` stesso e l'insieme vuoto:
 8 elementi in tutto. In generale, un insieme finito con `n` elementi ha un insieme
 potenza con `2ⁿ` elementi. Nota che `∅ ∈ P(X)` e `X ∈ P(X)` sempre.
 
-Attenzione anche qui al tipo degli oggetti: `{y} ∈ P(X)` (è un sottoinsieme di X,
-quindi un elemento del potenza), mentre `{y} ⊆ P(X)` è falso in generale.
+Attenzione anche qui al tipo degli oggetti: `{s} ∈ P(X)` (è un sottoinsieme di X,
+quindi un elemento del potenza), mentre `{s} ⊆ P(X)` è falso in generale.
 
 ## 4. OPERAZIONI INSIEMISTICHE
 
@@ -185,8 +185,8 @@ Due fatti operativi da ricordare:
 - il prodotto distribuisce sull'unione: `A × (B ∪ C) = (A × B) ∪ (A × C)`
   (verificabile per elencazione diretta nei casi finiti);
 - il prodotto **non** è commutativo: in generale `A × B ≠ B × A`. Esempio: con
-  `A = {1, 3}` e `B = {2}` si ha `A × B = {(1,2), (3,2)}` mentre
-  `B × A = {(2,1), (2,3)}`: insiemi diversi, qui addirittura disgiunti.
+  `A = {2, 5}` e `B = {7}` si ha `A × B = {(2,7), (5,7)}` mentre
+  `B × A = {(7,2), (7,5)}`: insiemi diversi, qui addirittura disgiunti.
 
 ## Concetti chiave da ricordare
 

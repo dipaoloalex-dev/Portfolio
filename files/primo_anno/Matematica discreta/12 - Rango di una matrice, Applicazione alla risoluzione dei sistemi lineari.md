@@ -25,7 +25,7 @@ piccola restano combinazioni di quelle della grande.
 
 Esempio nuovo: da una `(3, 3)` con righe `(1, 0, 2)`, `(0, 1, 1)`, `(2, 1, 5)`
 la subordinata sulle prime due righe e colonne è `[[1, 0], [0, 1]]`, di rango 2;
-l'intera ha rango 2 anch'essa (la terza riga è somma delle prime due più zeri),
+l'intera ha rango 2 anch'essa (la terza riga è `2` volte la prima più la seconda),
 quindi qui vale l'uguaglianza, ma mai il superamento.
 
 ## 3. TEOREMA DI ROUCHÉ-CAPELLI E I TEOREMI DI UNICITÀ
