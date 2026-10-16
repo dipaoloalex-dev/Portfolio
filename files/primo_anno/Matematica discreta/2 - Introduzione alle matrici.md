@@ -1,0 +1,206 @@
+## 1. DEFINIZIONI E NOTAZIONI
+
+Una **matrice** è una tabella di numeri disposti su righe (linee orizzontali) e
+colonne (linee verticali). Qui consideriamo solo matrici con elementi reali.
+Una matrice con `m` righe e `n` colonne si dice di **tipo `(m, n)`** e contiene
+`m × n` elementi.
+
+Ci sono due modi equivalenti per indicare una matrice generica `A` di tipo `(m, n)`:
+
+- **scrittura esplicita**, con tutti gli elementi in tabella;
+- **scrittura abbreviata** `A = [aᵢⱼ]`, dove `aᵢⱼ` è l'elemento che sta
+  all'incrocio tra la riga `i` e la colonna `j` (il primo indice è sempre la riga,
+  il secondo la colonna). Talvolta si scrive anche `aᵢⱼ = (A)ᵢⱼ`.
+
+L'insieme di tutte le matrici di tipo `(m, n)` si indica con `M(m,n)`.
+
+### 1.1 Un'applicazione: punti e matrici
+
+Le matrici nascono anche per rappresentare posizioni geometriche. Un punto `P`
+del piano è individuato dalla coppia delle sue coordinate `(x₀, y₀)` una volta
+fissato un sistema di assi cartesiani. La stessa informazione si può scrivere
+come matrice in due forme:
+
+- **vettore riga** a 2 componenti: `V = [x₀  y₀]`, di tipo `(1, 2)`;
+- **vettore colonna** a 2 componenti: colonna con `x₀` sopra e `y₀` sotto,
+  di tipo `(2, 1)`.
+
+Attenzione a non confondere i tre oggetti: il "vettore posizione" geometrico
+(freccia dall'origine a `P`) e le due matrici riga/colonna che ne registrano le
+componenti. C'è corrispondenza uno-a-uno fra i tre, ma sono oggetti di natura
+diversa.
+
+Con più punti il discorso si estende: tre punti `P₁, P₂, P₃` di coordinate
+`(x₁,y₁)`, `(x₂,y₂)`, `(x₃,y₃)` si raccolgono in una matrice di tipo `(3, 2)`
+(una riga per punto) oppure di tipo `(2, 3)` (una colonna per punto). In
+generale una `N`-upla di punti del piano sta in una matrice `(N, 2)` o `(2, N)`.
+
+Nello spazio a 3 dimensioni servono tre coordinate per punto, quindi un punto si
+rappresenta con un vettore riga `(1, 3)` o colonna `(3, 1)`, e `N` punti con una
+matrice `(N, 3)` o `(3, N)`. In uno spazio a `d` dimensioni (`Rᵈ`, l'insieme di
+tutte le `d`-uple ordinate di reali) si usano matrici `(N, d)` o `(d, N)`.
+
+**Osservazione importante: dichiarare sempre la dimensione.** La stessa tabella
+di numeri può descrivere situazioni diverse se non si dice in che spazio si
+lavora. Ad esempio una matrice `(3, 2)` con righe `(2,5)`, `(0,1)`, `(4,3)` può
+leggersi come tre punti del piano, mentre la sua "trasposta" `(2, 3)` può
+leggersi come due punti dello spazio a 3 dimensioni: senza dichiarare `d`
+l'interpretazione è ambigua.
+
+### 1.2 Matrici notevoli
+
+- **Vettori.** Una sola riga = vettore riga a `n` componenti (tipo `(1, n)`); una
+  sola colonna = vettore colonna a `m` componenti (tipo `(m, 1)`). Si usa un
+  solo indice: `X = [x₁ x₂ ... xₙ]`.
+- **Matrici quadrate.** Se `m = n`, la matrice è **quadrata di ordine `n`**.
+  Gli elementi `a₁₁, a₂₂, ..., aₙₙ` formano la **diagonale principale**. L'insieme
+  delle quadrate di ordine `n` si indica con `M(n)`. Una quadrata `1×1` è un
+  singolo numero. Se `m ≠ n` la matrice è **rettangolare**.
+- **Diagonali.** Quadrata con tutti zeri fuori dalla diagonale (`aᵢⱼ = 0` per
+  `i ≠ j`). Notazione compatta: `A = diag[a₁, a₂, ..., aₙ]`.
+- **Unità.** Diagonale con tutti `1` in diagonale, indicata `I(n)` (o `I` se
+  l'ordine è chiaro). I suoi elementi si scrivono con il **simbolo di Kronecker**
+  `δᵢⱼ`, che vale `1` se `i = j` e `0` altrimenti.
+- **Simmetrica.** Quadrata con `aᵢⱼ = aⱼᵢ` per ogni `i, j`: gli elementi opposti
+  rispetto alla diagonale sono uguali. In una `3×3` simmetrica solo 6 elementi
+  su 9 sono indipendenti (3 in diagonale + 3 fuori).
+- **Antisimmetrica.** Quadrata con `aᵢⱼ = −aⱼᵢ`: gli elementi opposti sono
+  cambiati di segno e la diagonale è tutta nulla (infatti `aᵢᵢ = −aᵢᵢ` implica
+  `aᵢᵢ = 0`). In una `3×3` antisimmetrica solo 3 elementi sono indipendenti.
+- **Triangolare inferiore.** Quadrata con zeri **sopra** la diagonale
+  (`aᵢⱼ = 0` per `i < j`): la parte non nulla sta in basso a sinistra.
+- **Triangolare superiore.** Quadrata con zeri **sotto** la diagonale
+  (`aᵢⱼ = 0` per `i > j`): la parte non nulla sta in alto a destra.
+- **Nulla.** Tutti gli elementi uguali a zero, indicata `O(m,n)` (o `O(n)`, `O`, `0`).
+
+**Uguaglianza fra matrici.** `A = B` se e solo se: (i) hanno lo stesso tipo
+`(m, n)`; (ii) ogni elemento coincide posto per posto (`aᵢⱼ = bᵢⱼ` per ogni `i, j`).
+L'uguaglianza è riflessiva (`A = A`), simmetrica e transitiva.
+
+## 2. PRIME OPERAZIONI CON LE MATRICI
+
+### 2.1 Trasposizione di una matrice
+
+La **trasposta** di `A` (tipo `(m, n)`), indicata `Aᵗ`, è la matrice di tipo
+`(n, m)` ottenuta scambiando ordinatamente righe e colonne: la riga `i` di `A`
+diventa la colonna `i` di `Aᵗ`, cioè `(Aᵗ)ᵢⱼ = aⱼᵢ`. Per una quadrata equivale a
+ribaltare gli elementi rispetto alla diagonale principale.
+
+Conseguenze utili:
+
+- simmetrica ⟺ `A = Aᵗ`; antisimmetrica ⟺ `A = −Aᵗ`;
+- doppia trasposizione: `(Aᵗ)ᵗ = A`;
+- la trasposta di un vettore riga è un vettore colonna e viceversa.
+
+Esempio con valori nuovi: se `A` è la `(3, 2)` con righe `(4,0)`, `(1,7)`,
+`(−2,5)`, la sua trasposta è la `(2, 3)` con righe `(4,1,−2)` e `(0,7,5)`.
+
+### 2.2 Matrice opposta
+
+L'**opposta** di `A`, indicata `−A`, è dello stesso tipo di `A` e si ottiene
+cambiando segno a ogni elemento: `(−A)ᵢⱼ = −aᵢⱼ`. Ovviamente `−(−A) = A`, e
+trasposizione e opposta commutano: `(−A)ᵗ = −(Aᵗ)`.
+
+**Esercizio guida (metodo).** Per stabilire se una matrice con parametri è
+simmetrica o antisimmetrica si impone `A = Aᵗ` oppure `A = −Aᵗ` e si risolve il
+sistema risultante. Esempio nuovo: sia `B = [[p, q+1], [q−1, r]]`. La condizione
+di simmetria dà `q+1 = q−1`, impossibile: nessuna scelta di `q` rende `B`
+simmetrica. La condizione di antisimmetria dà `p = 0`, `r = 0` e
+`q+1 = −(q−1)`, cioè `q = 0`: con `(p,r,q) = (0,0,0)` la matrice diventa
+`[[0,1],[−1,0]]`, antisimmetrica. Per le triangolari si azzerano invece gli
+elementi fuori posto: ad esempio `B` è triangolare superiore solo se l'elemento
+sotto diagonale è nullo, cioè `q−1 = 0`.
+
+## Concetti chiave da ricordare
+
+- `aᵢⱼ`: primo indice riga, secondo indice colonna; il tipo `(m, n)` conta.
+- Stessa tabella, spazi diversi: dichiarare sempre la dimensione `d`.
+- Diagonale → unità (`δᵢⱼ`) → simmetrica (`A = Aᵗ`) → antisimmetrica
+  (`A = −Aᵗ`, diagonale nulla) → triangolari → nulla.
+- Uguaglianza: stesso tipo + stessi elementi posto per posto.
+- `(Aᵗ)ᵗ = A`, `−(−A) = A`, `(−A)ᵗ = −(Aᵗ)`.
+
+## TEST di AUTOVALUTAZIONE
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+**1.** La matrice con righe `(5,5)` e `(5,5)` è:
+a) quadrata di ordine 2 · b) rettangolare di tipo `(2, 3)` · c) vettore riga ·
+d) vettore colonna
+
+**2.** Sia `C = [[2, k], [k, 7]]` con `k` reale. Quale affermazione è vera?
+a) È simmetrica per ogni `k` · b) È antisimmetrica per `k = 0` · c) È diagonale
+per ogni `k` · d) È l'unità per `k = 2`
+
+**3.** Sia `D = [[0, m], [−m, 0]]` con `m` reale. Quale affermazione è vera?
+a) È simmetrica per ogni `m` · b) È antisimmetrica per ogni `m` · c) È
+triangolare superiore per ogni `m` · d) È diagonale per `m = 1`
+
+**4.** Due matrici `A` di tipo `(2, 3)` e `B` di tipo `(3, 2)` con gli stessi 6
+numeri possono essere uguali?
+a) Sì, se i numeri coincidono · b) No, mai: il tipo è diverso · c) Sì, se sono
+quadrate · d) Solo se sono nulle
+
+**5.** Sia `A` la `(2, 3)` con righe `(1,0,4)` e `(−1,2,3)`. Com'è fatta `Aᵗ`?
+a) `(2, 3)` con le stesse righe · b) `(3, 2)` con righe `(1,−1)`, `(0,2)`,
+`(4,3)` · c) `(3, 2)` con righe `(1,0,4)` · d) Non esiste
+
+**6.** Per una matrice `A` qualsiasi di tipo `(m, n)`, quale uguaglianza è
+corretta?
+a) `(−A)ᵗ = −(Aᵗ)` · b) `(Aᵗ)ᵗ = −A` · c) `−(−A) = −A` · d) `(−A)ᵗ = Aᵗ`
+
+### Soluzioni ragionate
+
+**1 — a.** Due righe e due colonne con `m = n = 2`: è quadrata di ordine 2.
+Non è rettangolare (che richiede `m ≠ n`) né un vettore.
+
+**2 — a.** Gli elementi fuori diagonale coincidono (`k` e `k`), quindi `C = Cᵗ`
+per qualunque `k`. Non è antisimmetrica (servirebbe diagonale nulla e opposti),
+non è diagonale salvo `k = 0`, non è l'unità.
+
+**3 — b.** Fuori diagonale opposti (`m` e `−m`) e diagonale nulla: `D = −Dᵗ`
+per ogni `m`. Non è simmetrica salvo `m = 0`, non è triangolare in generale.
+
+**4 — b.** L'uguaglianza richiede lo stesso tipo: `(2, 3) ≠ (3, 2)`, quindi non
+possono mai essere uguali, anche con gli stessi numeri.
+
+**5 — b.** La trasposta scambia righe e colonne: da tipo `(2, 3)` a `(3, 2)`, e
+ogni riga di `A` diventa una colonna di `Aᵗ`, quindi le righe di `Aᵗ` sono
+`(1,−1)`, `(0,2)`, `(4,3)`.
+
+**6 — a.** Opposta e trasposta commutano. La b) sbaglia segno, la c) sbaglia
+segno (doppia opposta = originale), la d) ignora il meno.
+
+---
+
+## PROMPT RIUTILIZZABILE
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+```
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
+```
