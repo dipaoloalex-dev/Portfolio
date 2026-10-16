@@ -1,0 +1,143 @@
+## 1. DEFINIZIONE DI SPAZIO VETTORIALE
+
+Prima degli spazi vettoriali serve la nozione di **campo**: un insieme non vuoto
+`K` con due operazioni interne, somma e prodotto, che si comportano come quelle
+dei numeri usuali. In dettaglio: somma associativa e commutativa, con zero e
+opposti; prodotto associativo e commutativo, con unità `1 ≠ 0` e reciproco per
+ogni elemento non nullo; prodotto distributivo sulla somma.
+
+Notazioni compatte: `ab` per `a·b`, `−a` per l'opposto, `a − b` per `a + (−b)`,
+`a⁻¹` per il reciproco, `a/b` per `a·(1/b)`.
+
+Fatti di base: zero e unità sono unici; l'equazione `a + x = b` ha l'unica
+soluzione `x = b − a`; se `a ≠ 0`, l'equazione `ax = b` ha l'unica soluzione
+`x = b/a`; vale la **legge di annullamento** (`ab = 0` se e solo se almeno un
+fattore è zero).
+
+Esempi: `R` e `Q` con le operazioni usuali sono campi; `Z` invece no, perché un
+intero come `2` non ha reciproco intero.
+
+**Spazio vettoriale su `K`.** È una struttura con un insieme sostegno `V` (i cui
+elementi si chiamano **vettori**), un'operazione interna di **somma** fra vettori
+e un **prodotto per scalare** (ogni scalare di `K` per ogni vettore dà un
+vettore). Le due operazioni devono soddisfare otto assiomi:
+
+1. somma associativa; 2. somma commutativa; 3. esistenza del vettore nullo `0`;
+4. esistenza dell'opposto `−v` per ogni `v`; 5. lo scalare `1` lascia invariato
+ogni vettore; 6. `h(kv) = (hk)v`; 7. `k(v+w) = kv + kw`; 8. `(h+k)v = hv + kv`.
+
+Errore tipico: confondere il campo degli scalari con lo spazio dei vettori. Gli
+scalari si moltiplicano fra loro e hanno reciproci; i vettori si sommano fra loro
+e si moltiplicano solo per scalari, mai fra loro.
+
+## 2. PRIME PROPRIETÀ DEGLI SPAZI VETTORIALI
+
+Dagli assiomi seguono direttamente alcuni fatti, utili in ogni dimostrazione:
+
+- lo zero e l'opposto di un vettore sono **unici**: se `v + x = v` allora
+  necessariamente `x = 0`; se `v + x = 0` allora `x = −v`;
+- l'equazione `x + v = w` ha sempre l'unica soluzione `x = w − v`;
+- `kv = 0` se e solo se `k = 0` oppure `v = 0` (qui serve il reciproco dello
+  scalare non nullo, come nei campi);
+- corollari: `−v = (−1)v` e la **regola dei segni** (`k(−v) = (−k)v = −kv`,
+  `(−k)(−v) = kv`).
+
+L'idea ricorrente delle dimostrazioni è sempre la stessa: si somma l'opposto a
+entrambi i membri e si usano associatività e neutro per isolare l'incognita.
+
+## 3. LA NOZIONE DI COMBINAZIONE LINEARE
+
+Grazie ad associatività e commutatività della somma, sommare una `n`-upla di
+vettori in qualsiasi ordine e con qualsiasi parentesizzazione dà sempre lo
+stesso risultato: la scrittura `v₁ + ... + vₙ` è quindi priva di ambiguità, e
+resta invariata anche permutando gli addendi.
+
+Dati vettori `v₁, ..., vₙ` e scalari `k₁, ..., kₙ`, il vettore
+`k₁v₁ + ... + kₙvₙ` si chiama **combinazione lineare** dei vettori con
+coefficienti gli scalari. Esempio nuovo: in `R²` il vettore `(5, 1)` è
+combinazione di `(1, 0)` e `(0, 1)` con coefficienti `5` e `1`.
+
+## Concetti chiave da ricordare
+
+- Campo: somma e prodotto "come i reali", con opposti e reciproci; `Z` non è un campo.
+- Spazio vettoriale: 4 assiomi sulla somma + 4 sul prodotto per scalare.
+- Zero e opposto unici; `x + v = w` dà `x = w − v`; `kv = 0` solo se `k = 0` o `v = 0`.
+- Somme lunghe senza parentesi né ordine grazie ad associatività e commutatività.
+- Combinazione lineare = somma di vettori scalati.
+
+## TEST di AUTOVALUTAZIONE
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+**1.** Quale struttura è un campo con le operazioni usuali?
+a) `Z` · b) `Q` · c) `N` · d) L'insieme `{0, 1}`
+
+**2.** In uno spazio vettoriale, l'equazione `x + v = w`:
+a) non ha mai soluzione · b) ha l'unica soluzione `x = w − v` ·
+c) ha infinite soluzioni · d) ha soluzione solo se `v = 0`
+
+**3.** Se `kv = 0` con `v ≠ 0`, allora:
+a) `k = 1` · b) `k = 0` · c) `k` qualsiasi · d) impossibile
+
+**4.** Quanto vale `(−2)(−v)`?
+a) `−2v` · b) `2v` · c) `0` · d) `−v`
+
+**5.** Quale scrittura è sempre una combinazione lineare di `(v₁, v₂, v₃)`?
+a) `v₁ + v₂` · b) `4v₁ − v₃` · c) `v₁v₂` · d) `1/v₁`
+
+**6.** Perché `Z` non è un campo?
+a) La somma non commuta · b) Manca il reciproco per gli elementi non nulli
+diversi da ±1 · c) Manca lo zero · d) Il prodotto non è associativo
+
+### Soluzioni ragionate
+
+**1 — b.** `Q` ha opposti e reciproci; `Z` e `N` mancano dei reciproci,
+`{0, 1}` non è chiuso rispetto alla somma.
+
+**2 — b.** È la proposizione di risolubilità: esistenza per `w − v`, unicità per
+sottrazione membro a membro.
+
+**3 — b.** Dalla proposizione sull'annullamento misto: vettore non nullo impone
+scalare nullo.
+
+**4 — b.** Regola dei segni: due meno fanno più, `(−k)(−v) = kv`, qui `2v`.
+
+**5 — b.** È somma di vettori scalati con coefficienti `4, 0, −1`. La c) non è
+definita fra vettori, la d) nemmeno.
+
+**6 — b.** Tutto il resto vale in `Z`; a mancare è solo l'inverso
+moltiplicativo (ad esempio `1/2` non è intero).
+
+---
+
+## PROMPT RIUTILIZZABILE
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+```
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
+```

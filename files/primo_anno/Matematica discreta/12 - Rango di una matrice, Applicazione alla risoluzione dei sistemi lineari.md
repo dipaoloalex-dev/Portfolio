@@ -1,0 +1,145 @@
+## 1. LA DEFINIZIONE DI RANGO DI UNA MATRICE
+
+Per una matrice `A` di tipo `(m, n)` si considerano lo **spazio righe** `Rig(A)`
+(generato dalle righe in `Kⁿ`) e lo **spazio colonne** `Col(A)` (generato dalle
+colonne). Il teorema centrale afferma che i due hanno la **stessa dimensione**:
+l'ordine di un sistema massimo di righe indipendenti coincide con quello delle
+colonne. Questo intero comune è il **rango** `rk(A)`.
+
+Conseguenze immediate: la nulla ha rango 0 (unica con righe e colonne tutte
+nulle); il rango della trasposta coincide con quello della matrice (`rk(A) =
+rk(Aᵗ)`), perché trasporre scambia i ruoli di righe e colonne.
+
+Esempio nuovo: la matrice di righe `(1, 2)` e `(2, 4)` ha righe proporzionali e
+colonne proporzionali: un solo vettore indipendente da entrambe le parti,
+quindi rango 1. Aggiungendo una terza riga `(0, 1)`, le righe `(1, 2)` e
+`(0, 1)` restano indipendenti e generano tutto: rango 2.
+
+## 2. MATRICI SUBORDINATE A UNA DATA MATRICE E LORO RANGO
+
+Scegliendo alcune righe `i₁ < ... < iₕ` e alcune colonne `j₁ < ... < jₖ` di `A`
+si ottiene la **subordinata** `(h, k)` formata dai loro incroci. Vale sempre
+`rk(subordinata) ≤ rk(A)`: restringere prima le colonne e poi le righe (o
+viceversa) non può creare indipendenza nuova, perché le righe/colonne della
+piccola restano combinazioni di quelle della grande.
+
+Esempio nuovo: da una `(3, 3)` con righe `(1, 0, 2)`, `(0, 1, 1)`, `(2, 1, 5)`
+la subordinata sulle prime due righe e colonne è `[[1, 0], [0, 1]]`, di rango 2;
+l'intera ha rango 2 anch'essa (la terza riga è somma delle prime due più zeri),
+quindi qui vale l'uguaglianza, ma mai il superamento.
+
+## 3. TEOREMA DI ROUCHÉ-CAPELLI E I TEOREMI DI UNICITÀ
+
+Dette `B` la completa e `A` l'incompleta, il sistema è compatibile se e solo se
+`rk(B) = rk(A)`: aggiungere i termini noti non deve allargare lo spazio colonne.
+
+Sulla soluzione unica:
+
+- **primo teorema:** soluzione unica se e solo se `rk(B) = rk(A) = n` (numero
+  delle incognite): compatibilità più colonne indipendenti, quindi un solo modo
+  di ricostruire i termini noti;
+- **secondo teorema:** con sistema compatibile di rango `p < n`, fissate a
+  piacere le `n − p` incognite fuori da un massimo di colonne indipendenti,
+  resta un'unica soluzione per le altre: le soluzioni si descrivono in **forma
+  parametrica** con `n − p` parametri liberi (la scelta del massimo cambia la
+  parametrizzazione, non l'insieme delle soluzioni).
+
+Esempio nuovo: `x + y = 1`, `2x + 2y = 3` ha incompleta di rango 1 (righe
+proporzionali) e completa di rango 2: incompatibile. Con secondo membro `2`
+invece che `3`, i ranghi coincidono a 1: infinite soluzioni `y = t`, `x = 1 − t`.
+
+## 4. IL CASO DEI SISTEMI OMOGENEI
+
+Per un omogeneo con incompleta di rango `p` in `n` incognite, le soluzioni
+formano un sottospazio di dimensione `n − p`: basta costruire una soluzione per
+ogni variabile libera (uno nei posti liberi, zero negli altri) e si ottiene una
+base dello spazio delle soluzioni. In particolare c'è solo la banale se e solo se
+`p = n`, cioè colonne indipendenti.
+
+Errore tipico: credere che "rango pieno sulle righe" basti per l'unicità. Conta
+il confronto col numero delle incognite: serve `rk = n`, non solo uguaglianza
+fra completa e incompleta.
+
+## Concetti chiave da ricordare
+
+- `rk(A) = dim Rig(A) = dim Col(A)`; `rk(Aᵗ) = rk(A)`; subordinata non supera.
+- Compatibile ⟺ `rk(B) = rk(A)`; unica ⟺ rango uguale al numero di incognite.
+- Con `p < n`: `n − p` parametri liberi, forma parametrica.
+- Omogeneo: soluzioni = sottospazio di dimensione `n − p`; solo banale se `p = n`.
+
+## TEST di AUTOVALUTAZIONE
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+**1.** Una `(2, 3)` con righe `(1, 0, 2)` e `(0, 1, 1)` ha rango:
+a) 0 · b) 1 · c) 2 · d) 3
+
+**2.** Una subordinata può avere rango maggiore dell'originale?
+a) Sì, sempre · b) Mai · c) Solo se quadrata · d) Solo se nulla
+
+**3.** Con `rk(B) = 3` e `rk(A) = 2` il sistema è:
+a) compatibile · b) incompatibile · c) a soluzione unica ·
+d) omogeneo di dimensione 1
+
+**4.** Con `rk(B) = rk(A) = n` (incognite) la soluzione è:
+a) unica · b) mai unica · c) inesistente · d) parametrica a 2 parametri
+
+**5.** Un omogeneo in 4 incognite con incompleta di rango 1 ha soluzioni di
+dimensione:
+a) 1 · b) 4 · c) 3 · d) 0
+
+**6.** Se `rk(A) = rk(B) = 1` con 3 incognite, le soluzioni dipendono da:
+a) 0 parametri · b) 1 parametro · c) 2 parametri · d) 3 parametri
+
+### Soluzioni ragionate
+
+**1 — c.** Le due righe non sono proporzionali e ci sono solo 2 righe: massimo
+indipendente di ordine 2 (anche le colonne confermano, essendoci due colonne
+indipendenti).
+
+**2 — b.** Il rango della subordinata non supera mai quello della madre: le sue
+righe/colonne restano combinazioni di quelle originali.
+
+**3 — b.** Rouché-Capelli richiede uguaglianza: ranghi diversi = termini noti
+fuori dallo spazio colonne = nessuna soluzione.
+
+**4 — a.** Primo teorema di unicità: compatibilità più colonne indipendenti
+danno un'unica scrittura dei termini noti.
+
+**5 — c.** Dimensione `n − p = 4 − 1 = 3`: tre parametri liberi.
+
+**6 — c.** Parametri liberi = `n − p = 3 − 1 = 2`.
+
+---
+
+## PROMPT RIUTILIZZABILE
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+```
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
+```

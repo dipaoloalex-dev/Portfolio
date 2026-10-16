@@ -1,0 +1,144 @@
+## 1. DEFINIZIONE DI DIPENDENZA E INDIPENDENZA LINEARE
+
+Il vettore nullo si scrive sempre come combinazione a coefficienti tutti nulli.
+Un sistema `S = [v₁, ..., vₙ]` è **linearmente indipendente** quando questo è
+l'unico modo possibile: la relazione `k₁v₁ + ... + kₙvₙ = 0` vale se e solo se
+tutti gli `kᵢ` sono zero. Il sistema vuoto si considera indipendente per
+convenzione.
+
+Il sistema è invece **linearmente dipendente** quando è non vuoto ed esiste una
+combinazione non banale che dà il nullo (almeno un coefficiente diverso da zero).
+
+Casi guida, con parole proprie:
+
+- un singoletto `[v]` è indipendente se e solo se `v ≠ 0` (un multiplo di un
+  vettore non nullo si annulla solo col coefficiente zero);
+- una coppia è dipendente se e solo se i due vettori sono **proporzionali**
+  (dalla relazione si ricava uno come multiplo dell'altro e viceversa);
+- se un sottosistema è dipendente, lo è tutto il sistema (basta completare con
+  zeri): in particolare un sistema con lo zero dentro, o con due vettori
+  proporzionali, è sempre dipendente; un sistema è indipendente se e solo se lo
+  è ogni suo sottosistema;
+- i vettori unitari di `Kⁿ` sono indipendenti (la combinazione dà proprio la
+  `n`-upla dei coefficienti); stesso discorso per le matrici elementari;
+- fra i vettori geometrici: uno solo è indipendente se non nullo; due se non
+  hanno la stessa direzione; tre se non giacciono sullo stesso piano; da quattro
+  in poi c'è sempre dipendenza.
+
+Errore tipico: pensare che "dipendente" significhi che ogni vettore dipende
+dagli altri. No: basta che ce ne sia uno esprimibile con gli altri (o lo zero
+nel sistema) per rendere dipendente tutto il sistema.
+
+## 2. ALCUNI RISULTATI SULLA DIPENDENZA E INDIPENDENZA LINEARE
+
+- Un sistema non vuoto è dipendente se e solo se almeno un suo vettore dipende
+  dai rimanenti (togliendolo, il generato non cambia). Un corollario: esiste un
+  sottosistema proprio con lo stesso generato.
+- Se da un sistema dipendente si toglie un solo vettore e quel che resta è
+  indipendente, il vettore tolto dipende necessariamente dal resto.
+- Con un sistema indipendente, ogni vettore del generato si scrive in **un solo
+  modo** come combinazione; con un sistema dipendente, ogni vettore del
+  generato si scrive in più modi (si somma alla scrittura una relazione di
+  dipendenza non banale dello zero).
+
+## 3. IL TEOREMA DI STEINITZ
+
+Se un sistema indipendente `T` di `m` vettori vive dentro il generato di un
+sistema `S` di `n` vettori, allora `m ≤ n`: non si possono avere più vettori
+indipendenti che generatori. L'idea della dimostrazione è lo scambio: ogni
+vettore di `T` si scrive con `S`, e di volta in volta un vettore di `S` viene
+rimpiazzato da uno di `T`; se `T` fosse più numeroso, alla fine i suoi vettori
+restanti dipenderebbero dai primi, contro l'indipendenza.
+
+Corollari: in uno spazio finitamente generato da `n` vettori, nessun sistema
+indipendente supera `n` elementi. È il fondamento della nozione di dimensione,
+che verrà dopo.
+
+## Concetti chiave da ricordare
+
+- Indipendenza = solo i coefficienti tutti nulli annullano la combinazione.
+- Singoletto ok se non nullo; coppia ok se non proporzionali.
+- Sottosistema dipendente contagia tutto il sistema.
+- Dipendenza = un vettore è combinazione dei rimanenti = generato invariato togliendolo.
+- Indipendenza = scrittura unica; dipendenza = scritture multiple.
+- Steinitz: gli indipendenti non superano mai i generatori.
+
+## TEST di AUTOVALUTAZIONE
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+**1.** In `R²`, il sistema `[(3, 0), (0, 5)]` è:
+a) indipendente · b) dipendente perché c'è lo zero · c) dipendente perché i
+vettori sono proporzionali · d) vuoto
+
+**2.** Il sistema `[(2, 4), (1, 2)]` in `R²` è:
+a) indipendente · b) dipendente, perché il primo è il doppio del secondo ·
+c) indipendente perché non c'è lo zero · d) di ordine 1
+
+**3.** Se un sistema contiene il vettore nullo, allora è:
+a) indipendente · b) sempre dipendente · c) vuoto · d) di ordine zero
+
+**4.** Con `S` indipendente, la scrittura di un vettore di `⟨S⟩` come combinazione
+di `S` è:
+a) impossibile · b) unica · c) multipla · d) possibile solo per lo zero
+
+**5.** Per Steinitz, in uno spazio generato da 3 vettori un sistema indipendente
+può avere al massimo:
+a) 2 elementi · b) 3 elementi · c) 4 elementi · d) infiniti elementi
+
+**6.** Se togliendo `v` da `S` il generato non cambia, allora:
+a) `v` dipende dai rimanenti · b) `S` era indipendente · c) `v` è nullo per forza ·
+d) niente si può dire
+
+### Soluzioni ragionate
+
+**1 — a.** La combinazione `a(3,0) + b(0,5) = (0,0)` dà `a = b = 0`: nessun'altra
+possibilità. Non c'è lo zero né proporzionalità.
+
+**2 — b.** `(2, 4) = 2·(1, 2)`: proporzionalità diretta, quindi dipendenza. La c)
+è falsa perché l'assenza dello zero non basta.
+
+**3 — b.** Basta coefficiente 1 sullo zero e 0 altrove: relazione non banale che
+annulla tutto.
+
+**4 — b.** È il teorema sull'unicità della scrittura con sistemi indipendenti
+(differenza di due scritture = relazione nulla = coefficienti uguali).
+
+**5 — b.** Steinitz con `n = 3`: `m ≤ n` per ogni indipendente nel generato.
+
+**6 — a.** È la caratterizzazione del vettore ridondante: `⟨S−v⟩ = ⟨S⟩` se e solo
+se `v` dipende dal resto.
+
+---
+
+## PROMPT RIUTILIZZABILE
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+```
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
+```
