@@ -1,0 +1,230 @@
+## 1. OMOMORFISMI TRA SPAZI DI VETTORI NUMERICI
+
+Le lineari tra spazi di coordinate si descrivono tutte con una matrice che
+moltiplica i vettori colonna.
+
+Identificando `M(n, K)` con le colonne `M(n, 1, K)`, fissata
+`A ∈ M(m, n, K)` si pone `f_A(x) = A·x`. Scrivendo `A` per righe
+`a₁, ..., aₘ`, la componente `i`-esima è il prodotto riga-colonna
+`aᵢ·x`, cioè `a_{i1}x₁ + ... + a_{in}xₙ`. Dalle proprietà del prodotto,
+`f_A(x + y) = A·(x + y) = A·x + A·y` e `f_A(kx) = k(A·x)`: è un omomorfismo.
+
+Poiché `f_A(eⁱ)` è la colonna `i`-esima di `A`, indicata `aⁱ`, la `f_A` è
+l'unica lineare che manda la base canonica `e¹, ..., eⁿ` in quelle colonne.
+Viceversa ogni `f: M(n, 1, K) → M(m, 1, K)` lineare è di questa forma:
+basta prendere come colonne le immagini `aⁱ = f(eⁱ)`. La matrice così
+ottenuta è l'unica con `f = f_A` e si chiama matrice associata, indicata
+`M(f)`.
+
+Esempio nuovo: sia `f: M(2, R) → M(3, R)` con `f(e₁) = (2, 1, 0)` e
+`f(e₂) = (-1, 4, 3)`. La matrice per colonne è
+
+```
+[[2, -1], [1, 4], [0, 3]]
+```
+
+di tipo `(3, 2)`, e `f(x₁, x₂) = (2x₁ - x₂, x₁ + 4x₂, 3x₂)`.
+
+Esempio nuovo con base non canonica: sia `f: M(2, R) → M(2, R)` definita su
+una base da `f(1, 0) = (2, 1)` e `f(1, 2) = (4, 5)`. Poiché
+`(0, 1) = ((1, 2) - (1, 0))/2`, per linearità
+`f(0, 1) = ((4, 5) - (2, 1))/2 = (1, 2)`. Quindi `f(e₁) = (2, 1)` e
+`f(e₂) = (1, 2)` e la matrice in base canonica è `[[2, 1], [1, 2]]`, con
+`f(x₁, x₂) = (2x₁ + x₂, x₁ + 2x₂)`.
+
+La composizione corrisponde al prodotto nell'ordine giusto: se
+`f_A: M(n, 1, K) → M(m, 1, K)` e `f_B: M(m, 1, K) → M(p, 1, K)`, allora
+`(f_B ∘ f_A)(x) = B·(A·x) = (B·A)·x`, cioè `f_B ∘ f_A = f_{B·A}`. Per due
+lineari generiche `M(g ∘ f) = M(g)·M(f)`.
+
+Errore tipico: mettere nelle righe invece che nelle colonne le immagini
+della canonica, oppure invertire l'ordine scrivendo `M(f)·M(g)`. La prima
+mappa applicata sta a destra nel prodotto.
+
+## 2. IMMAGINE E NUCLEO DI UNA APPLICAZIONE LINEARE
+
+Per `f: V → W` lineare, l'insieme `f(V)` è un sottospazio di `W`, detto
+immagine e indicato `Im f`; coincide con `W` esattamente quando `f` è
+suriettiva. Se `V` è finitamente generato lo è anche `Im f`, e la sua
+dimensione è il rango `rk f`.
+
+Il nucleo `Ker f = f⁻¹(0)` è l'insieme dei vettori mandati a zero. È un
+sottospazio di `V`, e `Ker f = (0)` se e solo se `f` è iniettiva: se
+`f(v) = f(w)` allora `f(v - w) = 0`, quindi `v = w` quando il nucleo è
+banale, e viceversa.
+
+Conseguenze: il nucleo della restrizione a un sottospazio `V'` è
+`Ker f ∩ V'`; la restrizione è iniettiva, quindi isomorfismo su `f(V')`,
+se e solo se tale intersezione è nulla. In particolare, a dominio
+finitamente generato, `f` è iniettiva se e solo se `rk f = dim V`.
+
+Teorema di nullità più rango: se `V` è finitamente generato,
+`rk f = dim V - dim Ker f`, quindi `rk f ≤ dim V` con uguaglianza solo nel
+caso iniettivo. Se `dim V = dim W`, iniettività, suriettività e
+biettività si equivalgono.
+
+In termini di una base `H` di `V`: `f` è mono se e solo se `f(H)` è
+indipendente (con restrizione iniettiva su `H`); è epi se e solo se `f(H)`
+genera `W`; è iso se e solo se `f(H)` è base di `W`.
+
+Per le numeriche `f: M(n, 1, K) → M(m, 1, K)` con `f = f_A` si ha
+`rk f = dim⟨f(e¹), ..., f(eⁿ)⟩ = dim⟨a¹, ..., aⁿ⟩ = dim Col A = rk A`,
+cioè `rk f = rk M(f)`.
+
+Esempio nuovo: `f: R³ → R²` con `f(x, y, z) = (x + 2y, y - z)`. Il nucleo
+richiede `x + 2y = 0` e `y - z = 0`, cioè `x = -2y`, `z = y`:
+`Ker f = ⟨(-2, 1, 1)⟩` di dimensione `1`. Dunque `rk f = 3 - 1 = 2` e `f`
+è suriettiva ma non iniettiva.
+
+Errore tipico: confondere immagine col codominio, o pensare che
+`Ker f = (0)` significhi suriettività. Il nucleo controlla l'iniettività,
+l'immagine la suriettività; solo con pari dimensione finita l'una implica
+l'altra.
+
+## 3. INVERSA DI UNA MATRICE
+
+Sono invertibili le quadrate il cui endomorfismo associato è un isomorfismo.
+
+Sia `GL(n, K)` l'insieme delle `A ∈ M(n, n, K)` con `f_A` isomorfismo,
+dette non singolari o non degeneri. Allora `A ∈ GL(n, K)` se e solo se:
+
+- (a) `A` ha rango `n`, cioè massimo, ossia colonne indipendenti;
+- (b) esiste `B` con `A·B = Iₙ`, detta inversa destra;
+- (c) esiste `C` con `C·A = Iₙ`, detta inversa sinistra.
+
+Destra e sinistra, quando esistono, coincidono: tale matrice è l'inversa
+`A⁻¹`. Anche `A⁻¹ ∈ GL(n, K)` e `(A⁻¹)⁻¹ = A`.
+
+Calcolo con Gauss, esempio nuovo con valori diversi dall'originale. Sia
+
+```
+A = [[3, 1], [5, 2]]
+```
+
+di cui si vuole testare l'invertibilità. Si affianca l'identità:
+
+```
+[[3, 1, 1, 0], [5, 2, 0, 1]]
+```
+
+Con `(2, 1; -1)` la seconda riga diventa `(2, 1, -1, 1)`; con `(1, 2; -1)`
+la prima diventa `(1, 0, 2, -1)`; con `(2, 1; -5)` seguita da `(2, 1; ...)`
+in forma sistematica si arriva a sinistra all'identità. In breve: da
+`[[3, 1], [5, 2]]` si ottiene con operazioni elementari
+`[[1, 0], [0, 1]]` a sinistra e a destra compare
+
+```
+A⁻¹ = [[2, -1], [-5, 3]]
+```
+
+La verifica è `A·A⁻¹ = [[6-5, -3+3], [10-10, -5+6]] = I₂`. Se durante la
+riduzione comparisse una riga nulla a sinistra, la matrice sarebbe
+singolare e il procedimento si fermerebbe senza inversa.
+
+Errore tipico: applicare le operazioni solo a metà tabella senza
+trasportarle sulla parte identità, o dividere una riga per zero quando il
+pivot è nullo senza prima scambiare. Altro errore: credere che inversa
+destra e sinistra possano essere diverse nel caso quadrato.
+
+## Concetti chiave da ricordare
+
+- `f_A(x) = A·x`; le colonne di `M(f)` sono `f(e¹), ..., f(eⁿ)`.
+- `M(g ∘ f) = M(g)·M(f)`, attenzione all'ordine.
+- `Im f` sottospazio del codominio; `rk f = dim Im f`; epi se `Im f = W`.
+- `Ker f = f⁻¹(0)` sottospazio del dominio; mono se e solo se `Ker f = (0)`.
+- `rk f = dim V - dim Ker f`; a pari dimensione finita mono, epi e iso
+  coincidono.
+- `f` mono/epi/iso se e solo se `f(H)` è rispettivamente
+  indipendente/generatori/base per una base `H` di `V`.
+- `rk f = rk M(f)` nel caso numerico.
+- `A ∈ GL(n, K)` se e solo se rango massimo, ovvero con inversa destra e
+  sinistra coincidenti `A⁻¹`.
+- Calcolo di `A⁻¹` riducendo `[A | Iₙ]` a `[Iₙ | A⁻¹]` con Gauss.
+
+## TEST di AUTOVALUTAZIONE
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+**1.** Se `f: M(2, R) → M(3, R)` ha `f(e₁) = (1, 0, 2)` e `f(e₂) = (0, 1, -1)`,
+allora `M(f)` è:
+a) `[[1, 0], [0, 1], [2, -1]]` · b) `[[1, 0, 2], [0, 1, -1]]` ·
+c) `[[1, 2], [0, -1]]` · d) `[[1, 0], [2, -1]]`
+
+**2.** Con `f: M(2,1,K) → M(2,1,K)` e `g: M(2,1,K) → M(3,1,K)`, la composta
+`g ∘ f` ha matrice:
+a) `M(f)·M(g)` · b) `M(g)·M(f)` · c) `M(f) + M(g)` · d) `M(g) + M(f)`
+
+**3.** Per `f(x, y, z) = (2x - y, x + z)` si ha:
+a) `Ker f = (0)` · b) `Ker f = ⟨(1, 2, -1)⟩` · c) `rk f = 3` ·
+d) `f` è suriettiva su `R³`
+
+**4.** Se `f: V → W` con `dim V = 3` e `rk f = 2`, allora:
+a) `dim Ker f = 1` e `f` non è iniettiva · b) `dim Ker f = 0` ·
+c) `f` è un isomorfismo · d) `dim Ker f = 3`
+
+**5.** Una `A ∈ M(3, 3, K)` sta in `GL(3, K)` se e solo se:
+a) ha una riga nulla · b) ha rango `2` · c) ha rango `3` ·
+d) esiste solo inversa destra ma non sinistra
+
+**6.** L'inversa di `[[3, 1], [5, 2]]` è:
+a) `[[2, -1], [-5, 3]]` · b) `[[-2, 1], [5, -3]]` · c) `[[3, 5], [1, 2]]` ·
+d) `[[1/3, 0], [0, 1/2]]`
+
+### Soluzioni ragionate
+
+**1 — a.** Matrice `(3, 2)` con quelle colonne. La b) è la trasposta
+`(2, 3)`; la c) e la d) omettono una riga o mescolano le entrate.
+
+**2 — b.** La seconda mappa sta a sinistra nel prodotto. La a) inverte
+l'ordine, incompatibile anche nei tipi; c) e d) confondono somma con
+composizione.
+
+**3 — b.** `2x - y = 0` e `x + z = 0` danno `y = 2x`, `z = -x`, retta
+generata da `(1, 2, -1)`. La a) nega tale retta; la c) supera il rango
+massimo `2` del codominio; la d) sbaglia codominio (`R²`, non `R³`).
+
+**4 — a.** Da `rk = dim V - dim Ker` segue `dim Ker = 1`, quindi non
+iniettiva. La b) darebbe rango `3`, la c) richiederebbe nucleo nullo, la d)
+darebbe rango `0`.
+
+**5 — c.** Rango massimo `3` equivale a invertibilità. Riga nulla o rango
+`2` danno singolarità; destra e sinistra o esistono entrambe coincidenti o
+nessuna.
+
+**6 — a.** Determinante `6-5 = 1` e prodotto `A·A⁻¹ = I₂`. La b) è
+`-A⁻¹`; la c) è la trasposta di `A`; la d) inverte solo la diagonale,
+valida solo per diagonali.
+
+---
+
+## PROMPT RIUTILIZZABILE
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+```
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
+```
