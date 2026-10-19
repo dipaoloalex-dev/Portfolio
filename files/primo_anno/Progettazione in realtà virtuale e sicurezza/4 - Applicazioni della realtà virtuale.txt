@@ -8,7 +8,7 @@ smontaggi e assistenza, con attenzione a ottimizzazione, facilità di montare,
 facilità di riparare, accesso per l'operatore ed ergonomia dei gesti. Si
 condividono gli stessi modelli nati nella progettazione, così si controlla la
 coerenza e si simulano tutti i passi reali di chi dovrà montare, aprire e
-riparare. Un sistema di assieme virtuale guida verso buone sequenze di
+riparare. Un **sistema di assieme virtuale** guida verso buone sequenze di
 accoppiamento mostrando in anticipo dati concreti, anche senza alcun pezzo
 fisico.
 
@@ -26,14 +26,14 @@ Il vantaggio è vedere il ciclo e verificarne la fattibilità entro tempi, costi
 e vincoli di fabbrica. Anche la manutenzione entra nel ciclo di vita, con
 smontaggi pianificati per togliere parti guaste da riparare. Se l'assistenza è
 efficiente, crescono qualità, soddisfazione e velocità verso vendita e
-distribuzione. Ordine e traiettorie si scelgono con controllo di collisioni in
+distribuzione. Ordine e traiettorie si scelgono con **controllo di collisioni** in
 tempo reale, cercando la via funzionale senza compenetrazioni tra volumi. I
 percorsi validati si salvano e riusano per ricostruzioni successive. Utile anche
-lo smontaggio mirato di un solo gruppo per riparazione o riciclo, con eventuale
+lo **smontaggio mirato** di un solo gruppo per riparazione o riciclo, con eventuale
 richiusura.
 
 Esempio riscritto diverso: in automazione un braccio per cofani viene istruito
-da un operatore che muove una mano virtuale lungo un percorso libero da urti.
+da un operatore che muove una **mano virtuale** lungo un percorso libero da urti.
 La presa chiusa vale come comando statico, il moto della mano guida il robot in
 tempo reale nella stessa operazione.
 
@@ -44,7 +44,7 @@ buona visibilità, sostituzione facile, pochi attrezzi standard facili da
 raggiungere per mani e braccia, distanze minime antiurto, percorsi precisi
 anche per robot, tutto registrato in report digitali.
 
-La manutenzione virtuale si fa in due modi: con le proprie mani immerse nella
+La **manutenzione virtuale** si fa in due modi: con le proprie mani immerse nella
 scena, oppure con figure umane numeriche inserite e guidate a compiere una
 sequenza assegnata, con posture diverse e uso di attrezzi disponibili.
 
@@ -54,7 +54,7 @@ Senza verifica anticipata gli accessi risultano impossibili a pezzo finito.
 2. VIRTUAL MANUFACTURING
 --------------------------------------------------
 
-La fabbrica virtuale dà ai gruppi di processo una libertà di prova prima mai
+La **fabbrica virtuale** dà ai gruppi di processo una libertà di prova prima mai
 avuta: si anticipano e risolvono problemi prima di installare nulla. Oltre ai
 prototipi di prodotto, unisce disegno del pezzo e disegno del ciclo. Si
 simulano tutte le lavorazioni di linea per tagliare costi e tempi e rendere
@@ -88,14 +88,14 @@ continuo per guidare le scelte, non per confermare a posteriori.
 3. CRASH TEST VIRTUALI
 --------------------------------------------------
 
-L'analisi d'urto studia corpi in moto relativo e la protezione degli occupanti,
+L'**analisi d'urto** studia corpi in moto relativo e la protezione degli occupanti,
 nata soprattutto nell'auto. Con strumenti potenti si simulano impatti al
 calcolatore e il fisico resta solo per validazione finale. Oltre alle
 deformazioni si stimano i danni alle persone, oggi anche per i più piccoli e
 non solo per gli adulti. I modelli sono sempre più credibili per progetto e
 ricerca.
 
-Il metodo, in breve: ogni parte è divisa in piccolissimi pezzi con resistenza
+Il metodo, in breve: ogni parte è divisa in **piccolissimi pezzi** con resistenza
 nota del materiale, poi il programma applica forze virtuali in direzioni scelte
 e mostra come si deformerebbe l'insieme. Esempio riscritto: per una utilitaria
 recente la fase iniziale resta solo al computer e le prove intere su preserie
@@ -106,7 +106,7 @@ Ogni figura di prova va tarata, altrimenti misura male. Esempio riscritto con
 dati diversi: sala climatizzata stabile intorno a ventuno gradi, controllo con
 termometro elettronico avviato alcune ore prima, singoli distretti come testa,
 bacino e arti provati con protocolli, calzature dedicate dal costo di alcune
-decine di euro al paio. Un modello numerico di occupante medio per urto
+decine di euro al paio. Un **modello numerico di occupante medio** per urto
 laterale, nato con un consorzio di case europee, permette di ripetere in fretta
 molte prove a basso costo. La fedeltà al corpo, con inserti in lega a memoria di
 forma nel torace, è verificata con centinaia di tarature su materiali, pezzi e
@@ -114,19 +114,19 @@ carichi, e il modello è preso a riferimento da molte norme.
 
 Per impostare lo studio servono da un lato gli oggetti e dall'altro un programma
 che calcola risposte dinamiche man mano che parti semplici formano insiemi
-maggiori. Si distinguono elemento singolo come vite o traversa, componente come
-insieme di elementi tipo portiera completa, assieme come insieme di componenti
+maggiori. Si distinguono **elemento singolo** come vite o traversa, **componente** come
+insieme di elementi tipo portiera completa, **assieme** come insieme di componenti
 tipo scocca completa. Di ogni elemento servono flessibilità, cioè deformazione
 recuperabile lungo e traverso, e assorbimento in urto, cioè deformazione stabile
 sotto forza. Il programma unisce elementi in componenti e ne ricava gli indici
 per una data velocità, poi ripete a velocità diverse, assembla gli assiemi e
 ricalcola, fino al veicolo intero per angoli e velocità vari.
 
-Quarto tema: fluidi numerici. Con analisi numerica e algoritmi si risolvono al
+Quarto tema: **fluidi numerici**. Con analisi numerica e algoritmi si risolvono al
 computer problemi di moto dei fluidi per progettare meglio prima di costruire.
 Esempio riscritto: per un furgone si prevede la resistenza aerodinamica e la
 portanza con mappe di pressione e velocità sulle superfici. Il dominio è diviso
-in celle di calcolo, detta griglia, su cui si iterano equazioni di moto dei
+in celle di calcolo, detta **griglia**, su cui si iterano equazioni di moto dei
 fluidi fino a precisione voluta. Il percorso tipico è definire la forma,
 creare la griglia, scegliere modello fisico e numerico, fissare condizioni al
 bordo e iniziali se serve, iterare, vedere i risultati con un visualizzatore e
@@ -193,14 +193,26 @@ PROMPT RIUTILIZZABILE
 Prompt usato per generare questa scheda. Copialo in una nuova conversazione
 insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
 
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

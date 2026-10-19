@@ -11,7 +11,7 @@ Siano V un K-spazio vettoriale, Σ = (v₁, ..., vₘ) una m-upla ordinata e
 S = [v₁, ..., vₘ] il sistema corrispondente. L'ordine conta: scambiare due
 posti cambia Σ ma non l'insieme dei vettori.
 
-Prima specie (i, j; k): con i ≠ j e k ∈ K si rimpiazza solo il
+**Prima specie** (i, j; k): con i ≠ j e k ∈ K si rimpiazza solo il
 vettore di posto i:
 
 - v'ₕ = vₕ per h ≠ i;
@@ -23,19 +23,19 @@ torna a Σ. In pratica si somma a una riga un multiplo di un'altra riga.
 Esempio nuovo: in R² siano v₁ = (1, 0), v₂ = (0, 1), v₃ = (2, 1).
 La (3, 1; 2) lascia ferme v₁, v₂ e manda v₃ in (2, 1) + 2·(1, 0) = (4, 1).
 
-Seconda specie (i, j): con i < j si scambiano i vettori di posto i
+**Seconda specie** (i, j): con i < j si scambiano i vettori di posto i
 e j, gli altri restano fermi.
 
 Effetti fondamentali, riformulati:
 
 - (a) Un numero finito di operazioni di prima o seconda specie non cambia lo
-  spazio generato ⟨S⟩ = ⟨S̄⟩, quindi l'ordine di un massimo indipendente
+  **spazio generato** ⟨S⟩ = ⟨S̄⟩, quindi l'ordine di un **massimo indipendente**
   resta uguale.
 - (b) Se alcuni vettori v_{i₁}, ..., v_{iᵣ} generano già ⟨S⟩, con sole
-  operazioni di prima specie si possono annullare tutti gli altri. Idea: se
+  operazioni di **prima specie** si possono annullare tutti gli altri. Idea: se
   vᵢ = k₁·v_{i₁} + ... + kᵣ·v_{iᵣ}, le (i, i₁; -k₁), ..., (i, iᵣ; -kᵣ)
   azzerano il posto i.
-- (c) Viceversa, se Σ̄ è ottenuta usando come secondi indici solo i pivot
+- (c) Viceversa, se Σ̄ è ottenuta usando come secondi indici solo i **pivot**
   j ∈ {i₁, ..., iᵣ} e ha v̄ᵢ = 0 fuori dai pivot, allora i vettori
   originari v_{i₁}, ..., v_{iᵣ} generano ancora ⟨S⟩. Se inoltre i
   corrispondenti trasformati sono indipendenti, anche gli originari formano
@@ -60,15 +60,15 @@ di righe aᵢ = (aᵢ₁, ..., aᵢₙ). La (i, j; k) sulle righe sostituisce la
 riga i con rigaᵢ + k·rigaⱼ. La (i, j) scambia le righe i e j. Lo
 stesso si può fare per colonne.
 
-Il metodo dà quindi un massimo di righe (o colonne) indipendenti e il rango.
+Il metodo dà quindi un massimo di righe (o colonne) indipendenti e il **rango**.
 
-Matrice ridotta. Sia A di tipo (m, n) su K:
+**Matrice ridotta**. Sia A di tipo (m, n) su K:
 
-- A è (i, j)-ridotta se nella colonna j l'unico elemento diverso da
+- A è **(i, j)-ridotta** se nella colonna j l'unico elemento diverso da
   zero è quello di riga i.
 - A è (i₁, ..., iᵣ; j₁, ..., jᵣ)-ridotta, o semplicemente ridotta, se è
   (iₕ, jₕ)-ridotta per ogni h = 1, ..., r.
-- È completamente ridotta se in più tutte le righe di posto
+- È **completamente ridotta** se in più tutte le righe di posto
   i ≠ i₁, ..., iᵣ sono nulle.
 
 Esempio nuovo: la matrice
@@ -101,7 +101,7 @@ Risultati centrali:
 - (b) Se è completamente ridotta, il rango è r e quelle righe e colonne
   sono massimi indipendenti.
 
-Teorema di esistenza. Da ogni A ≠ 0 di tipo (m, n) si arriva con un
+**Teorema di esistenza**. Da ogni A ≠ 0 di tipo (m, n) si arriva con un
 numero finito di operazioni di prima specie sulle righe a una forma
 completamente ridotta. Allora rk(A) = r e le righe originarie di posti
 i₁, ..., iᵣ sono un massimo indipendente. Lo stesso sulle colonne dà un

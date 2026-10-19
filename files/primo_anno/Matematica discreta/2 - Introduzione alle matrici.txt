@@ -3,9 +3,9 @@
 1. DEFINIZIONI E NOTAZIONI
 --------------------------
 
-Una matrice è una tabella di numeri disposti su righe (linee orizzontali) e
-colonne (linee verticali). Qui consideriamo solo matrici con elementi reali.
-Una matrice con m righe e n colonne si dice di tipo (m, n) e contiene
+Una **matrice** è una tabella di numeri disposti su **righe** (linee orizzontali) e
+**colonne** (linee verticali). Qui consideriamo solo matrici con elementi reali.
+Una matrice con m righe e n colonne si dice di **tipo (m, n)** e contiene
 m × n elementi.
 
 Ci sono due modi equivalenti per indicare una matrice generica A di tipo (m, n):
@@ -15,7 +15,7 @@ Ci sono due modi equivalenti per indicare una matrice generica A di tipo (m, n):
   all'incrocio tra la riga i e la colonna j (il primo indice è sempre la riga,
   il secondo la colonna). Talvolta si scrive anche aᵢⱼ = (A)ᵢⱼ.
 
-L'insieme di tutte le matrici di tipo (m, n) si indica con M(m,n).
+L'insieme di tutte le matrici di tipo (m, n) si indica con **M(m,n)**.
 
 1.1 Un'applicazione: punti e matrici
 
@@ -24,8 +24,8 @@ del piano è individuato dalla coppia delle sue coordinate (x₀, y₀) una volt
 fissato un sistema di assi cartesiani. La stessa informazione si può scrivere
 come matrice in due forme:
 
-- vettore riga a 2 componenti: V = [x₀  y₀], di tipo (1, 2);
-- vettore colonna a 2 componenti: colonna con x₀ sopra e y₀ sotto,
+- **vettore riga** a 2 componenti: V = [x₀  y₀], di tipo (1, 2);
+- **vettore colonna** a 2 componenti: colonna con x₀ sopra e y₀ sotto,
   di tipo (2, 1).
 
 Attenzione a non confondere i tre oggetti: il "vettore posizione" geometrico
@@ -55,19 +55,19 @@ l'interpretazione è ambigua.
 - Vettori. Una sola riga = vettore riga a n componenti (tipo (1, n)); una
   sola colonna = vettore colonna a m componenti (tipo (m, 1)). Si usa un
   solo indice: X = [x₁ x₂ ... xₙ].
-- Matrici quadrate. Se m = n, la matrice è quadrata di ordine n.
-  Gli elementi a₁₁, a₂₂, ..., aₙₙ formano la diagonale principale. L'insieme
+- **Matrici quadrate**. Se m = n, la matrice è quadrata di ordine n.
+  Gli elementi a₁₁, a₂₂, ..., aₙₙ formano la **diagonale principale**. L'insieme
   delle quadrate di ordine n si indica con M(n). Una quadrata 1×1 è un
   singolo numero. Se m ≠ n la matrice è rettangolare.
-- Diagonali. Quadrata con tutti zeri fuori dalla diagonale (aᵢⱼ = 0 per
+- **Diagonali**. Quadrata con tutti zeri fuori dalla diagonale (aᵢⱼ = 0 per
   i ≠ j). Notazione compatta: A = diag[a₁, a₂, ..., aₙ].
 - Unità. Diagonale con tutti 1 in diagonale, indicata I(n) (o I se
   l'ordine è chiaro). I suoi elementi si scrivono con il simbolo di Kronecker
   δᵢⱼ, che vale 1 se i = j e 0 altrimenti.
-- Simmetrica. Quadrata con aᵢⱼ = aⱼᵢ per ogni i, j: gli elementi opposti
+- **Simmetrica**. Quadrata con aᵢⱼ = aⱼᵢ per ogni i, j: gli elementi opposti
   rispetto alla diagonale sono uguali. In una 3×3 simmetrica solo 6 elementi
   su 9 sono indipendenti (3 in diagonale + 3 fuori).
-- Antisimmetrica. Quadrata con aᵢⱼ = −aⱼᵢ: gli elementi opposti sono
+- **Antisimmetrica**. Quadrata con aᵢⱼ = −aⱼᵢ: gli elementi opposti sono
   cambiati di segno e la diagonale è tutta nulla (infatti aᵢᵢ = −aᵢᵢ implica
   aᵢᵢ = 0). In una 3×3 antisimmetrica solo 3 elementi sono indipendenti.
 - Triangolare inferiore. Quadrata con zeri sopra la diagonale
@@ -76,7 +76,7 @@ l'interpretazione è ambigua.
   (aᵢⱼ = 0 per i > j): la parte non nulla sta in alto a destra.
 - Nulla. Tutti gli elementi uguali a zero, indicata O(m,n) (o O(n), O, 0).
 
-Uguaglianza fra matrici. A = B se e solo se: (i) hanno lo stesso tipo
+**Uguaglianza fra matrici**. A = B se e solo se: (i) hanno lo stesso tipo
 (m, n); (ii) ogni elemento coincide posto per posto (aᵢⱼ = bᵢⱼ per ogni i, j).
 L'uguaglianza è riflessiva (A = A), simmetrica e transitiva.
 
@@ -85,7 +85,7 @@ L'uguaglianza è riflessiva (A = A), simmetrica e transitiva.
 
 2.1 Trasposizione di una matrice
 
-La trasposta di A (tipo (m, n)), indicata Aᵗ, è la matrice di tipo
+La **trasposta** di A (tipo (m, n)), indicata Aᵗ, è la matrice di tipo
 (n, m) ottenuta scambiando ordinatamente righe e colonne: la riga i di A
 diventa la colonna i di Aᵗ, cioè (Aᵗ)ᵢⱼ = aⱼᵢ. Per una quadrata equivale a
 ribaltare gli elementi rispetto alla diagonale principale.
@@ -101,7 +101,7 @@ Esempio con valori nuovi: se A è la (3, 2) con righe (4,0), (1,7),
 
 2.2 Matrice opposta
 
-L'opposta di A, indicata −A, è dello stesso tipo di A e si ottiene
+L'**opposta** di A, indicata −A, è dello stesso tipo di A e si ottiene
 cambiando segno a ogni elemento: (−A)ᵢⱼ = −aᵢⱼ. Ovviamente −(−A) = A, e
 trasposizione e opposta commutano: (−A)ᵗ = −(Aᵗ).
 

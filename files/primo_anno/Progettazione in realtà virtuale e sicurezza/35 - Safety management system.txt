@@ -12,10 +12,10 @@ nella vita e nei processi.
 Eseguirlo bene permette di centrare gli obiettivi dei riferimenti
 di settore, come il codice navale internazionale qui descritto
 in forma generica.
-Servono politica scritta per sicurezza e ambiente con obiettivi dichiarati,
+Servono **politica scritta** per sicurezza e ambiente con obiettivi dichiarati,
 priorita, risorse, ruoli, controlli, istruzioni e procedure conformi
 a norme nazionali e internazionali.
-Tutto sta in un documento detto manuale del sistema, presente in sede
+Tutto sta in un documento detto **manuale del sistema**, presente in sede
 e nelle unita operative, con verifiche periodiche.
 La verifica accerta se attivita e risultati seguono il piano, se il piano
 funziona ed e adatto agli obiettivi, con controllo indipendente di persona
@@ -31,7 +31,7 @@ La politica esprime visione e valori, direzione e risultati attesi,
 impegno visibile dentro e fuori verso prevenzione e miglioramento
 continuo, con responsabilita di tutti dal vertice al singolo secondo
 competenze e collaborazione reale.
-Analisi e gestione dei rischi come conoscenza dei pericoli prevedibili
+Analisi e **gestione dei rischi** come conoscenza dei pericoli prevedibili
 primo passo per risolverli.
 Un tempo i rischi erano ricondotti a natura, tecnica semplice, persona
 e collettivita e bastavano prevenzioni elementari.
@@ -42,9 +42,9 @@ riordinare dati sparsi e logiche da imparare su esempi semplici
 per casi complessi.
 Lanalisi diventa prerequisito per gestire, togliere o ridurre insuccessi,
 tagliare i costi totali ed evitare sorprese.
-Valutazione dei pericoli reali come controllo continuo delle barriere
+Valutazione dei pericoli reali come **controllo continuo delle barriere**
 e ricerca di nuovi rischi.
-Promozione interna con formazione sul sistema, cultura positiva, diffusione
+Promozione interna con formazione sul sistema, **cultura positiva**, diffusione
 di comunicazioni, competenze allineate ai ruoli e lezioni apprese condivise.
 Esempio riscritto diverso dalloriginale: politica di officina con obiettivo
 di zero cesoiamenti in un anno e riesame mensile con segnalazioni anonime.
@@ -61,12 +61,12 @@ Pianifica partendo da rischi delle attivita con politica e obiettivi.
 Attua secondo tempi e modi pianificati.
 Controlla se gli obiettivi sono raggiunti e apre correzioni su scostamenti.
 Riesamina e riparte fissando basi e mete del giro successivo.
-Nella ciclicita sta il miglioramento continuo.
+Nella ciclicita sta il **miglioramento continuo**.
 Il sistema deve calzare sulla realta con margini veri di progresso
 compatibili con obblighi di legge.
 Serve per conoscere e tenere sotto controllo gli aspetti di sicurezza,
 recepire regole obbligatorie e volontarie, fissare ruoli chiari,
-dare procedure operative e monitoraggio, curare formazione e ridurre
+dare **procedure operative** e monitoraggio, curare formazione e ridurre
 rischi coinvolgendo le parti.
 I vantaggi sono rispetto sostanziale e non formale delle regole con
 garanzie verso controllori e lavoratori, minori premi allente
@@ -100,16 +100,16 @@ provato a eliminare e ridurre tecnicamente il pericolo.
 ----------------------------
 I metodi consolidati vengono da settori avanzati come energia,
 chimica e impianti di processo.
-Sono quattro: sguardo avanti, sguardo indietro, verifiche di conformita
+Sono quattro: sguardo avanti, sguardo indietro, **verifiche di conformita**
 e gestione del dopo evento.
 In forma di righe di testo separate da spazi:
 previsione  memoria  verifica  emergenza
 
 4.1 ANALISI PROSPETTICHE DI SICUREZZA
 -------------------------------------
-Guardano avanti con modelli e simulazioni del sistema in anomalia.
+Guardano avanti con **modelli e simulazioni** del sistema in anomalia.
 Dati eventi di avvio e contorni, prevedono interazioni e conseguenze
-e alimentano la tabella di rischio per scegliere barriere e livelli
+e alimentano la **tabella di rischio** per scegliere barriere e livelli
 di sicurezza attesi.
 Esempio riscritto diverso dalloriginale: perdita da valvola con vento
 debole porta a nube di 30 m e chiede barriera con sensori e blocco.
@@ -118,8 +118,8 @@ del sistema reale in esame.
 
 4.2 ANALISI RETROSPETTIVE DI SICUREZZA
 ---------------------------------------
-Guardano indietro a incidenti, quasi eventi e non conformita per trovare
-le cause profonde.
+Guardano indietro a incidenti, **quasi eventi** e non conformita per trovare
+le **cause profonde**.
 Servono dati adatti ai modelli usati, da letteratura tecnica, compiti
 e procedure, contesti reali di lavoro e storia delle anomalie passate.
 Per riuso a fini previsionali i modelli dei due sguardi devono chiedere
@@ -230,13 +230,26 @@ Le altre sono sbagliate perche nulla, silenzio o improvvisazione lasciano conseg
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

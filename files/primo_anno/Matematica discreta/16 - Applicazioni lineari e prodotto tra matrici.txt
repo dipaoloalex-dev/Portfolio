@@ -4,7 +4,7 @@
 --------------------------------------
 
 Siano V e W spazi vettoriali sullo stesso campo K. Un'applicazione
-f: V → W è lineare, o omomorfismo, se conserva somme e multipli:
+f: V → W è lineare, **o omomorfismo**, se conserva somme e multipli:
 
 - f(v + w) = f(v) + f(w) per ogni v, w ∈ V;
 - f(k·v) = k·f(v) per ogni v ∈ V e k ∈ K.
@@ -21,13 +21,13 @@ Controesempio nuovo: g: R² → R² con g(x, y) = (x + 1, y) non è lineare
 perché g(0, 0) = (1, 0) ≠ (0, 0); la presenza della costante rompe la
 seconda proprietà.
 
-Terminologia: lineare suriettiva è epimorfismo, iniettiva è monomorfismo,
-biettiva è isomorfismo. Se f è un isomorfismo, l'inversa f⁻¹ esiste ed è
+Terminologia: lineare suriettiva è **epimorfismo**, iniettiva è **monomorfismo**,
+**biettiva** è isomorfismo. Se f è un isomorfismo, l'inversa f⁻¹ esiste ed è
 a sua volta lineare e biettiva; i due spazi si dicono isomorfi. Un'applicazione
-lineare da uno spazio in sé è un endomorfismo; un isomorfismo di uno spazio
-in sé è un automorfismo.
+lineare da uno spazio in sé è un **endomorfismo**; un isomorfismo di uno spazio
+in sé è un **automorfismo**.
 
-La composizione di lineari è lineare: se f: V → W e g: W → Z sono
+La **composizione di lineari** è lineare: se f: V → W e g: W → Z sono
 omomorfismi, anche g ∘ f: V → Z lo è, perché
 (g ∘ f)(v + v') = g(f(v)+f(v')) = (g ∘ f)(v)+(g ∘ f)(v'), e analogamente
 per gli scalari. La composta di isomorfismi è un isomorfismo.
@@ -88,9 +88,9 @@ Il prodotto nasce per descrivere le lineari tra spazi numerici, e quindi in
 generale tra spazi finitamente generati.
 
 Dati a = (a₁, ..., aₙ) riga e b colonna con entrate b₁, ..., bₙ, il
-prodotto riga-colonna è lo scalare a·b = a₁b₁ + ... + aₙbₙ. Soddisfa
+**prodotto riga-colonna** è lo scalare a·b = a₁b₁ + ... + aₙbₙ. Soddisfa
 k(a·b) = (ka)·b = a·(kb), le distributive
-a·(b+c) = a·b + a·c e (a+b)·c = a·c + b·c, e il legame con la trasposta.
+a·(b+c) = a·b + a·c e (a+b)·c = a·c + b·c, e il **legame con la trasposta**.
 
 Siano A di tipo (m, n) e B di tipo (n, p). Scrivendo A per righe
 a₁, ..., aₘ e B per colonne b¹, ..., bᵖ, l'elemento di posto (i, j)
@@ -119,18 +119,18 @@ Proprietà del prodotto tra matrici:
 Non vale in generale la commutatività. Se A è (m, n) e B è (n, p),
 B·A esiste solo se m = p, e comunque ha tipo diverso ((n, n) contro
 (m, m)). Anche nel caso quadrato m = n = p di norma A·B ≠ B·A.
-Due quadrate con A·B = B·A si dicono permutabili.
+Due quadrate con A·B = B·A **si dicono permutabili**.
 
 Esempio nuovo con diagonali: sia B = [[1, 2, 3], [0, -1, 4]] di tipo
 (2, 3) e D(2, -1, 3) diagonale. Allora
 
 B·D(2, -1, 3) = [[2, -2, 9], [0, 1, 12]]
 
-cioè ogni colonna j è moltiplicata per kⱼ. Moltiplicare a sinistra per
+cioè **ogni colonna j** è moltiplicata per kⱼ. Moltiplicare a sinistra per
 una diagonale moltiplica invece le righe: se C è (3, 2), la riga i
 di D(k₁, ..., kₙ)·C è kᵢ volte la riga i di C. Per una scalare
 Dₙ(k) si ha B·Dₙ(k) = Dₘ(k)·B = kB, e in particolare
-B·Iₙ = Iₘ·B = B: l'identità è il neutro del prodotto in M(n, n, K).
+B·Iₙ = Iₘ·B = B: l'identità è il **neutro del prodotto** in M(n, n, K).
 
 Errore tipico: moltiplicare entrate omonime, scambiare righe con colonne
 nel calcolo, o supporre A·B = B·A e (A·B)ᵀ = Aᵀ·Bᵀ. L'ordine conta sia

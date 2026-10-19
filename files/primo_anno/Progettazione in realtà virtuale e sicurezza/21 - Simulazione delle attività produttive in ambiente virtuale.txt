@@ -2,14 +2,14 @@
 
 1. METODO PEI E METODO WEI
 --------------------------
-La fabbrica digitale collega in un unico flusso informativo
+La **fabbrica digitale** collega in un unico flusso informativo
 progettazione del prodotto, pianificazione del ciclo
 e gestione del sistema produttivo, includendo anche
 fornitori esterni e rete di vendita.
 Una sfida aperta resta inserire in modo realistico
 la presenza delle persone dentro tale flusso.
 
-Per questo si ricorre a figure umane simulate al computer.
+Per questo si ricorre a **figure umane simulate** al computer.
 Si tratta di repliche articolate che imitano statura
 e movimenti di operatori reali e permettono di provare
 in anticipo posture, ingombri e sequenze di lavoro.
@@ -19,10 +19,10 @@ la prova virtuale consente molte verifiche rapide
 prima di costruire o modificare la linea.
 
 Uno degli ambienti usati per queste prove offre
-un insieme di controlli ergonomici chiamato TAT.
+un insieme di **controlli ergonomici** chiamato TAT.
 Esso raccoglie verifiche su sollevamento, postura
-di braccia e tronco, limiti di movimentazione manuale,
-tenuta sotto sforzo statico, carico lombare,
+di braccia e tronco, limiti di **movimentazione manuale**,
+tenuta sotto sforzo statico, **carico lombare**,
 classificazione posturale e tempi predeterminati.
 Nessuno di questi controlli, preso da solo, basta
 a indicare quale assetto sia globalmente migliore.
@@ -30,10 +30,10 @@ Serve quindi un percorso che li combini.
 
 Quando i parametri di postazione influiscono
 su una sola mansione, si applica un indice
-pensato per la singola operazione, qui detto PEI.
+pensato per la **singola operazione**, qui detto PEI.
 Quando nella stessa cella convivono piu mansioni diverse,
 lo stesso assetto puo aiutare una fase e penalizzarne unaltra.
-Allora serve un indice esteso a tutta la cella,
+Allora serve un **indice esteso** a tutta la cella,
 qui detto WEI, che media gli effetti sulle varie mansioni
 e sulle diverse taglie corporee.
 Il percorso logico prevede ambiente, accessibilita,
@@ -85,7 +85,7 @@ e sprecare tempo a valutarne sforzi e posture.
 -------------------------------------------------------------------------------------------
 Definite le sequenze possibili, resta da capire quanta parte
 della popolazione lavorativa puo sostenere gli sforzi richiesti.
-Lo strumento di previsione sotto carico statico stima
+Lo strumento di **previsione sotto carico statico** stima
 la quota di persone in grado di reggere una certa forza
 in una data postura, distinguendo per corporatura, eta e sesso.
 Lideale sarebbe coprire la totalita degli addetti,
@@ -105,7 +105,7 @@ quando invece una fascia di addetti resta quasi esclusa dallo sforzo.
 --------------------------------------------------------------------------------------
 Questo controllo stima le azioni sulla colonna del manichino
 postura per postura, al variare del carico movimentato.
-Lavora in tempo reale e segue criteri diffusi per il rischio lombare.
+Lavora in **tempo reale** e segue criteri diffusi per il rischio lombare.
 Fornisce compressione e taglio sui dischi tra quarta e quinta vertebra
 lombare e una stima di impegno dei muscoli del tronco
 necessari a equilibrare i momenti sulla schiena.
@@ -143,8 +143,8 @@ carico montante anteriore
 Per ciascun compito si osserva la sequenza posturale
 e si individuano i parametri geometrici che piu la condizionano.
 Nel caso rielaborato emerge un solo parametro regolabile importante,
-cioe la quota della scocca rispetto alla linea,
-piu un fattore legato alla persona, cioe la taglia corporea.
+cioe la **quota della scocca** rispetto alla linea,
+piu un fattore legato alla persona, cioe la **taglia corporea**.
 Esempio riscritto diverso dalloriginale: alzare di pochi centimetri
 il riferimento migliora la visibilita del cordone ma peggiora
 lappoggio della pistola per loperatore piu basso.
@@ -155,7 +155,7 @@ e peggiorare senza accorgersene gli altri otto.
 ----------------------------
 Si definisce prima un intervallo largo di quote compatibile
 con gli ingombri della cella, poi lo si restringe
-con la prova di raggiungibilita.
+con la **prova di raggiungibilita**.
 A fissare gli estremi sono due mansioni opposte:
 una richiede di vedere bene il punto basso di giunzione,
 laltra di arrivare con lattrezzo al punto alto.
@@ -222,7 +222,7 @@ La cassa unisce struttura metallica, impianti elettrici e pneumatici,
 arredi interni, ausiliari e organi di collegamento tra veicoli.
 Il carrello unisce telaio, ruote, riduttore per le versioni motrici,
 freno, sospensioni e interfacce verso la cassa.
-Il flusso si articola in quattro macrofasi:
+Il flusso si articola in **quattro macrofasi**:
 preparazione pezzi, montaggio strutture, trattamento e verniciatura,
 allestimento conclusivo.
 Errore tipico da evitare: ottimizzare la singola postazione robotizzata
@@ -249,7 +249,7 @@ Dopo il taglio e la foratura, i particolari sono uniti
 per saldatura o chiodatura nel reparto carpenteria.
 Si compongono scheletro della cassa e intelaiatura del carrello,
 con lati, pavimento, tetto e testate.
-I complessi di grande dimensione si movimentano con carroponte,
+I complessi di grande dimensione si movimentano con **carroponte**,
 poi si uniscono fino alla cassa grezza e al carrello grezzo.
 Segue una calibratura per stabilizzare forme e quote.
 Esempio riscritto diverso dalloriginale: prima si puntano fiancata
@@ -355,13 +355,26 @@ Le altre sono sbagliate perche invertono le fasi o impongono la granigliatura an
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

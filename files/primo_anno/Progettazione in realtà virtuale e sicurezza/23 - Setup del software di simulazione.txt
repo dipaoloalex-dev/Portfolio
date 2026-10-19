@@ -2,8 +2,8 @@
 
 1. PROGETTAZIONE DEL CICLO DI ASSEMBLAGGIO DI UN AEROPLANO LEGGERO
 ------------------------------------------------------------------
-Per impostare il ciclo si usano insieme un modellatore 3D parametrico
-e un simulatore con manichini digitali per le mansioni.
+Per impostare il ciclo si usano insieme un **modellatore 3D parametrico**
+e un simulatore con **manichini digitali** per le mansioni.
 Il primo definisce geometrie, dime e layout.
 Il secondo riproduce accessi, prese, unioni e uso di utensili,
 controllando interferenze tra persone, pezzi e macchine.
@@ -30,7 +30,7 @@ confrontare ipotesi alternative senza stravolgere le altre fasi
 e scegliere lassetto piu logico ed economico.
 Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
 zona di circa 48 per 16 metri
-un carroponte radiocomandato da 32 tonnellate con pulsantiera e ricevitore
+un **carroponte radiocomandato** da 32 tonnellate con pulsantiera e ricevitore
 per portare tronchi e ala verso lassemblaggio finale
 In forma di righe di testo separate da spazi:
 zona A tronchi  zona B ala  zona C coda  zona D unione finale
@@ -40,9 +40,9 @@ dentro larea di studio senza verificare passaggi e rotazioni dei grandi pezzi.
 2. PROGETTAZIONE DEI PIANI DI ASSEMBLAGGIO PRESENTI ALL'INTERNO DEI SOTTOGRUPPI
 -------------------------------------------------------------------------------
 Per ottimizzare lintero ciclo nel rispetto di ergonomia e funzionalita
-si progettano piani dedicati per ciascun sottogruppo.
+si progettano **piani dedicati** per ciascun sottogruppo.
 Il metodo si spiega con un impennaggio preso a esempio.
-Prima si scompone il componente in operazioni elementari secondo
+Prima si scompone il componente in **operazioni elementari** secondo
 logica funzionale e vincoli geometrici, in ordine diverso e con parole
 diverse rispetto alla lista originale.
 Esempio riscritto diverso dalloriginale per uno stabilizzatore:
@@ -55,10 +55,10 @@ con il simulatore ergonomico.
 Ad esempio la presa di una centina anteriore con mano destra
 viene animata per mostrare assenza di urti contro le guide,
 con kit ordinato sul banco accanto al manichino.
-La postura migliore si sceglie con un indice composito che unisce
+La postura migliore si sceglie con un **indice composito** che unisce
 spinta lombare, classificazione posturale del corpo e carico
 su arti superiori e collo.
-Occorre poi distinguere tre livelli: banco semplice senza attrezzi
+Occorre poi distinguere tre livelli: **banco semplice** senza attrezzi
 speciali per finiture e preassemblaggi, piano dedicato costruito
 su misura per un preciso sottogruppo, linea che collega i vari piani.
 Esempio riscritto diverso dalloriginale: per valutare due altezze
@@ -70,7 +70,7 @@ e scoprire in officina che la mano non entra nella dima.
 2.1 PUNTO DI LAVORO 1: TRONCO FRONTALE
 --------------------------------------
 Qui si unisce il tronco anteriore su piano in due parti, base fissa
-e corpo orientabile, con guide per centine, fondo e ordinate.
+e **corpo orientabile**, con guide per centine, fondo e ordinate.
 Il guscio resta aperto in alto per facilitare presa e trasporto
 con carroponte a fine stazione verso lunione con gli altri tronchi.
 Sono previsti due banchi vicini per i preassemblaggi da portare
@@ -100,7 +100,7 @@ a meta per un particolare mancante.
 ------------------------------------------
 Due stazioni gemelle simmetriche uniscono i due gusci posteriori
 destro e sinistro.
-Ogni piano ha base e corpo superiore con guide di riferimento
+Ogni piano ha base e corpo superiore con **guide di riferimento**
 per le centine, in parte fisse alle estremita e in parte mobili
 con viti e nastri per liberare la zona di foratura e rivettatura
 inferiore.
@@ -157,11 +157,11 @@ piu a registrare cerniere e rinvii interni.
 2.7 PUNTI DI LAVORO 8: STABILIZZATORI ORIZZONTALI
 -------------------------------------------------
 Qui si unisce lo stabilizzatore orizzontale con piano e tavolo.
-Il piano ha corpo rigido saldato su base, con traversini guida
+Il piano ha **corpo rigido saldato** su base, con traversini guida
 che riproducono il profilo e guidano centine e longheroni.
 Le guide sono mobili intorno a un perno al banco per aprire
 laccesso agli operatori nelle varie fasi.
-Si parte solo dopo arrivo e controllo funzionale del kit.
+Si parte solo dopo arrivo e **controllo funzionale del kit**.
 Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
 lunghezza circa 4,2 metri  altezza circa 1,9 metri
 sei traversini mobili su perni con bloccaggio rapido
@@ -186,7 +186,7 @@ con carroponte, mentre i pezzi leggeri viaggiano a mano verso
 lo stesso piano finale.
 Il piano ha struttura rigida con guide che copiano il profilo
 della fusoliera e sdoppiamento finale per accogliere i due gusci di coda.
-Lapertura posteriore lascia un varco tra i due gusci per entrare
+Lapertura posteriore lascia un **varco tra i due gusci** per entrare
 e completare le unioni dallinterno.
 Si fissano prima il tronco anteriore poi il centrale, poi si uniscono
 tra loro con scala mobile spostata di volta in volta sulla giunzione alta.
@@ -218,8 +218,8 @@ direttamente nelle stazioni dei sottogruppi.
 Negli ultimi decenni la simulazione e passata da calcoli separati
 a verifica integrata multidisciplinare che spiega il comportamento
 nel virtuale e riduce prove fisiche.
-Il limite del modello isolato ha spinto verso il gemello digitale
-e lanalisi ingegneristica predittiva, che passa dalla verifica
+Il limite del modello isolato ha spinto verso il **gemello digitale**
+e l**analisi ingegneristica predittiva**, che passa dalla verifica
 alla previsione con modelli a fedelta variabile, integrazione tra discipline,
 aggiornamento continuo rispetto al prodotto reale e analisi combinate
 per generare nuove soluzioni.
@@ -301,13 +301,26 @@ Le altre sono sbagliate perche non e archivio fermo, non e ritorno al passato e 
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

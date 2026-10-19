@@ -13,10 +13,10 @@ aᵢ·x, cioè a_{i1}x₁ + ... + a_{in}xₙ. Dalle proprietà del prodotto,
 f_A(x + y) = A·(x + y) = A·x + A·y e f_A(kx) = k(A·x): è un omomorfismo.
 
 Poiché f_A(eⁱ) è la colonna i-esima di A, indicata aⁱ, la f_A è
-l'unica lineare che manda la base canonica e¹, ..., eⁿ in quelle colonne.
+l'unica lineare che manda la **base canonica** e¹, ..., eⁿ in quelle colonne.
 Viceversa ogni f: M(n, 1, K) → M(m, 1, K) lineare è di questa forma:
 basta prendere come colonne le immagini aⁱ = f(eⁱ). La matrice così
-ottenuta è l'unica con f = f_A e si chiama matrice associata, indicata
+ottenuta è l'unica con f = f_A e si chiama **matrice associata**, indicata
 M(f).
 
 Esempio nuovo: sia f: M(2, R) → M(3, R) con f(e₁) = (2, 1, 0) e
@@ -46,12 +46,12 @@ mappa applicata sta a destra nel prodotto.
 ------------------------------------------------
 
 Per f: V → W lineare, l'insieme f(V) è un sottospazio di W, detto
-immagine e indicato Im f; coincide con W esattamente quando f è
+immagine e **indicato Im f**; coincide con W esattamente quando f è
 suriettiva. Se V è finitamente generato lo è anche Im f, e la sua
-dimensione è il rango rk f.
+dimensione è **il rango rk f**.
 
-Il nucleo Ker f = f⁻¹(0) è l'insieme dei vettori mandati a zero. È un
-sottospazio di V, e Ker f = (0) se e solo se f è iniettiva: se
+Il **nucleo Ker f** = f⁻¹(0) è l'insieme dei vettori mandati a zero. È un
+**sottospazio di V**, e Ker f = (0) se e solo se f è iniettiva: se
 f(v) = f(w) allora f(v - w) = 0, quindi v = w quando il nucleo è
 banale, e viceversa.
 
@@ -60,7 +60,7 @@ Ker f ∩ V'; la restrizione è iniettiva, quindi isomorfismo su f(V'),
 se e solo se tale intersezione è nulla. In particolare, a dominio
 finitamente generato, f è iniettiva se e solo se rk f = dim V.
 
-Teorema di nullità più rango: se V è finitamente generato,
+Teorema **di nullità più rango**: se V è finitamente generato,
 rk f = dim V - dim Ker f, quindi rk f ≤ dim V con uguaglianza solo nel
 caso iniettivo. Se dim V = dim W, iniettività, suriettività e
 biettività si equivalgono.
@@ -88,14 +88,14 @@ l'altra.
 
 Sono invertibili le quadrate il cui endomorfismo associato è un isomorfismo.
 
-Sia GL(n, K) l'insieme delle A ∈ M(n, n, K) con f_A isomorfismo,
-dette non singolari o non degeneri. Allora A ∈ GL(n, K) se e solo se:
+Sia GL(n, K) l'insieme delle A ∈ M(n, n, K) **con f_A isomorfismo**,
+dette **non singolari o non degeneri**. Allora A ∈ GL(n, K) se e solo se:
 
 - (a) A ha rango n, cioè massimo, ossia colonne indipendenti;
-- (b) esiste B con A·B = Iₙ, detta inversa destra;
-- (c) esiste C con C·A = Iₙ, detta inversa sinistra.
+- (b) esiste B con A·B = Iₙ, detta **inversa destra**;
+- (c) esiste C con C·A = Iₙ, detta **inversa sinistra**.
 
-Destra e sinistra, quando esistono, coincidono: tale matrice è l'inversa
+Destra e sinistra, quando esistono, coincidono: **tale matrice** è l'inversa
 A⁻¹. Anche A⁻¹ ∈ GL(n, K) e (A⁻¹)⁻¹ = A.
 
 Calcolo con Gauss, esempio nuovo con valori diversi dall'originale. Sia

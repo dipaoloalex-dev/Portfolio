@@ -3,7 +3,7 @@
 1. SOFTWARE DI SIMULAZIONE
 --------------------------
 Per studiare i due casi della lezione si usano in coppia
-un modellatore tridimensionale e un simulatore con figure umane.
+un **modellatore tridimensionale** e un simulatore con **figure umane**.
 Il primo costruisce pezzi, attrezzi e layout del capannone.
 Il secondo anima operatori e robot dentro quelle scene
 e verifica ingombri, prese, accessi e sequenze di montaggio.
@@ -13,7 +13,7 @@ alle posture e agli sforzi richiesti nelle stazioni.
 Il simulatore umano permette di provare ambienti diversi,
 macchine isolate o lintera fabbrica, con operazioni di accesso,
 presa, unione e smontaggio e lavoro combinato con attrezzature.
-Particolarmente utile e il modulo di analisi delle mansioni,
+Particolarmente utile e il modulo di **analisi delle mansioni**,
 che confronta i gesti simulati con i limiti delle norme di sicurezza.
 Cosi si valutano piu alternative quando il progetto e ancora aperto,
 senza aspettare prove fisiche costose in reparto.
@@ -35,14 +35,14 @@ Studiare la sequenza fin dallinizio, quando il capannone e ancora
 libero da vincoli, permette di confrontare layout alternativi
 senza penalizzare le fasi successive.
 Ogni campata ospita postazioni di pari superficie in linea,
-con vie di corsa per mezzi di sollevamento e aree di servizio.
+con **vie di corsa** per mezzi di sollevamento e aree di servizio.
 
 Per portare pezzi alle stazioni e trasferire moduli grandi
-si usano due carriponte indipendenti che scorrono nella campata.
+si usano due **carriponte indipendenti** che scorrono nella campata.
 Possono lavorare separati su compiti diversi oppure unirsi
 per raddoppiare la portata quando serve calare la cassa completa
 sui carrelli.
-Un braccio a bandiera su rotaia a parete serve invece i singoli posti,
+Un **braccio a bandiera** su rotaia a parete serve invece i singoli posti,
 perche scorre lungo il muro e raggiunge piu stazioni vicine
 nella movimentazione dei particolari da unire.
 Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
@@ -60,14 +60,14 @@ e poi accorgersi che i percorsi dei moduli si incrociano e si fermano.
 Nella prima stazione inizia il modulo corpo con struttura leggera
 in lega di alluminio, scelta per alleggerire il veicolo e usare
 lunghi profilati estrusi in pochi pezzi.
-Il modulo viaggia su una sella dedicata che lo accompagna
+Il modulo viaggia su una **sella dedicata** che lo accompagna
 di stazione in stazione e permette di presentarlo su entrambi i lati.
 A volte conviene lavorare in verticale invece che in orizzontale,
 per vedere meglio e spingere meno con braccia e schiena.
 La sella usata qui trasla su guide e ruota intorno allasse lungo,
 con appoggio centrale apribile in due parti per cambiare assetto.
 
-La stazione usa due robot articolati mobili su rotaie a pavimento,
+La stazione usa due **robot articolati** mobili su rotaie a pavimento,
 condivisibili con stazioni vicine.
 Qui si montano sotto cassa impianti elettrici e pneumatici.
 I materiali arrivano imballati, un addetto li dispone su maschere
@@ -93,7 +93,7 @@ con attese lunghe o avvicinamenti pericolosi nella stessa zona.
 2.2 POSTO DI LAVORO N.2
 -----------------------
 Nella seconda stazione il modulo viene presentato sul lato opposto
-al precedente, con mezza rotazione sulla sella.
+al precedente, con **mezza rotazione** sulla sella.
 Qui si completa il pavimento della carrozza con un pacchetto
 multistrato che unisce funzione portante, isolamento e calpestio.
 La stazione usa robot articolati simili a quelli della prima,
@@ -159,7 +159,7 @@ Dal grezzo al velivolo finito il percorso unisce strutture e impianti.
 La struttura si divide in quattro grandi insiemi con relativi sottinsiemi:
 parte anteriore abitabile, ali, code e carrelli.
 La prima include tronchi anteriore centrale e posteriore piu sportelli
-e coperture. La seconda include cassone centrale, rivestimenti,
+e coperture. La seconda include cassone centrale, **rivestimenti**,
 ipersostentatori e alettoni. La terza include derive e stabilizzatori
 con relativi equilibratori. La quarta distingue gamba anteriore
 e gambe principali.
@@ -185,12 +185,12 @@ con fori fuori tolleranza che non si accoppiano in rivettatura.
 
 3.3 ASSEMBLAGGIO DEI SOTTOGRUPPI
 --------------------------------
-I particolari preparati vanno a magazzino kit, cioe insiemi ordinati
+I particolari preparati vanno a **magazzino kit**, cioe insiemi ordinati
 di tutti i pezzi di un singolo sottogruppo, come un tronco o una semiala.
 Ogni sottogruppo si unisce in una piazzola dedicata con dima apposita,
 prevalentemente per rivettatura.
 I sottogruppi avanzano in parallelo e vanno sincronizzati per evitare
-fermi e ritardi: ognuno ha un proprio tempo di attraversamento
+fermi e ritardi: ognuno ha un proprio **tempo di attraversamento**
 legato a dimensione e complessita, diverso da stazione a stazione.
 Esempio riscritto diverso dalloriginale: il cassone centrale richiede
 tre ore e mezza, un alettone solo cinquanta minuti, cosi si sfalsano gli avvii.
@@ -200,7 +200,7 @@ intasando la linea con code davanti alla stazione piu lenta.
 3.4 ACCOPPIAMENTO DEI GRUPPI PRINCIPALI DI UN AEREO
 ---------------------------------------------------
 Quando scheletri di tronco, ala e coda sono pronti, si uniscono
-con aiuto di carroponte per formare lossatura completa del velivolo.
+con aiuto di **carroponte** per formare lossatura completa del velivolo.
 Lultimo passo di struttura inserisce i carrelli sotto la fusoliera,
 cosi lintelaiatura puo rotolare tra le piazzole degli impianti
 senza sollevamenti straordinari.
@@ -294,13 +294,26 @@ Le altre sono sbagliate perche invertono prove e verniciatura o mettono impianti
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

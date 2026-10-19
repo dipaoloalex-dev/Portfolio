@@ -6,7 +6,7 @@
 Le permutazioni servono a scrivere la formula del determinante e a
 determinarne il segno.
 
-Una permutazione di un insieme è una biettiva dell'insieme in sé. Quelle di
+Una **permutazione di un insieme** è una biettiva dell'insieme in sé. Quelle di
 Iₙ = {1, ..., n} sono i riordinamenti dei primi n numeri. L'insieme di
 tutte si indica Sₙ. Per n = 1 ce n'è una sola; per n = 2 ce ne sono due
 (12 e 21); per n = 3 ce ne sono sei. In generale il conteggio è
@@ -17,7 +17,7 @@ Esempio nuovo di conteggio: per n = 4 ci sono 4 scelte per la prima
 posizione e, per ciascuna, 6 permutazioni delle tre restanti, quindi
 4·6 = 24 = 4!.
 
-Ogni σ ∈ Sₙ ha un segno sign(σ) pari a 1 se è pari e -1 se è
+Ogni σ ∈ Sₙ **ha un segno** sign(σ) pari a 1 se è pari e -1 se è
 dispari. La parità è quella del numero di scambi a due a due necessari per
 riportarla all'identità 12...n: percorsi diversi possono usare un numero
 diverso di scambi, ma la parità è sempre la stessa.
@@ -34,7 +34,7 @@ sign(σ) = -sign(σ') se k è pari. L'idea è che, sistemata σ' con scambi
 interni, resta da portare k al suo posto con k-1 scambi.
 
 Errore tipico: pensare che il numero di scambi sia unico, o che |Sₙ|
-sia n² o 2ⁿ. Il fattoriale cresce molto più in fretta e il segno dipende
+sia n² o 2ⁿ. Il **fattoriale** cresce molto più in fretta e il segno dipende
 solo dalla parità, non dal particolare cammino scelto.
 
 2. DEFINIZIONE DI DETERMINANTE
@@ -48,17 +48,17 @@ Per A = (a_{ij}) si pone
 det A = Σ_{σ∈Sₙ} sign(σ)·a_{1σ(1)}·a_{2σ(2)}·...·a_{nσ(n)}
 
 dove la somma corre su tutte le n! permutazioni. Ogni addendo prende un
-elemento per ogni riga e ogni colonna, col segno della permutazione delle
+elemento per ogni riga e ogni colonna, **col segno della permutazione** delle
 colonne.
 
 Casi bassi, con calcoli nuovi:
 
 - per n = 1, det(a₁₁) = a₁₁;
-- per n = 2, le due permutazioni sono 12 pari e 21 dispari, quindi
+- per n = 2, **le due permutazioni sono 12 pari e 21 dispari**, quindi
   det [[a₁₁, a₁₂], [a₂₁, a₂₂]] = a₁₁a₂₂ - a₁₂a₂₁: diagonale meno
-  antidiagonale. Esempio nuovo: det [[3, 2], [1, 4]] = 12 - 2 = 10;
+  **antidiagonale**. Esempio nuovo: det [[3, 2], [1, 4]] = 12 - 2 = 10;
 - per n = 3 ci sono tre permutazioni pari (123, 231, 312) e tre
-  dispari (132, 213, 321), da cui la somma di sei tripli prodotti con
+  dispari (132, 213, 321), da cui la somma di **sei tripli prodotti** con
   segni +, +, +, -, -, -.
 
 Esempio nuovo di ordine 3: per
@@ -67,7 +67,7 @@ Esempio nuovo di ordine 3: per
 
 la formula dà 2·3·4 + 0·2·0 + 1·1·1 - 1·3·0 - 0·1·4 - 2·2·1 = 24 + 1 - 4 = 21.
 
-Un ausilio mnemonico solo per n = 3 è la regola di Sarrus: si accostano a
+Un ausilio mnemonico solo per n = 3 è la **regola di Sarrus**: si accostano a
 destra le prime due colonne e si sommano i tre prodotti diagonali
 sottraendo i tre antidiagonali. Non si estende a n > 3.
 
@@ -81,9 +81,9 @@ determinante sia lineare nelle entrate una per una senza il gioco dei segni.
 Per n ≥ 2 il calcolo si riduce ricorsivamente a determinanti di ordine
 n-1, soprattutto se ci sono molti zeri.
 
-Data A quadrata di ordine n, la complementare di a_{i₁j₁}, indicata
+Data A quadrata di ordine n, la **complementare di a**_{i₁j₁}, indicata
 Ā(i₁; j₁), si ottiene cancellando riga i₁ e colonna j₁. Il suo
-determinante è il minore complementare Ā^{i₁j₁}; il complemento
+determinante è il **minore complementare** Ā^{i₁j₁}; il complemento
 algebrico è A_{i₁j₁} = (-1)^{i₁+j₁}·Ā^{i₁j₁}.
 
 Esempio nuovo: in
@@ -91,10 +91,10 @@ Esempio nuovo: in
 [[1, 2, 3], [0, 1, 4], [5, 6, 0]]
 
 la complementare di a₂₃ = 4 è [[1, 2], [5, 6]], il minore vale
-6 - 10 = -4 e, essendo 2 + 3 = 5 dispari, il cofattore è
+6 - 10 = -4 e, essendo 2 + 3 = 5 dispari, **il cofattore** è
 (-1)⁵·(-4) = 4.
 
-Teorema di Laplace: per ogni riga i e ogni colonna j,
+**Teorema di Laplace: per ogni riga** i e ogni colonna j,
 
 det A = a_{i1}A_{i1} + ... + a_{in}A_{in}
 

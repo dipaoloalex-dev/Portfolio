@@ -5,16 +5,16 @@
 
 La realta virtuale deve dare la sensazione di stare in un luogo vero.
 Per questo si cura la profondita con stimoli di due famiglie.
-Vi sono segnali da un solo occhio, come grandezza e ombre,
-e segnali da due occhi, come differenza tra vista destra e sinistra.
+Vi sono **segnali da un solo occhio**, come grandezza e ombre,
+e **segnali da due occhi**, come differenza tra vista destra e sinistra.
 Servono entrambe le famiglie per una visione solida corretta.
 
 Le vie per dare a ogni occhio la sua vista sono di due tipi.
-Nella via semi immersiva la persona resta cosciente del corpo
+Nella **via semi immersiva** la persona resta cosciente del corpo
 e della stanza vera, ma usa comunque scene solide di lavoro.
-Nella via immersiva si cerca avvolgimento totale nel mondo sintetico.
+Nella **via immersiva** si cerca avvolgimento totale nel mondo sintetico.
 
-Un esempio tipico di via semi immersiva e il banco di lavoro virtuale.
+Un esempio tipico di via semi immersiva e il **banco di lavoro virtuale**.
 Sopra un tavolo fisico appare un modello solido da esaminare.
 Un proiettore attivo manda a turno vista destra e vista sinistra
 e occhiali con lenti a scatto aprono e chiudono in sincrono
@@ -32,7 +32,7 @@ Con la mano indica un coperchio e il sistema lo evidenzia subito.
 Serve per training, per verifiche di assieme e per prove didattiche
 diverse dal caso di mappe o sale operatorie dell'esempio originale.
 
-Una prima sala usa una parete di grande formato vista da molti.
+Una prima sala usa una **parete di grande formato** vista da molti.
 Mostra il modello anche a grandezza naturale con alta qualita.
 Usa retroproiezione con due o tre proiettori affiancati insieme.
 Per avere luce uniforme si sovrappongono un poco le fasce vicine
@@ -50,13 +50,13 @@ con venti persone davanti a una parete larga come un capannone.
 Tutti vedono fiancata e portellone a misura vera senza caschi singoli.
 Si discute di ingombri e sportelli con luce uniforme su tutto il telo.
 
-Una seconda sala e una stanza con tre fino a sei pareti attive.
+Una seconda sala e una **stanza con tre fino a sei pareti attive**.
 Dentro si resta in piedi e si vede solido intorno con occhiali a scatto.
 Poiche si sente ancora il proprio corpo si ha forte presenza in scena.
 Testa e mani sono seguite da tracciatore elettromagnetico leggero.
 La prima versione nacque in un laboratorio di visualizzazione d'oltreoceano.
 
-Una terza sala usa un telo curvo quasi avvolgente a grande arco.
+Una terza sala usa un **telo curvo quasi avvolgente** a grande arco.
 Evita spigoli e giunzioni nette della stanza a cubo e i disturbi
 da taratura diversa tra canali vicini per luce e per colore.
 Il telo e in un solo pezzo rigido chiaro con sostegno a terra solido.
@@ -75,7 +75,7 @@ anteriore per camminare e guardare anche sotto i piedi in scena.
 Aprendo i moduli si torna a parete piana, chiudendoli a circa meta
 angolo retto si forma un teatro curvo simile al telo avvolgente.
 
-Una quinta sala e una sfera calpestabile che rotola su se stessa.
+Una quinta sala e una **sfera calpestabile** che rotola su se stessa.
 Supera il limite dei confini fisici delle stanze con pareti fisse.
 La sfera ha doppio guscio plastico sottile in molti tasselli a puzzle,
 tenuta da un anello largo alcuni metri e da un cuscino d'aria leggero.
@@ -104,9 +104,9 @@ e vista legata alla testa, resta un cinema piano senza rilievo utile.
 Qui l'illusione e stare del tutto dentro il mondo sintetico.
 Non si vedono piu stanza vera e corpo proprio intorno in scena.
 
-Lo strumento tipico e il casco con schermi vicini agli occhi.
+Lo strumento tipico e il **casco con schermi vicini agli occhi**.
 Chi lo indossa perde la vista del corpo e della stanza reale.
-Ha due piccoli schermi per le immagini piu cuffie per audio spaziale.
+Ha due piccoli schermi per le immagini piu cuffie per **audio spaziale**.
 In versione solida i due schermi mostrano destra e sinistra diverse.
 In versione piana i due schermi mostrano la stessa immagine doppia.
 I modelli medi usano schermi piatti a cristalli liquidi leggeri,
@@ -185,9 +185,9 @@ Creare suoni al computer ricorda creare immagini al computer,
 anche se vedere e sentire restano sensi molto diversi tra loro.
 
 Il suono come parte udibile di un fenomeno fisico ha tre gruppi.
-Primo il parlato che porta storie, notizie e avvisi con parole chiare.
-Secondo la musica con toni combinati che porta emozioni e umore.
-Terzo i rumori naturali e artificiali che descrivono oggetti e processi.
+Primo il **parlato** che porta storie, notizie e avvisi con parole chiare.
+Secondo la **musica** con toni combinati che porta emozioni e umore.
+Terzo i **rumori naturali e artificiali** che descrivono oggetti e processi.
 Il parlato spiega e guida, come descrizione di una scena di lavoro.
 La musica colora e accompagna, e puo cambiare lo stato d'animo.
 Veloce spinge ad agire in fretta, lenta calma e distende i gesti.
@@ -320,13 +320,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

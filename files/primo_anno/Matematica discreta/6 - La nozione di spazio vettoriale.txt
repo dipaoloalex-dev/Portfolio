@@ -3,33 +3,33 @@
 1. DEFINIZIONE DI SPAZIO VETTORIALE
 -----------------------------------
 
-Prima degli spazi vettoriali serve la nozione di campo: un insieme non vuoto
+Prima degli spazi vettoriali serve la nozione di **campo**: un insieme non vuoto
 K con due operazioni interne, somma e prodotto, che si comportano come quelle
 dei numeri usuali. In dettaglio: somma associativa e commutativa, con zero e
 opposti; prodotto associativo e commutativo, con unità 1 ≠ 0 e reciproco per
 ogni elemento non nullo; prodotto distributivo sulla somma.
 
 Notazioni compatte: ab per a·b, −a per l'opposto, a − b per a + (−b),
-a⁻¹ per il reciproco, a/b per a·(1/b).
+a⁻¹ per il **reciproco**, a/b per a·(1/b).
 
 Fatti di base: zero e unità sono unici; l'equazione a + x = b ha l'unica
 soluzione x = b − a; se a ≠ 0, l'equazione ax = b ha l'unica soluzione
-x = b/a; vale la legge di annullamento (ab = 0 se e solo se almeno un
+x = b/a; vale la **legge di annullamento** (ab = 0 se e solo se almeno un
 fattore è zero).
 
 Esempi: R e Q con le operazioni usuali sono campi; Z invece no, perché un
 intero come 2 non ha reciproco intero.
 
-Spazio vettoriale su K. È una struttura con un insieme sostegno V (i cui
-elementi si chiamano vettori), un'operazione interna di somma fra vettori
-e un prodotto per scalare (ogni scalare di K per ogni vettore dà un
+**Spazio vettoriale** su K. È una struttura con un insieme sostegno V (i cui
+elementi si chiamano **vettori**), un'operazione interna di somma fra vettori
+e un **prodotto per scalare** (ogni scalare di K per ogni vettore dà un
 vettore). Le due operazioni devono soddisfare otto assiomi:
 
-1. somma associativa; 2. somma commutativa; 3. esistenza del vettore nullo 0;
-4. esistenza dell'opposto −v per ogni v; 5. lo scalare 1 lascia invariato
+1. somma associativa; 2. somma commutativa; 3. esistenza del **vettore nullo** 0;
+4. esistenza dell'**opposto** −v per ogni v; 5. lo scalare 1 lascia invariato
 ogni vettore; 6. h(kv) = (hk)v; 7. k(v+w) = kv + kw; 8. (h+k)v = hv + kv.
 
-Errore tipico: confondere il campo degli scalari con lo spazio dei vettori. Gli
+Errore tipico: confondere il **campo** degli scalari con lo spazio dei vettori. Gli
 scalari si moltiplicano fra loro e hanno reciproci; i vettori si sommano fra loro
 e si moltiplicano solo per scalari, mai fra loro.
 
@@ -40,10 +40,10 @@ Dagli assiomi seguono direttamente alcuni fatti, utili in ogni dimostrazione:
 
 - lo zero e l'opposto di un vettore sono unici: se v + x = v allora
   necessariamente x = 0; se v + x = 0 allora x = −v;
-- l'equazione x + v = w ha sempre l'unica soluzione x = w − v;
+- l'equazione x + v = w ha sempre l'unica **soluzione** x = w − v;
 - kv = 0 se e solo se k = 0 oppure v = 0 (qui serve il reciproco dello
   scalare non nullo, come nei campi);
-- corollari: −v = (−1)v e la regola dei segni (k(−v) = (−k)v = −kv,
+- corollari: −v = (−1)v e la **regola dei segni** (k(−v) = (−k)v = −kv,
   (−k)(−v) = kv).
 
 L'idea ricorrente delle dimostrazioni è sempre la stessa: si somma l'opposto a
@@ -58,7 +58,7 @@ stesso risultato: la scrittura v₁ + ... + vₙ è quindi priva di ambiguità, 
 resta invariata anche permutando gli addendi.
 
 Dati vettori v₁, ..., vₙ e scalari k₁, ..., kₙ, il vettore
-k₁v₁ + ... + kₙvₙ si chiama combinazione lineare dei vettori con
+k₁v₁ + ... + kₙvₙ si chiama **combinazione lineare** dei vettori con
 coefficienti gli scalari. Esempio nuovo: in R² il vettore (5, 1) è
 combinazione di (1, 0) e (0, 1) con coefficienti 5 e 1.
 

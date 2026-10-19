@@ -4,9 +4,9 @@
 -------------------
 
 Date due matrici A = [aᵢⱼ] e B = [bᵢⱼ] dello stesso tipo (m, n), la loro
-somma A + B è la matrice dello stesso tipo ottenuta sommando gli elementi
+**somma** A + B è la matrice dello stesso tipo ottenuta sommando gli elementi
 che occupano lo stesso posto: (A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ. Si sommano cioè gli
-elementi omologhi, posizione per posizione.
+elementi **omologhi**, posizione per posizione.
 
 Esempio nuovo con vettori riga: [4, −1, 6] + [2, 5, −6] = [6, 4, 0]. Il
 risultato ha lo stesso numero di componenti degli addendi. Stessa regola per i
@@ -14,7 +14,7 @@ vettori colonna e per le matrici generiche: ad esempio, sommando due (2, 2)
 si sommano le quattro coppie di elementi corrispondenti.
 
 Un fatto utile: se A è quadrata, anche Aᵗ è quadrata dello stesso ordine,
-quindi B = A + Aᵗ è sempre definita ed è simmetrica qualunque sia A
+quindi B = A + Aᵗ è sempre definita ed è **simmetrica** qualunque sia A
 (infatti Bᵗ = (A + Aᵗ)ᵗ = Aᵗ + A = B). Se invece A è rettangolare con
 m ≠ n, Aᵗ ha tipo diverso e la somma A + Aᵗ non ha senso.
 
@@ -22,14 +22,14 @@ Condizione essenziale: stesso tipo. Senza tipi uguali la somma non esiste,
 nemmeno se uno degli addendi è la matrice nulla. Ad esempio una (3, 2) non si
 può sommare con la nulla O₂ di ordine 2 (tipo (2, 2)): la scrittura
 A + O₂ = A lì è errata perché priva di significato. La formula A + O = A
-vale solo quando la nulla O ha lo stesso tipo (m, n) di A.
+vale solo quando la **nulla** O ha lo stesso tipo (m, n) di A.
 
-Combinando somma e matrice opposta si definisce la differenza:
+Combinando somma e matrice opposta si definisce la **differenza**:
 A − B = A + (−B), sempre fra matrici dello stesso tipo.
 
 Proprietà della somma (ereditate dai numeri reali): per A, B, C dello
 stesso tipo (m, n) valgono commutativa (A + B = B + A), associativa
-(la somma di tre o più matrici si scrive senza parentesi), elemento neutro
+(la somma di tre o più matrici si scrive senza parentesi), **elemento neutro**
 (A + O = A) e opposto (A + (−A) = O), più il legame con la trasposizione:
 (A + B)ᵗ = Aᵗ + Bᵗ.
 
@@ -37,13 +37,13 @@ Due conseguenze pratiche:
 
 - Semplificazione: se A + C = B + C allora A = B (basta sommare −C a
   entrambi i membri).
-- Equazione A + X = B: ha sempre un'unica soluzione, X = B − A
+- Equazione **A + X = B**: ha sempre un'unica soluzione, X = B − A
   (si verifica per sostituzione: A + (B − A) = B).
 
 2. PRODOTTO DI UN NUMERO PER UNA MATRICE
 ----------------------------------------
 
-Dato un reale α e una matrice A = [aᵢⱼ], il prodotto αA è la matrice
+Dato un reale α e una matrice A = [aᵢⱼ], il **prodotto** αA è la matrice
 dello stesso tipo ottenuta moltiplicando ogni elemento per α: (αA)ᵢⱼ = α·aᵢⱼ.
 Casi particolari: (−1)A = −A (matrice opposta) e 0A = O.
 
@@ -62,17 +62,17 @@ essere zero, e se α ≠ 0 tutti gli aᵢⱼ sono necessariamente nulli.
 ----------------------------------
 
 Date N matrici A₁, ..., Aₙ tutte dello stesso tipo e N reali
-α₁, ..., αₙ, la matrice α₁A₁ + ... + αₙAₙ si chiama combinazione lineare
+α₁, ..., αₙ, la matrice α₁A₁ + ... + αₙAₙ si chiama **combinazione lineare**
 delle A con coefficienti α.
 
-Le matrici sono linearmente indipendenti quando l'unico modo per ottenere
+Le matrici sono **linearmente indipendenti** quando l'unico modo per ottenere
 la matrice nulla come loro combinazione è prendere tutti i coefficienti uguali
-a zero: Σ αₖAₖ = O ⟹ ogni αₖ = 0. Altrimenti sono linearmente dipendenti
+a zero: Σ αₖAₖ = O ⟹ ogni αₖ = 0. Altrimenti sono **linearmente dipendenti**
 (esiste una combinazione a coefficienti non tutti nulli che dà O).
 
 Conseguenze immediate:
 
-- se una delle matrici è la nulla, il gruppo è sempre dipendente;
+- se una delle matrici è la nulla, il gruppo è sempre **dipendente**;
 - dipendenza equivale a: almeno una delle matrici è combinazione delle
   rimanenti (attenzione: "almeno una", non "ognuna" — con la nulla in gruppo,
   ad esempio, solo la nulla si scrive banalmente con le altre, non viceversa).

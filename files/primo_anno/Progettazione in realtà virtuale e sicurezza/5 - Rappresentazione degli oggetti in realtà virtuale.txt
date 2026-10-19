@@ -22,11 +22,11 @@ precostruito da mandare avanti e indietro.
 
 Un progetto si divide in geometria, interazione, percezione e
 visualizzazione. Un motore apposito gestisce modifiche della scena, scarto di
-ciò che esce dal cono visivo e disegno finale. Gli oggetti partono in tre
+ciò che esce dal **cono visivo** e disegno finale. Gli oggetti partono in tre
 coordinate e finiscono su schermo piano in due coordinate: ogni punto
 tridimensionale diventa un punto piano.
 
-Le tre vie classiche sono proiezione ortogonale, assonometria e prospettiva.
+Le tre vie classiche sono **proiezione ortogonale**, **assonometria** e **prospettiva**.
 Nella prima si tengono solo due delle tre coordinate e si perde la terza, con
 vista dall'alto, di fronte o di lato. Nella seconda si guarda da distanza
 infinita con due angoli di latitudine e longitudine e le misure non cambiano
@@ -62,7 +62,7 @@ dicono corrispondenti e fondono.
 In realtà gli occhi distano circa sette o otto centimetri, quindi vedono da
 angoli un po' diversi e le immagini non cadono su punti del tutto gemelli. Il
 cervello le unisce lo stesso e usa lo scarto per capire dove stanno le cose: è
-la visione con due viste.
+la **visione con due viste**.
 
 Esempio riscritto: per un piccolo guscio meccanico si scattano due foto
 spostate lateralmente di pochi centimetri con filtri di colore opposto, poi si
@@ -77,10 +77,10 @@ per un solo osservatore frontale nitido, oppure con due colori filtrati da
 occhiali con filtri gemelli. I programmi estendono l'effetto a tutto il quadro
 ricostruendo coppie coerenti e non solo vicino al centro.
 
-Due soluzioni correnti: occhiali attivi con emettitore che alternano quadri
+Due soluzioni correnti: **occhiali attivi** con emettitore che alternano quadri
 destri e sinistri e oscurano l'altro occhio in sincrono a infrarossi, con
 macchine veloci perché per venticinque quadri al secondo ne servono cinquanta
-a oltre cento hertz totali; occhiali passivi con lenti polarizzate e vetro
+a oltre cento hertz totali; **occhiali passivi** con lenti polarizzate e vetro
 davanti allo schermo, comodi e con ampio angolo se la frequenza resta alta.
 
 Errore tipico: dare stessa immagine ai due occhi e aspettarsi profondità. Senza
@@ -89,21 +89,21 @@ separazione destra e sinistra non c'è stereo.
 2.1 TECNOLOGIE DI TRACCIAMENTO E MANIPOLAZIONE
 --------------------------------------------------
 
-In uno spazio con tre assi ad angolo retto il moto è traslazione lungo gli assi
-oppure rotazione intorno agli assi: tre più tre, quindi sei possibilità per un
+In uno spazio con tre assi ad angolo retto il moto è **traslazione** lungo gli assi
+oppure **rotazione** intorno agli assi: tre più tre, quindi sei possibilità per un
 corpo rigido. Per interagire bene serve un puntatore che legga tutti e sei i
 moti e li passi al calcolatore. Il migliore resta la mano, anche se esistono
-mouse volumetrici. Perciò si seguono posizione e orientamento di un sensore
+**mouse volumetrici**. Perciò si seguono posizione e orientamento di un sensore
 sulla mano rispetto a ciò che si vede su schermo o casco. Guanti speciali
 leggono anche le singole dita e talvolta restituiscono tocco con piccole
 scosse che stimolano sotto pelle oppure con materiali che si piegano sotto
 tensione, dando la sensazione di stringere davvero.
 
-Le famiglie sono quattro. Meccaniche con braccio snodato e sensori di
+Le famiglie sono quattro. **Meccaniche** con braccio snodato e sensori di
 spostamento: ingombranti ma rapidissime, per teleoperazione e guida a
-distanza. Ottiche con telecamere e punti luminosi addosso: calcolano lo
-spostamento da immagini in tempo reale. Sonore con onde e echi come i sonar:
-leggono riflessioni e deviazioni al passaggio. Magnetiche, oggi le più usate:
+distanza. **Ottiche** con telecamere e punti luminosi addosso: calcolano lo
+spostamento da immagini in tempo reale. **Sonore** con onde e echi come i sonar:
+leggono riflessioni e deviazioni al passaggio. **Magnetiche**, oggi le più usate:
 una sorgente fissa crea un campo e sensori addosso misurano come si deforma
 con la presenza della persona.
 
@@ -269,14 +269,26 @@ PROMPT RIUTILIZZABILE
 Prompt usato per generare questa scheda. Copialo in una nuova conversazione
 insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
 
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

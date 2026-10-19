@@ -3,13 +3,13 @@
 1. SISTEMI LINEARI EQUIVALENTI
 ------------------------------
 
-Due sistemi nelle stesse incognite e sullo stesso campo sono equivalenti
-quando hanno esattamente le stesse soluzioni (anche se hanno equazioni diverse;
+Due sistemi nelle stesse incognite e sullo stesso campo sono **equivalenti**
+quando hanno esattamente le stesse **soluzioni** (anche se hanno equazioni diverse;
 due sistemi impossibili sono sempre equivalenti fra loro). L'equivalenza è una
-relazione di equivalenza, e l'obiettivo è trovare in ogni classe il sistema con
+**relazione di equivalenza**, e l'obiettivo è trovare in ogni classe il sistema con
 meno equazioni possibile.
 
-Legame fra equazioni e soluzioni: un'equazione che dipende linearmente dalle
+Legame fra equazioni e soluzioni: un'equazione che **dipende linearmente** dalle
 equazioni del sistema è soddisfatta da tutte le sue soluzioni; viceversa, se il
 sistema è compatibile e un'equazione è verificata da tutte le sue soluzioni,
 allora quell'equazione dipende dal sistema. Da qui segue che:
@@ -20,8 +20,8 @@ allora quell'equazione dipende dal sistema. Da qui segue che:
   ciascuno dipende dall'altro.
 
 Conseguenze pratiche: ogni sistema è equivalente a un suo sottosistema massimo
-di equazioni indipendenti (sistema ridotto); un compatibile è equivalente a
-un ridotto compatibile (sistema normale). In n incognite bastano al più
+di equazioni indipendenti (**sistema ridotto**); un compatibile è equivalente a
+un ridotto compatibile (**sistema normale**). In n incognite bastano al più
 n+1 equazioni in generale, n per gli omogenei (e n−1 se l'omogeneo ha
 soluzioni non banali). Il primo passo per risolvere è appunto ridurre il sistema.
 
@@ -32,12 +32,12 @@ proprio questa libertà che permette di semplificare.
 2. LA FORMULA DI GRASSMANN
 --------------------------
 
-La somma V₁ + V₂ è il sottospazio generato dall'unione dei due (ogni suo
+La **somma** V₁ + V₂ è il sottospazio generato dall'unione dei due (ogni suo
 vettore è somma di uno di V₁ e uno di V₂); se i due sono finitamente
 generati lo è anche la somma.
 
-Formula di Grassmann: dim V₁ + dim V₂ = dim(V₁+V₂) + dim(V₁∩V₂). L'idea:
-si parte da una base dell'intersezione, la si completa a base di ciascuno dei
+**Formula di Grassmann**: dim V₁ + dim V₂ = dim(V₁+V₂) + dim(V₁∩V₂). L'idea:
+si parte da una **base** dell'intersezione, la si completa a base di ciascuno dei
 due, e l'unione (base comune più i due completamenti) è una base della somma —
 i vettori in comune vengono contati una volta sola.
 
@@ -49,7 +49,7 @@ spazio. Due piani distinti per l'origine (dim 2 e 2) si incontrano in una retta
 3. SOMME DIRETTE
 ----------------
 
-Quando l'intersezione è solo lo zero, la somma si dice diretta (V₁ ⊕ V₂):
+Quando l'intersezione è solo lo zero, la somma si dice **diretta** (V₁ ⊕ V₂):
 le dimensioni si sommano senza correzioni, e viceversa l'uguaglianza dimensionale
 caratterizza la diretta. Proprietà equivalente: ogni vettore della somma si
 scrive in un unico modo come somma di un vettore di V₁ e uno di V₂
@@ -59,7 +59,7 @@ nell'intersezione).
 Per più addendi vale lo stesso, con la condizione su ciascuno rispetto alla
 somma degli altri; la dimensione della somma non supera mai la somma delle
 dimensioni, con uguaglianza se e solo se è diretta. Caso notevole: un sistema è
-indipendente se e solo se il suo generato è somma diretta delle rette dei
+**indipendente** se e solo se il suo generato è somma diretta delle rette dei
 singoli vettori, e una base è esattamente una scomposizione dello spazio in
 somma diretta di rette.
 

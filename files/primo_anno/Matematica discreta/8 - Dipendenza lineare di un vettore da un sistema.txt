@@ -3,10 +3,10 @@
 1. SISTEMI DI VETTORI E DIPENDENZA LINEARE
 ------------------------------------------
 
-Un sistema di ordine n è una n-upla (non ordinata) di vettori di un
+Un **sistema** di ordine n è una n-upla (non ordinata) di vettori di un
 sottoinsieme H dello spazio; l'insieme vuoto vale come sistema di ordine 0.
-Un vettore v dipende linearmente dal sistema S = [v₁, ..., vₙ] quando si
-può scrivere come combinazione dei suoi vettori: esistono scalari k₁, ..., kₙ
+Un vettore v **dipende linearmente** dal sistema S = [v₁, ..., vₙ] quando si
+può scrivere come **combinazione** dei suoi vettori: esistono scalari k₁, ..., kₙ
 con v = k₁v₁ + ... + kₙvₙ. La scrittura può essere unica o meno: è unica quando
 non esistono due combinazioni diverse che danno lo stesso v. Per convenzione,
 dal sistema vuoto dipende solo il vettore nullo.
@@ -19,11 +19,11 @@ sistema stesso (coefficiente 1 su sé stesso, 0 altrove).
 -----------------------------------------------------------
 
 - Sistemi di ordine uno. Da [v] dipendono esattamente i multipli kv
-  (vettori proporzionali a v); l'unico proporzionale al nullo è il nullo.
-- Vettori unitari. In Kⁿ ogni vettore (k₁, ..., kₙ) dipende in modo unico
+  (**vettori proporzionali** a v); l'unico proporzionale al nullo è il nullo.
+- **Vettori unitari**. In Kⁿ ogni vettore (k₁, ..., kₙ) dipende in modo unico
   dai vettori con un solo 1 in posizione i: i coefficienti sono le componenti
   stesse.
-- Matrici elementari. Ogni matrice (m, n) dipende in modo unico dalle
+- **Matrici elementari**. Ogni matrice (m, n) dipende in modo unico dalle
   matrici con un solo 1 in posizione (i, j); le diagonali dipendono dalle
   sole elementari diagonali, e una scalare è multiplo dell'unità.
 
@@ -35,21 +35,21 @@ non nulla.
 3. SOTTOSPAZI GENERATI DA UN SISTEMA O DA UN INSIEME DI VETTORI
 ------------------------------------------------------------
 
-Il sottospazio generato ⟨S⟩ è il più piccolo sottospazio contenente tutti i
+Il **sottospazio generato** ⟨S⟩ è il più piccolo sottospazio contenente tutti i
 vettori di S: l'intersezione di tutti i sottospazi che li contengono (famiglia
 mai vuota, perché contiene almeno l'intero spazio). Coincide esattamente con
 l'insieme di tutti i vettori che dipendono linearmente da S (somma e
 multipli di combinazioni restano combinazioni).
 
 Regole di confronto: ⟨T⟩ ⊆ ⟨S⟩ se e solo se ogni vettore di T dipende da S;
-i generati coincidono se la dipendenza vale in entrambi i versi. Togliere un
+i **generati** coincidono se la dipendenza vale in entrambi i versi. Togliere un
 vettore da S non cambia il generato se e solo se quel vettore dipende dai
 rimanenti.
 
-Un sottospazio è finitamente generato quando coincide col generato di un
+Un sottospazio è **finitamente generato** quando coincide col generato di un
 sistema finito (il nullo lo è, generato dal solo zero). Esempio geometrico: un
-vettore non nullo genera la retta della sua direzione; due vettori non paralleli
-generano il piano che li contiene (ogni vettore del piano si scompone lungo i
+vettore non nullo genera la **retta** della sua direzione; due vettori non paralleli
+generano il **piano** che li contiene (ogni vettore del piano si scompone lungo i
 due per il parallelogramma).
 
 Errore tipico: credere che "dipendere da una parte di S" e "dipingere da S"

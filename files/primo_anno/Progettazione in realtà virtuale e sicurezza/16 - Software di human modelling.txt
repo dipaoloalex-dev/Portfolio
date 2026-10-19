@@ -21,16 +21,16 @@ Chi fa treni e aerei cura comfort di bordo e comandi facili e sicuri
 per piloti e passeggeri, oltre a manutenzione con peso economico alto
 per vita lunga, pezzi costosi e molte ore di manodopera specializzata.
 
-Serve uno strumento che simuli l'uomo sul gemello digitale del prodotto
+Serve uno strumento che simuli l'uomo sul **gemello digitale** del prodotto
 prima del confronto con il fisico costruito in officina di prova.
 Sono figure digitali che ripetono gesti di tecnici veri su modelli finti.
 Copiano moto, sforzi, forme e misure di persone reali in scena tipica.
 Hanno scheletro con molti snodi per braccia, gambe e schiena in posa.
 Le taglie vengono da archivi di misure su campioni di popolazione ampia.
 Si mostrano piccoli e grandi, magri e robusti a scelta del progettista.
-Il corpo e visto come catena aperta di parti rigide unite da snodi.
+Il corpo e visto come **catena aperta** di parti rigide unite da snodi.
 
-Il nodo difficile e dosare bene le articolazioni senza esagerare in scena.
+Il nodo difficile e dosare bene le **articolazioni** senza esagerare in scena.
 Con poche articolazioni il moto resta legnoso e poco credibile in video.
 Con troppe il modello diventa pesante e difficile da muovere in prova.
 La regola e cambiare postura con sole rotazioni dei giunti in scena,
@@ -71,7 +71,7 @@ attendere senza rischi per sicurezza e affidabilita del mezzo in servizio.
 Si distinguono cure programmate a scadenze fisse per tenere prestazioni
 e cure dopo guasto per tornare a marcia normale dopo il danno subito.
 
-La manutenzione in virtuale con figure digitali aiuta questi scopi pratici.
+La **manutenzione in virtuale** con figure digitali aiuta questi scopi pratici.
 Simula officine, macchine e sistemi da curare prima che esistano in ferro.
 Riproduce accessi, prese, smontaggi, riparazioni e rimontaggi in scena.
 Cosi si vede se le mani arrivano e se gli attrezzi entrano in spazi stretti
@@ -83,8 +83,8 @@ Si controllano staffe e connessioni tra moduli per posa corretta in vano.
 Si verificano vista e accesso al pezzo e scelta dell'attrezzo giusto in borsa,
 dentro sagome consentite senza smontare mezzo mezzo in officina vera.
 
-Un pregio e usare figure standard per prove ripetibili tra progetti.
-Con taglia media femminile e taglia alta maschile i risultati si confrontano.
+Un pregio e usare **figure standard** per prove ripetibili tra progetti.
+Con **taglia media femminile** e **taglia alta maschile** i risultati si confrontano.
 Si fanno filmati da piu punti per procedure e punti critici da mostrare.
 Servono per manuali tecnici chiari per operatori in lingue diverse.
 Si condividono in rete con sedi lontane per pareri rapidi in giornata.
@@ -121,21 +121,21 @@ Fa analisi fini dei compiti con strumenti dedicati ai tempi e agli sforzi.
 
 Dal lato anatomico vi sono tre taglie base tra uomo, donna e bimbo.
 I pezzi si vedono in quattro modi per usi diversi in prova di scena.
-Il modo trasparente lascia vedere pezzi dietro la figura in primo piano.
-Il modo scheletro mostra solo assi e snodi per studio del moto puro.
-Il modo a fili mostra maglia leggera per controlli rapidi di ingombri.
-Il modo pieno mostra volumi ombreggiati per presenza realistica in video.
+Il **modo trasparente** lascia vedere pezzi dietro la figura in primo piano.
+Il **modo scheletro** mostra solo assi e snodi per studio del moto puro.
+Il **modo a fili** mostra maglia leggera per controlli rapidi di ingombri.
+Il **modo pieno** mostra volumi ombreggiati per presenza realistica in video.
 Le superfici recenti sono piu morbide e meno spigolose di prima,
 con posa manuale piu facile vicino agli oggetti e moto piu leggibile.
 
 Dal lato cinematico la figura ha decine di parti e snodi in tutto il corpo,
 con colonna a molti segmenti e mani a molti segmenti per dita in presa.
-Ogni figura supera il centinaio di liberta di moto tra braccia e gambe.
+Ogni figura supera il centinaio di **liberta di moto** tra braccia e gambe.
 Le taglie vengono da misure militari storiche su grandi campioni in divisa.
 Tanti snodi chiedono limiti per evitare pose impossibili in scena reale.
 Si usano angoli massimi da studi spaziali su corpo in assenza di peso.
 Le taglie si scelgono con peso e altezza in pannello di scala umana,
-con percentili bassi, medi e alti per coprire popolazione di utenti.
+con **percentili** bassi, medi e alti per coprire popolazione di utenti.
 Si possono cambiare rapporti tra arti e busto per disabilita simulate,
 con pannello avanzato per misure fini di spalle, anche e mani in posa.
 
@@ -143,7 +143,7 @@ Per l'ambiente si importano file dal disegno con formati neutri di scambio.
 Vi sono librerie di solidi semplici e oggetti pronti da menu principale.
 Si cambia vista in fretta e si cambiano materiali e rivestimenti in scena.
 La scena e tutto lo spazio dove si muove la figura con i pezzi intorno.
-Ogni figura ha parti unite da snodi con colori e riferimenti locali.
+Ogni figura ha parti unite da snodi con colori e **riferimenti locali**.
 Si puo riassumere in righe di testo con spazi come albero di scena.
 Livello  Contenuto  Esempio pratico in scena di prova
 Ambiente  Intera scena di lavoro  Officina con banco e scaffali vicini
@@ -220,13 +220,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

@@ -3,22 +3,22 @@
 1. SISTEMI LINEARI E SOTTOSPAZI DEI VETTORI NUMERICI
 ----------------------------------------------------
 
-Un sistema di m equazioni lineari in n incognite sul campo K si scrive
+Un **sistema** di m **equazioni lineari** in n incognite sul campo K si scrive
 leggendo le colonne: indicate con a¹, ..., aⁿ le colonne dei coefficienti e con
 c la colonna dei termini noti, risolverlo significa trovare gli scalari
 x₁, ..., xₙ tali che a¹x₁ + ... + aⁿxₙ = c. La matrice con tutte le colonne
-(B) è la matrice completa; quella senza la colonna dei termini noti (A)
-è la matrice incompleta; il sistema è omogeneo quando c = 0, e il suo
+(B) è la **matrice completa**; quella senza la colonna dei termini noti (A)
+è la **matrice incompleta**; il sistema è **omogeneo** quando c = 0, e il suo
 omogeneo associato si ottiene azzerando i termini noti.
 
-Il sistema si dice compatibile (o risolubile) quando ammette almeno una
-soluzione. L'omogeneo lo è sempre, grazie alla soluzione banale nulla;
-esistono invece sistemi impossibili, come due equazioni che impongono valori
+Il sistema si dice **compatibile** (o risolubile) quando ammette almeno una
+soluzione. L'omogeneo lo è sempre, grazie alla **soluzione banale** nulla;
+esistono invece **sistemi impossibili**, come due equazioni che impongono valori
 diversi alla stessa incognita.
 
 Legami con i sottospazi:
 
-- le soluzioni di un sistema omogeneo formano un sottospazio (somma e
+- le soluzioni di un sistema omogeneo formano un **sottospazio** (somma e
   multipli di soluzioni restano soluzioni, e lo zero c'è sempre);
 - le soluzioni di un sistema non omogeneo non formano un sottospazio
   (manca lo zero);
@@ -38,11 +38,11 @@ Dire che c dipende dal sistema delle colonne dei coefficienti equivale a dire
 che il sistema è compatibile: le soluzioni sono proprio i coefficienti delle
 combinazioni che ricostruiscono c.
 
-Teorema (criterio di compatibilità). Un sistema è compatibile se e solo se la
-colonna dei termini noti dipende linearmente dalle colonne dei coefficienti.
+Teorema (**criterio di compatibilità**). Un sistema è compatibile se e solo se la
+colonna dei termini noti **dipende linearmente** dalle colonne dei coefficienti.
 
-Riformulazione con gli spazi righe/colonne: lo spazio righe Rig(A) è il
-generato dalle righe, lo spazio colonne Col(A) quello generato dalle
+Riformulazione con gli spazi righe/colonne: lo **spazio righe** Rig(A) è il
+generato dalle righe, lo **spazio colonne** Col(A) quello generato dalle
 colonne (entrambi nulli solo per la matrice nulla). Il criterio diventa:
 compatibilità se e solo se Col(A) = Col(B), cioè aggiungere la colonna dei
 termini noti non allarga lo spazio colonne.

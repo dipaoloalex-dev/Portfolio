@@ -4,16 +4,16 @@
 ---------------
 La formazione per la sicurezza produce moltissimi contenuti
 e anche lofferta a distanza in questo tema e molto ampia.
-Una societa specializzata ha proposto una novita con visori immersivi.
-Ha creato un contenuto 3D che ricostruisce un cantiere edile animato
+Una societa specializzata ha proposto una novita con **visori immersivi**.
+Ha creato un contenuto 3D che ricostruisce un **cantiere edile animato**
 dove ci si muove in prima persona.
-Chi entra veste i panni del responsabile della sicurezza e supera
+Chi entra veste i panni del **responsabile della sicurezza** e supera
 tappe con problemi di norme.
-Le scelte danno ritorni da gioco con guida virtuale al fianco,
+Le scelte danno ritorni da gioco con **guida virtuale** al fianco,
 come avanzamento di livello o punteggio minimo.
 Obiettivo e imparare e verificare le norme lavorando in un luogo
 operativo dal proprio computer.
-La formazione a distanza cresce per mercato, utenti, qualita e formati.
+La **formazione a distanza** cresce per mercato, utenti, qualita e formati.
 Nei paesi avanzati i corsi noiosi di sole slide con voce lasciano spazio
 a formati piu coinvolgenti, al vertice le simulazioni immersive.
 Esempio riscritto diverso dalloriginale: invece di spiegare a voce
@@ -34,8 +34,8 @@ e pesano oltre due gigabyte contro poche decine di megabyte,
 valori rielaborati diversi dalloriginale.
 Per questo nel 2016, valore rielaborato diverso dalloriginale,
 la stessa societa creo tra le prime un ponte proprietario tra mondi
-desktop o immersivi e piattaforma corsi, integrato in ambiente
-di apprendimento basato sul nuovo standard di tracciamento.
+desktop o immersivi e **piattaforma corsi**, integrato in ambiente
+di apprendimento basato sul nuovo **standard di tracciamento**.
 Cosi il corso fuori piattaforma resta conforme alle norme.
 Lutente e seguito sempre e quando fa azioni previste parte il comando
 standard verso la piattaforma, con attestato sul profilo e registri
@@ -49,7 +49,7 @@ Il corso vecchio di sole slide e dispense video perde terreno.
 Serve coinvolgimento vero, non solo punti e distintivi.
 Serve imparare facendo con storia, interazioni, video e punteggi dosati
 sullobiettivo.
-Un ente assicurativo nazionale ha creato una fabbrica tipo in 3D
+Un ente assicurativo nazionale ha creato una **fabbrica tipo in 3D**
 sul proprio sito per mostrare rischi tipici e possibili rimedi.
 Il programma nacque da un ministero estero e fu adattato in italiano.
 Corsi e singoli lo usano per allenare locchio a rischi e prevenzioni.
@@ -82,13 +82,13 @@ e per dare un contributo autonomo alla dinamica collettiva.
 Non solo eseguire procedure come in addestramento, ma svolgere
 i propri compiti in sicurezza e gestire rischi e incertezza nel proprio ruolo.
 Per questo la piattaforma ammessa deve essere strumento dinamico
-dentro gruppi didattici strutturati, con comunita virtuale e pratica
+dentro gruppi didattici strutturati, con **comunita virtuale** e pratica
 condivisa e confronto continuo tra partecipanti.
 Anche programma e materiali devono rispecchiare questa idea di comunita
 a distanza solo fisica, non solo in sequenza ma in interazione reale,
 senza ridursi a macchinetta automatica di efficienza.
 La raccolta continua di osservazioni e bisogni con utenti, docenti
-e comitato scientifico e costante del modello, non delegabile una volta
+e **comitato scientifico** e costante del modello, non delegabile una volta
 per tutte alla piattaforma.
 I formatori come tutor dell’aula virtuale devono garantirla.
 Il percorso quindi non e solo prescrittivo con controllo di spunta
@@ -129,12 +129,12 @@ e suoni reali, molto piu di opuscolo e video passivi.
 Restano da esplorare usi e interazioni sempre piu naturali per bisogni veri.
 Nel caso sicurezza si sono create tappe chiave come vestiario,
 lavoro su tetto, suolo scivoloso, macchine, ponteggi e sistemi anticaduta.
-In ognuna lutente risponde a quiz a scelta multipla e vede subito
+In ognuna lutente risponde a **quiz a scelta multipla** e vede subito
 leffetto della risposta, capendo il senso delle norme.
 Le interfacce sono pensate per chi non e esperto di computer,
 con comandi semplici punta e clicca dopo studio per ridurre la fatica
 di ingresso nel mondo.
-Cosi a farsi male e solo il doppio digitale.
+Cosi a farsi male e solo il **doppio digitale**.
 Chi impara sta a casa e prova ad esempio a guidare una gru virtuale.
 Poiche sta in rete, si puo studiare da casa, ma senza garanzia totale
 di identita meglio usare casa solo per imparare e tenere le prove
@@ -208,13 +208,26 @@ Le altre sono sbagliate perche solo aula spreca la rete, solo casa senza control
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

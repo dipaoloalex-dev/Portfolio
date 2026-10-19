@@ -11,9 +11,9 @@ ordine h < min(m, n) individuata da righe i₁, ..., iₕ e colonne
 j₁, ..., jₕ. Aggiungendo una riga i fuori dalle prime e una colonna j
 fuori dalle seconde si ottiene la subordinata di ordine h+1 con righe
 i₁, ..., iₕ, i e colonne j₁, ..., jₕ, j. Il suo determinante è detto
-orlato del minore di partenza tramite i e j.
+**orlato del minore di partenza** tramite i e j.
 
-Un minore non nullo è fondamentale se h = min(m, n), oppure se
+Un minore non nullo **è fondamentale se** h = min(m, n), oppure se
 h < min(m, n) e tutti i suoi orlati sono nulli.
 
 Teorema: se una subordinata quadrata ha rango h e ogni matrice ottenuta
@@ -25,11 +25,11 @@ quelle righe e tutte le colonne ha rango h), poi che ogni altra riga ne
 dipende, altrimenti esisterebbe un orlato di rango h+1.
 
 Corollario degli orlati: un minore fondamentale individua il rango e i
-massimi indipendenti di righe e colonne con i suoi indici. In particolare:
+**massimi indipendenti di righe e colonne** con i suoi indici. In particolare:
 
-- rk A è il massimo ordine di un minore non nullo; i fondamentali sono
+- rk A è il **massimo ordine di un minore non nullo**; i fondamentali sono
   esattamente i minori non nulli di ordine uguale al rango;
-- A ha rango massimo min(m, n) se e solo se esiste un minore non nullo
+- A ha **rango massimo min(m, n)** se e solo se esiste un minore non nullo
   di quell'ordine.
 
 Errore tipico: pensare che basti un minore non nullo per concludere che il
@@ -72,20 +72,20 @@ Il metodo usa un fondamentale per testare la compatibilità e poi Cramer.
 
 Sia A·x = c con incompleta A non nulla e completa B. Primo passo: si
 trova con gli orlati un minore fondamentale di A di ordine r. Esso è
-anche minore di B; per decidere se è fondamentale in B basta orlarlo con
-le righe fuori e la colonna dei termini noti. Due casi:
+anche minore di B; per decidere se è fondamentale in B **basta orlarlo con**
+le righe fuori e la **colonna dei termini noti**. Due casi:
 
-- non è fondamentale in B: rk B > rk A, sistema incompatibile;
-- lo è anche in B: rk A = rk B = r, sistema compatibile ed equivalente
-  al ridotto delle sole r equazioni i₁, ..., iᵣ.
+- non è fondamentale in B: rk B > rk A, **sistema incompatibile**;
+- lo è anche in B: rk A = rk B = r, **sistema compatibile ed equivalente**
+  al **ridotto delle sole r equazioni** i₁, ..., iᵣ.
 
 Secondo passo: nel caso compatibile e ridotto, con colonne indipendenti ad
 esempio le prime m, le variabili restanti diventano parametri
-ξ_{m+1}, ..., ξₙ e si risolve il sistema normale m × m
+ξ_{m+1}, ..., ξₙ e si risolve il **sistema normale m** × m
 
 B·x' = c - ξ_{m+1}a^{m+1} - ... - ξₙaⁿ
 
-Terzo passo, regola di Cramer: se A·x = c è n × n con det A ≠ 0,
+Terzo passo, **regola di Cramer**: se A·x = c è n × n con det A ≠ 0,
 l'unica soluzione è ξᵢ = det Aⁱ / det A, dove Aⁱ sostituisce la colonna
 i con c. Segue da ξ = A⁻¹·c scritta coi cofattori. Per sistemi non
 quadrati ridotti si applica allo stesso modo al blocco B, ottenendo le

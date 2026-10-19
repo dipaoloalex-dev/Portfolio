@@ -10,10 +10,10 @@ La prima domanda e cosa ci si deve fare davvero dentro.
 Per industria si va da stile e idee alternative a ergonomia,
 da manutenzione e montaggi a tolleranze, urti e linee di lavoro.
 Un tempo servivano molti programmi diversi uno per uso preciso.
-Oggi le case uniscono tutto in pacchetti per l'intero ciclo di vita,
+Oggi le case uniscono tutto in **pacchetti** per l'intero ciclo di vita,
 dal primo schizzo alla gestione del prodotto venduto e assistito.
 
-Questa unione semplifica lo scambio dati con formati neutri interni,
+Questa unione semplifica lo scambio dati con **formati neutri** interni,
 ma chiude gli ambienti perche da meno interfacce aperte agli utenti.
 Per questo molti laboratori costruiscono strumenti propri su misura,
 con librerie aperte trovate in rete per grafica e interazione libera.
@@ -25,8 +25,8 @@ lo sviluppo si sposta su sistemi aperti diffusi da ufficio e laboratorio.
 
 Se basta un solo canale di proiezione il programma e semplice.
 Se servono tre teli insieme senza schede speciali di fusione,
-serve programma multicanale che divida le viste per ogni telo.
-In pratica un centro guida piu due serventi in rete locale coprono
+serve **programma multicanale** che divida le viste per ogni telo.
+In pratica un **centro** guida piu due **serventi** in rete locale coprono
 tre proiezioni con fette inviate istante per istante ai proiettori.
 Una via con fusione integrata usa una sola macchina potente,
 ma chiede proiettori e schede dedicati poco diffusi in sede media.
@@ -108,9 +108,9 @@ Poi importazione da molti formati, specie da disegno tecnico in uso.
 Poi vista solida per entrambi gli occhi senza fatica prolungata in prova.
 Poi dialogo con tracciatori e tatto disponibili in commercio corrente.
 
-Tutte le risorse per vita del prodotto si dicono gestione del ciclo.
+Tutte le risorse per vita del prodotto si dicono **gestione del ciclo**.
 Molte aiutano il virtuale come base di dati e di verifiche incrociate.
-Il disegno assistito aiuta a creare, cambiare e ottimizzare progetti.
+Il **disegno assistito** aiuta a creare, cambiare e ottimizzare progetti.
 Ogni strumento che facilita il disegno definisce forme di oggetti,
 da pezzi meccanici a edifici, da circuiti a veicoli e uffici interi.
 Vi sono sistemi per piano in due dimensioni con linee e quote semplici.
@@ -119,10 +119,10 @@ Vi sono sistemi per volume in tre dimensioni con solidi e superfici.
 Un sistema moderno mette in terna punti, linee, curve e piani,
 superfici e solidi piu note di testo per capire le intenzioni del tecnico.
 La ricchezza di dati distingue tre modi di modellare le forme in uso.
-Il primo a fili mostra solo punti e linee come gabbia trasparente.
-Il secondo a pelli aggiunge superfici e lavorazioni sopra i fili di base,
+Il primo a **fili** mostra solo punti e linee come gabbia trasparente.
+Il secondo a **pelli** aggiunge superfici e lavorazioni sopra i fili di base,
 utili per stampi e lavorazioni a valle del disegno tecnico iniziale.
-Il terzo a solidi chiude volumi senza buchi e dice dove sta materia,
+Il terzo a **solidi** chiude volumi senza buchi e dice dove sta materia,
 con dati di materiale inseriti per pesi e verifiche di resistenza.
 Dal disegno nascono percorsi utensile e verifiche di tensioni sui pezzi.
 Vi sono sistemi per meccanica, elettrica e civile e sistemi generali.
@@ -133,7 +133,7 @@ Gli strumenti per ingegneria simulano fisica con tre blocchi in fila.
 Il primo prepara modello, vincoli e carichi agenti sul pezzo in prova.
 Spesso si taglia in piccoli pezzi standard come aste, gusci e mattoni.
 Da poche decine a decine di migliaia secondo dettaglio voluto in scena.
-La rete di pezzi si fa con programmi appositi detti meshators veloci,
+La rete di pezzi si fa con programmi appositi detti **meshators** veloci,
 nella fase piu lunga di tutta l'analisi tecnica prima del calcolo vero.
 Il taglio scrive equazioni in forma di matrici ordinate per nodi vicini.
 Il secondo blocco risolve i conti, il terzo mostra e legge i risultati.
@@ -142,7 +142,7 @@ Con carichi e vincoli si cerca lo stato di tensione e i punti critici,
 partendo da legge dei materiali usati nel sistema reale da provare.
 Per urti tra mezzi in moto il calcolo diventa dinamico nel tempo,
 con contorni che cambiano a ogni istante della collisione in scena.
-Si aggiunge comportamento plastico oltre quello elastico dei metalli,
+Si aggiunge **comportamento plastico** oltre quello elastico dei metalli,
 con codici piu evoluti e conoscenza piu fine dei materiali in uso.
 Altre vie coprono fluidi e rumore con vibrazioni e comfort acustico.
 
@@ -167,7 +167,7 @@ con risparmi forti di tempi e costi di modifiche tardive in linea.
 Si controllano accessi, prese di comandi, viste dal posto di lavoro,
 posture comode e tempi per manutenzione programmata in sede.
 
-Il gemello digitale simula forme e funzioni al calcolatore di ufficio.
+Il **gemello digitale** simula forme e funzioni al calcolatore di ufficio.
 Da modello intero si valida il progetto senza muletto fisico iniziale.
 Si naviga dentro, si vedono pezzi e si provano funzioni prima di spendere.
 Oggi si usano entrambi, fisico e digitale, con fisico solo a fine prove.
@@ -263,13 +263,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

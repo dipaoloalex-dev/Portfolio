@@ -13,8 +13,8 @@ Il sistema e modulare e parla con quasi tutti gli ingressi e le uscite
 tipiche di sale immersive con caschi, guanti e tracciatori in rete.
 
 Il pacchetto ha tre parti principali per lavoro ordinato in team.
-Prima la preparazione statica della scena con oggetti e caratteri.
-Poi il motore dinamico che reagisce ai gesti durante la prova.
+Prima la **preparazione statica** della scena con oggetti e caratteri.
+Poi il **motore dinamico** che reagisce ai gesti durante la prova.
 Poi raccolte extra per compiti speciali come showroom e revisioni.
 La prima parte non e disegno tecnico puro con pochi comandi base.
 Le forme nascono fuori e si convertono nei formati supportati in sede.
@@ -25,12 +25,12 @@ I proprietari sono di due tipi per usi diversi in laboratorio di prova.
 Uno e testuale leggibile con editor semplice per controlli rapidi in sede.
 L'altro e binario leggero non leggibile ma piu rapido da caricare in scena.
 Lo scopo centrale e vestire la scena per renderla credibile e stabile.
-Si danno materiali e immagini ai pezzi e si muovono nello spazio di prova.
-Si mettono luci e clima con sfondo, foschia e luminosita globale in sala.
+Si danno **materiali e immagini** ai pezzi e si muovono nello spazio di prova.
+Si mettono **luci e clima** con sfondo, foschia e luminosita globale in sala.
 Si ottimizza struttura e matematica per calcoli piu leggeri in tempo reale.
 Il risultato e un file interno ottimizzato con scenario pronto all'uso.
 Oltre alla scena si fanno presentazioni con filmati ed esplosi guidati,
-sezioni per interni e allestimenti in stanze modello predefinite in sede.
+**sezioni per interni** e allestimenti in stanze modello predefinite in sede.
 In modo accoppiato con il motore serve anche da aiuto durante la prova.
 
 I moduli coprono ogni bisogno di allestimento senza uscire dall'editor.
@@ -40,8 +40,8 @@ Si regola luce ambiente e nebbia per profondita e atmosfera di lavoro.
 I materiali si creano nuovi e si danno ai pezzi scelti con un click diretto.
 Le immagini si stendono sopra con modi piani, sferici e cilindrici a scelta.
 Per saloni grandi si danno piu immagini allo stesso pezzo in scena.
-Vicino alta definizione, lontano bassa per risparmiare memoria video.
-Le camere salvano viste con limiti vicini e lontani del volume visibile.
+Vicino alta definizione, lontano bassa per risparmiare **memoria video**.
+Le camere salvano viste con limiti vicini e lontani del **volume visibile**.
 Le trasformazioni muovono, ruotano e scalano in terna fissa o locale.
 Le varianti cambiano a scatto forme e materiali con eventi guidati in prova.
 Gli oggetti semplici nascono dentro come linee, scatole e sfere di aiuto,
@@ -91,13 +91,13 @@ All'avvio un interprete legge lo script e accende i tre motori interni.
 Essi sono controllo azioni esterne, gestione dispositivi e mostra dati.
 Servono scena, gesti dagli ingressi e resa coerente senza ritardi in prova.
 
-La scena vive in struttura ad albero con oggetti e legami tra parti.
+La scena vive in **struttura ad albero** con oggetti e legami tra parti.
 Non solo forme, ma luci, mani e osservatore per resa corretta in sala.
 Serve memoria dei legami per muovere insiemi omogenei insieme in scena.
 Se si sposta un contenitore deve seguire il contenuto dentro di esso.
 L'albero ha rami e foglie con regole semplici per tutti i progetti.
 I rami collegano figli che possono essere rami o foglie finali in scena.
-Un ramo assieme lega figli senza doppi padri per uno stesso pezzo.
+Un ramo assieme lega figli senza **doppi padri** per uno stesso pezzo.
 Un ramo con funzione chiama codice a inizio e fine della sua resa video.
 Un ramo per dettaglio sceglie versione semplice o ricca per distanza.
 Lontano basta sagoma, vicino serve dettaglio per viti e bordi in scena.
@@ -117,9 +117,9 @@ La scena vuota parte da radice con ramo per osservatore e ramo per scenario.
 
 La resa carica forme, tiene gerarchia e mostra dal punto di chi guarda.
 Cerca equilibrio tra velocita e bellezza senza scatti in navigazione libera.
-Gli oggetti attivi per vista stanno in memoria rapida dedicata in macchina.
+Gli oggetti attivi per vista stanno in **memoria rapida dedicata** in macchina.
 Cosi accendere una luce aggiorna subito senza rileggere tutto l'albero.
-Si naviga come su tappeto volante con corpo che porta testa e mani.
+Si naviga come su **tappeto volante** con corpo che porta testa e mani.
 Mani e testa sono figlie del corpo e lo seguono in ogni spostamento.
 Oggetti figli del corpo restano solidali a chi esplora in prima persona.
 La camera da posto e direzione dello sguardo di chi guida in scena.
@@ -147,7 +147,7 @@ Vi e parte ferma da guardare soltanto senza toccarla in visita guidata.
 Vi e parte viva che risponde a gesti di mani e ad altri oggetti in scena.
 Si programma con script di tipo ingresso evento azione in modo chiaro.
 Si puo lavorare a eventi prefissati oppure ad agenti autonomi in scena.
-Nella prima via si scrive copione con coppie evento azione prima della prova.
+Nella prima via si scrive copione con **coppie evento azione** prima della prova.
 Evento come tasto, contatto o timer scaduto in postazione di lavoro vera.
 Azione come accendere luce, suono o cambiare forma e colore in scena.
 Il gestore attende e al segnale fa partire l'azione scritta nel copione.
@@ -157,7 +157,7 @@ Il risultato nasce da solo senza prevedere ogni incrocio a tavolino in ufficio.
 Per industria si usa la prima via con file di configurazione semplice e robusto.
 Resta possibile chiamare funzioni esterne per comportamenti autonomi mirati.
 
-Fondamentale e il controllo dei contatti tra solidi durante la presa in scena.
+Fondamentale e il **controllo dei contatti** tra solidi durante la presa in scena.
 Senza segnale di tocco non si puo afferrare in modo credibile con la mano.
 Il modulo crea evento a ogni intersezione tra pezzi sorvegliati in scena.
 Ha sportello che segna i pezzi controllabili e coordina i sotto moduli interni.
@@ -165,7 +165,7 @@ Ha motore che verifica davvero i poliedri indicati in quel momento in scena.
 
 Il gestore dei dispositivi accende e guida ingressi e uscite in sala immersiva.
 Trasforma segnali fisici in dati logici uguali per ogni scena senza riscrivere.
-Un server esterno rende lo scambio indipendente dai marchi in laboratorio.
+Un **server esterno** rende lo scambio indipendente dai marchi in laboratorio.
 Mostra errori in diretta e tiene piu pezzi uguali accesi insieme in prova.
 Si configura nella sezione di navigazione del modulo base prima dell'avvio.
 Regge tracciatori, guanti, minicloche, leve e tatto di varie famiglie in commercio.
@@ -235,13 +235,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

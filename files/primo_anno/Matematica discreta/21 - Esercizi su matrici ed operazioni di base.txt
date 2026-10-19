@@ -7,16 +7,16 @@ Esercizi di base su simmetria, trasposta e prodotti semplici, qui riproposti
 con numeri diversi dall'originale e con il metodo in evidenza.
 
 Simmetria parametrica, esempio nuovo: sia
-M = [[0, 2, p], [2, 1, q], [5, -1, 0]]. M è simmetrica se p = 5 e
-q = -1; non può mai essere antisimmetrica perché la diagonale contiene
+M = [[0, 2, p], [2, 1, q], [5, -1, 0]]. M **è simmetrica se p = 5** e
+q = -1; non può mai **essere antisimmetrica perché** la diagonale contiene
 1 ≠ 0. In generale una quadrata è simmetrica se a_{ij} = a_{ji},
 antisimmetrica se a_{ij} = -a_{ji} con diagonale nulla. Una rettangolare
 non è né simmetrica né antisimmetrica.
 
-Somma con la trasposta, esempio nuovo: sia A = [[1, 3, 2], [0, 2, -1], [4, 0, 1]].
+**Somma con la trasposta**, esempio nuovo: sia A = [[1, 3, 2], [0, 2, -1], [4, 0, 1]].
 Allora Aᵀ = [[1, 0, 4], [3, 2, 0], [2, -1, 1]] e
-B = A + Aᵀ = [[2, 3, 6], [3, 4, -1], [6, -1, 2]] è simmetrica,
-C = A - Aᵀ = [[0, 3, -2], [-3, 0, -1], [2, 1, 0]] è antisimmetrica.
+B = A + Aᵀ = [[2, 3, 6], [3, 4, -1], [6, -1, 2]] **è simmetrica,**
+C = A - Aᵀ = [[0, 3, -2], [-3, 0, -1], [2, 1, 0]] **è antisimmetrica.**
 In generale Bᵀ = B e Cᵀ = -C per (A ± Aᵀ)ᵀ = Aᵀ ± A, e vale
 B + C = 2A.
 
@@ -25,11 +25,11 @@ implica 2A = 0); combinazioni di simmetriche restano simmetriche e di
 antisimmetriche restano antisimmetriche perché (αS)ᵀ = αSᵀ.
 
 Diagonali, esempio nuovo: D₁ = diag(2, -1, 3), D₂ = diag(4, 5, -2).
-Il prodotto è diagonale con prodotti voce a voce:
+Il **prodotto è diagonale con prodotti voce a voce**:
 D₁D₂ = diag(8, -5, -6), cioè (D){ij} = aᵢbᵢδ{ij}.
 
 Permutabilità da combinazione, esempio nuovo: se 2A + 3B = 5I con
-coefficienti non nulli, moltiplicando a sinistra e a destra per A e
+coefficienti non nulli, **moltiplicando a sinistra e a destra per A** e
 sottraendo si ottiene 3(AB - BA) = 0, quindi [A, B] = 0.
 
 Errore tipico: imporre simmetria senza controllare la diagonale per
@@ -40,14 +40,14 @@ l'antisimmetria, o pensare che A + Aᵀ possa non essere simmetrica.
 
 Decomposizione, indipendenza e idempotenti, con valori nuovi.
 
-Ogni quadrata si scrive in un solo modo come A = S + E con S simmetrica
+Ogni quadrata si scrive **in un solo modo come A = S + E** con S simmetrica
 ed E antisimmetrica: basta S = (A + Aᵀ)/2 ed E = (A - Aᵀ)/2.
 L'unicità segue dal punto precedente: se S₁ + E₁ = S₂ + E₂ allora
 S₂ - S₁ = E₁ - E₂ è insieme simmetrica e antisimmetrica, quindi nulla.
 
 Indipendenza, esempio nuovo: con c₁, c₂, c₃, c₄ ≠ 0, le
 [[c₁, 0], [0, 0]], [[0, c₂], [0, 0]], [[0, 0], [c₃, 0]],
-[[0, 0], [0, c₄]] sono indipendenti perché
+[[0, 0], [0, c₄]] **sono indipendenti perché**
 α₁c₁ = α₂c₂ = α₃c₃ = α₄c₄ = 0 implica ogni αᵢ = 0. Analoga
 triangolazione dà l'indipendenza di famiglie a scala come
 [[h₁, h₂], [h₃, h₄]], [[h₁, h₂], [h₃, 0]], [[h₁, h₂], [0, 0]],
@@ -55,7 +55,7 @@ triangolazione dà l'indipendenza di famiglie a scala come
 
 Idempotenti (A² = A), fatti nuovi con stessa idea ma senza copiare i conti:
 
-- se A è idempotente lo è I - A, perché
+- **se A è idempotente lo è I - A**, perché
   (I - A)² = I + A² - 2A = I - A;
 - lo è Aᵀ, perché (Aᵀ)² = (A²)ᵀ = Aᵀ;
 - idempotente e antisimmetrica dà solo 0, perché A = A² = (-A)² = -A;
@@ -70,11 +70,11 @@ la trasposta rompa l'idempotenza.
 
 Problemi più articolati, riscritti con passaggi propri.
 
-Per A, B simmetriche, AB è simmetrica se e solo se commutano:
+Per A, B simmetriche, AB è simmetrica **se e solo se commutano**:
 (AB)ᵀ = BᵀAᵀ = BA, uguale ad AB solo se BA = AB.
 
 Per ogni A di tipo (m, n), AAᵀ di tipo (m, m) e AᵀA di tipo
-(n, n) sono definite e simmetriche, perché (AAᵀ)ᵀ = AAᵀ.
+(n, n) sono definite e simmetriche, perché **(AAᵀ)ᵀ = AAᵀ**.
 
 Permutabilità 2 × 2, esempio nuovo: siano A = [[a, 0], [b, a]] e
 B = [[x, 0], [y, y]] con notazione diversa per i conti ma stessa struttura

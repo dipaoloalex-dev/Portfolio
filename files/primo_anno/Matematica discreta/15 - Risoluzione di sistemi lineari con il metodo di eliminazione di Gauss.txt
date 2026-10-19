@@ -3,19 +3,19 @@
 1. RIDUZIONE DI UNA MATRICE NELLA FORMA A SCALINI
 -------------------------------------------------
 
-Con operazioni sulle righe di prima e seconda specie ogni matrice si può
-portare in una forma più leggibile, detta a scalini, da cui il rango si vede
+Con operazioni sulle righe **di prima e seconda specie** ogni matrice si può
+portare in una forma più leggibile, **detta a scalini**, da cui **il rango si vede**
 a colpo d'occhio.
 
 Sia A di tipo (m, n) su K. A è a scalini per righe se è nulla oppure
 è fatta così: le prime r righe sono non nulle (1 ≤ r ≤ m), le restanti
 sono nulle, e in ogni riga non nulla i c'è un primo elemento diverso da
-zero di colonna jᵢ, con j₁ < j₂ < ... < jᵣ. Prima di quel pivot la riga
+zero di colonna jᵢ, con j₁ < j₂ < ... < jᵣ. Prima **di quel pivot** la riga
 ha solo zeri: a_{i,jᵢ} ≠ 0 e a_{i,j} = 0 per j < jᵢ.
 
 Il rango è allora r: è il numero di gradini da scendere dalla prima riga
 per arrivare a una riga nulla, oppure all'ultima riga quando r = m. Le
-colonne j₁, ..., jᵣ si dicono caratteristiche e gli scalari a_{i,jᵢ}
+colonne j₁, ..., jᵣ **si dicono caratteristiche** e gli scalari a_{i,jᵢ}
 sono i pivot.
 
 Esempio nuovo: la matrice
@@ -63,7 +63,7 @@ le cui colonne sono (5·e₃, 2·e₁, -1·e₂).
 Conseguenze:
 
 - ogni D_σ(k₁, ..., kₙ) è completamente ridotta e il suo rango è il
-  numero di kᵢ non nulli; in particolare una matrice di permutazione
+  numero di kᵢ non nulli; in particolare una **matrice di permutazione**
   D_σ(1, ..., 1) ha rango massimo n;
 - una quadrata di rango massimo si porta con sole operazioni di prima
   specie sulle righe a una D_σ con tutti i kᵢ ≠ 0, e poi in diagonale
@@ -80,11 +80,11 @@ non necessariamente 1.
 2. IL METODO DI ELIMINAZIONE DI GAUSS PER LA SOLUZIONE DI SISTEMI LINEARI
 ------------------------------------------------------------
 
-Portare la matrice completa a scalini equivale a sostituire il sistema con
+Portare la **matrice completa a scalini** equivale a sostituire il sistema con
 uno equivalente più facile da discutere e risolvere.
 
 Dato un sistema A non nullo di m equazioni in n incognite, le
-operazioni elementari sulle equazioni producono un sistema equivalente A'
+operazioni elementari sulle equazioni producono **un sistema equivalente** A'
 con le stesse soluzioni. Si trasformi la completa in forma a scalini. Si
 hanno due casi:
 
@@ -109,13 +109,13 @@ ridotti. Nel secondo l'incompleta ha rango r-1: completa e incompleta
 differiscono e non c'è soluzione.
 
 Se si è nel caso compatibile, le colonne j₁, ..., jᵣ sono un massimo di
-colonne indipendenti dell'incompleta. Le incognite corrispondenti si
-ricavano dalle altre, dette libere:
+**colonne indipendenti** dell'incompleta. Le incognite corrispondenti si
+ricavano dalle altre, **dette libere**:
 
 x_{jᵢ} = [cᵢ - (a_{i,j_{r+1}}·x_{j_{r+1}} + ... + a_{i,jₙ}·x_{jₙ}})] / a_{i,jᵢ}
 
 dove j_{r+1}, ..., jₙ sono gli indici fuori dai pivot. Se r = n la
-soluzione è unica; se r < n è parametrica con n-r parametri.
+soluzione è unica; se r < n è **parametrica con n-r parametri**.
 
 Errore tipico: leggere la compatibilità solo dalla forma senza confrontare
 i ranghi di completa e incompleta, oppure assegnare i parametri alle
@@ -126,7 +126,7 @@ a segnalare impossibilità.
 3. ESEMPI
 ---------
 
-Primo sistema nuovo, con soluzione unica. Si risolva su Q:
+Primo sistema nuovo, **con soluzione unica**. Si risolva su Q:
 
 x + y + z = 6
 x - y + z = 2

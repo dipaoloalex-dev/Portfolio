@@ -3,7 +3,7 @@
 1. APPLICAZIONI MULTILINEARI
 ----------------------------
 
-Un'applicazione con più argomenti vettoriali è multilineare quando è lineare
+Un'applicazione con più argomenti vettoriali **è multilineare quando** è lineare
 in ciascun argomento separatamente.
 
 Siano V₁, ..., Vₙ e V spazi su K. Una φ: V₁ × ... × Vₙ → V è
@@ -15,8 +15,8 @@ Mult(V₁, ..., Vₙ); se tutti i domini coincidono con W si scrive
 Mult(n; W; V), e per V = K semplicemente Mult(n; W), i cui elementi
 sono le n-lineari su W.
 
-Una φ ∈ Mult(n; W; V) è simmetrica se lo scambio di due posti non la
-cambia; è alternante o antisimmetrica se si annulla appena due posti
+Una φ ∈ Mult(n; W; V) **è simmetrica se lo scambio** di due posti non la
+cambia; è **alternante o antisimmetrica se** si annulla appena due posti
 contengono lo stesso vettore. Da alternante segue lo scambio di segno:
 φ(..., vᵢ, ..., vⱼ, ...) = -φ(..., vⱼ, ..., vᵢ, ...). Per n = 2 basta
 sviluppare 0 = φ(v+w, v+w) = φ(v,w) + φ(w,v).
@@ -24,7 +24,7 @@ sviluppare 0 = φ(v+w, v+w) = φ(v,w) + φ(w,v).
 Conseguenze per un'alternante:
 
 - (a) aggiungere a un posto una combinazione degli altri non cambia il
-  valore; in particolare operazioni di prima specie sulla n-upla lasciano
+  valore; in particolare **operazioni di prima specie sulla n-upla** lasciano
   φ invariata, perché i termini extra hanno due ingressi uguali e sono
   nulli;
 - (b) se un argomento dipende dagli altri, allora φ = 0.
@@ -47,17 +47,17 @@ Il determinante è l'esempio centrale di n-lineare alternante.
 Identificando una quadrata con la n-upla delle sue righe
 (a₁, ..., aₙ), il determinante diventa
 det: M(n, K)ⁿ → K. Esso è l'unica multilineare alternante sulle righe che
-vale 1 su Iₙ. Ne seguono le proprietà operative, valide per righe e,
+**vale 1 su I**ₙ. Ne seguono le proprietà operative, valide per righe e,
 per trasposizione, per colonne:
 
 - (a) det A = det Aᵀ;
-- (b) riga o colonna nulla implica det A = 0;
-- (c) moltiplicare una riga per k moltiplica il determinante per k;
+- (b) **riga o colonna nulla implica** det A = 0;
+- (c) **moltiplicare una riga per k moltiplica il determinante per k**;
 - (d) se una riga è somma di più vettori, il determinante è la somma dei
   determinanti con ciascun addendo al posto di quella riga;
-- (e) uno scambio di due righe (seconda specie) cambia il segno;
-- (f) due righe o colonne uguali danno det A = 0;
-- (g) det A ≠ 0 se e solo se A ha rango n;
+- (e) **uno scambio di due righe** (seconda specie) cambia il segno;
+- (f) **due righe o colonne uguali** danno det A = 0;
+- (g) det A ≠ 0 se e solo se A **ha rango n**;
 - (h) sommare a una riga una combinazione delle altre non cambia il
   determinante; in particolare operazioni di prima specie lo lasciano
   invariato.
@@ -85,8 +85,8 @@ Per A non degenere di ordine n, posto A⁻¹ = (a'_{ij}), vale
 
 a'{ij} = A{ji} / det A
 
-dove A_{ji} è il complemento algebrico con indici scambiati. In forma
-matriciale si traspone la matrice dei cofattori (aggiunta) e si divide per
+dove A_{ji} è il **complemento algebrico con indici scambiati**. In forma
+matriciale si traspone la **matrice dei cofattori** (aggiunta) e si divide per
 il determinante. La verifica è A·A' = Iₙ: il posto (i, j) è la riga i
 di A per la colonna j dell'aggiunta diviso det A, cioè sviluppo lungo
 la riga giusta se i = j e sviluppo incrociato nullo se i ≠ j.

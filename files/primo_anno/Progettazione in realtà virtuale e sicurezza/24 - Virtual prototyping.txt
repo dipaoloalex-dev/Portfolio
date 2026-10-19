@@ -2,7 +2,7 @@
 
 1. IL CONCETTO DI PROTOTIPAZIONE VIRTUALE
 ------------------------------------------
-La simulazione numerica dei fenomeni fisici serve sia al mondo
+La **simulazione numerica** dei fenomeni fisici serve sia al mondo
 della ricerca sia allindustria per prevedere al calcolatore
 come si comporta un sistema prima di costruirlo.
 Un tempo ogni programma copriva una sola fisica separata,
@@ -18,11 +18,11 @@ Il vantaggio e doppio: maggiore cultura del virtuale e maggiore
 accuratezza dei calcoli per letture integrate dei fenomeni.
 Cosi si affrontano idee nuove con piu rigore, puntando a costi
 minori e qualita migliore.
-In questo quadro cresce la prototipazione virtuale, cioe luso
+In questo quadro cresce la **prototipazione virtuale**, cioe luso
 di modelli e calcoli numerici per sviluppare il prodotto riducendo
 o evitando i campioni fisici.
 
-In pratica il prototipo virtuale di una macchina e un modello
+In pratica il **prototipo virtuale** di una macchina e un modello
 numerico ricco di dati di prodotto e di processo, utile anche
 per valutazioni di forma e di interazione con le persone
 tramite ambienti immersivi.
@@ -66,19 +66,19 @@ senza prove funzionali nel tempo per dire che funziona.
 2. GLI STRUMENTI DELLA PROTOTIPAZIONE VIRTUALE
 ----------------------------------------------
 Escludendo lambiente immersivo, per le macchine servono tre famiglie
-ben integrate: modellatore geometrico 3D, simulazione del prodotto,
-simulazione dei processi.
+ben integrate: **modellatore geometrico 3D**, **simulazione del prodotto**,
+**simulazione dei processi**.
 Il modellatore crea la base geometrica per tutto cio che segue.
 Deve descrivere la forma senza ambiguità, catturare lintento
 di chi disegna, rigenerarsi da solo dopo ogni cambio di quota
 grazie alla guida da variabili, e propagare le modifiche a tutte
 le fasi collegate tramite associativita.
-Oggi la via piu efficace e la modellazione solida parametrica
+Oggi la via piu efficace e la **modellazione solida parametrica**
 a funzioni progressive.
 Esempio riscritto diverso dalloriginale: cambiando da 30 a 34 mm
 il diametro di un mozzo, fori e smussi collegati si aggiornano da soli.
-Per il prodotto meccanico si usano calcolo del movimento dei corpi
-e calcolo a elementi finiti.
+Per il prodotto meccanico si usano **calcolo del movimento** dei corpi
+e calcolo a **elementi finiti**.
 Il primo risolve sistemi di equazioni differenziali con vincoli
 per trovare reazioni e inerzie, noti pesi, vincoli e carichi.
 Per essere virtuale davvero deve lavorare senza ricostruire il modello,
@@ -108,12 +108,12 @@ ogni volta lo stesso pezzo con errori e tempi triplicati.
 Il prototipo virtuale raccoglie in un modello numerico tutte le info
 di prodotto e processo create nelle varie fasi.
 Serve quindi organizzazione rigorosa e programmi che garantiscano
-modello unico condiviso da tutte le applicazioni, per risparmiare
+**modello unico condiviso** da tutte le applicazioni, per risparmiare
 modellazione e memoria ed evitare doppioni.
 Le applicazioni non devono per forza usare sempre tutto il modello,
 i dettagli fini come piccoli smussi servono al percorso utensile
 ma appesantiscono il calcolo del movimento.
-Servono quindi sottomodelli parziali con solo i dati utili a ogni analisi,
+Servono quindi **sottomodelli parziali** con solo i dati utili a ogni analisi,
 estratti dal modello completo.
 Ogni cambio sul modello completo deve riflettersi sui parziali
 e viceversa, con associativita nei due sensi.
@@ -139,7 +139,7 @@ Contro: limiti dello scambio in formato neutro.
 Seconda: collegamenti diretti scritti da terzi o dai produttori.
 Pro: scelta ampia, uso autonomo, legame in un senso nei diretti.
 Contro: non sempre reperibili ne precisi.
-Terza: suite modulare di un solo fornitore con unico archivio.
+Terza: suite modulare di un solo fornitore con **unico archivio**.
 Pro: unico archivio e legame nei due sensi tra moduli.
 Contro: moduli non tutti allo stesso livello, poca scelta, a volte
 uso non indipendente per vincoli di licenza.
@@ -153,8 +153,8 @@ numerica e per qualita dei convertitori, cancellando entita o sbagliando
 connessioni topologiche, specie su superfici e raccordi, ma a volte
 anche su tratti semplici spezzati in tanti segmenti inutili che poi
 confondono il percorso utensile.
-Lo scambio neutro usa un pre convertitore verso il formato comune
-e un post convertitore per il ritorno, con formati aperti diffusi
+Lo scambio neutro usa un **pre convertitore** verso il formato comune
+e un **post convertitore** per il ritorno, con formati aperti diffusi
 di prima, seconda e terza generazione.
 I collegamenti diretti sono piu precisi ma richiedono due convertitori
 per ogni coppia nei due sensi.
@@ -236,13 +236,26 @@ Le altre sono sbagliate perche interfaccia, stampanti e assenza di formazione no
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

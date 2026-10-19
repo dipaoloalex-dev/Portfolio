@@ -4,7 +4,7 @@
 --------------------------------------------------
 
 Tra i programmi piu usati per disegno di strutture e scene
-di prova vi e un noto sistema integrato per ciclo di vita.
+di prova vi e un noto **sistema integrato** per ciclo di vita.
 E molto valido per rappresentazioni solide in tre dimensioni.
 Gira su stazioni storiche e su personal moderni da ufficio.
 Ha pannelli semplici e guida il prodotto da idea a produzione.
@@ -14,40 +14,40 @@ e non a come riuscirci con comandi complessi e oscuri.
 
 Il sistema e modulare e si configura a pacchetti per ogni sede.
 Vi e un nucleo di base per avvio, viste e gestione dei file.
-Vi e il disegno meccanico per pezzi e assiemi con vincoli.
+Vi e il **disegno meccanico** per pezzi e assiemi con vincoli.
 Vi e lo stile per superfici libere e forme estetiche curve.
 Vi e l'analisi per prove rapide su parti e assiemi interi.
 Vi e l'impiantistica per passare da piante piane a fabbriche digitali.
 Vi e la lavorazione per utensili, percorsi e finte produzioni a video.
-Vi e il gemello digitale per decisioni su assiemi complessi grandi.
+Vi e il **gemello digitale** per decisioni su assiemi complessi grandi.
 Vi e l'impiantistica di bordo per elettrico, fluidi e meccanica insieme.
 Vi e il processo digitale per sequenze di fabbrica simulate in team.
 Vi e l'ergonomia per posture e manichini in scena di lavoro vera.
 Vi e la conoscenza per regole e automatismi di progetto guidato.
 
 Il nucleo base da resa in tempo reale con hardware disponibile
-e foto di alta qualita con motore di tracciamento dei raggi luminosi.
+e foto di alta qualita con motore di **tracciamento dei raggi** luminosi.
 Il disegno meccanico accelera sviluppo con app dedicate per forme.
-Si disegnano parti solide, si danno vincoli di montaggio meccanico,
-si annotano tolleranze e si verifica conformita alle regole date.
+Si disegnano parti solide, si danno **vincoli di montaggio** meccanico,
+si annotano **tolleranze** e si verifica conformita alle regole date.
 Lo stile crea forme da modelli fisici o da schizzi da scansione inversa.
 Si modellano pelli con controllo in diretta dei requisiti di forma,
-si importano nuvole di punti con maglie leggere e analisi rapida,
+si importano **nuvole di punti** con maglie leggere e analisi rapida,
 si curano superfici estetiche ed ergonomiche come da modelleria.
 L'analisi itera prove su ogni parte con strumenti facili per tecnici.
 L'impiantistica studia layout e strategie alternative di produzione.
 La lavorazione unisce utensile e percorso con prova prima del taglio,
 per qualita costante su pezzi fresati di ogni tipo in officina.
-Il gemello aiuta le scelte con moduli per spazi e interferenze,
+Il gemello aiuta le scelte con moduli per spazi e **interferenze**,
 navigazione con viste potenti dentro il modello intero da esaminare,
 montaggi e smontaggi simulati per validazione e filmati tecnici,
-cinematismi di meccanismi di ogni tipo con leggi di moto corrette,
+**cinematismi** di meccanismi di ogni tipo con leggi di moto corrette,
 varianti compatte che si adattano meglio al contesto di montaggio,
 revisioni per studi ingegneristici con viste dedicate ai calcoli.
 Il modulo sistemi disegna insieme elettrico, fluidi e meccanica
 ottimizzando ingombri dentro il modello solido tridimensionale.
 Il modulo ergonomia studia posture per comfort dell'operatore,
-costruisce manichini precisi e ne muove arti e busto in scena,
+costruisce **manichini** precisi e ne muove arti e busto in scena,
 analizza interazioni con oggetti per sicurezza dei passeggeri,
 crea umani digitali con misure per fattori umani e taglie diverse.
 
@@ -72,7 +72,7 @@ Resta il dialogo con caschi, tracciatori e guanti disponibili in sede,
 che decide la qualita finale della prova immersiva per gli utenti.
 
 Con il sistema in esame si trattano forme fatte dentro o importate
-da altri disegni con formato neutro di scambio tra sistemi diversi.
+da altri disegni con **formato neutro** di scambio tra sistemi diversi.
 Si semplificano, si alleggeriscono e si mostrano in varie pose
 supportate da schermi, teli e caschi collegati alla postazione.
 
@@ -99,12 +99,12 @@ Per non appesantire la scena conviene toccare le geometrie utili.
 Si toglie il superfluo nel rispetto di funzioni e vincoli di progetto.
 Servono tagli per le molte entita nascoste mai viste in scena,
 come linee interne, pelli coperte e curve di costruzione di aiuto.
-Il sistema offre un magazzino nascosto per parti simili tra loro,
+Il sistema offre un **magazzino nascosto** per parti simili tra loro,
 cosi la vista attiva resta leggera e scorre senza attese lunghe.
 I singoli pezzi nascono come file di parte con solidi e pelli unite.
 Le parti si caricano in un unico file di assieme che fa da contenitore.
 Anche senza coordinate globali perfette fin dal primo schizzo,
-un sistema di vincoli mette ogni pezzo al posto giusto nel tutto.
+un sistema di **vincoli** mette ogni pezzo al posto giusto nel tutto.
 Prima della cura il modello appare a fili con tutte le linee visibili.
 Dopo la cura resta solo l'essenziale con maglie pulite e ordinate.
 Dopo la vestizione compaiono colori e materiali credibili in scena.
@@ -184,13 +184,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

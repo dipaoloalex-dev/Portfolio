@@ -45,12 +45,12 @@ Salute come benessere completo e non solo assenza di malattia secondo
 definizione sanitaria internazionale anni quaranta ripresa dalla legge.
 Danno come alterazione breve o duratura di corpo o funzioni.
 Incidente come evento accidentale con danno anche solo materiale,
-detto mancato infortunio o segnale perche molti segnali indicano
+detto **mancato infortunio** o segnale perche molti segnali indicano
 alto rischio futuro.
 Infortunio come lesione improvvisa e violenta sul lavoro con morte
 o invalidita breve o lunga con astensione, con gravita clinica,
 legame causa effetto e vicinanza nel tempo.
-Malattia da lavoro come patologia lenta da fattore presente nel luogo,
+**Malattia da lavoro** come patologia lenta da fattore presente nel luogo,
 in genere ogni danno non da infortunio.
 Tipi in forma di righe di testo separate da spazi:
 rischi specifici frequenti lievi  rischi comuni medi su una o piu persone
@@ -61,7 +61,7 @@ e rilasci dentro e fuori lo stabilimento.
 Infine analisi come ricerca degli elementi di pericolo, valutazione
 come sintesi qualitativa o quantitativa del possibile danno,
 gestione come azioni per attenuarlo con meno conseguenze
-come protezione o meno frequenza come prevenzione o entrambe.
+come **protezione** o meno frequenza come **prevenzione** o entrambe.
 Esempio riscritto diverso dalloriginale: rumore continuo in officina
 come specifico, caduta da scala come comune, perdita da serbatoio
 come rilevante raro.
@@ -75,11 +75,11 @@ Servono numeri chiari da pesare con costi e benefici nelle decisioni.
 Il rischio unisce danni e probabilita associati.
 Meno rischio significa danni minori o casi piu rari o entrambi.
 La formula convenzionale qui e descritta in forma generica senza simboli
-copiati, come prodotto tra frequenza attesa e grandezza degli effetti,
-con risultato detto indice di rischio.
+copiati, come prodotto tra **frequenza attesa** e **grandezza degli effetti**,
+con risultato detto **indice di rischio**.
 Pesa allo stesso modo conseguenze e probabilita di accadere.
 La misura usa statistiche di eventi indesiderati su popolazione esposta.
-Il rapporto tra esposti e non esposti da il rischio relativo.
+Il rapporto tra esposti e non esposti da il **rischio relativo**.
 La parte piu difficile e stimare la probabilita, meno errata e la stima
 della grandezza, quindi non hanno pari affidabilita.
 Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
@@ -125,7 +125,7 @@ per pericolo potenziale.
 Diagnosi che lega conseguenze a possibile causa.
 La stima usa statistica e modelli per dare numeri al rischio.
 Anche senza storia per processi nuovi si puo stimare con metodi
-a struttura logica ad albero.
+a **struttura logica ad albero**.
 Si scompone levento finale in catene di sottoeventi con probabilita
 note da analisi delle cause e si somma lungo i rami.
 La valutazione confronta misura, altri rischi e benefici contro costi
@@ -141,17 +141,17 @@ realta accadono anche quelle poco credibili.
 Primo passo su unarea e censire ogni situazione che puo generare
 incidenti rilevanti e metterla in luce.
 I risultati diventano mappe, curve sociali e studi di sensibilita.
-Le mappe disegnano linee di pari rischio individuale sulla pianta
+Le mappe disegnano **linee di pari rischio individuale** sulla pianta
 e dicono il pericolo secondo la posizione, utili per piani di emergenza
 e possibili evoluzioni con il meteo.
-Il rischio sociale guarda limpatto di un evento sulla comunita e lopinione.
+Il **rischio sociale** guarda limpatto di un evento sulla comunita e lopinione.
 Un unico caso con molte vittime pesa piu di molti casi con una vittima,
 esempio rielaborato diverso dalloriginale con crollo di tribuna contro
 cadute domestiche sparse.
 Le curve con frequenza cumulata contro numero di vittime mostrano
 il quadro senza dipendenza dal punto e guidano mezzi di emergenza
 e giudizio sui casi piu gravi.
-Lo studio di sensibilita segue il rischio al variare dei parametri,
+Lo **studio di sensibilita** segue il rischio al variare dei parametri,
 trova il peso di ogni sorgente e indica dove prevenire o mitigare
 per ottimizzare territorio e impianti, anche per decidere se e dove
 costruire opere civili e industriali.
@@ -224,13 +224,26 @@ Le altre sono sbagliate perche non sono decori, non nascondono e non evitano i p
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

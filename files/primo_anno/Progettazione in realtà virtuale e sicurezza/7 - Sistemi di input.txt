@@ -7,7 +7,7 @@ Un ambiente immersivo deve reagire ai gesti della persona.
 Serve quindi misurare dove si trovano e come sono orientate
 le parti del corpo coinvolte, come testa e mani, e usare tali
 misure per aggiornare scena e punto di vista in tempo reale.
-Il compito e affidato al tracciamento di posizione e postura.
+Il compito e affidato al **tracciamento di posizione e postura**.
 Piccoli sensori o emettitori posti sul corpo inviano segnali
 che cambiano con il movimento e una unita di calcolo li legge
 e li traduce nel grado di interazione corrispondente della scena.
@@ -15,8 +15,8 @@ e li traduce nel grado di interazione corrispondente della scena.
 Lo spazio e percepito come volume a tre dimensioni.
 Si puo pensare a una terna fissa con tre assi perpendicolari.
 Un corpo puo spostarsi lungo ciascun asse e puo ruotare
-intorno a ciascun asse, con tre spostamenti piu tre rotazioni.
-In totale vi sono sei liberta di moto per un corpo rigido.
+intorno a ciascun asse, con **tre spostamenti piu tre rotazioni**.
+In totale vi sono **sei liberta di moto** per un corpo rigido.
 Per una buona interazione conviene un puntatore che legga
 tutte e sei le liberta e le porti al programma senza riduzioni.
 
@@ -28,28 +28,28 @@ Senza lettura completa di posto e orientamento la vista
 resterebbe fissa e il lavoro non sarebbe naturale e credibile.
 
 Per giudicare un sistema contano quattro qualita principali.
-Prima la zona utile, cioe quanto spazio coperto senza errori.
-Seconda la frequenza di lettura, cioe quante volte al secondo
+Prima la **zona utile**, cioe quanto spazio coperto senza errori.
+Seconda la **frequenza di lettura**, cioe quante volte al secondo
 il calcolatore aggiorna i valori misurati sui sensori attivi.
-Terza la finezza minima, cioe il piu piccolo spostamento
+Terza la **finezza minima**, cioe il piu piccolo spostamento
 che lo strumento riesce ancora a distinguere con sicurezza.
-Quarta il ritardo di risposta, cioe quanto tempo passa tra
+Quarta il **ritardo di risposta**, cioe quanto tempo passa tra
 il gesto reale e il suo riconoscimento a schermo per l'utente.
 
 Esistono cinque famiglie principali piu alcune estensioni.
-La famiglia con bracci articolati collega con un contatto fisico
+La famiglia con **bracci articolati** collega con un contatto fisico
 la persona alla macchina con snodi pieni di sensori di piega.
 Sono ingombranti e scomodi da portare, ma veloci, semplici,
 poco costosi e poco disturbati dall'ambiente intorno.
 Vanno bene per teleoperazione e guida a distanza in sicurezza.
 
-La famiglia con sensori di rotazione usa giroscopi nati per
+La famiglia con **sensori di rotazione** usa giroscopi nati per
 guida di velivoli e poi diffusi in stabilizzatori per riprese.
 Non chiede ponti tra trasmettitori e ricevitori esterni fissi.
 Il costo era alto e cala con la produzione di massa attuale.
 Chiede ritarature frequenti e soffre le variazioni di calore.
 
-La famiglia con telecamere legge luci o punti luminosi posti
+La famiglia con **telecamere** legge luci o punti luminosi posti
 sulla persona e calcola lo spostamento dalle immagini in diretta.
 Costa e ingombra molto, ma copre saloni ampi con alta precisione.
 Puo usare luce visibile, raggi nascosti, camere o fotodiodi semplici.
@@ -61,7 +61,7 @@ del punto riflesso per stimare la distanza e poi ric costruisce
 il volume da piu viste piane con programma dedicato.
 Qui la finezza cala se sale troppo la frequenza di lettura.
 
-La famiglia con onde acustiche usa echi come un sonar marino.
+La famiglia con **onde acustiche** usa echi come un sonar marino.
 Misura rimbalzi e variazioni quando un corpo si muove nel campo.
 Un esempio generico con bande adesive di sensori segue il moto
 completo in sei liberta con ritardo di pochi millisecondi,
@@ -69,7 +69,7 @@ finezza di un paio di millimetri e passo angolare molto piccolo,
 con lettura fino a oltre cento volte al secondo secondo i punti.
 Funziona anche con penne e bacchette senza filo con moduli extra.
 
-La famiglia con campi magnetici e la piu diffusa anche se meno
+La famiglia con **campi magnetici** e la piu diffusa anche se meno
 precisa di camere e onde acustiche per misure fini di dettaglio.
 Una base fissa crea un campo e piccoli ricevitori addosso
 alterano il campo e la variazione dice posto e orientamento.
@@ -115,7 +115,7 @@ e puo provare fastidio e senso di malessere dopo poco tempo.
 Gli strumenti piani classici come mouse e tavoletta restano ottimi
 per punta e seleziona su due dimensioni con grande precisione.
 Con la grafica moderna si e provato a portarli in tre dimensioni.
-Un esempio generico di mouse volumetrico usa tre segnalatori
+Un esempio generico di **mouse volumetrico** usa tre segnalatori
 acustici su treppiede che inviano impulsi a un ricevitore in mano.
 Dalla differenza di tempi ricava posto e orientamento completi
 in sei liberta e permette presa e volo dentro il volume di lavoro.
@@ -127,7 +127,7 @@ verso i ripiani alti e aggancia la scatola giusta al primo colpo.
 Con un mouse piano classico dovrebbe usare tasti e menu extra
 e il giro sarebbe piu lento e meno intuitivo per i nuovi addetti.
 
-Un altro strumento usa una sfera sensibile a spinte e torsioni.
+Un altro strumento usa una **sfera sensibile a spinte e torsioni**.
 Le forze sulla sfera vanno al calcolatore che le legge e le unisce
 in una sola trasformazione rigida da dare agli oggetti in scena.
 Alcuni tasti davanti regolano la sensibilita secondo scala e distanza,
@@ -271,13 +271,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

@@ -3,8 +3,8 @@
 1. LA NOZIONE DI SOTTOSPAZIO VETTORIALE DI UNO SPAZIO VETTORIALE
 ------------------------------------------------------------
 
-Dato un K-spazio vettoriale V, un sottoinsieme V' è stabile (o chiuso)
-rispetto alle operazioni se è non vuoto e somma e prodotto per scalare non
+Dato un K-spazio vettoriale V, un sottoinsieme V' è **stabile** (o chiuso)
+rispetto alle operazioni se è non vuoto e somma e **prodotto per scalare** non
 "escono" mai da V': la somma di due elementi di V' resta in V', e il
 prodotto di un elemento di V' per uno scalare qualsiasi resta in V'.
 
@@ -16,19 +16,19 @@ spazio vettoriale: le proprietà "universali" (associatività, commutatività,
 distributive) valgono gratis perché valevano in V; quelle "esistenziali"
 vanno verificate, ma seguono dalla stabilità: lo zero sta in V' perché
 0·v = 0 per un qualsiasi v di V', e l'opposto sta in V' perché
-(−1)v = −v. Un tale V' si chiama sottospazio (o K-sottospazio) di V.
-I due banali si chiamano sottospazio improprio (V stesso) e sottospazio
-nullo ((0)); gli altri sono propri.
+(−1)v = −v. Un tale V' si chiama **sottospazio** (o K-sottospazio) di V.
+I due banali si chiamano **sottospazio improprio** (V stesso) e **sottospazio**
+nullo ((0)); gli altri sono **propri**.
 
 I sottospazi si comportano bene con inclusioni e intersezioni: un sottospazio di
 un sottospazio è sottospazio dello spazio grande, e l'intersezione di una
-famiglia qualsiasi di sottospazi è ancora un sottospazio (contiene sempre lo
+famiglia qualsiasi di sottospazi è ancora un **sottospazio** (contiene sempre lo
 zero e la stabilità si eredita membro per membro). L'unione invece in
 generale non è un sottospazio: è stabile per scalari ma di solito non per la
 somma (sommando elementi di due rami diversi si "esce" dall'unione).
 
 Criterio pratico equivalente: un sottoinsieme non vuoto è un sottospazio se e
-solo se contiene ogni combinazione lineare dei suoi elementi.
+solo se contiene ogni **combinazione lineare** dei suoi elementi.
 
 Errore tipico: pensare che basti la stabilità per una sola operazione. Servono
 entrambe: ci sono insiemi stabili per somma ma non per scalari e viceversa.
@@ -40,10 +40,10 @@ entrambe: ci sono insiemi stabili per somma ma non per scalari e viceversa.
   R-spazio vettoriale; fissato un punto P, anche l'insieme dei vettori
   applicati con origine in P (somma col parallelogramma) lo è. Cambiando punto
   cambia lo spazio: i nulli sono frecce diverse (PP→ contro QQ→).
-- Vettori numerici. Kⁿ con somma e prodotto componente per componente è
+- **Vettori numerici**. Kⁿ con somma e prodotto componente per componente è
   il prototipo di spazio vettoriale: lo zero è la n-upla nulla, l'opposto
   cambia tutti i segni. Sommare n-uple di lunghezze diverse non ha senso.
-- Matrici. Le matrici (n, m) su K con somma e prodotto per scalare posto
+- **Matrici**. Le matrici (n, m) su K con somma e prodotto per scalare posto
   per posto formano uno spazio vettoriale; righe e colonne si leggono come
   vettori numerici. Lo zero è la matrice nulla.
 - Applicazioni. Tutti questi esempi sono casi particolari di un'unica
@@ -60,8 +60,8 @@ entrambe: ci sono insiemi stabili per somma ma non per scalari e viceversa.
   (la somma "esce" dalle due direzioni).
 - Vettori applicati su una retta per P. Restringendosi alle frecce con
   origine in P giacenti su una retta fissata per P si ottiene un sottospazio.
-- Matrici speciali. Dentro le quadrate di ordine n: simmetriche,
-  antisimmetriche, diagonali, scalari, triangolari superiori e inferiori sono
+- Matrici speciali. Dentro le quadrate di ordine n: **simmetriche**,
+  **antisimmetriche**, diagonali, scalari, triangolari superiori e inferiori sono
   tutti sottospazi (diagonali e scalari stanno dentro le simmetriche). Sommare o
   scalare matrici di uno di questi tipi non fa mai uscire dal tipo.
 

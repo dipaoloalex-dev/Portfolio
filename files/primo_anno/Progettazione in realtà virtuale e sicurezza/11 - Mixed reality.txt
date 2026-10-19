@@ -4,8 +4,8 @@
 --------------------------------------------------
 
 Una evoluzione interessante del virtuale chiuso e l'arricchita.
-Il virtuale chiuso ricostruisce tutto in digitale da zero in scena.
-L'arricchita parte dal mondo vero e aggiunge contenuti sintetici
+Il **virtuale chiuso** ricostruisce tutto in digitale da zero in scena.
+L'arricchita parte dal mondo vero e aggiunge **contenuti sintetici**
 interattivi sopra cio che la persona vede e tocca in quel momento.
 Anche togliere parti disturbanti con filtri attivi fa parte dell'idea,
 come oscurare lampi forti durante lavori di saldatura protetta.
@@ -19,10 +19,10 @@ Se il riconoscimento o la comparsa tardano arriva frustrazione
 e il vantaggio operativo si perde del tutto sul campo di lavoro.
 
 Vi sono tre vie principali per unire vero e virtuale in scena.
-La prima usa occhiali con lenti quasi trasparenti e chiare.
+La prima usa occhiali con **lenti quasi trasparenti** e chiare.
 Sopra il fondo vero compaiono scritte e forme generate dal computer.
 La seconda usa camera sul capo e schermo chiuso e coprente.
-Si vede solo il segnale elaborato con miscelazione video interna.
+Si vede solo il segnale elaborato con **miscelazione video** interna.
 La terza usa proiettori che illuminano oggetti veri con disegni luminosi.
 Questa via soffre con superfici scure e opache poco riflettenti,
 che accettano poca luce e poche informazioni leggibili sopra.
@@ -41,7 +41,7 @@ Lo stesso schema vale per revisione di un modello fisico da banco,
 con schizzi, note e piccole varianti mostrate sopra il prototipo vero.
 Ambienti condivisi aiutano discussione tra tecnici come in riunione.
 
-Vi e poi un'idea di spettro continuo dal vero al sintetico totale.
+Vi e poi un'idea di **spettro continuo** dal vero al sintetico totale.
 A un estremo sta solo il mondo fisico con oggetti veri da vedere
 diretto o con finestre e strumenti semplici di osservazione quotidiana.
 All'altro estremo sta solo il mondo sintetico con oggetti generati
@@ -82,7 +82,7 @@ La tecnica e ancora sperimentale in laboratori e centri speciali,
 poco interessati a regole comuni e aperte per tutti i produttori.
 In rete vi sono centinaia di librerie per il virtuale chiuso,
 ma nessuna domina per diffusione e prestazioni stabili nel tempo.
-Anche i tracciatori chiedono spesso driver e ponti scritti a mano.
+Anche i **tracciatori** chiedono spesso **driver** e ponti scritti a mano.
 I costruttori usano cavi e protocolli propri poco compatibili tra loro.
 Serve personale esperto per montare, tarare e mantenere ogni pezzo.
 
@@ -102,14 +102,14 @@ ma mancano metodi per usi fini come disegno tecnico assistito.
 
 Quarto freno gli aspetti umani e soggettivi ancora da chiarire.
 Molti studi mostrano quanto pesino umore e differenze personali.
-Alcune persone soffrono di malessere simile al mal di mare virtuale,
+Alcune persone soffrono di malessere simile al **mal di mare virtuale**,
 poco dopo l'ingresso nel mondo simulato con visori avvolgenti.
 I sintomi sono mal di testa, nausea e nei casi peggiori vomito vero.
 Di solito compare alle prime prove e poi cala con l'abitudine,
 ma resta un ostacolo pratico per turni lunghi in azienda di produzione.
 
 Quinto freno la potenza grafica disponibile a prezzo accettabile.
-Scene ricche chiedono molto al motore di resa in tempo reale.
+Scene ricche chiedono molto al **motore di resa** in tempo reale.
 Sotto circa due decine di immagini al secondo cade l'interazione.
 Oggi gruppi di PC comuni danno potenza a costo molto minore
 rispetto alle vecchie stazioni dedicate molto costose da comprare.
@@ -133,7 +133,7 @@ Ottavo freno il tatto e la forza ancora deboli e poco semplici.
 La vista domina ma toccare con peso e durezza aiuta molto il vero.
 Mancano sistemi facili per dare tocchi e spinte credibili con mano.
 Un esempio generico e un braccio con penna che spinge sulle dita.
-Un altro esempio e un esoscheletro sul dorso della mano aperta
+Un altro esempio e un **esoscheletro** sul dorso della mano aperta
 che frena le dita sul palmo dove sta il pezzo virtuale da tenere.
 Utili ma ancora rigidi e costosi per uso quotidiano in fabbrica.
 
@@ -156,7 +156,7 @@ Stati alterati possono restare anche dopo l'uscita dal mondo sintetico.
 Alcuni filosofi dicono che il virtuale mostra mondi e se possibili
 per dare senso di presenza forte a chi sta dentro la scena creata.
 Come la mente crea modelli interni del mondo e prevede gli eventi,
-cosi la coscienza sarebbe un modello interno trasparente e dinamico,
+cosi la coscienza sarebbe un **modello interno** trasparente e dinamico,
 attraverso cui guardiamo come a contatto diretto con le cose vere.
 L'ambiente modifica percezione e senso di se e del reale circostante.
 Puo aiutare l'empatia verso gli altri o puo distruggerla in modo grave.
@@ -169,12 +169,12 @@ Un rischio noto ricorda l'esperimento della mano finta in laboratorio,
 dove il cervello sente come propria una mano non sua sul tavolo.
 In immersivo si puo sentire di essere la figura digitale mossa in scena.
 Per persone fragili vi e rischio di sdoppiamento e confusione mentale.
-Gli studiosi chiedono un codice di condotta per ricerca e progetti,
+Gli studiosi chiedono un **codice di condotta** per ricerca e progetti,
 perche cambiano idee di esperienza, autenticita e identita personale.
 Serve indagare i fondamenti etici prima di usi su larga scala reale.
 L'illusione di stare in corpi senza materia, di eta e forme diverse,
 non ha pari in film o giochi piani non immersivi e non avvolgenti.
-Si propone un diritto alla liberta mentale con limiti ai poteri forti,
+Si propone un diritto alla **liberta mentale** con limiti ai poteri forti,
 almeno dove vi e separazione dei poteri e tutele democratiche chiare.
 Cosi si riducono reazioni avverse e costi sociali per la collettivita.
 Un altro rischio e il ritiro dal mondo con rifiuto degli altri e del vero,
@@ -258,13 +258,26 @@ Soluzioni ragionate
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

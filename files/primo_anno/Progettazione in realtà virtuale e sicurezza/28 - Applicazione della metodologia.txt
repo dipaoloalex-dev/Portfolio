@@ -4,19 +4,19 @@
 -------------------------------------
 Per mostrare i tre rami del metodo si scelgono due casi
 sullimpianto di climatizzazione, uno semplice e uno critico.
-Il primo e la rimozione di un piccolo filtro essiccatore
+Il primo e la rimozione di un piccolo **filtro essiccatore**
 posto in zona libera del vano.
 A prima vista il pezzo sembra raggiungibile, afferrabile
 ed estraibile senza ostacoli.
-La prova con guanto immersivo conferma questa impressione.
+La prova con **guanto immersivo** conferma questa impressione.
 La mano entra, afferra il corpo cilindrico e lo sfila verso lalto
 senza torsioni del polso ne piegamenti della schiena.
-Tutti i valutatori compilano senza dubbi la scheda di assistenza.
+Tutti i valutatori compilano senza dubbi la **scheda di assistenza**.
 Esempio rielaborato con dati diversi dalloriginale a scopo illustrativo:
 filtro da 0,45 kg con diametro di 65 mm, corsa di estrazione di 12 cm,
 tempo stimato di 4 minuti con chiave fissa piccola.
 In forma di righe di testo separate da spazi:
-accesso libero  presa piena  estrazione verticale  scheda compilata
+accesso libero  presa piena  **estrazione verticale**  scheda compilata
 Errore tipico da evitare: saltare la prova immersiva perche sembra facile
 e scoprire dopo uninterferenza del coperchio a meta corsa.
 
@@ -26,7 +26,7 @@ Il secondo caso riguarda le viti inferiori che fissano il collettore
 al tetto del veicolo.
 Con il solo guanto lesito e subito negativo per i fissaggi critici,
 perche manca la gestione fine delle collisioni con lattrezzo.
-Si passa quindi al manichino digitale, che calcola anche le posture
+Si passa quindi al **manichino digitale**, che calcola anche le posture
 importanti vista la posizione scomoda dei punti posteriori.
 Le quattro viti in basso non sono uguali.
 Le due anteriori si vedono e si raggiungono in ginocchio con busto piegato
@@ -37,13 +37,13 @@ Problemi rilevati: senza togliere prima il gruppo compatto non si vede
 ne si tocca la zona, e le posteriori restano comunque molto scomode.
 Lesito non e buono per tutte e quattro, bene davanti e male dietro.
 Per le viti non serve discutere di estraibilita lungo un percorso,
-una vite si svita per definizione, e la presa dellutensile e implicita
+una vite si svita per definizione, e la **presa dellutensile** e implicita
 nella prova di accesso.
-Si passa agli indici posturali sul caso anteriore destro.
+Si passa agli **indici posturali** sul caso anteriore destro.
 Esempio rielaborato con valori diversi dalloriginale a scopo illustrativo:
 indice posturale globale pari a uno su quattro, disagio lieve senza correzioni urgenti
-compressione lombare intorno a 2600 newton sotto la soglia di 3200 newton
-indice arti superiori pari a due, vicino al minimo di accettabilita.
+**compressione lombare** intorno a 2600 newton sotto la **soglia di 3200 newton**
+indice **arti superiori** pari a due, vicino al minimo di accettabilita.
 Stessi valori a sinistra.
 Diverso il caso posteriore sinistro, con gli stessi valori a destra.
 Esempio rielaborato con valori diversi dalloriginale:
@@ -58,7 +58,7 @@ quattro viti uguali, ignorando che posizione e visibilita cambiano tutto.
 
 3. MODIFICA PROGETTUALE
 -----------------------
-Si corregge la parte bassa del collettore spostando i supporti.
+Si corregge la parte bassa del collettore spostando i **supporti**.
 Ruotandoli di circa mezzo giro rispetto allorigine e allargando
 di circa 25 mm il lato corto della base, valori rielaborati diversi
 dalloriginale, laccesso migliora molto.
@@ -70,7 +70,7 @@ posturale sceso di un punto ma ancora da sorvegliare
 lombare intorno a 2700 newton contro circa 3150 newton di prima,
 sotto la soglia di 3200 newton
 arti superiori scesi di un punto ma ancora sopra laccettabilita piena.
-Per abbassare ancora lo sforzo si introduce un avvitatore pneumatico
+Per abbassare ancora lo sforzo si introduce un **avvitatore pneumatico**
 a cricchetto leggero e compatto da circa 0,65 kg, valore rielaborato
 diverso dalloriginale, facile da maneggiare in spazi stretti.
 Con lutensile i risultati del kit di analisi diventano buoni.
@@ -153,13 +153,26 @@ Le altre sono sbagliate perche usare sempre il massimo dettaglio spreca tempo, c
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

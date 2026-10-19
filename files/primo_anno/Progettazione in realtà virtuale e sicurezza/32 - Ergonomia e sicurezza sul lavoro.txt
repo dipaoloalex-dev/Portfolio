@@ -14,14 +14,14 @@ Cerca i parametri chiave del rapporto tra persona e lavoro per togliere
 attriti e rendere naturale luso degli oggetti.
 Lindagine guarda ambiente, strutture e organizzazione per definire
 criteri accettabili dagli operatori.
-La normativa nazionale ha reso obbligatori i principi ergonomici
-nella scelta di posti, attrezzi e metodi, anche contro monotonia
+La normativa nazionale ha reso obbligatori i **principi ergonomici**
+nella scelta di posti, attrezzi e metodi, anche contro **monotonia**
 e ripetitività.
 Assetto corretto decisivo con schermi, dove i disturbi nascono spesso
 da norme disattese su attrezzi, posto e ambiente.
 Anche i portatili rientrano nelle regole con uso prolungato e dotazioni
-esterne come tastiera, mouse e rialzo per lo schermo.
-Per schermo si intende display con testo o grafica con qualsiasi tecnologia.
+esterne come **tastiera**, mouse e rialzo per lo schermo.
+Per schermo si intende **display con testo o grafica** con qualsiasi tecnologia.
 Negli ultimi anni il lavoro con video si e diffuso molto, con timori
 per la salute e studi dedicati.
 Una direttiva europea di fine anni ottanta diede prescrizioni minime
@@ -29,15 +29,15 @@ per il lavoro su video, recepita poi in Italia con decreto anni novanta
 al titolo dedicato in dieci articoli rielaborati in forma generica.
 Le aree da valutare sono vista e occhi, postura e fatica fisica,
 contesto ergonomico e ambientale, organizzazione per ridurre esposizione.
-Sono previsti diritto a pause dopo ore continuative con stacchi brevi
-periodici, sorveglianza sanitaria, informazione e formazione,
+Sono previsti diritto a **pause dopo ore continuative** con stacchi brevi
+periodici, **sorveglianza sanitaria**, informazione e formazione,
 consultazione dei rappresentanti e adeguamento dei posti.
 La definizione di addetto abituale fa riferimento a uso sistematico
 per molte ore a settimana, valore qui descritto in forma generica
 e con soglie rielaborate diverse dalloriginale a scopo illustrativo.
 Le regole tecniche di dettaglio stanno in allegati e linee guida
 ministeriali con standard e contenuti informativi per prevenire
-disturbi a schiena spalle collo e braccia, vista affaticata e fatica mentale.
+disturbi a schiena spalle collo e braccia, **vista affaticata** e **fatica mentale**.
 Elenco rischi in forma di righe di testo separate da spazi con selezione diversa:
 rischio chimico  rischio rumore  rischio vibrazioni  rischio elettrico
 rischio incendio  rischio movimentazione carichi  rischio gesti ripetitivi
@@ -81,9 +81,9 @@ passi da solo senza pause ne correzioni.
 -------------------------------------
 Il sedile deve essere stabile e libero nei movimenti, comodo e su misura,
 solido e sicuro, regolabile e pratico.
-Per il lavoro su video servono base antisdrucciolo a cinque appoggi,
+Per il lavoro su video servono **base antisdrucciolo a cinque appoggi**,
 altezza regolabile, bordi morbidi, comandi raggiungibili da seduti,
-piano e schienale sagomati con sostegno lombare e tessuto traspirante,
+piano e schienale sagomati con **sostegno lombare** e tessuto traspirante,
 schienale medio alto regolabile in altezza e inclinazione.
 Va tenuto vicino al tavolo con avambracci appoggiati.
 I valori standard vanno adattati alla persona.
@@ -92,7 +92,7 @@ sedile da circa 40 cm per statura di 1,50 m fino a circa 54 cm per 2,00 m
 Per sedersi bene portare indietro il bacino contro lo schienale
 per scaricare parte del peso.
 Tronco tra circa 85 e 105 gradi sulle cosce, valori rielaborati diversi,
-con curva lombare sostenuta.
+con **curva lombare** sostenuta.
 Non restare fermi oltre circa venticinque minuti, cambiare spesso.
 Gomiti anche e ginocchia oltre circa 85 gradi per muscoli, sangue
 e nervi liberi.
@@ -110,7 +110,7 @@ Lo schermo va a circa 45 65 cm dagli occhi, valori rielaborati diversi,
 di fronte senza torsioni di collo e schiena.
 Bordo alto ad altezza occhi, piu basso con lenti multifocali per non
 piegare il collo.
-Deve avere caratteri nitidi, immagine ferma, contrasto e luce regolabili,
+Deve avere caratteri nitidi, immagine ferma, **contrasto e luce regolabili**,
 orientabile e su base solida regolabile.
 La tastiera parallela al bordo con circa 18 cm liberi davanti, valori
 rielaborati diversi, per appoggiare mani e polsi.
@@ -190,13 +190,26 @@ Le altre sono sbagliate perche non e perdita di tempo, non riguarda il computer 
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
-Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
-- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
-- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
-- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
-- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
-- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
