@@ -301,26 +301,14 @@ Le altre sono sbagliate perche non e archivio fermo, non e ritorno al passato e 
 --------------------------------------------------------------------------------
 PROMPT RIUTILIZZABILE
 ---------------------
-Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
-senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
-tabelle, nomi di docenti o università, né avvisi di copyright del materiale
-sorgente. I concetti matematici devono restare tecnicamente identici
-all'originale, spiegati però a parole tue.
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
 
-Struttura obbligatoria del file:
-- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
-  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
-  stessi titoli delle sezioni originali in maiuscolo.
-- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
-  notazione standard in code span, esempi riscritti con valori diversi
-  dall'originale ed evidenziazione degli errori tipici da evitare.
-- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
-  punti essenziali.
-- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
-  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
-  materiale sorgente.
-- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
-  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
-  sono sbagliate.
-- Tono didattico preciso, in italiano, formattazione Markdown come in questa
-  scheda.
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
