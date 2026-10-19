@@ -1,0 +1,211 @@
+[plain-text per Pages — da 30 - Approccio virstperson e virtual design 2.md]
+
+1. SMONTAGGIO DELLA SOSPENSIONE TRASVERSALE ANTERIORE
+-----------------------------------------------------
+Si prova a togliere il braccio trasversale anteriore del carrello
+con due ambienti diversi da confrontare.
+Il confronto con il metodo precedente mostra esiti uguali sulla fattibilita,
+ma con strade diverse per arrivarci.
+
+1.1 VIRSTPERSON
+---------------
+Si verifica prima se la chiave arriva sulle teste delle viti.
+Con questo ambiente la prova e piu immediata perche il motore fisico
+segnala sia gli urti tra mano e pezzi sia quelli tra pezzi e pezzi.
+Le compenetrazioni vengono respinte da forze di reazione al contatto,
+quindi gia mentre si manovra si capisce se lutensile passa e se il pezzo
+puo uscire.
+Poiche in scena esiste solo la mano destra, senza vincoli speciali
+il braccio cadrebbe per gravita appena tolte le viti.
+Si creano quindi giunti elastici tra viti e telaio e tra braccio e telaio.
+Le viti scorrono lungo il loro asse per un tratto, poi il vincolo cede
+e restano libere nello spazio.
+Il braccio invece si libera con una leggera trazione delloperatore.
+Dopo il distacco entrambi si muovono liberi nella scena.
+Con questo si puo giudicare la fattibilita e compilare la scheda,
+con le stesse conclusioni del metodo precedente.
+Esempio riscritto diverso dalloriginale: vite che scorre per 25 mm
+poi si libera, braccio da 7 kg trattenuto fino a trazione di 15 newton.
+Errore tipico da evitare: togliere tutte le viti senza vincoli e vedere
+il pezzo cadere, scambiando un effetto di gravita per inaccessibilita.
+
+1.2 VIRTUAL DESIGN 2
+--------------------
+Si parte ancora dallaccesso per avvicinare la chiave a cricchetto.
+Loperatore attiva dal menu piano la presa dellutensile e lo porta
+sui punti da smontare.
+Si valuta se i gesti sono possibili e se la mano con lutensile tocca altro.
+Il controllo di collisione con avviso visivo nel modulo di simulazione
+di assieme conferma che lavvicinamento e possibile.
+Poi si prova lallentamento per vedere se c e spazio per ruotare la chiave.
+Per realismo si crea un aggancio di rotazione tra asse della bussola
+e asse della vite, cosi si legge langolo utile e si misura lo spazio.
+Poi si sfilano le viti solo lungo il loro asse e si sposta il braccio
+in verticale senza toccare altro.
+Le viste mostrano rimozione viti e rimozione braccio secondo i vincoli.
+Lesito e positivo per intervento correttivo, con accessi, sequenza
+di smontaggio e prese verificati.
+La prova e riuscita anche senza personale specializzato, con un solo
+operatore e sola chiave a cricchetto, in circa cinque minuti, valore
+rielaborato diverso dalloriginale.
+Stesse conclusioni del metodo precedente.
+In forma di righe di testo separate da spazi:
+accesso chiave  allentamento  sfilo lungo asse  uscita verticale  scheda si
+Errore tipico da evitare: allineare a occhio bussola e vite senza aggancio
+e ruotare storto rovinando lesagono nella simulazione.
+
+2. SMONTAGGIO DEL GRUPPO FRENANTE
+----------------------------------
+Si prova a togliere il gruppo frenante dellassale anteriore,
+prima gli spazi per la chiave a T, poi sfilo viti e distacco gruppo
+senza urti.
+
+2.1 VIRSTPERSON
+---------------
+Anche qui lavvio e piu rapido grazie a dinamica dei corpi e ombre
+che aiutano a capire le distanze.
+Servono giunti tra viti e telaio e tra freno e telaio, altrimenti
+tolte le viti il gruppo cadrebbe per gravita con una sola mano in scena.
+Le viti scorrono lungo lasse fino a un limite, poi si liberano.
+Il freno si libera con piccola trazione oltre la distanza di scatto.
+Dopo la rottura resta libero nella scena.
+Si puo cosi giudicare e compilare la scheda, come col metodo precedente.
+Esempio riscritto diverso dalloriginale: scorrimento viti per 20 mm
+poi libere, distacco gruppo da 14 kg con trazione di 20 newton.
+Errore tipico da evitare: dimenticare i giunti e attribuire la caduta
+a una presunta impossibilita di smontaggio.
+
+2.2 VIRTUAL DESIGN 2
+--------------------
+Si verifica accesso di mano e chiave alle viti, poi allentamento
+per gli spazi di manovra.
+Si imposta aggancio di rotazione tra chiave e vite per lavorare
+sullo stesso asse e leggere langolo utile.
+Si estraggono le viti solo lungo il loro asse, ripetendo per tutte
+e quattro le viti del programma.
+Poi si allontanano i due supporti resi afferrabili per seguire la mano
+dopo contatto col palmo, con comando dal menu piano tramite cloche.
+I supporti escono senza compenetrazioni.
+Infine esce il gruppo frenante reso scivoloso nel modulo di assieme,
+cosi non attraversa la puleggia ma vi scorre sopra, a costo di piu calcoli.
+Anche il pavimento reso interattivo permette di provare luscita diretta
+con carrello sul binario senza toccare terra, con esito favorevole.
+Lesito e positivo per intervento correttivo, con accessi, sequenza
+e prese verificati.
+Serve personale non specializzato ma in due operatori per peso
+e dimensioni con sola chiave a T, in circa nove minuti, valore rielaborato
+diverso dalloriginale, come col metodo precedente.
+In forma di righe di testo separate da spazi:
+quattro viti lungo asse  due supporti afferrabili  gruppo scivoloso  suolo attivo  esito si
+Errore tipico da evitare: lasciare i supporti non afferrabili e non riuscire
+a muoverli insieme alla mano durante la prova.
+
+3. CONSIDERAZIONI FINALI
+------------------------
+Il confronto avviene su tre punti: facilita di preparazione, uso da parte
+di manutentori non esperti di immersivo, realismo dei risultati.
+Sulla preparazione il secondo ambiente vince per interfaccia grafica intuitiva.
+Il primo chiede comandi di programmazione per vincoli e movimenti,
+ad esempio per piazzare il pezzo e muoverlo bene, con giunti tra corpi
+da scrivere a mano contro vincoli quasi immediati nellaltro.
+Entrambi richiedono protocolli di scambio per lavorare dove si disegna.
+Uso e realismo sono legati, perche piu la scena e credibile piu loperatore
+ricava info buone.
+Contano realismo visivo e realismo di contatto.
+Le ombre aiutano a capire dove sta la mano rispetto ai pezzi.
+La fisica fa reagire gli oggetti come nel reale a spinte dirette e a forze
+trasmesse per urti e catene.
+Il primo ambiente ha ombre, corpi rigidi secondo la fisica classica,
+urti tra oggetti e attrito tra mano e pezzi, quindi prove piu rapide
+e giudizi piu oggettivi su accessi, prese e smontaggi.
+Il secondo non ha ombre e non simula la dinamica dei rigidi,
+quindi percezione e prese sono meno realistiche.
+Per contro il secondo nasce per la realta virtuale e ha un modulo
+dedicato a monta e smonta, molto utile nelle prove, ed e aperto
+a sviluppi futuri, quindi resta il piu promettente con miglioramenti.
+Si potra aggiungere presa con dita piu naturali, polso avambraccio
+e braccio per piu presenza, calcolo automatico di percorsi liberi
+quando la via a mano e troppo difficile, con guida teorica da far
+ripercorrere alloperatore, e limiti cinematici per seguire fedelmente
+la via libera, utili anche per istruire un braccio robotizzato.
+Ombre dedicate ai casi di assistenza aiuterebbero a stimare distanze
+e volumi tra mano, utensili e pezzi.
+Esempio riscritto diverso dalloriginale: percorso guida di 40 cm con errore
+medio umano di 9 mm sceso a 4 mm con guida cinematica attiva.
+Errore tipico da evitare: scegliere solo per abitudine senza pesare
+preparazione, realismo e possibilita di sviluppo futuro.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Giunti temporanei evitano cadute per gravita con una sola mano in scena.
+- Aggancio di rotazione misura langolo utile e garantisce asse comune.
+- Viti solo lungo asse e gruppi con moti guidati rendono le prove ripetibili.
+- Sospensione con un operatore e freno in due per peso e dimensioni.
+- Supporti afferrabili e gruppo scivoloso aumentano realismo senza compenetrazioni.
+- Suolo interattivo prova luscita diretta con carrello sul binario.
+- Ombre e fisica con attrito danno risposte piu rapide e oggettive.
+- Interfaccia grafica contro comandi scritti nella preparazione della scena.
+- Modulo dedicato a monta e smonta rende il secondo ambiente piu promettente.
+- Guide calcolate e limiti cinematici aiutano operatore e futuro robot.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Perche con il primo ambiente la prova di accesso e piu immediata.
+a) Perche non controlla alcuna collisione tra oggetti.
+b) Perche motore fisico e reazioni al contatto mostrano subito urti tra mano e pezzi e tra pezzi e pezzi.
+c) Perche elimina la gravita in ogni scena.
+d) Perche vieta luso della scheda di assistenza.
+2. A cosa servono i giunti temporanei tra viti e telaio e tra gruppo e telaio.
+a) A decorare la scena senza funzioni.
+b) A trattenere i pezzi contro la gravita fino a sfilo o trazione, poi liberarli nello spazio.
+c) A bloccare per sempre ogni pezzo al telaio.
+d) A impedire qualsiasi compilazione della scheda.
+3. Cosa aggiunge laggancio di rotazione tra bussola e vite nel secondo ambiente.
+a) Nulla, e solo un effetto grafico.
+b) Asse comune e lettura dellangolo utile per misurare lo spazio di manovra.
+c) Rimozione automatica senza gesti delloperatore.
+d) Cancellazione dei vincoli di sfilo lungo asse.
+4. Come si trattano supporti e gruppo frenante nella fase finale del secondo ambiente.
+a) Si lasciano non interagenti e fermi nella scena.
+b) Supporti afferrabili con la mano e gruppo scivoloso sulla puleggia con suolo interattivo verificato.
+c) Si fanno attraversare la puleggia senza controllo.
+d) Si esclude ogni prova con carrello sul binario.
+5. Quale differenza principale emerge tra i due ambienti nel confronto.
+a) Sono identici in tutto senza differenze.
+b) Uno e rapido e realistico con ombre e fisica ma chiede comandi scritti, laltro e intuitivo con modulo dedicato ma senza ombre e dinamica.
+c) Uno vieta le schede e laltro vieta le prove.
+d) Nessuno permette verifiche di accessi e prese.
+6. Quali sviluppi futuri sono indicati come piu utili per il secondo ambiente.
+a) Nessun sviluppo ulteriore necessario.
+b) Dita naturali, braccio completo, percorsi liberi calcolati, limiti cinematici, ombre e guida per robot.
+c) Solo cambio di colori della scena.
+d) Eliminazione di ogni modulo di montaggio.
+
+Soluzioni ragionate
+1 — b. La dinamica con forze al contatto rende visibili subito gli urti durante la manipolazione.
+Le altre sono sbagliate perche i controlli ci sono ed estesi, la gravita resta e la scheda e lobiettivo.
+2 — b. Senza di essi tutto cadrebbe appena tolte le viti con una sola mano disponibile.
+Le altre sono sbagliate perche hanno funzione chiara, non bloccano per sempre e non impediscono la scheda.
+3 — b. Allineamento e misura dellangolo trasformano una sensazione in valutazione quantitativa dello spazio.
+Le altre sono sbagliate perche non e solo grafica, i gesti restano e lo sfilo guidato resta necessario.
+4 — b. La combinazione di presa, scivolamento e suolo attivo prova luscita completa senza compenetrazioni.
+Le altre sono sbagliate perche fermi, attraversamenti e rinuncia alla prova sul binario negano il metodo.
+5 — b. Rapidita e realismo da una parte e facilita con modulo dedicato dallaltra spiegano scelta e sviluppi.
+Le altre sono sbagliate perche differenze marcate esistono e le verifiche sono possibili in entrambi.
+6 — b. Solo mani piu vere, guide calcolate e vincoli utili alzano realismo e precisione anche per lautomazione.
+Le altre sono sbagliate perche servono miglioramenti sostanziali e non solo estetici o sottrattivi.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

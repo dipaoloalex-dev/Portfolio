@@ -1,0 +1,220 @@
+[plain-text per Pages — da 26 - Metodologia.md]
+
+1. STUDIO DEL PROBLEMA
+----------------------
+La crescita di complessita degli impianti ha cambiato
+il modo di pensare assistenza e logistica di supporto.
+Il costo lungo lintero ciclo di vita spinge a curare fin dal disegno
+affidabilita, disponibilita, facilita di assistenza e sicurezza.
+Gli strumenti di progetto cambiano in fretta e chiedono alle imprese
+spese di gestione, aggiornamenti e risposte rapide ai clienti,
+specie con stazioni di lavoro tradizionali poco flessibili.
+
+Pensare lassistenza solo a prodotto finito e un errore.
+Se nasce col progetto, suggerisce forme piu smontabili
+con tempi e costi minori.
+Luso dellambiente immersivo per lassistenza e ormai maturo
+e migliora di continuo, lobiettivo e ottimizzare gli strumenti
+per un risultato finale migliore, con processi attenti a energia,
+risorse, ambiente, sicurezza ed economicita.
+Il percorso parte dalle difficolta prima ancora di formulare il tema,
+poi guarda lo scenario esterno e le possibili evoluzioni,
+poi guarda dentro, storia compresa, trova i punti critici,
+raccoglie dati e stimola idee fino a definire il problema e la via.
+
+Un modo e fissare prima cosa si vuole ottenere e cosa si mette
+in ingresso tra dati e azioni, subito o durante luso interattivo.
+Qui e difficile dire se la domanda e posta bene, cioe se uscite
+attese, ingressi e vincoli sono coerenti tra loro.
+E invece facile dire se e risolta bene, basta vedere se i risultati
+coincidono con le uscite attese.
+Obiettivo del lavoro e accorciare lanalisi delle attivita assistenziali
+con strumenti immersivi.
+Introdurre presto nel progetto lattenzione alla riparabilita riduce
+frequenza, durata e fatica degli interventi, migliora lergonomia,
+scarta montaggi oltre le capacita umane, taglia addestramento
+e rimanda cio che non serve subito.
+Il modello 3D permette di provare accessibilita, presa ed estrazione
+con tempi e costi stimati come con il pezzo reale.
+I manichini digitali portano la persona nel progetto fin dallinizio
+con risposte oggettive, mentre per gli aspetti cognitivi servono
+prove soggettive con interazione diretta della mano vera tramite
+guanti e comandi spaziali.
+Esempio riscritto diverso dalloriginale: per cambiare un filtro laterale
+si provano apertura a 70 cm di altezza con due viti e apertura a 110 cm
+con sgancio rapido, scegliendo la seconda per minor flessione.
+Errore tipico da evitare: rinviare ogni scelta assistenziale al dopo
+vendita e scoprire che per una vite serve smontare mezzo assieme.
+
+2. DIAGRAMMA DI FLUSSO
+----------------------
+Lambiente immersivo aiuta a disegnare montaggi automatizzati razionali
+per prodotti nuovi pensati per fabbricazioni efficienti.
+Il flusso qui proposto usa due livelli di verifica.
+Prima lesperto prova col guanto ogni gesto assistenziale del gruppo
+scelto e giudica se puo compilare la scheda di assistenza per il futuro
+uso sul pezzo reale.
+Serve personale preparato che conosca lambiente immersivo e loggetto.
+A quel punto ci sono tre esiti.
+Primo: ha tutti i dati e compila subito la scheda.
+Secondo: e incerto e chiede aiuto al simulatore antropometrico.
+Terzo: vede subito che non si puo fare e chiede modifica di progetto.
+Se il secondo livello col manichino conferma la fattibilita, si compila.
+Se mostra che non si puo fare, si modifica il disegno e si riprova.
+Nel terzo caso si corregge subito e si riporta il caso allesperto.
+Esempio riscritto diverso dalloriginale: smontaggio di una pompa
+giudicato incerto col guanto per spazio dita, poi confermato possibile
+col manichino con chiave snodata da 13 mm in 12 minuti.
+In forma di righe di testo separate da spazi:
+prova col guanto  esito si compila  esito incerto verifica col manichino  esito no modifica
+Errore tipico da evitare: far valutare i gesti a chi non conosce ne lambiente
+ne il gruppo, ottenendo schede inaffidabili.
+
+2.1 LA SCHEDA MANUTENTIVA
+-------------------------
+La scheda raccoglie in un solo foglio tutto cio che serve per eseguire
+bene lintervento.
+Lavorando solo nel virtuale si capisce se il modulo e compilabile,
+perche il gemello digitale ha forme e sequenze di montaggio come il reale.
+Se la risposta e negativa si cambia il digitale, se e dubbia si studia
+piu a fondo.
+La scheda deve rispondere in anticipo a ogni domanda delladdetto.
+Esempio rielaborato con contenuti diversi dalloriginale a scopo illustrativo:
+gruppo pompa di ricircolo  operazione sostituzione filtro
+tipo a guasto  attrezzi chiave snodata e vaschetta
+personale qualificato  operatori numero due  durata media 45 minuti
+In forma di righe di testo separate da spazi:
+gruppo  operazione  tipo guasto o programmata  attrezzi  qualifica  persone  tempo
+Errore tipico da evitare: schede vaghe senza tempi, attrezzi e numero
+di persone, che fermano il lavoro in campo.
+
+3. VANTAGGI
+-----------
+I programmi attuali coprono disegno, gestione e ottimizzazione
+dei sistemi produttivi e risolvono molti problemi di nuovi prodotti
+e processi.
+La simulazione trova il layout migliore per macchine e persone,
+controlla cinematica dei robot ed ergonomia degli operatori
+e studia interazioni sicure tra uomo e mezzi.
+Lesempio dei calcolatori condivisi chiarisce il risparmio.
+Piu ambienti logici vivono sullo stesso ferro fisico, rompendo
+luno a uno tra macchina e sistema.
+Cosi calano costi di creazione e cura, cresce la flessibilita
+e migliora la gestione, con piu produttivita a pari lavoro.
+Meno macchine accese significa meno energia e meno calore da smaltire,
+quindi meno impatto e meno spese di aggiornamento rispetto
+a moltiplicare gli apparati fisici.
+Il recupero rapido sposta i dati su altro nodo senza lunghi fermi
+e riporta larchivio allo stato precedente al guasto senza perdere
+il lavoro fatto.
+La riparabilita virtuale valorizza il gemello digitale e permette
+di lavorare da portatile, tavolo o telefono con macchine sempre
+aggiornate, veloci, affidabili e meno costose.
+Nei prodotti complessi come mezzi aerei, navali, ferroviari e stradali,
+dove sicurezza e affidabilita sono vitali, la riparabilita e centrale.
+Essa pesa spesso tra un quarto e un terzo del costo di vita, valori
+rielaborati diversi dalloriginale a scopo illustrativo, quindi ridurla
+da vantaggio competitivo.
+I manichini digitali, pur laboriosi, danno buoni risultati e lalternanza
+con la prova rapida col guanto fa risparmiare tempo e denaro.
+Serve scegliere di volta in volta il livello giusto tra i due.
+Curare lassistenza fin dallinizio risponde alla concorrenza e rende
+il prodotto unico non solo per prestazioni, con smontabilita e accessi
+provati quando il costo orario specialistico cresce.
+Lambiente immersivo simula tutte le attivita future e addestra
+il personale con prove interattive piu efficaci della lezione passiva.
+Fa emergere difetti che col fisico si vedrebbero troppo tardi.
+Il supporto va quindi integrato nel progetto, non solo per prestazioni,
+tempi rapidi e costi, ma anche per semplicita di intervento, sicurezza
+di chi opera e materiali didattici utili a fabbricazione e assistenza.
+Sul fronte dei calcolatori condivisi i benefici sono uso pieno del ferro,
+minori consumi e rispetto ambientale, indipendenza dal modello fisico
+con periferiche definite dal supervisore e spostamenti senza problemi
+di driver, separazione dei servizi per fermi brevi e guasti isolati,
+meno spesa per armadi e sale, nuovi nodi creati per clonazione rapida
+con gestione semplificata.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+macchina a 12 nuclei usata all8 per cento, nodo da 400 W per circa 3500 unita
+di energia lanno piu 4800 per il fresco, totale circa 9500 unita,
+con tariffa di 0,18 monete per unita risparmio di circa 1710 monete lanno
+per ogni ferro spento, oltre a gruppi di continuita e monitor.
+Laddestramento immersivo e interattivo mostra contenuti realistici
+e fa manipolare oggetti, a differenza della lezione frontale passiva.
+Errore tipico da evitare: comprare ferro nuovo per ogni servizio
+e progettare senza scheda di assistenza, pagando poi energia,
+fermi e rilavorazioni.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Assistenza pensata nel disegno riduce tempi, costi e interventi oltre le capacita umane.
+- Il modello 3D simula accessi, prese ed estrazioni come con il pezzo reale.
+- Manichini per misure oggettive e guanto per sensazioni soggettive e cognitive.
+- Flusso a due livelli con tre esiti verso scheda compilata o modifica di progetto.
+- La scheda dichiara gruppo, gesto, tipo, attrezzi, qualifica, persone e tempo.
+- Gemello digitale e supporto integrato evitano difetti visti solo sul fisico.
+- Calcolatori condivisi tagliano ferro, energia, spazi e fermi con recuperi rapidi.
+- Riparabilita centrale nei trasporti dove pesa molto sul costo di vita.
+- Alternare guanto rapido e manichino preciso ottimizza tempi e affidabilita.
+- Formazione immersiva interattiva piu efficace della lezione passiva.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Perche conviene pensare lassistenza gia nel disegno iniziale.
+a) Per aumentare i fermi e i costi di intervento.
+b) Per ottenere forme piu smontabili e accessibili con tempi e costi minori.
+c) Per eliminare ogni prova virtuale.
+d) Per rinviare la sicurezza a dopo la consegna.
+2. Cosa fa lesperto nel primo passo del flusso con il guanto immersivo.
+a) Compila subito la fattura di vendita.
+b) Prova ogni gesto e giudica se puo compilare la scheda per il futuro uso reale.
+c) Spegne il modello digitale senza valutarlo.
+d) Cambia il progetto senza alcuna prova.
+3. Cosa accade in caso di esito incerto nella prima verifica.
+a) Si archivia il caso senza ulteriori controlli.
+b) Si passa al manichino digitale per confermare fattibilita o chiedere modifica.
+c) Si compila comunque la scheda con dati inventati.
+d) Si vieta ogni modifica al disegno.
+4. Quale contenuto deve avere una buona scheda di assistenza.
+a) Solo il nome del prodotto senza altri dati.
+b) Gruppo, gesto, tipo di intervento, attrezzi, qualifica, persone e tempo stimato.
+c) Solo il prezzo di vendita del ricambio.
+d) Solo la data di consegna al cliente.
+5. Quale vantaggio danno i calcolatori condivisi sullo stesso ferro.
+a) Piu nodi logici con meno energia, spazi e fermi e recuperi rapidi.
+b) Maggior consumo e maggiore ingombro a pari lavoro.
+c) Impossibilita di spostare i nodi tra ferri diversi.
+d) Obbligo di un ferro fisico per ogni servizio.
+6. Perche la formazione immersiva e preferibile alla lezione solo frontale.
+a) Perche e piu passiva e senza interazione.
+b) Perche mostra contenuti realistici e fa manipolare oggetti con prove attive.
+c) Perche elimina ogni contenuto tecnico.
+d) Perche impedisce di simulare i gesti futuri.
+
+Soluzioni ragionate
+1 — b. Anticipare smontabilita e accessi taglia interventi difficili e costi di manodopera specialistica.
+Le altre sono sbagliate perche aumentano fermi e costi, eliminano le prove utili o rimandano la sicurezza.
+2 — b. La prova uno a uno serve a raccogliere dati reali per scrivere istruzioni affidabili per il campo.
+Le altre sono sbagliate perche fattura, spegnimento e modifica cieca non producono alcuna valutazione.
+3 — b. Il secondo livello oggettivo scioglie il dubbio tra compilazione e riprogettazione mirata.
+Le altre sono sbagliate perche archiviare, inventare o vietare modifiche lascia il problema irrisolto.
+4 — b. Solo il quadro completo permette di preparare persone, mezzi e tempi senza fermi improvvisi.
+Le altre sono sbagliate perche nome solo, prezzo o data non guidano lesecuzione del lavoro.
+5 — a. La condivisione alza luso del ferro, riduce nodi accesi, calore, spazi e isola i guasti per servizio.
+Le altre sono sbagliate perche descrivono effetti opposti a virtualizzazione e separazione dei servizi.
+6 — b. Interazione e realismo trasformano la lezione in addestramento pratico su gesti e oggetti.
+Le altre sono sbagliate perche passivita, assenza di contenuti o divieto di simulazione negano il metodo.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

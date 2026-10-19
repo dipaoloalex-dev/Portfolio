@@ -1,0 +1,235 @@
+[plain-text per Pages — da 27 - L'uomo nel progetto.md]
+
+1. SIMULAZIONE DELLE ATTIVITÀ MANUTENTIVE
+-----------------------------------------
+Con hardware e programmi immersivi sempre piu potenti
+conviene studiare la riparabilita fin dalle prime bozze di progetto,
+specie per i trasporti.
+Chi gestisce lassistenza vuole meno interventi, meno ore e meno fatica,
+sia per guasti sia per prevenzione, con migliore ergonomia,
+meno addestramento e rinvio di cio che non serve subito.
+Provare i gesti nel virtuale aiuta a raggiungere questi scopi.
+
+La manutenzione virtuale evita riprogettazioni costose e definisce
+subito se il disegno e riparabile.
+Se non lo e, si capisce dove correggere prima di costruire,
+soprattutto dove montaggio e smontaggio superano le capacita umane.
+Cosi calano anche indennizzi per disturbi muscolari e scheletrici.
+Si controllano supporti e giunzioni per posizione e distribuzione,
+visibilita e raggiungibilita del pezzo e utensile adatto entro gli ingombri.
+Si creano animazioni da piu punti di vista per evidenziare i punti critici
+e per manuali tecnici, condivisibili in rete a distanza in poco tempo.
+
+Per portare la persona nel progetto si usano due vie.
+La prima con figura umana simulata al computer.
+La seconda con interazione diretta delle mani vere in ambiente immersivo.
+Se il sistema nasce senza pensare allassistenza, tempi e costi crescono.
+Lassistenza pesa spesso oltre meta del costo di vita, valore rielaborato
+diverso dalloriginale a scopo illustrativo intorno a cinque sei decimi,
+quindi studiare presto smontabilita, accessi e prese da vantaggio
+con manodopera specialistica sempre piu cara.
+Per insiemi complessi come aria, mare, ferro e strada, dove sicurezza
+e affidabilita sono vitali, queste analisi sono fondamentali anche se
+onerose per i molti pezzi.
+La figura simulata permette di provare ambienti, macchine e gesti di accesso,
+presa, smontaggio, riparazione e rimontaggio con corporature diverse,
+capendo se i movimenti sono davvero possibili, se si vede e si raggiunge
+il pezzo e come afferrarlo.
+Si stimano tempi e sforzi, tenuta individuale, posture e rischi per la schiena
+in sollevamento, con risultati oggettivi e ripetibili usando modelli standard.
+La via diretta mette invece il progettista in prima persona dentro la scena.
+Guanti con sensori delle dita e localizzatori di mani muovono un doppio
+digitale che tocca e sposta i pezzi come nel reale, senza mediazione
+di un soggetto comandato.
+Cosi la fattibilita si verifica in modo semplice e le modifiche arrivano
+presto con pochi costi di riprogettazione.
+Per formare meccanici e tecnici il simulatore sta in mezzo tra lezione
+su computer e manuali e affiancamento in campo con esperti.
+Dopo lo studio passivo si opera in prima persona su oggetti virtuali
+simili al vero per aspetto e comportamento.
+Esempio riscritto diverso dalloriginale: per serrare quattro viti interne
+si confrontano accesso frontale da 15 cm e accesso laterale da 22 cm,
+scegliendo il secondo per visibilita e minor torsione del polso.
+Errore tipico da evitare: disegnare senza lasciare finestre di accesso
+e scoprire in officina che serve smontare mezzo impianto per una vite.
+
+2. CASO STUDIO
+--------------
+Il modello digitale del complessivo, fatto con modellatore parametrico,
+e solo il punto di partenza e da solo non basta.
+Il solo disegno non mostra linterazione tra persona e ambiente,
+decisiva per lassistenza.
+Servono strumenti che simulino la persona in modo credibile.
+Qui si usano in coppia guanto immersivo per contatto diretto
+e manichino digitale per gesti come di tecnici reali su pezzi materiali.
+Obiettivo e cambiare disegno, montaggio e assistenza in funzione
+del fattore umano, tagliando tempi di progetto e migliorando qualita,
+produttivita e sicurezza, con minore bisogno di assistenza e minore
+costo di vita a parita di soddisfazione del cliente.
+Nel caso si studia limpianto di climatizzazione di un rotabile,
+composto da collettore, condotte e gruppo frigorifero.
+Tutte le operazioni si provano prima col guanto.
+Quelle piu critiche passano poi a manutenzione virtuale dettagliata
+con accesso, presa, smontaggio e rimontaggio fino alla minima unita
+sostituibile in linea, cioe il pezzo piu piccolo riparabile sul posto
+o scambiabile col ricambio se guasto.
+Scopo e trovare i problemi e correggere il disegno.
+Esempio riscritto diverso dalloriginale: per un filtro intasato si prova
+estrazione frontale da 8 kg con una mano e si passa a due mani con vassoio
+quando lo spazio scende sotto i 10 cm liberi.
+Errore tipico da evitare: fermarsi al bel modello 3D senza provare
+con mani e corpo se il pezzo esce davvero dalla sua sede.
+
+3. PREMESSA ALLANALISI DEI RISULTATI
+-------------------------------------
+Per collaudare il metodo alcuni valutatori preparati compilano
+la scheda di assistenza per ogni gesto usando solo il guanto.
+Lesito resta in parte soggettivo per esperienza e corporatura,
+ma lo strumento e rapido e facile.
+Poi gli esperti esaminano accessibilita, presa e smontaggio
+e decidono se la scheda e compilabile o se serve altro approfondimento.
+Esempio riscritto diverso dalloriginale: tre valutatori provano
+lo stesso sportello, due lo chiudono in 6 minuti e uno in 9 per statura
+minore, segnale che lattrezzatura va regolata.
+Errore tipico da evitare: usare un solo valutatore atletico come misura
+di cio che tutti riusciranno a fare.
+
+3.1 ANALISI DI ACCESSIBILITÀ
+----------------------------
+Un insieme e accessibile quando mani e utensili comuni entrano
+e resta spazio per togliere una vite, stringere un dado o inserire
+una sonda.
+In progetto si verifica che per ogni pezzo esista larea o il volume
+necessario e che la direzione di intervento sia libera.
+La prova segue criteri diffusi nel settore aeronautico su minime
+aperture per mani e attrezzi con relativi volumi di manovra.
+Tabelle e figure originali non si copiano, si descrivono in forma testuale.
+In forma di righe di testo separate da spazi:
+finestra piccola una mano  presa utensile corto  volume manovra polso
+finestra media due mani  volume manovra gomito  direzione libera
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+apertura da 12 per 10 cm per una mano, da 20 per 12 cm per chiave corta,
+profondita libera di 15 cm senza spigoli sul percorso.
+Lo spazio dipende da forma, peso e tipo di pezzo.
+Per pesi oltre circa 22 kg, valore rielaborato diverso dalloriginale,
+serve posto per due persone o per braccio meccanico.
+La prova sul climatizzatore e positiva se ogni microgesto si esegue
+col guanto o col manichino entro i volumi disponibili.
+Errore tipico da evitare: misurare solo lapertura e dimenticare
+il volume dietro per muovere il polso e lutensile.
+
+3.2 ANALISI DI SMONTABILITÀ
+---------------------------
+Un pezzo e smontabile se esce lungo una direzione senza urtare altro.
+Un sistema di molte parti e smontabile se esiste una sequenza di mosse
+che toglie una parte o un sottoinsieme alla volta fino a restare
+con un solo pezzo allultimo passo.
+Il nodo e trovare ordine e direzioni giuste.
+Una via parte dallo smontaggio per ricavare il montaggio.
+Si disegna lalbero dal pezzo piu esterno verso quello che condivide
+piu bordi col precedente, poi lo si legge al contrario per la minima
+sequenza di montaggio.
+Ma invertire non sempre vale perche i contatti non sono simmetrici.
+Una traslazione facile in chiusura puo bloccarsi in apertura.
+Il progettista decide se rimodellare o accettare la soluzione.
+La verifica e spesso faticosa perche in passato si e pensato poco
+a questa qualita, e molti gruppi chiusi poi non si aprono senza danni.
+Esito positivo solo senza interferenze lungo il percorso.
+Esempio riscritto diverso dalloriginale: coperchio con tre viti e incastro,
+ordine viti laterali poi centrale poi sfilo verso lalto di 10 cm,
+se invertito lincastro si impunta e serve smusso di 1 mm.
+Errore tipico da evitare: credere che basti invertire il filmato
+di montaggio per avere uno smontaggio possibile.
+
+3.3 ANALISI DI MANIPOLABILITÀ
+-----------------------------
+Manipolabile significa afferrabile in fretta, spostabile senza fatica
+e usabile senza rischi.
+Per presa a una mano sola servono limiti su ingombro e peso.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+ingombro massimo circa 60 mm  peso massimo circa 11 kg per una mano
+Se manca il primo requisito si usano due mani.
+Se si supera anche il peso di circa 22 kg, valore rielaborato diverso
+dalloriginale, serve seconda persona o aiuto meccanico per ogni mossa.
+Fino a tale soglia si assume che con due mani si gestiscano pezzi consistenti.
+Lesito puo essere positivo per lintera sequenza o per il singolo pezzo.
+Esempio riscritto diverso dalloriginale: maniglia da 55 mm e 9 kg ok
+con una mano, scatola da 70 mm e 14 kg ok con due mani,
+gruppo da 26 kg solo con paranco.
+Errore tipico da evitare: assegnare a una mano sola un pezzo largo
+e pesante che poi cade o strappa la presa in quota.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- La manutenzione virtuale definisce presto la riparabilita prima di costruire.
+- Figura simulata per misure oggettive e mani vere con guanto per prove soggettive dirette.
+- Formazione con simulatore tra lezione su computer e affiancamento in campo.
+- Caso climatizzazione con collettore, condotte e gruppo frigo fino a minima unita sostituibile.
+- Accessibilita come mani piu utensili piu volume libero lungo la direzione.
+- Smontabilita come sequenza senza urti con attenzione ai contatti non simmetrici.
+- Manipolabilita con limiti diversi per una mano, due mani e aiuto meccanico.
+- Animazioni condivise in rete per manuali e verifiche rapide a basso costo.
+- Pesi alti richiedono spazio per due persone o bracci meccanici.
+- Correggere nel digitale costa poco, correggere sul fisico costa molto.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Perche conviene simulare lassistenza in ambiente virtuale fin dal disegno.
+a) Per aumentare riprogettazioni tardive e costi di indennizzo.
+b) Per trovare presto accessi e gesti impossibili e correggere prima di costruire.
+c) Per eliminare ogni manuale tecnico di supporto.
+d) Per evitare qualsiasi verifica di visibilita dei pezzi.
+2. Cosa distingue figura simulata e interazione diretta con le mani.
+a) Sono identiche senza alcuna differenza di uso.
+b) La prima da misure oggettive con modelli standard, la seconda fa provare in prima persona con guanti e localizzatori.
+c) La seconda vieta di toccare e spostare oggetti virtuali.
+d) La prima impedisce di calcolare tempi e sforzi.
+3. Dove si colloca il simulatore nel percorso di formazione dei manutentori.
+a) Al posto di ogni esperienza senza ordine logico.
+b) Tra studio su computer e manuali e affiancamento in campo con esperti.
+c) Solo dopo anni di lavoro senza studio preliminare.
+d) Solo prima di conoscere i nomi dei componenti.
+4. Quando un insieme si puo dire accessibile durante il progetto.
+a) Quando mani e utensili entrano e resta volume per piccole operazioni lungo direzione libera.
+b) Quando il pezzo e visibile solo in figura senza spazio reale.
+c) Quando la direzione di intervento e ostruita da altri pezzi.
+d) Quando non si prevede alcun utensile per loperazione.
+5. Come si imposta correttamente una sequenza di smontaggio.
+a) Si sceglie un ordine a caso senza controllare urti e contatti.
+b) Si cerca ordine e direzioni senza interferenze con albero dal pezzo esterno e attenzione ai contatti non reversibili.
+c) Si assume che montaggio e smontaggio siano sempre simmetrici.
+d) Si accetta la prima soluzione senza verifica del progettista.
+6. Quando serve passare da una mano a due mani o a aiuto meccanico.
+a) Mai, tutto si fa sempre con una mano sola.
+b) Oltre lingombro limite si usano due mani, oltre il peso limite seconda persona o mezzo meccanico.
+c) Solo in base al colore del pezzo da spostare.
+d) Solo in base al turno di lavoro del giorno.
+
+Soluzioni ragionate
+1 — b. Anticipare prove di accesso e smontaggio evita forme chiuse e oneri per malattie e rilavorazioni.
+Le altre sono sbagliate perche aumentano costi e rischi, i manuali restano utili e la visibilita va verificata.
+2 — b. La figura standard rende confronti ripetibili, il guanto rende il progettista protagonista dei gesti reali.
+Le altre sono sbagliate perche i due modi hanno scopi diversi, il guanto permette prese e la figura calcola tempi e sforzi.
+3 — b. Lordine dal passivo al virtuale attivo al campo reale consolida gesti prima di toccare il velivolo vero.
+Le altre sono sbagliate perche senza ordine o solo dopo anni o senza basi si perde efficacia e sicurezza.
+4 — a. Servono insieme apertura, volume di manovra e via libera per viti, dadi e sonde.
+Le altre sono sbagliate perche figura sola, via ostruita o nessun utensile negano lintervento reale.
+5 — b. Solo la ricerca di percorsi liberi con albero ragionato trova lordine minimo senza urti.
+Le altre sono sbagliate perche caso, simmetria presunta o accettazione cieca generano blocchi in officina.
+6 — b. I limiti di presa e peso guidano la scelta verso due mani e poi verso aiuto esterno per sicurezza.
+Le altre sono sbagliate perche una mano per tutto e pericoloso e colore o turno non c entrano.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

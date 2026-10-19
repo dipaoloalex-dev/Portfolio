@@ -1,0 +1,211 @@
+[plain-text per Pages — da 18 - Analisi ergonomica con il software di human modelling.md]
+
+1. TASK ANALYSIS TOOLKIT
+--------------------------------------------------
+
+Il modulo extra per compiti industriali raccoglie nove strumenti
+per ergonomia di fabbrica tra produttivita e sicurezza in reparto.
+Copre sollevamenti, arti superiori, energia, limiti di movimentazione,
+forza statica, posture, fatica, schiena bassa e tempi standard di lavoro.
+
+Il primo strumento guarda i limiti per muovere materiali a mano.
+Serve per sollevare, abbassare, spingere, tirare e spostare in sicurezza
+con meno dolori alla zona lombare durante turni lunghi in magazzino.
+Usa tabelle da oltre due decenni di studi in un centro di ricerca estero.
+Trova il peso massimo accettabile per uomini e donne in quel compito.
+Progetta con prove cosa succede se cambiando variabili di lavoro,
+come larghezza del collo, altezze, distanze, frequenze e durate in turno.
+Si sceglie il gesto tra cinque mosse base e il sesso della persona.
+Si danno misure del collo, presa, altezze, braccia tese o vicine al corpo.
+Per spinte e spostamenti si danno distanze, altezze e frequenze in ciclo.
+Si chiede al calcolo o il carico limite per quota di capaci assegnata,
+oppure la quota di capaci per carico limite assegnato in partenza.
+Il pannello appare poco chiaro sui parametri da inserire in sede.
+Il risultato non suggerisce da solo come migliorare il compito difficile.
+Sta al tecnico unire altri strumenti per trovare soluzioni migliori.
+
+Esempio riscritto: si pensi a scatole di conserve in un deposito fresco.
+Si prova spinta di carrello basso con donne e uomini in turno misto.
+Si cambia altezza delle maniglie e frequenza dei viaggi in corsia.
+Si legge se la quota di capaci sale senza cambiare peso del carico.
+
+Il secondo strumento stima la forza statica che resta disponibile.
+Guarda postura, misure del corpo e spinte richieste dalle mani in scena.
+Usa studi di oltre due decenni in un centro universitario estero per ergonomia.
+Dice quanti uomini e donne reggono quel compito senza cedimenti.
+Segnala in tempo reale le pose oltre i limiti di resistenza ammessi.
+Si mette la figura nella posa piu dura o si lancia la simulazione intera.
+Si dicono sesso e misure, poi forze su mani con verso e intensita.
+Il pannello e semplice e mostra barre per spalle, gomiti e schiena.
+Si passano in rassegna le pose e si analizzano solo le critiche in turno.
+
+Esempio riscritto: si pensi a prese di vassoi in una mensa aziendale.
+Con figura alta al banco si vede se il polso resta oltre soglia in scena.
+Cambiando altezza del piano le barre tornano entro limiti sicuri.
+
+Errore tipico: chiedere solo carico limite senza guardare frequenze reali.
+Senza altezze, distanze e braccia tese i numeri restano ottimisti e falsi.
+
+2. ANALISI DELLE POSTURE DI LAVORO (OWAS)
+--------------------------------------------------
+
+Un metodo nato in siderurgia nordica negli anni settanta del secolo scorso
+da un modo semplice per giudicare comfort e urgenza di cambi al posto.
+Si osservano posture e carichi e si scompone il lavoro in fasi piccole.
+Poi si normalizza e si classifica in quattro gradi di azione correttiva.
+Si va da nessun danno a danno lieve possibile, da danno certo a danno grave.
+Lo strumento valuta schiena, braccia, gambe e pesi tenuti in mano in scena.
+Da un punteggio che dice quanto presto cambiare il posto di lavoro reale.
+La schiena ha quattro classi tra dritta, piegata e torta in torsione laterale.
+Le braccia hanno tre classi secondo altezza rispetto alle spalle in posa.
+Le gambe hanno sette classi tra piedi, seduti e ginocchio a terra in moto,
+con gambe tese o piegate durante lo spostamento in cella di lavoro.
+Si fissa la posa piu critica e si aggiunge eventuale peso alle mani.
+L'esito e sintetico ma non dice come correggere in dettaglio il banco.
+Da solo assegna il grado senza disegnare la soluzione nuova da montare.
+
+Esempio riscritto: si pensi a un addetto a sportello in ufficio postale.
+Con schiena dritta e braccia basse il grado resta senza danni in turno.
+Con busto torto e pacchi alti il grado chiede cambi entro breve tempo.
+
+Per fatica e recupero si guarda se il riposo basta in ciclo di lavoro.
+Lo strumento confronta riposo chiesto dai muscoli e riposo disponibile.
+Se manca riposo la fatica diventa non tollerabile per gli addetti in turno.
+Aiuta a disegnare compiti senza sovraccarichi e a trovare muscoli critici.
+Serve posa piu dura o filmato intero, carichi alle mani e tempi di fasi.
+Il tempo per una posa e quanto si resta fermi in quella posa in ciclo.
+Il tempo chiesto e quanto serve per recuperare dopo sforzo in turno.
+Il tempo libero e ciclo meno somma dei tempi fermi in pose del turno.
+Il compito va bene se il libero copre tutti i recuperi chiesti dai muscoli.
+Altrimenti si cambiano pause, rotazioni e pesi per migliorare il turno.
+Vale per lavori ripetitivi con cicli brevi e sempre uguali in giornata.
+Guarda solo muscoli diretti e trascura fibre, sangue, caldo e sesso.
+I dati vengono da pochi soggetti in laboratorio e non sempre dal vero.
+L'analisi in diretta mostra subito le zone piu stanche del corpo in scena.
+
+Per la bassa schiena si stimano spinte sui dischi lombari bassi in posa.
+Si confrontano con limiti tecnici noti per danni alla zona lombare in sede.
+Si regola statura della figura e si mette in presa di sollevamento reale.
+Si aggiunge peso alle mani e si prova fermo o in sequenza di sollevamenti.
+Solo la spinta sui dischi vale come numero, il resto resta qualitativo.
+Il peso dell'oggetto va messo sulle mani con calcolo a parte in ufficio,
+contando postura, presa e distanza tra mani e corpo durante la presa.
+
+Per tempi preventivi si scompone in gesti base con tempi tabulati noti.
+Si usano una decina di mosse tra raggiungere, muovere, ruotare in sede,
+premere, prendere, posare, lasciare, sbloccare, guardare e camminare.
+Si aggiungono pesi, forme, forze, angoli, precisioni e distanze in ciclo,
+oltre a posture ed esperienza degli addetti al banco di montaggio.
+Non conta la fatica che allunga i tempi nei lavori pesanti e ciclici.
+Resta utile per preventivi affidabili di cicli in fabbrica moderna e snella.
+
+Esempio riscritto: si pensi a scaffali di una biblioteca di quartiere.
+Con figure si prova a prendere scatole alte senza scala in dotazione.
+La fatica dice se bastano pause tra un piano e l'altro in turno lungo.
+La schiena dice se il disco basso supera i limiti con scatole piene.
+I tempi dicono quanti libri si sistemano all'ora con due addetti in sala.
+
+Errore tipico: usare un solo indice senza guardare tempo e carichi insieme.
+Senza confronto tra chiesto e disponibile la postura sembra buona ma stanca.
+
+3. IL DIGIPATH
+--------------------------------------------------
+
+Un percorso recente unisce tempi e schiena in un solo indice di confronto.
+Prima si ricostruisce la cella con pezzi importati dal disegno tecnico.
+Poi si fissano fasi, posture e pesi per la figura in ogni passo del ciclo.
+Poi si stimano tempi di ogni gesto e totale del ciclo con tempi standard.
+Poi si lancia il filmato e si leggono spinte lombari in tempo reale in scena.
+Poi si fa tabella con foglio di calcolo per curve e valori di picco in turno.
+Nasce un grafico carico tempo con spinte sui dischi bassi per ogni fase.
+Se la curva resta sotto il limite tecnico di alcune migliaia di newton,
+il compito e accettabile per la schiena della maggioranza degli addetti.
+L'area sotto la curva in forza per tempo da indice unico per quel compito.
+Vince il progetto con indice piu basso tra alternative a confronto in sede.
+
+Si puo riassumere in righe di testo con spazi come flusso di lavoro.
+Passo  Strumento usato  Risultato per il passo successivo
+Uno  Ricostruzione cella  Ambiente virtuale con scaffali e banchi
+Due  Definizione fasi e pesi  Posture e carichi per ogni gesto
+Tre  Stima tempi standard  Durate dei gesti e totale ciclo
+Quattro  Filmato e schiena  Curve di spinta in tempo reale
+Cinque  Foglio di calcolo  Grafico carico tempo per fasi
+Sei  Confronto con limite  Via libera o revisione del progetto
+Sette  Area sotto curva  Indice unico per scelta migliore
+
+Esempio riscritto con dati diversi: si pensi a due modi di caricare furgoni.
+Il primo modo ha picchi variabili e dura oltre mezzo minuto per collo.
+Il secondo modo ha curva regolare e dura circa un terzo del tempo totale.
+Il secondo da area minore e vince come scelta per la schiena in magazzino.
+Sviluppi futuri legheranno l'indice a soglie cliniche da prove su persone.
+
+Errore tipico: confrontare picchi senza guardare durata e area totale.
+Senza grafico nel tempo un picco breve sembra uguale a sforzo lungo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nove strumenti per compiti tra sollevamenti, posture, fatica e tempi.
+- Limiti di movimentazione con peso massimo o quota di capaci in turno.
+- Forza statica per dire quanti reggono le pose critiche in scena.
+- Posture in quattro gradi da nessun danno a danno grave da cambiare.
+- Fatica con confronto tra riposo chiesto e riposo libero nel ciclo.
+- Schiena bassa con spinte su dischi contro limiti tecnici noti.
+- Tempi standard da gesti base per preventivi di ciclo in fabbrica.
+- Percorso combinato da cella a tempi a schiena fino a indice unico.
+- Grafico carico tempo e area come metro per scelte tra progetti.
+- Senza frequenze e durate vere gli indici restano belli ma falsi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Lo strumento per limiti di movimentazione serve a:
+a) trovare peso massimo o quota di capaci per quel compito b) vietare ogni sollevamento c) cancellare le posture in scena d) spegnere i tempi di ciclo
+
+2. La forza statica si giudica:
+a) senza guardare posture critiche b) nelle pose piu dure con quote di capaci per sesso c) solo a voce senza figure d) senza pesi sulle mani
+
+3. Le posture con il metodo nordico si classificano in:
+a) un solo grado uguale per tutti b) quattro gradi da nessun danno a danno grave c) solo colori senza giudizi d) senza guardare schiena e gambe
+
+4. Per fatica e recupero il compito va bene se:
+a) il libero copre tutti i recuperi chiesti b) mancano pause e rotazioni c) si ignorano tempi di posa d) si lavora senza cicli definiti
+
+5. Per la bassa schiena conta soprattutto:
+a) solo estetica della scena b) spinta sui dischi contro limiti con pesi sulle mani c) schermo spento senza figure d) nessun limite tecnico di confronto
+
+6. Il percorso combinato finale sceglie:
+a) il progetto con area sotto curva minore b) sempre il piu lungo e variabile c) senza grafici ne tempi d) senza confronto tra alternative
+
+Soluzioni ragionate
+
+1 — a. Peso limite o quota di capaci per quel gesto in turno. La b) vieta tutto, la c) cancella pose, la d) spegne tempi.
+
+2 — b. Pose dure con quote per uomini e donne in scena. La a) salta pose, la c) resta a voce, la d) toglie pesi.
+
+3 — b. Quattro gradi guidano urgenza dei cambi al posto. La a) appiattisce tutto, la c) resta senza giudizi, la d) ignora corpo.
+
+4 — a. Libero maggiore o uguale a somma dei recuperi chiesti. La b) toglie pause, la c) ignora pose, la d) toglie cicli.
+
+5 — b. Dischi lombari con pesi messi sulle mani in posa. La a) guarda estetica, la c) spegne scena, la d) nega limiti.
+
+6 — a. Area minore significa meno carico nel tempo totale. La b) premia lungo, la c) nega grafici, la d) nega confronti.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

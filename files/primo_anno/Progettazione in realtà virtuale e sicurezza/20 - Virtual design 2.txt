@@ -1,0 +1,247 @@
+[plain-text per Pages — da 20 - Virtual design 2.md]
+
+1. VIRTUAL DESIGN SCENE EDITOR (VDSE)
+--------------------------------------------------
+
+Un noto pacchetto per virtuale in meccanica e veicoli nasce
+da azienda estera specializzata in soluzioni immersive di sala.
+Offre strumenti per simulare con flessibilita le fasi di progetto,
+da dati tecnici importati fino ad azioni in immersivo e rilettura esiti.
+Gira su sistema aperto diffuso con porting in corso verso sistemi da ufficio.
+Dopo anni su doppia piattaforma storica e moderna, la storica e chiusa.
+Il sistema e modulare e parla con quasi tutti gli ingressi e le uscite
+tipiche di sale immersive con caschi, guanti e tracciatori in rete.
+
+Il pacchetto ha tre parti principali per lavoro ordinato in team.
+Prima la preparazione statica della scena con oggetti e caratteri.
+Poi il motore dinamico che reagisce ai gesti durante la prova.
+Poi raccolte extra per compiti speciali come showroom e revisioni.
+La prima parte non e disegno tecnico puro con pochi comandi base.
+Le forme nascono fuori e si convertono nei formati supportati in sede.
+Il primo passo e importare solidi dall'ufficio tecnico nel nuovo ambiente.
+
+I formati comprendono aperti di scambio e proprietari interni di lavoro.
+I proprietari sono di due tipi per usi diversi in laboratorio di prova.
+Uno e testuale leggibile con editor semplice per controlli rapidi in sede.
+L'altro e binario leggero non leggibile ma piu rapido da caricare in scena.
+Lo scopo centrale e vestire la scena per renderla credibile e stabile.
+Si danno materiali e immagini ai pezzi e si muovono nello spazio di prova.
+Si mettono luci e clima con sfondo, foschia e luminosita globale in sala.
+Si ottimizza struttura e matematica per calcoli piu leggeri in tempo reale.
+Il risultato e un file interno ottimizzato con scenario pronto all'uso.
+Oltre alla scena si fanno presentazioni con filmati ed esplosi guidati,
+sezioni per interni e allestimenti in stanze modello predefinite in sede.
+In modo accoppiato con il motore serve anche da aiuto durante la prova.
+
+I moduli coprono ogni bisogno di allestimento senza uscire dall'editor.
+Le luci si creano e orientano come dirette, puntuali e a cono stretto.
+Vi e luce legata alla camera per schiarire sempre il centro vista in scena.
+Si regola luce ambiente e nebbia per profondita e atmosfera di lavoro.
+I materiali si creano nuovi e si danno ai pezzi scelti con un click diretto.
+Le immagini si stendono sopra con modi piani, sferici e cilindrici a scelta.
+Per saloni grandi si danno piu immagini allo stesso pezzo in scena.
+Vicino alta definizione, lontano bassa per risparmiare memoria video.
+Le camere salvano viste con limiti vicini e lontani del volume visibile.
+Le trasformazioni muovono, ruotano e scalano in terna fissa o locale.
+Le varianti cambiano a scatto forme e materiali con eventi guidati in prova.
+Gli oggetti semplici nascono dentro come linee, scatole e sfere di aiuto,
+piu cilindri, coni e scritte per targhe e segnali in officina virtuale.
+Per filari di pali e alberi si usano cartelli sempre frontali alla camera,
+fissi con immagine pronta oppure dinamici ricalcolati per distanza in scena.
+Si corregge verso delle facce per luci giuste sulle superfici curve in sala.
+Si ottimizza con tre livelli da leggero a spinto secondo uso in prova.
+Il leggero tocca solo ordine interno senza limiti e rende poco ma sicuro.
+Il medio tiene albero intatto e va bene senza controlli di contatto in scena.
+Lo spinto fonde tutto e non lascia piu sottopezzi visibili nell'albero.
+Si ordinano materiali uguali, si uniscono vertici doppi e si puliscono facce.
+Si fanno strisce di triangoli per schede veloci ma senza controlli di contatto.
+Si fondono solidi con stesso materiale per scene piu leggere e fluide.
+Si aprono sezioni con piani per vedere interni da un lato o sull'incrocio.
+Si sceglie come evidenziare selezione con box, fili o colori vivi in scena.
+Si regola navigazione con dettaglio che cala oltre distanze e ritmi fissati.
+Si regola resa con fili, texture, trasparenze e scarto del fuori vista in scena.
+Le ombre semplici sono finte senza sole reale per saloni di vendita in sede.
+Le animazioni muovono pezzi con tempi e parametri per ogni spostamento.
+Gli eventi uniscono azioni in una sola sequenza richiamabile nel motore.
+Si passa da camere salvate e si cambiano varianti senza toccare le luci.
+In modo accoppiato si gestiscono filmati legati agli oggetti scelti in scena.
+I portali mostrano arredi solo se la camera entra nella stanza in prova.
+Si combinano camere, filmati e varianti per presentazioni guidate in team.
+Si esplodono assiemi per manuali con pezzi traslati lungo assi di montaggio.
+Si documentano note e misure in pagine web con foto e distanze tra punti.
+Si leggono vertici, poligoni, nodi e ritmo per capire pesantezza di scena.
+
+Esempio riscritto: si pensi a una cella di montaggio per cappe da cucina.
+Si importano pensili e tubi, si danno acciaio e vetro con luci calde in sala.
+Si salvano viste da banco e da porta per controlli con clienti in visita.
+Si alleggerisce con fusioni e si prova scorrimento senza scatti in scena.
+
+Errore tipico: saltare vestizione e ottimizzazione prima della prova in sala.
+Senza luci, materiali e pulizia la scena resta pesante e poco credibile.
+
+2. IL KERNEL DI VD2
+--------------------------------------------------
+
+Il nucleo e il cuore che rende viva la scena preparata prima in sede.
+Con hardware adeguato da immersione vera con risposta ai gesti in scena.
+Si programma da pannello grafico senza scrivere codice a mano in ufficio.
+Lo stesso pannello gestisce ingressi e uscite comuni delle sale immersive.
+Moduli extra danno immersivo spinto e misto con vero e sintetico insieme.
+All'avvio un interprete legge lo script e accende i tre motori interni.
+Essi sono controllo azioni esterne, gestione dispositivi e mostra dati.
+Servono scena, gesti dagli ingressi e resa coerente senza ritardi in prova.
+
+La scena vive in struttura ad albero con oggetti e legami tra parti.
+Non solo forme, ma luci, mani e osservatore per resa corretta in sala.
+Serve memoria dei legami per muovere insiemi omogenei insieme in scena.
+Se si sposta un contenitore deve seguire il contenuto dentro di esso.
+L'albero ha rami e foglie con regole semplici per tutti i progetti.
+I rami collegano figli che possono essere rami o foglie finali in scena.
+Un ramo assieme lega figli senza doppi padri per uno stesso pezzo.
+Un ramo con funzione chiama codice a inizio e fine della sua resa video.
+Un ramo per dettaglio sceglie versione semplice o ricca per distanza.
+Lontano basta sagoma, vicino serve dettaglio per viti e bordi in scena.
+Puo cambiare colore in avvicinamento per avvisi di contatto in prova.
+Puo mostrare scritte solo quando l'oggetto entra nel campo visivo in sala.
+Il passaggio puo essere a scatto rapido o con dissolvenza graduale lenta.
+
+Le foglie sono terminali con un solo padre nell'albero di scena in uso.
+Vi sono forme con punti e superfici come scheletro interno non diretto.
+Vi sono scritte piane sempre frontali alla camera senza scala automatica.
+Vi sono luci con posto e colore fino a una manciata per scena in sala.
+Vi e ambiente unico con sfondo, foschia e luce globale per tutta la scena.
+Vi e osservatore con posto e angolo di vista verticale per la camera.
+Luci, ambiente e osservatore non si vedono ma guidano la resa finale.
+All'avvio finiscono in memoria veloce senza esplorare l'albero ogni volta.
+La scena vuota parte da radice con ramo per osservatore e ramo per scenario.
+
+La resa carica forme, tiene gerarchia e mostra dal punto di chi guarda.
+Cerca equilibrio tra velocita e bellezza senza scatti in navigazione libera.
+Gli oggetti attivi per vista stanno in memoria rapida dedicata in macchina.
+Cosi accendere una luce aggiorna subito senza rileggere tutto l'albero.
+Si naviga come su tappeto volante con corpo che porta testa e mani.
+Mani e testa sono figlie del corpo e lo seguono in ogni spostamento.
+Oggetti figli del corpo restano solidali a chi esplora in prima persona.
+La camera da posto e direzione dello sguardo di chi guida in scena.
+Servono anche angolo verticale e proporzioni tra altezza e larghezza.
+Serve profondita con piani vicino e lontano oltre cui non si disegna.
+La gerarchia resta in matrici con liste di facce e punti per ogni pezzo.
+Cosi si trovano in fretta dati di punti e facce per controlli di contatto.
+Il nucleo regge piu schede e finestre con viste solide per entrambi gli occhi.
+Calcola normali, unisce materiali uguali e pulisce geometrie morte in scena.
+Misura distanze e crea ombre semplici per presentazioni in salone.
+
+Esempio riscritto: si pensi a un magazzino con scaffali alti e carrelli veri.
+Il contenitore scaffale muove scatole figlie senza perderne i legami in scena.
+Lontano si vedono scatole a sagoma, vicino con etichette leggibili in corsia.
+La camera su tappeto segue mani per prese senza staccarsi dal corpo in moto.
+
+Errore tipico: rompere gerarchia con doppi padri e legami incrociati in scena.
+Senza albero pulito i movimenti trascinano pezzi sbagliati in prova.
+
+3. INTERACTION MANAGER
+--------------------------------------------------
+
+Mostrare non basta, serve far reagire la scena ai gesti in tempo reale.
+Vi e parte ferma da guardare soltanto senza toccarla in visita guidata.
+Vi e parte viva che risponde a gesti di mani e ad altri oggetti in scena.
+Si programma con script di tipo ingresso evento azione in modo chiaro.
+Si puo lavorare a eventi prefissati oppure ad agenti autonomi in scena.
+Nella prima via si scrive copione con coppie evento azione prima della prova.
+Evento come tasto, contatto o timer scaduto in postazione di lavoro vera.
+Azione come accendere luce, suono o cambiare forma e colore in scena.
+Il gestore attende e al segnale fa partire l'azione scritta nel copione.
+Ignora tutto cio che non e in elenco durante la sessione di prova in sala.
+Nella seconda via ogni pezzo sente da solo e decide come muoversi in scena.
+Il risultato nasce da solo senza prevedere ogni incrocio a tavolino in ufficio.
+Per industria si usa la prima via con file di configurazione semplice e robusto.
+Resta possibile chiamare funzioni esterne per comportamenti autonomi mirati.
+
+Fondamentale e il controllo dei contatti tra solidi durante la presa in scena.
+Senza segnale di tocco non si puo afferrare in modo credibile con la mano.
+Il modulo crea evento a ogni intersezione tra pezzi sorvegliati in scena.
+Ha sportello che segna i pezzi controllabili e coordina i sotto moduli interni.
+Ha motore che verifica davvero i poliedri indicati in quel momento in scena.
+
+Il gestore dei dispositivi accende e guida ingressi e uscite in sala immersiva.
+Trasforma segnali fisici in dati logici uguali per ogni scena senza riscrivere.
+Un server esterno rende lo scambio indipendente dai marchi in laboratorio.
+Mostra errori in diretta e tiene piu pezzi uguali accesi insieme in prova.
+Si configura nella sezione di navigazione del modulo base prima dell'avvio.
+Regge tracciatori, guanti, minicloche, leve e tatto di varie famiglie in commercio.
+
+Esempio riscritto: si pensi a un banco per porte di furgoni in linea di montaggio.
+A pressione di pulsante si accende luce e parte suono di conferma in sala.
+A contatto tra mano e maniglia parte presa senza copioni extra per ogni dito.
+Con server esterno si cambia guanto senza riscrivere la scena in prova.
+
+Errore tipico: lasciare tutto statico senza eventi scritti nel copione di scena.
+Senza contatti sorvegliati la presa resta finta e gli oggetti non rispondono.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Editor per vestire scena con luci, materiali, camere e varianti prima della prova.
+- Import da esterno con formati aperti e interni testuali e binari leggeri.
+- Ottimizzazione da leggera a spinta con fusioni e pulizia per scene fluide.
+- Presentazioni con esplosi, sezioni, portali e documenti per revisioni in team.
+- Nucleo con tre motori per azioni, dispositivi e resa coerente in tempo reale.
+- Albero con rami e foglie senza doppi padri per moti di insiemi in scena.
+- Dettaglio per distanza con scatto rapido o dissolvenza tra versioni in sala.
+- Tappeto volante con corpo, testa e mani solidali per navigazione naturale.
+- Copione a eventi per industria con contatti che avviano azioni in scena.
+- Server esterno per ingressi indipendenti dai marchi con errori in diretta.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. L'editor di scena serve soprattutto a:
+a) solo navigare senza preparare nulla b) importare, vestire e alleggerire prima della prova c) cancellare ogni modello in archivio d) spegnere luci e materiali per sempre
+
+2. L'ottimizzazione spinta rispetto a leggera:
+a) non cambia nulla in scena b) fonde e pulisce molto ma toglie sottopezzi visibili c) aumenta i poligoni inutili d) vieta ogni resa in tempo reale
+
+3. L'albero di scena e utile perche:
+a) lascia pezzi senza legami b) tiene gerarchia senza doppi padri per moti di insiemi c) mostra solo testi senza forme d) impedisce varianti e dettagli
+
+4. Il dettaglio per distanza serve a:
+a) mostrare tutto al massimo sempre b) usare sagome lontano e ricco vicino per fluidita c) nascondere scena sempre e comunque d) fermare la navigazione in sala
+
+5. Il copione a eventi in fabbrica prevede:
+a) nessuna azione dopo segnali b) coppie segnale azione con contatti che avviano risposte c) solo luci spente senza suoni d) scene senza parti vive da toccare
+
+6. Il gestore dei dispositivi con server esterno permette di:
+a) cambiare pezzi senza riscrivere scena b) legare tutto a un solo marchio c) nascondere errori di collegamento d) lavorare senza ingressi ne uscite
+
+Soluzioni ragionate
+
+1 — b. Importa, veste e pulisce per prova fluida in sala. La a) salta preparazione, la c) cancella archivi, la d) spegne luci utili.
+
+2 — b. Fonde molto ma perde sottopezzi nell'albero di scena. La a) nega effetti, la c) aumenta pesi, la d) vieta resa.
+
+3 — b. Rami e foglie con padre unico per trascinamenti corretti. La a) lascia senza legami, la c) mostra solo testi, la d) vieta varianti.
+
+4 — b. Sagome lontano e dettaglio vicino per ritmo costante. La a) appesantisce tutto, la c) nasconde scena, la d) ferma moto.
+
+5 — b. Segnali con azioni e contatti che avviano risposte in scena. La a) resta senza azioni, la c) spegne tutto, la d) toglie parti vive.
+
+6 — a. Segnali uguali per ogni scena con errori in diretta in sala. La b) lega a marchio unico, la c) nasconde errori, la d) toglie ingressi.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,216 @@
+[plain-text per Pages — da 15 - Software per la gestione dei dispositivi.md]
+
+1. VIRTUAL HAND
+--------------------------------------------------
+
+Per lavorare con le mani dentro il disegno tecnico serve
+un'estensione che gestisce guanto e tracciatore insieme in scena.
+Si presenta come aggiunta al modellatore solido usato in azienda.
+Con due pannelli di servizio, uno per configurare e uno per guidare,
+si collegano mani e sensori e si vedono subito a video in prova.
+Il vantaggio e lavorare diretto sui modelli nativi senza conversioni.
+Si toccano i pezzi, si cambiano e si vede subito l'effetto in scena.
+
+Vi sono due varianti della stessa estensione per usi diversi in sede.
+La prima serve per disegno e tocco leggero con guanto semplice.
+Permette di prendere e spostare con dita e vibrazione sul palmo.
+La seconda serve per forza piena su mano e braccio con esoscheletro.
+Permette di sentire resistenze durante presa e trasporto dei pezzi.
+Serve una versione recente del modellatore con livello adeguato.
+
+Esempio riscritto: si pensi a un tecnico che prova un pannello
+di una lavatrice prima di tagliare lamiera per la preserie in fabbrica.
+Con variante leggera afferra la manopola a video e la ruota in scena.
+Con variante con forza sente il peso dello sportello mentre lo apre.
+Senza conversioni ogni modifica resta nel file nativo di progetto.
+
+Errore tipico: installare l'estensione senza versione adeguata del base.
+Senza livello richiesto i pannelli non si aprono e i guanti restano muti.
+
+2. IL DCU
+--------------------------------------------------
+
+Il configuratore semplifica collegamento, taratura e prova dei pezzi.
+Il gestore sotto e un pilota intelligente che uniforma periferiche diverse.
+Il primo ha tre scopi chiari per chi prepara la postazione di lavoro.
+Primo vedere unita locali e remote e controllarne il moto a video.
+Secondo tarare in fretta ogni unita prima della sessione con utenti.
+Terzo regolare parametri per l'uso con gli strumenti della mano virtuale.
+Prima si avvia il gestore sotto, poi si apre la finestra del configuratore.
+La finestra ha cinque zone utili per lavorare con ordine e calma.
+Vi sono barra menu, barra rapida, pannello delle configurazioni,
+elenco dei dispositivi e vista grafica di prova con mano o assi.
+
+Il primo passo dopo il montaggio fisico e creare un contenitore.
+Un contenitore puo tenere piu pezzi insieme, come guanto e tracciatore.
+Dal menu si crea un nuovo contenitore con nome libero a scelta,
+per esempio prova del mattino per il turno di officina in corso.
+Poi dal menu si aggiunge un dispositivo al contenitore corrente,
+scegliendo tipo, nome e porta di collegamento fisico al PC.
+Alcuni guanti chiedono porta seriale con velocita di dialogo precisa.
+Ora l'elenco mostra i pezzi aggiunti con stato e indirizzo di rete.
+Cliccando su un pezzo si lancia il collegamento al gestore centrale.
+Nella vista grafica compare la mano se il pezzo e un guanto da dita.
+Per tracciatore compaiono due terne di assi con punte colorate.
+Una terna con sfera chiara dice posto del ricevitore mobile in scena.
+L'altra terna dice posto della base fissa che emette il campo di misura.
+
+La taratura del tracciatore chiede posa della base e dei ricevitori,
+scelta del semispazio attivo e centratura del sensore in scena.
+La taratura del guanto ha due vie secondo precisione voluta in prova.
+La via rapida chiede gesti guidati in sequenza a video con mano aperta
+e poi con presa a pinza tra pollice e indice per pochi secondi.
+La via fine regola ogni dito con cursori per giunti esterni, medi,
+interni e aperture, oltre ad arco del palmo e pieghe del polso.
+Serve quando cambiano mani e taglie tra operatori diversi in turno.
+
+Esempio riscritto: si pensi a un laboratorio con due postazioni vicine.
+Si crea un contenitore per banco di sinistra con guanto e tracciatore.
+Si danno nomi chiari come mano sinistra e base banco sinistra in elenco.
+Si collega, si vede la mano che si apre a video e si tara con gesti rapidi.
+Per un nuovo operatore si ripete la tara fine sulle dita prima di iniziare.
+
+Errore tipico: saltare la tara a ogni cambio di persona al banco.
+Senza nuova taratura la mano virtuale resta storta e la presa sbaglia.
+
+3. INTERAZIONE IN CATIA
+--------------------------------------------------
+
+Montati e collegati i pezzi si passa alla presa dentro il modellatore.
+Nella parte base si aprono gestore e configuratore in ordine corretto.
+Si ricollegano i pezzi e si ripete la tara del guanto per chi lavora ora.
+Poi si apre il modulo immersivo dentro l'estensione della mano virtuale.
+Si carica il file da toccare e si aggiunge la mano all'albero logico.
+La mano va resa come sottoassieme flessibile per muoversi bene in scena.
+Con avvio della presa si caricano forme e controllo dei contatti reali.
+Cosi la mano puo afferrare senza passare dentro i solidi in modo finto.
+
+La finestra di presa offre comandi chiari per sessioni guidate in team.
+Vi e avvio e stop per aprire e chiudere la presa attiva in scena.
+Vi e tutto schermo per nascondere menu e vedere solo il modello.
+Vi e azzera per tornare alla posa caricata prima della prova in corso.
+Vi e scelta vista con mouse da tavolo oppure con testa tracciata in scena.
+Vi e scelta contatto con modo libero che lascia passare dopo la presa
+oppure modo fisso che tiene il punto fino a rilascio delle dita in scena.
+Vi e scelta di presa con tutta la mano oppure solo con polpastrelli.
+Vi e scelta di mano destra o sinistra secondo il guanto indossato.
+Vi e stato che dice quali pezzi sono pronti e collegati in rete locale.
+
+Nella parte complessa si va oltre la sfera semplice di prova iniziale.
+Se il pezzo ha vincoli coerenti si muovono cinematismi veri collegati.
+Esempio riscritto con caso diverso: si pensi a una leva di un trapano
+a colonna che muove cremagliera e testa in verticale durante la foratura.
+Con una mano si tira la leva e la testa scende lungo le guide in scena.
+Con due mani si tiene il pezzo con sinistra e si tira la leva con destra.
+Serve che vincoli di cerniera e scorrimento siano giusti nel modello.
+
+Errore tipico: lasciare la mano rigida nell'albero logico di assieme.
+Senza flessibilita la mano non segue le dita e la presa non chiude.
+
+4. SIMULAZIONE DI ATTIVITA MANUTENTIVE IN AMBIENTE CATIAV5-VIRTUAL HAND
+--------------------------------------------------
+
+Per montaggi e smontaggi, e quindi per manutenzione programmata,
+il simulatore di montaggio da solo e la mano virtuale da sola hanno limiti.
+Insieme si coprono a vicenda e danno prove complete e credibili in sede.
+La via che risolve i contatti prevede uso combinato dei due strumenti.
+Con la mano si guardano interferenze tra mano e pezzi in presa diretta.
+Con il simulatore si guardano interferenze tra pezzo mosso e resto fermo.
+Durante la presa si puo far lasciare traccia al centro del pezzo mosso.
+Si avvia la presa, si sceglie opzione di traccia e si avvia registrazione.
+La linea compare solo a fine presa staccando la mano con tasto sul guanto
+e fermando la registrazione con comando di stop dedicato in pannello.
+
+Si puo riassumere in righe di testo con spazi come tabella di confronto.
+Strumento  Pregi principali  Limiti principali da ricordare
+Simulatore di montaggio  Contatti tra pezzi con luci e suoni  Niente mano diretta in scena
+Simulatore di montaggio  Traiettoria precisa da tastiera  Niente giudizio su abilita reale
+Simulatore di montaggio  Percorso libero automatico molta memoria richiesta
+Simulatore di montaggio  Prove dove si disegna il progetto  Serve modello ben preparato
+Mano virtuale  Guanto per abilita reale di presa  Niente contatti tra pezzi soli
+Mano virtuale  Tracciatori per moto libero  Poca fisica reale nei moti
+Mano virtuale  Contatti mano pezzi in diretta molta memoria richiesta
+
+Ottenuta la traccia si passa al simulatore per analisi fine della mossa.
+Si fa ripercorrere al pezzo la linea registrata dalla mano in prova libera.
+Attivando i contatti tra solidi si vede se la via e libera o tocca in scena.
+Se vi sono tocchi si chiede percorso libero automatico per verifica.
+Per lavori duri si calcola prima la via libera e la si importa in scena
+come guida visiva per l'operatore che muove il pezzo con le mani.
+
+Esempio riscritto: si pensi a cambio filtro su un compressore in cabina.
+Con mano si prova a estrarre il filtro tra tubi senza smontare tutto.
+Si registra la traccia del centro mentre si ruota il polso in scena.
+Poi il simulatore ricontrolla urti tra filtro e tubi fermi intorno al vano.
+Se tocca, si calcola via libera e la si mostra come filo guida in scena.
+
+Errore tipico: fidarsi della sola mano senza ricontrollo tra solidi.
+Senza verifica oggettiva restano microtocchi invisibili a occhio in scena.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Estensione per mani e tracciatori diretta sui modelli nativi senza conversioni.
+- Variante leggera per tocco, variante con forza per mano e braccio in presa.
+- Configuratore per collegare, tarare e provare prima di ogni sessione.
+- Contenitori con nomi chiari per guanto e base di misura insieme in elenco.
+- Tara rapida con gesti, tara fine per dita a ogni cambio di operatore.
+- Mano come assieme flessibile per presa corretta dentro l'albero logico.
+- Vista da mouse o da testa, contatto libero o fisso, presa intera o polpastrelli.
+- Cinematismi possibili solo con vincoli coerenti nel modello caricato.
+- Mano per uomo e pezzi, simulatore per pezzi tra loro con traccia registrata.
+- Via libera automatica come guida visiva per lavori complessi in cabina.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. L'estensione per mano virtuale serve a:
+a) lavorare diretto sui modelli nativi senza conversioni b) impedire ogni uso di guanti c) cancellare i modelli dal disco d) spegnere ogni vista solida
+
+2. Prima di ogni sessione con operatori diversi bisogna:
+a) non tarare mai il guanto b) ricollegare e ritarare il guanto per la nuova mano c) buttare il tracciatore d) lavorare senza contenitori di pezzi
+
+3. La mano nell'albero logico deve essere:
+a) rigida e bloccata senza moto b) sottoassieme flessibile per seguire le dita c) fuori scena senza file d) senza vista grafica di prova
+
+4. Nella finestra di presa la scelta del contatto serve a:
+a) decidere se tenere il punto fino a rilascio o lasciare passare b) spegnere il computer di sala c) cambiare colore dei muri veri d) stampare su carta la scena
+
+5. Per cinematismi credibili con leve e ingranaggi serve:
+a) modello senza vincoli coerenti b) modello con vincoli coerenti che guidano il moto c) schermo spento senza scena d) mani legate senza guanti
+
+6. Per manutenzione con montaggi difficili conviene:
+a) solo mano senza verifiche tra solidi b) mano per traccia piu simulatore per contatti tra pezzi c) solo calcolo senza prove umane d) nessuna traccia ne percorso libero
+
+Soluzioni ragionate
+
+1 — a. Lavoro diretto con modifiche subito visibili sui nativi. La b) vieta guanti, la c) cancella file, la d) spegne viste utili.
+
+2 — b. Nuova mano chiede nuova tara per presa giusta. La a) salta tara, la c) butta pezzi, la d) lavora senza ordine.
+
+3 — b. Flessibile segue dita e chiude la presa in scena. La a) blocca moto, la c) toglie file, la d) toglie vista.
+
+4 — a. Libero contro fisso regola tenuta del punto di contatto. La b) spegne macchina, la c) colora muri veri, la d) stampa carta.
+
+5 — b. Vincoli giusti muovono organi collegati in modo vero. La a) lascia libero senza guida, la c) spegne scena, la d) lega mani.
+
+6 — b. Traccia umana piu controllo oggettivo tra solidi in scena. La a) resta senza verifiche, la c) toglie uomo, la d) toglie guide utili.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

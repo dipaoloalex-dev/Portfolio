@@ -1,0 +1,248 @@
+[plain-text per Pages — da 24 - Virtual prototyping.md]
+
+1. IL CONCETTO DI PROTOTIPAZIONE VIRTUALE
+------------------------------------------
+La simulazione numerica dei fenomeni fisici serve sia al mondo
+della ricerca sia allindustria per prevedere al calcolatore
+come si comporta un sistema prima di costruirlo.
+Un tempo ogni programma copriva una sola fisica separata,
+struttura oppure calore oppure fluidi oppure elettromagnetismo
+oppure acustica oppure chimica.
+Oggi si cerca una visione dinsieme che studia anche come
+queste fisiche interagiscono tra loro nello stesso progetto.
+
+Oltre ai settori storici come volo e auto, molte altre realta
+adottano queste prove virtuali grazie a strumenti piu semplici
+e a progettisti piu sensibili al tema.
+Il vantaggio e doppio: maggiore cultura del virtuale e maggiore
+accuratezza dei calcoli per letture integrate dei fenomeni.
+Cosi si affrontano idee nuove con piu rigore, puntando a costi
+minori e qualita migliore.
+In questo quadro cresce la prototipazione virtuale, cioe luso
+di modelli e calcoli numerici per sviluppare il prodotto riducendo
+o evitando i campioni fisici.
+
+In pratica il prototipo virtuale di una macchina e un modello
+numerico ricco di dati di prodotto e di processo, utile anche
+per valutazioni di forma e di interazione con le persone
+tramite ambienti immersivi.
+La sua diffusione era frenata da modelli difficili da costruire,
+poca circolazione di sapere nelle piccole imprese, calcolo costoso
+e programmi poco collegati tra loro, ad esempio per passare
+dal disegno dettagliato al modello semplificato per il calcolo.
+Oggi il calcolo economico dei personal computer ha tolto un ostacolo
+e lo scambio del modello tra fasi e molto migliorato, resta solo
+da scegliere la filosofia di interscambio piu efficiente.
+
+Obiettivo del progettista resta provare il prodotto intero prima
+di produrlo.
+Il modello digitale da solo, nato con i modellatori solidi tridimensionali,
+risponde a domande di montaggio, ingombro, peso e aspetto, e si aggiorna
+in fretta.
+Ma non basta che sia bello e senza interferenze, deve funzionare
+secondo specifica e costi.
+La prova sul solo esemplare fisico, spesso coincidente con il pezzo
+da consegnare e verificato in collaudo, arriva troppo tardi.
+La prototipazione virtuale aggiunge al modello la variabile tempo
+e lo rende funzionale, cosi le prove si fanno al computer senza
+lunghe messe a punto sul reale.
+Esempio riscritto diverso dalloriginale: per una staffa di sostegno
+si provano tre spessori da 4 5 e 6 mm e due posizioni di nervatura,
+scegliendo la piu leggera che resta sotto il limite di freccia.
+La simulazione del comportamento fisico permette di esplorare
+i punti critici con varianti rapide, ottimizzare forma e materiale,
+tagliare prove di laboratorio e scrivere specifiche chiare per i fornitori.
+Lalternativa resta solo la prova reale, piu lenta e rischiosa,
+con arrivo sul mercato ritardato e prove a volte impossibili.
+Unindustria automobilistica pioniera, in forma generica, passo
+in un decennio da circa quattro anni a circa venti mesi di sviluppo
+e da circa sessanta campioni a circa quindici, con forte calo di costi.
+Il virtuale sostiene anche progettare con lanalisi e lavorare insieme
+tra ufficio tecnico e officina, oltre a creare memoria storica
+dei prodotti e procedure formalizzate.
+Errore tipico da evitare: pensare che basti un bel modello 3D
+senza prove funzionali nel tempo per dire che funziona.
+
+2. GLI STRUMENTI DELLA PROTOTIPAZIONE VIRTUALE
+----------------------------------------------
+Escludendo lambiente immersivo, per le macchine servono tre famiglie
+ben integrate: modellatore geometrico 3D, simulazione del prodotto,
+simulazione dei processi.
+Il modellatore crea la base geometrica per tutto cio che segue.
+Deve descrivere la forma senza ambiguità, catturare lintento
+di chi disegna, rigenerarsi da solo dopo ogni cambio di quota
+grazie alla guida da variabili, e propagare le modifiche a tutte
+le fasi collegate tramite associativita.
+Oggi la via piu efficace e la modellazione solida parametrica
+a funzioni progressive.
+Esempio riscritto diverso dalloriginale: cambiando da 30 a 34 mm
+il diametro di un mozzo, fori e smussi collegati si aggiornano da soli.
+Per il prodotto meccanico si usano calcolo del movimento dei corpi
+e calcolo a elementi finiti.
+Il primo risolve sistemi di equazioni differenziali con vincoli
+per trovare reazioni e inerzie, noti pesi, vincoli e carichi.
+Per essere virtuale davvero deve lavorare senza ricostruire il modello,
+leggere masse e inerzie dalla geometria, leggere i vincoli dati
+in assieme o farli mettere per via grafica, mantenere associativita,
+controllare collisioni e mostrare risultati realistici.
+I suoi risultati, con vincoli e forze, diventano ingressi per le analisi
+a elementi finiti sui singoli pezzi.
+Anche il calcolo a elementi finiti, oltre a solutore e tipi di analisi
+e generazione di maglia, deve evitare ricostruzioni, importare
+le condizioni dal calcolo di movimento e restare associativo.
+Per i processi servono programmi che simulano le tecnologie
+di fabbricazione, ad esempio fusione di metalli, stampaggio di plastiche
+e taglio con asportazione, per valutare fattibilita e creare percorsi
+utensile e programmi per macchine numeriche, sempre senza rifare
+il modello e con associativita mantenuta.
+Esempio riscritto diverso dalloriginale: per una cuffia in plastica
+si confrontano due punti di iniezione e si sposta di 10 mm un tassello
+critico prima di fresare lo stampo.
+In forma di righe di testo separate da spazi:
+modellatore 3D  simulatore movimento  simulatore elementi finiti  simulatore processo
+Errore tipico da evitare: usare tre strumenti scollegati e rimodellare
+ogni volta lo stesso pezzo con errori e tempi triplicati.
+
+3. PROBLEMI DI BASE DELLA PROTOTIPAZIONE VIRTUALE
+--------------------------------------------------
+Il prototipo virtuale raccoglie in un modello numerico tutte le info
+di prodotto e processo create nelle varie fasi.
+Serve quindi organizzazione rigorosa e programmi che garantiscano
+modello unico condiviso da tutte le applicazioni, per risparmiare
+modellazione e memoria ed evitare doppioni.
+Le applicazioni non devono per forza usare sempre tutto il modello,
+i dettagli fini come piccoli smussi servono al percorso utensile
+ma appesantiscono il calcolo del movimento.
+Servono quindi sottomodelli parziali con solo i dati utili a ogni analisi,
+estratti dal modello completo.
+Ogni cambio sul modello completo deve riflettersi sui parziali
+e viceversa, con associativita nei due sensi.
+Nello stesso istante tutti devono vedere la stessa versione aggiornata.
+Oltre al modello va ordinata la gestione di file, report e archivi
+delle varie fasi di creazione.
+Interfacce sempre piu facili allargano luso anche a non specialisti,
+ma il programma non giudica la competenza di chi lo usa.
+Vale la regola per cui dati errati in ingresso danno risultati inutili.
+Servono quindi basi tecniche solide e formazione mirata, piu esperienza
+per definire guide su modellazione, scelta di maglia, vincoli, lettura
+risultati e validazione.
+Esempio riscritto diverso dalloriginale: togliendo smussi da 1 mm
+per il calcolo di massima e mantenendoli per il percorso fresa,
+con collegamento automatico tra le due viste.
+Quando la catena non e ottimizzata nasce il problema di far capire
+lo stesso archivio a programmi diversi.
+Le strade sul mercato sono quattro.
+Prima: programmi diversi dei migliori nei settori collegati con formati
+aperti standard.
+Pro: ampia scelta, evoluzione garantita, uso autonomo di ognuno.
+Contro: limiti dello scambio in formato neutro.
+Seconda: collegamenti diretti scritti da terzi o dai produttori.
+Pro: scelta ampia, uso autonomo, legame in un senso nei diretti.
+Contro: non sempre reperibili ne precisi.
+Terza: suite modulare di un solo fornitore con unico archivio.
+Pro: unico archivio e legame nei due sensi tra moduli.
+Contro: moduli non tutti allo stesso livello, poca scelta, a volte
+uso non indipendente per vincoli di licenza.
+Quarta: ambiente aperto con stessa interfaccia e stesso archivio
+dove si collegano programmi di fornitori diversi.
+Pro: stesso archivio e interfaccia, legame doppio, molta scelta.
+Contro: sistemi giovani non sempre maturi, funzionano solo col
+modellatore principale.
+In genere la conversione rovina in parte i dati per diversa precisione
+numerica e per qualita dei convertitori, cancellando entita o sbagliando
+connessioni topologiche, specie su superfici e raccordi, ma a volte
+anche su tratti semplici spezzati in tanti segmenti inutili che poi
+confondono il percorso utensile.
+Lo scambio neutro usa un pre convertitore verso il formato comune
+e un post convertitore per il ritorno, con formati aperti diffusi
+di prima, seconda e terza generazione.
+I collegamenti diretti sono piu precisi ma richiedono due convertitori
+per ogni coppia nei due sensi.
+Esistono anche neutri proprietari efficienti quando i programmi
+condividono lo stesso motore geometrico.
+Il passaggio dal disegno piano al solido spaventa per calo di produttivita,
+ma con poche regole il timore rientra.
+La durata dipende da scelta del programma adatto senza forzature,
+curva di apprendimento da settimane a mesi, impegno reale di persone
+e tempo con programmazione seria, strategie di modellazione e archivio
+adatte e condivise, tanto piu importanti con molti utenti.
+Esempio riscritto diverso dalloriginale: un ufficio di otto persone
+che passa al 3D in tre mesi con due ore al giorno di pratica guidata
+e libreria comune, contro sei mesi senza piano.
+Errore tipico da evitare: scegliere in fretta il programma piu economico
+e poi personalizzarlo per mesi senza metodo ne archivi condivisi.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Il prototipo virtuale e un modello numerico funzionale che riduce campioni fisici e aggiunge il tempo al 3D.
+- Dal calcolo per singola fisica si passa allanalisi globale con interazioni tra fenomeni.
+- Tre famiglie integrate: modellatore 3D, simulazione di prodotto, simulazione di processo.
+- Modellazione solida parametrica con associativita e rigenerazione da variabili.
+- Movimento dei corpi e elementi finiti si scambiano vincoli e condizioni senza ricostruire.
+- Modello unico con sottomodelli parziali aggiornati e congruenti nello stesso istante.
+- Interfacce facili non sostituiscono basi tecniche e validazione esperta dei risultati.
+- Quattro vie di integrazione tra formati aperti, traduttori, suite unica e ambiente aperto.
+- Conversioni tra formati possono tagliare entita e guastare topologia specie su superfici.
+- Passaggio da piano a solido riuscito con scelta giusta, formazione e archivi condivisi.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa distingue il prototipo virtuale funzionale dal solo modello 3D.
+a) Il colore piu realistico del rendering.
+b) La capacita di simulare il comportamento nel tempo e verificare se funziona da specifica.
+c) Il numero maggiore di viste di stampa.
+d) La dimensione del file di archivio.
+2. Quale terna rappresenta correttamente gli strumenti di base per sistemi meccanici.
+a) Modellatore 3D, simulazione di prodotto, simulazione di processo integrati tra loro.
+b) Solo foglio elettronico, posta e archivio documenti.
+c) Solo ambiente immersivo senza alcun modello geometrico.
+d) Solo prove fisiche senza alcun calcolo.
+3. Quale requisito e essenziale per un modellatore efficiente.
+a) Impedire qualsiasi modifica dopo il primo salvataggio.
+b) Descrizione senza ambiguitita, guida da variabili e associativita verso le altre fasi.
+c) Lavorare solo in piano senza solidi.
+d) Cancellare lintento del progettista a ogni apertura.
+4. Cosa devono garantire modello unico e sottomodelli parziali.
+a) Ognuno una versione diversa e scollegata dagli altri.
+b) Un solo archivio condiviso, viste parziali per ogni analisi e aggiornamento reciproco alla stessa versione.
+c) Solo immagini senza dati numerici.
+d) Nessun controllo di congruenza tra applicazioni.
+5. Quale limite hanno in genere le conversioni tra formati diversi.
+a) Migliorano sempre la geometria senza perdite.
+b) Possono perdere entita e connessioni per precisione e traduttori, specie su superfici e raccordi.
+c) Rendono inutile qualsiasi validazione dei risultati.
+d) Impediscono luso del formato neutro con pre e post convertitori.
+6. Da cosa dipende soprattutto la durata del passaggio dal disegno piano al solido.
+a) Solo dal colore dellinterfaccia del programma.
+b) Da scelta adatta, curva di apprendimento, impegno organizzato e strategie di archivio condivise.
+c) Solo dal numero di stampanti in ufficio.
+d) Dalleliminazione di ogni formazione per gli utenti.
+
+Soluzioni ragionate
+1 — b. Il valore aggiunto e la prova funzionale nel tempo con carichi e vincoli reali.
+Le altre sono sbagliate perche colore, viste e peso del file non dicono se il prodotto rispetta le prestazioni.
+2 — a. Solo linsieme integrato copre forma, comportamento fisico e fabbricazione senza rifare il modello.
+Le altre sono sbagliate perche fogli e posta non simulano, limmersivo da solo non basta e le prove fisiche sono lalternativa da ridurre.
+3 — b. Chiarezza geometrica piu rigenerazione parametrica e propagazione modifiche evitano errori e rilavorazioni.
+Le altre sono sbagliate perche bloccare modifiche o restare in piano o perdere lintento va contro lefficienza.
+4 — b. Unicita evita doppioni, parzialita alleggerisce le analisi, associativita mantiene tutti allineati.
+Le altre sono sbagliate perche versioni diverse creano conflitti, servono dati numerici e la congruenza e obbligatoria.
+5 — b. La diversa precisione e i traduttori imperfetti tagliano o deformano entita e topologia.
+Le altre sono sbagliate perche non ce miglioramento automatico, la validazione resta necessaria e il neutro usa proprio i due convertitori.
+6 — b. Un piano realistico di scelta, apprendimento, tempo dedicato e regole di archivio accorcia la transizione.
+Le altre sono sbagliate perche interfaccia, stampanti e assenza di formazione non determinano lapprendimento.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

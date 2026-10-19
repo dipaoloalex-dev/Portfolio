@@ -1,0 +1,230 @@
+[plain-text per Pages — da 33 - Definizione del rischio.md]
+
+1. SICUREZZA SUL LAVORO
+-----------------------
+Salute e integrita possono essere minacciate dal lavoro
+e dallambiente dove si opera.
+Le cause possono stare nellambiente materiale con polveri,
+luce scarsa e rumore, nella fatica per posture e orari,
+e nella pericolosita dei gesti da compiere.
+Sicurezza significa sapere che il sistema non andra verso stati
+indesiderati.
+Ma non basta che per caso non accada nulla, serve conoscenza
+scientifica con osservazioni ripetibili per valutarla davvero.
+Sicurezza totale senza pericoli in senso assoluto resta ideale
+difficile nella vita reale, pero le norme rendono rari i danni
+e migliorano la qualita di vita.
+Le misure principali sono valutare tutti i rischi, programmare
+la prevenzione unendo tecnica, ambiente e organizzazione,
+togliere i pericoli o ridurli con la tecnica disponibile,
+rispettare lergonomia in orari, posti, attrezzi e metodi contro
+monotonia e ripetitività, agire alla fonte, sostituire il piu
+pericoloso col meno pericoloso, ridurre gli esposti e luso di agenti
+chimici fisici e biologici, preferire protezioni collettive alle
+individuali, sorvegliare la salute e spostare chi e sensibile ad altra
+mansione, formare lavoratori, capi e rappresentanti, dare istruzioni
+chiare, consultare tutti, migliorare nel tempo anche con buone prassi,
+preparare emergenze per soccorso, fuoco, evacuazione e pericolo grave,
+usare segnali e curare manutenzione di ambienti e dispositivi
+secondo il costruttore.
+I rischi toccano persone, ambiente e macchine, dentro e fuori
+il sistema considerato, in forma singola o collettiva.
+Per chi lavora si usano tre famiglie.
+In forma di righe di testo separate da spazi:
+famiglia A infortuni e impianti  famiglia B igiene e agenti
+famiglia C organizzazione e persona
+La prima copre strutture, macchine, energia e sostanze con fuoco
+ed esplosioni.
+La seconda copre chimici, fisici, biologici e cancerogeni.
+La terza copre turni, mente, postura e contesti gravosi.
+Esempio riscritto diverso dalloriginale: rumore in falegnameria
+come famiglia B e turno notturno con pause corte come famiglia C.
+Errore tipico da evitare: cercare solo il pericolo evidente della macchina
+e dimenticare organizzazione e igiene del contesto.
+
+2. TIPI DI RISCHIO
+------------------
+Si distinguono rischio sentito dal singolo, sentito dal gruppo,
+stimato col calcolo e rischio vero con info complete.
+Il sentito e la possibilita che accadano danni a persone, ambiente
+o collettivita.
+Conta chi lo sente, cioe chi ne pagherebbe le conseguenze, e perche
+lo si considera meritevole di attenzione.
+La percezione cambia per molti fattori soggettivi e oggettivi.
+In forma di righe di testo separate da spazi:
+scelta libera o imposta  confidenza  numero coinvolti  tipo evento
+cultura  situazione personale  comunicazione  durata  immediatezza
+Esempio riscritto diverso dalloriginale sulla volontarieta: in autobus
+si pretendono standard altissimi, in bici propria si accettano
+rischi alti credendo di controllarli con la bravura, mentre nel mezzo
+pubblico il rischio sembra fuori dalla propria volonta.
+La confidenza riduce lallarme, per questo molti infortuni in magazzino
+colpiscono gli esperti.
+Il numero conta: un disastro con molte vittime insieme colpisce piu
+delle stesse vittime in tanti piccoli casi, anche per effetto dei media.
+Il tipo di morte pesa: un crollo con fuoco spaventa piu di una caduta
+in strada.
+Cultura e obiettivo personale cambiano il peso dato al rischio proprio
+o altrui.
+Il modo di raccontarlo orienta: i notiziari spingono su emozioni
+e disagi.
+La durata conta: vivere accanto a una diga preoccupa piu di una gita
+in bici, perche il primo e continuo e il secondo transitorio.
+Limmediatezza conta: molti con bevande zuccherate ogni giorno accettano
+il rischio futuro per il piacere subito, sottovalutando il domani.
+Oltre al singolo esiste il sentire collettivo che guida le decisioni
+quando bisogna cambiare verso soluzioni piu o meno rischiose.
+Il calcolato viene da metodi quantitativi con probabilita e danni attesi.
+Il vero esisterebbe solo con info totali su probabilita e conseguenze.
+Con dati incerti non e raggiungibile.
+Servono sistema stabile nel tempo per statistiche, misure valide
+e registrazioni affidabili, con finestra temporale adatta alla raccolta.
+Esempio riscritto diverso dalloriginale: alluvioni rare con pochi dati
+contro cadute in magazzino frequenti con molti dati utili.
+Errore tipico da evitare: scambiare la paura del momento per misura
+reale senza probabilita e conseguenze stimate.
+
+3. SIMULAZIONI E ROLEPLAYING
+----------------------------
+Il gioco in didattica fu accolto con dubbi e ancora discute,
+ma non si puo piu dire come venti anni fa che sia insostenibile,
+resta aperta la domanda sulla sua efficacia vera.
+La sicurezza come scuola e universita ha molti strumenti da tarare
+su temi, persone e logistica.
+Ognuno impara in modo diverso a seconda di come riceve le info.
+Fare in prima persona con simulazioni e ruoli fissa meglio e piu a lungo.
+Spesso il formatore deve dare nozioni tecniche a platee poco avvezze,
+con programmi fitti e capillari che rischiano di rendere ostica
+la materia contro lo scopo di creare cultura della sicurezza.
+Oltre a preparazione e coinvolgimento del docente contano gli strumenti,
+e i piu efficaci chiedono partecipazione attiva con ruolo e simulazione.
+La simulazione puo essere teorica o pratica.
+Nella didattica moderna ci sono tre modi.
+Simbolica vicina allo studio classico con simboli e non realta.
+Ibrida con esperienza piu simboli residui.
+Esperienziale innovativa dove si agisce in copia della realta,
+al centro di questo approfondimento.
+La scuola classica non usa il canale percettivo motorio con percezione
+e azione fuori dalla mente, mentre qui si prova e riprova e il sapere
+nasce dallesperienza forte.
+In sicurezza questo vale moltissimo.
+Con scenario del formatore si vive un lavoro vero, con pratica,
+conseguenze e scelte rapide senza danni reali.
+Esempio riscritto diverso dalloriginale: prova di allarme con fumo
+teatrale dove tutta la sede evacua e poi si discutono code e tempi.
+Il formatore poi fa emergere a tavolino saperi, meccanismi e soluzioni.
+Centrale e lanalisi di cio che e accaduto per portare il modello
+dentro lesperienza.
+Il ruolo in sicurezza accresce consapevolezza e analisi dei casi reali
+e confidenza con obiettivi e punti di vista altrui sul campo.
+Il gioco e una sessione dove il docente assegna parti come nella vita,
+per vedere da altro lato e capire gli altri.
+Il dopo gioco analizza dinamiche tra persone in lavoro o emergenza,
+da attori e da osservatori esterni.
+Esempi riscritti diversi dalloriginale: vestire i panni del coordinatore
+di magazzino per mappare i rischi di una corsia, oppure del custode
+di piano o delladdetto alle chiamate in una finta perdita di gas.
+Il formato standard ha tre tempi.
+Preparazione con scena, storia e parti, a volte scritte insieme agli attori.
+Esecuzione con interpretazione dei ruoli assegnati.
+Discussione guidata su scelte, posizioni e motivi soggettivi per capire
+le dinamiche ipotizzate in preparazione.
+Errore tipico da evitare: fare solo nozioni frontali a platee stanche
+senza far provare e discutere casi concreti.
+
+3.1 APPLICAZIONI DELLA REALTÀ VIRTUALE
+---------------------------------------
+Gli usi di questo strumento sono molti.
+Primo: ricostruire progetto, spazio o territorio per studiare e disegnare.
+Si controllano aspetto e viste con inserimento nel paesaggio, sicurezza
+con anomalie e incidenti simulati, percorsi con flussi e ingorghi,
+inserimento nel quartiere urbano.
+Secondo: mostrare fasi di cantiere con aree e accessi.
+Terzo: usare il modello come mappa verso archivio con tutte le info sullopera.
+Quarto: usare il modello nella vita dellopera per gestione con spazi
+commerciali e museali, prove di guasti per sicurezza, formazione di operatori
+e manutentori, piani di manutenzione.
+Quinto: diffondere il progetto e cercare consenso tra promotori.
+In particolare spiega ai non tecnici, utenti e cittadini, i valori della proposta.
+Unisce specialisti diversi gia in progettazione.
+E oggi il mezzo piu realistico per mostrare uno spazio futuro a tutti,
+da tecnici a imprenditori e amministratori.
+Esempio riscritto diverso dalloriginale: visita virtuale di una passerella
+con prova di afflusso di cento persone e percorso alternativo senza colli.
+Errore tipico da evitare: usare il modello solo come immagine bella
+senza simulazioni, archivi e formazione collegati.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Sicurezza come sapere scientifico che previene stati indesiderati del sistema.
+- Prevenzione programmata con ergonomia, fonte, sostituzione e collettivo prima dellindividuale.
+- Tre famiglie con infortuni, igiene e organizzazione della salute.
+- Sentito singolo e collettivo contro calcolato con probabilita e vero con info totali.
+- Percezione guidata da scelta, confidenza, numero, tipo, cultura, comunicazione, durata e immediatezza.
+- Simulazione simbolica, ibrida ed esperienziale con ciclo di percezione e azione.
+- Ruolo in tre tempi con preparazione, esecuzione e discussione guidata.
+- Prova di emergenza come esempio principe di apprendimento senza danni.
+- Modello virtuale come ausilio a studio, cantiere, archivio, gestione e consenso.
+- Formatore come regista di scenari e di analisi a tavolino dopo lesperienza.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa significa lavorare in sicurezza secondo la prima sezione.
+a) Solo sperare che non accada nulla senza verifiche.
+b) Conoscere con metodo come evolve il sistema per evitare stati indesiderati con prevenzione programmata.
+c) Solo usare protezioni individuali senza altro.
+d) Solo fare manutenzione quando si rompe qualcosa.
+2. Come si dividono i rischi per chi lavora descritti nel testo.
+a) Solo rischi elettrici senza altre famiglie.
+b) Infortuni e impianti, igiene e agenti, organizzazione e persona.
+c) Solo rischi notturni senza altri tipi.
+d) Solo rischi individuali senza collettivi ne interni o esterni.
+3. Quale fattore NON altera la percezione del rischio come descritta.
+a) Scelta libera o imposta con confidenza ed esperienza.
+b) Colore preferito della divisa senza contesto.
+c) Numero di coinvolti e tipo di evento con cultura e comunicazione.
+d) Durata desposizione e immediatezza delle conseguenze.
+4. Cosa distingue rischio calcolato e rischio vero.
+a) Sono identici in ogni condizione di dati.
+b) Il primo stima probabilita e danni col metodo, il secondo esisterebbe solo con info totali e sistema stabile e misurabile.
+c) Il primo non usa alcun metodo quantitativo.
+d) Il secondo si misura sempre anche con dati scarsi e rari.
+5. Perche simulazione esperienziale e ruolo sono forti in sicurezza.
+a) Perche evitano ogni discussione dopo la prova.
+b) Perche fanno vivere scenari con scelte rapide senza danni e poi si analizzano meccanismi e soluzioni.
+c) Perche sostituiscono norme e valutazioni con solo divertimento.
+d) Perche non richiedono preparazione ne guida del formatore.
+6. A cosa serve il modello virtuale oltre al bel disegno.
+a) Solo a fare una immagine da appendere in ufficio.
+b) A controllare qualita, sicurezza, flussi e citta, a seguire cantiere e archivio e a formare e manutenere lopera.
+c) A nascondere anomalie e conflitti di percorso.
+d) A evitare ogni comunicazione con non tecnici e cittadini.
+
+Soluzioni ragionate
+1 — b. La definizione chiede sapere verificabile e misure ordinate dalla valutazione alle emergenze.
+Le altre sono sbagliate perche caso, solo individuali o solo rottura negano il sistema di prevenzione.
+2 — b. La tripartizione copre macchine e strutture, salute e ambiente, lavoro e mente insieme.
+Le altre sono sbagliate perche riducono tutto a un solo pericolo o ignorano collettivo e contesto.
+3 — b. Il colore da solo non compare tra i nove fattori di percezione con comunicazione e durata.
+Le altre sono sbagliate perche elencano proprio fattori citati come scelta, numero, cultura e immediatezza.
+4 — b. Senza stabilita, misura valida e finestra adatta come per eventi rari non si arriva al vero.
+Le altre sono sbagliate perche uguaglianza, assenza di metodo o misura sempre possibile contraddicono il testo.
+5 — b. Lesperienza protetta piu analisi guidata fissa cultura della sicurezza meglio della lezione frontale.
+Le altre sono sbagliate perche discussione essenziale, norme restano e preparazione del docente decisiva.
+6 — b. Il gemello visivo unisce progetto, cantiere, dati, gestione e consenso in un unico strumento vivo.
+Le altre sono sbagliate perche non e vetrina, non nasconde problemi e serve proprio a comunicare a tutti.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

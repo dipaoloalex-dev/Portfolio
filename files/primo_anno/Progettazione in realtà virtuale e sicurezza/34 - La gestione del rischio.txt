@@ -1,0 +1,236 @@
+[plain-text per Pages — da 34 - La gestione del rischio.md]
+
+1. RISK MANAGEMENT
+------------------
+Gestire il rischio significa misurarlo o stimarlo e poi costruire
+strategie per governarlo.
+Lo fanno le grandi imprese con gruppi dedicati e le piccole
+in modo informale nella pratica quotidiana.
+La sicurezza oltre che bene primario ed esigenza e diritto di chi lavora,
+quindi sta alla base di ogni attivita.
+In passato resto in secondo piano dietro conti economici con sterile
+confronto tra costi e benefici.
+Soprattutto tra gli anni sessanta e ottanta, valori rielaborati diversi
+dalloriginale, il modello rigido di linea puntava solo a efficienza
+e quantita e metteva al centro regolarita degli impianti e non la persona.
+Solo dagli anni ottanta, con modelli centrati su flessibilita e qualita,
+crebbe nei lavoratori la consapevolezza del proprio lavoro.
+Le richieste collettive misero prima di salario ed economia la salute
+e la sicurezza.
+Salute passo da assenza di malattie a benessere fisico, mentale e sociale.
+Sicurezza passo da voce tecnico economica a condizione per tutelare
+la salute.
+Oggi sicurezza significa insieme di prevenzioni e protezioni di datore,
+collaboratori, medico competente e lavoratori per migliorare i luoghi
+e ridurre infortuni.
+La legge nazionale di fine anni duemila con testo unico e correttivi
+chiede alle imprese un sistema organizzato che gira su pianifica,
+attua, controlla e riesamina in modo dinamico.
+Non esiste modello unico, ogni organizzazione con lavoratori
+e rappresentanti sceglie le misure adatte.
+La parola rischio nel parlare comune crea confusione perche usata
+come pericolo o come probabilita.
+Esempio riscritto diverso dalloriginale: dire che e probabile
+un temporale pomeridiano preoccupa per alta probabilita anche se
+il danno e lieve, dire che una frana e rischiosa preoccupa per danno
+grave anche se rara.
+Serve quindi legare rischio a probabilita e danno insieme, base di un noto
+metodo a curve di uso diffuso.
+La norma tecnica definisce il rischio come probabilita che persone,
+beni o ambiente subiscano effetti negativi di data natura per un pericolo.
+Da qui le definizioni in forma breve.
+Pericolo come situazione potenziale da proprieta chimiche, fisiche
+o biologiche di sostanze e sistemi con effetti avversi.
+Salute come benessere completo e non solo assenza di malattia secondo
+definizione sanitaria internazionale anni quaranta ripresa dalla legge.
+Danno come alterazione breve o duratura di corpo o funzioni.
+Incidente come evento accidentale con danno anche solo materiale,
+detto mancato infortunio o segnale perche molti segnali indicano
+alto rischio futuro.
+Infortunio come lesione improvvisa e violenta sul lavoro con morte
+o invalidita breve o lunga con astensione, con gravita clinica,
+legame causa effetto e vicinanza nel tempo.
+Malattia da lavoro come patologia lenta da fattore presente nel luogo,
+in genere ogni danno non da infortunio.
+Tipi in forma di righe di testo separate da spazi:
+rischi specifici frequenti lievi  rischi comuni medi su una o piu persone
+rischi rilevanti rari gravissimi
+I primi da agenti fisici e chimici continui, i secondi da macchine
+e impianti di ogni settore, i terzi da anomalie con fuochi, scoppi
+e rilasci dentro e fuori lo stabilimento.
+Infine analisi come ricerca degli elementi di pericolo, valutazione
+come sintesi qualitativa o quantitativa del possibile danno,
+gestione come azioni per attenuarlo con meno conseguenze
+come protezione o meno frequenza come prevenzione o entrambe.
+Esempio riscritto diverso dalloriginale: rumore continuo in officina
+come specifico, caduta da scala come comune, perdita da serbatoio
+come rilevante raro.
+Errore tipico da evitare: usare rischio, pericolo e probabilita come sinonimi
+e decidere senza distinguere frequenza e gravita.
+
+2. QUANTIFICAZIONE DEL RISCHIO
+------------------------------
+Nessuno evita ogni rischio, si sceglie la via ritenuta meno rischiosa.
+Servono numeri chiari da pesare con costi e benefici nelle decisioni.
+Il rischio unisce danni e probabilita associati.
+Meno rischio significa danni minori o casi piu rari o entrambi.
+La formula convenzionale qui e descritta in forma generica senza simboli
+copiati, come prodotto tra frequenza attesa e grandezza degli effetti,
+con risultato detto indice di rischio.
+Pesa allo stesso modo conseguenze e probabilita di accadere.
+La misura usa statistiche di eventi indesiderati su popolazione esposta.
+Il rapporto tra esposti e non esposti da il rischio relativo.
+La parte piu difficile e stimare la probabilita, meno errata e la stima
+della grandezza, quindi non hanno pari affidabilita.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+ottanta casi lanno con un ferito ciascuno non equivalgono a otto casi
+con otto feriti ne a un caso con sessantaquattro feriti, perche la societa
+pesa diversamente concentrazione e diffusione.
+Le frequenze si studiano con analisi dettagliata delle condizioni operative
+del sistema candidato a incidente.
+La grandezza e piu complessa per i molti fattori sul danno di riferimento
+accettabile da tutti.
+Nel processo si separano probabilita e gravita di ogni evento pericoloso
+e il prodotto individua il rischio di quel caso.
+Gli eventi possono essere intensivi piccoli, forti, brevi, improvvisi
+e poco prevedibili, oppure pervasivi ampi, lunghi, graduali e meglio
+prevedibili.
+Per cause possono essere naturali fuori dal governo umano come trombe,
+frane e vento, oppure umani dentro il controllo collettivo come inattesi,
+non voluti e non previsti, voluti o previsti.
+Le conseguenze possono essere sanitarie, sociali e ambientali.
+Esempio riscritto diverso dalloriginale: raffica breve su ponteggio
+come intensivo contro umidita diffusa in reparto per mesi come pervasivo.
+Errore tipico da evitare: sommare casi diversi solo per prodotto uguale
+senza dire se il danno e concentrato o sparso nel tempo.
+
+3. ANALISI DEL RISCHIO
+----------------------
+Lindustria usa da tempo queste procedure, ora accolte anche
+nellingegneria.
+Tre passi fondamentali.
+Primo: elencare gli incidenti ipotizzabili per struttura, funzioni
+e ambiente.
+Secondo: stimare in numeri probabilita e conseguenze.
+Terzo: confrontare con obiettivi di sicurezza per dire se accettabile
+e dove agire per tagliare frequenze o danni.
+Lidentificazione raccoglie sapere da studi e da storia sui pericoli.
+Per strade ad esempio si usano archivi dei sinistri gia avvenuti.
+Con elaborazioni si trovano tratti e punti con molti casi e si lega
+causa a effetto.
+Si puo procedere a cascata in tre modi.
+Osservazione ripetuta e registrata nel tempo.
+Selezione con procedura standard che classifica prodotti e fenomeni
+per pericolo potenziale.
+Diagnosi che lega conseguenze a possibile causa.
+La stima usa statistica e modelli per dare numeri al rischio.
+Anche senza storia per processi nuovi si puo stimare con metodi
+a struttura logica ad albero.
+Si scompone levento finale in catene di sottoeventi con probabilita
+note da analisi delle cause e si somma lungo i rami.
+La valutazione confronta misura, altri rischi e benefici contro costi
+di prevenzione e riduzione.
+Cerca anche le condizioni che innescano levento.
+La verifica da risultati qualitativi oltre i soli indici di frequenza
+e gravita che dicono quanto ma non perche.
+Le fasi richieste sono trovare gli eventi avversi, capire i meccanismi
+con cui possono accadere, stimare estensione, grandezza e probabilita
+di ogni fenomeno pericoloso.
+In teoria basterebbero sequenze credibili per ogni pericolo, ma nella
+realta accadono anche quelle poco credibili.
+Primo passo su unarea e censire ogni situazione che puo generare
+incidenti rilevanti e metterla in luce.
+I risultati diventano mappe, curve sociali e studi di sensibilita.
+Le mappe disegnano linee di pari rischio individuale sulla pianta
+e dicono il pericolo secondo la posizione, utili per piani di emergenza
+e possibili evoluzioni con il meteo.
+Il rischio sociale guarda limpatto di un evento sulla comunita e lopinione.
+Un unico caso con molte vittime pesa piu di molti casi con una vittima,
+esempio rielaborato diverso dalloriginale con crollo di tribuna contro
+cadute domestiche sparse.
+Le curve con frequenza cumulata contro numero di vittime mostrano
+il quadro senza dipendenza dal punto e guidano mezzi di emergenza
+e giudizio sui casi piu gravi.
+Lo studio di sensibilita segue il rischio al variare dei parametri,
+trova il peso di ogni sorgente e indica dove prevenire o mitigare
+per ottimizzare territorio e impianti, anche per decidere se e dove
+costruire opere civili e industriali.
+Esempio riscritto diverso dalloriginale: spostando un deposito di 200 m
+fuori dal centro la curva sociale scende di un ordine di grandezza.
+Errore tipico da evitare: fermarsi a indici medi senza mappe, curve
+e cause, e scoprire in emergenza zone e scenari non previsti.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Gestione come misura, stima e strategia con ciclo di miglioramento continuo.
+- Storia da efficienza senza persona a benessere fisico, mentale e sociale.
+- Definizioni ordinate con pericolo, salute, danno, incidente, infortunio e malattia.
+- Tre tipi con specifici frequenti lievi, comuni medi e rilevanti rari gravissimi.
+- Analisi, valutazione e gestione tra protezione sulle conseguenze e prevenzione sulle frequenze.
+- Formula come prodotto tra frequenza e grandezza con diversa affidabilita.
+- Eventi intensivi contro pervasivi e naturali contro umani con tre intenzioni.
+- Identificazione a cascata con osservazione, selezione e diagnosi piu alberi logici.
+- Mappe per luogo, curve sociali per comunita e sensibilita per parametri.
+- Decisioni su opere e territori guidate da contributi di ogni sorgente.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa significa gestire il rischio nel senso della lezione.
+a) Solo riparare dopo il danno senza prevenzione.
+b) Misurare o stimare e poi attuare strategie con ciclo di miglioramento e partecipazione.
+c) Solo compilare moduli senza misure concrete.
+d) Solo assicurarsi senza cambiare luoghi e metodi.
+2. Quale passaggio storico e descritto correttamente.
+a) Sempre al centro la persona senza fasi di solo efficientismo.
+b) Da modello rigido di sola efficienza a modelli con flessibilita e salute come benessere completo.
+c) Mai alcuna legge o sistema organizzato per la sicurezza.
+d) Solo tecnica senza salute ne partecipazione.
+3. Come si distinguono i tre tipi di rischio per frequenza e danno.
+a) Tutti identici senza differenze utili.
+b) Specifici frequenti lievi, comuni medi su poche persone, rilevanti rari gravissimi dentro e fuori.
+c) Solo rilevanti senza specifici e comuni.
+d) Solo individuali senza collettivi e senza cause.
+4. Cosa dice la formula convenzionale qui descritta in forma generica.
+a) Il rischio cresce solo con la sfortuna senza misure.
+b) Il rischio unisce frequenza attesa e grandezza effetti in un indice con pesi di affidabilita diversi.
+c) Probabilita e gravita non si possono mai separare per analisi.
+d) Ottanta casi lievi equivalgono sempre a un caso grave.
+5. Quali passi compongono lanalisi in tre fasi con cascata.
+a) Solo реакция emotiva senza dati ne modelli.
+b) Elenco incidenti, stima di probabilita e danni con alberi, confronto con obiettivi e azioni su frequenze o danni.
+c) Solo mappe senza stime ne decisioni.
+d) Solo curve sociali senza identificazione iniziale.
+6. A cosa servono mappe, curve sociali e sensibilita nelle decisioni.
+a) Solo a decorare relazioni senza usi pratici.
+b) A localizzare pericoli per luogo, a pesare impatto su comunita e a trovare leve sui parametri per piani ed emergenze.
+c) A nascondere le sorgenti peggiori di rischio.
+d) A evitare ogni piano di emergenza e di territorio.
+
+Soluzioni ragionate
+1 — b. Misura e strategia con lavoratori coinvolti e riesame continuo definiscono la gestione moderna.
+Le altre sono sbagliate perche solo riparazione, solo carte o solo polizza non prevengono ne migliorano.
+2 — b. Levoluzione da linea efficiente a persona con benessere spiega leggi e sistemi partecipati.
+Le altre sono sbagliate perche negano la fase storica, le norme o la salute completa.
+3 — b. La tripartizione aiuta a scegliere protezioni e prevenzioni proporzionate a frequenza e gravita.
+Le altre sono sbagliate perche appiattiscono tutto o cancellano famiglie e contesti interni ed esterni.
+4 — b. Il prodotto orienta ma la probabilita e piu incerta della grandezza e la concentrazione pesa diversamente.
+Le altre sono sbagliate perche sfortuna generica, inseparabilita assoluta o equivalenza cieca tradiscono il metodo.
+5 — b. Osservazione, selezione e diagnosi con alberi portano a numeri confrontabili con benefici e costi.
+Le altre sono sbagliate perche emozione sola, sole mappe o sole curve non bastano senza identificazione e stima.
+6 — b. Luogo, comunita e parametri guidano emergenze, opere e mitigazioni dove rendono di piu.
+Le altre sono sbagliate perche non sono decori, non nascondono e non evitano i piani ma li fondano.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

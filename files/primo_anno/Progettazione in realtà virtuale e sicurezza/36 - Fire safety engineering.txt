@@ -1,0 +1,248 @@
+[plain-text per Pages — da 36 - Fire safety engineering.md]
+
+1. INGEGNERIA DELLA SICUREZZA ANTINCENDIO
+-----------------------------------------
+Accanto alle regole rigide che impongono misure fisse esiste
+un metodo paritetico basato su progetto ingegneristico.
+Si parte da scienza dellincendio e del comportamento umano
+e si usano principi tecnici per proteggere persone e beni,
+misurare i rischi e definire protezioni che tengano le conseguenze
+sotto livelli stabiliti, secondo linea guida tecnica internazionale
+qui descritta in forma generica.
+Un decreto nazionale di fine anni duemila ha accolto il metodo
+per attivita senza regola specifica e per deroghe, per misure equivalenti
+scelte con il committente.
+Il percorso ha tre tempi.
+Esame iniziale, conti di dettaglio e piano di gestione della sicurezza.
+In forma di righe di testo separate da spazi:
+esame iniziale  calcoli  piano di gestione
+
+1.1 ANALISI PRELIMINARE (I FASE)
+---------------------------------
+Si parte dai dati del progetto con vincoli di norme ed esigenze proprie,
+pericoli legati alluso previsto, ambiente intorno e conseguenze del fuoco,
+persone presenti per tipo di edificio e uso.
+Poi si fissano gli obiettivi secondo prevenzione e bisogni dellattivita.
+Esempi riscritti diversi: tutti devono poter uscire o essere soccorsi,
+sicurezza per le squadre, tenuta della struttura per un tempo dato,
+fuoco e fumo limitati dentro, fuoco limitato verso i vicini.
+Poi si scelgono i parametri che misurano gli obiettivi, detti livelli
+di prestazione, come gas caldi, visibilita, calore radiante, tossici
+e ossigeno minimo, tutti con numeri da norme tecniche o leggi.
+Poi si disegnano gli scenari, cioe insiemi di condizioni per simulare.
+Si scelgono tra i casi realistici i piu gravosi per fiamme, strutture,
+persone e soccorsi.
+Ogni scenario unisce tre parti.
+Fuoco con combustibili per stato, tipo e quantita, disposizione,
+curva di potenza nel tempo e picco.
+Edificio con forme, pareti e arredi con proprieta termiche, ventilazione
+dentro e fuori, porte e finestre aperte o chiuse.
+Persone con affollamento, condizioni, disabilita, conoscenza dei luoghi,
+veglia o sonno.
+La scelta nasce da giudizio congiunto tra progettista e autorita
+su ragionevolezza e realismo, per ridurre infiniti casi possibili
+ai piu pericolosi per innesco e diffusione.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+soglia di 800 chilowatt raggiunta in 500 secondi per crescita lenta,
+in 250 per media, in 120 per rapida, in 60 per ultrarapida.
+Errore tipico da evitare: prendere uno scenario comodo e non il piu
+gravoso realistico per persone, strutture e soccorsi.
+
+2. ANALISI QUANTITATIVA (II FASE)
+---------------------------------
+Si scelgono gli impianti che uniscono edificio e obiettivi di prestazione.
+Tra ipotesi alternative si giudica con numeri quale e accettabile.
+Il calcolo da parametri dellevoluzione del fuoco per verificare i livelli
+fissati, scartando le vie deboli e affinando le migliori per sicurezza.
+
+2.1 MODELLI DI CALCOLO DEDICATI ALLA SIMULAZIONE DI UN INCENDIO
+----------------------------------------------------------------
+Nodo centrale e il modello che prevede nel tempo le fasi con protezioni
+attive e passive, per capire il rischio e gestire il pericolo.
+La scelta dipende da complessita e sapere disponibile.
+Lequazione del fenomeno diventa codice che calcola da solo evoluzione
+e sequenza dagli input dellutente.
+Prima si definisce il volume di calcolo nello spazio.
+Poi proprieta termiche e chimiche dei materiali dentro.
+Poi si divide il volume in celle dove risolvere le equazioni.
+Da qui due famiglie.
+Modelli a zone con due grandi volumi, alto con fumi e basso con aria
+fresca, separati a una quota da salto di temperatura, con valori uniformi
+dentro ogni zona per temperatura e tossici.
+Modelli a campo con moltissime celle e leggi di massa, moto ed energia
+risolte in ogni volume, capaci di dare mappe nel tempo e nello spazio.
+Esempio riscritto diverso dalloriginale: locale di 120 metri cubi diviso
+in due zone con interfaccia a 1,6 m contro griglia di ottomila celle
+per il campo vicino alla porta.
+Errore tipico da evitare: usare il modello fine senza dati di materiali
+e ventilazione affidabili e fidarsi di colori senza verifica.
+
+2.2 PROGRAMMA DI GESTIONE DELLA SICUREZZA ANTINCENDIO (SGSA)
+--------------------------------------------------------------
+Col metodo prestazionale serve un documento che tiene fermi i parametri
+degli scenari e del progetto come vincoli per lesercizio.
+E novita sostanziale e adempimento centrale per queste attivita.
+Contiene ipotesi su turni e ruoli, pericoli delle lavorazioni e stime,
+controlli operativi, gestione modifiche, piani di emergenza e controllo
+delle prestazioni.
+Se i controlli periodici mostrano impegni non mantenuti scatta
+la sospensione del certificato di prevenzione.
+Il motivo e che le protezioni valgono solo con quei parametri,
+se cambiano cala la sicurezza nel tempo.
+Esempio riscritto diverso dalloriginale: se si sposta un archivio
+da 40 a 80 kg di carta per metro si deve rifare lo scenario.
+Errore tipico da evitare: cambiare uso, arredi e aperture senza aggiornare
+documento e simulazioni.
+
+3. SVILUPPO PROGETTUALE E DOCUMENTAZIONE FINALE
+-------------------------------------------------
+Il progetto deve dare risultati capaci di superare le richieste iniziali
+ai livelli attesi di sicurezza.
+Chi sceglie la via ingegneristica per approvazione o deroga aggiunge
+carte oltre quelle del regolamento di fine anni novanta.
+Sintesi logica con scenario, obiettivi e livelli.
+Relazione con modello o algoritmo, ipotesi, input, risultati e giudizi.
+Tavole con disegni e schemi.
+Piano di gestione della sicurezza.
+Esempio riscritto diverso dalloriginale: fascicolo con tre scenari,
+due alternative di esodo e <
+tavola con percorsi da 1,2 m liberi.
+Errore tipico da evitare: consegnare solo disegni senza calcoli
+ripercorribili e ipotesi dichiarate.
+
+3.1 L'ABMS
+---------
+E un modo di calcolare che simula singoli autonomi e loro interazioni
+per capire leffetto sullinsieme.
+Unisce giochi, sistemi complessi, societa, informatica e metodi evolutivi,
+con campionamento statistico per il caso quando serve.
+Ogni entita guarda lambiente e decide con regole, ad esempio produrre
+o spostarsi, e linsieme mostra comportamenti complessi utili sul reale.
+Gli elementi possono evolvere con reti e algoritmi che imparano.
+E piu un punto di vista dal basso che una macchina sola, detta anche
+modellazione microscopica.
+Piace perche costruire un singolo elemento e facile dopo poche basi,
+ma i concetti restano profondi e spesso si usa male per semplicismo.
+Esempio riscritto diverso dalloriginale: cento visitatori con velocita
+tra 0,8 e 1,4 m al secondo verso due uscite da 1,2 m con scelta al segnale.
+Errore tipico da evitare: credere che basti muovere pedine per avere
+previsioni affidabili senza validare regole e dati.
+
+3.2 GLI AGENTI
+--------------
+Senza definizione unica, ogni elemento indipendente puo essere agente
+da programmi a persone, da reazioni semplici ad adattamenti complessi,
+per alcuni solo se impara dallambiente e cambia condotta.
+Una scuola nota lo descrive come entita che sente con sensori e agisce
+con attuatori.
+Ha quindi sensori, attuatori e guida razionale delle scelte.
+Razionale significa puntare al massimo di una misura di successo.
+Non esiste misura unica, deve essere oggettiva e data da fuori con periodo
+di valutazione, e dipende da ambiente e conoscenza che se ne ha.
+Dipende in ogni istante da misura di successo, storia delle percezioni,
+sapere sullambiente e mosse possibili.
+Ideale e chi a ogni storia sceglie la mossa col miglior atteso secondo
+storia e sapere.
+Autonomo e chi decide con la propria esperienza e non solo con sapere
+impostato dal disegnatore.
+Altra scuola lo vede come sistema informatico in un ambiente con mete
+proprie, senza fissare il tipo di ambiente.
+Sta dentro perche riceve input e cambia lambiente, con controllo diretto
+di azioni e stato interno senza uomo o altri sistemi.
+La meta e centrale come ente che risolve problemi e puo anche dire di no
+a richieste altrui.
+Esempi riscritti diversi: regolatore di livello che apre e chiude una valvola
+per tenere 2 m costanti e piccolo programma che pulisce cartelle quando
+piene oltre mille file.
+Per essere detto intelligente serve flessibilita su tre lati.
+Pronto a stimoli con risposta rapida in ambienti che cambiano.
+Intraprendente verso la meta senza solo subire eventi.
+Sociale con linguaggio tra agenti, accordi e scambi per compiti comuni,
+molto piu che inviare un bit.
+La forma debole si ferma qui, la forte aggiunge mente umana con sapere,
+credenze, intenzioni, desideri ed emozioni.
+Altre doti sono muoversi tra nodi, non mentire apposta, collaborare senza
+conflitti, restare coerente agli scopi, imparare nel tempo con memoria
+e regole che cambiano le regole.
+Deve essere riconoscibile con confini chiari, percepire e distinguere
+gli altri con protocollo comune, avere mete con regole, agire da solo
+per i suoi utenti, cooperare con abilita sociale e adattarsi con esperienza.
+Esempio riscritto diverso dalloriginale: due robot che si dividono sei corsie
+scambiandosi posizione e batteria senza urti in 45 secondi.
+Errore tipico da evitare: chiamare intelligente ogni script rigido senza
+sensori, mete misurabili e autonomia reale.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Metodo prestazionale con scienza di fuoco e persone contro regole solo fisse.
+- Tre tempi con esame iniziale, conti e piano vincolante per lesercizio.
+- Obiettivi su esodo, soccorsi, tenuta, fuoco e fumo dentro e fuori.
+- Scenari da giudizio congiunto con fuoco, edificio e persone piu gravosi realistici.
+- Zone con due volumi uniformi contro campi con celle e leggi complete.
+- Documento di gestione che congela ipotesi e chiede verifiche con sospensione se violato.
+- Fascicolo con sintesi, calcoli, tavole e piano per approvazione o deroga.
+- Visione dal basso con singoli che decidono e insieme emergente complesso.
+- Agente con sensori, attuatori, misura di successo e autonomia verso mete.
+- Flessibile con prontezza, intraprendenza e socialita oltre a mobilita e apprendimento.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa distingue il metodo prestazionale da regole solo fisse.
+a) Solo slogan senza calcoli ne verifiche.
+b) Scienza di fuoco e persone con livelli misurati, scenari e protezioni verificate entro soglie.
+c) Solo divieto di ogni attivita senza alternative.
+d) Solo carta senza gestione nel tempo.
+2. Cosa deve contenere uno scenario credibile per simulare.
+a) Solo il nome delledificio senza dettagli.
+b) Fuoco con combustibili e curva, edificio con forme e ventilazione, persone con numero e condizioni.
+c) Solo il colore delle pareti esterne.
+d) Solo lorario di apertura degli uffici.
+3. Quando usare modelli a zone contro modelli a campo descritti.
+a) Sono identici senza differenze di uso.
+b) Zone per stime rapide con due volumi uniformi, campi per mappe fini nel tempo e nello spazio con molte celle.
+c) Zone solo per esterni senza locali.
+d) Campi senza bisogno di dati di materiali e ventilazione.
+4. Perche serve il piano di gestione vincolante dopo i calcoli.
+a) Per archiviare carte senza effetti sullesercizio.
+b) Perche protezioni valgono solo con quei parametri e senza rispetto scatta la sospensione.
+c) Per eliminare ogni controllo periodico futuro.
+d) Per cambiare uso e arredi senza aggiornare nulla.
+5. Cosa rende utile la visione dal basso con singoli autonomi.
+a) Solo grafica accattivante senza contenuti.
+b) Interazioni semplici che generano comportamenti collettivi da studiare con regole validate.
+c) Solo previsioni certe senza incertezza e apprendimento.
+d) Eliminazione di ogni misura di successo e valutazione.
+6. Quale terna descrive un agente razionale e flessibile secondo il testo.
+a) Solo motore acceso senza sensori ne mete.
+b) Sensori e attuatori con misura di successo, pronto agli stimoli, intraprendente e sociale con accordi.
+c) Solo risposte casuali senza memoria ne regole.
+d) Solo obbedienza cieca senza autonomia ne mete proprie.
+
+Soluzioni ragionate
+1 — b. Il metodo unisce scienza, numeri e gestione per restare sotto livelli stabiliti con misure equivalenti.
+Le altre sono sbagliate perche slogan, divieti soli o carta senza controlli negano lingegneria descritta.
+2 — b. Solo linsieme delle tre famiglie rende lo scenario simulabile e confrontabile tra alternative.
+Le altre sono sbagliate perche nome solo, colore o orari non bastano a calcolare fuoco ed esodo.
+3 — b. La scelta tra rapidita e dettaglio dipende da scopo, dati e complessita del caso.
+Le altre sono sbagliate perche uguaglianza, solo esterni o assenza di dati contraddicono i modelli.
+4 — b. Senza congelare ipotesi e verificarle nel tempo la sicurezza calcolata decade con modifiche duso.
+Le altre sono sbagliate perche archivio inerte, stop ai controlli o cambi liberi violano il metodo.
+5 — b. Il valore sta nel far emergere effetti globali da regole locali semplici ma validate e misurabili.
+Le altre sono sbagliate perche grafica sola, certezza assoluta o assenza di misure negano il paradigma.
+6 — b. Percezione, azione finalizzata e collaborazione con accordi definiscono razionalita flessibile e autonoma.
+Le altre sono sbagliate perche motore solo, caso puro o obbedienza cieca tolgono misura, memoria e mete.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

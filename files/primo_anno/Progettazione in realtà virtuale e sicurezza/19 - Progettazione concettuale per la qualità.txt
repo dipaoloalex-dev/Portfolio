@@ -1,0 +1,264 @@
+[plain-text per Pages — da 19 - Progettazione concettuale per la qualita.md]
+
+1. PROCEDURA DI SVILUPPO
+--------------------------------------------------
+
+L'idea iniziale del prototipo decide il successo del prodotto.
+Bisogna trovare in fretta la soluzione piu amata dai clienti.
+Serve confrontare molte alternative e scegliere la migliore in scena.
+I modi per giudicare sono con misure e con impressioni guidate.
+I primi misurano cio che si puo contare fin dal primo schizzo.
+I secondi guardano profili emotivi e reazioni a colori e forme.
+Aiutano a capire desideri non detti e a metterli nel progetto reale.
+
+Il limite e procurare modelli fisici per ogni variante in gara.
+Costano molto e chiedono tempi lunghi in officina di prototipi.
+Con rete e video maturi si giudica anche solo dall'aspetto a schermo.
+Si mostrano varianti e si chiede quale piace a prima vista in riunione.
+Ma senza toccare il modello i giudizi restano deboli e soggettivi.
+Mancano attributi oggettivi e misure di sensazioni senza interazione.
+
+Con stanze immersive piu esperti toccano insieme prototipi digitali.
+Si superano i limiti di fisico costoso e di video piano senza tatto.
+Unendo disegno tecnico, ergonomia e immersivo si da forma all'idea.
+Si porta molto materiale utile alla progettazione vera successiva.
+Dopo il brief si elabora l'idea con prototipi digitali leggeri in sede.
+Chiedono piu spesa in progetto ma ottimizzano prestazioni provabili
+in virtuale prima di tagliare stampi e lamiere per la preserie reale.
+In auto il digitale e ormai parte del processo di nuovi modelli in gamma.
+Anche il ferro prova interesse per treni e mezzi leggeri da citta.
+Resta poco diffuso per diffidenza verso l'abbandono del fisico vero
+e per fatica nel giudicare prestazioni ancora poco definite in bozza.
+Per questo si studia un caso di cruscotto per piccola auto da citta,
+per giovani alla guida, in un laboratorio immersivo di ateneo tecnico.
+Si usano un modellatore di stile per superfici libere con viste realistiche,
+un sistema integrato per prove immersive con mani e tracciatori in sala,
+un manichino digitale per posture e prese durante la guida simulata.
+
+Lo scopo e spostare verifiche di uso ed estetica alla fase di idea iniziale.
+Si tagliano giri di varianti, tempi di prototipi e costi di prove ripetute.
+Si punta su cio che alza di piu la qualita percepita dai clienti finali.
+Il percorso ha cinque fasi logiche in ordine di lavoro chiaro e semplice.
+
+Prima fase trova gli elementi di qualita attesi dai clienti in strada.
+Si usano interviste, gruppi di discussione e analisi di modelli in vendita.
+Si guarda l'uso reale e si aggiungono idee nuove del progettista in studio.
+
+Esempio riscritto: si pensi a un manubrio per bici elettrica da citta.
+Si intervistano pendolari, si vedono modelli in negozio e si notano
+prese scomode sotto pioggia e tasti piccoli con guanti invernali in uso.
+Si aggiungono idee per tasti grandi e grip antiscivolo prima del prototipo.
+
+Errore tipico: partire da una sola idea senza alternative a confronto.
+Senza molte varianti la scelta cade sul primo schizzo e non sul migliore.
+
+2. CLASSIFICAZIONE DEGLI ELEMENTI DI QUALITA
+--------------------------------------------------
+
+Serve dare a ogni elemento un peso diverso per il giudizio finale.
+Conta il legame tra efficacia oggettiva e soddisfazione soggettiva.
+Un metodo noto divide in cinque famiglie con logiche diverse in uso.
+Tre sono principali per le scelte di progetto quotidiane in studio.
+La prima evita malcontento se presente e ben fatta in ogni esemplare.
+La seconda alza soddisfazione in proporzione alla sua bonta misurata.
+La terza entusiasma anche da sola se ben pensata e ben realizzata.
+Le altre due sono neutre o addirittura indesiderate per alcuni utenti.
+
+Terza fase crea architetture che uniscono tutte le richieste utili.
+Cerca soluzioni con tutti i requisiti per clienti diversi in strada.
+Aiuta la creativita con legami chiari tra scelte tecniche e piacimento.
+Nascono schizzi, modelli in scala e da poco gemelli digitali leggeri.
+Il metodo aggiunge informazioni senza stravolgere il mestiere del designer.
+Non toglie apporto originale come piani statistici puri senza disegnatore.
+
+Quarta fase misura la qualita dei concept prima dell'uso reale in strada.
+I modi comuni guardano solo clienti dopo l'acquisto e l'uso quotidiano.
+Non servono in corso d'opera per decidere tra varianti in gara in studio.
+Qui la qualita di idee e servizi e quasi tutta soggettiva da stimare.
+Un metodo dedicato calcola indici con legami funzionali tra efficacia
+e soddisfazione, usando solo giudizi di esperti senza scomodare clienti.
+Da tre indici per pesi delle famiglie sul totale del prodotto in esame.
+Vale anche per parti di gamma esistente da migliorare senza rifare tutto.
+
+Quinta fase sceglie il concept ottimale tra quelli provati in sala immersiva.
+Se gli indici concordano la scelta e ovvia e immediata per il team.
+Se la qualita resta bassa servono nuovi elementi e nuova architettura,
+tornando alla prima fase con brief aggiornato e piu ambizioso in studio.
+Se gli indici discordano nessun vincitore unico emerge dai conti in tabella.
+Si fondono pregi in modo fattibile e originale in un nuovo prototipo.
+Si fa prova di conferma con esperti per misurare i miglioramenti veri.
+Senza progressi si studiano interazioni tra elementi per cambiarli insieme.
+
+Esempio riscritto: si pensi a tre selle per bici da citta in negozio.
+Una evita dolori ma e anonima, una cresce con imbottitura regolabile,
+una entusiasma con luce integrata anche se non richiesta da capitolato.
+Si fondono base comoda e luce in un nuovo modello da testare in strada.
+
+Errore tipico: pesare tutti gli elementi allo stesso modo in tabella.
+Senza famiglie con logiche diverse i conti appiattiscono le scelte vere.
+
+3. FORMULAZIONE DI UN METODO
+--------------------------------------------------
+
+Il modello da un numero per ogni famiglia sul totale di prodotto.
+Si codificano giudizi di esperti con schede semplici in scala chiara.
+Per basi e entusiasmi basta si o no con pieno accordo sul requisito.
+Per proporzionali si usa scala a quattro livelli da zero a tre in scheda.
+Ogni indice segue la logica della sua famiglia di appartenenza in uso.
+
+Per basi serve che tutti siano efficaci per evitare malcontento diffuso.
+Si usa logica in serie dove basta un no per abbassare il totale in pagella.
+Si moltiplicano le probabilita di si sotto ipotesi di indipendenza tra voci.
+Conta il numero di voci base presenti nel concept in gara in studio.
+
+Per proporzionali vale somma degli effetti con pesi per livelli in scheda.
+Piu alto il livello medio piu alta la risposta alle attese dei clienti.
+Si somma su tutte le voci con codifica da zero a tre per ogni esperto.
+
+Per entusiasmi basta un si per accendere l'entusiasmo del cliente finale.
+Si usa logica in parallelo dove un si compensa gli altri no in tabella.
+Si calcola uno meno prodotto dei no sotto ipotesi di indipendenza tra voci.
+Conta il numero di voci entusiasmanti presenti nel concept in gara.
+
+L'indice medio proporzionale e condizionato alle basi presenti e funzionanti.
+Per totale ordinario si moltiplicano base e proporzionale in un solo numero.
+Cosi si confrontano concept con una misura sintetica ma leggibile in riunione.
+
+Si puo riassumere in righe di testo con spazi come schema di calcolo.
+Famiglia  Logica di raccolta  Idea di calcolo per indice di famiglia
+Basi  Serie con tutti si  Prodotto delle probabilita di si in scheda
+Proporzionali  Somma pesata  Media dei livelli da zero a tre in scheda
+Entusiasmi  Parallelo con un si  Uno meno prodotto dei no in scheda
+Totale  Prodotto finale  Base per proporzionale come qualita ordinaria
+
+Esempio riscritto: si pensi a tre zaini per scuola media di quartiere.
+Basi come cuciture sane vanno tutte si per non avere resi in negozio.
+Proporzionali come tasche utili alzano voto in proporzione al numero.
+Entusiasmi come luce notturna accendono anche con una sola idea forte.
+
+Errore tipico: fare medie semplici su famiglie con logiche diverse in tabella.
+Senza serie, somma e parallelo i numeri dicono il contrario del mercato.
+
+4. CASO STUDIO: PLANCIA DI UNA MINICAR
+--------------------------------------------------
+
+Il caso guarda un cruscotto per piccola auto da tragitti brevi in citta,
+per guidatori molto giovani sotto i venticinque anni di eta media.
+Si parte da modelli in vendita e si notano voci comuni a tutti in listino.
+Si trovano otto voci tra aspetto, viste e usi di comandi in plancia.
+Vi sono aspetto globale, vista di schermo e aria ed emergenza in guida,
+uso di emergenza e aria e audio, oltre a tinta della plancia in abitacolo.
+
+Con questionario a oltre cento studenti di disegno tecnico industriale,
+circa meta di genere femminile, si classificano le voci nelle famiglie.
+Aspetto e tinta risultano entusiasmanti anche da soli in salone di vendita.
+Viste di schermo, aria ed emergenza risultano basi da non sbagliare mai.
+Prese di emergenza e audio risultano basi per sicurezza e uso quotidiano.
+Prese dell'aria crescono con bonta in proporzione al comfort in marcia.
+Il campione rispecchia giovani che passano da scooter ad auto piccola.
+
+Si disegnano tre varianti con nomi di fantasia diversi per confronto.
+Una con consolle verticale alta, una obliqua e una orizzontale bassa.
+Cambiano posti di manopole, tasti e schermo rispetto al volante in prova.
+Con manichini si tracciano zone di presa a dito steso e a tre dita in guida.
+Una dozzina di esperti prova in ordine casuale in sala immersiva attrezzata.
+Vi e sedile fisico con mani aptiche per forze di tasti e manopole vere.
+Prima si giudica a video da tre angolazioni per viste di schermo e aria.
+Poi si naviga liberi con casco e tracciatori toccando tasti veri in scena.
+Si giudicano aspetto, tinta e usi di emergenza, aria e audio in plancia.
+I voti vanno in tabelle con metodo a tre indici per famiglie di qualita.
+Si puo riassumere in righe di testo con spazi come esito di gara.
+Voce  Migliore  Secondo  Terzo  Nota pratica per il team di stile
+Aspetto  Variante obliqua  Altre pari  Altre pari  Piace linea mossa in foto
+Vista schermo  Obliqua  Verticale  Orizzontale  Schermo alto e dritto vince
+Vista aria  Obliqua  Verticale  Orizzontale  Bocchette in vista piena
+Vista emergenza  Obliqua  Pari basse  Pari basse  Tasto rosso ben visibile
+Presa emergenza  Orizzontale  Verticale  Obliqua  Vicino al volante vince
+Presa aria  Obliqua  Verticale  Orizzontale  Manopole grandi al centro
+Presa audio  Obliqua  Orizzontale  Verticale  Comandi vicini allo schermo
+Tinta  Verticale  Pari basse  Pari basse  Tinta chiara piace ai giovani
+
+La variante obliqua vince sul totale ordinario tra le tre in gara in studio.
+Resta seconda sugli entusiasmi per tinta chiara della verticale in salone.
+Pesa il punto debole su uso audio come voce base da non sbagliare mai.
+Nasce una quarta variante plus su base obliqua con due ritocchi mirati.
+Tinta chiara presa dalla verticale e comandi audio vicini allo schermo.
+Conferma con stessi esperti mostra salti su funzioni ed estetica in scheda.
+Il mix supera anche la verticale sugli entusiasmi senza perdere basi.
+La plus diventa scelta ottimale per fasi successive di sviluppo in azienda.
+
+Esempio riscritto con caso diverso: si pensi a plancia di scooter elettrico.
+Tre varianti con schermo alto, basso e centrale per consegne in citta.
+Vince quella con schermo alto per viste, poi si copia tinta chiara e tasti
+vicini perAudio e si conferma con fattorini in sala immersiva di prova.
+
+Errore tipico: scegliere solo sul totale senza guardare basi deboli in tabella.
+Senza correzione di voci base la variante bella resta fragile sul mercato.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Idea iniziale con molte alternative per massima soddisfazione in strada.
+- Misure dove si puo, impressioni per emozioni non dette dai clienti.
+- Virtuale con esperti per superare fisico costoso e video senza tatto.
+- Cinque fasi da bisogni a scelta ottimale con prove in sala immersiva.
+- Cinque famiglie con basi, proporzionali ed entusiasmi come pilastri.
+- Serie per basi, somma per proporzionali, parallelo per entusiasmi in conti.
+- Totale come base per proporzionale per confronto tra concept in gara.
+- Caso con otto voci su cruscotto per giovani in citta con tre varianti.
+- Manichini e aptica per viste e prese vere prima di stampi costosi.
+- Plus con tinta e comandi corretti come sintesi vincente da lanciare.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. L'idea iniziale di prodotto chiede:
+a) una sola via senza confronti b) molte alternative a confronto per miglior soddisfazione c) nessun giudizio di esperti d) solo costi senza qualita
+
+2. Le famiglie di qualita servono a:
+a) pesare voci con logiche diverse b) dare pesi uguali a tutto c) togliere ogni misura d) vietare questionari agli utenti
+
+3. Per basi, proporzionali ed entusiasmi vale:
+a) stessa media per tutti b) serie per basi, somma per proporzionali, parallelo per entusiasmi c) solo fortuna senza conti d) nessun legame con soddisfazione
+
+4. Le cinque fasi vanno in ordine da:
+a) scelta finale senza bisogni b) bisogni, pesi, idee, misure e scelta ottimale c) solo disegni senza prove d) produzione senza concept iniziale
+
+5. Nel caso del cruscotto per giovani vince:
+a) sempre la prima idea senza prove b) variante obliqua corretta in plus con tinta e comandi vicini c) variante senza viste ne prese d) nessuna prova con esperti in sala
+
+6. La conferma con esperti serve a:
+a) archiviare senza leggere voti b) verificare miglioramenti di funzioni ed estetica della plus c) copiare senza cambiare nulla d) saltare tabelle e indici finali
+
+Soluzioni ragionate
+
+1 — b. Confronto largo trova il migliore per clienti in strada. La a) resta su unica via, la c) nega esperti, la d) guarda solo costi.
+
+2 — a. Pesi con serie, somma e parallelo secondo famiglie in tabella. La b) appiattisce tutto, la c) toglie misure, la d) vieta questionari.
+
+3 — b. Logiche diverse per basi, proporzionali ed entusiasmi in conti. La a) usa stessa media, la c) resta senza conti, la d) nega legami.
+
+4 — b. Da bisogni a pesi a idee a misure fino a scelta finale. La a) salta bisogni, la c) resta senza prove, la d) salta concept.
+
+5 — b. Obliqua piu tinta chiara e audio vicino allo schermo in prova. La a) salta prove, la c) toglie viste, la d) nega esperti.
+
+6 — b. Conferma funzioni ed estetica prima del lancio in azienda. La a) archivia senza leggere, la c) copia senza cambi, la d) salta tabelle.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,232 @@
+[plain-text per Pages — da 16 - Software di human modelling.md]
+
+1. I MANICHINI VIRTUALI NELLA PROGETTAZIONE
+--------------------------------------------------
+
+La progettazione virtuale crea modelli digitali completi dei prodotti,
+con forme uguali al vero tranne la materia fisica toccabile in mano.
+Cosi si fanno prove e controlli come con un prototipo da banco.
+Con solo disegno tecnico non si ha scena completa e credibile,
+perche manca l'uomo che usa e ripara il prodotto nel luogo vero.
+Il vantaggio e tenere il fisico solo per la fine del lavoro,
+con risparmi chiari di tempi e costi per prove intermedie in ufficio.
+
+Oggi adattarsi alla persona e un marchio di qualita per le aziende.
+L'ergonomia entra presto nel progetto con standard di sicurezza alti,
+clienti attenti alla facilita d'uso e gara forte tra concorrenti in negozio.
+Fa bene non solo a chi compra e usa ogni giorno il prodotto finito,
+ma anche a chi monta e ripara in fabbrica con meno fatica fisica e mentale.
+
+Chi fa treni e aerei cura comfort di bordo e comandi facili e sicuri
+per piloti e passeggeri, oltre a manutenzione con peso economico alto
+per vita lunga, pezzi costosi e molte ore di manodopera specializzata.
+
+Serve uno strumento che simuli l'uomo sul gemello digitale del prodotto
+prima del confronto con il fisico costruito in officina di prova.
+Sono figure digitali che ripetono gesti di tecnici veri su modelli finti.
+Copiano moto, sforzi, forme e misure di persone reali in scena tipica.
+Hanno scheletro con molti snodi per braccia, gambe e schiena in posa.
+Le taglie vengono da archivi di misure su campioni di popolazione ampia.
+Si mostrano piccoli e grandi, magri e robusti a scelta del progettista.
+Il corpo e visto come catena aperta di parti rigide unite da snodi.
+
+Il nodo difficile e dosare bene le articolazioni senza esagerare in scena.
+Con poche articolazioni il moto resta legnoso e poco credibile in video.
+Con troppe il modello diventa pesante e difficile da muovere in prova.
+La regola e cambiare postura con sole rotazioni dei giunti in scena,
+senza allungare o accorciare arti in modo innaturale durante la posa.
+Altro nodo e porre i giunti giusti dentro la figura visibile a schermo.
+Si legano superfici esterne a ossa interne con misure da immagini cliniche
+prese su volontari in pose diverse per tarare bene spalle e anche.
+
+Le figure aiutano disegno, fabbrica, assistenza e corsi per operatori.
+Si valutano posti di lavoro, prodotti e linee prima di costruirli in ferro.
+Si fanno prodotti centrati sull'uomo in varie taglie e stature diverse.
+Si guardano posture, comfort, viste e prese dei comandi in anticipo.
+Si capisce se servono sforzi eccessivi o se la manutenzione e agevole.
+Si riprogettano forme per manutenzione facile e costi di vita piu bassi,
+con clienti piu contenti e aziende piu competitive sul mercato globale.
+Servono anche a medicina del lavoro e a studio di indumenti tecnici,
+ovunque serva vedere uomo e ambiente insieme in simulazione guidata.
+
+Esempio riscritto: si pensi a un banco da officina per cambi olio rapidi.
+Con figura alta e figura minuta si prova altezza del ponte e del tappo.
+Si vede se le mani arrivano senza piegare troppo schiena e collo.
+Si sposta il filtro in zona libera prima di tagliare staffe in ferro vero.
+
+Errore tipico: disegnare senza uomo e scoprire tardi gli impedimenti.
+Senza figure in varie taglie gli accessi risultano finti e stretti al vero.
+
+2. IL VIRTUAL MAINTENANCE
+--------------------------------------------------
+
+Con hardware e programmi moderni si puo unire al disegno iniziale
+una verifica di facilita di assistenza per tutta la vita del prodotto,
+specie per mezzi di trasporto su rotaia, aria e strada trafficata.
+Treni, aerei e auto devono restare efficienti e sicuri per anni di uso,
+solo con controlli attenti e periodici fatti da squadre preparate.
+Chi compra e gestisce vuole frenare costi di fermi e interventi frequenti.
+Serve tagliare tempi di fermo, formare in fretta e rimandare cio che puo
+attendere senza rischi per sicurezza e affidabilita del mezzo in servizio.
+Si distinguono cure programmate a scadenze fisse per tenere prestazioni
+e cure dopo guasto per tornare a marcia normale dopo il danno subito.
+
+La manutenzione in virtuale con figure digitali aiuta questi scopi pratici.
+Simula officine, macchine e sistemi da curare prima che esistano in ferro.
+Riproduce accessi, prese, smontaggi, riparazioni e rimontaggi in scena.
+Cosi si vede se le mani arrivano e se gli attrezzi entrano in spazi stretti
+quando il progetto e ancora su carta e facile da cambiare senza costi.
+A volte rifare un muso o un carrello costa piu di tutta la prova virtuale.
+Si definiscono requisiti di assistenza e si correggono subito in video
+le mosse oltre i limiti del corpo, con meno strappi e richieste di danni.
+Si controllano staffe e connessioni tra moduli per posa corretta in vano.
+Si verificano vista e accesso al pezzo e scelta dell'attrezzo giusto in borsa,
+dentro sagome consentite senza smontare mezzo mezzo in officina vera.
+
+Un pregio e usare figure standard per prove ripetibili tra progetti.
+Con taglia media femminile e taglia alta maschile i risultati si confrontano.
+Si fanno filmati da piu punti per procedure e punti critici da mostrare.
+Servono per manuali tecnici chiari per operatori in lingue diverse.
+Si condividono in rete con sedi lontane per pareri rapidi in giornata.
+Rispetto a carta e fisico si dimezzano quasi tempi di verifica in sede,
+con costi e tempi di lancio molto piu bassi per nuovi sistemi in gamma.
+Restano freni con prezzi alti, limiti tecnici e pochi esperti capaci
+di guidare tutto il sistema senza errori in azienda di produzione reale.
+
+Esempio riscritto: si pensi a un furgone per consegne in citta trafficata.
+Con figure si prova cambio lampada del faro senza smontare il muso.
+Si vede se serve chiave speciale e se il cofano lascia spazio alle mani.
+Si gira un filmato per il manuale e si manda in rete alle officine.
+
+Errore tipico: rimandare la manutenzione a prodotto finito e costruito.
+Senza prove virtuali precoci i ritocchi costano molto e fermano linee.
+
+3. IL MANICHINO VIRTUALE JACK
+--------------------------------------------------
+
+Un noto programma con figura maschile e femminile e versione bimbo
+rappresenta un aiuto concreto per ergonomia in fabbrica e uffici.
+Nasce in ambito universitario alla fine degli anni ottanta del secolo scorso
+e vive oggi in versione completa e in versione leggera per gemelli digitali.
+Ha moduli extra per posti occupati e per analisi dei compiti assegnati.
+Permette di porre figure in scene, dare lavori e valutarne gli esiti in diretta.
+Ha scena interattiva con viste libere per controlli tecnici ed ergonomici.
+
+Il programma sa costruire stanze virtuali dove mettere le figure in posa.
+Gestisce misure del corpo per figure credibili in varie taglie umane.
+Cambia singole parti e simula anche limiti fisici e disabilita motorie.
+Assegna compiti e mostra comportamenti con filmati in tempo reale.
+Valuta comfort di seduta e postura per posti di guida e banchi di lavoro.
+Fa analisi fini dei compiti con strumenti dedicati ai tempi e agli sforzi.
+
+Dal lato anatomico vi sono tre taglie base tra uomo, donna e bimbo.
+I pezzi si vedono in quattro modi per usi diversi in prova di scena.
+Il modo trasparente lascia vedere pezzi dietro la figura in primo piano.
+Il modo scheletro mostra solo assi e snodi per studio del moto puro.
+Il modo a fili mostra maglia leggera per controlli rapidi di ingombri.
+Il modo pieno mostra volumi ombreggiati per presenza realistica in video.
+Le superfici recenti sono piu morbide e meno spigolose di prima,
+con posa manuale piu facile vicino agli oggetti e moto piu leggibile.
+
+Dal lato cinematico la figura ha decine di parti e snodi in tutto il corpo,
+con colonna a molti segmenti e mani a molti segmenti per dita in presa.
+Ogni figura supera il centinaio di liberta di moto tra braccia e gambe.
+Le taglie vengono da misure militari storiche su grandi campioni in divisa.
+Tanti snodi chiedono limiti per evitare pose impossibili in scena reale.
+Si usano angoli massimi da studi spaziali su corpo in assenza di peso.
+Le taglie si scelgono con peso e altezza in pannello di scala umana,
+con percentili bassi, medi e alti per coprire popolazione di utenti.
+Si possono cambiare rapporti tra arti e busto per disabilita simulate,
+con pannello avanzato per misure fini di spalle, anche e mani in posa.
+
+Per l'ambiente si importano file dal disegno con formati neutri di scambio.
+Vi sono librerie di solidi semplici e oggetti pronti da menu principale.
+Si cambia vista in fretta e si cambiano materiali e rivestimenti in scena.
+La scena e tutto lo spazio dove si muove la figura con i pezzi intorno.
+Ogni figura ha parti unite da snodi con colori e riferimenti locali.
+Si puo riassumere in righe di testo con spazi come albero di scena.
+Livello  Contenuto  Esempio pratico in scena di prova
+Ambiente  Intera scena di lavoro  Officina con banco e scaffali vicini
+Figura  Attori e oggetti in scena  Tecnico piu carrello con ruote
+Segmento  Pezzi delle figure  Braccio destro o gamba sinistra
+Nodi e spigoli  Maglia di base  Punti e linee del braccio in fili
+Ogni parte ha riferimenti locali a tre assi per posto e orientamento.
+Vi e un riferimento globale per tutte le figure insieme nella scena.
+Gli agganci rapidi posano con precisione su piani, bordi e punti,
+come nei comandi di disegno tecnico per lavoro pulito e veloce.
+
+Esempio riscritto: si pensi a montaggio di una porta di un furgone.
+Con figura media si prova presa della maniglia senza graffi in vernice.
+Con figura minuta si prova vista dallo specchio da sedile guida in scena.
+Con figura con limiti si prova apertura con una sola mano libera in uso.
+
+Errore tipico: usare una sola taglia media per tutte le verifiche in sede.
+Senza estremi di statura gli accessi restano giusti solo per pochi utenti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Figure digitali per provare uomo e prodotto prima del fisico costoso.
+- Corpo come catena di rigidi con snodi tarati su misure di popolazione.
+- Posture con sole rotazioni senza allungare arti in modo finto in scena.
+- Manutenzione virtuale per accessi, prese e smontaggi prima della carta finale.
+- Figure standard per prove ripetibili e filmati per manuali in rete.
+- Tempi quasi dimezzati ma servono esperti e sistemi costosi in azienda.
+- Programma con scene, taglie, compiti e comfort per validazione ergonomica.
+- Quattro viste tra trasparente, scheletro, fili e pieno per usi diversi.
+- Decine di snodi con limiti fisiologici e percentili per stature estreme.
+- Albero da ambiente a figure a segmenti con riferimenti e agganci rapidi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. I manichini virtuali servono a:
+a) provare uomo e prodotto prima del fisico b) vietare ogni prova in sede c) cancellare i disegni tecnici d) fermare la produzione per sempre
+
+2. Per posture credibili la regola e:
+a) allungare arti a piacere b) cambiare solo rotazioni senza allungare arti c) togliere tutti gli snodi d) posare senza riferimenti in scena
+
+3. La manutenzione in virtuale permette di:
+a) vedere accessi e smontaggi prima di costruire b) nascondere ogni guasto possibile c) lavorare senza figure umane d) evitare manuali e filmati utili
+
+4. Le quattro viste della figura servono a:
+a) confondere gli operatori in prova b) scegliere tra vedere dentro, scheletro, fili e pieno secondo uso c) spegnere la scena in sede d) mostrare solo testo senza forme
+
+5. Tanti snodi chiedono:
+a) nessun limite di movimento b) limiti fisiologici per evitare pose impossibili c) moto solo con arti allungati d) figure senza taglie ne percentili
+
+6. L'albero di scena va da:
+a) ambiente a figure a segmenti con riferimenti b) solo punti senza figure c) solo colori senza geometria d) schermo spento senza scena
+
+Soluzioni ragionate
+
+1 — a. Prove precoci con figure prima del fisico costoso finale. La b) vieta prove, la c) cancella disegni, la d) ferma fabbrica.
+
+2 — b. Solo rotazioni per cambi di postura naturali in scena. La a) allunga in modo finto, la c) toglie snodi, la d) toglie riferimenti.
+
+3 — a. Accessi e mosse visti prima con correzioni a basso costo. La b) nasconde guasti, la c) toglie uomo, la d) nega manuali utili.
+
+4 — b. Quattro modi per controllo e presenza secondo compito in corso. La a) confonde, la c) spegne scena, la d) mostra solo testo.
+
+5 — b. Angoli massimi fisiologici per pose possibili e sicure. La a) lascia tutto libero, la c) allunga arti, la d) toglie taglie.
+
+6 — a. Gerarchia chiara da scena a parti con agganci rapidi. La b) resta solo punti, la c) resta solo colori, la d) spegne scena.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

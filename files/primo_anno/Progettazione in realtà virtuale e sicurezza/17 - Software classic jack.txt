@@ -1,0 +1,230 @@
+[plain-text per Pages — da 17 - Software classic jack.md]
+
+1. INTERAGIRE CON JACK
+--------------------------------------------------
+
+Il dialogo con i pezzi importati e la postura della figura
+passano da un pannello di controllo dedicato alla persona virtuale.
+Da qui si sceglie un segmento e lo si sposta e ruota secondo
+gli assi del riferimento locale legato a quello stesso segmento.
+Quando si muove un pezzo il programma usa cinematica inversa.
+Calcola da solo in tempo reale dove vanno segmenti e snodi vicini.
+Se si tira la mano in avanti, avambraccio e braccio seguono
+come farebbe un braccio vero senza spezzare le articolazioni.
+
+La mano puo fare quattro prese base gia pronte per usi comuni.
+Vi sono presa fine con polpastrelli, presa piena con palmo chiuso,
+presa a tre dita per piccoli pezzi e presa di guida per manici lunghi.
+Si sceglie il tipo, si indica l'oggetto e la mano si chiude da sola
+in modo credibile intorno alla forma toccata in quel momento.
+Le molte articolazioni delle dita permettono poi ogni variante libera.
+
+Si puo dare una postura da libreria con alcune decine di pose pronte,
+oppure crearne una nuova e salvarla per lavori futuri in reparto.
+La figura puo prendere, guardare, alzare e camminare su percorso.
+Un sistema di animazione assegna i moti con pochi comandi in sequenza.
+Si puo anche vedere la scena dagli occhi della figura per controllo vero.
+
+Esempio riscritto: si pensi a un operaio che avvita un pannello
+di un armadio elettrico in una cella di montaggio di prova interna.
+Si muove l'avambraccio verso la vite e il gomito segue da solo.
+Si sceglie presa fine e le dita chiudono su un giravite piccolo.
+Si salva la postura chinata e la si riusa per altri quadri uguali.
+Si guarda dal punto della figura per verificare viti nascoste dietro.
+
+Errore tipico: muovere solo la mano senza controllare il braccio intero.
+Senza cinematica inversa attiva la spalla resta ferma e la posa e finta.
+
+2. COLLISION DETECTION
+--------------------------------------------------
+
+Il programma non impedisce da solo ai solidi di compenetrarsi.
+Sarebbe troppo pesante calcolare tutto sempre in tempo reale.
+Vi e pero una funzione che mostra i contatti tra pezzi scelti in scena.
+Si scelgono prima due parti da controllare con cura durante la prova.
+Quando si toccano davvero le due parti si illuminano a video subito.
+
+Vi sono quattro algoritmi con compromessi diversi tra Pratica di uso.
+Si puo riassumere in righe di testo con spazi come tabella di scelta.
+Metodo  Velocita  Precisione  Uso consigliato in prova
+Primo a volumi semplici  Alta  Bassa  Prime stime rapide di ingombri
+Secondo a geometria media  Media  Media  Pezzi incavati con curve interne
+Terzo a controllo fine  Bassa  Alta  Verifiche finali di precisione
+Quarto a controllo fine rivisto  Bassa  Alta  Verifiche finali piu stabili
+
+Il primo chiude ogni pezzo in sfere o scatole fittizie intorno alle forme.
+Veloce ma grossolano, buono per scarti grandi e passaggi liberi evidenti.
+Il secondo segue meglio le concavita ma chiede piu tempo di calcolo.
+Il terzo e il quarto sono molto fini ma molto lenti per scene grandi.
+
+Fissata una postura si possono stimare forze e momenti sui giunti.
+Si danno pesi agli oggetti tenuti in mano durante il compito in scena.
+Il pannello mostra barre per spalle, gomiti e polsi durante la presa.
+Con animazione si vedono compiti e spostamenti nella cella di lavoro.
+Cosi si sistema layout di reparto e altezze di banchi e scaffali vicini.
+
+Esempio riscritto: si pensi a un addetto che sposta un contenitore
+tra banco e scaffale in un magazzino ricambi di medie dimensioni.
+Si scelgono mano e scatola come coppia da controllare in scena.
+Con metodo veloce si vede subito se il passaggio e libero in corridoio.
+Con metodo fine si verifica lo sfioro tra scatola e montante in ferro.
+Poi si leggono sforzi su spalla con scatola piena prima di decidere turni.
+
+Errore tipico: accendere il controllo su tutto insieme senza coppie mirate.
+Senza scelta di parti il calcolo rallenta e i tocchi restano confusi.
+
+3. CLASSIC JACK E L'AMBIENTE CAD
+--------------------------------------------------
+
+Il programma parla con il disegno tecnico in entrambi i versi di lavoro.
+Legge i formati neutri piu diffusi per solidi, maglie e scene sintetiche.
+Crea anche solidi semplici da libreria da integrare nel modello in uso.
+Una utilita riduce i poligoni delle superfici importate da altri sistemi.
+Serve per restare fluidi in tempo reale senza perdere forme utili in scena.
+
+Vi e un modulo per abitacolo e posto guida con cinque strumenti pratici.
+Primo linee guida per ingombri con taglie standard di utenti in auto.
+Secondo previsione di posture al volante e ai pedali durante la guida.
+Terzo giudizio di comfort di seduta e di appoggi per viaggi lunghi.
+Quarto zone di presa per mani intorno a plancia e leve vicine al sedile.
+Quinto libreria di parti pronte per interni da montare in scena di prova.
+
+Vi e un modulo per compiti industriali con nove strumenti di analisi.
+Copre sollevamenti, arti superiori, energia, movimentazione manuale,
+forza statica, posture di lavoro, schiena bassa, fatica e tempi standard.
+Aiuta a disegnare lavori produttivi e sicuri per turni reali in fabbrica.
+
+Per sollevamenti si valutano prese simmetriche e asimmetriche in scena,
+anche con appigli scomodi tra mano e scatola durante la presa in magazzino.
+Lo strumento usa equazioni note di una commissione tecnica di settore.
+Trova il peso raccomandato che quasi tutti possono alzare a lungo in sicurezza.
+Stima lo stress fisico di un compito singolo o di molti sollevamenti a turno.
+Il programma compila quasi tutto da solo senza misure lunghe a mano.
+Basta dire se il lavoro e singolo o multiplo con piu prese diverse in ciclo.
+Si mettono figura a inizio e fine presa con frequenza al minuto e durata.
+Si dice se l'appiglio e buono, medio o scarso per mani e guanti in uso.
+Per multipli si ripetono i dati per ogni sollevamento del ciclo di lavoro.
+
+Le posture si danno in due modi con precisione diversa in sede di prova.
+La via rapida copia le pose della figura messe a video con un click diretto.
+La via misurata inserisce quote prese sul campo con distanze e angoli reali.
+La prima e veloce ma grossolana per perizie veloci in riunione di reparto.
+La seconda e rigorosa ma chiede tempo per rilievi con metro e foto in campo.
+
+Lo strumento da peso raccomandato e indice di sollevamento in uscita.
+L'indice e rapporto tra peso vero e peso raccomandato per quel compito.
+Con indice pari a uno scatta sorveglianza sanitaria per legge sul lavoro.
+Con indice pari a tre e oltre vi e stress grave non accettabile in turno.
+Si suggeriscono altezze e distanze migliori per ridurre lo sforzo in scena.
+
+Per arti superiori si valuta rischio di fastidi a spalle, gomiti e polsi.
+Si guarda postura, muscoli usati, pesi, durate e frequenze dei gesti in turno.
+Si da un punteggio che dice urgenza di intervento sulla postazione.
+Si puo riassumere in righe di testo con spazi come tabella di giudizio.
+Punteggio  Giudizio sulla postura  Cosa fare in reparto di lavoro
+Uno o due  Accettabile  Nessun cambio urgente in programma
+Tre o quattro  Da indagare  Studiare meglio tempi e altezze
+Cinque o sei  Da indagare e cambiare presto  Correggere entro breve turno
+Sette  Cambio immediato  Fermare e ridisegnare il posto
+Lo strumento giudica ma non propone da solo le correzioni da fare in sede.
+Servono braccioli, altezze e pesi rivisti dal progettista dopo il punteggio.
+Per usare bene si mette la figura nella posa piu pesante del ciclo reale.
+Si dice se dura oltre un minuto o torna piu volte al minuto in turno.
+Si dice peso e se resta fermo o si muove in ciclo continuo di lavoro.
+
+Per energia si stima il costo metabolico del lavoro svolto in turno.
+Si parte da taglia della figura e durata totale del ciclo in minuti reali.
+Si stimano quote di tempo in piedi, curvi e seduti durante il turno.
+Si scelgono gesti tra circa due decine di azioni base in elenco dedicato.
+Si resta in piedi o seduti, si cammina, si alza e abbassa, si trasporta,
+si spinge e tira, si muovono braccia per montaggi leggeri in linea.
+Si aggiungono carichi, tempi, distanze, pendenze e frequenze per gesto.
+La scheda unisce dati della persona e del ciclo con quote di posture.
+Da qui escono quote per stare in piedi, seduti e curvi in chilocalorie.
+Poi si sommano energie dei singoli compiti in energia totale di turno.
+Il rapporto con i minuti da tasso al minuto da confrontare con limiti noti.
+Si trovano compiti oltre soglia da alleggerire o dividere tra operatori.
+Restano fuori fattori minori come sesso, eta, forma fisica e ritmi personali,
+oltre a caldo e umidita che pesano ma si trattano a parte in sede medica.
+Serve analisi fine del ciclo, mentre gesti minuti di dita restano difficili
+da scomporre in voci semplici senza rilievi dedicati con videoriprese.
+La guida in linea e scarna e molte voci restano poco chiare agli utenti.
+
+Esempio riscritto: si pensi a scatole di ricambi da scaffale a banco.
+Si prova sollevamento da terra a piano con figura media in scena.
+Si legge peso raccomandato e indice per presa buona e presa scarsa.
+Con indice alto si alza il piano e si dimezza il peso per collo in magazzino.
+Si prova scaffale alto con braccia oltre spalla e punteggio critico in uscita.
+Si cambia scaffale a petto d'uomo e il punteggio torna accettabile in sede.
+Si stima energia del turno con cammini e spinte di carrelli pieni in corsia.
+
+Errore tipico: fidarsi del numero senza guardare postura e presa reale.
+Senza pose giuste e frequenze vere gli indici restano belli ma falsi.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Pannello umano con cinematica inversa per posture naturali in scena.
+- Quattro prese base piu libreria di pose per lavori rapidi in reparto.
+- Animazioni e vista dagli occhi per verificare compiti in prima persona.
+- Contatti a coppie con quattro metodi da veloce a fine secondo uso.
+- Forze e momenti per sistemare layout e posti di lavoro in cella.
+- Scambi con disegno tecnico e maglie leggere per tempo reale fluido.
+- Moduli per abitacolo e per compiti con sollevamenti ed energia in scena.
+- Peso raccomandato e indice per dire se il sollevamento e sicuro.
+- Punteggio per arti superiori per urgenza di cambi alla postazione.
+- Energia da gesti base con limiti per trovare compiti oltre soglia.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. La cinematica inversa nella figura serve a:
+a) muovere da soli braccio e spalla in modo naturale b) bloccare ogni articolazione in scena c) cancellare i segmenti dal modello d) spegnere la vista della scena
+
+2. Per i contatti tra pezzi conviene:
+a) controllare tutto insieme senza scelte b) scegliere coppie e metodo da veloce a fine secondo scopo c) non scegliere mai alcuna coppia d) lavorare senza alcuna verifica
+
+3. Forze e momenti sui giunti aiutano a:
+a) sistemare layout e posti di lavoro b) togliere pesi dagli oggetti c) nascondere posture scorrette d) fermare ogni animazione in scena
+
+4. Per scambi con il disegno tecnico serve:
+a) solo carta senza file b) formati neutri e maglie leggere per tempo reale c) modelli pesantissimi senza cura d) divieto di importare ed esportare
+
+5. Il peso raccomandato e l'indice dicono se:
+a) il sollevamento e sicuro o a rischio b) la scena ha bei colori c) il turno e finito per sempre d) non serve alcuna postura in prova
+
+6. Il punteggio per arti superiori indica:
+a) solo bellezza della scena b) urgenza di cambi da accettabile a immediato c) prezzo del programma in sede d) numero di figure in scena
+
+Soluzioni ragionate
+
+1 — a. Mano tira e resto del braccio segue come al vero. La b) blocca moto, la c) cancella parti, la d) spegne vista utile.
+
+2 — b. Coppie mirate con metodo giusto per scopo e tempo. La a) rallenta e confonde, la c) non verifica nulla, la d) nega controlli.
+
+3 — a. Pesi e posture guidano altezze e layout corretti. La b) toglie pesi veri, la c) nasconde errori, la d) ferma animazioni.
+
+4 — b. Neutri e maglie leggere tengono fluido il tempo reale. La a) resta su carta, la c) appesantisce scena, la d) vieta scambi.
+
+5 — a. Rapporto tra peso vero e raccomandato con soglie di rischio. La b) guarda colori, la c) chiude turno, la d) nega posture.
+
+6 — b. Da nessun cambio a cambio immediato secondo punteggio. La a) guarda estetica, la c) guarda prezzo, la d) conta figure.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

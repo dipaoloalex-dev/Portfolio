@@ -1,0 +1,165 @@
+[plain-text per Pages — da 28 - Applicazione della metodologia.md]
+
+1. RIMOZIONE DEL FILTRO DISIDRATATORE
+-------------------------------------
+Per mostrare i tre rami del metodo si scelgono due casi
+sullimpianto di climatizzazione, uno semplice e uno critico.
+Il primo e la rimozione di un piccolo filtro essiccatore
+posto in zona libera del vano.
+A prima vista il pezzo sembra raggiungibile, afferrabile
+ed estraibile senza ostacoli.
+La prova con guanto immersivo conferma questa impressione.
+La mano entra, afferra il corpo cilindrico e lo sfila verso lalto
+senza torsioni del polso ne piegamenti della schiena.
+Tutti i valutatori compilano senza dubbi la scheda di assistenza.
+Esempio rielaborato con dati diversi dalloriginale a scopo illustrativo:
+filtro da 0,45 kg con diametro di 65 mm, corsa di estrazione di 12 cm,
+tempo stimato di 4 minuti con chiave fissa piccola.
+In forma di righe di testo separate da spazi:
+accesso libero  presa piena  estrazione verticale  scheda compilata
+Errore tipico da evitare: saltare la prova immersiva perche sembra facile
+e scoprire dopo uninterferenza del coperchio a meta corsa.
+
+2. SMONTAGGIO DELLE VITI DI FISSAGGIO DEL PLENUM ALL'IMPERIALE
+--------------------------------------------------------------
+Il secondo caso riguarda le viti inferiori che fissano il collettore
+al tetto del veicolo.
+Con il solo guanto lesito e subito negativo per i fissaggi critici,
+perche manca la gestione fine delle collisioni con lattrezzo.
+Si passa quindi al manichino digitale, che calcola anche le posture
+importanti vista la posizione scomoda dei punti posteriori.
+Le quattro viti in basso non sono uguali.
+Le due anteriori si vedono e si raggiungono in ginocchio con busto piegato
+in avanti in modo accettabile.
+Le due posteriori, vicine al vetro curvo, richiedono corpo disteso
+a pancia in giu con braccia tese in avanti sotto la struttura.
+Problemi rilevati: senza togliere prima il gruppo compatto non si vede
+ne si tocca la zona, e le posteriori restano comunque molto scomode.
+Lesito non e buono per tutte e quattro, bene davanti e male dietro.
+Per le viti non serve discutere di estraibilita lungo un percorso,
+una vite si svita per definizione, e la presa dellutensile e implicita
+nella prova di accesso.
+Si passa agli indici posturali sul caso anteriore destro.
+Esempio rielaborato con valori diversi dalloriginale a scopo illustrativo:
+indice posturale globale pari a uno su quattro, disagio lieve senza correzioni urgenti
+compressione lombare intorno a 2600 newton sotto la soglia di 3200 newton
+indice arti superiori pari a due, vicino al minimo di accettabilita.
+Stessi valori a sinistra.
+Diverso il caso posteriore sinistro, con gli stessi valori a destra.
+Esempio rielaborato con valori diversi dalloriginale:
+posturale al massimo della scala con effetti molto nocivi da correggere subito
+lombare al limite intorno a 3200 newton con rischio per le vertebre basse
+arti superiori al livello alto con possibili disturbi a spalle e polsi.
+Serve quindi intervenire.
+Come da flusso, le due anteriori chiudono con scheda compilata,
+le due posteriori vanno riprogettate.
+Errore tipico da evitare: giudicare tutte le viti uguali perche sono
+quattro viti uguali, ignorando che posizione e visibilita cambiano tutto.
+
+3. MODIFICA PROGETTUALE
+-----------------------
+Si corregge la parte bassa del collettore spostando i supporti.
+Ruotandoli di circa mezzo giro rispetto allorigine e allargando
+di circa 25 mm il lato corto della base, valori rielaborati diversi
+dalloriginale, laccesso migliora molto.
+Le posteriori diventano visibili e raggiungibili senza distendersi
+completamente sotto il volume.
+La postura migliora agli indici rispetto a prima.
+Esempio rielaborato con valori diversi dalloriginale:
+posturale sceso di un punto ma ancora da sorvegliare
+lombare intorno a 2700 newton contro circa 3150 newton di prima,
+sotto la soglia di 3200 newton
+arti superiori scesi di un punto ma ancora sopra laccettabilita piena.
+Per abbassare ancora lo sforzo si introduce un avvitatore pneumatico
+a cricchetto leggero e compatto da circa 0,65 kg, valore rielaborato
+diverso dalloriginale, facile da maneggiare in spazi stretti.
+Con lutensile i risultati del kit di analisi diventano buoni.
+Esempio rielaborato con valori diversi dalloriginale:
+posturale a livello basso con disagio moderato senza urgenza
+lombare nettamente sotto soglia con compressioni quasi assenti
+arti superiori a livello intermedio ma accettabile nel quadro
+favorevole degli altri due indici.
+La lezione finale e chiara.
+Provare prima tutto col guanto e rapido ed economico, specie per i casi
+banali come il filtro che col manichino costerebbe molto piu tempo.
+Il dettaglio col manichino va riservato ai casi critici come le viti,
+dove i tempi lunghi si giustificano in fase di progetto.
+Esempio riscritto diverso dalloriginale: filtro chiuso in unora di prove
+contro mezza giornata per le quattro viti con posture e utensili.
+Errore tipico da evitare: usare sempre lo strumento pesante per tutto
+e sprecare giorni dove basterebbe una prova rapida col guanto.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Il filtro in zona libera chiude subito con scheda compilata da tutti.
+- Il guanto da solo non basta dove servono attrezzi e collisioni fini.
+- Le viti anteriori sono accettabili, le posteriori impongono posture distese critiche.
+- Indici posturali, lombari e arti superiori separano i casi buoni da quelli da correggere.
+- Rotazione dei supporti e base piu larga aprono laccesso alle viti posteriori.
+- Avvitatore leggero taglia lo sforzo e porta gli indici sotto le soglie critiche.
+- Strategia a due livelli con guanto rapido prima e manichino dettagliato poi.
+- Senza rimozione preventiva del gruppo compatto non si vede la zona viti.
+- Smontabilita ovvia per le viti, decisivi accesso, presa e postura.
+- Tempi lunghi solo dove serve accuratezza, come per i fissaggi critici.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa mostra il caso del filtro essiccatore in zona libera.
+a) Accesso e presa semplici con scheda compilata da tutti dopo prova col guanto.
+b) Impossibilita totale di accesso anche a vista.
+c) Necessita immediata di riprogettare lintero impianto.
+d) Obbligo di usare il manichino per ogni microgesto banale.
+2. Perche per le viti si passa dal guanto al manichino digitale.
+a) Perche il guanto e piu preciso del manichino in ogni caso.
+b) Perche servono gestione delle collisioni con lattrezzo e misura delle posture scomode.
+c) Per eliminare qualsiasi scheda di assistenza.
+d) Per evitare di guardare la visibilita dei punti.
+3. Quale differenza emerge tra viti anteriori e posteriori del collettore.
+a) Sono tutte ugualmente facili senza distinzioni.
+b) Le anteriori sono accettabili in ginocchio, le posteriori richiedono posizione distesa critica.
+c) Le posteriori sono piu facili delle anteriori.
+d) Nessuna vite e mai smontabile per definizione.
+4. Come si leggono gli indici posturali nel confronto tra i due casi.
+a) Valori bassi e lombare sotto soglia davanti, valori alti e lombare al limite dietro.
+b) Valori identici in ogni posizione senza differenze.
+c) Solo il peso dellutensile conta senza postura.
+d) Le soglie critiche non esistono e non si usano.
+5. Cosa cambia con rotazione dei supporti e base piu larga.
+a) Nulla, laccesso resta identico a prima.
+b) Le posteriori diventano raggiungibili e gli indici scendono sotto o verso le soglie.
+c) Le anteriori diventano impossibili da raggiungere.
+d) Si elimina la necessita di qualsiasi utensile per sempre.
+6. Quale strategia di analisi risulta piu efficiente in fase di progetto.
+a) Usare il manichino pesante per tutto anche per i casi banali.
+b) Prima prova rapida col guanto per tutti, poi dettaglio col manichino solo dove critico.
+c) Mai provare nulla prima di costruire il pezzo reale.
+d) Compilare schede senza alcuna prova virtuale.
+
+Soluzioni ragionate
+1 — a. Il caso semplice dimostra accesso libero e presa agevole con esito unanime per la scheda.
+Le altre sono sbagliate perche non ce blocco, non serve rifare tutto e il manichino sarebbe spreco qui.
+2 — b. Solo il secondo livello calcola urti con chiave e carichi di schiena e braccia in posizioni difficili.
+Le altre sono sbagliate perche il guanto e piu rapido ma meno completo, la scheda resta e la visibilita e centrale.
+3 — b. La posizione del corpo cambia da ginocchio piegato a disteso prono con braccia tese dietro.
+Le altre sono sbagliate perche uguaglianza, inversione e impossibilita negano levidenza delle prove.
+4 — a. Davanti disagio moderato e compressioni basse, dietro massimo disagio e limite lombare raggiunto.
+Le altre sono sbagliate perche le differenze sono marcate, lutensile non basta da solo e le soglie guidano le decisioni.
+5 — b. Lo spostamento apre la vista e accorcia le leve del corpo, poi lutensile leggero completa il recupero.
+Le altre sono sbagliate perche miglioramento evidente, anteriori restano buone e lutensile resta utile.
+6 — b. Il doppio livello risparmia tempo sui casi facili e concentra analisi fini dove gli indici sono critici.
+Le altre sono sbagliate perche usare sempre il massimo dettaglio spreca tempo, costruire subito costa e schede senza prove sono inaffidabili.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

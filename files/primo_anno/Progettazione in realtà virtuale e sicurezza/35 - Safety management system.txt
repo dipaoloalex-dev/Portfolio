@@ -1,0 +1,242 @@
+[plain-text per Pages — da 35 - Safety management system.md]
+
+1. SISTEMA DI GESTIONE DELLA SICUREZZA
+--------------------------------------
+Un sistema di gestione della sicurezza e il processo con cui
+unorganizzazione complessa governa i rischi, fissa obiettivi,
+pianifica e misura le prestazioni per raggiungerli.
+Vale per imprese, scali, navi e altri sistemi produttivi.
+E la forma piu completa di approccio a prevenzione, gestione
+e contenimento di anomalie, pericoli, non conformita e incidenti
+nella vita e nei processi.
+Eseguirlo bene permette di centrare gli obiettivi dei riferimenti
+di settore, come il codice navale internazionale qui descritto
+in forma generica.
+Servono politica scritta per sicurezza e ambiente con obiettivi dichiarati,
+priorita, risorse, ruoli, controlli, istruzioni e procedure conformi
+a norme nazionali e internazionali.
+Tutto sta in un documento detto manuale del sistema, presente in sede
+e nelle unita operative, con verifiche periodiche.
+La verifica accerta se attivita e risultati seguono il piano, se il piano
+funziona ed e adatto agli obiettivi, con controllo indipendente di persona
+qualificata.
+Alle organizzazioni conformi si rilasciano certificato operativo e documento
+di conformita della societa con validita di quattro anni, valore rielaborato
+diverso dalloriginale, mentre il responsabile ha autorita su sicurezza
+e ambiente.
+Le parti principali sono quattro.
+Politica e obiettivi dati dal vertice come cornice, sostegno e garanzia
+di indipendenza per le attivita di base.
+La politica esprime visione e valori, direzione e risultati attesi,
+impegno visibile dentro e fuori verso prevenzione e miglioramento
+continuo, con responsabilita di tutti dal vertice al singolo secondo
+competenze e collaborazione reale.
+Analisi e gestione dei rischi come conoscenza dei pericoli prevedibili
+primo passo per risolverli.
+Un tempo i rischi erano ricondotti a natura, tecnica semplice, persona
+e collettivita e bastavano prevenzioni elementari.
+Con lindustria diventano molti e intrecciati e serve percorso chiaro
+con strumenti di indagine.
+Gli strumenti sono modelli per scomporre complessita, metodi per
+riordinare dati sparsi e logiche da imparare su esempi semplici
+per casi complessi.
+Lanalisi diventa prerequisito per gestire, togliere o ridurre insuccessi,
+tagliare i costi totali ed evitare sorprese.
+Valutazione dei pericoli reali come controllo continuo delle barriere
+e ricerca di nuovi rischi.
+Promozione interna con formazione sul sistema, cultura positiva, diffusione
+di comunicazioni, competenze allineate ai ruoli e lezioni apprese condivise.
+Esempio riscritto diverso dalloriginale: politica di officina con obiettivo
+di zero cesoiamenti in un anno e riesame mensile con segnalazioni anonime.
+Errore tipico da evitare: scrivere il manuale e lasciarlo nel cassetto
+senza verifiche indipendenti ne partecipazione reale.
+
+2. CICLO DI DEMING
+------------------
+Organizzare la sicurezza non e solo rispettare norme ma usare gestione moderna.
+Leccellenza chiede condizioni ottimali ottenute con sistema dedicato
+secondo norma volontaria internazionale qui descritta in forma generica.
+Il sistema gira come ruota in quattro tempi.
+Pianifica partendo da rischi delle attivita con politica e obiettivi.
+Attua secondo tempi e modi pianificati.
+Controlla se gli obiettivi sono raggiunti e apre correzioni su scostamenti.
+Riesamina e riparte fissando basi e mete del giro successivo.
+Nella ciclicita sta il miglioramento continuo.
+Il sistema deve calzare sulla realta con margini veri di progresso
+compatibili con obblighi di legge.
+Serve per conoscere e tenere sotto controllo gli aspetti di sicurezza,
+recepire regole obbligatorie e volontarie, fissare ruoli chiari,
+dare procedure operative e monitoraggio, curare formazione e ridurre
+rischi coinvolgendo le parti.
+I vantaggi sono rispetto sostanziale e non formale delle regole con
+garanzie verso controllori e lavoratori, minori premi allente
+assicurativo, meno infortuni con costi anche nascosti, meno pressione
+ispettiva.
+Esempio riscritto diverso dalloriginale: in magazzino obiettivo di dimezzare
+quasi cadute in sei mesi con audit mensile e correzioni su scaffali e corsie.
+Errore tipico da evitare: fare un giro solo e fermarsi senza riesame
+ne nuovo ciclo di miglioramento.
+
+3. PRINCIPI BASE DEL RISK SAFETY MANAGEMENT
+-------------------------------------------
+Ogni rischio si affronta in ordine logico.
+Primo: togliere alla radice con il disegno la condizione o linnesco
+e quindi leffetto.
+Secondo: se non basta o non e ragionevole, mettere ripari e protezioni
+contro il residuo.
+Terzo: se resta ancora, spostarlo con appalto a terzi, con copertura
+assicurativa adeguata o con informazione allutilizzatore su natura
+e cautele tramite libretti, cartelli e avvisi.
+La prima fase non accetta levento, le altre lo ammettono come possibile.
+Ogni correzione va verificata per non creare nuovi problemi operativi
+o di sicurezza.
+Esempio riscritto diverso dalloriginale: prima si elimina lo spigolo vivo
+con raggio, poi si mette carter con micro, poi si avvisa in manuale
+di non forzare con attrezzo improprio.
+Errore tipico da evitare: partire subito dallassicurazione senza aver
+provato a eliminare e ridurre tecnicamente il pericolo.
+
+4. APPROCCI OPERATIVI AL SMS
+----------------------------
+I metodi consolidati vengono da settori avanzati come energia,
+chimica e impianti di processo.
+Sono quattro: sguardo avanti, sguardo indietro, verifiche di conformita
+e gestione del dopo evento.
+In forma di righe di testo separate da spazi:
+previsione  memoria  verifica  emergenza
+
+4.1 ANALISI PROSPETTICHE DI SICUREZZA
+-------------------------------------
+Guardano avanti con modelli e simulazioni del sistema in anomalia.
+Dati eventi di avvio e contorni, prevedono interazioni e conseguenze
+e alimentano la tabella di rischio per scegliere barriere e livelli
+di sicurezza attesi.
+Esempio riscritto diverso dalloriginale: perdita da valvola con vento
+debole porta a nube di 30 m e chiede barriera con sensori e blocco.
+Errore tipico da evitare: usare modelli generici senza dati specifici
+del sistema reale in esame.
+
+4.2 ANALISI RETROSPETTIVE DI SICUREZZA
+---------------------------------------
+Guardano indietro a incidenti, quasi eventi e non conformita per trovare
+le cause profonde.
+Servono dati adatti ai modelli usati, da letteratura tecnica, compiti
+e procedure, contesti reali di lavoro e storia delle anomalie passate.
+Per riuso a fini previsionali i modelli dei due sguardi devono chiedere
+le stesse famiglie di dati.
+Lo sguardo avanti immagina con creativita conseguenze da iniziatori
+critici, quello indietro impara dal passato con metodi di cause.
+Serve conoscere procedure, funzioni di sistemi e pratiche reali sul campo.
+Ogni organizzazione raccoglie segnalazioni scritte obbligatorie e valuta
+gravita e frequenza su un periodo.
+Occorrenza e il caso intero, evento e passaggio visibile o gesto che sposta
+da stato normale A a stato anomalo B, a volte coincidenti se caso semplice.
+La ricostruzione logica studia carte e rapporti oltre i primi dati in quattro
+passi.
+In forma di righe di testo separate da spazi:
+trova eventi  ordina nel tempo  separa avvio e conseguenze  segna utili e dannosi
+Lefficacia dipende da assenza di punizioni per chi segnala, dati molti
+e buoni, analisi corretta, incrocio con osservazioni sul lavoro e tabella
+di rischio collegata alle previsioni.
+Esempio riscritto diverso dalloriginale: da tre quasi cadute in corsia
+si risale a pavimento scivoloso e si cambia resina antiscivolo.
+Errore tipico da evitare: punire chi segnala e restare senza dati
+su quasi eventi preziosi per prevenire.
+
+4.3 AUDIT DI SICUREZZA
+----------------------
+La verifica stima quanto lorganizzazione rispetta norme e livelli attesi
+di progetto.
+E terreno comune tra chi cura sicurezza e chi cura qualita, che devono
+collaborare davvero per funzionare.
+Esempio riscritto diverso dalloriginale: lista di quaranta voci su estintori
+e procedure con due non conformita chiuse in trenta giorni.
+Errore tipico da evitare: fare verifiche separate senza parlarsi
+con esiti opposti sullo stesso reparto.
+
+4.4 GESTIONE DELLE EMERGENZE
+-----------------------------
+Capitolo a parte sul dopo evento piu che su prevenzione e ritorno
+alla normalita o contenimento.
+Chiede metodi propri come messaggi ai media, cura di persone e familiari,
+divisione di compiti tra operativi e dirigenti, con manuale operativo
+di riferimento qui citato in forma generica.
+Esempio riscritto diverso dalloriginale: prova semestrale con punto
+di raccolta e conta teste in otto minuti senza interferenze col traffico.
+Errore tipico da evitare: improvvisare a incidente avvenuto senza ruoli
+provati ne canali di comunicazione pronti.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Sistema come politica scritta, rischi noti, controlli reali e cultura diffusa.
+- Manuale presente ovunque con verifiche indipendenti e certificati a termine.
+- Ruota in quattro tempi per miglioramento continuo su realta e leggi.
+- Ordine con togliere, ridurre con ripari, spostare con appalti e avvisi.
+- Sguardo avanti con simulazioni e tabelle per barriere adeguate.
+- Sguardo indietro con cause profonde e cronologia senza punire chi segnala.
+- Verifiche congiunte tra sicurezza e qualita sui livelli attesi.
+- Emergenze come dopo evento con ruoli, media e manuale dedicato.
+- Dati specifici e modelli simili per riuso tra memoria e previsione.
+- Ogni correzione verificata per non creare nuovi pericoli operativi.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Cosa rende completo un sistema di gestione della sicurezza descritto.
+a) Solo slogan affissi senza documenti ne verifiche.
+b) Politica scritta, rischi analizzati, controlli di efficacia e promozione con manuale e verifiche indipendenti.
+c) Solo acquisto di estintori senza organizzazione.
+d) Solo assicurazione senza prevenzione ne procedure.
+2. Come gira correttamente la ruota in quattro tempi.
+a) Solo azione senza pianificare ne controllare ne riesaminare.
+b) Pianifica dai rischi, attua nei tempi, controlla con correzioni, riesamina e riparte.
+c) Solo controllo finale senza obiettivi iniziali.
+d) Solo riesame senza attuazione sul campo.
+3. Quale ordine segue la logica dei tre principi contro i rischi.
+a) Prima assicurare, poi ignorare, poi nascondere il pericolo.
+b) Prima togliere alla radice col disegno, poi ripari sul residuo, poi spostamento con appalti e avvisi verificando effetti nuovi.
+c) Solo cartelli senza alcuna modifica tecnica.
+d) Solo protezioni senza mai eliminare alla fonte.
+4. Cosa distingue sguardo avanti e sguardo indietro descritti.
+a) Sono identici senza differenze di dati e scopi.
+b) Uno simula anomalie per prevedere e tabelle, laltro studia casi passati per cause profonde con modelli simili.
+c) Uno esclude dati specifici del sistema reale.
+d) Laltro vieta segnalazioni scritte obbligatorie.
+5. Cosa verifica una buona verifica di conformita secondo il testo.
+a) Solo fatture di acquisto dei dispositivi.
+b) Rispetto di norme e livelli attesi con collaborazione tra sicurezza e qualita.
+c) Solo numero di dipendenti in organico.
+d) Solo colore dei cartelli senza contenuti.
+6. Cosa comprende la gestione del dopo evento oltre la prevenzione.
+a) Nulla, finisce tutto prima dellincidente.
+b) Ruoli pronti, messaggi, cura di persone e familiari, manuale operativo e prove con raccolta.
+c) Solo silenzio verso media e famiglie.
+d) Solo improvvisazione senza compiti assegnati.
+
+Soluzioni ragionate
+1 — b. Solo insieme di politica, analisi, controlli e cultura con carte e verifiche fa sistema reale.
+Le altre sono sbagliate perche slogan, soli acquisti o sola polizza non governano i rischi.
+2 — b. La sequenza chiusa lega obiettivi a fatti con correzioni e nuovo giro di miglioramento.
+Le altre sono sbagliate perche tronche o senza piano non danno continuita ne efficacia.
+3 — b. Lordine risparmia misure inutili e controlla che il rimedio non crei altri pericoli.
+Le altre sono sbagliate perche assicurare prima, solo avvisi o solo ripari contraddicono la gerarchia.
+4 — b. Previsione con modelli e memoria con cause usano stesse famiglie di dati per dialogare.
+Le altre sono sbagliate perche uguaglianza, dati generici o divieto di segnalare negano il metodo.
+5 — b. Il confronto tra atteso e reale con due funzioni unite rende la verifica credibile e utile.
+Le altre sono sbagliate perche fatture, organico o colori non misurano conformita ai livelli.
+6 — b. Dopo evento servono persone, messaggi e prove definite prima nel manuale dedicato.
+Le altre sono sbagliate perche nulla, silenzio o improvvisazione lasciano conseguenze senza governo.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

@@ -1,0 +1,175 @@
+[plain-text per Pages — da 29 - Analisi delle operazioni di manutenzione.md]
+
+1. APPROCCIO CATIA V5-VIRTUAL HAND
+----------------------------------
+Il guanto immersivo sente bene gli urti tra mano e oggetti
+ma non quelli tra oggetti e oggetti.
+Per questo si uniscono due ambienti.
+Prima loperatore con guanto e visore prova lo smontaggio in immersivo
+e controlla accessi e prese, perche li le collisioni mano pezzi si vedono.
+Durante la prova resta a video la scia del punto centrale del pezzo mosso.
+Poi nel modulo di montaggio virtuale del modellatore loggetto viene
+vincolato a seguire quella scia, controllando con segnali visivi e sonori
+che non tocchi gli altri pezzi dellassieme.
+Cosi in un unico flusso si verificano smontabilita, accessibilita
+e manipolabilita del gesto di assistenza.
+Esempio riscritto diverso dalloriginale: per avvicinare una chiave a forchetta
+a un dado laterale si prova prima lingresso della mano e poi si fa seguire
+alla chiave la scia arancione di 25 cm senza toccare il passaruota.
+Errore tipico da evitare: fidarsi solo del guanto e dichiarare fattibile
+un percorso dove poi la chiave urta la staffa vicina.
+
+1.1 SMONTAGGIO DELLA SOSPENSIONE TRASVERSALE ANTERIORE
+-------------------------------------------------------
+Si parte dagli spazi liberi per far arrivare lattrezzo sulle teste delle viti.
+Lavvicinamento si prova in immersivo guardando se la mano tocca altro
+e se i movimenti restano naturali.
+Poi si riusa la scia del centro dellutensile nel modulo di montaggio
+per avere conferma di assenza di urti tra oggetti.
+Verificata la raggiungibilita, si prova lallentamento cercando volume
+per ruotare la chiave.
+Per semplicita si lascia alla chiave un solo movimento, la rotazione
+intorno al perno, con due vincoli descritti in forma testuale.
+In forma di righe di testo separate da spazi:
+assi allineati chiave perno  facce a contatto chiave supporto
+Poi si prova a sfilare le viti solo lungo il loro asse e a togliere
+il braccio trasversale tenendo il suo piano medio allineato al piano
+medio dei supporti.
+Le due viste, immersiva e di montaggio, mostrano rimozione viti
+e rimozione braccio senza collisioni.
+Con questo esito loperatore puo compilare la scheda di assistenza.
+Esempio rielaborato con dati diversi dalloriginale a scopo illustrativo:
+assieme carrello di rotabile  gesto braccio trasversale anteriore
+tipo a guasto  esito possibile  sequenza viti poi braccio
+utensile chiave a bussola  personale generico  operatori uno  tempo sette minuti
+In forma di righe di testo separate da spazi:
+assieme carrello  gesto braccio  tipo guasto  esito si  utensile bussola  persone una  tempo sette
+Errore tipico da evitare: lasciare la chiave libera in tutti i sensi
+e ottenere rotazioni impossibili che in officina non si possono ripetere.
+
+2. SMONTAGGIO DEL GRUPPO FRENANTE
+----------------------------------
+Anche qui si cerca prima spazio per lattrezzo sulle viti da togliere.
+Si prova lingresso della chiave in immersivo per mano e ingombri,
+poi si riusa la scia del centro nel modulo di montaggio per escludere
+urti tra chiave e parti vicine.
+Poi si prova lallentamento con un solo grado libero, rotazione sul suo asse,
+per garantire manovra sufficiente.
+I vincoli sono due, in forma testuale: asse chiave allineato allasse vite
+e faccia di battuta a contatto col supporto.
+In questo caso la rotazione pura lascia come scia quasi un punto.
+Poi si sfila ogni vite solo lungo il suo asse e si trasla il gruppo frenante
+nel piano evidenziato a video.
+Le viste mostrano rimozione viti e rimozione gruppo senza urti.
+Anche qui si puo compilare la scheda.
+Esempio rielaborato con dati diversi dalloriginale a scopo illustrativo:
+assieme carrello di rotabile  gesto gruppo frenante  tipo a guasto
+utensile chiave a T  personale generico  operatori due  tempo otto minuti
+sequenza prima viti poi gruppo  note accessi presi e smontaggio verificati
+In forma di righe di testo separate da spazi:
+assieme carrello  gesto freno  utensile T  persone due  tempo otto  esito si
+Errore tipico da evitare: vincolare il gruppo a direzioni libere e farlo
+passare dentro il disco o il tubo vicino senza accorgersene.
+
+3. SMONTAGGIO DEL COPRIRUOTA
+----------------------------
+Il carter sulla ruota e subito visibile e raggiungibile, quindi lattenzione
+va su presa e percorso di uscita.
+Piu prove in immersivo mostrano fatica a sfilarlo senza toccare altro.
+Le scie importate nel modulo di montaggio, con controllo di collisione attivo,
+confermano tocchi e compenetrazioni.
+Non potendo giudicare a vista, si usa il calcolo automatico del percorso
+per cercare almeno una via libera, regolando tolleranze e passi.
+Il programma genera una scia ammissibile.
+Con spazio per la mano verificato in immersivo e percorso libero trovato
+nel modulo, loperazione si dichiara possibile e si compila la scheda.
+Il metodo funziona anche se laborioso.
+Si prova anche il percorso inverso.
+Prima si calcola la via libera, poi si mostra in immersivo e si chiede
+alloperatore di farvi scorrere il punto centrale evidenziato con sferetta.
+Si confrontano scia guida e scia umana per misurare lerrore nel seguire
+la guida virtuale.
+Il confronto avviene per punti su piani ortogonali alla scia guida.
+Poiche lo strumento di misura lavora tra curve e non tra tracce grezze,
+si costruiscono curve parametriche di quinto grado, valore rielaborato
+diverso dalloriginale, su un numero di punti di ciascuna scia in ambiente
+di modellazione di stile.
+Esempio riscritto diverso dalloriginale: scostamento medio di 8 mm
+con picco di 15 mm in uscita dal bordo, accettabile con smusso di 2 mm.
+Errore tipico da evitare: dichiarare impossibile un gesto scomodo
+senza aver cercato con calcolo automatico una via alternativa libera.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Guanto per mano su oggetti e modulo di montaggio per oggetti su oggetti.
+- La scia del centro collega la prova umana alla verifica di interferenza.
+- Vincoli semplici di asse e facce rendono ripetibili allentamento e sfilo.
+- Scheda compilabile solo dopo prove senza collisioni in entrambe le viste.
+- Sospensione e freno seguono avvicina, allenta, sfila lungo asse, trasla gruppo.
+- Carter visibile ma critico in uscita, risolto con percorso calcolato.
+- Percorso inverso con guida visibile misura lerrore umano rispetto allideale.
+- Curve parametriche permettono misure di distanza tra scie grezze.
+- Dati scheda diversi per utensile, persone e minuti secondo il caso.
+- Metodo efficace ma laborioso, da usare dove serve precisione di smontaggio.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Perche unire prova col guanto e verifica nel modulo di montaggio virtuale.
+a) Perche il primo vede mano su oggetti e il secondo oggetti su oggetti con segnali di urto.
+b) Perche basta uno dei due in ogni caso senza scia.
+c) Per eliminare qualsiasi vincolo di movimento.
+d) Per evitare di compilare la scheda di assistenza.
+2. Come si rende ripetibile lallentamento di una vite nelle prove.
+a) Lasciando la chiave libera in tutti i sensi senza regole.
+b) Con un solo grado libero di rotazione e vincoli di asse e facce a contatto.
+c) Senza alcun controllo di spazio per la manovra.
+d) Muovendo la vite in direzioni diverse dal suo asse.
+3. Cosa si verifica prima di sfilare viti e gruppo nei casi sospensione e freno.
+a) Solo il colore dei componenti dellassieme.
+b) Spazio di avvicinamento, volume di manovra, sfilo lungo asse e traslazione guidata senza urti.
+c) Solo il rumore di fondo del laboratorio.
+d) Solo il peso totale del rotabile completo.
+4. Come si risolve il carter facilmente visibile ma difficile da estrarre.
+a) Si dichiara impossibile senza altre prove.
+b) Si importano le scie, si attiva il controllo urti e si cerca con calcolo automatico una via libera.
+c) Si forza lestrazione urtando le parti vicine.
+d) Si salta la verifica di manipolazione per fretta.
+5. A cosa serve il percorso inverso con sferetta e guida visibile.
+a) A decorare la scena immersiva senza misure.
+b) A far seguire alloperatore la via calcolata e a misurare lo scostamento punto per punto.
+c) A impedire qualsiasi compilazione della scheda.
+d) A sostituire i vincoli con movimenti liberi non controllati.
+6. Come si confrontano scia guida e scia umana se lo strumento misura solo curve.
+a) Non si confrontano in alcun modo possibile.
+b) Si costruiscono curve parametriche sui punti delle scie e si misura la distanza su piani ortogonali.
+c) Si guardano a occhio senza alcuna misura.
+d) Si cancellano entrambe le scie prima del confronto.
+
+Soluzioni ragionate
+1 — a. Laccoppiata copre entrambi i tipi di collisione e la scia li collega in un unico giudizio.
+Le altre sono sbagliate perche un solo ambiente lascia buchi, i vincoli servono e la scheda e lobiettivo finale.
+2 — b. Un grado e due appoggi descrivono il gesto reale e rendono la prova confrontabile tra casi.
+Le altre sono sbagliate perche liberta totale, nessuno spazio o direzioni violate non sono ripetibili in officina.
+3 — b. Solo la sequenza completa di accessi e movimenti vincolati prova la fattibilita senza danni.
+Le altre sono sbagliate perche colore, rumore e peso totale non dicono se il percorso e libero.
+4 — b. La via calcolata dimostra che esiste almeno un percorso senza interferenze oltre alle mani.
+Le altre sono sbagliate perche resa immediata, forzatura o salto dei controlli lasciano il rischio di urti.
+5 — b. La guida visibile trasforma un percorso ideale in compito eseguibile e misurabile per lerrore umano.
+Le altre sono sbagliate perche non e estetica, non blocca la scheda e non elimina i vincoli necessari.
+6 — b. Linterpolazione rende le tracce misurabili dallo strumento a curve con sezioni ortogonali alla guida.
+Le altre sono sbagliate perche rinuncia, occhio e cancellazione non danno una misura oggettiva dello scostamento.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .

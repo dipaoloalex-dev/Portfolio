@@ -1,0 +1,278 @@
+[plain-text per Pages — da 25 - Virtual prototyping e prototipazione rapida.md]
+
+1. LA PROTOTIPAZIONE RAPIDA
+---------------------------
+Le immagini generate al computer sono diventate realistiche,
+dinamiche e interattive grazie a grafica e hardware.
+E nato cosi il prototipo virtuale, cioe luso del modello 3D
+per vedere e simulare un pezzo mentre lo si progetta.
+Il campione fisico aggiunge pero il tatto e la vera terza dimensione,
+che aiutano a capire lidea e a cercare modifiche.
+Permette anche di mettere vicini piu oggetti e scegliere con il cliente
+la soluzione piu adatta.
+
+Le tecniche additive costruiscono loggetto strato dopo strato
+partendo dalla sua descrizione matematica nel modellatore,
+senza attrezzature dedicate e senza dipendere dalla forma.
+Punti di forza: tempi molto corti e molti materiali possibili
+anche con geometrie intricate.
+Sono diffuse nellindustria, nella medicina e nel design,
+dove le forme sono sempre piu complesse e richiedono studio
+matematico accurato.
+Un tempo si disegnava su carta con riga e compasso su un piano,
+oggi si usa un arsenale digitale, ma lo schermo da solo non da
+certezza assoluta di cio che si realizza.
+La via rapida trasforma limmagine fugace in solido da toccare.
+
+Attenzione al nome: da modello matematico a pezzo non e istantaneo.
+Le macchine piu veloci impiegano ore per pezzi piccoli e giorni
+per pezzi grandi.
+Il vantaggio e altrove rispetto alla via tradizionale.
+La via tradizionale somma disegno, piano di lavoro, attrezzaggio,
+cambi utensile, lavorazione e finitura, da poche ore a settimane
+secondo complessita, poi la serie parte in fretta.
+La via additiva quasi azzera la preparazione del ciclo e allunga
+invece la strada verso la serie, per questo sarebbe meglio parlare
+di avvio rapido della costruzione di campioni.
+La diffusione dei modellatori ha spinto ricerche su polveri fuse
+con laser, filo plastico depositato a caldo e fogli sagomati incollati,
+portate avanti oggi in modo sistematico anche da piccole e medie imprese.
+Lesordio di questi sistemi stupi perche creava fisicamente dal 3D
+con grandi attese di assenza di limiti.
+Poi ricerca e sviluppo hanno migliorato tempi, tolleranze, finitura
+e resistenza a clima e a sollecitazioni meccaniche e chimiche.
+Oggi le macchine sono semplici da usare, la qualita e stimabile,
+i materiali sono molti e i limiti per attrezzaggio rapido sono noti.
+Sono mezzi a pieno titolo per sviluppo veloce di prodotti e stampi.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+campione da 120 mm in circa nove ore, base da 300 mm in circa due giorni,
+tolleranza di un decimo e rugosita migliorata del venti per cento.
+Dal mercato dagli anni ottanta al duemila sono arrivate piu varianti,
+vita piu breve, maggiore complessita e consegne piu strette.
+Un ritardo di due mesi puo tagliare circa un quarto degli utili,
+mentre accettare oltre un terzo di costi di sviluppo in piu resta tollerabile.
+Per questo la rapidita di sviluppo ha decretato il successo,
+facendo da collante tra idea, modello 3D, attrezzi e pre-serie.
+Errore tipico da evitare: credere che rapido significhi pezzo grande
+in pochi minuti e senza finitura ne controlli.
+
+2. REALIZZAZIONE DI PLUG-IN PER L'INTEGRAZIONE DI AMBIENTI DI RV
+----------------------------------------------------------------
+Si descrive un ponte software tra modellazione immersiva e disegno
+tecnico, per disegnare in realta virtuale e poi costruire con via additiva.
+Servono piccoli moduli aggiuntivi che fanno dialogare lapp immersiva
+con lapp di disegno.
+Le spinte sono molte.
+Prima: provare a basso costo unidea per capirne potenziale e uso,
+vedere in stereoscopia loggetto, farlo valutare a gruppi interni
+o esterni di clienti e fornitori prima del fisico, anticipando
+il primo riscontro e guidando da subito la finalizzazione per la serie.
+La fase iniziale pesa su tutte le successive, quindi le scelte migliori
+vanno messe nel progetto per evitare modifiche costose.
+Il virtuale prevede pregi e difetti di ogni parte in avamprogetto
+e aiuta a scegliere il compromesso tra qualita ed economicita.
+Seconda: lingegneria virtuale unisce tutte le simulazioni del ciclo
+di vita, dal disegno alla fabbrica virtuale, in ununica struttura
+che simula cio che accade fino al mercato.
+Nodo critico resta come la persona tocca il mondo virtuale.
+Lideale sarebbe agire dentro la scena con sensazioni simili al reale.
+Qui il virtuale e essenziale e usa i risultati del disegno virtuale,
+tanto che mentre si disegna nasce gia il campione.
+Gli utensili necessari sono due.
+Per dare forma servono solidi e superfici dei modellatori attuali,
+solidi nella matematica e negli algoritmi, ancora migliorabili
+nei modi di interazione.
+Oggi si usa mouse, tastiera, tavoletta e penna ottica, ma si intravedono
+gesti piu naturali come modellare con le mani tramite ritorno di forza
+o con spatole digitali come nella creta.
+Per completare il prodotto servono poi prese e unioni di parti distinte.
+In officina si spostano a mano o con robot e dime.
+Nel disegno si vincolano assi di cilindri o piani che coincidono
+con il mouse, mentre programmi di montaggio simulano avvicinamento,
+inserimento, attrezzi presenti e urti lungo il percorso.
+La base per assiemi gerarchici, traiettorie e controlli di interferenza
+e matura, resta da migliorare il dialogo tra persona, ambiente e modello.
+Da qui il valore di un passaggio facile di dati tra app immersiva e disegno,
+che porta a una rapida costruzione additiva efficace.
+A differenza della sottrazione da blocco pieno, qui si cresce per strati.
+Il flusso seguito e in due passi funzionali.
+Primo: disegno del campione e conversione in file di scambio a faccette.
+Secondo: affettatura in piani paralleli da parte del controllo macchina
+per ricostruire il volume.
+Esempio rielaborato con numeri diversi dalloriginale a scopo illustrativo:
+modello da 45 mm affettato ogni 0,15 mm in circa trecento strati
+costruito in una notte senza attrezzi.
+Il solo disegno non garantisce che funzioni, perche manca la prova sul campo.
+Si rischia di ripetere piu volte il ciclo fino al pezzo giusto.
+Un aiuto viene dal provare il pezzo dentro lambiente virtuale,
+interagendo prima di stamparlo.
+Alcuni disegni mostrano gia la profondita stereoscopica, ma linterazione
+resta legata a manopole a sei gradi che spostano vista e oggetti.
+La ricerca ha creato comandi 3D piu naturali, ancora poco integrati
+nei disegni tecnici, eppure molto richiesti nelle revisioni.
+Grazie a modelli dettagliati, auto e volo spingono fino al gemello
+digitale completo dei loro prodotti e lo provano in ambienti immersivi.
+Ma lambiente immersivo gestisce solo maglie leggere e veloci,
+perdendo nella conversione funzioni, vincoli e proprieta dei materiali.
+Cosi il digitale non si modifica li dentro e ogni cambio al disegno
+richiede nuova conversione.
+Serve quindi un formato intermedio di descrizione che viaggi tra i due mondi.
+Poi il progetto puo andare alla macchina additiva.
+La prova ha confrontato vari disegni commerciali, ad esempio un noto
+modellatore in versione terza generazione, esteso con un modulo
+per dialogare con un sistema di interazione spaziale.
+Lo schema logico e circolare.
+In forma di righe di testo separate da spazi:
+disegno CAD  esportazione descrittiva  importazione immersiva  prova virtuale  stampa rapida
+Lidea iniziale usa il disegno per creare loggetto e una mano modellata
+nello stesso ambiente per prenderlo e spostarlo nella scena.
+Lo scoglio e stato far parlare le interfacce applicative con il programma,
+tra fili paralleli e librerie dinamiche per prenderne davvero il controllo.
+Si e realizzata una struttura testuale di traduzione dal formato del disegno
+a quello del mondo virtuale, confrontando molti formati in uscita
+dai due ambienti per restare generali.
+Errore tipico da evitare: modificare solo la maglia leggera immersiva
+e scoprire che vincoli e materiali sono andati persi al ritorno.
+
+3. METADATA PER LA REALTÀ VIRTUALE
+----------------------------------
+I metadati sono descrizioni, in breve dati sui dati.
+Il problema e decidere cosa descrivono e con quale punto di vista.
+Si pensi a quattro tecnici bendati intorno a una barca al buio.
+Chi tocca la vela dice telo, chi tocca lo scafo dice muro curvo,
+chi tocca la cima dice corda, chi tocca il fanale dice occhio luminoso.
+Sembrano quattro oggetti diversi.
+Cosi ogni descrizione e valida ma da sola non basta, serve dichiarare
+il punto di vista di lettura.
+Per capire luso si pensi a un archivio di tabelle.
+Servono nomi dei campi, valori ammessi e formato di scrittura.
+Queste note sono gia metadati, ma luso e piu ampio dei soli archivi.
+Esempio rielaborato diverso dalloriginale: si misura una colonna di terreno
+a una data coordinata con quota, umidita, pressione e granulometria.
+I valori finiscono in tabella.
+Per la colonna quota servono molte note: interi o decimali, segno ammesso,
+gestione dei vuoti, unita in centimetri o pollici, quota istantanea o media
+in presenza di assestamenti.
+Queste note tecniche dicono il tipo, altre note aiutano a interpretare.
+Vista nel suo insieme, la tabella e una risorsa da descrivere come in biblioteca:
+cosa raccoglie, dove e quando, chi la firma, chi la pubblica e in che formato,
+utile per decidere se serve davvero.
+Aggiungere note aiuta la ricerca, ma senza regole nascono contraddizioni.
+Le funzioni sono molte: riepilogo del senso, verifica di esistenza,
+localizzazione della copia, selezione e filtro, restrizione di accesso,
+spiegazione di lettura, disponibilita effettiva, ponte tra discipline
+con equivalenze di termini, gestione di raccolte con cataloghi,
+condizioni duso, storia e provenienza con trasformazioni,
+legami tra parti di opere composte, struttura logica e modi di accesso.
+Per struttura ci sono due idee.
+La prima a filo steso: come mollette su corda del bucato, ogni molletta
+ha unetichetta e regge un solo foglietto con il valore.
+Esempio rielaborato diverso dalloriginale con nome diverso:
+creatore = Luca Bianchi
+Il segno uguale lega uno a uno nome e valore, come in uno schema
+essenziale di descrizione bibliografica.
+La seconda ad albero: da un punto partono rami che si dividono ancora.
+Esempio rielaborato diverso dalloriginale:
+Titolo
+|--TitoloPrincipale = Staffa prova
+|--Lingua = IT
+Oppure in dettaglio per una persona responsabile:
+Responsabile
+|--Persona
+|--|--Dati
+|--|--|--Nome = Luca
+|--|--|--Cognome = Bianchi
+|--|--Recapito
+|--|--|--Sede = Officina 2
+|--|--|--Citta = Bari
+|--|--|--TelefonoLavoro =
+In forma di righe di testo separate da spazi:
+filo steso una etichetta un valore  albero radice rami foglie
+Nellalbero la struttura stessa definisce il campo.
+Le descrizioni possono diventare complesse e servono descrizioni
+delle descrizioni, cioe meta descrizioni.
+Definiti i concetti, si passa a realizzarli ricordando che conta
+anche la struttura oltre ai valori.
+Chi riceve puo elaborare solo se conosce entrambi.
+Un legante e un modo preciso di scrivere struttura piu dati.
+Un linguaggio diffuso per legare, nato per il web, esprime strutture
+in testo semplice, adatto a invii e a trasformazioni automatiche.
+Esempio riscritto diverso dalloriginale: stessa anagrafica scritta
+in righe annidate testuali invece che in tabella chiusa.
+Errore tipico da evitare: inviare solo valori senza struttura e senza
+punto di vista, rendendo i dati non ricercabili e non interpretabili.
+
+CONCETTI CHIAVE DA RICORDARE
+-----------------------------
+- Il virtuale mostra e simula, il fisico aggiunge tatto e confronto diretto tra varianti.
+- Le tecniche additive costruiscono per strati dal 3D senza attrezzi dedicati.
+- Rapido significa avvio rapido del campione, non stampa istantanea verso la serie.
+- Mercato con piu varianti e vita breve premia chi accorcia sviluppo e industrializzazione.
+- Il ponte tra immersivo e disegno anticipa riscontri e guida la finalizzazione per la serie.
+- Dare forma e unire parti richiedono interazioni piu naturali di mouse e tastiera.
+- Disegno piu affettatura piu prova virtuale riduce cicli ripetuti prima della stampa.
+- Maglie leggere perdono funzioni e vincoli, serve formato intermedio di descrizione.
+- I metadati dichiarano punto di vista, tipo tecnico e interpretazione dei valori.
+- Strutture a filo e ad albero con legante testuale rendono dati ricercabili e scambiabili.
+
+TEST DI AUTOVALUTAZIONE
+-----------------------
+Verifica la comprensione degli argomenti con le seguenti domande a scelta multipla.
+1. Quale differenza chiave distingue prototipo virtuale e prototipo fisico.
+a) Il virtuale si vede su schermo, il fisico si tocca e si confronta in vera terza dimensione.
+b) Il virtuale e sempre piu costoso del fisico in ogni caso.
+c) Il fisico non serve mai a nessuna verifica.
+d) Il virtuale elimina ogni bisogno di modello matematico.
+2. Dove sta davvero la rapidita delle tecniche additive.
+a) Nella produzione di massa immediata senza preparazione.
+b) Nellazzerare quasi la pianificazione del ciclo del campione, pur con stampa di ore o giorni.
+c) Nelleliminare qualsiasi finitura e controllo.
+d) Nel costruire senza alcun modello di partenza.
+3. Quale flusso porta correttamente dal disegno alla stampa con prova virtuale.
+a) Disegno, conversione a faccette, affettatura in strati, prova immersiva, stampa.
+b) Stampa, disegno, affettatura, prova.
+c) Prova immersiva senza modello, poi stampa senza affettatura.
+d) Solo stampa senza disegno ne prova.
+4. Perche serve un formato intermedio tra disegno e ambiente immersivo.
+a) Per aumentare il peso dei file senza motivo.
+b) Perche la conversione leggera perde funzioni e vincoli e impedisce modifiche nel virtuale.
+c) Per eliminare il disegno tecnico per sempre.
+d) Per impedire qualsiasi prova virtuale.
+5. Cosa sono in pratica i metadati con esempio corretto.
+a) Dati sui dati con punto di vista dichiarato, ad esempio unita e gestione dei vuoti di una misura.
+b) Solo il valore numerico senza alcuna nota.
+c) Solo il colore dellinterfaccia del programma.
+d) Una copia identica del dato senza descrizione.
+6. Quale struttura di metadati e descritta correttamente.
+a) A filo con una etichetta e un valore, e ad albero con radice rami e foglie annidate.
+b) Solo elenco senza etichette ne valori.
+c) Solo valori senza etichette ne legami.
+d) Struttura che vieta qualsiasi legante testuale.
+
+Soluzioni ragionate
+1 — a. Il virtuale aiuta a vedere e simulare, il fisico aggiunge tatto e confronto reale tra alternative.
+Le altre sono sbagliate perche i costi dipendono dai casi, il fisico resta utile e il modello matematico resta la base.
+2 — b. Il risparmio sta nel saltare attrezzi e piani di lavorazione del campione, anche se la crescita resta di ore o giorni.
+Le altre sono sbagliate perche la serie richiede ancora preparazione, finiture e controlli restano e il modello resta indispensabile.
+3 — a. Lordine corretto prepara il modello, lo traduce, lo affetta, lo prova e poi lo materializza.
+Le altre sono sbagliate perche invertono le fasi o saltano conversioni e prove necessarie.
+4 — b. La maglia leggera e veloce ma povera, senza ponte ogni cambio al disegno va riconvertito e non si edita in immersivo.
+Le altre sono sbagliate perche non si cerca peso inutile, il disegno resta centrale e la prova va favorita.
+5 — a. I metadati spiegano cosa misura il valore, come e scritto e come va letto nel suo contesto.
+Le altre sono sbagliate perche valore solo o colore o copia non descrivono tipo, unita e interpretazione.
+6 — a. Il filo lega uno a uno etichetta e valore, lalbero annida campi e il legante testuale li rende scambiabili.
+Le altre sono sbagliate perche senza etichette o senza legami non si ricerca ne si valida la struttura.
+
+--------------------------------------------------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt. procedi con questo : [PDF 1] .
