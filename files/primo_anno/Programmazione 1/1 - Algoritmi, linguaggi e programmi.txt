@@ -1,0 +1,230 @@
+[plain-text per Pages — da 1 - Algoritmi, linguaggi e programmi.md]
+
+1. ALGORITMI E PROGRAMMI
+------------------------
+
+Il computer e una macchina esecutrice: non inventa
+soluzioni, esegue ordini esterni. Linsieme di
+istruzioni scritte in un codice comprensibile alla
+macchina si chiama **programma**.
+
+Prima del codice serve il ragionamento: analizzare
+il problema, fissare obiettivi, distinguere dati
+iniziali e risultati attesi, descrivere i passi.
+Questa descrizione accurata e il **algoritmo**.
+
+In senso largo un algoritmo e una sequenza finita
+di operazioni, come una ricetta o le istruzioni
+di una lavatrice. In informatica e invece una
+**sequenza ordinata e finita di passi**,
+ripetibili e non ambigui, che con un dato
+**input** produce un **output** che risolve
+una intera classe di problemi con dati iniziali
+diversi, non un solo caso isolato.
+
+Esempio riscritto con dati diversi: invece della
+somma di due numeri, si pensi al calcolo della
+media di tre temperature lette da sensori. Stessi
+passi per ogni terna di valori, cambia solo il
+risultato numerico.
+
+Un algoritmo valido deve avere sei proprieta:
+
+- finito: termina con un risultato;
+- eseguibile: ogni passo e realizzabile
+  dallesecutore;
+- non ambiguo: letto da chiunque allo stesso modo;
+- generale: vale per una classe di problemi;
+- deterministico: stessi dati iniziali danno
+  sempre stesso risultato finale;
+- completo: prevede tutti i casi possibili.
+
+Si distinguono **algoritmi deterministici**, con
+un solo passo successivo possibile per ogni
+istruzione e quindi un solo percorso, e
+**algoritmi non deterministici**, con almeno
+una istruzione a piu continuazioni possibili
+e quindi esiti diversi dagli stessi dati.
+Fra i secondi ci sono quelli **probabilistici**,
+dove ogni continuazione ha una sua probabilita
+di scelta.
+
+Errore tipico: indicare alla macchina solo come
+risolvere un singolo esempio numerico. Va descritta
+sempre la classe di problemi.
+
+2. RAPPRESENTAZIONE DEGLI ALGORITMI
+-----------------------------------
+
+Per farsi capire da persone o macchine, i comandi
+vanno scritti in modo preciso. Poiche lalgoritmo
+diventera poi programma con la codifica, conviene
+usare fin da subito un linguaggio che faciliti
+la traduzione. Le due vie sono **diagramma di flusso**
+e **pseudo codifica**.
+
+La pseudo codifica procede in tre fasi ordinate.
+
+Intestazione: una riga con `Algoritmo` piu un nome
+a scelta, ad esempio `Algoritmo Media`.
+
+Fase dichiarativa: si dichiarano nomi e tipi dei
+dati, variabili e costanti, con `dichiara`. Esempio
+riscritto: `dichiara T1, T2, T3, M come numeri
+decimali`.
+
+Fase esecutiva: fra `inizio` e `fine` si mettono
+in ordine acquisizione con `leggi`, calcolo con
+`calcola`, scrittura con `scrivi`. Esempio
+riscritto con caso diverso:
+
+Algoritmo Media
+Variabili
+dichiara T1, T2, T3, M come numeri decimali
+inizio
+leggi T1
+leggi T2
+leggi T3
+calcola M = (T1 + T2 + T3) / 3
+scrivi M
+fine
+
+Il diagramma di flusso e invece una immagine
+dellalgoritmo con simboli standard e frecce per
+lordine. Ovale per inizio e fine, parallelogramma
+per lettura e scrittura, rettangolo per istruzione
+da eseguire, rombo per scelta fra due percorsi
+secondo una condizione.
+
+Tabella dei simboli come righe di testo:
+ovale = inizio e fine sequenza
+parallelogramma = inserimento ed emissione dati
+rettangolo = istruzione da eseguire
+rombo = scelta fra due percorsi per condizione
+
+Esempio riscritto con caso diverso: preparare un
+te con controllo del gusto. Passi: scalda acqua,
+metti bustina, versa acqua, lascia in infusione,
+assaggia. Se e amaro aggiungi miele e riassaggia,
+altrimenti te pronto e fine. Il ciclo NO torna
+ad aggiungi miele, il SI va a te pronto.
+
+Errore tipico: mescolare simboli a caso o
+dimenticare le frecce di sequenza e il ramo NO/SI
+del rombo.
+
+3. LINGUAGGI DI PROGRAMMAZIONE
+-------------------------------
+
+Le macchine nascono per alleggerire il lavoro.
+Il computer doveva risolvere calcoli complessi,
+poi con i modelli general-purpose serve guidarlo
+con istruzioni in un codice comprensibile: nasce
+la programmazione e servono ponti uomo-macchina,
+cioe i **linguaggio di programmazione**.
+
+Un linguaggio ha alfabeto, parole e frasi, piu
+regole duso. Come le lingue naturali ha **lessico**
+per scrivere le parole, **sintassi** per la
+grammatica delle frasi, **semantica** per il
+significato delle frasi corrette.
+
+La classificazione per livello distingue tre strati.
+
+Il **linguaggio macchina** dipende dallhardware
+ed esegue istruzioni direttamente sul **processore**
+o CPU. Ogni istruzione fa una sola **operazione
+ben precisa**, come scrivere in una cella di
+memoria, saltare alla cella successiva, svolgere
+un calcolo logico-aritmetico. Pregio: diretto.
+Difetto: un programma per una architettura non
+gira su unaltra.
+
+Il **linguaggio assembly** e un linguaggio di basso
+livello, ancora orientato alla macchina ma piu
+leggibile: ignora il binario e usa mnemonici, ad
+esempio `ADD` per la somma e `JMP` per il salto.
+Servono moltissime istruzioni semplici per ottenere
+astrazione, quindi il programma diventa lungo,
+duro da leggere, da controllare e da mantenere.
+
+Il **linguaggio di alto livello** e piu vicino
+alluomo e quasi indipendente dalla macchina. Va
+pero tradotto in macchina con **compilatore**, che
+traduce tutto il sorgente prima dellesecuzione, o
+con **interprete**, che traduce ed esegue una
+istruzione alla volta durante la corsa.
+
+Errore tipico: credere che alto livello significhi
+senza traduzione. Senza compilatore o interprete
+la macchina non capisce nulla.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il programma e la lista di istruzioni, lalgoritmo e il metodo generale prima del codice.
+- Input uguale e percorso unico danno output uguale negli algoritmi deterministici.
+- Pseudo codifica usa dichiara, inizio, leggi, calcola, scrivi, fine in ordine.
+- Nel flow-chart ovale e inizio-fine, parallelogramma e dati, rettangolo e calcolo, rombo e scelta.
+- Linguaggio macchina dipende dal processore, assembly usa mnemonici come ADD e JMP.
+- Alto livello va tradotto con compilatore tutto insieme o con interprete riga per riga.
+- Lessico e parole, sintassi e frasi, semantica e significati.
+- Senza completezza e generalita non ce algoritmo ma solo un esempio svolto.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche serve prima lalgoritmo e poi il programma?
+a) Perche il computer inventa da solo i passi · b) Perche va descritta la classe di problemi con dati, obiettivi e passi prima di codificare · c) Perche basta un esempio numerico · d) Perche il programma non usa dati in ingresso
+
+2. Quale proprieta manca se con gli stessi dati ottieni ogni volta un risultato diverso senza volerlo?
+a) Finitezza · b) Carattere deterministico · c) Uso di input · d) Presenza di output
+
+3. In pseudo codifica, qual e lordine corretto?
+a) Inizio, dichiara, leggi, fine · b) Intestazione con Algoritmo, dichiara, inizio, leggi, calcola, scrivi, fine · c) Scrivi, leggi, calcola, inizio · d) Dichiara dopo fine
+
+4. Nel diagramma di flusso cosa fa il rombo?
+a) Apre e chiude la sequenza · b) Legge e scrive dati · c) Esegue un calcolo fisso · d) Sceglie fra due percorsi secondo una condizione
+
+5. Perche un programma in linguaggio macchina non gira ovunque?
+a) Perche e troppo vicino alluomo · b) Perche dipende dallhardware e dal processore · c) Perche usa ADD e JMP · d) Perche e sempre tradotto dal compilatore
+
+6. Che differenza c e tra compilatore e interprete?
+a) Nessuna, sono sinonimi · b) Il primo traduce tutto il sorgente prima di eseguire, il secondo traduce ed esegue una istruzione alla volta · c) Il primo esegue senza tradurre · d) Il secondo funziona solo su linguaggio macchina
+
+Soluzioni ragionate
+
+1 — b. Serve analisi di problema, obiettivi, input e passi generali prima del codice. La a) nega il ruolo esecutivo della macchina, la c) resta sul singolo caso, la d) nega luso dei dati.
+
+2 — b. Senza determinismo lo stesso ingresso non garantisce stessa uscita. La a) riguarda la terminazione, c) e d) riguardano solo presenza di dati e risultato.
+
+3 — b. Solo questa segue intestazione, dichiarazioni e blocco inizio-fine con le tre azioni in ordine. Le altre invertono o spezzano la sequenza.
+
+4 — d. Il rombo valuta una condizione e dirama. La a) e lovale, la b) e il parallelogramma, la c) e il rettangolo.
+
+5 — b. Legame stretto con architettura e CPU. La a) rovescia il concetto, la c) descrive assembly, la d) descrive alto livello.
+
+6 — b. Definizioni corrette dei due traduttori. La a) li confonde, la c) nega la traduzione, la d) inverte i livelli.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

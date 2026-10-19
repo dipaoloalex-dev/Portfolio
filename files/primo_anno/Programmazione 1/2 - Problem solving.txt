@@ -1,0 +1,171 @@
+[plain-text per Pages — da 2 - Problem solving.md]
+
+1. CONCETTI GENERALI
+-------------------
+
+La vita quotidiana e piena di scelte riuscite male
+perche affrontate in modo inefficiente. Quando un
+disagio resta espresso in forma vaga non si gestisce:
+frasi come tutto va male o non cambiera mai non
+dicono cosa fare. Togliendo queste generalita si
+puo iniziare a lavorare davvero.
+
+Il **problem solving** e un approccio sistematico:
+definire la questione incerta e produrre molte
+soluzioni possibili senza giudicarle subito. Il
+**decision making** viene dopo: riduce le opzioni,
+sceglie una strada e valuta le conseguenze delle
+mosse.
+
+Esempio riscritto con caso diverso: invece di dire
+ho il mondo sulle spalle, si passi a nelle ultime
+due settimane ho saltato tre scadenze perche non
+ho un calendario. Il primo e sfogo, il secondo si
+puo misurare e correggere.
+
+Il problem solving e un **processo cognitivo**
+verso un obiettivo senza metodo ovvio. Si puo
+insegnare con tecniche apposite, non e solo talento.
+
+Errore tipico: confondere sfogo generico e problema
+definito, e giudicare le idee mentre si generano.
+
+2. IL PROBLEM SOLVING
+--------------------
+
+Il percorso ha sei fasi in ordine. Il **problem finding**
+nota il disagio. Il **problem setting** lo trasforma
+in questione ben definita. La **problem analysis**
+scompone il principale in secondari con `WBS`.
+Il problem solving elimina le cause e risponde alle
+domande. Il decision making decide come agire dalle
+risposte. Il **decision taking** passa allazione.
+
+Il problem setting e diagnosi teorica e pratica:
+da disagio a problema chiaro. Precede tutto e poi
+il problema chiaro diventa progetto da gestire con
+il **project management**.
+
+Esempio riscritto: disagio per stampe sempre in
+ritardo. Setting: la coda supera i dieci minuti
+nella fascia serale. Analysis: driver, carta, rete.
+Solving: cambia driver e sposta i lavori lunghi.
+Making e taking: scelta e avvio da lunedi.
+
+Una volta definito ogni aspetto si passa alla
+risoluzione. Senza setting corretto il solving
+fallisce anche se impegnativo.
+
+Errore tipico: saltare al codice o allazione senza
+aver definito input, output e confini.
+
+3. TECNICHE DI PROBLEM SOLVING
+------------------------------
+
+Programmare il lavoro in sei mosse: definizione,
+analisi, **design dellalgoritmo**, codifica,
+**testing e debugging**, documentazione.
+
+La definizione descrive in modo chiaro cosa fare.
+Lanalisi chiarisce **input** richiesti con tipi e
+**output** prodotti con formati. Senza questi
+confini il resto e fragile.
+
+Il design e la definizione formale del metodo.
+Con **affinamento progressivo** si divide in sotto
+problemi sempre piu piccoli finche sono facili,
+detto `Stepwise refinement`. Con **approccio top-down**
+si parte dallalto verso il basso e ogni compito
+di livello si chiama `modulo`.
+
+Esempio riscritto con dati diversi: calcolo del
+totale di una comanda con tre portate. Modulo alto
+totale conto, sotto moduli leggi prezzi, somma,
+aggiungi servizio, stampa. Ogni sotto modulo e
+banale da solo.
+
+Poi vengono **pseudo codice** in stile quasi
+linguaggio e **flowchart** con sequenze, selezioni
+e cicli per mostrare la logica. La **codifica**
+scrive il programma a moduli, leggibile e semplice.
+Il debugging toglie i bug con tre famiglie: errori
+**sintattici** di grammatica, errori **run-time**
+in esecuzione come divisione per zero con `divisione
+per zero`, errori **logici** con algoritmo o
+realizzazione sbagliata e risultati strani. La
+**documentazione** descrive il programma per farlo
+capire anche ad altri.
+
+Errore tipico: scrivere codice monolitico senza
+moduli e senza documentazione, e testare solo il
+caso fortunato.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Vago non si risolve, definito si misura e si corregge.
+- Prima molte idee senza giudizio, poi scelta e azione.
+- Ordine finding, setting, analysis, solving, making, taking.
+- Senza setting chiaro il solving spreca fatica.
+- Design con affinamento progressivo, top-down e moduli.
+- Pseudo codice e flowchart prima della codifica a moduli.
+- Sintattici bloccano, run-time esplodono, logici ingannano.
+- Codice pulito piu documentazione serve anche ad altri.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa distingue problem solving e decision making?
+a) Sono la stessa fase · b) Il primo genera molte soluzioni senza giudicare, il secondo sceglie e valuta conseguenze · c) Il primo agisce subito · d) Il secondo non decide mai
+
+2. Perche serve il problem setting prima del solving?
+a) Per saltare lanalisi · b) Per trasformare il disagio in questione definita da gestire come progetto · c) Per scrivere subito codice · d) Per evitare ogni documentazione
+
+3. Cosa fa la problem analysis con WBS?
+a) Passa allazione · b) Scompone il principale in secondari trattabili · c) Elimina i test · d) Sceglie il linguaggio
+
+4. Cosa significa approccio top-down con moduli?
+a) Partire dal basso senza ordini · b) Partire dallalto verso il basso con compiti detti moduli · c) Scrivere tutto in un unico blocco · d) Saltare il design
+
+5. Quale coppia e corretta per rappresentare la logica prima del codice?
+a) Solo testing · b) Pseudo codice per passi e flowchart per sequenze selezioni cicli · c) Solo documentazione · d) Solo codifica
+
+6. Un programma calcola sempre lo sconto doppio anche con codice senza errori di grammatica. Che errore e?
+a) Sintattico · b) Run-time da divisione per zero · c) Logico da algoritmo o realizzazione errata · d) Nessun errore
+
+Soluzioni ragionate
+
+1 — b. Generazione libera poi riduzione e scelta. La a) li fonde, la c) anticipa lazione, la d) nega la decisione.
+
+2 — b. Da disagio a problema chiaro poi progetto. La a) salta un passo, la c) corre al codice, la d) toglie le carte.
+
+3 — b. Scomposizione gerarchica dei compiti. La a) e il taking, la c) toglie verifiche, la d) riguarda la codifica.
+
+4 — b. Definizione corretta di livelli e moduli. La a) inverte il verso, la c) nega i moduli, la d) salta il design.
+
+5 — b. I due strumenti prima della scrittura. Le altre citano fasi diverse e successive.
+
+6 — c. Grammatica ok ma risultato sbagliato per logica. La a) bloccherebbe, la b) esploderebbe in corsa, la d) nega levidenza.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

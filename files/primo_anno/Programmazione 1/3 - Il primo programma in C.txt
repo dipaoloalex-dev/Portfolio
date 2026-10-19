@@ -1,0 +1,171 @@
+[plain-text per Pages — da 3 - Il primo programma in C.md]
+
+1. STRUTTURA DEL PROGRAMMA
+-------------------------
+
+Un primo esempio stampa una riga a video. Lo
+schema con nomi diversi e il seguente:
+
+`// saluto iniziale`
+`#include <stdio.h>`
+`int main( void )`
+`{`
+`printf( "Ciao dal C!\n" );`
+`}`
+
+I **commenti** con `//` o `/* */` documentano e
+aiutano a leggere. Sono ignorati dal compilatore
+e non creano codice macchina. Meglio `//` perche
+piu brevi ed evitano di dimenticare la chiusura.
+
+Esempio riscritto: invece del nome file originale,
+si usi `saluto.c` con commento che dice solo lo
+scopo. Stessa funzione, dati diversi.
+
+La **direttiva al preprocessore** con `#` viene
+elaborata prima di compilare. Con
+`#include <stdio.h>` si includono i contenuti
+della **intestazione standard** di ingresso-uscita,
+che servono al compilatore per le chiamate come
+`printf`.
+
+Le **righe vuote** e gli spazi di tabulazione
+migliorano la lettura e di norma sono ignorati
+dal compilatore.
+
+Errore tipico: lasciare un blocco `/*` senza
+chiusura e trasformare mezzo file in commento.
+
+2. LA FUNZIONE MAIN
+-------------------
+
+Ogni programma C ha una **funzione main** da cui
+parte lesecuzione e puo avere altre funzioni. Con
+`int main( void )` si dice che restituisce un
+**intero** e non riceve nulla. Le graffe `{` e `}`
+aprono e chiudono il **blocco** col corpo.
+
+Esempio riscritto: stessa struttura ma con testo
+diverso nei commenti e rientri da tre spazi. Il
+meccanismo resta identico, cambiano solo le parole
+di contorno.
+
+Buona pratica: mettere prima di ogni funzione un
+breve commento con lobiettivo.
+
+Errore tipico: dimenticare una graffa o pensare
+che si parta da unaltra funzione.
+
+3. LA FUNZIONE PRINTF
+---------------------
+
+Con `printf( "testo\n" );` si stampa una **stringa**
+fra doppi apici. Lintera riga con chiamata,
+argomento e `;` e una **istruzione** e il punto e
+virgola e il terminatore. I caratteri escono come
+scritti, tranne le sequenze speciali.
+
+Il **carattere di escape** `\` piu lettera forma
+una **sequenza di escape**. La piu usata e `newline`
+con `\n` che manda a capo. Altre righe come testo:
+`tab` con `\t`, avviso con `\a`, barra con `\\`,
+apici con `\"`.
+
+Tabella come righe di testo:
+`\n` = nuova riga a inizio successiva
+`\t` = salto alla tabulazione successiva
+`\a` = suono o avviso senza spostare
+`\\` = una barra dentro stringa
+`\"` = apici dentro stringa
+
+Esempio riscritto con dati diversi: invece del
+messaggio originale si stampi `Ciao dal C!`.
+Con due chiamate si puo spezzare la stessa riga,
+con piu `\n` in una sola si fanno piu righe.
+
+La graffa `}` chiude main e va commentata.
+Le funzioni di **libreria standard** come `printf`
+e `scanf` non sono parole del linguaggio: il
+compilatore lascia solo un posto per la chiamata
+e il **linker** cerca nelle librerie e completa
+leseguibile. Se il nome e scritto male il linker
+non trova corrispondenze e segnala errore.
+
+Esempio riscritto: scrivere `print` invece di
+`printf` sembra simile ma il collegamento fallisce.
+
+Buona pratica: rientrare il corpo di tre spazi in
+modo uniforme, meglio spazi che tabulazioni, e
+applicare sempre la stessa convenzione.
+
+Errore tipico: dimenticare `;` o rompere una
+stringa andando a capo dentro gli apici.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Commenti per persone, non per la macchina.
+- Cancelletto significa preprocessore prima del compilatore.
+- Main con int e void, graffe per il blocco.
+- Printf stampa stringhe, punto e virgola chiude.
+- Backslash piu lettera comanda, newline manda a capo.
+- Libreria collegata dal linker, non dal compilatore.
+- Indentazione uniforme con spazi per leggere meglio.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. A cosa servono i commenti in un primo programma?
+a) A velocizzare · b) A documentare e leggere, ignorati dal compilatore · c) A creare codice macchina · d) A chiudere il main
+
+2. Cosa fa `#include <stdio.h>`?
+a) Stampa da solo · b) Dice al preprocessore di includere lintestazione standard per printf · c) Chiude il blocco · d) Manda a capo
+
+3. Cosa significa `int main( void )`?
+a) Funzione assente · b) Partenza da main con reso intero e nessun ingresso · c) Commento · d) Istruzione di stampa
+
+4. Cosa stampa `printf( "A\nB\n" );`?
+a) Una riga unica AB · b) Nulla · c) A sopra e B sotto su due righe · d) Solo B
+
+5. Perche serve `\\` dentro una stringa?
+a) Per andare a capo · b) Per mettere una vera barra senza farla leggere come escape · c) Per chiudere · d) Per commentare
+
+6. Scrivi `print` invece di `printf`. Chi se ne accorge?
+a) Nessuno · b) Il linker, che non trova la funzione nelle librerie · c) Il preprocessore toglie tutto · d) Le graffe
+
+Soluzioni ragionate
+
+1 — b. Solo lettura umana, zero effetti. La a) promette velocita, la c) crea codice, la d) confonde i ruoli.
+
+2 — b. Inclusione prima della traduzione. La a) non stampa, la c) e compito graffe, la d) e di newline.
+
+3 — b. Punto di avvio con tipo e parametri. La a) nega la presenza, c) e d) sono altri costrutti.
+
+4 — c. Ogni newline porta allinizio successivo. La a) ignora gli a capo, la b) nega tutto, la d) taglia meta.
+
+5 — b. Doppia barra per una vera. La a) e newline, la c) e graffa, la d) e commento.
+
+6 — b. Nome noto solo alle librerie collegate dopo. Le altre fasi non conoscono quel catalogo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
