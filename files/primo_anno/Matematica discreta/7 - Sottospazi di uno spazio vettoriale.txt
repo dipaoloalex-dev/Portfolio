@@ -1,133 +1,140 @@
-## 1. LA NOZIONE DI SOTTOSPAZIO VETTORIALE DI UNO SPAZIO VETTORIALE
+[plain-text per Pages — da 7 - Sottospazi di uno spazio vettoriale.md]
 
-Dato un `K`-spazio vettoriale `V`, un sottoinsieme `V'` è **stabile** (o chiuso)
+1. LA NOZIONE DI SOTTOSPAZIO VETTORIALE DI UNO SPAZIO VETTORIALE
+------------------------------------------------------------
+
+Dato un K-spazio vettoriale V, un sottoinsieme V' è stabile (o chiuso)
 rispetto alle operazioni se è non vuoto e somma e prodotto per scalare non
-"escono" mai da `V'`: la somma di due elementi di `V'` resta in `V'`, e il
-prodotto di un elemento di `V'` per uno scalare qualsiasi resta in `V'`.
+"escono" mai da V': la somma di due elementi di V' resta in V', e il
+prodotto di un elemento di V' per uno scalare qualsiasi resta in V'.
 
-Ogni spazio ha almeno due sottoinsiemi stabili: sé stesso e il singoletto `{0}`,
-detti stabili **banali** (coincidono solo nello spazio nullo).
+Ogni spazio ha almeno due sottoinsiemi stabili: sé stesso e il singoletto {0},
+detti stabili banali (coincidono solo nello spazio nullo).
 
-Un sottoinsieme stabile, con le operazioni ereditate da `V`, è a sua volta uno
+Un sottoinsieme stabile, con le operazioni ereditate da V, è a sua volta uno
 spazio vettoriale: le proprietà "universali" (associatività, commutatività,
-distributive) valgono gratis perché valevano in `V`; quelle "esistenziali"
-vanno verificate, ma seguono dalla stabilità: lo zero sta in `V'` perché
-`0·v = 0` per un qualsiasi `v` di `V'`, e l'opposto sta in `V'` perché
-`(−1)v = −v`. Un tale `V'` si chiama **sottospazio** (o `K`-sottospazio) di `V`.
-I due banali si chiamano sottospazio **improprio** (`V` stesso) e sottospazio
-**nullo** (`(0)`); gli altri sono **propri**.
+distributive) valgono gratis perché valevano in V; quelle "esistenziali"
+vanno verificate, ma seguono dalla stabilità: lo zero sta in V' perché
+0·v = 0 per un qualsiasi v di V', e l'opposto sta in V' perché
+(−1)v = −v. Un tale V' si chiama sottospazio (o K-sottospazio) di V.
+I due banali si chiamano sottospazio improprio (V stesso) e sottospazio
+nullo ((0)); gli altri sono propri.
 
 I sottospazi si comportano bene con inclusioni e intersezioni: un sottospazio di
 un sottospazio è sottospazio dello spazio grande, e l'intersezione di una
 famiglia qualsiasi di sottospazi è ancora un sottospazio (contiene sempre lo
-zero e la stabilità si eredita membro per membro). L'**unione** invece in
+zero e la stabilità si eredita membro per membro). L'unione invece in
 generale non è un sottospazio: è stabile per scalari ma di solito non per la
 somma (sommando elementi di due rami diversi si "esce" dall'unione).
 
 Criterio pratico equivalente: un sottoinsieme non vuoto è un sottospazio se e
-solo se contiene **ogni combinazione lineare** dei suoi elementi.
+solo se contiene ogni combinazione lineare dei suoi elementi.
 
 Errore tipico: pensare che basti la stabilità per una sola operazione. Servono
 entrambe: ci sono insiemi stabili per somma ma non per scalari e viceversa.
 
-## 2. ESEMPI DI SPAZI VETTORIALI
+2. ESEMPI DI SPAZI VETTORIALI
+-----------------------------
 
-- **Vettori liberi e applicati in un punto.** Lo spazio dei vettori liberi è un
-  `R`-spazio vettoriale; fissato un punto `P`, anche l'insieme dei vettori
-  applicati con origine in `P` (somma col parallelogramma) lo è. Cambiando punto
-  cambia lo spazio: i nulli sono frecce diverse (`PP→` contro `QQ→`).
-- **Vettori numerici.** `Kⁿ` con somma e prodotto componente per componente è
-  il prototipo di spazio vettoriale: lo zero è la `n`-upla nulla, l'opposto
-  cambia tutti i segni. Sommare `n`-uple di lunghezze diverse non ha senso.
-- **Matrici.** Le matrici `(n, m)` su `K` con somma e prodotto per scalare posto
+- Vettori liberi e applicati in un punto. Lo spazio dei vettori liberi è un
+  R-spazio vettoriale; fissato un punto P, anche l'insieme dei vettori
+  applicati con origine in P (somma col parallelogramma) lo è. Cambiando punto
+  cambia lo spazio: i nulli sono frecce diverse (PP→ contro QQ→).
+- Vettori numerici. Kⁿ con somma e prodotto componente per componente è
+  il prototipo di spazio vettoriale: lo zero è la n-upla nulla, l'opposto
+  cambia tutti i segni. Sommare n-uple di lunghezze diverse non ha senso.
+- Matrici. Le matrici (n, m) su K con somma e prodotto per scalare posto
   per posto formano uno spazio vettoriale; righe e colonne si leggono come
   vettori numerici. Lo zero è la matrice nulla.
-- **Applicazioni.** Tutti questi esempi sono casi particolari di un'unica
-  costruzione: le applicazioni da un insieme `I` in `K`, sommate e scalate punto
-  per punto (`(f+g)(x) = f(x)+g(x)`). Le `n`-uple corrispondono a `I = {1..n}`,
-  le matrici a `I` = insieme delle posizioni.
+- Applicazioni. Tutti questi esempi sono casi particolari di un'unica
+  costruzione: le applicazioni da un insieme I in K, sommate e scalate punto
+  per punto ((f+g)(x) = f(x)+g(x)). Le n-uple corrispondono a I = {1..n},
+  le matrici a I = insieme delle posizioni.
 
-## 3. ESEMPI DI SOTTOSPAZI DI UNO SPAZIO VETTORIALE
+3. ESEMPI DI SOTTOSPAZI DI UNO SPAZIO VETTORIALE
+------------------------------------------------
 
-- **Vettori di una direzione fissata.** Il nullo più tutti i vettori paralleli a
+- Vettori di una direzione fissata. Il nullo più tutti i vettori paralleli a
   una retta data forma un sottospazio; due direzioni diverse danno sottospazi la
   cui intersezione è solo lo zero, e la loro unione non è un sottospazio
   (la somma "esce" dalle due direzioni).
-- **Vettori applicati su una retta per `P`.** Restringendosi alle frecce con
-  origine in `P` giacenti su una retta fissata per `P` si ottiene un sottospazio.
-- **Matrici speciali.** Dentro le quadrate di ordine `n`: simmetriche,
+- Vettori applicati su una retta per P. Restringendosi alle frecce con
+  origine in P giacenti su una retta fissata per P si ottiene un sottospazio.
+- Matrici speciali. Dentro le quadrate di ordine n: simmetriche,
   antisimmetriche, diagonali, scalari, triangolari superiori e inferiori sono
   tutti sottospazi (diagonali e scalari stanno dentro le simmetriche). Sommare o
   scalare matrici di uno di questi tipi non fa mai uscire dal tipo.
 
-## Concetti chiave da ricordare
+Concetti chiave da ricordare
+----------------------------
 
 - Sottospazio = sottoinsieme non vuoto stabile per somma e prodotto per scalare.
 - Banali: spazio intero e sottospazio nullo; gli altri sono propri.
 - Intersezione di sottospazi è un sottospazio; l'unione in generale no.
 - Criterio: contiene tutte le combinazioni lineari dei suoi elementi.
-- Esempi guida: `Kⁿ`, matrici, applicazioni punto per punto; sottospazi tipici:
+- Esempi guida: Kⁿ, matrici, applicazioni punto per punto; sottospazi tipici:
   simmetriche, diagonali, triangolari, vettori di una direzione.
 
-## TEST di AUTOVALUTAZIONE
+TEST di AUTOVALUTAZIONE
+-----------------------
 
 Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
 ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
 
-**1.** Quale condizione manca perché un sottoinsieme sia di sicuro un sottospazio?
+1. Quale condizione manca perché un sottoinsieme sia di sicuro un sottospazio?
 a) Non vuoto · b) Stabile per somma e prodotto per scalare · c) Contenere lo
 zero · d) Tutte: servono non vuoto + entrambe le stabilità
 
-**2.** L'intersezione di due sottospazi è:
+2. L'intersezione di due sottospazi è:
 a) sempre un sottospazio · b) mai un sottospazio · c) un sottospazio solo se
 sono uguali · d) un sottospazio solo se uno contiene l'altro
 
-**3.** L'unione di due sottospazi distinti di una retta e un piano in `R³`:
+3. L'unione di due sottospazi distinti di una retta e un piano in R³:
 a) è sempre un sottospazio · b) non è un sottospazio in generale, perché la
 somma di vettori dei due rami può uscire dall'unione · c) è un sottospazio se
 contiene lo zero · d) è vuota
 
-**4.** In `R²`, l'insieme `{(x, y) : y = 2x}` è:
+4. In R², l'insieme {(x, y) : y = 2x} è:
 a) un sottospazio (retta per l'origine) · b) non stabile per somma ·
 c) privo dello zero · d) stabile solo per scalari positivi
 
-**5.** In `R²`, l'insieme `{(x, y) : y = 1}` è:
+5. In R², l'insieme {(x, y) : y = 1} è:
 a) un sottospazio · b) non è un sottospazio perché non contiene lo zero ·
 c) stabile per somma · d) stabile per prodotto per scalare
 
-**6.** Nelle matrici `2×2`, l'insieme delle diagonali è:
+6. Nelle matrici 2×2, l'insieme delle diagonali è:
 a) un sottospazio, contenuto nelle simmetriche · b) non stabile per somma ·
 c) privo della nulla · d) uguale a tutte le matrici
 
-### Soluzioni ragionate
+Soluzioni ragionate
 
-**1 — d.** La definizione richiede tutte e tre le cose insieme: sottoinsieme non
+1 — d. La definizione richiede tutte e tre le cose insieme: sottoinsieme non
 vuoto e chiuso rispetto a entrambe le operazioni. Lo zero segue ma va comunque
 garantito dalla non vuotezza.
 
-**2 — a.** Contiene lo zero (comune a tutti) e la stabilità passa ai membri:
+2 — a. Contiene lo zero (comune a tutti) e la stabilità passa ai membri:
 somma e scalari di elementi comuni restano comuni.
 
-**3 — b.** È il controesempio standard: ogni ramo è stabile da solo, ma la
+3 — b. È il controesempio standard: ogni ramo è stabile da solo, ma la
 somma incrociata esce dall'unione.
 
-**4 — a.** È la retta per l'origine di pendenza 2: somma e multipli di coppie
-con `y = 2x` verificano ancora l'equazione, e `(0,0)` c'è.
+4 — a. È la retta per l'origine di pendenza 2: somma e multipli di coppie
+con y = 2x verificano ancora l'equazione, e (0,0) c'è.
 
-**5 — b.** Manca già lo zero (`(0,0)` ha `y = 0 ≠ 1`); inoltre sommando due
-elementi si ottiene `y = 2`. Quindi né somma né scalari sono stabili.
+5 — b. Manca già lo zero ((0,0) ha y = 0 ≠ 1); inoltre sommando due
+elementi si ottiene y = 2. Quindi né somma né scalari sono stabili.
 
-**6 — a.** Somma e multipli di diagonali restano diagonali (e quindi
+6 — a. Somma e multipli di diagonali restano diagonali (e quindi
 simmetriche); la nulla è diagonale.
 
----
+----------------------------------------
 
-## PROMPT RIUTILIZZABILE
+PROMPT RIUTILIZZABILE
+---------------------
 
 Prompt usato per generare questa scheda. Copialo in una nuova conversazione
 insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
 
-```
 Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
 senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
 tabelle, nomi di docenti o università, né avvisi di copyright del materiale
@@ -151,4 +158,3 @@ Struttura obbligatoria del file:
   sono sbagliate.
 - Tono didattico preciso, in italiano, formattazione Markdown come in questa
   scheda.
-```

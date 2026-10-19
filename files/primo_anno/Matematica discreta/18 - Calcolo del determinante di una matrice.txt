@@ -1,0 +1,220 @@
+[plain-text per Pages — da 18 - Calcolo del determinante di una matrice.md]
+
+1. PERMUTAZIONI
+---------------
+
+Le permutazioni servono a scrivere la formula del determinante e a
+determinarne il segno.
+
+Una permutazione di un insieme è una biettiva dell'insieme in sé. Quelle di
+Iₙ = {1, ..., n} sono i riordinamenti dei primi n numeri. L'insieme di
+tutte si indica Sₙ. Per n = 1 ce n'è una sola; per n = 2 ce ne sono due
+(12 e 21); per n = 3 ce ne sono sei. In generale il conteggio è
+ricorsivo: fissato il primo posto in n modi possibili, restano le
+permutazioni degli altri n-1 oggetti. Dunque |Sₙ| = n! = n·(n-1)·...·2·1.
+
+Esempio nuovo di conteggio: per n = 4 ci sono 4 scelte per la prima
+posizione e, per ciascuna, 6 permutazioni delle tre restanti, quindi
+4·6 = 24 = 4!.
+
+Ogni σ ∈ Sₙ ha un segno sign(σ) pari a 1 se è pari e -1 se è
+dispari. La parità è quella del numero di scambi a due a due necessari per
+riportarla all'identità 12...n: percorsi diversi possono usare un numero
+diverso di scambi, ma la parità è sempre la stessa.
+
+Esempio nuovo: 2 1 4 3 torna a 1 2 3 4 con due scambi (il primo con il
+secondo, il terzo con il quarto), quindi è pari e ha segno 1. Invece
+3 1 2 richiede due scambi per riordinarsi (3 1 2 → 1 3 2 → 1 2 3), quindi
+è pari; 2 3 1 4 con gli stessi due scambi è pari, mentre 2 1 3 con un
+solo scambio è dispari e ha segno -1.
+
+Vale una regola ricorsiva: se σ(1) = k e σ' è la parte residua sugli
+n-1 elementi restanti, allora sign(σ) = sign(σ') se k è dispari e
+sign(σ) = -sign(σ') se k è pari. L'idea è che, sistemata σ' con scambi
+interni, resta da portare k al suo posto con k-1 scambi.
+
+Errore tipico: pensare che il numero di scambi sia unico, o che |Sₙ|
+sia n² o 2ⁿ. Il fattoriale cresce molto più in fretta e il segno dipende
+solo dalla parità, non dal particolare cammino scelto.
+
+2. DEFINIZIONE DI DETERMINANTE
+------------------------------
+
+Il determinante è un'applicazione det: Mₙ(K) → K che associa uno scalare
+a ogni quadrata di ordine n.
+
+Per A = (a_{ij}) si pone
+
+det A = Σ_{σ∈Sₙ} sign(σ)·a_{1σ(1)}·a_{2σ(2)}·...·a_{nσ(n)}
+
+dove la somma corre su tutte le n! permutazioni. Ogni addendo prende un
+elemento per ogni riga e ogni colonna, col segno della permutazione delle
+colonne.
+
+Casi bassi, con calcoli nuovi:
+
+- per n = 1, det(a₁₁) = a₁₁;
+- per n = 2, le due permutazioni sono 12 pari e 21 dispari, quindi
+  det [[a₁₁, a₁₂], [a₂₁, a₂₂]] = a₁₁a₂₂ - a₁₂a₂₁: diagonale meno
+  antidiagonale. Esempio nuovo: det [[3, 2], [1, 4]] = 12 - 2 = 10;
+- per n = 3 ci sono tre permutazioni pari (123, 231, 312) e tre
+  dispari (132, 213, 321), da cui la somma di sei tripli prodotti con
+  segni +, +, +, -, -, -.
+
+Esempio nuovo di ordine 3: per
+
+[[2, 0, 1], [1, 3, 2], [0, 1, 4]]
+
+la formula dà 2·3·4 + 0·2·0 + 1·1·1 - 1·3·0 - 0·1·4 - 2·2·1 = 24 + 1 - 4 = 21.
+
+Un ausilio mnemonico solo per n = 3 è la regola di Sarrus: si accostano a
+destra le prime due colonne e si sommano i tre prodotti diagonali
+sottraendo i tre antidiagonali. Non si estende a n > 3.
+
+Errore tipico: applicare Sarrus a ordini diversi da 3, o dimenticare i
+segni delle tre permutazioni dispari. Altro errore: credere che il
+determinante sia lineare nelle entrate una per una senza il gioco dei segni.
+
+3. TEOREMA DI LAPLACE
+---------------------
+
+Per n ≥ 2 il calcolo si riduce ricorsivamente a determinanti di ordine
+n-1, soprattutto se ci sono molti zeri.
+
+Data A quadrata di ordine n, la complementare di a_{i₁j₁}, indicata
+Ā(i₁; j₁), si ottiene cancellando riga i₁ e colonna j₁. Il suo
+determinante è il minore complementare Ā^{i₁j₁}; il complemento
+algebrico è A_{i₁j₁} = (-1)^{i₁+j₁}·Ā^{i₁j₁}.
+
+Esempio nuovo: in
+
+[[1, 2, 3], [0, 1, 4], [5, 6, 0]]
+
+la complementare di a₂₃ = 4 è [[1, 2], [5, 6]], il minore vale
+6 - 10 = -4 e, essendo 2 + 3 = 5 dispari, il cofattore è
+(-1)⁵·(-4) = 4.
+
+Teorema di Laplace: per ogni riga i e ogni colonna j,
+
+det A = a_{i1}A_{i1} + ... + a_{in}A_{in}
+
+det A = a_{1j}A_{1j} + ... + a_{nj}A_{nj}
+
+cioè somma degli elementi per i rispettivi cofattori. L'idea è raggruppare
+nella definizione le n! permutazioni secondo il primo valore σ(1) e
+riconoscere in ogni gruppo un minore col segno dato dalla regola del primo
+elemento.
+
+Il vantaggio è iterativo: si scende a ordini minori fino al 2. Conviene
+scegliere la riga o colonna con più zeri; se una riga o colonna è nulla il
+determinante è subito zero.
+
+Esempio nuovo di ordine 4, diverso dall'originale. Sia
+
+[[1, 0, 2, 1], [3, 2, 0, 0], [0, 0, 1, 4], [2, 0, 3, 1]]
+
+La seconda colonna ha un solo non-zero a₂₂ = 2. Lo sviluppo lungo quella
+colonna dà det A = 2·(-1)^{2+2}·det M con
+
+M = [[1, 2, 1], [0, 1, 4], [2, 3, 1]]
+
+Per M, con Sarrus o Laplace, det M = 3: infatti 1·(1-12) - 2·(0-8) + 1·(0-2) = -11 + 16 - 2 = 3.
+Quindi det A = 2·3 = 6.
+
+Errore tipico: sbagliare l'esponente (-1)^{i+j} o dimenticarlo, e
+sviluppare lungo una riga piena di non-zeri invece di quella più sparsa,
+moltiplicando i conti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- |Sₙ| = n!; il segno è 1 per pari e -1 per dispari.
+- sign(σ) si ricava dal primo valore k: stesso segno del residuo se k
+  dispari, opposto se pari.
+- det A = Σ sign(σ)·a_{1σ(1)}...a_{nσ(n)}.
+- Ordine 2: diagonale meno antidiagonale; ordine 3: sei termini o Sarrus.
+- Complementare toglie riga e colonna; minore è il suo determinante;
+  cofattore aggiunge (-1)^{i+j}.
+- Laplace: sviluppo per una riga o colonna a scelta; iterare fino a ordine 2.
+- Riga o colonna nulla implica determinante zero; conviene la linea con più zeri.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. Il numero di permutazioni di 5 elementi è:
+a) 25 · b) 32 · c) 120 · d) 10
+
+2. La permutazione 2 1 4 3 di I₄ è:
+a) dispari con segno -1 · b) pari con segno 1 · c) non è una
+permutazione · d) pari con segno -1
+
+3. Il determinante di [[4, 1], [2, 3]] vale:
+a) 14 · b) 10 · c) 12 - 2 = 12 · d) 5
+
+4. Il complemento algebrico di a₂₄ in una 4 × 4 ha fattore:
+a) (-1)^{6} = 1 · b) (-1)^{5} = -1 · c) (-1)^{8} = 1 sempre ·
+d) (-1)^{2} = 1 sempre
+
+5. Il determinante di [[2, 0, 1], [1, 3, 2], [0, 1, 4]] vale:
+a) 18 · b) 21 · c) 24 · d) 10
+
+6. Se una quadrata ha una colonna tutta nulla, allora:
+a) il determinante dipende dalla colonna scelta per Laplace ·
+b) il determinante è 1 · c) il determinante è 0 · d) Laplace non si applica
+
+Soluzioni ragionate
+
+1 — c. 5! = 120. La a) fa 5², la b) fa 2⁵, la d) fa 5·2.
+
+2 — b. Due scambi disgiunti danno parità pari, segno 1. La a) sbaglia
+parità; la c) nega che siano tutti distinti; la d) contraddice
+segno-parità.
+
+3 — b. 4·3 - 1·2 = 10. La a) somma invece di sottrarre l'antidiagonale
+(12 + 2); la c) omette la sottrazione; la d) dimezza il risultato.
+
+4 — a. 2 + 4 = 6 pari, fattore 1. La b) sbaglia somma; c) e d)
+usano esponenti fissi invece di i + j.
+
+5 — b. Sviluppo dà 2·(12-2) + 1·(1-0) = 21. La a) trascura il secondo
+addendo; la c) conta solo il primo; la d) è il determinante di una
+sottomatrice 2 × 2.
+
+6 — c. Ogni addendo di Laplace su quella colonna è 0·A_{ij} = 0. La a)
+fraintende l'invarianza, la b) confonde con l'identità, la d) nega proprio
+il caso più favorevole.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

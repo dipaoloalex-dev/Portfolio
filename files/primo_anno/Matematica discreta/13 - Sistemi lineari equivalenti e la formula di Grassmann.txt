@@ -1,6 +1,9 @@
-## 1. SISTEMI LINEARI EQUIVALENTI
+[plain-text per Pages — da 13 - Sistemi lineari equivalenti e la formula di Grassmann.md]
 
-Due sistemi nelle stesse incognite e sullo stesso campo sono **equivalenti**
+1. SISTEMI LINEARI EQUIVALENTI
+------------------------------
+
+Due sistemi nelle stesse incognite e sullo stesso campo sono equivalenti
 quando hanno esattamente le stesse soluzioni (anche se hanno equazioni diverse;
 due sistemi impossibili sono sempre equivalenti fra loro). L'equivalenza è una
 relazione di equivalenza, e l'obiettivo è trovare in ogni classe il sistema con
@@ -11,43 +14,45 @@ equazioni del sistema è soddisfatta da tutte le sue soluzioni; viceversa, se il
 sistema è compatibile e un'equazione è verificata da tutte le sue soluzioni,
 allora quell'equazione dipende dal sistema. Da qui segue che:
 
-- se ogni equazione di `B` dipende da `A`, le soluzioni di `A` stanno in `B`;
+- se ogni equazione di B dipende da A, le soluzioni di A stanno in B;
   con dipendenza nei due versi i sistemi sono equivalenti;
 - due sistemi compatibili sono equivalenti se e solo se ogni equazione di
   ciascuno dipende dall'altro.
 
 Conseguenze pratiche: ogni sistema è equivalente a un suo sottosistema massimo
-di equazioni indipendenti (sistema **ridotto**); un compatibile è equivalente a
-un ridotto compatibile (sistema **normale**). In `n` incognite bastano al più
-`n+1` equazioni in generale, `n` per gli omogenei (e `n−1` se l'omogeneo ha
+di equazioni indipendenti (sistema ridotto); un compatibile è equivalente a
+un ridotto compatibile (sistema normale). In n incognite bastano al più
+n+1 equazioni in generale, n per gli omogenei (e n−1 se l'omogeneo ha
 soluzioni non banali). Il primo passo per risolvere è appunto ridurre il sistema.
 
 Errore tipico: credere che "stesse soluzioni" richieda "stesse equazioni".
 Equazioni diverse possono descrivere lo stesso insieme di soluzioni, ed è
 proprio questa libertà che permette di semplificare.
 
-## 2. LA FORMULA DI GRASSMANN
+2. LA FORMULA DI GRASSMANN
+--------------------------
 
-La **somma** `V₁ + V₂` è il sottospazio generato dall'unione dei due (ogni suo
-vettore è somma di uno di `V₁` e uno di `V₂`); se i due sono finitamente
+La somma V₁ + V₂ è il sottospazio generato dall'unione dei due (ogni suo
+vettore è somma di uno di V₁ e uno di V₂); se i due sono finitamente
 generati lo è anche la somma.
 
-**Formula di Grassmann:** `dim V₁ + dim V₂ = dim(V₁+V₂) + dim(V₁∩V₂)`. L'idea:
+Formula di Grassmann: dim V₁ + dim V₂ = dim(V₁+V₂) + dim(V₁∩V₂). L'idea:
 si parte da una base dell'intersezione, la si completa a base di ciascuno dei
 due, e l'unione (base comune più i due completamenti) è una base della somma —
 i vettori in comune vengono contati una volta sola.
 
-Esempio nuovo: in `R³`, il piano `z = 0` (dim 2) e la retta dell'asse `z`
-(dim 1) si incontrano solo nello zero: la somma ha dim `2+1−0 = 3`, tutto lo
+Esempio nuovo: in R³, il piano z = 0 (dim 2) e la retta dell'asse z
+(dim 1) si incontrano solo nello zero: la somma ha dim 2+1−0 = 3, tutto lo
 spazio. Due piani distinti per l'origine (dim 2 e 2) si incontrano in una retta
-(dim 1): la somma ha dim `2+2−1 = 3`.
+(dim 1): la somma ha dim 2+2−1 = 3.
 
-## 3. SOMME DIRETTE
+3. SOMME DIRETTE
+----------------
 
-Quando l'intersezione è solo lo zero, la somma si dice **diretta** (`V₁ ⊕ V₂`):
+Quando l'intersezione è solo lo zero, la somma si dice diretta (V₁ ⊕ V₂):
 le dimensioni si sommano senza correzioni, e viceversa l'uguaglianza dimensionale
 caratterizza la diretta. Proprietà equivalente: ogni vettore della somma si
-scrive in **un unico modo** come somma di un vettore di `V₁` e uno di `V₂`
+scrive in un unico modo come somma di un vettore di V₁ e uno di V₂
 (se ci fosse ambiguità, la differenza darebbe un vettore non nullo
 nell'intersezione).
 
@@ -58,67 +63,69 @@ indipendente se e solo se il suo generato è somma diretta delle rette dei
 singoli vettori, e una base è esattamente una scomposizione dello spazio in
 somma diretta di rette.
 
-## Concetti chiave da ricordare
+Concetti chiave da ricordare
+----------------------------
 
 - Equivalenti = stesse soluzioni; dipendenza fra equazioni governa inclusioni.
 - Ogni sistema equivale a un ridotto; ogni compatibile a un normale.
 - Grassmann: somma delle dimensioni = dimensione somma + dimensione intersezione.
 - Diretta = intersezione nulla = scrittura unica = dimensioni che si sommano.
 
-## TEST di AUTOVALUTAZIONE
+TEST di AUTOVALUTAZIONE
+-----------------------
 
 Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
 ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
 
-**1.** Due sistemi incompatibili nelle stesse incognite sono:
+1. Due sistemi incompatibili nelle stesse incognite sono:
 a) mai equivalenti · b) sempre equivalenti (stesso insieme vuoto di soluzioni) ·
 c) equivalenti solo se hanno stesse equazioni · d) sempre compatibili
 
-**2.** Se ogni equazione di `B` dipende da `A`, allora:
-a) ogni soluzione di `A` risolve `B` · b) ogni soluzione di `B` risolve `A` ·
+2. Se ogni equazione di B dipende da A, allora:
+a) ogni soluzione di A risolve B · b) ogni soluzione di B risolve A ·
 c) i sistemi sono incompatibili · d) niente si può dire
 
-**3.** In `R³`, un piano per l'origine e una retta non contenuta in esso danno somma di dimensione:
+3. In R³, un piano per l'origine e una retta non contenuta in esso danno somma di dimensione:
 a) 2 · b) 4 · c) 3 · d) 1
 
-**4.** La somma di due sottospazi è diretta se e solo se:
-a) l'intersezione è `(0)` · b) la somma è tutto lo spazio · c) hanno stessa
+4. La somma di due sottospazi è diretta se e solo se:
+a) l'intersezione è (0) · b) la somma è tutto lo spazio · c) hanno stessa
 dimensione · d) sono uguali
 
-**5.** Con `dim V₁ = 2`, `dim V₂ = 2`, `dim intersezione = 1`, la somma ha dimensione:
+5. Con dim V₁ = 2, dim V₂ = 2, dim intersezione = 1, la somma ha dimensione:
 a) 4 · b) 2 · c) 3 · d) 1
 
-**6.** In una somma diretta, la scrittura di un vettore come somma delle componenti è:
+6. In una somma diretta, la scrittura di un vettore come somma delle componenti è:
 a) mai possibile · b) possibile in più modi · c) unica · d) possibile solo per lo zero
 
-### Soluzioni ragionate
+Soluzioni ragionate
 
-**1 — b.** L'equivalenza guarda agli insiemi di soluzioni: due insiemi vuoti
+1 — b. L'equivalenza guarda agli insiemi di soluzioni: due insiemi vuoti
 coincidono. Le equazioni possono essere diversissime.
 
-**2 — a.** Sostituendo una soluzione di `A` nelle combinazioni che danno le
-equazioni di `B` si ottiene zero: la soluzione passa a `B`. Il viceversa
+2 — a. Sostituendo una soluzione di A nelle combinazioni che danno le
+equazioni di B si ottiene zero: la soluzione passa a B. Il viceversa
 richiede la dipendenza opposta.
 
-**3 — c.** Grassmann: `2 + 1 − 0 = 3` (la retta esce dal piano, intersezione
-nulla). La b) è impossibile in `R³`.
+3 — c. Grassmann: 2 + 1 − 0 = 3 (la retta esce dal piano, intersezione
+nulla). La b) è impossibile in R³.
 
-**4 — a.** È la definizione di diretta; da Grassmann segue anche l'uguaglianza
+4 — a. È la definizione di diretta; da Grassmann segue anche l'uguaglianza
 dimensionale, ma è la nullità dell'intersezione il criterio.
 
-**5 — c.** `2 + 2 − 1 = 3`: classico caso di due piani per l'origine in `R³`.
+5 — c. 2 + 2 − 1 = 3: classico caso di due piani per l'origine in R³.
 
-**6 — c.** È la caratterizzazione operativa della diretta: unicità della
+6 — c. È la caratterizzazione operativa della diretta: unicità della
 scomposizione; con intersezione non nulla ci sarebbero due scritture diverse.
 
----
+----------------------------------------
 
-## PROMPT RIUTILIZZABILE
+PROMPT RIUTILIZZABILE
+---------------------
 
 Prompt usato per generare questa scheda. Copialo in una nuova conversazione
 insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
 
-```
 Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
 senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
 tabelle, nomi di docenti o università, né avvisi di copyright del materiale
@@ -142,4 +149,3 @@ Struttura obbligatoria del file:
   sono sbagliate.
 - Tono didattico preciso, in italiano, formattazione Markdown come in questa
   scheda.
-```

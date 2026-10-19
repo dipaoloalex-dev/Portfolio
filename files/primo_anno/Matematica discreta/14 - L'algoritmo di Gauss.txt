@@ -1,0 +1,281 @@
+[plain-text per Pages — da 14 - L'algoritmo di Gauss.md]
+
+1. TRASFORMAZIONI ELEMENTARI DI SISTEMI DI VETTORI
+--------------------------------------------------
+
+Il procedimento serve a manipolare un sistema di vettori senza alterarne le
+proprietà di generazione e indipendenza, per poi leggere il rango e risolvere
+sistemi lineari.
+
+Siano V un K-spazio vettoriale, Σ = (v₁, ..., vₘ) una m-upla ordinata e
+S = [v₁, ..., vₘ] il sistema corrispondente. L'ordine conta: scambiare due
+posti cambia Σ ma non l'insieme dei vettori.
+
+Prima specie (i, j; k): con i ≠ j e k ∈ K si rimpiazza solo il
+vettore di posto i:
+
+- v'ₕ = vₕ per h ≠ i;
+- v'ᵢ = vᵢ + k·vⱼ.
+
+Gli altri restano identici. È reversibile: applicando poi (i, j; -k) si
+torna a Σ. In pratica si somma a una riga un multiplo di un'altra riga.
+
+Esempio nuovo: in R² siano v₁ = (1, 0), v₂ = (0, 1), v₃ = (2, 1).
+La (3, 1; 2) lascia ferme v₁, v₂ e manda v₃ in (2, 1) + 2·(1, 0) = (4, 1).
+
+Seconda specie (i, j): con i < j si scambiano i vettori di posto i
+e j, gli altri restano fermi.
+
+Effetti fondamentali, riformulati:
+
+- (a) Un numero finito di operazioni di prima o seconda specie non cambia lo
+  spazio generato ⟨S⟩ = ⟨S̄⟩, quindi l'ordine di un massimo indipendente
+  resta uguale.
+- (b) Se alcuni vettori v_{i₁}, ..., v_{iᵣ} generano già ⟨S⟩, con sole
+  operazioni di prima specie si possono annullare tutti gli altri. Idea: se
+  vᵢ = k₁·v_{i₁} + ... + kᵣ·v_{iᵣ}, le (i, i₁; -k₁), ..., (i, iᵣ; -kᵣ)
+  azzerano il posto i.
+- (c) Viceversa, se Σ̄ è ottenuta usando come secondi indici solo i pivot
+  j ∈ {i₁, ..., iᵣ} e ha v̄ᵢ = 0 fuori dai pivot, allora i vettori
+  originari v_{i₁}, ..., v_{iᵣ} generano ancora ⟨S⟩. Se inoltre i
+  corrispondenti trasformati sono indipendenti, anche gli originari formano
+  un massimo indipendente.
+
+Errore tipico: pensare che (i, j; k) modifichi anche vⱼ, o che i possa
+coincidere con j. No: cambia solo il posto i. Altro errore: credere che
+lo scambio alteri il generato; lo scambio cambia l'ordine della m-upla, non
+lo span.
+
+2. DEFINIZIONE DELL'ALGORITMO
+-----------------------------
+
+Data una m-upla di vettori numerici Σ = [a₁, ..., aₘ] di ordine n, si
+cerca un insieme di posti i₁ < ... < iᵣ tale che, usando solo (i; j; k)
+con j pivot, tutte le righe non pivot diventino nulle e le righe pivot
+trasformate risultino indipendenti. Per il punto (c) sopra, le righe
+originarie di posti i₁, ..., iᵣ sono allora un massimo indipendente.
+
+In forma matriciale: Σ equivale alla matrice A = (aᵢⱼ) di tipo (m, n)
+di righe aᵢ = (aᵢ₁, ..., aᵢₙ). La (i, j; k) sulle righe sostituisce la
+riga i con rigaᵢ + k·rigaⱼ. La (i, j) scambia le righe i e j. Lo
+stesso si può fare per colonne.
+
+Il metodo dà quindi un massimo di righe (o colonne) indipendenti e il rango.
+
+Matrice ridotta. Sia A di tipo (m, n) su K:
+
+- A è (i, j)-ridotta se nella colonna j l'unico elemento diverso da
+  zero è quello di riga i.
+- A è (i₁, ..., iᵣ; j₁, ..., jᵣ)-ridotta, o semplicemente ridotta, se è
+  (iₕ, jₕ)-ridotta per ogni h = 1, ..., r.
+- È completamente ridotta se in più tutte le righe di posto
+  i ≠ i₁, ..., iᵣ sono nulle.
+
+Esempio nuovo: la matrice
+
+0  4  0
+0  2  0
+7  0  0
+
+è (3, 1)-ridotta perché la colonna 1 ha solo 7 in riga 3; non è
+(1, 2)-ridotta né (2, 2)-ridotta perché la colonna 2 ha due elementi
+non nulli. È quindi (3; 1)-ridotta ma non completamente ridotta se si
+considerano solo quei pivot.
+
+Altro esempio nuovo:
+
+0  5  0  1
+0  0  0  0
+4  0  0  0
+0  0  0  0
+
+è (1, 2)-ridotta, (3, 1)-ridotta, quindi (1, 3; 2, 1)-ridotta; avendo
+nulle le righe 2 e 4, è anche completamente ridotta.
+
+Risultati centrali:
+
+- (a) Se A è ridotta con quei pivot, allora i j₁, ..., jᵣ sono a due a
+  due distinti, e sia le righe i₁, ..., iᵣ sia le colonne j₁, ..., jᵣ
+  sono indipendenti. L'idea: ogni colonna pivot è un multiplo non nullo di
+  un diverso vettore canonico e_{iₕ}.
+- (b) Se è completamente ridotta, il rango è r e quelle righe e colonne
+  sono massimi indipendenti.
+
+Teorema di esistenza. Da ogni A ≠ 0 di tipo (m, n) si arriva con un
+numero finito di operazioni di prima specie sulle righe a una forma
+completamente ridotta. Allora rk(A) = r e le righe originarie di posti
+i₁, ..., iᵣ sono un massimo indipendente. Lo stesso sulle colonne dà un
+massimo di colonne indipendenti.
+
+Procedimento: sia i₁ la prima riga non nulla e j₁ la sua prima colonna
+non nulla. Si azzera il resto della colonna j₁ con
+(i, i₁; -a_{i,j₁} / a_{i₁,j₁}) per ogni i ≠ i₁ con elemento non nullo.
+Si ottiene una matrice (i₁, j₁)-ridotta. Se resta solo la riga i₁ non
+nulla si finisce; altrimenti si prende la successiva riga non nulla
+i₂ > i₁, la sua prima colonna non nulla j₂, si azzera la colonna j₂
+fuori da i₂, e si itera. Dopo un numero finito di passi tutte le righe
+non pivot sono nulle.
+
+Errore tipico: pretendere che i pivot debbano essere 1 o stare sulla
+diagonale in ordine 1, 2, 3. Qui iₕ e jₕ sono arbitrari: conta solo
+che ogni colonna pivot abbia un unico non-zero. Altro errore: confondere
+ridotta con completamente ridotta; senza l'azzeramento delle righe
+extra non si legge ancora il rango.
+
+3. ESEMPIO
+----------
+
+Cerchiamo un massimo di righe indipendenti della matrice su Q, con valori
+scelti apposta diversi da qualsiasi esempio standard:
+
+1  2  0  1
+0  1  3  0
+2  0  1  2
+1  3  3  1
+
+Si noti che la quarta riga è somma delle prime due, quindi ci si aspetta
+rango 3.
+
+Prima riga non nulla i₁ = 1, prima colonna non nulla j₁ = 1 con
+a₁₁ = 1. La colonna 1 ha 2 in riga 3 e 1 in riga 4. Applichiamo
+(3, 1; -2) e (4, 1; -1):
+
+1  2  0  1
+0  1  3  0
+0 -4  1  0
+0  1  3  0
+
+È (1, 1)-ridotta. La successiva riga non nulla è i₂ = 2 con
+j₂ = 2. Azzeriamo la colonna 2 con (1, 2; -2), (3, 2; 4),
+(4, 2; -1):
+
+1  0 -6  1
+0  1  3  0
+0  0 13  0
+0  0  0  0
+
+Ora è (1, 2; 1, 2)-ridotta. La successiva riga non nulla è i₃ = 3 con
+j₃ = 3 perché 13 ≠ 0. La colonna 3 ha -6 in riga 1 e 3 in riga
+2; applichiamo (1, 3; 6/13) e (2, 3; -3/13):
+
+1  0  0  1
+0  1  0  0
+0  0 13  0
+0  0  0  0
+
+La matrice è (1, 2, 3; 1, 2, 3)-ridotta e, avendo nulla la riga 4, è
+completamente ridotta. Il rango è 3 e le righe originarie di posti
+1, 2, 3, cioè [a₁, a₂, a₃], formano un massimo indipendente. La riga
+a₄, divenuta nulla, dipendeva dalle precedenti.
+
+Errore tipico in questo calcolo: applicare le operazioni con il coefficiente
+di segno sbagliato e non azzerare davvero la colonna, oppure fermarsi appena
+la matrice è triangolare senza pulire anche sopra il pivot. Qui la pulizia
+va fatta sia sopra sia sotto, altrimenti non si ottiene la forma richiesta.
+
+Concetti chiave da ricordare
+----------------------------
+
+- (i, j; k) somma a vᵢ il multiplo k·vⱼ; (i, j) scambia due posti;
+  la prima è invertita da (i, j; -k).
+- Le operazioni elementari conservano ⟨S⟩ e l'ordine del massimo
+  indipendente.
+- (i, j)-ridotta: colonna j con unico non-zero in riga i;
+  completamente ridotta: in più righe non pivot tutte nulle.
+- Ridotta implica j₁, ..., jᵣ distinti e righe/colonne pivot
+  indipendenti; completamente ridotta implica rango r.
+- L'algoritmo sceglie prima riga non nulla i₁ e prima colonna non nulla
+  j₁, azzera la colonna con (i, i₁; -a_{i,j₁}/a_{i₁,j₁}) e itera sotto.
+- Alla fine il rango è il numero di pivot e le righe originarie dei posti
+  pivot sono un massimo indipendente.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. In K³ siano v₁ = (1, 1, 0), v₂ = (0, 1, 2), v₃ = (1, 0, 1).
+Dopo la (3, 2; 2) il vettore v₃ diventa:
+a) (1, 2, 5) · b) (1, 0, 1) · c) (2, 0, 2) · d) (1, 1, 3)
+
+2. Quale affermazione sulle trasformazioni elementari è corretta?
+a) La (i, j; k) modifica sia il posto i sia il posto j ·
+b) La (i, j; -k) applicata dopo la (i, j; k) ripristina la m-upla ·
+c) Lo scambio (i, j) cambia lo spazio generato ·
+d) La (i, j; k) richiede i = j
+
+3. La matrice [[0, 6, 0], [0, 0, 0], [5, 0, 4]]:
+a) è (1, 2)-ridotta ma non (3, 1)-ridotta ·
+b) è (3, 3)-ridotta ma non (1, 2)-ridotta ·
+c) è (1, 2)-ridotta e (3, 1)-ridotta ·
+d) non è né (1, 2)-ridotta né (3, 1)-ridotta
+
+4. Se una (4, 4) è (1, 3; 2, 4)-completamente ridotta, allora:
+a) ha rango 4 · b) ha rango 2 e la riga 2 è nulla ·
+c) ha rango 2 e le righe 1, 3 sono indipendenti ·
+d) ha rango 3
+
+5. Con prima riga pivot i₁ = 2 e a_{2,1} = 4, per azzerare
+a_{5,1} = 6 si usa:
+a) (5, 2; -3/2) · b) (2, 5; -3/2) · c) (5, 2; 3/2) · d) (5, 2; -2/3)
+
+6. Una matrice 3 × 4 ridotta a forma completamente ridotta con pivot
+(1, 2; 1, 3) e terza riga nulla ha rango:
+a) 3 · b) 1 · c) 4 · d) 2
+
+Soluzioni ragionate
+
+1 — a. v₃ + 2·v₂ = (1, 0, 1) + (0, 2, 4) = (1, 2, 5). La b) ignora
+l'operazione; la c) raddoppia v₃; la d) somma una sola volta v₂.
+
+2 — b. La prima specie è invertibile con coefficiente opposto. La a) è
+falsa perché cambia solo il posto i; la c) è falsa perché lo scambio
+conserva il generato; la d) è falsa perché richiede i ≠ j.
+
+3 — c. La colonna 2 ha solo 6 in riga 1 e la colonna 1 ha solo
+5 in riga 3. La colonna 3 ha invece 4 in riga 3 più 0 altrove,
+ma questo non toglie le due riduzioni indicate.
+
+4 — c. Completamente ridotta con r = 2 pivot: rango 2, righe 1, 3
+indipendenti e righe 2, 4 nulle. La a) confonde il numero di righe col
+rango; la b) indica la riga nulla sbagliata; la d) conta un pivot in più.
+
+5 — a. Serve (i, i₁; -a_{i,j₁}/a_{i₁,j₁}) = (5, 2; -6/4) = (5, 2; -3/2).
+La b) inverte i posti; la c) sbaglia segno; la d) inverte il rapporto.
+
+6 — d. Due pivot effettivi danno rango 2; la riga nulla non conta. La
+a) conta le righe totali, la b) ne conta una sola, la c) supera il numero
+di righe non nulle e di pivot.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.

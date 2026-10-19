@@ -1,0 +1,145 @@
+[plain-text per Pages — da 8 - Dipendenza lineare di un vettore da un sistema.md]
+
+1. SISTEMI DI VETTORI E DIPENDENZA LINEARE
+------------------------------------------
+
+Un sistema di ordine n è una n-upla (non ordinata) di vettori di un
+sottoinsieme H dello spazio; l'insieme vuoto vale come sistema di ordine 0.
+Un vettore v dipende linearmente dal sistema S = [v₁, ..., vₙ] quando si
+può scrivere come combinazione dei suoi vettori: esistono scalari k₁, ..., kₙ
+con v = k₁v₁ + ... + kₙvₙ. La scrittura può essere unica o meno: è unica quando
+non esistono due combinazioni diverse che danno lo stesso v. Per convenzione,
+dal sistema vuoto dipende solo il vettore nullo.
+
+Due casi banali ma fondamentali: il nullo dipende da qualunque sistema (basta
+prendere tutti i coefficienti zero), e ogni vettore del sistema dipende dal
+sistema stesso (coefficiente 1 su sé stesso, 0 altrove).
+
+2. ESEMPI DI DIPENDENZA LINEARE DI UN VETTORE DA UN SISTEMA
+-----------------------------------------------------------
+
+- Sistemi di ordine uno. Da [v] dipendono esattamente i multipli kv
+  (vettori proporzionali a v); l'unico proporzionale al nullo è il nullo.
+- Vettori unitari. In Kⁿ ogni vettore (k₁, ..., kₙ) dipende in modo unico
+  dai vettori con un solo 1 in posizione i: i coefficienti sono le componenti
+  stesse.
+- Matrici elementari. Ogni matrice (m, n) dipende in modo unico dalle
+  matrici con un solo 1 in posizione (i, j); le diagonali dipendono dalle
+  sole elementari diagonali, e una scalare è multiplo dell'unità.
+
+Esempio nuovo: in R² il vettore (5, 1) dipende da [(1, 0), (1, 1)] perché
+(5, 1) = 4·(1, 0) + 1·(1, 1); il vettore (0, 7) invece non dipende da
+[(1, 0)] da solo, perché nessun multiplo di (1, 0) ha seconda componente
+non nulla.
+
+3. SOTTOSPAZI GENERATI DA UN SISTEMA O DA UN INSIEME DI VETTORI
+------------------------------------------------------------
+
+Il sottospazio generato ⟨S⟩ è il più piccolo sottospazio contenente tutti i
+vettori di S: l'intersezione di tutti i sottospazi che li contengono (famiglia
+mai vuota, perché contiene almeno l'intero spazio). Coincide esattamente con
+l'insieme di tutti i vettori che dipendono linearmente da S (somma e
+multipli di combinazioni restano combinazioni).
+
+Regole di confronto: ⟨T⟩ ⊆ ⟨S⟩ se e solo se ogni vettore di T dipende da S;
+i generati coincidono se la dipendenza vale in entrambi i versi. Togliere un
+vettore da S non cambia il generato se e solo se quel vettore dipende dai
+rimanenti.
+
+Un sottospazio è finitamente generato quando coincide col generato di un
+sistema finito (il nullo lo è, generato dal solo zero). Esempio geometrico: un
+vettore non nullo genera la retta della sua direzione; due vettori non paralleli
+generano il piano che li contiene (ogni vettore del piano si scompone lungo i
+due per il parallelogramma).
+
+Errore tipico: credere che "dipendere da una parte di S" e "dipingere da S"
+siano diversi: se un vettore dipende da un sottosistema, dipende anche dal
+sistema intero (basta completare con coefficienti zero).
+
+Concetti chiave da ricordare
+----------------------------
+
+- Dipendenza = scrivibilità come combinazione lineare del sistema.
+- Nullo dipende da tutto; ogni vettore dipende dal sistema che lo contiene.
+- ⟨S⟩ = minimo sottospazio contenente S = tutte le combinazioni di S.
+- Confronto di generati tramite dipendenze incrociate; vettore ridondante si può togliere.
+- Un vettore genera la sua retta; due non paralleli generano il loro piano.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. In R², il vettore (4, 6) dipende da [(1, 0), (0, 1)]?
+a) Sì: (4, 6) = 4·(1, 0) + 6·(0, 1) · b) No · c) Solo con coefficienti nulli ·
+d) Solo se i due generatori sono paralleli
+
+2. Quale vettore NON dipende da [(2, 0)] in R²?
+a) (6, 0) · b) (0, 0) · c) (0, 5) · d) (−4, 0)
+
+3. Se v dipende da T e ogni vettore di T dipende da S, allora:
+a) v dipende da S · b) v è nullo · c) S e T coincidono ·
+d) niente si può dire
+
+4. Togliere da S un vettore che dipende dai rimanenti:
+a) restringe il generato · b) lascia invariato ⟨S⟩ · c) svuota il generato ·
+d) rende i vettori indipendenti
+
+5. Il sottospazio generato dal solo vettore nullo è:
+a) tutto lo spazio · b) il sottospazio nullo · c) vuoto · d) indefinito
+
+6. Due vettori non paralleli del piano generano:
+a) solo la loro somma · b) l'intero piano che li contiene · c) la loro retta ·
+d) il solo vettore nullo
+
+Soluzioni ragionate
+
+1 — a. I coefficienti sono le componenti stesse: combinazione esibita e
+valida. La d) è irrilevante perché i generatori sono indipendenti.
+
+2 — c. I multipli di (2, 0) hanno sempre seconda componente nulla; (0, 5)
+non è mai raggiungibile. Gli altri sono multipli (con 3, 0, −2).
+
+3 — a. È la transitività della dipendenza (proposizione sui generati
+inclusi): basta sostituire le combinazioni.
+
+4 — b. È il corollario sul vettore ridondante: tutto ciò che dipendeva da
+S dipende ancora dal sistema ridotto.
+
+5 — b. L'unica combinazione possibile è k·0 = 0: il generato è (0).
+
+6 — b. È l'esempio geometrico centrale: scomposizione col parallelogramma
+su due direzioni indipendenti copre tutto il piano.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione universitaria fornita in una sintesi originale in italiano,
+senza copiare frasi, esempi con gli stessi valori, domande del test, immagini,
+tabelle, nomi di docenti o università, né avvisi di copyright del materiale
+sorgente. I concetti matematici devono restare tecnicamente identici
+all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file:
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti
+  direttamente dalla prima sezione con "## N. TITOLO SEZIONE", usando gli
+  stessi titoli delle sezioni originali in maiuscolo.
+- Una sezione "##" per ogni sezione della lezione, con spiegazioni chiare,
+  notazione standard in code span, esempi riscritti con valori diversi
+  dall'originale ed evidenziazione degli errori tipici da evitare.
+- Poi una sezione "## Concetti chiave da ricordare" con elenco puntato dei
+  punti essenziali.
+- Poi una sezione "## TEST di AUTOVALUTAZIONE" con 6 domande a scelta
+  multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal
+  materiale sorgente.
+- Poi una sezione "### Soluzioni ragionate" con la risposta corretta di ogni
+  domanda e 2-3 righe di spiegazione, motivando anche perché le altre opzioni
+  sono sbagliate.
+- Tono didattico preciso, in italiano, formattazione Markdown come in questa
+  scheda.
