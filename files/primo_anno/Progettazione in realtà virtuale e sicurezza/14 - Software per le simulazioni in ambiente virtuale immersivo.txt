@@ -1,0 +1,196 @@
+[plain-text per Pages — da 14 - Software per le simulazioni in ambiente virtuale immersivo.md]
+
+1. CATIA, UN SISTEMA CAD
+--------------------------------------------------
+
+Tra i programmi piu usati per disegno di strutture e scene
+di prova vi e un noto sistema integrato per ciclo di vita.
+E molto valido per rappresentazioni solide in tre dimensioni.
+Gira su stazioni storiche e su personal moderni da ufficio.
+Ha pannelli semplici e guida il prodotto da idea a produzione.
+Le edizioni recenti migliorano funzioni e riducono costi e tempi.
+Il nuovo modo funzionale fa pensare a cosa modellare in scena
+e non a come riuscirci con comandi complessi e oscuri.
+
+Il sistema e modulare e si configura a pacchetti per ogni sede.
+Vi e un nucleo di base per avvio, viste e gestione dei file.
+Vi e il disegno meccanico per pezzi e assiemi con vincoli.
+Vi e lo stile per superfici libere e forme estetiche curve.
+Vi e l'analisi per prove rapide su parti e assiemi interi.
+Vi e l'impiantistica per passare da piante piane a fabbriche digitali.
+Vi e la lavorazione per utensili, percorsi e finte produzioni a video.
+Vi e il gemello digitale per decisioni su assiemi complessi grandi.
+Vi e l'impiantistica di bordo per elettrico, fluidi e meccanica insieme.
+Vi e il processo digitale per sequenze di fabbrica simulate in team.
+Vi e l'ergonomia per posture e manichini in scena di lavoro vera.
+Vi e la conoscenza per regole e automatismi di progetto guidato.
+
+Il nucleo base da resa in tempo reale con hardware disponibile
+e foto di alta qualita con motore di tracciamento dei raggi luminosi.
+Il disegno meccanico accelera sviluppo con app dedicate per forme.
+Si disegnano parti solide, si danno vincoli di montaggio meccanico,
+si annotano tolleranze e si verifica conformita alle regole date.
+Lo stile crea forme da modelli fisici o da schizzi da scansione inversa.
+Si modellano pelli con controllo in diretta dei requisiti di forma,
+si importano nuvole di punti con maglie leggere e analisi rapida,
+si curano superfici estetiche ed ergonomiche come da modelleria.
+L'analisi itera prove su ogni parte con strumenti facili per tecnici.
+L'impiantistica studia layout e strategie alternative di produzione.
+La lavorazione unisce utensile e percorso con prova prima del taglio,
+per qualita costante su pezzi fresati di ogni tipo in officina.
+Il gemello aiuta le scelte con moduli per spazi e interferenze,
+navigazione con viste potenti dentro il modello intero da esaminare,
+montaggi e smontaggi simulati per validazione e filmati tecnici,
+cinematismi di meccanismi di ogni tipo con leggi di moto corrette,
+varianti compatte che si adattano meglio al contesto di montaggio,
+revisioni per studi ingegneristici con viste dedicate ai calcoli.
+Il modulo sistemi disegna insieme elettrico, fluidi e meccanica
+ottimizzando ingombri dentro il modello solido tridimensionale.
+Il modulo ergonomia studia posture per comfort dell'operatore,
+costruisce manichini precisi e ne muove arti e busto in scena,
+analizza interazioni con oggetti per sicurezza dei passeggeri,
+crea umani digitali con misure per fattori umani e taglie diverse.
+
+Esempio riscritto: si pensi a un supporto per motore di un furgone.
+Con disegno meccanico si fa il pezzo e i vincoli al telaio vicino.
+Con stile si raccorda la cover estetica senza spigoli taglienti.
+Con analisi si prova il braccetto sotto vibrazioni di marcia reale.
+Con gemello si controlla che non tocchi tubi e cavi in vano motore.
+
+Errore tipico: attivare tutti i pacchetti senza un piano di lavoro.
+Senza scelta mirata per obiettivi, la postazione resta lenta e costosa.
+
+2. L'AMBIENTE DI VISUALIZZAZIONE DI CATIA V5
+--------------------------------------------------
+
+Portare matematiche precise in scena immersiva chiede molti passi.
+Servono conversioni e alleggerimenti con programmi diversi tra loro,
+con tempi e costi che frenano molte aziende dall'uso largo del virtuale.
+Usare un solo sistema per disegno e per vista immersiva toglie passaggi
+e da flessibilita nel rifare prove e modifiche senza esportazioni continue.
+Resta il dialogo con caschi, tracciatori e guanti disponibili in sede,
+che decide la qualita finale della prova immersiva per gli utenti.
+
+Con il sistema in esame si trattano forme fatte dentro o importate
+da altri disegni con formato neutro di scambio tra sistemi diversi.
+Si semplificano, si alleggeriscono e si mostrano in varie pose
+supportate da schermi, teli e caschi collegati alla postazione.
+
+Il percorso va in quattro passi logici in ordine di lavoro chiaro.
+Si puo riassumere in righe di testo con spazi come tabella di flusso.
+Passo  Azione principale  Risultato per il passo successivo
+Uno  Modelli tecnici di partenza  Geometrie precise da alleggerire
+Due  Pulizia e vestizione  Maglie leggere con colori e materiali
+Tre  Taratura di testa e scena  Vista stabile legata ai movimenti
+Quattro  Prova in tempo reale  Navigazione fluida senza scatti
+
+Esempio riscritto: si pensi a una centralina idraulica da fiera.
+Si importa il gruppo con valvole e tubi dal disegno del fornitore.
+Si tolgono filetti interni invisibili e si alleggeriscono i raccordi.
+Si tara il casco e si gira intorno al banco senza ritardi in scena.
+
+Errore tipico: portare il modello grezzo diretto nel visore immersivo.
+Senza pulizia e taratura la scena scatta e i pezzi sembrano rotti.
+
+3. LA MODELLAZIONE
+--------------------------------------------------
+
+Per non appesantire la scena conviene toccare le geometrie utili.
+Si toglie il superfluo nel rispetto di funzioni e vincoli di progetto.
+Servono tagli per le molte entita nascoste mai viste in scena,
+come linee interne, pelli coperte e curve di costruzione di aiuto.
+Il sistema offre un magazzino nascosto per parti simili tra loro,
+cosi la vista attiva resta leggera e scorre senza attese lunghe.
+I singoli pezzi nascono come file di parte con solidi e pelli unite.
+Le parti si caricano in un unico file di assieme che fa da contenitore.
+Anche senza coordinate globali perfette fin dal primo schizzo,
+un sistema di vincoli mette ogni pezzo al posto giusto nel tutto.
+Prima della cura il modello appare a fili con tutte le linee visibili.
+Dopo la cura resta solo l'essenziale con maglie pulite e ordinate.
+Dopo la vestizione compaiono colori e materiali credibili in scena.
+
+Il sistema legge e scrive molti formati di scambio e immagini comuni,
+tra solidi, maglie, disegni piani e mappe di tipo fotografico standard.
+Per il tracciamento prevede profili pronti da attivare con un click,
+con scelta di stereoscopia attiva per teli e occhiali a scatto in sala.
+Per le mani prevede guanti con estensione dedicata gia pronta all'uso,
+mentre altri guanti chiedono driver da scrivere quasi da zero in casa.
+Resta comunque ambiente aperto a nuove estensioni via codice
+per qualsiasi dispositivo di ingresso e di uscita in commercio nuovo.
+
+Esempio riscritto: si pensi a un carter di una fresatrice da showroom.
+Da file con centinaia di fori e nervature si tolgono interni invisibili.
+Le viti uguali finiscono nel magazzino nascosto e non in vista attiva.
+L'assieme con vincoli chiude sportello e carter senza clash tra lamiere.
+La vestizione rossa con adesivi rende la foto per catalogo e fiera.
+
+Errore tipico: mostrare tutto il grezzo con fili e interni accesi.
+Senza magazzino nascosto e vincoli ben dati il video va a scatti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Sistema integrato a pacchetti per disegno, analisi e ciclo di vita.
+- Nucleo, meccanica, stile, analisi, impianti e lavorazioni in un unico ambiente.
+- Gemello per interferenze, montaggi, cinematismi e revisioni tecniche.
+- Ergonomia con posture, manichini e misure per comfort e sicurezza.
+- Un solo sistema per disegno e vista per tagliare conversioni e tempi.
+- Percorso da modelli a pulizia, taratura e prova in tempo reale.
+- Parti singole e assieme contenitore con vincoli per posto corretto.
+- Magazzino nascosto per alleggerire la vista attiva in scena.
+- Molti formati in ingresso e uscita per scambi tra uffici diversi.
+- Ambiente aperto a tracciatori, visori e guanti con estensioni dedicate.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Il sistema integrato descritto serve a:
+a) solo scrivere testi senza disegni b) disegnare, provare e gestire il prodotto in un unico ambiente c) spegnere ogni vista solida d) vietare importazioni da altri sistemi
+
+2. Il percorso verso la vista immersiva chiede:
+a) modello grezzo diretto senza cura b) pulizia, vestizione, taratura e prova in tempo reale c) solo spegnimento del visore d) carta stampata senza computer
+
+3. Le parti singole e l'assieme stanno insieme perche:
+a) restano sparse senza legami b) vincoli semplici le mettono al posto giusto nel tutto c) si cancellano da sole in automatico d) non hanno coordinate ne rapporti
+
+4. Il magazzino nascosto serve a:
+a) appesantire la vista attiva b) tenere simili fuori vista per scena leggera e fluida c) cancellare per sempre i pezzi utili d) mostrare interni invisibili sempre accesi
+
+5. Per mani e testa in immersivo il sistema prevede:
+a) nessun dialogo con dispositivi b) profili pronti per tracciatori e guanti con estensioni aperte c) solo mouse piano senza casco d) divieto di stereoscopia attiva
+
+6. Il gemello digitale con i suoi moduli permette:
+a) solo foto senza verifiche b) interferenze, montaggi, cinematismi e revisioni in scena c) nessun controllo di assieme d) modelli senza vincoli ne misure
+
+Soluzioni ragionate
+
+1 — b. Disegno, prove e ciclo insieme in moduli collegati tra loro. La a) resta solo testo, la c) spegne viste, la d) vieta scambi utili.
+
+2 — b. Quattro passi in ordine per scena fluida e stabile. La a) porta scatti, la c) spegne visore, la d) torna a carta.
+
+3 — b. Vincoli guidano posto corretto senza coordinate perfette. La a) lascia sparso, la c) cancella pezzi, la d) nega rapporti.
+
+4 — b. Simili fuori vista per alleggerire la scena attiva in uso. La a) rovescia lo scopo, la c) distrugge utili, la d) accende nascosti.
+
+5 — b. Tracciatori e guanti con profili ed estensioni aperte dedicate. La a) nega dialogo, la c) resta in piano, la d) vieta stereo utile.
+
+6 — b. Verifiche complete su assieme prima del fisico costoso. La a) resta solo foto, la c) nega controlli, la d) toglie vincoli.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

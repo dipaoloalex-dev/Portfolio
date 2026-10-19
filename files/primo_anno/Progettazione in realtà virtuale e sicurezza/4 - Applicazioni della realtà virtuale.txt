@@ -1,0 +1,206 @@
+[plain-text per Pages — da 4 - Applicazioni della realtà virtuale.md]
+
+1. VERIFICHE DI SEQUENZE DI OPERAZIONI DI MONTAGGIO-SMONTAGGIO E MANUTENZIONE
+--------------------------------------------------
+
+Le tecniche immersive si usano fin dalle prime fasi per provare montaggi,
+smontaggi e assistenza, con attenzione a ottimizzazione, facilità di montare,
+facilità di riparare, accesso per l'operatore ed ergonomia dei gesti. Si
+condividono gli stessi modelli nati nella progettazione, così si controlla la
+coerenza e si simulano tutti i passi reali di chi dovrà montare, aprire e
+riparare. Un sistema di assieme virtuale guida verso buone sequenze di
+accoppiamento mostrando in anticipo dati concreti, anche senza alcun pezzo
+fisico.
+
+Esempio riscritto: per un armadio tecnico con sportello, ventola e scheda si
+prova a schermo l'ordine di inserimento, si vede che la scheda non esce senza
+togliere prima la guida aria e si cambia la sequenza prima di stampare staffe.
+
+Prima, con modelli fisici, i tempi si allungavano e i costi salivano, eppure
+spesso la sequenza restava poco studiata. Correggere dopo voleva dire
+rifare prodotto o metodi o entrambi. Inoltre il modo di unire veniva fissato in
+progettazione mentre l'ordine veniva deciso solo in programmazione, con ritardi
+incompatibili con risposte rapide al mercato.
+
+Il vantaggio è vedere il ciclo e verificarne la fattibilità entro tempi, costi
+e vincoli di fabbrica. Anche la manutenzione entra nel ciclo di vita, con
+smontaggi pianificati per togliere parti guaste da riparare. Se l'assistenza è
+efficiente, crescono qualità, soddisfazione e velocità verso vendita e
+distribuzione. Ordine e traiettorie si scelgono con controllo di collisioni in
+tempo reale, cercando la via funzionale senza compenetrazioni tra volumi. I
+percorsi validati si salvano e riusano per ricostruzioni successive. Utile anche
+lo smontaggio mirato di un solo gruppo per riparazione o riciclo, con eventuale
+richiusura.
+
+Esempio riscritto diverso: in automazione un braccio per cofani viene istruito
+da un operatore che muove una mano virtuale lungo un percorso libero da urti.
+La presa chiusa vale come comando statico, il moto della mano guida il robot in
+tempo reale nella stessa operazione.
+
+Gli obiettivi sono strategici su tutto il processo, come minori costi e tempi,
+lancio più rapido, più innovazione, qualità e flessibilità, oppure operativi su
+pochi passi chiave. I requisiti pratici sono accesso per controlli locali,
+buona visibilità, sostituzione facile, pochi attrezzi standard facili da
+raggiungere per mani e braccia, distanze minime antiurto, percorsi precisi
+anche per robot, tutto registrato in report digitali.
+
+La manutenzione virtuale si fa in due modi: con le proprie mani immerse nella
+scena, oppure con figure umane numeriche inserite e guidate a compiere una
+sequenza assegnata, con posture diverse e uso di attrezzi disponibili.
+
+Errore tipico: definire prima il prodotto e solo alla fine l'ordine di montaggio.
+Senza verifica anticipata gli accessi risultano impossibili a pezzo finito.
+
+2. VIRTUAL MANUFACTURING
+--------------------------------------------------
+
+La fabbrica virtuale dà ai gruppi di processo una libertà di prova prima mai
+avuta: si anticipano e risolvono problemi prima di installare nulla. Oltre ai
+prototipi di prodotto, unisce disegno del pezzo e disegno del ciclo. Si
+simulano tutte le lavorazioni di linea per tagliare costi e tempi e rendere
+facili le modifiche a pezzo o impianto. La simulazione completa mostra
+problemi possibili all'inizio, in mezzo e alla fine. Un programma dedicato
+riproduce intere linee o celle, segue movimenti e forze di ogni fase e indica
+dove intervenire per ottimizzare.
+
+Esempio riscritto: per una linea di piccoli motori si spostano a schermo due
+stazioni, si accorcia un'attesa e si verifica che nessun carrello interferisca,
+scegliendo la soluzione migliore dopo poche iterazioni, senza spostare ferri veri.
+
+Il sistema si riconfigura e ripete: ogni giro corregge in base al precedente
+fino all'ottimo, con più flessibilità e meno costi fissi perché non trasforma
+materiale. L'investimento iniziale si ripaga perché lo stesso ambiente serve
+per molti casi. Esistono impostazioni centrate sulla produzione, che provano
+rapidamente i piani, e impostazioni centrate sul controllo dinamico, che
+ottimizzano il ciclo regolando i parametri. Entrambe misurano meglio i rischi,
+accorciano lo sviluppo congiunto di pezzo e ciclo e possono coinvolgere i
+clienti, con più competitività.
+
+Usi efficaci riscritti con casi diversi: studio di fattibilità di una staffa con
+validazione del piano e taglio dei costi di vita; prova di precisione di un
+carter con analisi dei moti e controllo di urti su macchine a controllo
+numerico; formazione distribuita in rete per operatori e tecnici con meno spese
+di trasferta; raccolta continua di dati che rende più intelligente il sistema.
+
+Errore tipico: usare la simulazione una sola volta a progetto chiuso. Serve in
+continuo per guidare le scelte, non per confermare a posteriori.
+
+3. CRASH TEST VIRTUALI
+--------------------------------------------------
+
+L'analisi d'urto studia corpi in moto relativo e la protezione degli occupanti,
+nata soprattutto nell'auto. Con strumenti potenti si simulano impatti al
+calcolatore e il fisico resta solo per validazione finale. Oltre alle
+deformazioni si stimano i danni alle persone, oggi anche per i più piccoli e
+non solo per gli adulti. I modelli sono sempre più credibili per progetto e
+ricerca.
+
+Il metodo, in breve: ogni parte è divisa in piccolissimi pezzi con resistenza
+nota del materiale, poi il programma applica forze virtuali in direzioni scelte
+e mostra come si deformerebbe l'insieme. Esempio riscritto: per una utilitaria
+recente la fase iniziale resta solo al computer e le prove intere su preserie
+arrivano solo a produzione avviata, senza più distruggere decine di vetture
+buone per ogni variante.
+
+Ogni figura di prova va tarata, altrimenti misura male. Esempio riscritto con
+dati diversi: sala climatizzata stabile intorno a ventuno gradi, controllo con
+termometro elettronico avviato alcune ore prima, singoli distretti come testa,
+bacino e arti provati con protocolli, calzature dedicate dal costo di alcune
+decine di euro al paio. Un modello numerico di occupante medio per urto
+laterale, nato con un consorzio di case europee, permette di ripetere in fretta
+molte prove a basso costo. La fedeltà al corpo, con inserti in lega a memoria di
+forma nel torace, è verificata con centinaia di tarature su materiali, pezzi e
+carichi, e il modello è preso a riferimento da molte norme.
+
+Per impostare lo studio servono da un lato gli oggetti e dall'altro un programma
+che calcola risposte dinamiche man mano che parti semplici formano insiemi
+maggiori. Si distinguono elemento singolo come vite o traversa, componente come
+insieme di elementi tipo portiera completa, assieme come insieme di componenti
+tipo scocca completa. Di ogni elemento servono flessibilità, cioè deformazione
+recuperabile lungo e traverso, e assorbimento in urto, cioè deformazione stabile
+sotto forza. Il programma unisce elementi in componenti e ne ricava gli indici
+per una data velocità, poi ripete a velocità diverse, assembla gli assiemi e
+ricalcola, fino al veicolo intero per angoli e velocità vari.
+
+Quarto tema: fluidi numerici. Con analisi numerica e algoritmi si risolvono al
+computer problemi di moto dei fluidi per progettare meglio prima di costruire.
+Esempio riscritto: per un furgone si prevede la resistenza aerodinamica e la
+portanza con mappe di pressione e velocità sulle superfici. Il dominio è diviso
+in celle di calcolo, detta griglia, su cui si iterano equazioni di moto dei
+fluidi fino a precisione voluta. Il percorso tipico è definire la forma,
+creare la griglia, scegliere modello fisico e numerico, fissare condizioni al
+bordo e iniziali se serve, iterare, vedere i risultati con un visualizzatore e
+analizzarli. Unendo fluidi e struttura si valutano anche deformazioni e
+pressioni variabili nel tempo, con stime di potenza ed efficienza per macchine
+a fluido.
+
+Errore tipico: lanciare calcoli senza taratura delle figure e senza griglia
+adeguata. Senza controlli i colori sono suggestivi ma i numeri non valgono.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il montaggio virtuale anticipa sequenze, accessi e traiettorie senza pezzi.
+- Manutenzione e smontaggio mirato fanno parte del ciclo di vita.
+- Mano virtuale e figure numeriche programmano robot e verificano posture.
+- La fabbrica virtuale unisce pezzo e ciclo e si riconfigura in fretta.
+- L'urto numerico sostituisce quasi tutte le distruzioni reali.
+- Figure tarate e griglie curate decidono l'attendibilità dei risultati.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. Il montaggio virtuale serve soprattutto a:
+a) evitare qualsiasi modello · b) provare ordine, accessi e traiettorie senza pezzo fisico · c) vietare la collaborazione · d) allungare i tempi di programmazione
+
+2. Lo smontaggio mirato è utile per:
+a) buttare tutto l'assieme · b) togliere solo un gruppo per riparazione o riciclo · c) impedire ogni riuso · d) nascondere i percorsi
+
+3. La fabbrica virtuale conviene perché:
+a) richiede sempre nuovi capannoni · b) simula linea completa e iterazioni rapide senza trasformare materiale · c) blocca le modifiche · d) usa un solo caso per sempre
+
+4. Nei crash numerici la base è:
+a) dividere in parti con resistenze note e applicare forze virtuali · b) disegnare a mano senza dati · c) provare solo a vettura ferma · d) ignorare gli occupanti
+
+5. Senza taratura delle figure e controllo termico:
+a) i risultati restano validi · b) le misure possono falsarsi e la prova non certifica · c) i costi spariscono · d) la griglia si crea da sola
+
+6. Nell'analisi dei fluidi il passo chiave è:
+a) evitare qualsiasi griglia · b) dividere il dominio in celle e iterare fino a precisione con visualizzazione · c) indovinare pressioni senza calcolo · d) fermarsi alla forma esterna
+
+Soluzioni ragionate
+
+1 — b. Verifica sequenze e interferenze prima di costruire. La a) nega il modello previsionale, la c) nega il lavoro condiviso, la d) contraddice la risposta rapida al mercato.
+
+2 — b. Separa un insieme definito per assistenza o recupero con eventuale richiusura. La a) demolisce tutto, la c) vieta il riuso dei percorsi, la d) nasconde proprio ciò che serve.
+
+3 — b. Intera disposizione e celle sotto controllo con modifiche facili. La a) aggiunge edifici, la c) congela il progetto, la d) spreca la riusabilità su molti casi.
+
+4 — a. Da elemento a componente ad assieme con flessibilità e assorbimento per velocità e angoli. La b) non ha dati, la c) toglie il moto relativo, la d) esclude i danni alle persone che invece si stimano.
+
+5 — b. Materiali sensibili e protocolli richiedono stabilità e controlli anticipati. La a) ignora la metrologia, la c) inventa risparmi, la d) salta la discretizzazione.
+
+6 — b. Geometria, griglia, modelli, condizioni, iterazioni, vista e analisi. La a) rifiuta il metodo, la c) sostituisce il calcolo con stime, la d) si ferma all'estetica.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

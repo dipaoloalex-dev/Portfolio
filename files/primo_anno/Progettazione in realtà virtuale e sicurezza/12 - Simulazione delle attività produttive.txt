@@ -1,0 +1,284 @@
+[plain-text per Pages — da 12 - Simulazione delle attivita produttive.md]
+
+1. CLASSIFICAZIONE DEI MODELLI
+--------------------------------------------------
+
+La simulazione studia il comportamento di un sistema vero
+o solo immaginato facendo prove sulla sua rappresentazione.
+Serve quando da soluzioni piu chiare e meno costose di altri
+metodi, oppure quando resta l'unica via per mancanza di formule
+esatte o per ipotesi troppo strette per l'impianto da esaminare.
+Se il sistema non esiste ancora perche in progetto su carta,
+oppure e una variante non ancora costruita di uno esistente,
+la simulazione prevede prestazioni e miglioramenti prima di spendere.
+
+Due parole chiave sono sistema e modello da tenere distinte.
+Il sistema e un insieme di pezzi riconoscibili legati da rapporti
+logici, fisici o matematici per lavorare verso uno scopo assegnato.
+Nel tempo passa per stati diversi, cioe situazioni dei suoi pezzi.
+Si disegna spesso a blocchi, con variabili e funzioni per blocco.
+Le variabili interne nascono dentro il sistema in esame diretto.
+Le variabili esterne vengono date da chi usa il modello dall'esterno.
+
+Il modello e una rappresentazione fatta per uno studio preciso.
+Non copia tutto il sistema in ogni dettaglio possibile e reale,
+ma solo gli aspetti utili allo scopo dichiarato dell'indagine.
+Prima si fissa lo scopo, poi si scelgono grandezze importanti
+e si scartano quelle inutili per la domanda da risolvere in aula.
+I legami tra grandezze scelte danno il comportamento totale.
+Stessi impianti vogliono modelli diversi se cambiano gli scopi.
+
+Lo stato e l'insieme delle variabili che bastano a descrivere
+il sistema in un dato istante per quello studio preciso in corso.
+Simulare significa usare il modello per generare in ordine
+la successione di stati del sistema oggetto di analisi tecnica.
+Il modello di simulazione deve essere adeguato allo scopo,
+cioe coprire tutti gli aspetti ritenuti importanti per l'indagine.
+
+I sistemi si dividono in primo luogo per modo di cambio di stato.
+Nel continuo i cambi sono dolci e graduali senza salti improvvisi.
+Nel discreto i cambi sono bruschi e a scatti in istanti precisi.
+In secondo luogo si dividono per legame tra cause ed effetti.
+Nel deterministico gli effetti seguono rigidi gli ingressi dati.
+Nello stocastico gli effetti variano con caso guidato da leggi fisse.
+
+La simulazione statica fotografa il sistema in un solo istante,
+detta anche con metodo a campionamento casuale puro e semplice.
+La dinamica segue il sistema in piu istanti e nel suo divenire
+lungo un intervallo di tempo assegnato per la prova da svolgere.
+Per fabbriche in forte concorrenza con molta automazione spinta
+la simulazione prova modi di lavoro sul modello senza fermi reali,
+senza toccare l'impianto vero durante gli esperimenti di ottimizzazione.
+Qui conta la gara tra risorse per prestazioni e colli di bottiglia.
+Si cerca la risorsa che frena di piu, si modella con legami corretti
+e si trova il valore migliore di un indice per quel caso di produzione.
+
+Anche i modelli si dividono in due famiglie principali chiare.
+I fisici descrivono per somiglianza e si misurano con grandezze
+come forza, spostamento e differenza di potenziale tra punti.
+Modelli in scala ridotta e modelli analogici sono esempi tipici.
+I matematici usano variabili per i pezzi e funzioni per i legami.
+Restano ingresso, uscita e stato con ruoli diversi nel calcolo vivo.
+Le prime entrano e non dipendono dal modello interno in uso.
+Le seconde escono da incontro tra ingressi e stati interni attuali.
+Le terze dicono lo stato e possono dipendere anche da uscite passate.
+
+Esempio riscritto: si pensi a una linea di confezionamento marmellate.
+Il sistema ha nastri, riempitrici e tappatori legati in sequenza stretta.
+Lo stato a mezzogiorno dice code, velocita e scorte di vasetti vuoti.
+Il modello per tagliare gli scarti guarda solo code e tempi di fermo,
+non il colore delle etichette inutile per lo scopo di velocita pura.
+
+Errore tipico: voler modellare tutto senza fissare prima lo scopo.
+Senza scelta di variabili utili il modello diventa pesante e confuso.
+
+2. MODELLI DI SIMULAZIONE
+--------------------------------------------------
+
+Non sempre si trovano formule chiuse per capire un sistema reale.
+Conviene allora costruire un modello su cui fare prove simulate.
+Di solito e un modello matematico adatto a calcoli ripetuti in serie.
+Ma un modello per simulare e diverso da uno per carta e penna.
+Il secondo deve rispettare vincoli rigidi della tecnica analitica scelta.
+La famiglia dei modelli di simulazione segue quella matematica affine.
+
+Un primo criterio guarda se vi e caso dentro le relazioni di base.
+Nei deterministici nessuna variabile e casuale e i legami sono esatti.
+Si risolvono bene con metodi esatti di analisi matematica classica.
+Negli stocastici almeno un legame segue una legge di probabilita.
+Non vi e piu corrispondenza unica tra dati iniziali e storia futura.
+Stessi ingressi possono dare storie diverse possibili in uscita.
+Sono piu complessi e la carta non basta per risultati soddisfacenti.
+Serve simulare molte volte e stimare le qualita con campioni casuali
+dalle evoluzioni generate in serie dal modello in esecuzione.
+
+Un secondo criterio guarda come il tempo fa evolvere il sistema.
+Nei continui le variazioni scorrono senza salti lungo il tempo.
+Nei discreti le variazioni avvengono a scatti in punti separati.
+A volte un sistema a scatti si descrive con modello continuo dolce
+e viceversa, per semplicita di calcolo e di lettura dei risultati.
+Meglio riferire la classe al modello che si costruisce davvero
+piuttosto che al sistema vero osservato fuori dal laboratorio.
+
+Esempio riscritto: si pensi a un forno per pane in un panificio locale.
+Un modello deterministico lega tempo e temperatura in modo fisso.
+Uno stocastico aggiunge guasti casuali e file variabili di clienti.
+Per medie e code con guasti serve simulare molte giornate diverse.
+
+Errore tipico: usare formule esatte dove il caso domina i risultati.
+Senza prove ripetute si sottovalutano code e attese reali in negozio.
+
+3. SIMULAZIONE AD EVENTI DISCRETI
+--------------------------------------------------
+
+Qui il sistema avanza per passi detti eventi in istanti precisi.
+Tra un evento e l'altro lo stato resta fermo senza cambiamenti.
+L'evento e un cambio istantaneo di una o piu variabili di stato.
+Puo nascere dentro il sistema come fine di una lavorazione interna.
+Puo venire da fuori come arrivo di un ordine o mancanza di energia.
+
+Vi sono due modi di far avanzare il tempo nel modello di prova.
+Nel modo sincrono si fissa un passo fisso e si guarda solo a scadenze.
+Eventi non insieme restano separati nella lettura dei risultati.
+Eventi accadono solo negli istanti segnati sul calendario di prova.
+Nel modo asincrono si salta da un evento al successivo diretto.
+L'orologio avanza di evento in evento senza curare il vuoto in mezzo,
+se nulla accade e nulla cambia durante l'intervallo saltato in avanti.
+Gli eventi stanno a inizio e fine di ogni attivita svolta dai pezzi.
+
+Con la simulazione si studia e migliora il sistema esistente su modello.
+I vantaggi sono flessibilita di progetto e di uso in molti casi reali,
+uso di caso e dinamica dentro i modelli costruiti per la prova,
+viste chiare dei processi altrimenti nascosti agli operatori in linea,
+aiuto a scelte complesse operative e di gestione quotidiana in fabbrica,
+prova facile di nuove soluzioni senza fermi lunghi di impianto vero,
+migliore conoscenza dei processi interni all'organizzazione di lavoro,
+misura di reazione a guasti e cambi di condizioni operative in turno,
+previsione di comportamenti e costi prima di investire in modifiche.
+
+Vi sono anche limiti da tenere presenti prima di decidere in azienda.
+I risultati valgono quanto vale il modello costruito con cura reale.
+Se il modello e rozzo le risposte restano rozze e poco affidabili.
+Letture finali complesse possono ingannare se il modello e storto.
+Costruire senza scopi e misure chiare diventa lungo e faticoso.
+
+Accanto all'evento vi e l'attivita come condizione che dura nel tempo.
+L'evento e istantaneo e non consuma tempo per accadere in scena.
+L'attivita chiede tempo e sta tra un evento di inizio e uno di fine.
+E un'azione svolta da un pezzo quando vi sono condizioni adatte.
+
+Gli eventi sono di due tipi per causa che li fa scattare in scena.
+Quelli di tempo nascono da data segnata sul calendario di prova.
+Quelli di stato nascono da condizione non di tempo che cambia lo stato.
+
+Il sistema discreto si vede come rete di flusso con due attori.
+I sottosistemi fanno ciascuno una funzione precisa e stabile nel tempo.
+Le entita sono oggetti che girano e chiedono servizi ai sottosistemi.
+Si guarda la portata, cioe quante entita passano in un periodo dato.
+La carta con code e processi casuali vale solo con ipotesi semplici,
+spesso lontane dal vero comportamento dell'impianto reale osservato.
+
+Per costruire simulatori discreti vi sono due strutture di codice.
+Quelli a eventi attivano un piccolo programma a ogni evento giunto,
+che aggiorna i pezzi toccati da quel cambio di stato in quel momento.
+Quelli a processi danno a ogni pezzo una procedura sempre presente,
+con parti attive in corsa e parti ferme in attesa di sveglia da altre.
+Ogni cambio legato a un evento e visto come lavoro di procedura attiva.
+
+Esempio riscritto: si pensi a uno sportello postale con due casse.
+Arrivo di cliente e evento esterno segnato sull'orologio di prova.
+Servizio allo sportello e attivita tra inizio e fine con tempo di attesa.
+In modo sincrono si guarda ogni minuto fisso la fila allo sportello.
+In modo asincrono si salta da arrivo a fine servizio senza vuoti inutili.
+
+Errore tipico: confondere evento istantaneo con attivita che dura.
+Senza inizio e fine distinti i tempi di attesa risultano falsati.
+
+4. LE FASI DELLA SIMULAZIONE
+--------------------------------------------------
+
+Un esperimento ben fatto segue nove passi in ordine logico chiaro.
+Primo si formula il problema con scopi e criteri di confronto tra idee.
+Secondo si raccolgono dati dal sistema vero per modello e variabili.
+Terzo si formalizza il modello con pezzi e legami funzionali utili,
+scegliendo forma adeguata a descrivere la realta osservata in campo.
+Quarto si stimano parametri e leggi operative dai dati raccolti in loco.
+Quinto si valuta se modello e stime descrivono bene la realta studiata.
+Sesto si scrive il codice che traduce il modello per il calcolatore,
+scegliendo linguaggio adatto per chiarezza e velocita di prova.
+Settimo si valida il programma senza errori logici e di scrittura,
+verificando che il finto sistema si muova come il vero sistema atteso.
+Ottavo si disegna il piano prove con durate e ripetizioni per test,
+modi di misura a ogni giro e criteri di giudizio dei risultati ottenuti.
+Nono si analizzano i risultati con criteri fissati prima delle prove,
+con tabelle e grafici facili da leggere per chi decide in azienda.
+
+Si puo riassumere in righe di testo con spazi come tabella di marcia.
+Passo  Compito principale  Uscita attesa per il passo
+Uno  Fissare problema e criteri  Domanda chiara e metro di giudizio
+Due  Raccogliere dati veri  Dati puliti per modello e prove
+Tre  Disegnare modello e legami  Schema adatto alla realta
+Quattro  Stimare parametri e leggi  Valori pronti da inserire
+Cinque  Valutare adeguatezza  Via libera o ritorno a modello
+Sei  Scrivere programma  Codice eseguibile senza errori
+Sette  Validare comportamento  Finto uguale al vero nei test
+Otto  Pianificare prove e misure  Piano con giri e criteri
+Nove  Analizzare e presentare  Risposte chiare per le scelte
+
+Esempio riscritto: si pensi a un magazzino ricambi che vuole
+tagliare attese al banco senza comprare scaffali nuovi e costosi.
+Si fissa il problema dei tempi, si misurano arrivi e servizi reali,
+si modella banco e code, si stimano tempi medi e variabilita,
+si prova il codice, si valida con una settimana tipo osservata,
+si lanciano prove con uno o due addetti e si scelgono turni migliori.
+
+Errore tipico: saltare raccolta dati e validazione per fretta di codice.
+Senza dati veri e senza confronto col reale le risposte sono finte.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Simulazione come prove su modello per sistemi veri o futuri da progettare.
+- Sistema come pezzi legati, modello come vista utile per uno scopo preciso.
+- Stato come variabili che bastano in un istante per quello studio in corso.
+- Continuo con cambi dolci, discreto con cambi a scatti in istanti fissi.
+- Deterministico con effetti fissi, stocastico con caso guidato da leggi.
+- Statica come foto istantanea, dinamica come film lungo un intervallo.
+- Evento istantaneo dentro o fuori, attivita come durata tra inizio e fine.
+- Sincrono a passo fisso, asincrono a salti da evento a evento successivo.
+- Nove passi da problema e dati fino a codice, prove e analisi chiare.
+- Bonta dei risultati pari a bonta di modello, dati e validazione reale.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. La simulazione serve soprattutto a:
+a) evitare ogni prova e ogni misura b) studiare un sistema su modello per prevedere e migliorare c) copiare senza capire il sistema vero d) fermare ogni impianto senza motivi
+
+2. Un buon modello per uno studio deve:
+a) copiare tutto senza scopo b) mostrare solo aspetti utili allo scopo fissato c) nascondere ogni variabile importante d) restare senza legami tra grandezze
+
+3. Un sistema a scatti con caso guidato da leggi e detto:
+a) continuo e deterministico b) discreto e stocastico c) fermo senza tempo d) senza variabili di stato
+
+4. Tra evento e attivita vale che:
+a) sono identici senza differenze b) evento e istantaneo, attivita dura tra inizio e fine c) attivita e istantanea, evento dura mesi d) nessuno cambia mai lo stato
+
+5. Nel modo asincrono il tempo:
+a) avanza a passo fisso sempre uguale b) salta da evento a evento senza curare i vuoti fermi c) resta fermo per sempre d) torna sempre indietro di un giorno
+
+6. Nei nove passi viene prima:
+a) analisi finale senza dati b) problema, dati e modello prima di codice e prove c) codice senza validazione d) prove senza piano ne criteri
+
+Soluzioni ragionate
+
+1 — b. Prove su modello per previsioni e miglioramenti mirati. La a) nega prove, la c) copia senza capire, la d) ferma senza scopo.
+
+2 — b. Solo aspetti utili allo scopo con legami chiari tra misure. La a) copia tutto senza criterio, la c) nasconde il necessario, la d) toglie i legami.
+
+3 — b. Scatti nel tempo con variabilita casuale secondo leggi. La a) dice dolce e fisso, la c) nega il tempo, la d) nega variabili.
+
+4 — b. Istante contro durata tra due eventi di confine. La a) li confonde, la c) li rovescia, la d) nega cambi di stato.
+
+5 — b. Salti mirati tra eventi con stato fermo in mezzo. La a) descrive il sincrono, la c) blocca orologio, la d) inverte il tempo.
+
+6 — b. Ordine logico da domanda a dati e modello fino a prove. La a) salta dati, la c) salta validazione, la d) salta piano e criteri.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

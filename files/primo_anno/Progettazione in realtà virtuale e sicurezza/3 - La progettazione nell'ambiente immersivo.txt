@@ -1,0 +1,206 @@
+[plain-text per Pages — da 3 - La progettazione nell'ambiente immersivo.md]
+
+1. VIRTUAL PROTOTYPING
+--------------------------------------------------
+
+Nella produzione industriale il prototipo virtuale serve a sviluppare il
+prodotto con modelli e simulazioni numeriche. Il ciclo classico prevede
+disegno, costruzione di un modello fisico, prova, correzione del progetto e
+nuova versione. Questo giro è lento, costa per i pezzi fisici e frena le idee
+davvero nuove, perché cambiare molto dopo le prove vuol dire ricominciare con
+pesanti effetti su tempi e costi. La prototipazione virtuale è la risposta
+consolidata: si lavora in ambienti digitali con vista interattiva fin dalle
+prime fasi, per tagliare tempi e costi e alzare la qualità. Con grandi schermi
+immersivi gruppi diversi collaborano a distanza e poi lo stesso ambiente serve
+a mostrare il prodotto al cliente per raccogliere osservazioni prima di avere
+alcun pezzo reale.
+
+Esempio riscritto: un piccolo elettrodomestico da cucina viene studiato solo
+a schermo per forme, ingombri e incastri. Si scopre subito che una scheda
+interna tocca il guscio e si sposta un supporto nel modello, senza stampare
+nulla. La fase più cara, costruire prototipi, è sostituita da corrispondenti
+digitali basati su modelli tridimensionali e dati di progetto in archivi
+aziendali di gestione dati e ciclo di vita.
+
+A seconda dell'avanzamento si valutano aspetti diversi, estetici, funzionali o
+di unione tra parti, e più si va avanti più le modifiche costano. Il virtuale
+conviene perché nasce da dati digitali senza costruire, segnala da solo
+problemi come urti tra sottoinsiemi diversi e rimanda al punto da correggere,
+fa collaborare sedi lontane e fotografa subito la configurazione presente in
+archivio invece di attendere settimane di officina.
+
+Si possono valutare estetica, come linea di un veicolo o cabina di un velivolo
+per passeggeri, ergonomia come presa di comandi, visibilità dentro e fuori e uso
+di apparecchi domestici, unione di sistemi diversi come struttura e impianti
+nello stesso mezzo, montaggio manuale o automatico con fabbrica virtuale per
+pianificare la produzione.
+
+Il limite maggiore è che molti modellatori 3D non lasciano toccare davvero il
+modello digitale. E' atteso un uso largo di questi gemelli per simulare prodotto,
+ingegneria, fabbrica, assistenza e riciclo. Fondamentale è lo scambio dati tra
+modellazione e ambiente immersivo. Ogni forma è in origine una formula più o
+meno complessa, e muovere assiemi di centinaia di pezzi con superfici libere
+sarebbe troppo pesante anche per macchine potenti. Si prendono i dati nativi e
+si riducono a un formato leggero di sola visualizzazione che tiene la stessa
+geometria con memoria molto minore.
+
+Il percorso è in tre passi: costruire il virtuale con reticolo di poligoni da
+geometria originale e poi semplificarlo, vestirlo con colori, materiali, luci e
+superfici, tarare visori, inseguitori e sensazioni di tocco. Le curve diventano
+triangoli uniti, con precisione guidata da scarto di corda e di angolo. Troppi
+triangoli rallentano, troppo pochi imbruttiscono. Si riduce il numero fino a
+tenere circa venti o trenta immagini al secondo in navigazione, unendo ad
+esempio triangoli quasi piatti o nati da punti vicinissimi.
+
+Esempio riscritto: per un mezzo da lavoro con molti dettagli si lascia geometria
+piena al braccio sotto esame e si rivestono con sole immagini le lamiere lontane
+dello sfondo. E' come applicare adesivi su forme qualsiasi: più realismo senza
+più geometria. Vale da lontano, non per il pezzo da analizzare. Le proiezioni
+per stendere le immagini possono essere piane per terreni o schermi visti di
+fronte, cilindriche per altezza e giro, sferiche per giro completo, con zone
+meno uniformi verso i poli negli ultimi due casi.
+
+Errore tipico: chiedere dettaglio massimo ovunque. Va messo dove serve
+l'analisi, altrove bastano immagini leggere.
+
+2. APPLICAZIONI IN AMBITO VEICOLISTICO
+--------------------------------------------------
+
+Nel virtuale l'utente è avvolto da scena generata al calcolatore con stimoli di
+vista, udito e tatto. Per i trasporti questo serve a giudicare stile ed estetica,
+comodità di posture, visibilità dentro e fuori, prestazioni meccaniche e di
+fluidi, montabilità, movimenti e anche reazioni delle persone. Così si migliora
+il prototipo fin dalle prime bozze.
+
+Esempio riscritto con caso diverso: un costruttore di autobus valuta a scala
+naturale riflessi e ombre sulla fiancata e il riflesso del deposito sul vetro,
+verifiche che prima volevano modelli in scala di legno e gesso. In ambiente
+condiviso più stilisti lavorano insieme e le soluzioni tecniche crescono accanto
+alle idee. Per preparare la scena si acquisisce un bozzetto e il costruttivo,
+si ricavano viste davanti, fianco, dietro e pianta dentro le facce di un volume
+di riferimento da un'origine fissata. Ne esce una scatola aperta su due lati con
+dentro abitacolo e ingombro totale da cui partire.
+
+Errore tipico: usare il virtuale solo per belle immagini. Senza misure di
+ingombro e verifiche tecniche resta vetrina e non progetto.
+
+3. PROGETTAZIONE ERGONOMICA
+--------------------------------------------------
+
+Postura giusta e confortevole va assicurata fin dal concetto del veicolo.
+L'ergonomia studia l'incontro tra persone e sistemi per lo scopo previsto, con
+teorie, dati e metodi, per alzare soddisfazione e prestazioni. In pratica guarda
+il rapporto tra individuo e tecnica. Contano sicurezza prima di tutto, poi
+adattabilità, facilità d'uso, comfort, gradevolezza e comprensibilità. Il
+rapporto incide anche sull'efficienza della persona. Per giudicarlo si guardano
+compito e bisogni, attrezzi con misure, forme e posizioni, e informazioni per
+usarli. Servono molte discipline, da misure del corpo a meccanica e movimento,
+da fisiologia a psicologia. Per stimare l'effetto delle scelte sull'uomo si usa
+un manichino numerico con scheletro e giunti. Le lunghezze vengono da archivi
+di misure corporee per coprire i percentili della popolazione attesa.
+
+Esempio riscritto: per una berlina compatta si stimano prima di ogni pezzo
+fisico leggibilità degli strumenti, spazio per testa, spalle, braccia e
+ginocchia in guida e larghezza porta per salita e discesa. L'alternativa è far
+provare direttamente al progettista con le sue mani: guanti con sensori anche
+sulle dita e rilevatori di posizione portano una mano virtuale 3D a toccare i
+pezzi digitali.
+
+Errore tipico: verificare l'ergonomia solo a prototipo finito. Dopo, spostare
+un montante o un comando costa molto più che in concetto.
+
+4. CONCEPT DESIGN E DESIGN REVIEW
+--------------------------------------------------
+
+Il concept è la parte creativa che fissa le basi del progetto, come elaborato
+finale di un metaprogetto. Può essere una tappa o fermarsi all'idea, come le
+vetture da salone che mostrano dove può andare stile e tecnica senza diventare
+prodotti in vendita. Dentro il concept stanno le linee guida per l'esecuzione:
+più è solido, meno il finale se ne discosta. Un percorso contiene spesso più
+concept in sequenza che raccontano le scelte. Con modellatori, simulazione
+ergonomica e immersione si dà forma all'idea per valutarla e provarla.
+Esempio riscritto: per una citycar si fissano abitabilità, comfort, brio,
+ecologia, robustezza, clienti e contesti, poi si dettagliano stile, materiali e
+mercato fino a una vettura da esposizione e poi verso fattibilità e produzione
+con prototipi da perfezionare per norme e vincoli.
+
+La revisione di progetto è il momento in cui il disegno è valutato su tutti i
+requisiti per confermare il fatto e trovare problemi prima di andare avanti. La
+finale riuscita fa partire lancio o rilascio. In settori regolati come i
+dispositivi medici è obbligatoria e deve includere persone fuori dal gruppo di
+progetto. Correggere tardi costa molto più che presto, quindi più revisioni su
+coerenza, uso, reperibilità e ambiente ripagano. Dopo il concetto, il virtuale
+è fortissimo nell'impostazione tra reparti diversi per decidere il finale: più
+persone insieme vedono lo stesso modello, segnalano errori e cambiano in tempo
+reale, coinvolgendo anche assistenza e altri uffici oltre ai progettisti.
+
+Errore tipico: fare revisioni solo tra progettisti a fine percorso. Senza
+esterni e senza virtuale condiviso gli errori emergono quando costano di più.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il prototipo virtuale sostituisce il fisico per provare presto e a basso costo.
+- Dal CAD si passa a reticoli leggeri con colori e taratura dei dispositivi.
+- Dettaglio pieno solo sul pezzo in analisi, immagini altrove.
+- Nel veicolo contano stile a scala vera, ergonomia e visibilità insieme.
+- Il manichino numerico e le mani virtuali anticipano comfort e accessi.
+- Il concept fissa le linee, la revisione con esterni chiude i problemi presto.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. Il prototipo virtuale conviene soprattutto perché:
+a) elimina ogni prova · b) nasce da dati digitali, si cambia in fretta e segnala interferenze · c) evita di archiviare dati · d) richiede sempre pezzi fisici
+
+2. Per reggere circa 20 o 30 immagini al secondo si:
+a) aumenta sempre i triangoli · b) si semplifica il reticolo e si usano immagini dove basta · c) si spegne ogni luce · d) si vieta la navigazione
+
+3. La proiezione piana è adatta per:
+a) superfici curve in ogni direzione · b) terreni o schermi visti di fronte · c) interni motore · d) mani virtuali
+
+4. Nel veicolo il virtuale serve a valutare insieme:
+a) solo il prezzo · b) stile, ergonomia, visibilità e montaggio fin dalle bozze · c) solo il marchio · d) solo la pubblicità
+
+5. Il manichino numerico usa:
+a) misure inventate · b) archivi corporei per percentili e guanti con sensori · c) sole foto senza misure · d) un solo corpo medio senza varianti
+
+6. La revisione finale di progetto:
+a) si fa da soli a prodotto lanciato · b) include anche esterni e nel virtuale corregge in tempo reale prima di avanzare · c) serve solo per l'estetica · d) aumenta sempre i costi se fatta presto
+
+Soluzioni ragionate
+
+1 — b. Velocità, basso costo e segnalazione automatica sono i vantaggi indicati. La a) nega ogni prova, la c) toglie gli archivi che invece lo nutrono, la d) contraddice la sostituzione del fisico.
+
+2 — b. Semplificazione guidata e immagini tengono il flusso. La a) appesantisce e fa scendere le immagini al secondo, la c) toglie realismo senza ridurre geometria, la d) rinuncia al virtuale.
+
+3 — b. Piano definito da due assi per superfici piane da un punto di vista. La a) chiede cilindrica o sferica, c) e d) non sono proiezioni di immagini.
+
+4 — b. E' l'uso congiunto descritto per mezzi. Le altre riducono a un solo aspetto commerciale.
+
+5 — b. Dati di popolazione e interazione diretta danno accessi e comandi giusti. La a) inventa numeri, la c) non misura, la d) ignora la variabilità richiesta.
+
+6 — b. Verifica totale con esterni e modifiche condivise prima di impegnare altro lavoro. La a) la fa tardi e da soli, la c) la restringe, la d) rovescia il risparmio della prevenzione.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

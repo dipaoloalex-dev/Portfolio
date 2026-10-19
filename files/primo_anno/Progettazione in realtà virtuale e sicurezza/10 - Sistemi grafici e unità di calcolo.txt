@@ -1,0 +1,336 @@
+[plain-text per Pages — da 10 - Sistemi grafici e unita di calcolo.md]
+
+1. INTRODUZIONE
+--------------------------------------------------
+
+Un progetto immersivo si divide in parti di lavoro distinte.
+Vi sono forme degli oggetti, dialogo con la persona,
+percezione dei sensi e immagini mostrate a schermo finale.
+Ogni parte e curata da un motore di resa con tre compiti base.
+Primo aggiornare l'ambiente quando cambia qualcosa in scena.
+Secondo togliere cio che resta fuori dal cono di vista attuale.
+Terzo mostrare a video cio che resta dentro in modo corretto.
+
+In grafica si dice resa il passaggio da descrizione astratta a foto.
+La scena e un insieme di solidi definiti in spazio a tre dimensioni,
+con prospettiva scelta e luci regolate per ogni vista da creare.
+La resa accende i solidi e li proietta su piano a due dimensioni,
+calcolando colore di ogni punto per l'immagine finale da mostrare.
+Dunque si parte da coordinate triple e si arriva a punti piani,
+con legame diretto tra punto solido e punto schermo in prospettiva.
+La prospettiva appare piu vera di viste parallele o assonometriche,
+perche rimpicciolisce con la distanza come fa l'occhio umano.
+
+Per grafica tecnica conta molto la qualita visiva del risultato,
+che in immersivo diventa scena credibile e confortevole da girare.
+Con scene ricche o foto molto fini la resa chiede molto calcolo,
+con milioni di operazioni decimali per ogni singola immagine.
+Si aggiunge il dialogo in tempo reale tipico dei mondi virtuali,
+che chiede potenza in piu a processori e schede di lavoro dedicate.
+Programmi di resa possono metterci molto per una sola foto ferma.
+In immersivo servono scene semplificate e ben ottimizzate,
+cosi il calcolatore aggiorna in fretta e tiene realismo sufficiente.
+
+Esempio riscritto: si pensi a un tecnico che prova un banco
+di assemblaggio per piccoli elettrodomestici da cucina domestica.
+Se il banco ha troppi dadi e cavi modellati uno per uno,
+la vista scatta e il giro diventa lento e faticoso da seguire.
+Con viti semplificate e scatole lisce la scena gira fluida
+e si giudicano ingombri e prese senza attese tra un passo e l'altro.
+
+A differenza dei filmati preregistrati, qui tutto nasce sul momento.
+La scena e ancorata al mondo e l'utente sceglie dove guardare
+e quanto toccare e muovere gli oggetti intorno a se stesso.
+Nel filmato classico si sceglie solo quale sequenza gia pronta vedere,
+senza cambiare angolazioni o interagire con i pezzi mostrati a schermo.
+Per moto fluido senza scatti serve un ritmo di circa due decine
+di immagini al secondo, legata alla breve persistenza sulla retina.
+Dunque potenza grafica e di calcolo decide se il mondo virtuale
+puo esistere davvero con foto grandi, precise e in moto dolce.
+Contano gestione delle forme, complessita dei modelli di scena,
+nitidezza delle viste e capacita di calcolo rapida ed efficace.
+
+Oggi vista e simulazione muovono moli enormi di dati continui,
+fino a migliaia di miliardi di informazioni per archivi complessi.
+Per mostrare in tempo reale archivi cosi grandi servono doti precise.
+Prima il sistema deve crescere a moduli per reggere la mole di dati.
+Seconda la frequenza di rinnovo deve restare alta e costante
+al cambiare di vista della persona o di posa del modello in scena.
+Terza deve dare la nitidezza massima chiesta dall'uso in corso.
+Quarta l'interfaccia per l'utente deve restare flessibile e semplice.
+
+La scelta tra macchina unica condivisa di fascia alta e gruppo
+di piccoli calcolatori in rete dipende dall'uso da realizzare.
+Con piu teli di proiezione serve alta nitidezza su ogni schermo,
+perche ogni telo mostra solo una parte densa di punti per istante.
+I monitor restano dominanti, ma la loro nitidezza cresce piano
+rispetto a prezzi e velocita degli altri componenti interni al PC.
+Si supera il limite tagliando il telo in piu unita vicine,
+ognuna con uno o piu proiettori dedicati alla sua striscia.
+Servono pero moltissimi punti da muovere in tempi strettissimi
+per una sola immagine intera su tutti i teli messi insieme.
+Il calcolatore cura anche parti fuori vista in quel momento,
+oltre alla fascia di fusione tra teli vicini per continuita uniforme.
+Il tipo di schermo pesa molto sui conti, con teli multipli solidi
+piu esosi di un singolo monitor o di un casco leggero da testa.
+
+Con strumenti attuali e schede accelerate si arriva facile
+a nitidezze alte da postazione tecnica di fascia professionale.
+Servono macchine grafiche potenti con catene di resa vicine
+per teli e proiettori separati ma sincronizzati tra loro in scena.
+La via comune e dividere il carico totale in fette parallele.
+Si puo mettere piu catene grafiche dentro la stessa macchina,
+oppure distribuire i conti sulle schede di piu macchine in rete.
+La prima via puo stare sullo stesso chip con stadi doppi interni,
+oppure su due schede nella stessa piastra madre di lavoro,
+oppure su armadi complessi con molte memorie e processori
+che lavorano tutti in parallelo sulla stessa vista da mostrare.
+Un tempo solo gli armadi costosi reggevano un laboratorio immersivo,
+ma i prezzi restavano molto alti per acquisto e gestione continua.
+Da anni si punta su gruppi di PC standard a basso costo e scalabili,
+facili da trovare e da montare in rete locale di laboratorio.
+
+Errore tipico: chiedere foto perfette senza tagliare i dettagli.
+Senza scene leggere e senza calcolo parallelo ben diviso
+il ritmo crolla e l'immersione diventa scattosa e stancante.
+
+2. SISTEMI COLLAUDATI
+--------------------------------------------------
+
+L'unita di calcolo deve creare immagini sul momento reale,
+leggere ingressi da periferiche collegate al banco di prova,
+produrre uscita grafica anche su molti canali insieme in sala
+e guidare i programmi applicativi caricati per la sessione.
+Servono parti spinte, spesso dedicate e costose per sale grandi.
+La scelta cade in genere su stazione unica di fascia alta
+con sistema dedicato stabile, oppure su gruppo di PC in rete
+con sistemi aperti diffusi e di facile gestione quotidiana.
+Per stabilita del sistema la prima via resta spesso preferita.
+
+Il sistema unico ad alte prestazioni usa piu unita centrali
+e schede grafiche che curano dentro il flusso di dati in arrivo.
+Il pregio e l'uniformita interna tra tutte le parti del sistema.
+Ogni processore vede diretto memoria centrale e risorse grafiche.
+Cosi programmare e piu facile e i controlli riescono piu efficaci.
+La memoria appare come spazio unico continuo e condiviso,
+con passaggio dati tra processori curato dal sistema in modo
+trasparente per chi usa l'interfaccia di lavoro quotidiana.
+Si fanno in fretta piu parti di una app o piu app insieme in parallelo.
+Serve pero un grande sforzo di disegno dell'hardware interno,
+rispetto a una scatola semplice con un solo processore centrale.
+Per l'utente resta piu semplice lanciare app complesse e pesanti,
+specie con fili di esecuzione multipli su piu unita insieme in parallelo.
+Cosi si separano i compiti e si riducono attese e conflitti tra unita.
+
+Con il silicio economico la potenza a basso prezzo e cresciuta molto.
+PC e stazioni base migliorano in fretta in schede, piastre e dischi,
+con prezzi in calo costante anno dopo anno per gli acquirenti.
+Si fa strada l'idea di unire piu PC in gruppo parallelo di lavoro
+come alternativa valida alle macchine uniche di fascia altissima.
+Ma unire piccoli PC in un solo motore di resa non e come avere
+memoria condivisa dentro un unico armadio compatto e coerente.
+Il gruppo crea un ambiente eterogeneo con PC legati in rete locale,
+di solito con schede di rete comuni molto piu lente del bus interno.
+Servono quindi programmi esterni per gestire e dividere i dati,
+mentre nella macchina unica tutto e automatico e trasparente.
+Oggi i gruppi di PC restano comunque motori efficaci per resa,
+vista e dialogo in molte installazioni immersive di uso reale.
+
+La differenza vera e nella sincronia nativa tra le parti del sistema.
+Nella macchina unica i dati passano da soli con bus veloce interno.
+Nel gruppo i dati passano per rete tra scatole separate e distinte.
+La rete introduce ritardi e velocita media piu bassa del potenziale
+delle singole schede prese da sole fuori dal gruppo di lavoro.
+Serve sopra il sistema un programma che divide e condivide i dati.
+Bisogna curare topologia di rete, fette di dati comuni tra nodi
+e bilanciamento dinamico del carico tra macchine accese in scena.
+Il coordinatore non vale per ogni app da solo in automatico,
+ma va riconfigurato a ogni cambio di lavoro e di scena da mostrare.
+
+La macchina unica nasconde tutto con parti dedicate costose,
+ma crescere costa molto in nuove schede e nuove licenze interne.
+Il gruppo punta a pari prestazioni con risorse semplici e aperte.
+I pregi del gruppo spiegano la diffusione anche fuori dal virtuale,
+ovunque serva molto calcolo continuo su grandi archivi di dati.
+Primo il prezzo basso con pezzi standard facili da trovare in negozio.
+Seconda la modularita con nodi che entrano ed escono senza fermi,
+per alzare o cambiare potenza aggiungendo una scatola alla volta.
+Ogni PC ha processore, memoria e grafica propri dentro il case,
+quindi il tutto scala meglio di catene strette che condividono
+bus, memoria e ingressi uscite su una sola piastra madre unica.
+Aggiungendo nodi crescono in linea calcolo, memoria e rete totale.
+Di solito vi e un centro che guida e molti serventi che eseguono.
+Per teli multipli l'immagine intera si taglia in fette per limiti fisici
+degli schermi, una fetta per ogni servente con proiettore dedicato.
+Sul centro stanno sistema, app e guida con divisione e sincronia dati.
+Il centro da dati, allinea i conti e permette il volo libero in scena.
+Ogni servente calcola solo la sua fetta ancorata al mondo visibile
+con funzione di trasformazione adatta al suo telo di competenza.
+Cosi i conti corrono in parallelo su tutti i nodi accesi insieme.
+Dati da mostrare e immagini in corso restano separati con ordine,
+con centro che guida e nodi di ingresso che leggono mani e testa.
+I dati viaggiano con scambio di messaggi sulla rete locale interna.
+Per una nitidezza media da ufficio il flusso per foto intera
+vale solo pochi megabyte variabili secondo scena e compressione.
+
+La composizione di una foto chiede passi su nodi diversi in catena.
+La rete carica poco i processori e le schede toccano poco la rete.
+In sintesi i passi sui dati sono lettura dal grafo di scena centrale,
+riduzione di mole, invio in rete locale, ritorno a mole piena
+e scrittura dei punti nel grafo del servente di competenza.
+Per bilanciare si puo tagliare ancora in sotto fette piu piccole.
+Con teli multipli le fette si uniscono diretto sugli schermi vicini,
+senza rileggere e ricucire tutto in un unico punto centrale di lavoro.
+Con schermo unico serve invece ricucire prima in una sola foto
+e portare poi i dati cuciti nel punto centrale di uscita video.
+La forma con centro e serventi distribuisce i conti fisici in rete
+e accelera la simulazione per prove a grandezza naturale vera,
+punto chiave per giudicare modelli solidi con mano e occhio vicini.
+
+Il gruppo puo avere molti nodi e forme a piacere secondo programmi,
+con nodi speciali per ingressi, conti app, resa o servizi di aiuto.
+La cura dei programmi di guida resta decisiva per il successo pratico.
+Servono dialoghi facili con ingressi dentro e fuori dal gruppo stesso.
+I nodi non restano uguali ma si differenziano per compiti precisi.
+Serve leggere ingressi, curare codice app, fare resa e servizi vari.
+Serve grafica su teli multipli con ritmo di circa trenta volte al secondo
+per scene credibili e confortevoli per occhi e testa degli utenti.
+La resa parallela riesce se i nodi sono speciali, equilibrati e sincroni,
+cosi tutte le fette nascono nello stesso istante allo stesso comando.
+Il futuro punta a guide dati sempre piu rapide e trasparenti in rete.
+
+Per sale grandi la stazione unica deve avere processori paralleli
+programmabili con memoria condivisa o distribuita tra i banchi interni,
+con molti processi insieme senza colli di bottiglia tra le unita.
+Serve dialogo rapido tra processori con minimo ritardo interno possibile.
+Una sola app deve poter usare tutti i processori insieme in parallelo,
+ripartendo la catena grafica a fette sui processori liberi in quel momento.
+Una famiglia nota di supercalcolatori grafici andava da pochi
+processori fino a molte decine, con da poche a decine di catene grafiche.
+Per sale con molti canali a grandezza vera servono tante schede
+quanti sono i canali di proiezione accesi insieme in parallelo.
+Per unire piu catene su una sola uscita servono moduli detti compositori,
+snodi flessibili e programmabili tra schede grafiche vicine in macchina.
+
+In sintesi per ricerca con molto codice fatto in casa e sedi sparse
+conviene il gruppo di PC per prezzo e flessibilita di prova continua.
+Per produzione stabile con flussi fissi e tempi stretti di consegna
+puo convenire la stazione unica gia provata e collaudata in campo.
+Il giudizio puo invecchiare in fretta con nuove schede innovative
+che cambiano prezzi e prestazioni nel giro di pochi mesi di mercato.
+
+Errore tipico: credere che basti aggiungere PC per andare piu forte.
+Senza rete curata, fette bilanciate e sincronia allo stesso istante
+i nodi si ostacolano e la scena resta lenta e non allineata tra teli.
+
+3. SOLUZIONI INNOVATIVE
+--------------------------------------------------
+
+Oltre alle vie classiche vi sono proposte nuove da aziende leader
+di grafica avanzata per postazioni e sale di visualizzazione immersiva.
+Con schede di ultima generazione la vista solida non dipende
+piu dalla potenza di una sola catena grafica isolata nel case.
+Una proposta unisce piu schede sulla stessa piastra madre
+per la stessa vista con bus video dedicato interno ad alta banda.
+Vale su macchina multicanale singola e anche su gruppo in rete.
+Con una sola interfaccia si aggiornano driver e nitidezze,
+si richiamano profili utente e si avviano periferiche e app grafiche.
+Un modulo apposito lega le unita in catena logica unica ordinata,
+con scelta via programma di modi di unione senza toccare i cavi.
+
+Il costo resta alto come per ogni novita appena uscita sul mercato,
+anche se sotto le stazioni uniche piu costose di fascia altissima.
+La gara tra produttori promette cali rapidi dei prezzi nei prossimi anni.
+
+Due novita di rilievo sono un sistema visivo esterno compatto
+e nuove stazioni con processori doppi e schede grafiche recenti.
+Il sistema esterno si lega a stazioni e server comuni per grafica spinta.
+Sta fuori dal case e usa piu processori grafici insieme in parallelo.
+I modelli coprono da quattro a otto uscite video con memoria
+totale di pochi gigabyte per foto intere ad alta nitidezza di sala.
+Le nuove stazioni uniscono sistema aperto e sistema diffuso da ufficio,
+processori doppi a sessantaquattro bit per calcoli pesanti continui,
+schede recenti anche con sistema esterno citato sopra in opzione
+e memoria fino a qualche decina di gigabyte per scene molto grandi.
+
+Esempio riscritto: si pensi a un laboratorio che prova una cabina
+di un carrello per logistica con quattro teli intorno al posto guida.
+Con modulo esterno si pilotano tutti i teli da una sola stazione
+senza cablare armadi complessi e senza fermi lunghi di taratura.
+Con stazioni nuove si tiene tutto il progetto in locale a basso costo
+e si cambia risoluzione al volo per prove con clienti diversi in giornata.
+
+Il successo dipende dal software che deve usare le nuove risorse.
+Senza app aggiornate le schede restano ferme sotto il potenziale reale.
+
+Errore tipico: comprare hardware nuovo senza adeguare i programmi.
+Senza driver curati e app parallele la potenza resta sulla carta
+e la sala va piano come con le macchine precedenti piu semplici.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Resa come passaggio da solidi con luci a foto piana in prospettiva.
+- Mondo immersivo chiede scene leggere e ritmo di circa due decine al secondo.
+- Scelta tra stazione unica condivisa e gruppo di PC in rete locale.
+- Stazione unica facile da programmare ma cara da far crescere nel tempo.
+- Gruppo di PC economico e modulare ma chiede rete e sincronia curate.
+- Centro che guida e serventi per fette con proiettori dedicati ai teli.
+- Fette unite su teli multipli, ricucite al centro per schermo unico.
+- Teli multipli e fusione bordi alzano molto il carico di calcolo.
+- Moduli esterni e stazioni nuove per molte uscite con poca complicazione.
+- Senza software parallelo e driver aggiornati la potenza resta inutilizzata.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Il motore di resa in un mondo immersivo deve:
+a) solo stampare testi senza immagini b) aggiornare ambiente, togliere fuori vista e mostrare in prospettiva c) spegnere luci e prospettiva per sempre d) bloccare ogni interazione con gli oggetti
+
+2. Per moto fluido e confortevole serve:
+a) una sola foto ferma per tutta la visita b) scene leggere e ritmo di circa due decine di immagini al secondo c) scene pesantissime senza alcun taglio d) schermo spento durante il movimento
+
+3. La stazione unica condivisa e forte perche:
+a) nasconde complessita con memoria e risorse viste in comune b) non ha processori ne memoria interna c) vieta ogni programma parallelo d) funziona senza alcun sistema operativo
+
+4. Il gruppo di PC in rete chiede soprattutto:
+a) nessun cavo e nessuna regola b) divisione in fette, rete curata e sincronia allo stesso istante c) un solo PC acceso e gli altri spenti d) scene senza alcuna divisione del lavoro
+
+5. Con teli multipli rispetto a schermo unico vale che:
+a) le fette si uniscono sui teli senza ricucitura centrale b) serve sempre ricucitura centrale anche con molti teli c) non serve alcun proiettore dedicato d) basta un telefono senza grafica
+
+6. Le soluzioni nuove con moduli esterni servono a:
+a) pilotare molte uscite con gestione semplice da una interfaccia b) togliere ogni scheda grafica dal sistema c) impedire cambi di risoluzione e profili d) fermare ogni aggiornamento dei programmi
+
+Soluzioni ragionate
+
+1 — b. Aggiorna, scarta fuori vista e mostra con luci e prospettiva. La a) resta solo testo, la c) toglie luci utili, la d) nega interazione viva.
+
+2 — b. Leggerezza e ritmo costante danno fluidita e comfort. La a) resta ferma, la c) appesantisce e scatta, la d) spegne la vista in moto.
+
+3 — a. Memoria e risorse comuni semplificano codice e controlli. La b) nega parti presenti, la c) vieta parallelo, la d) nega sistema necessario.
+
+4 — b. Fette equilibrate con rete e sincronia danno velocita vera. La a) nega rete curata, la c) spegne i nodi utili, la d) nega divisione del carico.
+
+5 — a. Su teli multipli ogni fetta va al suo proiettore diretto. La b) vale per schermo unico, la c) toglie proiettori, la d) cambia del tutto apparato.
+
+6 — a. Molte uscite con driver e profili da un solo pannello semplice. La b) toglie schede, la c) blocca cambi utili, la d) ferma programmi necessari.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

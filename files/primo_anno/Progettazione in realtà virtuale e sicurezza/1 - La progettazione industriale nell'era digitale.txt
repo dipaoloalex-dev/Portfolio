@@ -1,0 +1,273 @@
+[plain-text per Pages — da 1 - La progettazione industriale nell'era digitale.md]
+
+1. REALTA' VIRTUALE-ALCUNE DEFINIZIONI
+--------------------------------------------------
+
+La realtà virtuale si può descrivere come un insieme di tecniche che costruiscono
+al calcolatore un mondo credibile in cui una persona si muove e agisce come nella
+vita quotidiana. Nasce come sviluppo della grafica e animazione al computer, che
+in pochi anni ha trasformato il calcolatore da terminale di sole scritte a
+strumento capace di mostrare forme, colori e movimenti.
+
+L'idea di fondo sfrutta un fatto umano: vediamo in tre dimensioni, riconosciamo
+le forme quasi subito e da bambini impariamo a toccare e spostare oggetti. Se il
+mondo sintetico si comporta in modo atteso, l'utente riusa le abilità di tutti i
+giorni senza dover imparare gesti innaturali.
+
+In letteratura esistono varie formulazioni, tutte centrate sugli stessi punti:
+un ambiente creato dal computer, percepito dai sensi, immersivo, che reagisce
+in tempo reale a ciò che fa l'utente e dà la sensazione di stare altrove
+controllando con il proprio comportamento ciò che accade. Da queste idee segue
+che un'applicazione si dice di realtà virtuale quando usa immagini 3D, risponde
+in modo interattivo e può accogliere più partecipanti.
+
+Sul piano pratico restano i concetti di scena, punto di vista dell'osservatore e
+parte visibile. Le due novità specifiche sono immersività e interattività.
+L'immersività allontana dal mondo reale con schermi o caschi di visualizzazione.
+L'interattività produce immagini nuove nell'istante in cui servono, a differenza
+di un'animazione preregistrata per il cinema, anche molto curata. L'utente esplora
+e partecipa seguendo regole di interazione, anche se il mondo sintetico non
+rispetta peso o inerzia reali. Concettualmente appositi sensori leggono dove si
+trova la testa e allineano la vista virtuale, così ogni movimento aggiorna subito
+il punto di osservazione e nasce la sensazione di essere dentro la scena.
+
+Esempio riscritto: si pensi a un tecnico che ispeziona una sala macchine
+virtuale per addestramento. Ruota la testa a sinistra e la vista ruota con lui,
+avanza di un passo e lo scenario scorre, afferra una valvola con un guanto
+strumentato e la valvola risponde. Se invece guardasse un filmato preregistrato
+della stessa sala, non potrebbe cambiare inquadratura né toccare nulla.
+
+Sul piano tecnico, per tenere il flusso intorno a 20 immagini al secondo, limite
+sotto cui l'occhio nota gli scatti, oggi si rinuncia ai metodi più pesanti di
+fotorealismo puro. Servono quindi sia scheda grafica sia processore centrale
+adeguati, e non tutte le applicazioni chiedono la stessa potenza. Per rendere
+credibile anche la presenza del corpo dell'utente, detta proprio-percezione, si
+usa un doppio digitale chiamato avatar, che può andare da una ricostruzione
+dettagliata con scanner a una mano semplificata o a un solo segnalino. Servono
+perciò rilevatori di posizione nello spazio e sensori di gesti di mani e dita,
+molto più ricchi di mouse e tastiera, ma con il problema aperto di gestire bene
+tante informazioni con un'interfaccia davvero efficiente.
+
+Errore tipico: confondere un'animazione 3D non interattiva con realtà virtuale,
+oppure credere che basti il fotorealismo. Senza risposta immediata ai movimenti
+e senza immersione non si ha realtà virtuale, anche se le immagini sono belle.
+
+2. LA PROGETTAZIONE DIGITALE
+--------------------------------------------------
+
+A metà anni Novanta un grande aereo di linea è stato il primo velivolo interamente
+progettato e preassemblato al computer, senza alcun modello fisico. L'esperienza
+mostrò due fatti poi diventati regola: il digitale taglia i tempi e alza la qualità,
+e spinge l'automazione molto avanti. Con un modellatore 3D interattivo i tecnici
+videro i pezzi a schermo, ne simularono il montaggio e corressero disallineamenti
+e interferenze, dimezzando tempi, errori e rilavorazioni rispetto alle procedure
+precedenti.
+
+Esempio riscritto con dati diversi: una grande casa auto che negli anni Novanta
+impiegava oltre quaranta mesi dallo stile al primo veicolo scese sotto i venti mesi
+dopo la digitalizzazione spinta. Un marchio europeo realizzò in meno di venti mesi
+una nuova berlina media, stile compreso, fase che prima da sola assorbiva quasi
+dodici mesi. Oggi nella prima fase auto tutto è digitale: singoli pezzi e assiemi
+sono modellati in CAD 3D e verificati insieme per trovare conflitti, e si rivede la
+geometria prima di costruire qualsiasi prototipo fisico.
+
+In senso ampio, per progettazione digitale si intende un percorso dall'idea
+all'opera condotto con mezzi digitali, con tre condizioni compresenti: modelli
+tridimensionali usati come strumenti di conoscenza, simulazione e prototipazione e
+non come semplice disegno; hardware grafico di nuova generazione con
+visualizzazione ombreggiata modificabile in tempo reale accanto alle viste
+tradizionali; definizione chiara degli usi del modello e strumenti adatti per
+crearlo, analizzarlo e presentarlo nelle revisioni di progetto.
+
+Le conseguenze sono profonde. Si superano sia i limiti del disegno analogico sia
+quelli della prima informatizzazione fatta di elenchi e testi, inadatti a contenuti
+spaziali e multimediali. Non si ha solo un aiuto al disegno, ma tutto il
+ragionamento passa in digitale su un modello sempre accessibile nello spazio e nel
+tempo, utile anche a chi non è specialista. I dati numerici restano sullo sfondo e
+guidano il lavoro i meccanismi legati a ciò che si vede. Si separano così fare e
+vedere: sul foglio classico disegnare e guardare coincidevano, mentre ora lo
+schermo mostra e altri strumenti creano, come mouse e tastiera.
+
+Il modello digitale rende il progettista di nuovo anche costruttore, perché contiene
+anche il codice per macchine a controllo numerico e processi automatici. Cadono le
+barriere tra idea creativa, ingegnerizzazione, verifica di fattibilità ed esecuzione.
+Mettere i modelli in serie permette di raccontare in 3D sistemi spaziali come
+edifici o prodotti. La vista tridimensionale migliora definizione, ordine e
+recupero delle informazioni, descrive ogni manufatto come insieme di parti con un
+vocabolario preciso e funziona da interfaccia intuitiva verso testi, immagini,
+disegni 2D, audio e video, da scala edilizia a scala geografica con mappe con
+collegamenti o navigatori 3D in tempo reale.
+
+La simulazione è manipolare il modello nello spazio e nel tempo per far emergere
+interazioni nascoste. Si procede per cicli: si costruisce, si prova, si corregge, si
+aggiorna e si riprova fino a capire abbastanza. Il digitale rende il ciclo rapido,
+economico e possibile anche dove il modello fisico non arriva. L'obiettivo non è
+tanto la bella immagine da cinema o la sola verifica di forma e struttura, quanto
+un prototipo virtuale modificabile molte volte, simile al reale per comportamento
+e prestazioni, prima topologiche e geometriche che fotografiche.
+
+Errore tipico: pensare che progettazione digitale significhi solo disegnare in CAD
+più in fretta. Il salto è valutare con numeri ciò che prima era solo qualitativo e
+rendere continuo e visivo ciò che prima era campionato.
+
+3. INDUSTRIA 4.0
+--------------------------------------------------
+
+Il nome indica la quarta rivoluzione industriale: il digitale collega la produzione
+in verticale dentro il singolo processo e in orizzontale tra processi diversi, con un
+dialogo uomo-macchina più snello per accorciare il tempo fino al mercato.
+
+Il prototipo virtuale, detto anche modello digitale di assieme, è la simulazione al
+computer di un prodotto fisico da mostrare, analizzare e provare lungo tutto il
+ciclo di vita, da disegno e ingegneria a fabbricazione, assistenza e riuso.
+Costruirlo e provarlo si chiama prototipazione virtuale. In pratica è una
+rappresentazione 3D manipolabile in tempo reale in geometria, superfici e
+comportamento, che per sostituire la maquette richiede anche un buon modello di
+interazione persona-prodotto. Serve a esplorare alternative, a fare verifiche
+ingegneristiche e produttive e a simulare gestione e domanda. Un uso tipico è
+l'analisi ingegneristica al computer, come calcoli strutturali agli elementi finiti,
+fluidodinamica e verifiche di resistenza.
+
+Esempio riscritto con dati diversi: nell'auto le analisi di carrozzeria con metodi
+numerici e processori potenti hanno quasi eliminato i crash reali, fatti con modelli
+non lineari agli elementi finiti. Strumenti di ottimizzazione in tempo reale hanno
+permesso a un costruttore europeo di passare da oltre tre mesi di analisi classiche
+a circa tre settimane per modello e verifiche di urto, con tempi più corti e
+maggiore sicurezza. Una volta fissati requisiti, forme e impaginazione, si costruisce
+il primo digitale e si arriva alla soluzione con famiglie parametriche simili,
+arricchite fino a diventare un archivio 3D integrato che governa tutto il progetto.
+
+Il modello 3D è così diventato il centro del sistema informativo, non più un corpo
+unico visto da più lati ma un insieme di parti, ognuna mostrabile in più modi e con
+attributi geometrici, materici e costruttivi secondo ciò che serve leggere. Da qui
+nomi diversi per scala: gestione del ciclo di vita del prodotto per l'oggetto,
+modellazione informativa per l'edificio, sistemi informativi geografici per il
+territorio. Il punto di partenza è documentare bene il progetto con un archivio 3D
+ordinato e aggiornabile, organizzato per elementi costruttivi e modi di unirli.
+Nel prodotto industriale tale gestione segue l'intero ciclo da concezione a
+smaltimento e collega clienti, venditori e risorse interne con strumenti per
+relazioni, forniture e pianificazione. Una sua parte cura i dati di prodotto lungo
+sviluppo e vita ed è la più utile al progettista. I vantaggi sono lancio più rapido,
+migliore qualità, meno prototipi fisici, riuso dei dati e ingegneria integrata. Il
+cuore è creare e gestire in un solo luogo tutti i dati con strategie e software per
+accedervi. Non è solo software ma anche metodo collaborativo dove progetto,
+marketing, vendite, fabbrica, rete e clienti lavorano sugli stessi dati.
+
+Errore tipico: ridurre Industria 4.0 a fabbrica più automatizzata. Il punto è
+l'integrazione informativa verticale e orizzontale con prototipi virtuali al centro.
+
+4. REVERSE MODELLING
+--------------------------------------------------
+
+Come disegno ed esecuzione, anche rilievo e progetto si sono spesso intrecciati.
+Design e architettura hanno sempre guardato a forme esistenti per inventarne di
+nuove, ma raramente hanno preso l'esistente come base diretta da rielaborare, per
+la lentezza del rilievo, l'inutilità di semplici disegni 2D per design e restauri,
+o il cambio di tecniche che rende difficile ricostruire come prima. Il passaggio ad
+analogico a digitale ha cambiato poco all'inizio, anche se in industria si è
+codificato come ricavare un 3D da dati reali.
+
+La modellazione inversa ricostruisce la geometria di un oggetto. Le fonti possono
+essere pezzi fisici, file di modellazione, percorsi di fresatura, acquisizioni con
+luce naturale o proiettata, macchine di misura a coordinate o file per
+stereolitografia. Il modello ottenuto si riusa nel progetto digitale per
+modificarlo, completarlo, analizzarlo o costruirlo, tutto o in parte. Di solito si
+misura con scanner o fotogrammetria, si ottiene una nuvola di punti 3D e sopra si
+costruisce una rete di triangoli che li collega. Se esiste già un digitale, il lavoro
+diventa un aggiornamento dimensionale per la prototipazione.
+
+Casi utili riscritti con esempi diversi: copiare in digitale schizzi e modelli fatti
+a mano; rifare un pomello rotto senza disegni; archiviare pezzi nati prima dei
+modellatori; aggiornare il progetto dopo modifiche fatte sul fisico; rilevare lo
+stato costruito senza 3D; rifare gli esecutivi dopo una realizzazione difforme;
+cambiare sistema di tolleranze per nuovi stampi. Con questi metodi non si parte da
+zero ma da una massa di dati grezzi verso il modello finito, controllando a video
+lo scarto tra punti e superfici e seguendo percorsi simili a come si produrrà
+l'oggetto, ben oltre il semplice piazzare triangoli.
+
+Le fasi riscritte con casi diversi: idea con modelli in creta o resina; progetto
+con digitalizzazione di una maquette riusabile; prototipo con meno esemplari
+grazie a misure 3D; ingegneria con passaggio diretto dal pezzo misurato;
+produzione con trasferimento di ritocchi manuali per verifica; qualità con
+confronto tra costruito e previsto. Il cuore è rendere facile la modifica con
+primitive geometriche gestibili nel modellatore. Oltre alla sistemazione dei punti,
+c'è la costruzione di superfici che richiede sensibilità artigianale: rendere liscia
+una zona continua, curare i cambi di curvatura, cambiare metodo per pelli diverse,
+giudicare a occhio e al tatto. Serve quindi atteggiamento progettuale creativo e
+non solo prestazionale.
+
+Errore tipico: credere che basti unire i punti con triangoli. Senza superfici ben
+costruite e modificabili il modello non serve al progetto e resta solo una bella
+scansione.
+
+Concetti chiave da ricordare
+----------------------------
+
+- La realtà virtuale unisce immagini 3D, interazione immediata e più utenti.
+- Immersività allontana dal reale, interattività risponde subito ai gesti.
+- Servono circa 20 immagini al secondo, quindi grafica e processore adeguati.
+- Avatar e sensori danno presenza e gesti oltre mouse e tastiera.
+- Il digitale dimezza tempi ed errori e unisce idea, ingegneria e fabbricazione.
+- Progettazione digitale significa modelli 3D conoscitivi, grafica interattiva e usi definiti.
+- Il prototipo virtuale sostituisce la maquette lungo l'intero ciclo di vita.
+- Industria 4.0 integra processi in verticale e orizzontale intorno ai dati 3D.
+- La modellazione inversa parte da misure reali verso un modello modificabile.
+- Senza superfici ricostruite con criterio il rilievo resta inutilizzabile.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. Un'applicazione si dice di realtà virtuale se:
+a) mostra immagini 3D preregistrate senza interazione · b) è interattiva con immagini 3D e può avere più partecipanti · c) è solo un disegno 2D su schermo · d) funziona senza alcun calcolo in tempo reale
+
+2. La differenza tra immersività e interattività è che:
+a) sono la stessa cosa · b) la prima astrae dal reale con visori o schermi, la seconda aggiorna subito le immagini su richiesta · c) la prima riguarda solo l'audio · d) la seconda impedisce di navigare
+
+3. Perché spesso si rinuncia al massimo fotorealismo in tempo reale?
+a) perché non piace agli utenti · b) per garantire circa 20 immagini al secondo con hardware sostenibile · c) perché i sensori lo impediscono · d) perché il 3D non serve
+
+4. Nella progettazione digitale un modello 3D è soprattutto:
+a) una bella vista da archiviare · b) un sistema conoscitivo, simulabile e prototipabile · c) una scansione non modificabile · d) un disegno 2D stampato
+
+5. Il prototipo virtuale serve a:
+a) sostituire le prove lungo il ciclo di vita con simulazioni modificabili · b) evitare qualsiasi verifica · c) costruire subito stampi senza dati · d) fermarsi all'idea senza ingegneria
+
+6. La modellazione inversa parte da:
+a) un foglio bianco senza misure · b) misure reali come nuvole di punti da trasformare in modello modificabile · c) sole immagini pubblicitarie · d) soli testi senza geometria
+
+Soluzioni ragionate
+
+1 — b. Servono tutti e tre i requisiti insieme. La a) manca di interazione, la c) manca di 3D e immersione, la d) nega il calcolo istantaneo.
+
+2 — b. Definizioni corrette per ruolo. La a) le confonde, la c) restringe al solo audio, la d) rovescia il concetto di navigazione attiva.
+
+3 — b. Il collo di bottiglia è il flusso rapido con grafica e processore adeguati. La a) è soggettiva, la c) confonde cause, la d) contraddice tutto il percorso digitale.
+
+4 — b. Conoscenza, simulazione e prototipazione iterativa sono il punto. La a) lo riduce ad archivio, la c) nega la modificabilità, la d) torna al 2D.
+
+5 — a. Simula geometria, superfici e comportamento in tempo reale lungo design, fabbrica e assistenza. La b) elimina le verifiche, la c) salta i dati, la d) si ferma all'idea.
+
+6 — b. Da laser o fotogrammetria a rete di triangoli e poi a superfici utili in modellazione. La a) descrive il progetto tradizionale, c) e d) non danno geometria misurata.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

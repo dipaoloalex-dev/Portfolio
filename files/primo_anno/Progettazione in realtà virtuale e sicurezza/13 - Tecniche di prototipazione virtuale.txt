@@ -1,0 +1,275 @@
+[plain-text per Pages — da 13 - Tecniche di prototipazione virtuale.md]
+
+1. PROBLEMATICHE CONNESSE ALLA SCELTA DEL SOFTWARE DI RV
+--------------------------------------------------
+
+Un buon programma immersivo, oltre a mostrare viste solide,
+deve centrare obiettivi precisi, usare bene macchina e schermi
+e parlare con mani e sensi come tracciatori, guanti e tatto.
+La prima domanda e cosa ci si deve fare davvero dentro.
+Per industria si va da stile e idee alternative a ergonomia,
+da manutenzione e montaggi a tolleranze, urti e linee di lavoro.
+Un tempo servivano molti programmi diversi uno per uso preciso.
+Oggi le case uniscono tutto in pacchetti per l'intero ciclo di vita,
+dal primo schizzo alla gestione del prodotto venduto e assistito.
+
+Questa unione semplifica lo scambio dati con formati neutri interni,
+ma chiude gli ambienti perche da meno interfacce aperte agli utenti.
+Per questo molti laboratori costruiscono strumenti propri su misura,
+con librerie aperte trovate in rete per grafica e interazione libera.
+La scelta non puo ignorare macchina di calcolo e schermi di sala.
+Un tempo il disegno tecnico girava su stazioni dedicate storiche,
+perche i personal comuni non avevano potenza grafica sufficiente.
+Con processori e schede moderne piu forti e piu facili da usare,
+lo sviluppo si sposta su sistemi aperti diffusi da ufficio e laboratorio.
+
+Se basta un solo canale di proiezione il programma e semplice.
+Se servono tre teli insieme senza schede speciali di fusione,
+serve programma multicanale che divida le viste per ogni telo.
+In pratica un centro guida piu due serventi in rete locale coprono
+tre proiezioni con fette inviate istante per istante ai proiettori.
+Una via con fusione integrata usa una sola macchina potente,
+ma chiede proiettori e schede dedicati poco diffusi in sede media.
+Altre vie con piu schede in parallelo sullo stesso personal nuovo
+promettono alternative ai gruppi, ma sono ancora poco provate.
+
+I gruppi di PC sono maturati solo negli ultimi anni di mercato.
+Con schede recenti arrivano a prestazioni pari alle stazioni costose,
+anche se prove mostrano ancora piu instabilita nei gruppi aperti.
+Per questo chi fa solo virtuale tiene ancora i sistemi storici chiusi,
+anche se per pochi anni prima del passaggio totale ai sistemi aperti.
+Molti programmi nati su storico sono arrivati dopo sugli aperti,
+e non tutti gestiscono gruppi in versione commerciale standard.
+Con ambienti di sviluppo aperti si puo comunque aggiungere la funzione.
+
+Conta anche quanti processori il programma sa usare in parallelo.
+Stazioni storiche e personal nuovi possono avere piu unita centrali.
+Senza codice capace di dividerci i conti la potenza resta ferma.
+I programmi nati su storico dividono bene i carichi tra unita.
+Sugli aperti la divisione e piu rara e va verificata prima in prova.
+
+La scelta dipende anche dai dispositivi da collegare in laboratorio.
+Se serve un solo uso con un solo programma conviene comprare
+prima il programma e poi i pezzi compatibili con esso in elenco.
+Se servono molti usi con programmi diversi il quadro e complesso.
+Bisogna incrociare tracciatori, guanti, minicloche e schermi
+senza occhiali con cio che ogni programma supporta davvero.
+
+I programmi immersivi sono di quattro famiglie principali utili.
+Prima i modellatori tecnici che fanno anche prove sul gemello digitale
+in immersivo con moduli collegati per prodotto e fabbrica virtuale.
+Seconda i simulatori umani con manichini digitali per ergonomia
+in immersivo per posture, sforzi e raggiungibilita dei comandi.
+Terza le app dedicate solo al virtuale per visite e verifiche in scena.
+Quarta le app interne non in vendita fatte per un solo progetto,
+la famiglia piu numerosa e difficile da censire tra aziende e centri.
+
+Esempio riscritto: si pensi a una piccola azienda di cucine componibili.
+Deve scegliere tra pacchetto unico per stile, ante e montaggio
+e tre strumenti separati per disegno, ergonomia e linea di montaggio.
+Se prende il pacchetto unico risparmia scambi ma si lega a un formato.
+Se prende strumenti aperti spende meno ma deve curare ponti e driver.
+Con un solo telo in sala prove basta un personal medio recente.
+Con tre teli per cucina a grandezza vera serve gruppo con centro e serventi.
+
+Errore tipico: comprare prima schermi e guanti senza programma.
+Senza accordi tra multicanale, sistema operativo e driver di tracciamento
+i pezzi restano fermi e il laboratorio non apre mai al lavoro vero.
+
+2. SISTEMI PLM
+--------------------------------------------------
+
+Fare virtuale significa costruire spazi che cambiano nel tempo.
+E la persona che definisce stanze e percorsi con nodi di passaggio.
+Dall'idea del prodotto si e passati a manutenzione e accessi facili.
+Il limite resta il supporto informatico che regge la scena intera.
+Le tecniche di forme e di dialogo crescono con hardware nuovo.
+Prima bastava geometria pura per copiare l'aspetto esterno visto.
+Poi si aggiungono legami funzionali tra parti del sistema in uso.
+Oggi una app immersiva e complessa e chiede codice avanzato e curato.
+
+Il gemello virtuale aiuta molto il progetto fin dalle prime bozze.
+Tiene forma e funzioni del prodotto in un unico modello coerente.
+Per rigidi lo sviluppo e maturo e affidabile in azienda da anni.
+Per deformabili resta ancora strada da fare con prove e modelli.
+Si studiano forme che cambiano sotto sforzi e calori reali in scena.
+La simulazione deve dare fenomeni coerenti con fisica vera misurata,
+non solo apparenza gradevole senza numeri dietro le immagini mostrate.
+Meccanica, calore, campi e fluidi deformano i corpi in modo legato.
+Vanno integrati nel modello per risposte credibili e stabili nel tempo.
+Queste vie basate su fisica restano oggetto di ricerca aperta e viva.
+Presto, unendo disegno tecnico diffuso e nuovi solutori in rete,
+si vedra una macchina cadere per gravita prima di costruirla in ferro.
+Il moto nascera da calcolo corretto e non da mano dell'operatore.
+
+Un buon programma per mondi virtuali ha doti chiare da verificare.
+Prima modellazione semplice con pannelli amichevoli per tutti in sede.
+Poi importazione da molti formati, specie da disegno tecnico in uso.
+Poi vista solida per entrambi gli occhi senza fatica prolungata in prova.
+Poi dialogo con tracciatori e tatto disponibili in commercio corrente.
+
+Tutte le risorse per vita del prodotto si dicono gestione del ciclo.
+Molte aiutano il virtuale come base di dati e di verifiche incrociate.
+Il disegno assistito aiuta a creare, cambiare e ottimizzare progetti.
+Ogni strumento che facilita il disegno definisce forme di oggetti,
+da pezzi meccanici a edifici, da circuiti a veicoli e uffici interi.
+Vi sono sistemi per piano in due dimensioni con linee e quote semplici.
+Vi sono sistemi per volume in tre dimensioni con solidi e superfici.
+
+Un sistema moderno mette in terna punti, linee, curve e piani,
+superfici e solidi piu note di testo per capire le intenzioni del tecnico.
+La ricchezza di dati distingue tre modi di modellare le forme in uso.
+Il primo a fili mostra solo punti e linee come gabbia trasparente.
+Il secondo a pelli aggiunge superfici e lavorazioni sopra i fili di base,
+utili per stampi e lavorazioni a valle del disegno tecnico iniziale.
+Il terzo a solidi chiude volumi senza buchi e dice dove sta materia,
+con dati di materiale inseriti per pesi e verifiche di resistenza.
+Dal disegno nascono percorsi utensile e verifiche di tensioni sui pezzi.
+Vi sono sistemi per meccanica, elettrica e civile e sistemi generali.
+
+Il disegno per stile libero modella pelli morbide per creativi in studio.
+Si tira la forma a video e si vede subito resa, luci e rivestimenti.
+Gli strumenti per ingegneria simulano fisica con tre blocchi in fila.
+Il primo prepara modello, vincoli e carichi agenti sul pezzo in prova.
+Spesso si taglia in piccoli pezzi standard come aste, gusci e mattoni.
+Da poche decine a decine di migliaia secondo dettaglio voluto in scena.
+La rete di pezzi si fa con programmi appositi detti meshators veloci,
+nella fase piu lunga di tutta l'analisi tecnica prima del calcolo vero.
+Il taglio scrive equazioni in forma di matrici ordinate per nodi vicini.
+Il secondo blocco risolve i conti, il terzo mostra e legge i risultati.
+
+Con carichi e vincoli si cerca lo stato di tensione e i punti critici,
+partendo da legge dei materiali usati nel sistema reale da provare.
+Per urti tra mezzi in moto il calcolo diventa dinamico nel tempo,
+con contorni che cambiano a ogni istante della collisione in scena.
+Si aggiunge comportamento plastico oltre quello elastico dei metalli,
+con codici piu evoluti e conoscenza piu fine dei materiali in uso.
+Altre vie coprono fluidi e rumore con vibrazioni e comfort acustico.
+
+Esempio riscritto: si pensi a uno sgabello da bar con seduta morbida.
+Il modello a fili basta per ingombri e altezze al banco di mescita.
+Il modello a pelli serve per curvature e cuciture viste dai clienti.
+Il modello a solidi serve per pesi, viti e prove di carico sul fusto.
+Con solutore a elementi si prova la gamba sotto peso di persona.
+
+Errore tipico: fermarsi a bella forma senza fisica dietro le quinte.
+Senza vincoli, carichi e materiali la scena resta immagine muta.
+
+3. CAMPI DI APPLICAZIONE DEI SISTEMI PLM
+--------------------------------------------------
+
+Gli strumenti per ciclo di vita aprono molti usi nuovi ogni anno.
+Tra i piu promettenti in fabbrica vi sono ergonomia e gemello digitale.
+
+L'ergonomia oggi decide il successo di un prodotto industriale vero.
+Con gestione del ciclo si prova prima della produzione definitiva,
+con risparmi forti di tempi e costi di modifiche tardive in linea.
+Si controllano accessi, prese di comandi, viste dal posto di lavoro,
+posture comode e tempi per manutenzione programmata in sede.
+
+Il gemello digitale simula forme e funzioni al calcolatore di ufficio.
+Da modello intero si valida il progetto senza muletto fisico iniziale.
+Si naviga dentro, si vedono pezzi e si provano funzioni prima di spendere.
+Oggi si usano entrambi, fisico e digitale, con fisico solo a fine prove.
+Con gemello si ottengono modello fisico sostituito dal virtuale in sala,
+tempi piu corti per nuovo prodotto pronto al lancio sul mercato,
+meno modifiche in corso d'opera con fermi e rilavorazioni in officina
+e costi di sviluppo piu bassi come somma dei tre risparmi citati sopra.
+
+Il gemello spinge molto la diffusione del virtuale immersivo in fabbrica.
+Permette cicli di montaggio provati a video passo dopo passo in team,
+giochi tra parti e controllo di interferenze tra solidi vicini in assieme,
+prove di mobilita di sportelli e leve senza prototipi in lamiera vera,
+urti simulati con deformazioni credibili prima dei crash veri costosi,
+foto realistiche per cataloghi e scelte di colori con clienti in sede,
+liste di manutenzione e criteri di sicurezza verificati in scena virtuale,
+moti di cinematismi con leggi orarie corrette per camme e bielle,
+tolleranze di accoppiamento per fori e alberi senza scarti in produzione.
+
+Si puo riassumere in righe di testo con spazi come tabella di verifiche.
+Verifica  Cosa si guarda in scena  Vantaggio pratico per azienda
+Montaggio  Sequenze e attrezzi  Meno fermi in linea di lavoro
+Giochi e interferenze  Spazi tra pezzi  Niente urti a sorpresa in assieme
+Mobilita  Sportelli e leve  Aperture garantite senza tagli
+Urti  Deformazioni e assorbimenti  Sicurezza provata prima delle prove
+Foto catalogo  Colori e luci  Scelte rapide con clienti in sala
+Manutenzione  Liste e accessi  Tempi certi per assistenza programmata
+Cinematismi  Leggi di moto  Sincronismi corretti tra organi in moto
+Tolleranze  Accoppiamenti fori alberi  Scarti ridotti in produzione reale
+
+Esempio riscritto: si pensi a una lavatrice domestica da rinnovare.
+Con gemello si prova oblò, cestello e centralina senza lamiera tagliata.
+Si verifica mano sul filtro, vista sui tasti e schiena in manutenzione.
+Si lancia la foto per volantino prima dello stampo definitivo in acciaio.
+
+Errore tipico: tenere fisico e digitale separati senza dialoghi tra loro.
+Senza andata e ritorno tra sala virtuale e banco reale di fine prove
+i benefici di tempi e costi si perdono tra modelli non allineati.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Scelta tra pacchetto unico per ciclo e strumenti separati per ogni uso.
+- Macchina, schermi e dispositivi guidano la scelta piu del prezzo solo.
+- Un canale semplice, tre teli insieme con centro piu serventi in rete.
+- Quattro famiglie tra disegno, manichini, solo virtuale e interni su misura.
+- Gemello con forma e funzioni prima del fisico per prove e decisioni.
+- Fili per ingombri, pelli per stile, solidi per materia e pesi in scena.
+- Blocchi di preparazione, soluzione e lettura per simulazioni fisiche serie.
+- Urti dinamici con plastico contro statico solo elastico per strutture ferme.
+- Ergonomia e gemello per accessi, viste, posture e manutenzione facile.
+- Verifiche di montaggio, giochi, moti, urti e tolleranze prima di spendere.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Per scegliere il programma immersivo conta prima:
+a) solo colore della scatola b) obiettivi, macchina, schermi e dispositivi collegabili c) solo nome alla moda d) nessuna prova in sala
+
+2. Per tre teli insieme senza fusione speciale serve:
+a) solo telefono senza grafica b) programma multicanale con centro e serventi in rete c) schermo spento senza proiettori d) carta stampata senza computer
+
+3. Il gemello digitale serve a:
+a) validare progetto senza muletto fisico iniziale b) vietare ogni prova virtuale c) costruire subito stampi senza dati d) fermare il progetto alla prima idea
+
+4. Tra i modi di modellare vale che:
+a) sono tutti uguali senza differenze b) fili per gabbia, pelli per stile, solidi per materia chiusa c) solidi senza volume ne materia d) fili senza punti ne linee
+
+5. Gli strumenti di simulazione fisica usano:
+a) solo fantasia senza conti b) preparazione, soluzione di matrici e lettura dei risultati c) solo matita senza computer d) nessun vincolo ne carico applicato
+
+6. Con gemello in fabbrica si ottengono:
+a) tempi piu lunghi e costi piu alti b) meno fisico iniziale, tempi corti e meno modifiche c) nessuna verifica di montaggio d) piu scarti e piu fermi in linea
+
+Soluzioni ragionate
+
+1 — b. Obiettivi e compatibilita guidano acquisto utile in sala. La a) guarda scatola, la c) segue moda, la d) nega prove necessarie.
+
+2 — b. Centro e serventi dividono fette ai proiettori in sincrono. La a) non ha grafica, la c) spegne proiezione, la d) torna a carta.
+
+3 — a. Navigazione e prove su intero virtuale prima del fisico. La b) vieta prove, la c) salta dati, la d) ferma alla prima idea.
+
+4 — b. Gabbia, superfici e volumi chiusi per usi diversi in scena. La a) nega differenze, la c) toglie volume, la d) toglie punti e linee.
+
+5 — b. Tre blocchi in fila per modello, conti e viste chiare. La a) resta senza conti, la c) resta senza computer, la d) toglie carichi.
+
+6 — b. Virtuale prima riduce fisico, tempi e modifiche in linea. La a) rovescia i vantaggi, la c) nega verifiche, la d) aumenta scarti e fermi.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

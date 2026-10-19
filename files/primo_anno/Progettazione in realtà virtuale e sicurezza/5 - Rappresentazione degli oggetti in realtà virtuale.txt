@@ -1,0 +1,282 @@
+[plain-text per Pages — da 5 - Rappresentazione degli oggetti in realtà virtuale.md]
+
+1. PROIEZIONI ORTOGONALI-ASSONOMETRIA-PROSPETTIVA
+--------------------------------------------------
+
+Le applicazioni immersive crescono con calcolo e grafica. Nel cinema o nei
+giochi registrati conta soprattutto la bellezza finale e si possono spendere
+ore per una sola immagine. Nel virtuale invece la scena deve essere leggera
+perché il calcolatore la ricalcola mentre l'utente si muove. Nei filmati
+tradizionali si sceglie solo quale pezzo già pronto guardare, nel virtuale si
+genera tutto nell'istante: si sceglie un punto, si prende un oggetto, lo si
+ruota o ridimensiona e si cambia ambiente. Poiché l'occhio trattiene un'immagine
+per circa un decimo di secondo, per un moto fluido servono almeno venti o
+venticinque quadri al secondo, oggi possibili a prezzi accessibili con schede
+accelerate. Un tempo, per risparmiare, si limitavano i quadri a risoluzioni
+molto basse, oggi si arriva senza fatica oltre il milione di punti.
+
+Esempio riscritto: un operaio esplora un banco di lavoro virtuale con una
+turbina. Gira intorno al pezzo, lo ingrandisce per leggere una targhetta e
+cambia colore a una cover. Tutto nasce al momento, non esiste un filmato
+precostruito da mandare avanti e indietro.
+
+Un progetto si divide in geometria, interazione, percezione e
+visualizzazione. Un motore apposito gestisce modifiche della scena, scarto di
+ciò che esce dal cono visivo e disegno finale. Gli oggetti partono in tre
+coordinate e finiscono su schermo piano in due coordinate: ogni punto
+tridimensionale diventa un punto piano.
+
+Le tre vie classiche sono proiezione ortogonale, assonometria e prospettiva.
+Nella prima si tengono solo due delle tre coordinate e si perde la terza, con
+vista dall'alto, di fronte o di lato. Nella seconda si guarda da distanza
+infinita con due angoli di latitudine e longitudine e le misure non cambiano
+con la distanza, quindi l'aspetto resta poco naturale.
+
+Esempio riscritto: per controllare un mobile da officina bastano le tre viste
+ortogonali con quote, mentre per presentarlo al cliente serve la prospettiva
+dove lo spigolo vicino appare maggiore di quello lontano.
+
+La prospettiva tiene conto del calo apparente con la distanza. Dipende da
+distanza tra occhio e foglio di disegno, distanza tra occhio e oggetto, punto
+nello spazio e direzione di sguardo con longitudine e latitudine. Con passaggi
+di rotazione e divisione per la profondità si ottiene il punto piano. Quasi
+tutti gli strumenti immersivi usano questa via con piccole varianti.
+
+Errore tipico: chiedere fotorealismo da filmato e interazione immediata
+insieme su macchine deboli. Bisogna alleggerire la scena per tenere il flusso.
+
+2. LA VISIONE STEREOSCOPICA
+--------------------------------------------------
+
+La distanza si giudica con due occhi. Dopo antiche intuizioni sul vedere doppio,
+nell'Ottocento un fisico inglese costruisce un apparato ottico che dà profondità
+da due viste. Ogni occhio registra da solo forme e colori come una camera: la
+pupilla dosa la luce, il cristallino forma l'immagine sulla retina e il nervo la
+porta al cervello, che fonde le due metà in un'unica scena 3D. Un punto fissato
+appare singolo anche se lascia due tracce separate. Un punto a destra cade sul
+lato nasale di un occhio e su quello temporale dell'altro e viene collocato a
+destra. Ogni zona di retina ha un valore di direzione, così luce e colore hanno
+anche un dove nello spazio visivo. Le zone accoppiate per stessa direzione si
+dicono corrispondenti e fondono.
+
+In realtà gli occhi distano circa sette o otto centimetri, quindi vedono da
+angoli un po' diversi e le immagini non cadono su punti del tutto gemelli. Il
+cervello le unisce lo stesso e usa lo scarto per capire dove stanno le cose: è
+la visione con due viste.
+
+Esempio riscritto: per un piccolo guscio meccanico si scattano due foto
+spostate lateralmente di pochi centimetri con filtri di colore opposto, poi si
+fondono e si guardano con occhiali adatti. Per soggetti enormi come un
+piazzale o minuti come un ingranaggio da orologio si allarga o si stringe la
+base di ripresa, altrimenti l'effetto sparisce.
+
+Per avere 3D bisogna mandare l'immagine destra solo a destra e viceversa, con
+occhi incrociati a occhio nudo su coppie affiancate, con prisma o specchi
+davanti a un occhio per scene grandi, con due specchietti a quarantacinque gradi
+per un solo osservatore frontale nitido, oppure con due colori filtrati da
+occhiali con filtri gemelli. I programmi estendono l'effetto a tutto il quadro
+ricostruendo coppie coerenti e non solo vicino al centro.
+
+Due soluzioni correnti: occhiali attivi con emettitore che alternano quadri
+destri e sinistri e oscurano l'altro occhio in sincrono a infrarossi, con
+macchine veloci perché per venticinque quadri al secondo ne servono cinquanta
+a oltre cento hertz totali; occhiali passivi con lenti polarizzate e vetro
+davanti allo schermo, comodi e con ampio angolo se la frequenza resta alta.
+
+Errore tipico: dare stessa immagine ai due occhi e aspettarsi profondità. Senza
+separazione destra e sinistra non c'è stereo.
+
+2.1 TECNOLOGIE DI TRACCIAMENTO E MANIPOLAZIONE
+--------------------------------------------------
+
+In uno spazio con tre assi ad angolo retto il moto è traslazione lungo gli assi
+oppure rotazione intorno agli assi: tre più tre, quindi sei possibilità per un
+corpo rigido. Per interagire bene serve un puntatore che legga tutti e sei i
+moti e li passi al calcolatore. Il migliore resta la mano, anche se esistono
+mouse volumetrici. Perciò si seguono posizione e orientamento di un sensore
+sulla mano rispetto a ciò che si vede su schermo o casco. Guanti speciali
+leggono anche le singole dita e talvolta restituiscono tocco con piccole
+scosse che stimolano sotto pelle oppure con materiali che si piegano sotto
+tensione, dando la sensazione di stringere davvero.
+
+Le famiglie sono quattro. Meccaniche con braccio snodato e sensori di
+spostamento: ingombranti ma rapidissime, per teleoperazione e guida a
+distanza. Ottiche con telecamere e punti luminosi addosso: calcolano lo
+spostamento da immagini in tempo reale. Sonore con onde e echi come i sonar:
+leggono riflessioni e deviazioni al passaggio. Magnetiche, oggi le più usate:
+una sorgente fissa crea un campo e sensori addosso misurano come si deforma
+con la presenza della persona.
+
+Esempio riscritto: per avvitare un pannello virtuale l'operatore ruota il polso
+e il sistema meccanico segue senza ritardo, mentre per muoversi in un capannone
+virtuale basta la tuta ottica che segue il tronco senza fili.
+
+Le stesse idee valgono per mani, braccia, gambe e testa. Si studiano tute
+intere, ma in commercio restano soprattutto caschi per testa e guanti per mani.
+
+Errore tipico: usare un mouse piano per ruotare nello spazio. Senza sei gradi
+rilevati i gesti restano ambigui.
+
+3. TECNOLOGIE DI PROIEZIONE
+--------------------------------------------------
+
+I proiettori servono per visioni di gruppo o pubbliche. Si giudicano per luce
+emessa, differenza tra bianco e nero, omogeneità su tutto il quadro,
+definizione, peso e rumore. Le tre vie frontali principali sono tubo catodico,
+cristalli liquidi e microspecchi digitali.
+
+3.1 LA TECNOLOGIA CRT
+--------------------------------------------------
+
+Il tubo catodico nasce a inizio Novecento e resta in uso con la televisione
+degli anni Cinquanta e Sessanta. Uno o più fasci colpiscono dentro il tubo uno
+strato che si illumina. La scansione piega i fasci in orizzontale e verticale
+così in fretta da sembrare fissa, oltre circa centodieci gradi non si può
+piegare.
+
+Esempio riscritto: per una sala riunioni con proiettore a tubo si ottiene nero
+profondo spegnendo i fasci sulle zone scure e piena potenza sulle zone chiare.
+
+Ogni punto è fatto di tre microzone che a occhio nudo non si distinguono, una
+rossa, una verde e una blu, accese dai tre cannoni che spazzolano la griglia.
+Una maschera forata manda ogni fascio sulla zona giusta. Le zone possono stare
+a terzetti tondi o a strisce verticali. Mescolandosi nell'occhio danno il colore
+per sintesi nello spazio: cambiando intensità dei tre fasci cambia la tinta.
+Per restare accesa la zona va continuamente alimentata perché la luce dura da
+millesimi di millisecondo fino a pochi secondi. Con movimento meglio durata
+breve, con durata lunga meno tremolio.
+
+Il tubo dà il miglior nero e alto contrasto proprio spegnendo sulle zone scure.
+Regge alta definizione e molte migliaia di ore a piena luce prima di affievolirsi.
+Due varianti sono maschera forata, con scritte nitide e buon rapporto spesa resa,
+e griglia verticale, con meno metallo che scalda, più zona utile e schermo
+cilindrico meno riflettente e più contrastato con tinte scure. Gli schermi piani
+riducono abbagli e deformazioni da curvatura, con cannone a fuoco variabile per
+compensare il vetro piatto.
+
+Errore tipico: lasciare immagini ferme luminose a lungo. Si usura lo strato e
+resta l'alone.
+
+3.2 LA TECNOLOGIA LCD
+--------------------------------------------------
+
+Compare nei primi anni Settanta in calcolatrici, poi orologi e portatili. Usa
+sostanze allungate a bastoncino che scorrono come liquidi ma restano ordinate
+come cristalli. La versione più diffusa è semplice: uno strato tra due vetri
+trattati che allineano le molecole lungo il vetro, ma i due vetri sono ruotati
+di novanta gradi così in mezzo nasce una spirale. Fuori stanno due filtri
+incrociati e nei modelli a luce ambiente uno specchio sotto. Ogni piccola zona
+appare scura o chiara secondo il campo esterno. Con poche zone ognuna ha il suo
+circuito, con molte zone si usa griglia di elettrodi trasparenti per righe da
+un lato e colonne dall'altro e si accende l'incrocio sotto corrente. Il campo
+usa tensione alternata guidata da oscillatore, perché la continua rovinerebbe
+gli elettrodi. Il comando è diretto con poche zone e a scansione con molte.
+
+Esempio riscritto: un termostato da parete con poche cifre usa zone dedicate
+sempre leggibili, un portatile con tanti punti usa griglia riga colonna.
+
+Lo specchio rimanda la luce che entra e le zone la lasciano passare o no, così
+nasce l'immagine finché c'è luce naturale o artificiale. Questi schermi non
+creano luce ma la lasciano o la bloccano, quindi serve lampada propria dentro
+il pannello. Rispetto al tubo sono sottili, consumano meno, non tremolano
+perché le celle restano come devono, hanno geometria perfetta senza errori di
+convergenza e irradiano meno, con meno fatica, mal di testa e insonnia. Il punto
+debole resta il movimento: le celle impiegano tempo ad accendersi e spegnersi,
+molto più lente del fascio e dello strato luminoso classico.
+
+Errore tipico: aspettarsi nero perfetto come nel tubo. Qui il nero dipende da
+quanto bene le zone bloccano la luce propria.
+
+3.3 LA TECNOLOGIA DLP
+--------------------------------------------------
+
+Nasce per più luce e colori più veri delle vie precedenti. La luce è deviata da
+un componente con moltissimi specchietti quadrati su memoria. Ognuno ruota di
+pochi gradi sul perno migliaia di volte al secondo tra riposo verso un
+assorbitore e lavoro verso la lente, così decide un colore in un punto. Ogni
+specchietto ha il suo elettrodo e tutti sono guidati insieme ma indipendenti,
+rapidissimi. Con distanza di circa un micron tra vicini, oltre il novanta per
+cento della luce passa dall'obiettivo e l'immagine è nitida. Una lampada manda
+luce su ruota con i tre fondamentali in rotazione sincrona per tutte le
+combinazioni, poi prisma, chip, ottica e grande schermo.
+
+Il punto forte è la commutazione velocissima, senza scia tipica dei cristalli.
+Lavora per riflessione e non per assorbimento, quindi non degrada il pannello
+nel tempo come l'altra via e basta pulire per tornare come nuovo. Ha colori
+brillanti, contrasto maggiore e quadro stabile con scansione progressiva. E'
+ancora in evoluzione mentre le altre sono al limite. Riducendo lo spazio tra
+specchietti si perderà meno luce e la qualità salirà. Un osservatore sensibile
+muovendo in fretta lo sguardo può vedere bordi con frange dei tre fondamentali,
+detto effetto arcobaleno, che dipende da occhio e da velocità della ruota oltre
+certe soglie.
+
+Errore tipico: avvicinare troppo lo schermo pensando di guadagnare dettaglio.
+Con matrici fisse oltre certa distanza si vedono solo i punti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nel virtuale le immagini nascono al momento e servono venti o più quadri al secondo.
+- Il progetto unisce geometria, interazione, percezione e vista con motore dedicato.
+- La proiezione perde una coordinata, l'assonometria non scala con la distanza, la prospettiva sì.
+- Il cervello fonde due viste diverse per distanza tra occhi e dà profondità.
+- Servono sei gradi rilevati con mano, guanti e casco più che mouse piano.
+- Tubo con fasci e maschera, cristalli con campi e filtri, specchietti veloci: ogni via ha pregi e limiti.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. Perché nel virtuale le scene devono essere leggere?
+a) per risparmiare disco e basta · b) per ricalcolare tutto in tempo reale mentre l'utente sceglie cosa guardare · c) perché il 3D non serve · d) per vietare ogni interazione
+
+2. Nella proiezione ortogonale cosa accade?
+a) si aggiungono coordinate · b) si tiene tutto invariato · c) si perde una delle tre coordinate e si hanno tre viste · d) si deforma tutto a caso
+
+3. Per avere stereo occorre:
+a) stessa immagine ai due occhi · b) destra solo a destra e sinistra solo a sinistra · c) schermo spento · d) un solo occhio aperto per sempre
+
+4. Per sei gradi di libertà serve:
+a) solo un pulsante · b) lettura di tre spostamenti e tre rotazioni con mano e sensori · c) solo audio · d) carta e matita
+
+5. Un limite tipico dei cristalli liquidi rispetto al tubo è:
+a) risposta più lenta nel movimento · b) volume sempre maggiore · c) consumo sempre maggiore · d) tremolio sempre maggiore
+
+6. Negli specchietti digitali l'immagine nasce da:
+a) assorbimento che degrada · b) riflessioni rapidissime con ruota colori sincronizzata · c) pellicola chimica · d) sola lampada senza chip
+
+Soluzioni ragionate
+
+1 — b. Il flusso dipende dalle scelte live e richiede quadri continui. La a) riduce tutto ad archivio, la c) nega il 3D centrale, la d) contraddice l'interazione richiesta.
+
+2 — c. Si tengono due coordinate e si perde z, x o y per viste orizzontale, verticale e laterale. La a) inventa dimensioni, la b) non proietta, la d) nega la regola precisa.
+
+3 — b. Solo la separazione dà fusione con profondità. La a) resta piatta, la c) toglie il segnale, la d) rinuncia alla coppia.
+
+4 — b. Tre traslazioni più tre rotazioni con mano, guanti e casco. La a) non misura lo spazio, la c) non localizza, la d) resta su piano.
+
+5 — a. Le celle impiegano tempo contro fascio quasi istantaneo. Le altre rovesciano pregi noti come volume, consumi e assenza di tremolio.
+
+6 — b. Specchietti indipendenti tra riposo e lavoro con colori sincronizzati. La a) descrive l'altra tecnologia che degrada, c) e d) ignorano chip e ruota.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

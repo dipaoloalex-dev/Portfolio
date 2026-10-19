@@ -1,0 +1,332 @@
+[plain-text per Pages — da 8 - Dispositivi di output.md]
+
+1. SISTEMI DI VISUALIZZAZIONE SEMI-IMMERSIVA
+--------------------------------------------------
+
+La realta virtuale deve dare la sensazione di stare in un luogo vero.
+Per questo si cura la profondita con stimoli di due famiglie.
+Vi sono segnali da un solo occhio, come grandezza e ombre,
+e segnali da due occhi, come differenza tra vista destra e sinistra.
+Servono entrambe le famiglie per una visione solida corretta.
+
+Le vie per dare a ogni occhio la sua vista sono di due tipi.
+Nella via semi immersiva la persona resta cosciente del corpo
+e della stanza vera, ma usa comunque scene solide di lavoro.
+Nella via immersiva si cerca avvolgimento totale nel mondo sintetico.
+
+Un esempio tipico di via semi immersiva e il banco di lavoro virtuale.
+Sopra un tavolo fisico appare un modello solido da esaminare.
+Un proiettore attivo manda a turno vista destra e vista sinistra
+e occhiali con lenti a scatto aprono e chiudono in sincrono
+molte volte al secondo per separare le due viste agli occhi.
+Il punto di vista segue la testa misurata da un tracciatore esterno.
+Spostando testa e busto intorno al banco si vedono lati diversi.
+Guanti strumentati o sonde dedicate dicono al calcolatore
+dove sono le mani per prendere e indicare i pezzi mostrati.
+
+Esempio riscritto: si pensi a un tecnico che prova un riduttore
+di una macchina utensile appoggiato sul banco di officina virtuale.
+Si china a sinistra e vede il fianco con le viti di fissaggio,
+si alza e guarda dall'alto la scocca e gli ingombri di montaggio.
+Con la mano indica un coperchio e il sistema lo evidenzia subito.
+Serve per training, per verifiche di assieme e per prove didattiche
+diverse dal caso di mappe o sale operatorie dell'esempio originale.
+
+Una prima sala usa una parete di grande formato vista da molti.
+Mostra il modello anche a grandezza naturale con alta qualita.
+Usa retroproiezione con due o tre proiettori affiancati insieme.
+Per avere luce uniforme si sovrappongono un poco le fasce vicine
+e si cala la luce verso i bordi nella zona di sovrapposizione.
+La ricerca punta a ridurre l'alone di giunzione, a uniformare
+luce e colori e a usare moduli standard componibili in fila.
+Un esempio recente usa uno schermo largo alcuni metri con
+decine di proiettori a coppie e un gruppo di calcolatori in rete,
+fino a molti milioni di punti totali per dettagli finissimi.
+Un altro esempio usa matrici di proiettori per canale singolo,
+ognuno con alcuni punti di resa medio alta per teli molto ampi.
+
+Esempio riscritto: si pensi a una revisione di un furgone da lavoro
+con venti persone davanti a una parete larga come un capannone.
+Tutti vedono fiancata e portellone a misura vera senza caschi singoli.
+Si discute di ingombri e sportelli con luce uniforme su tutto il telo.
+
+Una seconda sala e una stanza con tre fino a sei pareti attive.
+Dentro si resta in piedi e si vede solido intorno con occhiali a scatto.
+Poiche si sente ancora il proprio corpo si ha forte presenza in scena.
+Testa e mani sono seguite da tracciatore elettromagnetico leggero.
+La prima versione nacque in un laboratorio di visualizzazione d'oltreoceano.
+
+Una terza sala usa un telo curvo quasi avvolgente a grande arco.
+Evita spigoli e giunzioni nette della stanza a cubo e i disturbi
+da taratura diversa tra canali vicini per luce e per colore.
+Il telo e in un solo pezzo rigido chiaro con sostegno a terra solido.
+Vale retroproiezione e proiezione frontale, in modo attivo o passivo.
+Accoglie alcune decine di posti, meno della parete grande,
+ma offre a ciascuno una vista piu centrata e confortevole.
+La fetta di immagine per ogni proiettore dipende da forma del telo,
+posto dei proiettori e nitidezza finale voluta per la scena intera.
+
+Una quarta sala usa tre o piu piani collegati e riconfigurabili.
+Ogni modulo ha schermo, sostegno, specchio e proiettore proprio.
+Senza una taratura fine dei colori si vedrebbero le giunzioni
+e cadrebbe il senso di stare dentro un unico ambiente continuo.
+Un esempio diffuso usa tre piani posteriori piu un piano a pavimento
+anteriore per camminare e guardare anche sotto i piedi in scena.
+Aprendo i moduli si torna a parete piana, chiudendoli a circa meta
+angolo retto si forma un teatro curvo simile al telo avvolgente.
+
+Una quinta sala e una sfera calpestabile che rotola su se stessa.
+Supera il limite dei confini fisici delle stanze con pareti fisse.
+La sfera ha doppio guscio plastico sottile in molti tasselli a puzzle,
+tenuta da un anello largo alcuni metri e da un cuscino d'aria leggero.
+Si entra da un portello e camminando si fa girare la sfera grande.
+Sensori di rotazione leggono il moto e lo passano a una sfera minore
+spinta da sostegni elastici contro la sfera di proiezione esterna.
+Il calcolatore genera in tempo reale viste esterne da piu proiettori,
+parte alle pareti intorno e parte a soffitto sopra la sfera stessa.
+La pelle interna lascia vedere bene le immagini da dentro il guscio.
+Cosi camminando sembra di attraversare il mondo generato dal computer.
+Serve per volo simulato e per addestramento a rischi alti,
+come squadre di soccorso o compiti operativi in ambienti ostili.
+
+Esempio riscritto: si pensi a un addetto che prova l'uscita da un
+magazzino in fiamme virtuali per corso antincendio interno aziendale.
+Cammina nella sfera e il corridoio scorre intorno senza muri veri.
+I sensori aggiornano fumo e segnaletica mentre si muove a piedi.
+
+Errore tipico: pensare che basti ingrandire lo schermo per avere
+presenza. Senza separazione destra sinistra, taratura di luce e colore
+e vista legata alla testa, resta un cinema piano senza rilievo utile.
+
+2. SISTEMI DI VISUALIZZAZIONE IMMERSIVI
+--------------------------------------------------
+
+Qui l'illusione e stare del tutto dentro il mondo sintetico.
+Non si vedono piu stanza vera e corpo proprio intorno in scena.
+
+Lo strumento tipico e il casco con schermi vicini agli occhi.
+Chi lo indossa perde la vista del corpo e della stanza reale.
+Ha due piccoli schermi per le immagini piu cuffie per audio spaziale.
+In versione solida i due schermi mostrano destra e sinistra diverse.
+In versione piana i due schermi mostrano la stessa immagine doppia.
+I modelli medi usano schermi piatti a cristalli liquidi leggeri,
+con resa media e tensione bassa e senza emissioni forti.
+Sono piccoli e tengono il casco compatto e poco affaticante.
+I modelli ad alta resa cromatica usano piccoli tubi da ripresa.
+Nascono in bianco e nero per limiti di miniaturizzazione a colori
+e creano il colore con filtri rossi verdi e blu in sequenza rapida.
+Il sistema manda a turno le tre componenti e accende i filtri giusti,
+con risultato pari a uno schermo a colori ma con ingombro maggiore,
+emissioni presenti e tensioni molto alte per i tubi interni.
+
+Per confrontare i caschi contano cinque voci principali.
+Prima la nitidezza dei punti per ogni schermo interno al casco.
+Seconda l'ampiezza dell'angolo coperto dagli schermi sugli occhi.
+Terza il peso che stanca il collo nelle sessioni lunghe di lavoro.
+Quarta il prezzo di acquisto e manutenzione nel tempo d'uso.
+Quinta quanto il casco copre la vista vera e fa sentire dentro.
+
+Esempio riscritto con dati diversi: si pensi a tre fasce generiche.
+Fascia leggera da scuola con resa base e angolo medio stretto,
+peso di poco oltre un etto e prezzo di fascia bassa da laboratorio.
+Copre poco e immerge poco, ma va bene per prime prove brevi.
+Fascia media avvolgente con stessa resa ma audio incluso,
+angolo medio, forma che chiude bene gli occhi e visiera alzabile
+per guardare il banco vero senza togliere tutto il casco.
+Fascia alta con resa doppia e angolo quasi doppio rispetto a base,
+buon contrasto e presenza forte, ma peso e prezzo molto maggiori.
+Alcuni alti lasciano fessure laterali e perdono parte di presenza.
+Per realta mista servono caschi che lasciano vedere il vero mondo
+con lenti semi trasparenti sotto le immagini generate dal computer.
+Un esempio di fascia altissima ha resa alta e angolo medio ampio,
+audio incluso, ma peso oltre un chilo e prezzo da laboratorio grande.
+Un esempio equilibrato ha resa alta e angolo medio, peso sotto
+tre quarti di chilo e lente per misto su richiesta a prezzo medio.
+Una famiglia leggera con una o due camere sul casco mostra il vero
+mondo intorno con angolo medio e prezzi da fascia bassa a media
+secondo resa solida e tipo di camere montate sul telaio.
+Vi sono poi prototipi che disegnano con luce debole a laser
+direttamente sulla retina per un solo occhio in forma monocromatica.
+Altri prototipi minuti da occhiali comuni pesano poco e si portano
+in tasca, con resa base ridotta e prezzo da novita portatile tascabile.
+
+Esempio riscritto: si pensi a una prova di plancia di un muletto
+in un'aula di ergonomia per addetti di magazzino e logistica.
+Con casco medio avvolgente l'operatore regola sedile e volante
+e giudica leve e spie senza prototipo fisico in lamiera vera.
+Con casco leggero aperto giudicherebbe peggio le distanze laterali.
+
+Un altro strumento e il visore su braccio articolato da banco.
+Schermo e ottiche stanno in una scatola con due fori per gli occhi.
+Si guarda dentro e si esplora muovendo il braccio snodato libero.
+Sensori ai giunti leggono l'orientamento scelto e aggiornano la vista.
+Una variante senza mani lascia stare in piedi o seduti liberi.
+Si sente forte presenza ma il moto resta legato al braccio meccanico.
+In fabbrica serve per prove di seduta e comandi su plance di veicoli,
+come visibilita dal posto guida e portata di leve e pulsanti veri.
+
+Errore tipico: scegliere solo per punti e angolo dichiarati.
+Senza peso, copertura laterale e tipo di lenti per misto o chiuso
+si rischia fatica al collo e falsa immersione con bordi veri visibili.
+
+3. AUDIO TRIDIMENSIONALE
+--------------------------------------------------
+
+La vista porta molte informazioni ma non basta da sola in scena.
+L'udito aiuta la vista e ne allarga l'orizzonte oltre il cono visivo.
+Con soli occhi si riconosce cio che sta davanti in un angolo definito.
+Con orecchie piu occhi si sente anche cio che sta di lato e dietro.
+L'insieme da quadro completo e interazione migliore e piu rapida.
+I primi suoni dei calcolatori erano semplici avvisi acuti e fissi.
+Oggi sprecare l'udito con soli segnali ripetitivi e un errore grave.
+Molte ricerche hanno spinto la grafica e poco il suono sintetico.
+Vi sono molti strumenti per scene animate ma pochi maturi per audio.
+Creare suoni al computer ricorda creare immagini al computer,
+anche se vedere e sentire restano sensi molto diversi tra loro.
+
+Il suono come parte udibile di un fenomeno fisico ha tre gruppi.
+Primo il parlato che porta storie, notizie e avvisi con parole chiare.
+Secondo la musica con toni combinati che porta emozioni e umore.
+Terzo i rumori naturali e artificiali che descrivono oggetti e processi.
+Il parlato spiega e guida, come descrizione di una scena di lavoro.
+La musica colora e accompagna, e puo cambiare lo stato d'animo.
+Veloce spinge ad agire in fretta, lenta calma e distende i gesti.
+Toni cupi rendono il luogo misterioso e teso per chi ascolta.
+I rumori danno verita fisica, come avviamento di un motore da officina
+o urto secco di un attrezzo caduto su banco di metallo robusto.
+Si va da ascolto passivo di racconti fino a giochi molto interattivi.
+
+Esempio riscritto: si pensi a un manuale vocale per manutenzione
+di una pressa in un reparto rumoroso di stampaggio lamiera.
+Il parlato guida i passi, un fondo musicale leggero tiene attenzione,
+i rumori di leve e sfiati confermano ogni manovra riuscita in scena.
+In un racconto audio la musica crea il luogo e i rumori dei passi
+aiutano a capire stanze e distanze senza alcuna immagine visiva.
+
+La ricerca video ha curato poco il suono posizionato in tre dimensioni.
+Suoni veri e stabili nello spazio completano l'immersione visiva.
+Un suono posizionato aiuta a trovare pezzi fuori vista durante il moto.
+Sembra venire dall'alto, da fianco o da dietro con moto chiaro.
+Si segue mentre si avvicina, gira intorno e si allontana nel buio.
+Tra molti suoni insieme aiuta a scegliere quello utile, come seguire
+una voce tra molte in mensa affollata ignorando il resto dei tavoli.
+Il suono dice anche che luogo e, come sala grande o grotta stretta,
+e che cosa fa un oggetto, come peso, urto e velocita di caduta.
+Per orientarsi conta molto capire da dove viene il suono nello spazio.
+Se l'angolo e ambiguo si ruota la testa per fissarlo meglio in modo naturale.
+Il suono aiuta a controllare i propri passi e la propria posizione.
+Se una parete blocca l'avanzo e manca ritorno di forza alle mani,
+un segnale acustico di ostacolo spiega subito l'urto contro il muro.
+I suoni legati ai pezzi toccati dicono dove sono gli oggetti in scena.
+
+Per giochi ed effetti si usava spesso solo cinema e non fisica vera.
+Un modo comune e mandare un suono preregistrato a ogni evento fisso.
+Va bene per un segnale di vittoria o un campanello di fine prova.
+Stanca invece per urti tra solidi sempre uguali a ogni colpo reale.
+Suoni di strisciamento e rotolamento sono continui e legati al posto.
+Non si possono preregistrare e serve sintesi guidata dal moto fisico.
+La sintesi modella molti fenomeni e resta molto complessa da tarare.
+Il contatto tra rigidi con controllo di collisione e studiato da anni
+per realismo e per evitare compenetrazioni tra pezzi in moto rapido.
+Gli algoritmi trovano urti istante per istante e calcolano spinte opposte.
+Da velocita, accelerazione, massa, superfici e tipo di urto in simulazione
+si ricava un suono coerente con l'evento visto a schermo in scena.
+
+Le tecnologie per audio posizionato sono di due vie principali.
+Le schede base dei primi personal non mettevano suoni intorno all'ascolto.
+Oggi nuovi dispositivi con algoritmi dedicati posizionano le fonti ovunque.
+La via con processori dedica schede speciali nelle stazioni di lavoro.
+La via con programmi usa interfacce del sistema operativo per l'audio.
+Entrambe mettono suoni su sfera virtuale, li orientano e li muovono,
+con assorbimenti ed echi come nel mondo reale di tutti i giorni.
+Serve porre le fonti e anche posto e orientamento dell'ascoltatore.
+Come per le luci, le fonti possono essere a tutto tondo in ogni verso
+o a cono stretto solo dentro un fascio frontale di emissione.
+Molte librerie lasciano dare cono interno ed esterno per limiti
+minimi e massimi di intensita a seconda della distanza in scena.
+Le famiglie piu diffuse sono tre linee note di librerie audio 3D.
+La prima linea nasce in un sistema operativo diffuso come parte
+multimediale e parla diretto alla scheda con molte funzioni utili.
+Dalla terza versione regge il posizionato e poi le schede accelerate.
+La seconda linea nasce aperta sul modello delle librerie grafiche aperte
+con funzioni in linguaggio moderno per parlare all'hardware audio.
+Crea solo scene a tre dimensioni con echi e occlusioni semplici.
+La terza linea estende le prime due con eco, riverbero e occlusioni
+legate a forma della stanza e tipo di fonte sonora usata in scena.
+
+Esempio riscritto: si pensi a un corso per carrellisti in deposito virtuale.
+Un segnale a sinistra avvisa di scaffale vicino fuori vista laterale.
+Un eco lungo dice corsia stretta, un suono sordo dice urto lieve.
+Il programma sposta le fonti con l'avanzo del mezzo in tempo reale.
+
+Errore tipico: usare solo suoni preregistrati uguali per tutto.
+Senza sintesi legata a moto e urti e senza posizione nello spazio
+l'audio resta piatto e non aiuta a trovare oggetti e ostacoli.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Vista da un occhio e da due occhi servono insieme per spazio corretto.
+- Semi immersivo tiene corpo e stanza, immersivo chiude fuori il vero mondo.
+- Banco, parete grande, stanza, telo curvo, moduli e sfera coprono gruppi diversi.
+- Casco chiude la vista vera e unisce schermi vicini e cuffie per audio posto.
+- Scelta del casco pesa nitidezza, angolo, peso, prezzo e copertura reale.
+- Visore su braccio da presa stabile ma limita il moto libero in scena.
+- Parlato guida, musica colora, rumori danno verita fisica agli oggetti.
+- Suono posizionato trova fuori vista e spiega luoghi e urti in scena.
+- Campioni fissi per eventi fissi, sintesi guidata per urti e strisciamenti.
+- Audio 3D con schede o programmi pone fonti a tutto tondo o a cono.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. La visione solida corretta in scena chiede:
+a) solo segnali da un occhio senza rilievo b) segnali da un occhio e da due occhi insieme c) solo buio senza alcuna luce d) solo suoni senza immagini
+
+2. Il banco di lavoro virtuale funziona perche:
+a) mostra carta stampata fissa senza rilievo b) unisce proiezione a turno, occhiali a scatto e testa seguita c) spegne ogni tracciatore di testa e mani d) usa solo sedie senza schermi e proiettori
+
+3. Per gruppi numerosi senza caschi singoli conviene:
+a) parete grande o stanza con proiezione condivisa b) solo casco chiuso per una persona alla volta c) solo cuffie senza alcuna immagine d) telefono senza schermo e senza audio
+
+4. Per scegliere un casco immersivo conta soprattutto:
+a) solo colore della scocca esterna b) nitidezza, angolo, peso, prezzo e copertura c) solo lunghezza del cavo di rete d) solo materiale dell'imballo di vendita
+
+5. Il suono posizionato in scena serve a:
+a) trovare fonti fuori vista e capire luoghi e urti b) coprire ogni rumore utile con musica alta c) spegnere ogni aiuto alla navigazione d) togliere ogni informazione su distanza e moto
+
+6. Per urti e strisciamenti variabili in scena conviene:
+a) stesso campione fisso per ogni colpo b) sintesi guidata da moto e contatto fisico c) silenzio totale senza alcun segnale d) sola luce senza alcun suono di evento
+
+Soluzioni ragionate
+
+1 — b. Servono indizi piani e disparita tra occhi insieme. La a) toglie il rilievo, la c) toglie la luce, la d) toglie le immagini utili.
+
+2 — b. Turni di viste con occhiali e testa seguita danno rilievo e presa. La a) resta carta piana, la c) spegne il tracciamento, la d) toglie schermi e proiezione.
+
+3 — a. Parete e stanza mostrano a molti senza vestizione singola. La b) serve a uno alla volta, la c) toglie le immagini, la d) toglie scena e audio utili.
+
+4 — b. Sono le cinque voci che guidano peso e presenza vera. La a) guarda solo estetica, la c) guarda solo cavo, la d) guarda solo scatola di vendita.
+
+5 — a. Trova lati e dietro e spiega ambienti e ostacoli in moto. La b) copre i segnali utili, la c) toglie aiuto al moto, la d) toglie distanza e direzione.
+
+6 — b. La sintesi segue posto, velocita e urto e resta credibile. La a) ripete fissa e stanca, la c) toglie ogni segnale, la d) lascia solo luce senza audio.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

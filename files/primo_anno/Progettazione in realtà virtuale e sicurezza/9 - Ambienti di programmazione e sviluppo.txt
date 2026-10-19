@@ -1,0 +1,307 @@
+[plain-text per Pages — da 9 - Ambienti di programmazione e sviluppo.md]
+
+1. AMBIENTI DI PROGRAMMAZIONE E SVILUPPO
+--------------------------------------------------
+
+Scrivere programmi richiede strumenti che aiutano a comporre,
+controllare e mandare in esecuzione il lavoro svolto in laboratorio.
+Un testo scritto in un linguaggio ad alto livello non e diretto
+per la macchina e va tradotto in istruzioni elementari eseguibili.
+A questo servono programmi speciali detti traduttori di codice.
+
+Vi sono due famiglie principali di traduttori con usi diversi.
+La prima traduce tutto il sorgente in una sola volta prima del via
+e produce un eseguibile pronto da lanciare molte volte in seguito.
+La seconda legge ed esegue una riga alla volta durante la prova,
+tornando sul percorso di traduzione a ogni passo del programma.
+La prima via da in genere programmi piu rapidi in esecuzione.
+La seconda via da prove immediate e comoda per didattica e debug.
+
+Esempio riscritto: si pensi a un tirocinante che prova una utility
+per calcolare pesi di un carrello in un magazzino di ricambi.
+Con traduzione completa lancia il calcolo cento volte in un attimo.
+Con esecuzione riga per riga vede subito dove si ferma su errore
+e corregge la formula prima di creare la versione definitiva.
+
+Errore tipico: pensare che i due modi siano uguali in tutto.
+Se serve velocita di esecuzione conviene la via completa,
+se serve prova rapida conviene la via riga per riga in diretta.
+
+2. IL LINGUAGGIO VRML
+--------------------------------------------------
+
+Con la rete si e unito il mondo delle pagine con il mondo solido.
+Nasce cosi un linguaggio descrittivo per scene navigabili via rete,
+pensato come veicolo espressivo di informazione e comunicazione.
+Mentre le pagine classiche mostrano testi e immagini piane
+senza far entrare l'utente dentro la scena mostrata a schermo,
+qui si aggiunge profondita e possibilita di muovere il punto di vista.
+Si puo avanzare verso un pezzo, girargli intorno e osservarlo da vicino.
+
+Il linguaggio e in forma di semplice testo leggibile con editor comune.
+Dentro vi sono comandi che dicono forma, colore, rivestimenti
+e posto degli oggetti nello spazio tridimensionale di lavoro.
+I programmi di disegno sanno gia fare immagini curate da soli.
+La differenza vera e che questi file viaggiano in rete aperti
+e milioni di persone possono scaricarli e visitarli da casa.
+
+La storia iniziale vide una demo di labirinto navigabile in rete
+presentata a una conferenza mondiale sul web nei primi anni novanta.
+Li si propose un formato aperto per il virtuale in rete a breve termine.
+Il problema era la varieta di macchine degli utenti per potenza e tipo.
+Serviva uno standard per descrivere scene e un navigatore capace
+di leggere il testo e trasformarlo in grafica e simulazione viva.
+La prima versione descriveva mondi fermi senza vita interna.
+La seconda aggiunse moto degli oggetti e interazione con la persona,
+oltre a fonti sonore e filmati per scene piu credibili e ricche.
+Pochi anni dopo arrivò il riconoscimento come norma internazionale
+da parte degli enti mondiali per standard e per elettrotecnica.
+
+Per visitare basta un calcolatore medio con mouse e scheda normale.
+Il limite e usare un puntatore piano dentro un mondo a volume.
+L'altro limite e la mole dei file per scene molto ricche di dettagli,
+pesante rispetto alla banda tipica delle linee di rete domestiche.
+In azienda si usano spesso formati simili ma proprietari e chiusi,
+comodi per funzioni dedicate ma poco portabili tra sistemi diversi.
+Si sperimentano sistemi che spostano pezzi e comportamenti
+da un mondo a un altro senza riscrivere il codice di origine.
+Cosi si monta in parallelo una scena complessa condivisa tra gruppi,
+con metodo di progettazione simultanea tra reparti diversi.
+La meta resta far incontrare piu utenti insieme con doppi digitali,
+cioe figure che rappresentano il corpo di ciascuno dentro la scena,
+anche con interfacce esterne di largo uso per il web interattivo.
+
+Esempio riscritto: si pensi a una piccola azienda che mostra
+un banco da lavoro per corsi serali di manutenzione meccanica.
+Il file leggero si scarica da rete e si gira con mouse comune.
+Si entra nella stanza, ci si avvicina a una morsa e si legge
+una targa con istruzioni, senza installare stazioni costose.
+Se la scena cresce con troppi pezzi il file diventa pesante
+e con linea lenta il caricamento diventa lungo e scomodo.
+
+Errore tipico: credere che basti un file pesante per fare immersione.
+Senza standard aperto, navigatore adatto e scene ben dosate
+la visita resta lenta e poco interattiva per l'utente collegato.
+
+3. IL LINGUAGGIO C++
+--------------------------------------------------
+
+Tra i linguaggi piu diffusi al mondo vi e un linguaggio nato
+nei primi anni ottanta in un laboratorio telefonico d'oltreoceano.
+Il nome gioca sul simbolo di incremento del linguaggio padre
+per dire versione migliorata e potenziata rispetto all'origine.
+Si usa in giochi, tempo reale, parti di sistemi operativi,
+grafica e audio, app mobili e calcolo su grandi macchine.
+Negli anni ha avuto molte edizioni con aggiunte e rifiniture
+che lo tengono moderno e importante per progetti complessi.
+
+Un programma immersivo oggi e troppo grande per una persona sola.
+Serve dividere il lavoro tra gruppi con competenze diverse.
+La via piu adatta e la programmazione orientata agli oggetti.
+Qui il problema si taglia in parti chiuse dette oggetti autonomi.
+Ogni oggetto tiene insieme dati propri e azioni sui dati stessi.
+I dati sono proprieta interne, le azioni sono metodi di lavoro.
+Ogni oggetto parla con gli altri solo tramite interfaccia pubblica.
+Cosi un gruppo usa oggetti fatti da altri senza leggerne dentro
+il sorgente interno e senza romperne il funzionamento esterno.
+
+Il linguaggio si evolve con lentezza ma senza fermarsi mai.
+Aggiunge costrutti per altri stili oltre agli oggetti classici,
+come lo stile funzionale con funzioni pure e trasformazioni.
+Le edizioni degli anni dieci hanno allargato molto il corredo.
+L'ultima di meta decennio ha portato piccoli miglioramenti utili.
+Una successiva era in discussione con uscita prevista dopo poco.
+La compatibilita con il padre resta solo per vecchi programmi
+e parti storiche da mantenere in esercizio senza riscritture.
+Usare bene tutti i costrutti, vecchi e nuovi senza sprechi,
+da codice portabile, veloce e facile da estendere nel tempo.
+Pensare a oggetti aiuta a usare idee del mondo reale e non
+solo idee di macchina, con requisiti piu chiari e manutenzione facile.
+Gli oggetti sono mattoni riusabili in molti progetti diversi.
+Il riuso e infatti il motivo per cui lo stile a oggetti e nato.
+Non e esclusiva di questo linguaggio, ma e comune a quasi tutti
+i linguaggi moderni e cresce piu delle tecniche precedenti.
+
+La diffusione fuori dai laboratori deve molto a questo linguaggio.
+Conoscerlo aiuta a capire gli oggetti in generale e in profondita.
+A differenza di altri linguaggi gestiti piu vincolati e guidati,
+qui resta forte il legame con lo stile procedurale del padre diretto.
+Si hanno tutti gli strumenti per fare bene, ma e facile
+uscire dalle regole pur volendo restare dentro il paradigma.
+Servono disciplina e disegno attento per tenere riuso e crescita,
+che sono le promesse piu importanti e piu difficili da mantenere.
+Resta tra i piu usati e piu fraintesi, ma vicino alle prestazioni
+dei linguaggi precedenti con in piu i vantaggi moderni degli oggetti.
+
+Esempio di programma riscritto senza riportare il codice originale.
+Si pensi a un mini programma di prova per un corso di officina.
+Mostra a schermo una frase di benvenuto diversa dal classico saluto,
+come buon lavoro al reparto frese su una sola riga di testo,
+poi chiude e restituisce al sistema un codice di fine corretta.
+Usa la libreria standard per uscita a video e per codice di uscita.
+Cosi si verificano catena di compilazione, console e ritorno al sistema.
+
+Errore tipico: usare lo stile a oggetti solo nei nomi senza regole.
+Senza interfacce pulite e parti indipendenti si perde riuso vero
+e il codice diventa fragile a ogni aggiunta di funzioni nuove.
+
+4. PRIMITIVE GRAFICHE
+--------------------------------------------------
+
+Per grafica al calcolatore serve un corredo con forme pronte,
+senza ricostruire ogni volta ogni immagine da zero a mano.
+Servono standard grafici condivisi tra schede e sistemi diversi.
+A parte le librerie legate a un solo sistema operativo diffuso,
+lo standard professionale e una libreria aperta nata nei primi
+anni novanta e affermatasi su tutte le piattaforme di lavoro.
+
+Tale libreria ha due compiti principali di semplificazione.
+Primo nascondere schede diverse con una sola interfaccia unica.
+Secondo chiedere a tutte le versioni le stesse funzioni base,
+con emulazione via programma dove la scheda non arriva da sola.
+
+Il lavoro e prendere punti, linee e poligoni e farne punti schermo.
+Cio avviene con una catena di stadi detta macchina a stati grafica.
+Molti comandi danno forme alla catena o dicono come trattarle.
+Prima di una versione maggiore degli anni duemila ogni stadio
+aveva funzione fissa con pochi interruttori di regolazione interna.
+Da quella versione molti stadi si programmano con linguaggio apposito.
+
+La libreria ha spinto le schede verso funzioni base comuni oggi diffuse.
+Si puo riassumere in una riga di testo con spazi come tabella.
+Voce  Effetto pratico in scena
+Punti linee poligoni  Forme base per ogni modello da mostrare
+Trasformazione e luci  Posto e illuminazione dei solidi in scena
+Profondita a pixel  Ordine corretto tra davanti e dietro in vista
+Mappe di superficie  Immagini stese su facce per dettaglio finto
+Fusione di trasparenze  Vetri e ombre morbide con canali di opacita
+
+Molto apprezzata e la compatibilita all'indietro tra versioni.
+Programmi scritti per la prima edizione girano senza ritocchi
+anche su versioni molto successive della stessa libreria aperta.
+
+La libreria e procedurale e lavora a basso livello di dettaglio.
+Chiede passi precisi per disegnare ogni vista della scena intera.
+Altre interfacce descrittive ad alto livello usano un albero di scena.
+Basta una descrizione generale e il motore cura i dettagli di resa.
+Qui serve conoscere bene la catena, ma resta liberta di creare
+algoritmi di resa complessi e su misura per effetti speciali.
+
+Un sistema aperto a grafo scritto nello stesso linguaggio a oggetti
+organizza i dati in albero per legami di dipendenza tra le parti.
+Se un dettaglio torna molte volte si modella una sola volta sola
+e si riusa nei nodi giusti con trasformazioni diverse per posto.
+Si calcola solo cio che sta nel campo visivo e si nasconde il resto,
+con disegno piu rapido e meno carico sulla macchina di prova.
+Si cambia anche il dettaglio mostrato secondo la distanza,
+con meno triangoli da lontano e piu triangoli da vicino in scena.
+Il sistema nasce per grafica in tempo reale e mondi navigabili.
+
+Da questa base nasce una piattaforma a oggetti per app interattive
+che usa gli acceleratori attuali con poco sforzo di scrittura.
+Offre nodi base pronti da usare, cambiare ed estendere per bisogni nuovi.
+Chi la usa pensa solo a costruire oggetti solidi e scene vere,
+senza curare a mano interfacce di tocco e di vista come prima.
+I nodi coprono forme, proprieta di aspetto e gruppi di parti unite.
+Tutto finisce in un archivio detto grafo di scena ad albero ordinato.
+Con lo stesso archivio si fa piu della sola immagine a schermo,
+come scelta con click, presa, spostamento e modifica diretta.
+Si puo cambiare vista senza muovere i punti dei solidi in memoria,
+oppure muovere i solidi nella terna fissa cambiando le coordinate.
+A questo servono nodi speciali detti manipolatori interattivi.
+Danno maniglie semplici per ruotare e spostare con gesti naturali.
+Vi sono anche editor di materiali, luci orientate e camere fisse
+come punti di vista salvati dentro la scena di progetto virtuale.
+Un visore di scena offre modi diversi di esplorazione guidata.
+Oltre al modo classico da disegno tecnico vi sono volo dall'alto,
+cammino dentro i locali e taglio per vedere l'interno dei pezzi.
+
+Volendo disegnare una casetta con la libreria di basso livello
+serve scomporla in molte istruzioni semplici di poligoni piani
+e mandarle nel motore nell'ordine giusto per buona resa finale.
+Se si mandano anche parti nascoste si spreca tempo prezioso.
+La piattaforma ad albero risolve il problema con oggetti pronti
+come cubi e poligoni da derivare in forme nuove con poco codice.
+Il mondo da disegnare sta nel grafo e il sistema lo scompone da solo.
+Vi sono anche controlli pronti per interazioni comuni con la scena.
+Vi e un formato comune per salvare e ricaricare mondi interi da file.
+Una app base sta in poche centinaia di righe legando i pezzi dati.
+Il rovescio e una velocita minore rispetto a codice fatto a mano,
+perche la gestione automatica dell'albero pesa sul giro di resa.
+Un altro limite era il formato unico che chiedeva convertitori
+esterni per importare ed esportare verso altri sistemi di lavoro.
+Gli scopi restano codice migliore, comodita d'uso ed efficienza.
+Per questo la piattaforma resta diffusa nei laboratori che fanno
+ricerca e didattica su realta virtuale e grafica interattiva reale.
+
+Errore tipico: disegnare tutto a basso livello senza albero di scena.
+Senza riuso dei nodi e senza scarto del fuori vista la resa cala
+e il codice cresce senza controllo a ogni nuovo oggetto aggiunto.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Ambiente di sviluppo unisce scrittura, prova ed esecuzione con traduttori.
+- Traduzione completa per velocita, riga per riga per prova immediata.
+- Linguaggio web per solidi come testo con forma, colore e posto in rete.
+- Prima versione per mondi fermi, seconda per moto e interazione con audio e video.
+- Formati chiusi comodi ma poco portabili, meta di mondi condivisi con figure.
+- Oggetti con dati e metodi e interfaccia pubblica per lavoro in gruppi.
+- Riuso e manutenzione come vantaggi veri dello stile a oggetti maturo.
+- Libreria aperta a basso livello con catena da forme a punti schermo.
+- Grafo di scena per riuso, scarto del nascosto e dettaglio per distanza.
+- Piattaforma a nodi per costruire, scegliere e muovere con poco codice.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. La differenza tra le due famiglie di traduttori e che:
+a) sono identiche in tutto e per tutto b) una traduce tutto prima del via, l'altra riga per riga in diretta c) nessuna traduce mai alcun testo d) entrambe disegnano solo immagini senza codice
+
+2. Il linguaggio per solidi in rete e utile perche:
+a) resta solo su carta senza rete b) porta scene navigabili e condivise via rete con testo semplice c) impedisce ogni interazione con la scena d) mostra solo testo piano senza profondita
+
+3. Tra prima e seconda versione del linguaggio per solidi cambia che:
+a) nulla cambia tra le due versioni b) la seconda aggiunge moto, interazione e fonti sonore e video c) la prima ha gia tutto della seconda d) entrambe vietano qualsiasi scena in rete
+
+4. Lo stile a oggetti aiuta i gruppi perche:
+a) mescola tutto senza regole interne b) divide in oggetti autonomi con interfaccia pubblica e riuso c) vieta ogni riuso tra progetti diversi d) chiede di leggere sempre tutto il sorgente altrui
+
+5. La libreria grafica aperta di basso livello fa soprattutto:
+a) solo calcoli senza immagini b) porta punti linee e poligoni a punti schermo con catena di stadi c) cancella ogni scena senza disegnare d) scrive testi senza alcuna grafica
+
+6. Il grafo di scena ad albero serve a:
+a) rallentare sempre ogni disegno b) riusare nodi, nascondere fuori vista e variare dettaglio per distanza c) impedire scelta e spostamento degli oggetti d) obbligare a ridisegnare ogni dettaglio da zero
+
+Soluzioni ragionate
+
+1 — b. Tutto prima contro riga per riga e la distinzione vera. La a) nega la differenza, la c) nega la traduzione, la d) confonde con disegno puro.
+
+2 — b. Testo semplice con scene condivise e navigabili in rete. La a) resta su carta, la c) nega interazione, la d) torna a piano senza volume.
+
+3 — b. Moto e interazione con audio e video arrivano dopo. La a) nega evoluzione, la c) anticipa tutto alla prima, la d) vieta la rete.
+
+4 — b. Parti autonome con interfaccia danno riuso tra gruppi. La a) toglie regole, la c) vieta riuso, la d) impone lettura totale interna.
+
+5 — b. Da forme base a punti schermo con stadi in sequenza. La a) resta senza immagini, la c) cancella scene, la d) resta solo testo.
+
+6 — b. Riuso e scarto del nascosto con dettaglio per distanza. La a) vede solo lentezza, la c) vieta interazione, la d) spreca modellazione ripetuta.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

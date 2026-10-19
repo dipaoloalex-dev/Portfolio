@@ -1,0 +1,361 @@
+[plain-text per Pages — da 6 - Sistemi di interazione e visualizzazione.md]
+
+1. LIVELLI DI INTERAZIONE: WALK-THROUGH E SPOSTAMENTO DI OGGETTI VIRTUALI
+--------------------------------------------------
+
+La realta virtuale offre al progetto molto piu di un disegno
+tridimensionale animato, perche unisce vista solida e comandi
+naturali e cambia il rapporto tra persona e calcolatore.
+Secondo lo scopo della simulazione si distinguono gradi
+diversi di interazione, dal semplice giro esplorativo fino
+alla modifica vera e propria degli oggetti in scena.
+
+Il grado piu basso e la sola esplorazione dello scenario.
+Con un rilevatore di testa e mano oppure con un mouse comune
+si cammina dentro il modello e si guarda da vari punti.
+La soluzione con mouse costa poco e ha diffuso la tecnica
+anche dove non vi sono caschi o rilevatori dedicati.
+Il giro virtuale serve molto in edilizia, mezzi di trasporto
+e impianti, dove prima si passava da schizzi a immagini fisse
+e poi a navigazione in tempo reale dentro e fuori l'opera.
+In meccanica serve anche per valutare assiemi a distanza
+in gruppo via rete, scegliendo da raccolte di pezzi gia
+modellati e chiedendo poi il file tecnico completo.
+
+Esempio riscritto: si pensi a un piccolo studio che mostra
+a un cliente un laboratorio di falegnameria ancora da costruire.
+Con un mouse economico il cliente avanza tra i banchi,
+alza lo sguardo verso le scaffalature e controlla i passaggi.
+Non tocca nulla, ma capisce volumi e percorsi meglio
+che con stampe o filmati fissi preregistrati in precedenza.
+
+Questo per ora e solo anticamera della realta virtuale piena,
+perche l'osservatore non altera nulla durante la seduta.
+Senza un grado superiore la tecnica resta adatta allo svago
+ma poco utile all'ingegneria e alla progettazione vera.
+Serve che il programma calcoli da solo e in tempo reale
+rapporti tra oggetti, come distanza tra centri o contatto
+tra superfici esterne, detto rilevamento delle collisioni.
+Cosi si evita per esempio di passare attraverso una parete
+e si passa solo dove vi sono varchi e aperture previste.
+
+Esempio riscritto: si pensi a un magazzino virtuale con scaffali.
+Il sistema blocca l'avanzata contro una scaffalatura piena
+e lascia passare solo lungo il corridoio centrale libero.
+Se una mano tracciata tocca una scatola, la scatola cambia
+colore o emette un suono per dire che e selezionata.
+Con un tasto o un gesto la scatola segue la mano e si sposta
+in tempo reale, poi un comando la lascia nella nuova sede.
+Questo e il primo passo verso interazione piena in tre dimensioni.
+
+Il passo dopo e cambiare non solo posto ma anche forma.
+Per modellare davvero in immersivo servirebbe una base dati
+dinamica e rapida, capace di reggere quote guidate da parametri.
+Il progettista dovrebbe creare un solido base, plasmarlo,
+aggiornare subito l'archivio e assegnare proprieta fisiche.
+Oggi gli ambienti in commercio non lo permettono ancora.
+Da un lato usano formati leggeri da rete che vanno bene
+per mostrare ma non per gestire dati vivi, e si deve sempre
+convertire il modello tecnico nel formato da visualizzare.
+Dall'altro le proprieta fisiche si danno prima con pannelli
+piani tradizionali e non dentro la seduta immersiva.
+
+Resta invece molto utile la prototipazione virtuale classica.
+Si modella nel sistema tecnico abituale, poi si esporta
+il modello per prove di montaggio e controllo ingombri.
+Con rilevatori e vista avanzata si verificano interferenze
+e montaggi errati partiti dal disegno tridimensionale.
+Il limite e che non si fanno grandi modifiche alle parti,
+perche il ritorno al modello nativo perde informazioni,
+come volumi e vincoli, facili da togliere e difficili da recuperare.
+Se pero basta cambiare legami di montaggio e non le parti,
+per assiemi ed ergonomia resta uno strumento molto pratico.
+
+Errore tipico: credere che camminare nel modello sia gia
+progettare in virtuale. Senza selezione, spostamento guidato
+e controllo delle collisioni si resta a una visita guidata.
+
+2. LA VISIONE STEREOSCOPICA NELLA REALTA VIRTUALE
+--------------------------------------------------
+
+La parola viene dal greco e unisce spazio e visione.
+E la percezione del rilievo dovuta all'uso di due occhi.
+Ogni occhio vede la stessa scena da un punto un poco diverso,
+perche gli occhi distano tra loro pochi centimetri.
+Il cervello unisce le due prese, fonde le parti uguali
+e legge le piccole differenze come senso di profondita.
+Cosi un oggetto guardato con entrambi gli occhi appare unico,
+anche se su ogni retina si forma un'immagine diversa.
+
+Ottenuta la coppia di immagini serve che ogni occhio
+ne riceva una sola e quella giusta per la sua posizione.
+I programmi di realta virtuale ricostruiscono bene l'effetto
+su tutta l'area mostrata e non solo vicino al centro di mira,
+meglio di strumenti analitici o digitali piu semplici.
+Per separare le due viste esistono varie strade tecniche.
+
+Una prima strada usa occhiali con lenti a cristalli liquidi.
+Destra e sinistra appaiono a turno sullo stesso schermo.
+Un centralina oscura a turno una lente in sincrono con lo schermo.
+Quando si mostra la vista destra si chiude la lente sinistra e viceversa.
+Lo scambio avviene in una frazione piccolissima di secondo
+per dare moto fluido e continuo senza sfarfallio evidente.
+Il difetto principale e il costo alto del sistema completo.
+
+Una seconda strada usa filtri che selezionano la luce.
+Le due viste passano da filtri ruotati di un quarto di giro
+l'uno rispetto all'altro e poi da occhiali corrispondenti.
+Ogni occhio riceve cosi solo la vista a lui destinata.
+Si usa spesso per diapositive e filmati in tre dimensioni,
+e con un pannello adatto anche su monitor comuni.
+I difetti sono impianto complesso, spesa alta e poca portabilita.
+
+Una terza strada fonde i canali di colori complementari.
+Si parte dalla coppia destra e sinistra gia pronta in tre canali.
+Alla vista sinistra si tolgono due canali secondari,
+alla vista destra si toglie il canale principale caldo.
+Un programma semplice sovrappone i due risultati in una sola
+immagine doppia da guardare con occhiali bicolori.
+Cosi ogni lente lascia passare solo la sua vista di origine.
+
+Esempio riscritto: si pensi a una foto di un banco da lavoro
+sdoppiata in due tinte quasi sovrapposte e un poco spostate.
+A occhio nudo sembra confusa e con bordi colorati strani.
+Con occhiali con lente calda e lente fredda ogni occhio
+vede una sola versione e il banco esce in rilievo netto.
+Il pregio e semplicita e spesa minima di stampa e occhiali.
+Il difetto e resa spesso quasi in grigio, colori limitati e
+qualita visiva non alta per usi di precisione spinta.
+
+Una quarta strada non chiede occhiali e usa visione libera.
+Nella forma parallela le due viste stanno affiancate vicine.
+Si guarda oltre il foglio fino a tenere gli assi quasi paralleli,
+finche ogni occhio aggancia una sola immagine laterale.
+Nella forma incrociata le viste destra e sinistra sono scambiate.
+Si incrociano gli sguardi cosi l'occhio destro prende la vista
+di sinistra e viceversa, fino a fondere in unica vista solida.
+Le immagini per questo uso si dicono autostereogrammi.
+Pregi sono semplicita, costo basso e trasporto facile.
+Difetto principale e fatica e difficolta nel trovare la fusione.
+
+La stereoscopia conta molto in realta virtuale perche con
+grafica al calcolatore si puo mostrare un intero scenario
+con profondita credibile e giudizi migliori su distanze e volumi.
+
+Il meccanismo si lega al fenomeno dello spostamento apparente.
+Il termine indica quanto un oggetto sembra spostarsi se visto
+da due punti diversi posti a una certa distanza tra loro.
+Un caso noto e la lettura inclinata di uno strumento a lancetta.
+Se l'indice non sta sullo stesso piano della scala graduata,
+da una posizione storta appare proiettato su tacche diverse
+secondo la direzione da cui si guarda la misura segnata.
+Lo stesso accade con i due occhi su uno stesso oggetto vicino.
+Prima con un occhio poi con l'altro la posizione sembra cambiare
+perche il punto di osservazione si sposta tra i due organi.
+
+L'occhio umano non usa solo la foto sulla retina singola.
+Usa tutto l'insieme di variazioni e costanze nel tempo e nello spazio.
+Se ci si allontana la scena sembra stringersi verso il centro,
+se ci si avvicina sembra aprirsi e allargarsi intorno.
+Questo insieme di segnali si chiama flusso ottico visivo.
+Elaborandolo il sistema visivo trova da solo cio che resta uguale
+e cio che cambia, utile per forma e moto degli oggetti.
+Sono le variazioni nel tempo di questi scarti a dare la
+sensazione di movimento proprio o degli oggetti intorno.
+
+Nel confronto tra le due viste il cervello misura uno scarto,
+detto disparita, cioe distanza orizzontale tra punti corrispondenti
+delle due immagini proiettate sulle retine left e right.
+Questa distanza crea l'effetto di rilievo e cambia con la lontananza.
+Un oggetto molto vicino da scarto diverso da uno lontano messo a fuoco.
+La stessa distanza misurata sullo schermo tra punti corrispondenti
+della coppia si chiama scarto di presentazione sullo schermo.
+Essa guida la disparita sulle retine e quindi la buona riuscita
+della fusione solida senza sforzo e senza visione doppia.
+
+Vi sono in sostanza quattro casi di scarto sullo schermo.
+Con scarto nullo le due viste coincidono e non vi e rilievo.
+Con scarto piccolo positivo entro la distanza tra gli occhi
+inizia il senso di profondita dietro il piano dello schermo.
+Piu cresce lo scarto piu l'oggetto sembra lontano e interno.
+Con assi visivi incrociati lo scarto diventa negativo e l'oggetto
+sembra uscire dallo schermo verso chi guarda la scena.
+Se lo scarto supera la distanza tra gli occhi si ha divergenza,
+che in natura non accade e provoca fastidio e affaticamento.
+
+Si puo riassumere in una riga di testo con spazi come tabella.
+Caso  Effetto percepito  Sensazione pratica d'uso
+Divergenza  Fastidio agli occhi  Da evitare sempre in progetto
+Positiva  Oggetto dentro lo schermo  Buona per sfondi lontani
+Zero  Oggetto sullo schermo  Buona per menu e riferimenti
+Negativa  Oggetto fuori dallo schermo  Buona con cautela per dettagli vicini
+
+Errore tipico: pensare che basti raddoppiare le immagini per avere
+rilievo. Senza separazione corretta per occhio e senza scarti
+ben dosati si hanno doppioni, fatica e nessuna profondita utile.
+
+3. MODALITA DI PROIEZIONE
+--------------------------------------------------
+
+La proiezione tridimensionale segue due vie principali,
+una detta attiva e una detta passiva, diverse per proiettori,
+occhiali e numero di persone che possono assistere insieme.
+Dopo aver visto le basi conviene tornare sui dettagli operativi
+per capire costi, luce e comodita in sala e in laboratorio.
+
+Nella via attiva le due viste escono in sequenza rapida
+sullo stesso schermo, di solito oltre cento cambi al secondo.
+Chi guarda porta occhiali con otturatori a cristalli liquidi,
+detti occhiali a scatto, che chiudono un occhio alla volta.
+Quando il quadro sinistro e visibile il destro e bloccato e viceversa.
+La scheda grafica del motore di resa deve mandare un segnale
+di sincronia veloce tra quadri proiettati e chiusura delle lenti.
+Il vantaggio e usare un solo proiettore comune da sala,
+anche se spesso serve un modello nato per alte frequenze.
+Il difetto e il costo di ogni occhiale attivo con elettronica,
+che per pubblico numeroso diventa spesa molto onerosa.
+
+Esempio riscritto: si pensi a un'aula con venti posti per prova
+di un cruscotto di una macchina operatrice agricola.
+Con via attiva basta un proiettore veloce e venti occhiali
+a scatto con batteria e sincronia da gestire e ricaricare.
+La spesa per gli occhiali supera presto quella del proiettore
+e la manutenzione per rotture e ricariche pesa sul corso.
+
+Nella via passiva tutto si basa su selezione della luce.
+Un'onda di luce vibra in molte direzioni diverse insieme.
+Se passa da un filtro che tiene una sola direzione, le altre
+componenti vengono assorbite e resta solo quella utile.
+Con occhiali che hanno due filtri opposti, uno per occhio,
+ogni occhio riceve solo la sua vista dedicata in contemporanea.
+Poiche l'occhio non sente la direzione di vibrazione,
+il cervello legge la differenza come profondita naturale.
+
+La selezione puo essere di primo tipo a direzione singola.
+E una soluzione economica con ottima separazione tra occhi,
+ma soffre se chi guarda piega molto la testa di lato.
+Ruotando il capo cambiano le informazioni ricevute dagli occhi
+e calano effetto solido e realismo della scena immersiva.
+
+La selezione puo essere di secondo tipo a direzione rotante.
+Qui la luce non resta fissa su una sola direzione di vibrazione.
+Chi guarda puo piegare la testa e cambiare punto di vista
+senza perdere troppo la separazione tra le due viste proiettate.
+Gli occhiali passivi sono leggeri e senza parti elettroniche,
+quindi economici e adatti a pubblico ampio in sala grande.
+Servono pero in genere due proiettori con frequenza standard,
+uno per la vista sinistra e uno per la vista destra insieme.
+Su ogni ottica sta un filtro che manda la luce solo alla lente giusta.
+La versione rotante costa un poco piu di quella a direzione singola.
+
+Esempio riscritto: si pensi a una sala prove con quaranta sedute
+per verifica di una cabina di un carrello elevatore da magazzino.
+Con via passiva vi sono due proiettori fissi e quaranta occhiali
+leggeri senza batterie da distribuire all'ingresso e igienizzare.
+Si perde qualcosa in impianto doppio ma si risparmia su gestione
+e si tiene buona luminosita per discussioni di gruppo.
+
+Una variante recente usa filtri a bande strette di colore.
+Le due viste escono insieme come in passiva normale sul telo,
+ma sono tinte in modo diverso nelle componenti spettrali.
+Gli occhiali con filtri speciali mandano ogni banda all'occhio giusto.
+Cosi si riduce lo sfarfallio tipico delle vie attive rapide
+e si tiene meglio il colore rispetto alle passive semplici.
+
+Un'altra soluzione usa un solo proiettore veloce con filtro attivo
+posto davanti all'ottica e occhiali con selezione lineare leggera.
+Le due viste escono una dopo l'altra come con occhiali a scatto,
+poi il filtro davanti orienta la luce su due angolazioni oblique opposte
+e crea forte immersione con buona resa per sala affollata.
+Funziona con varie tecnologie di proiezione da sala,
+ma con alcune serve coprire tre lenti e l'insieme resta piu grande.
+
+Vi sono poi schermi che non chiedono alcun occhiale in testa.
+Mostrano oggetti in tre dimensioni in tempo reale con sistema
+complesso e costoso basato su supporto speciale gia selettivo.
+A differenza della via classica, il rilievo si vede senza aiuti,
+perche stampa o monitor con strato a lenti nasconde da solo
+a ogni occhio la vista data all'altro occhio vicino.
+Serve pero disporre di piu viste della stessa scena da più angoli.
+Gli schermi usati mostrano sia viste piane sia viste solide
+lavorando in due modi diversi con semplice commutazione.
+Un metodo comune usa una barriera a strisce davanti ai punti luminosi,
+come nei vecchi ologrammi giocattolo per ragazzi.
+L'immagine vista dipende dall'angolo da cui si guarda il pannello.
+Al centro ogni occhio prende colonne diverse di punti, per esempio
+sinistro le colonne dispari e destro le colonne pari affiancate.
+Unendo in verticale le due serie nasce la fusione solida corretta.
+Se la barriera diventa trasparente con un interruttore interno,
+entrambi gli occhi vedono la stessa immagine e si torna a vista piana.
+
+Errore tipico: scegliere la via solo per costo del proiettore.
+Senza contare occhiali, luce in sala e movimenti della testa
+si rischia fatica, colori spenti o spesa alta per molto pubblico.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Interazione cresce per gradi da giro esplorativo a modifica di posto e forma.
+- Giro virtuale con mouse o rilevatori serve per verifiche di spazi e percorsi.
+- Rilevamento collisioni blocca muri e guida selezione e spostamento con segnali.
+- Modellazione immersiva piena chiede base dati dinamica e proprieta fisiche vive.
+- Prototipazione virtuale prova montaggi ma torna male al modello nativo.
+- Rilievo nasce da due viste diverse fuse dal cervello in unica vista solida.
+- Occhiali a scatto, filtri di luce e fusione colori separano destra e sinistra.
+- Visione libera parallela e incrociata fonde senza occhiali ma con fatica.
+- Scarto sullo schermo guida profondita dentro, sopra, fuori o fastidio.
+- Proiezione attiva usa un proiettore veloce e occhiali cari, passiva due proiettori e occhiali leggeri.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Il giro esplorativo in un modello serve soprattutto a:
+a) cambiare subito forme e materiali b) visitare spazi e percorsi senza modificare nulla c) assegnare proprieta fisiche ai solidi d) convertire formati tecnici in automatico
+
+2. Il rilevamento delle collisioni in scena permette di:
+a) attraversare ogni parete senza limiti b) bloccare passaggi vietati e guidare selezione e presa c) spegnere ogni segnale visivo e sonoro d) cancellare il modello tecnico di origine
+
+3. La prototipazione virtuale e piu forte quando:
+a) si provano montaggi e ingombri senza rifare le parti b) si ridisegnano da zero tutte le parti in immersivo c) si eliminano verifiche di interferenza d) si lavora senza alcun modello tecnico di partenza
+
+4. La visione solida nasce perche:
+a) i due occhi vedono la stessa identica foto piana b) il cervello fonde due prese un poco diverse in un unico rilievo c) basta raddoppiare una foto senza separazione d) lo schermo emette profumi e suoni avvolgenti
+
+5. Nello scarto sullo schermo, il caso con oggetto percepito dentro vale quando:
+a) lo scarto e nullo e le viste coincidono b) lo scarto e piccolo e positivo entro la distanza tra gli occhi c) gli assi visivi sono incrociati verso chi guarda d) lo scarto supera la distanza tra gli occhi
+
+6. Tra via attiva e via passiva per molto pubblico conviene spesso:
+a) attiva con molti occhiali elettronici da ricaricare b) passiva con occhiali leggeri senza elettronica e due proiettori c) nessuna proiezione e solo descrizione a voce d) una sola foto piana senza alcuna separazione
+
+Soluzioni ragionate
+
+1 — b. Il giro serve a esplorare volumi e percorsi. La a) chiede modifica vera, la c) chiede proprieta fisiche vive, la d) chiede conversioni che qui non avvengono.
+
+2 — b. Blocca attraversamenti vietati e aiuta presa con cambi colore o suoni. La a) rovescia il compito, la c) toglie i segnali utili, la d) confonde con limiti di conversione.
+
+3 — a. Montaggi e ingombri senza rifare parti sono il suo uso ideale. La b) chiede modellazione piena ancora immatura, la c) toglie il suo scopo, la d) nega la base tecnica di partenza.
+
+4 — b. Due prese diverse fuse danno profondita. La a) senza differenza non da rilievo, la c) senza separazione da doppioni, la d) introduce sensi non pertinenti.
+
+5 — b. Scarto piccolo positivo mette l'oggetto dietro il telo. La a) mette sullo schermo, la c) porta fuori verso chi guarda, la d) crea divergenza con fastidio.
+
+6 — b. Occhiali semplici e luce buona reggono molta platea. La a) costa molto per molti occhiali attivi, la c) rinuncia al rilievo, la d) resta in piano senza stereoscopia.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

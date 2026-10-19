@@ -1,0 +1,215 @@
+[plain-text per Pages — da 2 - La realtà virtuale.md]
+
+1. DEMATERIALIZZAZIONE DELLA REALTA'
+--------------------------------------------------
+
+Il passaggio da oggetti fisici a informazioni in bit sta cambiando abitudini
+e vite. All'inizio il digitale trattava in modo economico solo i simboli più
+semplici, lettere e cifre: per anni le macchine hanno soprattutto scritto,
+calcolato, confrontato elenchi e archiviato testi.
+
+Oggi quasi tutto si può tradurre in dati. Esempio riscritto con caso diverso:
+le prime verifiche su un nuovo treno ad alta velocità vengono fatte in una
+galleria del vento simulata, con un convoglio interamente numerico. E' come
+una nuova scrittura per descrivere e conservare il mondo, e abbassa il costo
+di produrre e scambiare informazioni.
+
+Resa l'informazione separabile dalla materia, resta da dare a molti oggetti una
+sorta di consapevolezza leggibile a distanza, cioè il modo di conoscere il loro
+stato senza toccarli. E' il percorso opposto: il digitale entra nelle cose e ne
+diventa l'anima. Quando esiste il modello numerico di un veicolo, di uno
+stabilimento o di un elettrodomestico, si possono prevedere i comportamenti e
+le risposte a comandi e condizioni diverse. Sensori sempre più economici
+misurano il reale e lo trasformano in sequenze binarie, così oggetto e sua
+descrizione si fondono.
+
+Nella progettazione questo accade già con le tecniche immersive: cambia il
+dialogo persona-macchina e cambia il modo di rappresentare. L'immagine
+numerica diventa linguaggio, e il modello non è più un pezzo di materia ma il
+risultato di istruzioni date al calcolatore. Dal disegno su carta in due
+dimensioni si è passati al solido tridimensionale nei modellatori, fino a
+simulazioni così spinte da parlare di realtà che perde peso fisico. Senza
+entrare in teorie generali sul futuro della materia, basta ricordare che
+l'uomo ha sempre sia costruito manufatti sia raffigurato per comunicare e
+tramandare.
+
+Esempio riscritto: invece della tavola prospettica rinascimentale citata
+nell'originale, si pensi a un affresco con colonnato che guida l'occhio verso
+un punto di fuga per dare profondità su muro piano. E' lo stesso sforzo antico:
+rendere credibile il 3D con artifici, prima con la prospettiva e oggi con il
+calcolo in tempo reale.
+
+Non esiste una sola definizione chiusa, perché il termine copre molti sistemi:
+progetto industriale, addestramento per mezzi e impianti, intrattenimento,
+visualizzazione scientifica, formazione a mansioni complesse, didattica a
+distanza. In fabbrica la persona è progettista o cliente e l'ambiente è il
+modello numerico del prodotto con le sue funzioni, messo in un contesto che può
+essere virtuale o reale. Vari stimoli visivi, sonori e tattili riproducono
+situazioni reali e l'utente prova il modello muovendosi dentro o intorno,
+spostando parti e ascoltando suoni, con sensazioni vicine al vero. Così
+crescono comprensione, analisi, idee e comunicazione. Sul piano delle parole il
+termine unisce due opposti, ciò che è concreto e ciò che non lo è nel concreto.
+
+La forza sta nel tenere insieme, anche per spazi complessi, sia significati
+studiati con schemi simbolici sia significati colti con la percezione. La parte
+più difficile è la risposta credibile del sistema ai gesti, che non deve rompere
+il senso di presenza, cioè l'illusione di stare davvero dentro la scena.
+
+Nello sviluppo industriale il vantaggio maggiore è controllare in anticipo
+avanzamento, organizzazione e coerenza di ogni idea. Cresce l'interesse a
+sostituire presto prove su modelli fisici con prove su equivalenti numerici,
+uguali per geometria e comportamento e messi in contesti d'uso simulati. Se i
+fisici sparissero del tutto, tempi e costi crollerebbero e la qualità salirebbe,
+perché si valuta presto in un ambiente riconfigurabile e si fanno molte più
+versioni sul modello numerico. Si passa dal provare per tentativi al migliorare
+in continuo tipico della simulazione, con benefici estetici, funzionali,
+costruttivi ed economici, specie per prodotti complessi. Resta però molto lavoro
+di sviluppo tra saperi diversi.
+
+Errore tipico: credere che dematerializzare significhi eliminare il prodotto.
+Si elimina il prototipo fisico intermedio, non l'oggetto finale né le verifiche.
+
+2. I PRIMI PASSI DELLA REALTA' VIRTUALE
+--------------------------------------------------
+
+Le prime simulazioni immersive nascono con gli addestratori per piloti subito
+dopo il secondo conflitto mondiale e con l'industria del tempo libero.
+Esempio riscritto: un giovane inventore e appassionato di cinema realizza a metà
+anni Cinquanta una cabina meccanica multisensoriale brevettata pochi anni dopo,
+con visore stereo dove appoggiare il viso, vibrazioni, vento, manubrio con
+ritorno, sensazione di movimento, audio su due canali ed erogatore di profumi.
+L'idea era offrire a basso costo un'esperienza di vista, udito, tatto e olfatto,
+ma l'industria la accolse con freddezza.
+
+Le basi concettuali per il progetto immersivo arrivano a metà anni Sessanta con
+l'idea che uno schermo collegato al calcolatore fa conoscere mondi impossibili
+nel fisico. Da qui nasce il primo casco con visione stereo e un inseguitore
+meccanico che legge la posizione della testa nello scenario. Intorno al 1970
+l'attenzione passa al dialogo con tutto il corpo: la tastiera appare un limite
+alla convinzione dell'illusione. L'obiettivo, ancora oggi non pieno, è agire
+senza strumenti dedicati. Un sistema sperimentale con telecamera e grande
+schermo ne è un passo: la sagoma ripresa e separata dallo sfondo si unisce a
+grafica generata e i gesti muovono una scena piana, con risposte visive e sonore
+che aumentano il realismo e danno un senso di legame tra corpo vero e immagine.
+
+Esempio riscritto con dati diversi: nei primi anni Settanta un'agenzia pubblica
+di ricerca concentra fondi su esigenze belliche mentre cresce l'interesse per il
+volo spaziale. Le imprese più attente aprono primi laboratori sul virtuale e
+nella manifattura entra il disegno assistito con prime immagini 3D su schermo
+piano. Seguono cabina di addestramento con casco e computer per piloti senza
+rischi reali, poi un guanto che legge posizione, orientamento e piegatura delle
+dita. A metà anni Ottanta un ambiente immersivo unisce casco e guanto per vedere
+in stereo e toccare la scena. Poi un sistema per missioni spaziali combina grafica,
+audio posizionato e comandi vocali sotto casco con piccoli schermi e guanto
+strumentato.
+
+Un ambiente conta per tre qualità base: quanto l'utente è libero di navigare,
+quanto manipola oggetti in tempo reale, quanta presenza sente per fedeltà e
+immersione. L'interfaccia non dà più solo funzioni ma include la persona dentro
+la scena. Il calcolatore si adatta ai gesti, l'utente è parte attiva perché il
+sistema reagisce dall'esterno. I programmi diventano multimodali per alzare
+l'immersione, con tocco diretto e intuitivo come se gli oggetti fossero veri.
+
+Errore tipico: pensare che basti il casco per avere immersione. Senza libertà di
+movimento, manipolazione reale e risposte coerenti resta solo visione 3D.
+
+3. CAMPI DI APPLICAZIONE DELLA REALTA' VIRTUALE
+--------------------------------------------------
+
+Il virtuale supporta abilità umane in molti campi, dal militare alla fisica,
+dallo spettacolo al disegno, dall'aerospazio all'auto e ai treni, dalla
+microrobotica all'architettura e al territorio, dai processi alla biomeccanica.
+Serve un realismo adeguato, quindi programmi sempre più dettagliati. La
+complessità cresce con disco, memoria e velocità di calcolo per avere risposte
+in tempi utili.
+
+Nell'industria è risorsa multidisciplinare per vedere, progettare soluzioni
+nuove e validare insieme prodotto e processo. Con rendering più potente nascono
+simulatori per uso e manutenzione, come guida di veicoli e controllo del
+traffico. L'effetto atteso sulla competitività è forte, anche con lavoro
+concorrente: il gruppo condivide presto il modello di stile e arriva prima al
+prototipo di riferimento, dal concetto alla forma finale in modo più naturale.
+
+Esempio riscritto: nel militare si addestrano squadre in scenari simulati che
+evitano incidenti dei giochi reali e risparmiano materiali ed energia, con
+posizioni diverse in tempo reale per migliorare tattica e coordinamento.
+Nell'industria si disegna un'intera linea con un programma di fabbrica virtuale:
+si prova ogni stazione e si sposta una postazione per ottimizzare il flusso,
+decidendo presto scelte poi redditizie. In medicina un paziente numerico fa
+provare interventi senza rischi, e un robot che segue la mano filtra il tremore
+e restituisce sforzi adatti su scale minute.
+
+Efficacia e diffusione crescono con calcolo e grafica. L'espansione continua
+perché il 3D simulato serve a scienza e industria insieme.
+
+Errore tipico: chiedere al virtuale la copia perfetta del reale. Basta il
+dettaglio utile alla decisione nei tempi richiesti, non il massimo assoluto.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il digitale separa informazione e materia e poi rimette informazione negli oggetti.
+- Il virtuale è nuovo dialogo persona-macchina con risposta multisensoriale immediata.
+- Senza senso di presenza l'interazione non regge, anche con bella grafica.
+- Nel progetto sostituire prove fisiche con cicli numerici taglia tempi e costi.
+- Contano controllo di navigazione, manipolazione reale e coinvolgimento.
+- Le tappe chiave vanno dai simulatori e cabine multisensoriali a casco, guanto e sistemi spaziali.
+- Militare, industria e medicina mostrano risparmi, sicurezza e decisioni anticipate.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+
+1. La dematerializzazione significa soprattutto:
+a) eliminare ogni prodotto fisico per sempre · b) separare informazione e materia e usare modelli numerici per prevedere e provare · c) stampare solo disegni su carta · d) spegnere tutti i sensori
+
+2. Perché il senso di presenza è centrale?
+a) è solo un effetto scenico · b) se la risposta non è credibile l'utente non si sente dentro la scena · c) serve solo per l'audio · d) impedisce di muoversi
+
+3. Una tappa storica corretta in ordine è:
+a) cabine per piloti e dispositivi multisensoriali prima di casco con inseguitore e guanto strumentato · b) guanto prima di ogni simulatore · c) sistemi spaziali prima del secondo conflitto · d) interfacce multimodali prima del disegno assistito
+
+4. Un ambiente virtuale si giudica per:
+a) solo per il prezzo del visore · b) libertà di navigazione, manipolazione in tempo reale e presenza percepita · c) solo numero di cavi · d) solo grandezza dello schermo
+
+5. Nell'industria il virtuale aiuta perché:
+a) evita qualsiasi modello · b) fa provare linea e prodotto e decidere presto con meno prototipi fisici · c) vieta la collaborazione · d) allunga i tempi per sicurezza
+
+6. In medicina il paziente numerico serve a:
+a) sostituire i medici · b) esercitarsi senza rischi e affinare precisione con aiuti robotici · c) evitare ogni misura · d) mostrare sole immagini fisse
+
+Soluzioni ragionate
+
+1 — b. E' il doppio movimento descritto: prima dati senza materia, poi modelli che prevedono risposte. La a) estremizza, la c) torna alla carta, la d) toglie proprio gli ingressi utili.
+
+2 — b. Senza risposta realistica cade l'illusione di far parte della scena. La a) lo riduce a trucco, la c) lo limita a un senso, la d) rovescia il concetto di navigazione.
+
+3 — a. Dai simulatori postbellici e cabine anni Cinquanta a casco anni Sessanta e guanto anni Ottanta. Le altre invertono epoche e cause tecniche.
+
+4 — b. Sono le tre qualità base indicate. Le altre usano un solo parametro fisico e ignorano interazione e coinvolgimento.
+
+5 — b. Simula disposizione e funzioni per ottimizzare prima di costruire. La a) nega il modello, la c) nega il lavoro concorrente, la d) contraddice la riduzione dei tempi.
+
+6 — b. Prove e microtecniche con filtraggio e sforzi guidati senza pericoli. La a) sostituisce persone, la c) elimina le misure, la d) toglie interazione.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

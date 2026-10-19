@@ -1,0 +1,283 @@
+[plain-text per Pages — da 7 - Sistemi di input.md]
+
+1. SISTEMI DI TRACKING
+--------------------------------------------------
+
+Un ambiente immersivo deve reagire ai gesti della persona.
+Serve quindi misurare dove si trovano e come sono orientate
+le parti del corpo coinvolte, come testa e mani, e usare tali
+misure per aggiornare scena e punto di vista in tempo reale.
+Il compito e affidato al tracciamento di posizione e postura.
+Piccoli sensori o emettitori posti sul corpo inviano segnali
+che cambiano con il movimento e una unita di calcolo li legge
+e li traduce nel grado di interazione corrispondente della scena.
+
+Lo spazio e percepito come volume a tre dimensioni.
+Si puo pensare a una terna fissa con tre assi perpendicolari.
+Un corpo puo spostarsi lungo ciascun asse e puo ruotare
+intorno a ciascun asse, con tre spostamenti piu tre rotazioni.
+In totale vi sono sei liberta di moto per un corpo rigido.
+Per una buona interazione conviene un puntatore che legga
+tutte e sei le liberta e le porti al programma senza riduzioni.
+
+Esempio riscritto: si pensi a un tecnico che controlla una pompa
+in una centrale virtuale di prova per addestramento interno.
+Piegando il busto avanza verso la pompa, ruotando il polso
+orienta una chiave virtuale e la scena segue subito i suoi gesti.
+Senza lettura completa di posto e orientamento la vista
+resterebbe fissa e il lavoro non sarebbe naturale e credibile.
+
+Per giudicare un sistema contano quattro qualita principali.
+Prima la zona utile, cioe quanto spazio coperto senza errori.
+Seconda la frequenza di lettura, cioe quante volte al secondo
+il calcolatore aggiorna i valori misurati sui sensori attivi.
+Terza la finezza minima, cioe il piu piccolo spostamento
+che lo strumento riesce ancora a distinguere con sicurezza.
+Quarta il ritardo di risposta, cioe quanto tempo passa tra
+il gesto reale e il suo riconoscimento a schermo per l'utente.
+
+Esistono cinque famiglie principali piu alcune estensioni.
+La famiglia con bracci articolati collega con un contatto fisico
+la persona alla macchina con snodi pieni di sensori di piega.
+Sono ingombranti e scomodi da portare, ma veloci, semplici,
+poco costosi e poco disturbati dall'ambiente intorno.
+Vanno bene per teleoperazione e guida a distanza in sicurezza.
+
+La famiglia con sensori di rotazione usa giroscopi nati per
+guida di velivoli e poi diffusi in stabilizzatori per riprese.
+Non chiede ponti tra trasmettitori e ricevitori esterni fissi.
+Il costo era alto e cala con la produzione di massa attuale.
+Chiede ritarature frequenti e soffre le variazioni di calore.
+
+La famiglia con telecamere legge luci o punti luminosi posti
+sulla persona e calcola lo spostamento dalle immagini in diretta.
+Costa e ingombra molto, ma copre saloni ampi con alta precisione.
+Puo usare luce visibile, raggi nascosti, camere o fotodiodi semplici.
+Il difetto di occlusione del raggio si riduce con piu camere intorno.
+Un esempio generico con raggi nascosti segue una decina di punti
+fino a pochi metri e ignora bene metalli e disturbi magnetici.
+Un altro esempio con punti catarifrangenti valuta la nitidezza
+del punto riflesso per stimare la distanza e poi ric costruisce
+il volume da piu viste piane con programma dedicato.
+Qui la finezza cala se sale troppo la frequenza di lettura.
+
+La famiglia con onde acustiche usa echi come un sonar marino.
+Misura rimbalzi e variazioni quando un corpo si muove nel campo.
+Un esempio generico con bande adesive di sensori segue il moto
+completo in sei liberta con ritardo di pochi millisecondi,
+finezza di un paio di millimetri e passo angolare molto piccolo,
+con lettura fino a oltre cento volte al secondo secondo i punti.
+Funziona anche con penne e bacchette senza filo con moduli extra.
+
+La famiglia con campi magnetici e la piu diffusa anche se meno
+precisa di camere e onde acustiche per misure fini di dettaglio.
+Una base fissa crea un campo e piccoli ricevitori addosso
+alterano il campo e la variazione dice posto e orientamento.
+I ricevitori sono piccoli come una moneta e quindi molto comodi.
+La zona e media ma si allarga unendo piu basi insieme in rete.
+Il difetto e la sensibilita ai disturbi elettromagnetici vicini.
+Un esempio generico storico segue fino a quattro ricevitori
+con ritardo minimo e lettura oltre cento volte al secondo.
+Un esempio piu recente segue oltre dieci sensori insieme
+con lettura doppia e ritardo ancora minore per scene affollate.
+Un altro esempio usa corrente continua e soffre meno i rumori,
+seguendo pochi sensori con oltre cento letture al secondo.
+
+Vi sono poi lettori dello sguardo che seguono i movimenti degli occhi
+per capire dove guarda l'utente dentro la scena mostrata a casco.
+Un esempio generico misura la direzione di un solo occhio rispetto
+alla testa e anche l'apertura della pupilla per attenzione e fatica.
+La zona misurabile resta stretta e la lettura resta media e lenta.
+
+Vi sono infine sistemi di cattura del corpo per molte articolazioni.
+Di solito bastano testa su casco o occhiali e mani con guanti leggeri.
+A volte serve tutto il corpo per presenza forte e completa in scena.
+Una tuta semplice con sensori di rotazione e leggera ed economica,
+ma rigida da indossare e poco adatta a prove di postura ergonomica.
+Un sistema con punti luminosi e camere e caro ma molto comodo,
+perche chiede solo piccoli segni senza fili sulla persona ripresa.
+
+Errore tipico: scegliere solo per precisione di catalogo senza
+guardare zona utile, ritardo e disturbi del luogo di lavoro reale.
+
+2. SISTEMI DI NAVIGAZIONE
+--------------------------------------------------
+
+Navigare significa muoversi in scena e cambiarne la vista.
+Si puo arretrare da un pezzo, avvicinarsi a un dettaglio
+o puntare dritti a un luogo prefissato del mondo sintetico.
+Lo stesso tracciamento puo guidare il moto legando il punto
+di vista a un sensore posto sul capo della persona immersa.
+Cosi il protagonista sente forte presenza e naturalezza viva,
+ma chi guarda da fuori su schermo vede salti rapidi di vista
+e puo provare fastidio e senso di malessere dopo poco tempo.
+
+Gli strumenti piani classici come mouse e tavoletta restano ottimi
+per punta e seleziona su due dimensioni con grande precisione.
+Con la grafica moderna si e provato a portarli in tre dimensioni.
+Un esempio generico di mouse volumetrico usa tre segnalatori
+acustici su treppiede che inviano impulsi a un ricevitore in mano.
+Dalla differenza di tempi ricava posto e orientamento completi
+in sei liberta e permette presa e volo dentro il volume di lavoro.
+
+Esempio riscritto: si pensi a un magazziniere che cerca un ricambio
+in un deposito virtuale con scaffali alti e corsie strette e lunghe.
+Con un mouse volumetrico avanza tra le corsie, ruota la vista
+verso i ripiani alti e aggancia la scatola giusta al primo colpo.
+Con un mouse piano classico dovrebbe usare tasti e menu extra
+e il giro sarebbe piu lento e meno intuitivo per i nuovi addetti.
+
+Un altro strumento usa una sfera sensibile a spinte e torsioni.
+Le forze sulla sfera vanno al calcolatore che le legge e le unisce
+in una sola trasformazione rigida da dare agli oggetti in scena.
+Alcuni tasti davanti regolano la sensibilita secondo scala e distanza,
+altri bloccano spostamenti o rotazioni per lavori di precisione.
+
+Un altro strumento molto diffuso e la cloche da mano compatta.
+Ha forma adatta al palmo e resta robusta e versatile per lunghi turni.
+Va molto bene per moto nel piano di appoggio e sterzate semplici.
+Va meno bene se durante il volo serve cambiare spesso quota
+con salite e discese continue e fini lungo l'asse verticale.
+
+Accanto a questi vi sono bacchette e impugnature dedicate,
+natte per realta virtuale e pensate per stare in mano leggera.
+Rilevano posto e moto nello spazio e mandano i dati
+a un elaboratore centrale che li archivia e li usa in scena.
+Usate con un buon tracciamento esterno danno presa sicura
+e permettono sia volo libero sia tocco e scelta di pezzi vicini.
+
+Errore tipico: legare sempre la vista alla testa senza alternative.
+Per visite guidate e pubblico esterno meglio un comando manuale
+stabile che evita scossoni continui e malessere a chi osserva.
+
+3. SISTEMI HAPTIC
+--------------------------------------------------
+
+L'ultimo grado di interazione e toccare e cambiare gli oggetti.
+Qui si sceglie, si afferra, si sposta e si modifica posto,
+forma e colore in tempo reale con gesti diretti e naturali.
+Alcuni navigatori con pulsanti e azioni programmabili aiutano
+entro certi limiti a prendere e muovere pezzi in scena virtuale.
+Resta pero la mano il mezzo piu congeniale e immediato.
+I sistemi indossati sul corpo danno il contatto piu semplice,
+perche seguono le dita e il palmo senza astrazioni intermedie.
+
+Quando la mano tocca un pezzo virtuale non bastano luci e suoni.
+Serve anche un segnale sulla pelle per dire che vi e contatto vero.
+Cosi cresce realismo e senso di presenza dentro la scena condivisa.
+La parola usata viene dal greco e richiama afferrare e toccare.
+Questi apparati portano il tatto nel mondo sintetico con interfacce
+collegate al calcolatore che leggono e restituiscono azioni.
+I piu semplici dicono se una faccia e liscia o ruvida o appuntita.
+I piu ricchi dicono anche calore, umidita, densita, peso e sforzi.
+Si puo cosi prendere un pezzo, sentirne la durezza e girarlo.
+
+Un sistema tattile lavora in due versi insieme nello stesso tempo.
+Come uscita manda ritorno di forza dal mondo verso la persona.
+Come ingresso prende controllo e manipolazione dalla persona
+verso il mondo con presa e spinta sugli oggetti mostrati a schermo.
+
+La pelle sente con piccoli pistoncini o bolle che vibrano a comando
+dentro guanti speciali che avvolgono dita e palmo della mano.
+Le forze al braccio che danno senso di posizione e resistenza
+vengono da vincoli fisici come leve reattive o snodi meccanici veri.
+Ogni apparato e unito a un tracciamento che segue la mano e la blocca
+prima che entri dentro il solido virtuale toccato in quel momento.
+Oltre al tatto semplice si puo afferrare, tirare e deformare in modo attivo.
+La bonta di un apparato si giudica con zona utile, precisione,
+liberta di moto, rigidezza, spinta nominale, spinta massima,
+inerzia propria e alcuni indici senza unita per confronti equi.
+
+Esempio riscritto: si pensi a un apprendista che prova viti e dadi
+di un pannello elettrico in un banco virtuale di officina didattica.
+Con guanto a fibre che legge le pieghe delle dita vede la sua mano
+copiare i gesti a schermo e sente scatti leggeri a ogni filetto.
+Con tendini esterni sulle dita la presa si ferma sul metallo duro
+e non affonda dentro il pezzo come senza ritorno di forza vero.
+
+Tra i modelli, un braccio da tavolo con penna o ditale e stato tra
+i primi diffusi e resta molto usato in laboratorio e scuola.
+Esiste in varianti per zona, liberta, rigidezza e forza massima utile.
+Un altro modello a base fissa con tre liberta regge spinte molto alte
+e copre un volume ditens di secchi d'acqua con buon margine.
+Serve per prove di leve di cambio e per esercizi di recupero motorio.
+Una famiglia di guanti misura la postura, aggiunge vibrazione
+su ogni dito e poi aggiunge esoscheletro con tendini per cinque dita.
+Ogni dito ha un motore che frena al contatto con solidi virtuali
+con forze perpendicolari ai polpastrelli e gesti quasi naturali.
+Una versione con armatura fino al braccio segue anche spalla e gomito,
+ma resta ingombrante e scomoda e poco adatta a fabbrica vera.
+Oggi si punta a tatto su tutto il corpo per realismo totale,
+ma per l'industria serve ancora molta ricerca prima dell'uso quotidiano.
+
+Errore tipico: credere che basti vibrazione per dire tatto vero.
+Senza blocco contro penetrazione e senza misura di forza e forma
+la presa resta finta e la mano passa dentro gli oggetti mostrati.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il tracciamento legge posto e orientamento e aggiorna scena e vista.
+- Sei liberta uniscono tre spostamenti e tre rotazioni nello spazio.
+- Zona, frequenza, finezza e ritardo guidano la scelta del sistema.
+- Bracci, giroscopi, camere, echi e campi hanno pregi e limiti diversi.
+- Sguardo e tute intere servono solo per compiti speciali mirati.
+- La vista legata al capo e immersiva ma puo dare malessere a chi guarda.
+- Mouse volumetrico, sfera di forza e cloche portano il piano in tre dimensioni.
+- Bacchette dedicate lavorano bene solo con buon tracciamento esterno.
+- Il tatto unisce uscita di forza e ingresso di controllo nello stesso gesto.
+- Guanti, penne e esoscheletri devono bloccare la mano sul solido toccato.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Verifica con domande originali sugli stessi temi della lezione.
+Le soluzioni ragionate sono in fondo e nessuna domanda e copiata.
+
+1. Per una buona interazione immersiva un puntatore dovrebbe:
+a) leggere una sola direzione piana b) leggere sei liberta tra spostamenti e rotazioni c) leggere solo suoni senza gesti d) restare fisso senza aggiornare la vista
+
+2. La qualita di un tracciamento si giudica soprattutto da:
+a) colore del contenitore e nome commerciale b) zona utile, frequenza, finezza e ritardo c) numero di viti esterne del mobile d) lunghezza del cavo di alimentazione
+
+3. Un sistema con braccio articolato e sensori ai giunti e:
+a) leggero e invisibile senza contatto b) ingombrante ma veloce, semplice e poco disturbato c) privo di sensori e senza misure d) utile solo per stampare su carta
+
+4. Per navigare senza dare malessere al pubblico esterno conviene:
+a) muovere sempre la vista con la testa del protagonista b) usare un comando manuale stabile con moto dolce c) spegnere ogni schermo esterno alla scena d) cambiare vista a scatti rapidi e continui
+
+5. Un sistema tattile completo deve comportarsi come:
+a) solo uscita video senza tocco b) solo ingresso tasti senza ritorno c) ingresso e uscita insieme con presa e ritorno di forza d) archivio fermo senza interazione
+
+6. Il limite degli esoscheletri grandi per fabbrica e oggi:
+a) ingombro e vestibilita scomoda per turni lunghi b) assenza totale di motori e sensori c) impossibilita di vedere la scena in testa d) mancanza di mani nell'operatore reale
+
+Soluzioni ragionate
+
+1 — b. Servono tre spostamenti piu tre rotazioni per gesti naturali. La a) riduce a un piano, la c) ignora il moto, la d) nega l'aggiornamento di scena.
+
+2 — b. Sono i quattro parametri che contano per uso reale. La a) guarda estetica e marca, la c) guarda viti inutili, la d) guarda solo alimentazione.
+
+3 — b. Il contatto fisico con braccio da presa veloce ma ingombra. La a) nega il contatto, la c) nega i sensori, la d) cambia del tutto il campo d'uso.
+
+4 — b. Un comando manuale dolce evita salti di vista agli osservatori. La a) crea scossoni continui, la c) nasconde senza risolvere, la d) peggiora il malessere esterno.
+
+5 — c. La mano comanda e sente forza insieme nello stesso gesto. La a) resta solo video, la b) resta solo tasti, la d) nega ogni scambio vivo.
+
+6 — a. Peso e vestibilita frenano l'uso industriale quotidiano. La b) nega motori presenti, la c) confonde con visori assenti, la d) descrive un caso impossibile.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+Struttura obbligatoria del file .txt (plain-text per Word/Pages, niente Markdown):
+- Prima riga: plain-text per Pages — da <Titolo>.md, poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice senza backtick, code span o altra sintassi Markdown, esempi riscritti con dati/casi diversi dall'originale ed evidenziazione degli errori tipici da evitare. Matrici/tabelle solo come righe di testo separate da spazi.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi, senza Markdown.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
