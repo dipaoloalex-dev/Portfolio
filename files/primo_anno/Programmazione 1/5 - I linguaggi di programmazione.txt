@@ -1,0 +1,230 @@
+[plain-text per Pages — da 5 - I linguaggi di programmazione.md]
+
+1. INTRODUZIONE ALLA PROGRAMMAZIONE
+-----------------------------------
+
+Unidea intuitiva dice che parlare e usare parole
+capite da un gruppo. Questa idea non basta per
+calcolare in automatico, perche resta ambigua
+e non dice come verificare frasi e proprieta.
+
+Serve invece un **linguaggio formale** visto come
+sistema preciso. Deve dire quali frasi sono ammesse,
+come controllare se una frase ci appartiene,
+come fissarne il senso e quali sono i mattoni
+primitivi da cui partire.
+
+Tre piani vanno distinti sempre.
+Il **lessico** fissa come si scrivono le parole.
+La **sintassi** fissa come si combinano le parole
+in frasi, cioe la grammatica da rispettare.
+La **semantica** fissa il senso da dare alle frasi
+gia costruite in modo corretto.
+
+Esempio riscritto: una riga puo rispettare le
+regole di forma ma restare senza senso, come un
+conto scritto bene con tipi non adatti allazione.
+La forma da sola non garantisce il significato.
+
+Errore tipico: pensare che basti la frase ben
+formata per avere un programma che funziona.
+
+2. LINGUAGGI DI PROGRAMMAZIONE
+-------------------------------
+
+Un calcolatore esegue solo ordini semplici e
+limitati che capisce davvero, anche se poi con
+essi svolge lavori complessi. Va guidato passo
+passo con un codice adatto a lui.
+
+Ogni linguaggio nasce da caratteri base, poi da
+parole riservate e poi da regole per usarle bene.
+A livello fisico contano solo azioni come sposta
+un dato, somma due dati, confronta due dati.
+
+Linsieme degli ordini cablati forma il
+**linguaggio macchina**. Chi lo usa diretto scrive
+programmi macchina. Ogni compito richiede molte
+istruzioni elementari. Tutto diventa numero
+binario, dati e comandi insieme. Scrivere leggere
+e mantenere e faticoso. La forma riflette la
+macchina piu che il problema da risolvere.
+
+Poi venne l**assembly** con sigle al posto dei
+numeri e nomi al posto degli indirizzi.
+Esempio riscritto: invece di un codice numerico
+si scrive `MOV` per spostare e `ADD` per sommare,
+con nomi come `tot` e non posizioni numeriche.
+Serve comunque un **assemblatore** che traduce
+ogni sigla in istruzioni macchina. Rapporto uno
+a uno, piu leggibile ma ancora legato alla macchina.
+
+Oggi lassembly resta solo con limiti forti di
+tempo. Di solito si sta piu vicini alla lingua
+naturale con un **linguaggio di alto livello**.
+Sta a meta fra macchina da un lato e lingua
+naturale dallaltro. Meno ricco della lingua
+naturale ma piu preciso. Poche parole e poche
+regole, senza ambiguita.
+
+Il C sta in mezzo fra basso e alto. Vicino alla
+macchina abbastanza da controllare i dettagli,
+astratto abbastanza da ragionare sul problema.
+
+Errore tipico: credere che basti conoscere la
+macchina per scrivere in alto livello, oppure
+credere che alto livello significhi lingua libera.
+
+3. I LINGUAGGI DI ALTO LIVELLO
+------------------------------
+
+Lalto livello tratta oggetti complessi senza
+chiedere i dettagli fisici di ogni macchina.
+Per girare pero serve un traduttore verso il basso.
+Un **compilatore** e un programma che traduce
+in blocco verso istruzioni eseguibili.
+Un interprete traduce ed esegue passo passo.
+
+In assembly ogni riga vale una istruzione macchina.
+In alto livello una sola riga puo valere molte
+istruzioni macchina. Il traduttore e quindi piu
+complesso di un semplice assemblatore.
+
+Vantaggi di chi non dipende dalla macchina:
+niente dettagli fisici per ogni modello,
+testi piu facili da leggere e da cambiare.
+Si parla di **portabilita** leggibilita e
+manutenibilita. Portabile gira altrove dopo
+nuova traduzione. Leggibile ricorda la lingua
+naturale. Manutenibile si corregge e si evolve
+con meno fatica. Lastratto aiuta anche a
+controllare se lalgoritmo e corretto.
+
+Esempio riscritto: stesso calcolo del totale
+portato su due macchine diverse senza riscriverlo,
+basta ritradurre. A basso livello servirebbe
+riscrittura legata ai registri.
+
+Possibile prezzo e minore efficienza. A parita
+di risultato esistono sequenze macchina diverse.
+Chi scrive in alto controlla poco le scelte del
+traduttore. Compilatori moderni pero usano
+ottimizzazioni che molti non conoscono.
+Poiche il costo vero sta dopo la consegna, fra
+correzioni e adattamenti, la chiarezza vince.
+
+Errore tipico: puntare tutto alla velocita
+subito e perdere leggibilita e portabilita,
+che pesano di piu nel tempo.
+
+4. TIPI DI LINGUAGGI AD ALTO LIVELLO
+------------------------------------
+
+I linguaggi si raggruppano per modello astratto
+che chiedono di usare mentre si programma.
+Schema in righe di testo semplici:
+programmazione
+imperativi dichiarativi
+imperativi procedurali oggetti parallelo
+dichiarativi funzionali logici
+
+Il **linguaggio imperativo** cambia lo stato
+della memoria passo passo. Al centro sta
+lassegnazione di un valore a una cella.
+Chi programma costruisce la sequenza di passi
+che porta dallo stato iniziale a quello finale
+che rappresenta la soluzione.
+Sotto stanno procedurali come `C`, a oggetti
+come `Java`, e forme per il calcolo parallelo.
+
+Il **linguaggio dichiarativo** ragiona per funzioni
+e relazioni. Non si pensa per celle che cambiano,
+ma per legami fra dati e risultati di funzioni.
+Sotto stanno funzionali come `Lisp` e logici
+come `Prolog`.
+
+Esempio riscritto: per totale e media si puo
+dare la sequenza leggi somma dividi e assegna,
+oppure dichiarare il legame media uguale somma
+su conteggio senza dire i passi di memoria.
+
+La scelta dipende dallambito. Calcolo tecnico
+usa forme procedurali. Intelligenza artificiale
+usa forme logiche e funzionali. Gestione usa
+forme per archivi e tabelle. Sistemi usa forme
+vicine alla macchina. Interfacce e rete usano
+forme a oggetti e ambienti visuali e web.
+
+Errore tipico: usare un modello imperativo dove
+basterebbe una relazione, oppure forzare tutto
+in un solo linguaggio per ogni ambito.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Formale dice parole frasi senso e mattoni, non solo uso comune.
+- Lessico per parole, sintassi per frasi, semantica per senso.
+- Macchina e binario faticoso, assembly con sigle e nomi piu leggibile.
+- Alto livello a meta strada, povero ma senza ambiguita.
+- Compilatore traduce in blocco, interprete passo passo.
+- Portabile leggibile e manutenibile batte il solo veloce.
+- Imperativi per stati e assegnazioni, dichiarativi per funzioni e relazioni.
+- C intermedio, scelta del linguaggio per ambito.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche serve un linguaggio formale oltre lidea comune di lingua?
+a) Per avere piu ambiguita · b) Per dire frasi ammesse test di appartenenza senso e mattoni · c) Per togliere ogni regola · d) Solo per tradurre poesie
+
+2. Cosa distingue sintassi e semantica?
+a) Sono la stessa cosa · b) La prima fissa la forma delle frasi, la seconda il senso delle frasi corrette · c) La prima da il senso, la seconda le parole · d) Nessuna riguarda le frasi
+
+3. Cosa cambia fra macchina e assembly?
+a) Nulla, sono identici · b) Macchina e binario diretto, assembly usa sigle e nomi poi tradotti · c) Assembly non si traduce mai · d) Macchina e piu leggibile
+
+4. Cosa fa un compilatore per lalto livello?
+a) Evita ogni traduzione · b) Traduce una riga anche in molte istruzioni macchina eseguibili · c) Esegue senza leggere il codice · d) Lega solo i cavi
+
+5. Cosa indicano portabilita leggibilita e manutenibilita?
+a) Solo velocita · b) Uso altrove dopo ritraduzione, lettura facile, modifica facile · c) Solo minor costo subito · d) Obbligo di riscrivere tutto
+
+6. Quando usare un dichiarativo invece di un imperativo?
+a) Quando basta una relazione fra dati senza passi di stato · b) Sempre per muovere registri · c) Mai, non esiste · d) Solo per spegnere la macchina
+
+Soluzioni ragionate
+
+1 — b. Servono quattro risposte precise su frasi e senso. La a) vuole lambiguita, la c) toglie le regole, la d) sposta lambito.
+
+2 — b. Forma contro senso con frasi corrette. La a) le fonde, la c) le scambia, la d) le nega.
+
+3 — b. Sigle e nomi con traduttore uno a uno. La a) li unisce, la c) nega la traduzione, la d) inverte la leggibilita.
+
+4 — b. Da astratto a eseguibile in molte istruzioni. La a) nega il ruolo, la c) salta la lettura, la d) resta allhardware.
+
+5 — b. Tre vantaggi insieme dopo la consegna. La a) guarda solo al tempo, la c) guarda solo al prezzo iniziale, la d) nega il riuso.
+
+6 — a. Funzioni e relazioni senza celle. La b) chiede passi di stato, la c) nega la famiglia, la d) riduce tutto a un tasto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

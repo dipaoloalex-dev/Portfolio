@@ -1,0 +1,203 @@
+[plain-text per Pages — da 5 - Aritmetica in C.md]
+
+1. CONCETTI RELATIVI ALLA MEMORIA
+---------------------------------
+
+Ogni nome di variabile indica una
+**locazione di memoria** del computer.
+Ogni variabile ha nome, tipo e valore
+contenuto in quel momento.
+
+Quando si legge con `scanf` il valore digitato
+viene posto nella locazione con quel nome.
+Le locazioni diverse non devono essere vicine.
+
+Esempio riscritto con dati diversi: invece di 45
+e 72 si pensi a 31 in `valA` e 58 in `valB`.
+Prima `valA` riceve 31, poi `valB` riceve 58.
+Poi `tot = valA + valB` mette 89 in `tot`.
+
+Scrivere un nuovo valore cancella quello prima:
+si parla di **scrittura distruttiva**.
+Il contenuto vecchio va perso per sempre.
+
+Fare la somma invece usa i valori senza
+cancellarli. I due addendi restano uguali
+dopo il conto. Solo la destinazione cambia.
+
+Quando un valore viene solo letto e resta
+intatto si parla di **lettura non distruttiva**.
+
+Errore tipico: credere che usare una variabile
+in un conto la azzeri, oppure credere che due
+variabili vicine nel codice siano vicine in memoria.
+
+2. OPERATORI ARITMETICI IN C
+----------------------------
+
+I calcoli usano uno speciale **operatore aritmetico**.
+Il C non usa gli stessi segni dellalgebra su carta.
+La moltiplicazione vuole sempre `*` esplicito.
+Il resto della divisione vuole `%`.
+In algebra `ab` pare prodotto, in C `ab` pare
+un solo nome di due lettere, quindi serve `a * b`.
+
+Tutti questi segni sono detti **operatore binario**
+perche legano due operandi, come `4 + 9`
+con operatore `+` e operandi `4` e `9`.
+
+Tabella riscritta in righe di testo semplici:
+operazione addizione segno `+` algebra f + 7 C f + 7
+operazione sottrazione segno `-` algebra p - c C p - c
+operazione prodotto segno `*` algebra k m C k * m
+operazione quoziente segno `/` algebra x div y C x / y
+operazione resto segno `%` algebra r mod s C r % s
+
+La **divisione intera** taglia i decimali.
+Esempio riscritto: `9 / 4` vale `2` e `19 / 6`
+vale `3`. Resta solo la parte intera.
+
+L **operatore di resto** `%` da cio che avanza.
+Funziona solo con operandi interi.
+Esempio riscritto: `9 % 4` vale `1` e `19 % 6`
+vale `1`. Serve per cicli, parita e controlli.
+
+Le formule vanno scritte in **forma lineare**,
+tutto su una riga con segni espliciti.
+Esempio riscritto: a diviso b diventa `a / b`.
+
+Errore tipico: dividere per zero e bloccare il
+programma, oppure usare `%` con valori non interi.
+Un blocco subito e irreversibile, un risultato
+sbagliato senza blocco e non irreversibile.
+
+3. ESPRESSIONI ALGEBRICHE IN C
+------------------------------
+
+Le parentesi raggruppano come in algebra.
+Esempio riscritto: per `k` volte `m + n`
+si scrive `k * (m + n)`.
+
+Lordine segue la **precedenza degli operatori**:
+1 parentesi al massimo livello, prima le piu
+interne in caso di **parentesi annidate**
+come `( (a + b) + c )`
+2 prodotto resto e quoziente da sinistra a destra
+3 somma e differenza da sinistra a destra
+con livello piu basso del gruppo prima
+4 assegnazione con `=` sempre per ultima.
+
+Quando a pari livello si va da sinistra a destra
+si parla di **associativita** da sinistra a destra.
+Altri operatori, che si vedranno dopo, vanno
+invece da destra verso sinistra.
+
+Esempio riscritto con media di quattro termini:
+`t = (a + b + c + d) / 4`
+Le tonde servono perche `/` batte `+`.
+Senza tonde solo `d` verrebbe diviso per `4`.
+
+Esempio riscritto di retta: `y = p * x + q`
+Qui le tonde non servono perche `*` batte `+`.
+
+Esempio riscritto misto con tutti i segni:
+`z = p * r % q + w / x - y`
+ordine 6 1 2 4 3 5
+Prima `*` `%` `/` da sinistra, poi `+` `-`
+da sinistra, infine `=` in `z`.
+
+Tondeggianti allo stesso livello senza dentro
+fuori si calcolano da sole, come in
+`a * (b + c) + d * (e + f)`.
+
+Esempio riscritto di polinomio di grado due:
+`y = a * x * x + b * x + c`
+ordine 6 1 2 4 3 5
+Non esiste elevamento a potenza, quindi `x`
+al quadrato si scrive `x * x`.
+Con `a = 3` `b = 4` `c = 5` `x = 4`:
+`y = 3 * 4 * 4 + 4 * 4 + 5`
+`y = 12 * 4 + 4 * 4 + 5`
+`y = 48 + 4 * 4 + 5`
+`y = 48 + 16 + 5`
+`y = 64 + 5`
+`y = 69`
+
+Tondeggianti non richieste ma utili per chiarezza
+si dicono **parentesi ridondanti**, come in
+`y = (a * x * x) + (b * x) + c`.
+
+Errore tipico: togliere tonde utili sulla somma
+prima della divisione, oppure credere che `*`
+e `+` abbiano pari rango.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nome variabile uguale locazione con tipo e valore mutevole.
+- Scrittura cancella il vecchio, lettura lascia intatto.
+- `*` per prodotto e `%` per resto, sempre espliciti.
+- `/` tra interi taglia i decimali, `%` solo tra interi.
+- Tutto in linea su una riga, niente frazioni su due piani.
+- Ordine: tonde, poi `*` `/` `%`, poi `+` `-`, infine `=`.
+- A pari rango si va da sinistra a destra.
+- Tonde utili per chiarezza anche se non obbligatorie.
+- Mai dividere per zero.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa succede a `tot` e agli addendi in `tot = valA + valB`?
+a) `tot` cambia e gli addendi restano · b) Tutti e tre si azzerano · c) Gli addendi si cancellano e `tot` resta · d) Nulla cambia in memoria
+
+2. Quale scrittura C e corretta per il prodotto di `k` per `m`?
+a) `k m` vicini · b) `k x m` con x · c) `k * m` esplicito · d) `k mod m` con mod
+
+3. Quanto valgono `9 / 4` e `9 % 4` tra interi?
+a) `2` con resto `1` · b) `2.25` con resto `2.25` · c) `1` con resto `3` · d) `4` con resto `9`
+
+4. Come va scritta in C una frazione con somma sopra?
+a) Senza segni su due righe · b) Con tonde come `(a + b + c + d) / 4` · c) Come `a + b + c + d / 4` senza tonde · d) Come `a / b + c / d` spezzata
+
+5. In `z = p * r % q + w / x - y` cosa si fa prima?
+a) `=` poi tutto il resto · b) `+` e `-` prima di `*` · c) `*` `%` `/` da sinistra poi `+` `-` poi `=` · d) Tutto da destra a sinistra insieme
+
+6. Con `a = 3` `b = 4` `c = 5` `x = 4` quanto vale `a * x * x + b * x + c`?
+a) `69` · b) `89` · c) `72` con altri dati · d) `48` fermo al primo prodotto
+
+Soluzioni ragionate
+
+1 — a. Destinazione distrutta e sorgenti intatte. La b) azzera tutto, la c) inverte i ruoli, la d) nega ogni effetto.
+
+2 — c. Solo `*` dice prodotto in C. La a) crea un solo nome, la b) usa una lettera, la d) chiede il resto.
+
+3 — a. Taglio a `2` e avanzo `1`. La b) da decimali impossibili tra interi, la c) copia altri valori, la d) scambia dividendo e risultato.
+
+4 — b. Tonde prima della divisione. La a) non e lineare, la c) divide solo lultimo, la d) cambia la formula.
+
+5 — c. Rango e verso corretti con `=` ultimo. La a) anticipa `=`, la b) inverte i ranghi, la d) usa un solo verso errato.
+
+6 — a. `48 + 16 + 5` fa `69`. La b) usa altri addendi, la c) copia un vecchio esempio, la d) si ferma a meta conto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

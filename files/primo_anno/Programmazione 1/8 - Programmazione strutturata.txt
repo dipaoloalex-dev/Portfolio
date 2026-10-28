@@ -1,0 +1,237 @@
+[plain-text per Pages — da 8 - Programmazione strutturata.md]
+
+1. INTRODUZIONE
+---------------
+
+Risolvere un calcolo vuol dire fare passi
+in un ordine preciso, non solo elencare azioni.
+Un **algoritmo** dice quali mosse fare e in
+quale successione farle.
+
+Esempio riscritto con caso diverso: invece della
+sveglia al lavoro si pensi alla chiusura serale
+di un negozio. Ordine giusto: spegni forno,
+lava banco, chiudi cassa, abbassa serranda,
+vai a casa. Se inverti lava banco e spegni forno
+dopo aver chiuso, sprechi tempo e lasci sporco.
+Lordine cambia il risultato anche con stessi passi.
+
+Dire in che ordine eseguire le righe si dice
+**controllo del programma**. Senza controllo
+chiaro il computer segue un percorso errato.
+
+Errore tipico: elencare azioni senza fissare
+lordine e scoprire solo dopo che il risultato
+non torna.
+
+2. PSEUDOCODICE
+---------------
+
+Lo **pseudocodice** e un modo informale e quasi
+discorsivo per progettare prima di scrivere in C.
+Non gira sul computer, serve per ragionare con
+calma e poi tradurre riga per riga in C.
+
+Si scrive con soli caratteri in un editor. Una
+buona bozza si converte quasi da sola, perche
+ogni frase trova il suo comando in C.
+
+Contiene solo azioni e scelte reali. Una
+**definizione non eseguibile** come `int k`
+avvisa il traduttore e riserva memoria, ma non
+fa conti ne letture ne stampe quando gira.
+Alcuni elencano tutte le variabili allinizio
+con una nota sullo scopo di ciascuna.
+
+Errore tipico: trattare lo pseudocodice come
+programma da eseguire, oppure mettere fra le
+azioni anche le definizioni per il traduttore.
+
+3. DIAGRAMMI DI FLUSSO
+----------------------
+
+Un **diagramma di flusso** disegna lalgoritmo
+con figure unite da frecce dette linee di flusso.
+Mostra subito lordine e i bivi meglio di un
+elenco. Molti preferiscono lo pseudocodice, ma
+il disegno rende evidenti i controlli.
+
+Il **simbolo di azione** e il rettangolo per conti
+e scambi con lesterno. Esempio riscritto con
+nomi diversi: prima `tot = tot + punti` poi
+`conta = conta + 1`. Prima si aggiorna il totale,
+poi si avanza il contatore.
+
+Per un disegno intero si apre con ovale con
+dentro Avvio e si chiude con ovale con dentro
+Fine. Per un pezzo isolato si usano invece
+tondini detti **simbolo connettore**, uno in
+entrata e uno in uscita. Ogni controllo ha cosi
+un solo ingresso e una sola uscita e i pezzi si
+uniscono uscita contro ingresso in fila.
+
+Il **simbolo di decisione** e il rombo per le
+scelte. Contiene una domanda con risposta vera
+o falsa e ha due frecce in uscita, una per via.
+
+Errore tipico: usare ovunque rettangoli anche
+per le domande, oppure lasciare pezzi senza
+ingresso e uscita chiari.
+
+4. ISTRUZIONI DI SELEZIONE IN C
+-------------------------------
+
+Il C offre tre forme di scelta.
+La **selezione singola** con `if` fa un passo
+se vero e lo salta se falso.
+La doppia con `if` piu `else` fa un passo se
+vero e un altro passo se falso.
+La multipla con `switch` sceglie fra molte vie
+a seconda del valore di una espressione.
+
+Errore tipico: usare `if` da solo quando servono
+due vie diverse, oppure usare `switch` per un
+semplice si o no.
+
+5. ISTRUZIONI DI ITERAZIONE IN C
+--------------------------------
+
+Il C offre tre forme di ciclo: `while` con test
+prima, `do` piu `while` con test dopo, `for`
+compatto con avvio test e passo. Non ce altro.
+
+In tutto il C ha sette controlli: sequenza, tre
+scelte, tre cicli. Ogni programma nasce da questi
+pezzi combinati nel modo adatto al compito.
+
+I pezzi si legano in due soli modi. Con
+l**accatastamento** si mettono in fila uscita
+contro ingresso, come mattoni uno sopra laltro.
+Con l**annidamento** si mette un controllo
+dentro un altro. Bastano sette tipi e due modi
+per costruire ogni programma.
+
+Errore tipico: credere che servano comandi
+speciali oltre i sette, oppure unire i pezzi
+con salti liberi invece che in fila o dentro.
+
+6. ISTRUZIONE DI SELEZIONE IF
+-----------------------------
+
+La scelta serve fra vie alternative. Esempio
+riscritto con dati diversi: invece di soglia 18
+e parola Passed si usi soglia 24 e parola Ok.
+Se `media >= 24` stampa `Ok`, senno salta la
+stampa e va alla riga dopo. Lo pseudocodice in
+forma Se stampa corrisponde quasi alla riga
+`if (media >= 24)` con `puts` dentro.
+
+La riga interna va rientrata. Il rientro aiuta
+a vedere la struttura ma il traduttore ignora
+spazi tabulazioni e ritorni. Vale zero come
+falso e ogni valore diverso da zero come vero.
+
+Anche `if` ha una sola entrata e una sola uscita.
+Il disegno usa solo tondini e frecce piu
+rettangoli per fare e rombi per decidere. Questo
+schema fare oppure decidere guida tutto il lavoro:
+scegliere i controlli, metterli in fila o dentro,
+poi aggiungere azioni e domande al posto giusto.
+
+Errore tipico: non rientrare il corpo e non
+vedere piu la struttura, oppure credere che solo
+i confronti possano decidere mentre vale ogni
+espressione con zero e non zero.
+
+7. STRUTTURE DI CONTROLLO
+-------------------------
+
+Di solito si va in **esecuzione sequenziale**,
+cioe una riga dopo laltra come scritta.
+Cambiare la prossima riga da fare si dice
+spostare il controllo altrove.
+
+Un tempo il salto libero con `goto` verso molti
+punti creava guasti difficili da seguire. La
+programmazione ordinata ha tolto quel salto.
+Senza salti liberi il testo resta chiaro e piu
+facile da correggere e da cambiare.
+
+Bastano tre schemi: fila, scelta, ciclo. La fila
+dice che senza indicazioni si segue lordine
+scritto. Scelta e ciclo cambiano percorso solo
+nei punti previsti dai loro simboli.
+
+Errore tipico: spargere salti liberi per
+accorciare e poi non ritrovare piu il percorso.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Algoritmo uguale mosse piu ordine, ordine errato guasta tutto.
+- Pseudocodice per pensare, definizioni solo per il traduttore.
+- Disegno con rettangoli rombi ovali tondini e frecce.
+- Ogni controllo con un ingresso e una uscita.
+- Scelte con `if` `if` piu `else` e `switch`.
+- Cicli con `while` `do` piu `while` e `for`.
+- Fila e dentro come unici due modi di unione.
+- Vero diverso da zero, falso uguale a zero.
+- Tre schemi bastano, niente salti liberi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche lordine conta in un algoritmo di chiusura serale?
+a) Perche i passi sono inutili · b) Perche stessi passi in altro ordine danno esito diverso · c) Perche basta elencare · d) Perche il controllo non serve
+
+2. Cosa distingue una definizione come `int k` nel progetto?
+a) Fa un calcolo · b) Legge e stampa · c) Avvisa il traduttore senza azione in corsa · d) Decide un bivio
+
+3. Cosa indicano ovale e tondino in un disegno?
+a) Ovale per intero e pezzo, tondino per azione · b) Ovale per Avvio e Fine, tondino per ingresso e uscita di un pezzo · c) Ovale per domanda, tondino per conto · d) Nessun uso preciso
+
+4. Quando usare `if` da solo e quando `switch`?
+a) `if` per una via eventuale, `switch` per molte vie per valore · b) Sempre `switch` · c) Sempre `if` anche per molte vie · d) Mai nessuno dei due
+
+5. Come si uniscono i controlli senza salti liberi?
+a) Solo con `goto` · b) In fila uscita contro ingresso oppure uno dentro laltro · c) A caso con frecce libere · d) Senza alcun legame
+
+6. Cosa vale come vero in una domanda C?
+a) Solo il testo · b) Solo zero · c) Diverso da zero vero e zero falso · d) Nulla, servono solo parole
+
+Soluzioni ragionate
+
+1 — b. Lordine decide lesito a pari passi. La a) nega i passi, la c) basta dellelenco, la d) nega il controllo.
+
+2 — c. Solo messaggio per memoria e tipo. La a) parla di conti, la b) di scambi, la d) di scelte.
+
+3 — b. Intero contro pezzo con ingressi e uscite. La a) scambia i ruoli, la c) mette domande e conti, la d) nega ogni uso.
+
+4 — a. Singola contro multipla per valore. La b) usa sempre la multipla, la c) usa sempre la singola, la d) non usa nulla.
+
+5 — b. Fila e dentro come unici modi. La a) torna ai salti, la c) lascia il caso, la d) toglie i legami.
+
+6 — c. Regola zero e non zero. La a) parla di testo, la b) inverte la regola, la d) esclude le espressioni.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

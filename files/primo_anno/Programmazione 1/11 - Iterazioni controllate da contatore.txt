@@ -1,0 +1,137 @@
+[plain-text per Pages — da 11 - Iterazioni controllate da contatore.md]
+
+1. ITERAZIONI CONTROLLATE DA CONTATORE
+--------------------------------------
+
+Il compito chiede la media di un gruppo noto
+in partenza. Esempio riscritto con dati diversi:
+invece di dieci voti si usino otto misure con
+valori 84 77 69 91 88 73 95 81. La media e la
+somma diviso il numero di pezzi. La somma fa
+658 e diviso 8 fa 82 con resto. Il programma
+legge uno alla volta, somma e alla fine stampa.
+
+Se i giri sono noti prima si usa una
+**iterazione definita**. Una **variabile contatore**
+dice quante volte ripetere il blocco. Qui si
+parte da 1 e si va finche resta `<= 8`. Dopo
+lultimo giro il contatore supera il limite e
+si esce verso la media.
+
+Traccia in dieci righe adattata a otto pezzi:
+1 somma a zero
+2 indice a uno
+3 riga vuota
+4 finche indice `<= 8`
+5 leggi la misura dopo
+6 aggiungi misura alla somma
+7 alza indice di uno
+8 riga vuota
+9 media come somma su 8
+10 stampa la media.
+
+Nel listato servono somma indice misura media.
+La **fase di avvio** azzera somma e mette indice
+a 1. La **fase di lavoro** usa `while` con invito
+lettura somma e aumento. La **fase di chiusura**
+fa media come `somma / 8` e stampa il risultato.
+
+La **variabile totale** accumula la somma dei
+dati letti. Il contatore conta i pezzi inseriti.
+Con valori sempre da 1 a 8 si puo usare un
+**tipo senza segno** che tiene solo zero e oltre.
+La somma parte da zero senno trascina dentro
+un resto vecchio della cella. Lindice parte da
+zero o da uno a seconda della domanda usata.
+
+Una cella mai avviata tiene un **valore spazzatura**,
+cioe lultimo resto lasciato in memoria. Saltare
+lavvio di somma o indice da risultati errati.
+Questo guasto gira senza blocchi ma sbaglia i
+conti ed e detto **errore logico da avvio**.
+
+Il conto con interi taglia i decimali e da una
+**media troncata**. Qui 658 su 8 vale 82 in
+C anche se il vero quoziente ha resto. I decimali
+veri si dicono **numero in virgola mobile** e
+si vedranno dopo.
+
+Le definizioni possono stare ovunque prima del
+primo uso dentro `main`. Qui restano in alto per
+mostrare avvio lavoro e chiusura. In genere
+conviene la **definizione vicina alluso**, subito
+prima di servire, per ridurre gli errori.
+
+Errore tipico: non azzerare somma e indice e
+ottenere medie strane senza alcun blocco.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Giri noti prima uguale ciclo con contatore.
+- Indice da 1 con `<= 8` per otto pezzi.
+- Somma da zero, indice da zero o da uno.
+- Senza avvio resta spazzatura in cella.
+- Senza avvio nasce errore logico silenzioso.
+- Interi divisi danno media troncata.
+- Tre fasi: avvio lavoro e chiusura.
+- Definizioni prima delluso, meglio vicino alluso.
+- Senza segno solo per valori mai negativi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando si usa un ciclo con contatore noto?
+a) Con giri ignoti · b) Con giri noti prima come otto pezzi · c) Mai con medie · d) Solo senza somma
+
+2. Con indice da 1 e `<= 8` quanti giri si fanno?
+a) Sette · b) Otto · c) Nove · d) Infiniti
+
+3. Perche la somma parte da zero?
+a) Per stile · b) Per non trascinare spazzatura nel totale · c) Per rallentare · d) Per cambiare tipo
+
+4. Cosa tiene una variabile mai avviata?
+a) Sempre zero · b) Spazzatura con resto di memoria · c) Sempre la media · d) Nulla di leggibile
+
+5. Quanto vale in C 658 su 8 fra interi?
+a) 82 troncato · b) 82.25 esatto · c) 83 per eccesso · d) 0 per errore
+
+6. Dove conviene definire una variabile?
+a) Dopo luso · b) Mai definirla · c) Prima delluso e vicino alluso · d) Solo in fondo
+
+Soluzioni ragionate
+
+1 — b. Definita con numero noto prima. La a) vuole segnale, la c) esclude le medie, la d) esclude la somma.
+
+2 — b. Da 1 a 8 compresi sono otto. La a) ne toglie uno, la c) ne aggiunge uno, la d) non ha fine.
+
+3 — b. Azzerare pulisce la cella. La a) parla di stile, la c) di tempo, la d) di tipo.
+
+4 — b. Resto precedente in cella. La a) dice zero fisso, la c) dice media, la d) nega la lettura.
+
+5 — a. Taglio dei decimali fra interi. La b) vuole virgola mobile, la c) arrotonda su, la d) vede un blocco.
+
+6 — c. Prima e vicino per meno errori. La a) inverte lordine, la b) non definisce, la d) rimanda tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

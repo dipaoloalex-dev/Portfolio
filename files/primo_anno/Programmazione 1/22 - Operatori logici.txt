@@ -1,0 +1,294 @@
+[plain-text per Pages — da 22 - Operatori logici.md]
+
+1. OPERATORI LOGICI
+------------------
+
+Prima si usavano solo prove
+singole con `>` `<` `>=` `<=`
+`==` e `!=`. Ogni `if` guardava
+un solo confronto alla volta.
+
+Per unire piu prove servivano
+`if` separati o dentro luno
+dellaltro. Ora si usa una
+**condizione composta** con
+simboli logici fra prove semplici.
+
+I tre segni sono `&&` per e,
+`||` per o, `!` per non. Con essi
+si scrive una scelta con due
+o piu richieste insieme.
+
+Errore tipico: annidare molti `if`
+dove basta una sola riga con
+simboli logici.
+
+2. OPERATORE LOGICO AND (&&)
+----------------------------
+
+La **congiunzione logica** chiede
+che entrambe le prove siano vere.
+Esempio riscritto con altri dati:
+invece di sesso ed eta si usino
+tessera e punti. Da
+`if (tessera == 2 && punti >= 70)`
+con `++over70` dentro si conta
+solo chi ha tessera 2 e almeno 70.
+
+Prima si valutano `==` e `>=`,
+poi si valuta `&&`. Il tutto e vero
+solo se vere entrambe. Se una o
+entrambe false si salta il corpo
+e si va alla riga dopo `if`.
+
+Vale la **tabella di verita** con
+quattro casi per `e1` ed `e2`.
+Righe di testo separate da spazi:
+e1 e2 e1-e-e2
+0 0 0
+0 non-zero 0
+non-zero 0 0
+non-zero non-zero 1.
+
+Il C rende 0 o 1 come risultato,
+ma come vero accetta ogni
+**valore diverso da zero** in
+ingresso. Quindi 5 o meno 3 valgono
+come veri nelle prove.
+
+Errore tipico: usare un solo `&`
+al posto dei due `&&` richiesti.
+
+3. OPERATORE LOGICO OR (||)
+---------------------------
+
+La **disgiunzione logica** chiede
+che almeno una prova sia vera.
+Esempio riscritto con altri dati:
+invece di media 90 ed esame 90
+si usi corso 75 e prova 75. Da
+`if (corso >= 75 || prova >= 75)`
+con messaggio di idoneita dentro
+si passa con una o entrambe vere.
+
+Il messaggio manca solo quando
+entrambe false, cioe zero e zero.
+Negli altri tre casi si entra nel
+corpo e si stampa lesito buono.
+
+Righe di testo per tabella diversa
+ma stessa logica:
+e1 e2 e1-o-e2
+0 0 0
+0 non-zero 1
+non-zero 0 1
+non-zero non-zero 1.
+
+Errore tipico: credere che o
+escluda il caso con entrambe vere,
+mentre qui include anche quello.
+
+4. VALUTAZIONE CORTOCIRCUITATA
+------------------------------
+
+La prova si ferma con una
+**valutazione interrotta appena noto**
+lesito finale. Non serve leggere
+tutto se basta la prima parte.
+
+Vale la **priorita fra AND e OR**:
+`&&` lega prima di `||`. Entrambi
+vanno da sinistra a destra.
+
+Esempio riscritto: con
+`tessera == 2 && punti >= 70`
+se tessera diversa da 2 il tutto
+e gia falso e si evita il secondo
+test. Se tessera vale 2 si deve
+ancora leggere i punti per capire
+se il tutto resta vero o cade.
+
+Errore tipico: mettere effetti
+collaterali a destra e credere che
+girino sempre, mentre a volte non
+partono per lo stop anticipato.
+
+5. PRESTAZIONI
+--------------
+
+Per correre di piu si ordina bene.
+Con `&&` conviene la **condizione piu selettiva a sinistra**:
+prima la prova piu spesso falsa,
+cosi si esce subito senza leggere
+il resto.
+
+Con `||` conviene prima la prova
+piu spesso vera, cosi si entra
+subito senza leggere il resto.
+Lordine giusto puo ridurre il
+tempo di giro del programma.
+
+Errore tipico: lasciare a sinistra
+la prova piu lenta e rara mentre
+a destra ce una prova rapida che
+decide quasi sempre da sola.
+
+6. OPERATORE LOGICO DI NEGAZIONE (!)
+------------------------------------
+
+La **negazione unaria** ribalta una
+sola prova. Diversa da `&&` e `||`
+che uniscono due prove e sono
+binari, essa ha un solo operando.
+
+Si mette prima della prova per
+agire quando quella e falsa.
+Esempio riscritto con altri nomi:
+invece di voto e segnale si usi
+misura e limite. Da
+`if (!(misura == limite))` con
+stampa del dopo dentro si stampa
+solo se misura diversa da limite.
+
+Servono **tonde obbligatorie attorno al confronto**
+perche `!` lega prima di `==`.
+Senza tonde si nega solo il primo
+pezzo e non tutto il confronto.
+
+Tabella in righe di testo:
+prova non-prova
+0 1
+non-zero 0.
+
+Spesso si evita `!` con segno
+diverso. Lesempio sopra si scrive
+meglio come `if (misura != limite)`
+con stesso effetto e forma piu
+pulita.
+
+Errore tipico: scordare le tonde
+e negare solo una variabile invece
+di tutto il confronto voluto.
+
+7. RIEPILOGO DELLA PRECEDENZA E DELLASSOCIATIVITA DEGLI OPERATORI
+-----------------------------------------------------------------
+
+La **scala di precedenza** va da
+alto a basso. Righe di testo con
+segni, verso e tipo:
+`++` `--` postfissi destra-sinistra postfisso
+`+` `-` `!` `++` `--` prefissi destra-sinistra unario
+`*` `/` `%` sinistra-destra moltiplicativo
+`+` `-` sinistra-destra additivo
+`<` `<=` `>` `>=` sinistra-destra relazionale
+`==` `!=` sinistra-destra uguaglianza
+`&&` sinistra-destra AND logico
+`||` sinistra-destra OR logico
+`?:` destra-sinistra condizionale
+`=` `+=` `-=` `*=` `/=` `%=` destra-sinistra assegnazione
+`,` sinistra-destra virgola.
+
+Chi sta sopra lega prima. A pari
+livello conta il verso di lettura.
+Con dubbi usare tonde esplicite.
+
+Errore tipico: mescolare `&&` `||`
+e confronti senza tonde e ottenere
+un ordine diverso dal voluto.
+
+8. LEGGI DI DE MORGAN
+---------------------
+
+Vale la **equivalenza con negazioni scambiate**:
+`!(c1 && c2)` equivale a
+`(!c1 || !c2)`, mentre
+`!(c1 || c2)` equivale a
+`(!c1 && !c2)`. Il non fuori
+entra dentro e cambia `&&` con `||`.
+
+Esempio riscritto con altri valori:
+invece di x 10 y 1 e soglie 5 7
+si usi p 12 q 2 e soglie 6 9.
+Casi riscritti con lettere nuove:
+a `!(p < 6) && !(q >= 9)`
+b `!(r == s) || !(t != 4)`
+c `!((p <= 7) && (q > 3))`
+d `!((m > 3) || (n <= 8))`.
+
+Programma di prova con valori
+fissi diversi: `p = 12` `q = 2`
+`r = 4` `s = 4` `t = 4` `m = 3`
+`n = 11`. Stampa i valori, poi per
+ogni caso confronta con `==` forma
+vecchia e forma nuova. Se uguali
+stampa conferma di equivalenza,
+senno stampa smentita. Tutte e
+quattro danno conferma attesa.
+
+Errore tipico: negare dentro senza
+cambiare `&&` con `||` e perdere
+lequivalenza voluta.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `&&` vero solo con entrambe vere.
+- `||` falso solo con entrambe false.
+- `!` ribalta una sola prova.
+- 0 falso e non zero vero in ingresso.
+- Uscita 0 o 1 per ogni prova logica.
+- `&&` prima di `||` e poi sinistra-destra.
+- Fermo appena noto per correre di piu.
+- Prova piu decisiva sempre a sinistra.
+- Tonde attorno al confronto con `!`.
+- Spesso `!=` meglio di `!(==)`.
+- Tonde esplicite contro dubbi di ordine.
+- Non fuori cambia `&&` con `||`.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando scatta `tessera == 2 && punti >= 70`?
+a) Sempre · b) Solo con entrambe vere · c) Con una falsa · d) Mai
+2. Quando tace `corso >= 75 || prova >= 75`?
+a) Sempre · b) Con una vera · c) Solo con entrambe false · d) Mai
+3. Cosa rende una prova con `&&` o `||`?
+a) Sempre 5 · b) Solo 0 o 1 con vero ogni non zero · c) Solo testo · d) Nulla
+4. Cosa fa `tessera == 2 && punti >= 70` se tessera vale 9?
+a) Legge tutto · b) Si ferma subito come falso · c) Dichiara vero · d) Salta `if`
+5. Come si ordina per correre con `&&`?
+a) A caso · b) Prova piu spesso falsa a sinistra · c) Prova piu lenta a sinistra · d) Senza ordine
+6. Cosa equivale a `!(c1 || c2)`?
+a) `!c1 || !c2` · b) `!c1 && !c2` · c) `c1 && c2` · d) `c1 || c2`
+
+Soluzioni ragionate
+
+1 — b. Congiunzione con due vere insieme. La a) scatta sempre, la c) accetta una falsa, la d) non scatta mai.
+2 — c. Disgiunzione falsa solo a zero zero. La a) tace sempre, la b) tace con una vera, la d) non tace mai.
+3 — b. Uscita 0 o 1 ma vero largo in ingresso. La a) fissa 5, la c) parla di testo, la d) non rende nulla.
+4 — b. Stop anticipato con prima falsa in `&&`. La a) legge tutto, la c) dice vero, la d) toglie `if`.
+5 — b. Selettiva a sinistra per uscire subito. La a) lascia a caso, la c) mette lenta prima, la d) non ordina.
+6 — b. Non fuori con e al posto di o. La a) mantiene o, la c) toglie i non, la d) copia senza non.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

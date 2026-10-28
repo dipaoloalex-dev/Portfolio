@@ -1,0 +1,237 @@
+[plain-text per Pages — da 28 - Libreria standard.md]
+
+1. FILE DI INTESTAZIONE
+----------------------
+
+Ogni libreria ha un file con
+annunci pronti: prototipi, tipi
+e costanti utili alle sue voci.
+Si aggiunge in testa con `#include`
+e rende noti i nomi al resto del
+file. Altri file dello standard
+restano disponibili oltre i citati.
+
+Righe di testo per tabella ridotta
+e descritta a parole proprie:
+`assert` per controlli di diagnosi
+e ricerca guasti nel programma.
+`ctype` per prove su caratteri e
+passi fra minuscole e maiuscole.
+`errno` per segnali di errore con
+macro apposite.
+`float` per confini dei decimali
+del sistema.
+`limits` per confini degli interi
+del sistema.
+`locale` per forme locali di date
+ore soldi e numeri nel mondo.
+`math` per conti matematici pronti.
+`signal` per fatti anomali in corsa.
+`stdarg` per liste con numero e tipo
+non noto prima.
+`stddef` per tipi comuni di calcolo.
+`stdio` per ingresso uscita e dati
+di appoggio.
+`stdlib` per testo numeri, memoria,
+caso e utilita varie.
+`string` per lavoro su stringhe.
+`time` per ore e date da trattare.
+
+Esempio riscritto con altri dati:
+invece di stampare tutti i confini
+si stampano solo tre voci. Righe:
+`#include <stdio.h>`
+`#include <limits.h>`
+`int main(void)`
+`printf("%d", CHAR_BIT)` per bit
+in un byte, qui 8.
+`printf("%d", SHRT_MIN)` per minimo
+di corto, qui meno 32768.
+`printf("%d", SHRT_MAX)` per massimo
+di corto, qui 32767.
+Uscita in tre righe di testo semplici
+con valori detti sopra. Il resto dei
+confini segue la stessa idea senza
+ripetere tutta la tabella.
+
+Si possono fare **testate proprie del gruppo**
+con estensione `.h`. Si aggiungono
+con `#include` e virgolette, non con
+parentesi angolari. Esempio riscritto:
+invece di `square.h` si usi `cube.h`.
+Riga: `#include "cube.h"` in cima al
+file per rendere noto `cube` al resto.
+Vale la **virgolette per file locali**
+contro `<>` per file di sistema.
+
+In molti linguaggi vale il **passo per copia o per alias**:
+per valore o per riferimento. Per
+valore passa una copia e la chiamata
+non tocca loriginale. Per riferimento
+la chiamata puo cambiare loriginale.
+Meglio la copia quando non serve
+cambiare fuori: evita **effetti laterali accidentali**
+che rompono laffidabilita del lavoro.
+Il riferimento solo con voci fidate
+che devono davvero cambiare fuori.
+In C ogni argomento passa per valore.
+Poi si vedra come ottenere leffetto
+alias con operatori appositi. Esempio
+riscritto con altro nome: invece di
+`square` si usi `cube` con
+`int cube(int k)` e `return k*k*k`
+dove `k` resta locale alla voce.
+
+Ogni nome ha anche **vita visibilita e legame**:
+classe di memoria, permanenza, campo
+di azione e collegamento. La classe
+dice quanto esiste, dove si puo citare
+e se vale oltre il file corrente con
+dichiarazioni giuste. I segni sono
+`auto` `extern` `static` piu voce per
+fili paralleli da non trattare qui.
+
+La **vita automatica nel blocco** con
+`auto` nasce allingresso e muore
+alluscita. Solo le celle possono averla.
+Le locali con ingressi e corpo di norma
+sono automatiche senza scriverlo, quindi
+`auto` resta raro. Da qui in poi si
+dicono solo automatiche. La tecnica
+risparmia memoria perche crea solo
+quando serve e distrugge alluscita.
+
+La **vita statica fino a fine corsa**
+con `extern` e `static` esiste da avvio
+a termine. Per le static la cella nasce
+e parte una sola volta prima del via.
+Per le funzioni il nome esiste da avvio.
+Ma esistere non vuol dire poter citare
+sempre: vita e campo restano separati.
+
+Le **globali fuori da ogni funzione**
+con `extern` di base tengono il valore
+per tutta la corsa. Voci e funzioni
+globali si citano da ogni funzione
+posta dopo annuncio o definizione
+nello stesso file. Per questo servono
+i prototipi, come `stdio` che rende
+noto `stampa` al resto del file. Meglio
+evitare le globali salvo dure esigenze
+di scatto: una voce lontana puo toccare
+per sbaglio e creare guasti. Le celle
+usate in una sola voce restino locali.
+
+La **locale che ricorda fra chiamate**
+con `static` si vede solo nella sua
+voce ma non perde il dato alluscita.
+Al giro dopo ritrova il valore lasciato
+al giro prima. Riga riscritta con altro
+nome: invece di `count = 1` si usi
+`static int giri = 1` dentro la voce.
+Senza avvio scritto, le numeriche
+statiche partono da zero da sole.
+
+Esempio riscritto per caso: invece di
+dado a 6 con 20 lanci si usi dado a
+8 con 16 lanci. La **sorgente di interi casuali**
+`rand` rende fra 0 e `RAND_MAX`, qui
+almeno 32767 e su molti sistemi molto
+di piu. Annuncio in `stdlib`. Riga:
+`k = rand()` per un intero grezzo.
+La **scala con resto e scatto** porta
+al campo voluto. Con `rand() % 8` si
+ha 0 7, poi con `+ 1` si ha 1 8. Il
+numero 8 e il fattore di scala. Ciclo
+`for` da 1 a 16 con stampa larga e a
+capo ogni 4 con `i % 4 == 0`. Uscita
+indicativa in righe di testo, diversa
+per traduttore:
+3 7 2 8
+1 5 5 4
+6 2 8 3
+7 1 4 6.
+
+Per prova di pari uscita si ripete a
+lungo. Esempio riscritto: invece di
+60 milioni per dado a 6 si usino 40
+milioni per dado a 8. Ogni faccia da
+1 a 8 attende circa 5 milioni di colpi.
+Sei contatori diventano otto contatori
+`f1` fino a `f8`, ciclo lungo, `face`
+con `1 + rand() % 8`, poi `switch`
+con otto vie e `++f1` fino a `++f8`,
+poi stampa con `%s` per titoli e `%u`
+per conti. Con array si fara in una
+sola riga al posto di molte vie. Ripeti
+piu volte la corsa: i numeri tornano
+uguali senza seme nuovo. La libreria
+del tempo dara poi semi davvero vari.
+
+Errore tipico: usare `<>` per testate
+proprie, abusare di globali, o chiedere
+a `rand` un campo senza scala e scatto.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Testata con annunci tipi e costanti.
+- `<>` per sistema e virgolette per locali.
+- Copia per non toccare loriginale.
+- Alias solo con voci fidate e utili.
+- In C prima solo passo per valore.
+- `auto` vive solo dentro il blocco.
+- `static` ed `extern` fino a fine corsa.
+- Vita e campo come aspetti separati.
+- Globali rare per guasti laterali.
+- `static` locale ricorda fra i giri.
+- `rand` piu resto per scala e scatto.
+- Ripeti a lungo per pari frequenza.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa porta una testata come `limits`?
+a) Nulla · b) Annunci tipi e costanti per le voci · c) Solo testo · d) Solo errori
+2. Come si aggiunge `cube.h` del gruppo?
+a) Con `<>` · b) Con `#include "cube.h"` fra virgolette · c) Senza righe · d) A fine disco
+3. Quando usare il passo per valore?
+a) Mai · b) Sempre quando non serve cambiare fuori · c) Solo per guasti · d) Mai in C
+4. Dove vive una `auto` di blocco?
+a) Ovunque · b) Solo dentro il blocco fra ingresso e uscita · c) Per sempre · d) Mai
+5. Cosa fa `static int giri = 1` in voce?
+a) Nulla · b) Ricorda il valore fra chiamate · c) Cancella tutto · d) Apre a tutti
+6. Cosa da `1 + rand() % 8`?
+a) Sempre 1 · b) Intero da 1 a 8 con scala e scatto · c) Solo 0 · d) Nulla mai
+
+Soluzioni ragionate
+
+1 — b. Prototipi e dati di appoggio per le voci. La a) non porta nulla, la c) vede testo, la d) vede errori.
+2 — b. Virgolette per file locali del gruppo. La a) vale per sistema, la c) non aggiunge nulla, la d) parla di disco.
+3 — b. Copia senza effetti fuori quando basta leggere. La a) lo vieta, la c) lo lega ai guasti, la d) nega il C.
+4 — b. Vita automatica fra entra ed esci. La a) apre ovunque, la c) tiene per sempre, la d) non crea nulla.
+5 — b. Locale con memoria fra i giri della voce. La a) non fa nulla, la c) cancella tutto, la d) apre a tutti.
+6 — b. Resto per 0 7 piu scatto a 1 8. La a) fissa 1, la c) fissa 0, la d) non rende nulla.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

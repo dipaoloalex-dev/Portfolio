@@ -1,0 +1,152 @@
+[plain-text per Pages — da 19 - Istruzione di selezione multipla switch.md]
+
+1. ISTRUZIONE SWITCH
+--------------------
+
+Dopo scelta singola e doppia resta il caso con
+molte vie per valori fissi. La **selezione multipla**
+prova una stessa domanda contro tanti valori e fa
+una cosa diversa per ciascuno.
+
+Lo strumento usa una serie di **etichetta case**
+piu un **ramo default** facoltativo per gli altri.
+Ogni via ha le sue righe da fare.
+
+Esempio riscritto con altri valori: invece di
+lettere di voto si contino taglie di maglie con
+`S` `M` `L` `X` `K`. Cinque contatori partono da
+zero. Un `while` legge tasti fino a fine e dentro
+sta lo `switch` sulla lettera letta. Ogni coppia
+grande piccola alza il suo conto e poi esce.
+
+Giro riscritto: ingressi `s M l L S x k m Q`
+e poi fine. I conti finali danno `S` 2 `M` 3
+`L` 2 `X` 1 `K` 1, con un avviso per `Q` fuori
+dalle vie previste e riepilogo alla fine.
+
+Errore tipico: usare catene di `if` uguali dove
+basta una sola prova con molte vie.
+
+2. DETTAGLI DELLISTRUZIONE SWITCH
+---------------------------------
+
+La parola `switch` apre con tonde su una
+**espressione di controllo**. Il valore entra e
+viene provato contro ogni etichetta in ordine.
+
+Se trova la via giusta fa quelle righe e poi deve
+trovare l**uscita immediata dal ramo** con `break`.
+Senza quel salto continua anche nelle vie dopo.
+Questa **caduta senza break** e quasi sempre un
+guasto logico e non voluto.
+
+Se nessuna via risponde entra il ramo di riserva.
+Mettere sempre il ramo di riserva evita di perdere
+i casi strani in silenzio. Per abitudine il
+**ramo default** sta per ultimo. In fondo il `break`
+finale si puo anche omettere ma tenerlo aiuta la
+simmetria con le altre vie.
+
+Errore tipico: scordare `break` e vedere salire
+anche i conti delle vie dopo quella vera.
+
+3. DIAGRAMMA DI FLUSSO DELLISTRUZIONE SWITCH
+---------------------------------------------
+
+Il disegno prova le vie in cascata con rombi in
+fila. Ogni via vera fa le sue azioni e poi salta
+fuori con `break`. Lultima via falsa cade nelle
+azioni di riserva. Non servono graffe intorno a
+ogni via come negli altri controlli.
+
+Serve il **salto dei bianchi** dentro la prova.
+Lettura a tasti singoli chiede Invio e porta un
+ritorno dopo ogni simbolo. Tre vie apposite per
+ritorno tabulazione e spazio evitano avvisi a
+ogni riga. Cosi nasce un **doppio giro per riga**:
+primo per il simbolo vero e secondo per il ritorno.
+
+Scrivere due **etichette gemelle** vicine come
+`case S` con `case s` fa fare la stessa cosa per
+grande e piccola senza ripetere il corpo.
+
+Ogni via vuole una **costante intera fissa**:
+simboli o numeri noti prima di partire, non
+variabili che cambiano. Vale la regola degli
+**apici singoli contro doppi**: singolo per un
+simbolo solo e doppi per testi interi.
+
+Errore tipico: mettere variabili nelle etichette
+o usare doppi apici per un simbolo singolo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Una prova contro molte vie fisse.
+- Etichette piu ramo di riserva alla fine.
+- `break` per uscire dopo la via vera.
+- Senza `break` si cade nelle vie dopo.
+- Riserva sempre per i casi strani.
+- Salta ritorno tab e spazi dentro la prova.
+- Ogni tasto vale due giri con Invio.
+- Gemelle per grande e piccola insieme.
+- Solo costanti fisse nelle vie.
+- Singolo per simboli e doppi per testi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando conviene `switch` alle catene di `if`?
+a) Mai · b) Con una prova contro molti valori fissi · c) Senza prove · d) Solo senza conti
+
+2. Cosa fa `break` in una via vera?
+a) Nulla · b) Fa cadere nelle altre · c) Esce subito verso dopo la prova · d) Chiude il programma
+
+3. A cosa serve il ramo di riserva?
+a) A togliere le vie · b) A prendere i casi non previsti con avviso · c) A ripetere · d) A leggere
+
+4. Perche tre vie per ritorno tab e spazio?
+a) Per bellezza · b) Per non dare avvisi a ogni Invio con doppio giro · c) Per contare di piu · d) Per togliere le lettere
+
+5. Cosa fanno due etichette vicine per grande e piccola?
+a) Due cose diverse · b) Stessa cosa per luna o laltra · c) Nulla · d) Solo errore
+
+6. Cosa si puo mettere in una etichetta?
+a) Variabile che cambia · b) Solo costante fissa con apici giusti · c) Testo lungo libero · d) Nulla mai
+
+Soluzioni ragionate
+
+1 — b. Una sola prova con molte vie. La a) lo nega, la c) toglie le prove, la d) toglie i conti.
+
+2 — c. Uscita subito dopo la via. La a) non fa nulla, la b) descrive la caduta, la d) chiude tutto.
+
+3 — b. Rete per gli strani con messaggio. La a) toglie le vie, la c) ripete, la d) parla di lettura.
+
+4 — b. Salto dei bianchi con due giri per tasto. La a) parla di stile, la c) aumenta i conti, la d) toglie lettere.
+
+5 — b. Gemelle con stesso corpo. La a) le separa, la c) non fa nulla, la d) vede solo errore.
+
+6 — b. Fisse con singoli per simboli. La a) mette variabili, la c) mette testi, la d) svuota tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

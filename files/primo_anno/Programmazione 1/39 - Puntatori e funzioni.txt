@@ -1,0 +1,152 @@
+[plain-text per Pages — da 39 - Puntatori e funzioni.md]
+
+1. PASSARE ARGOMENTI A FUNZIONI PER RIFERIMENTO
+----------------------------------------------
+
+Ci sono due modi per dare dati a una
+voce con **doppia via di passaggio**: Per copia
+la chiamata riceve solo un doppione del
+valore della chiamante. La copia costa
+tempo e memoria e con `return` torna un
+solo dato cambiato alla chiamante. Per
+dare indietro piu dati serve il punto.
+Vale la **copia singola contro punti multipli**:
+`return` per uno, indirizzi per molti.
+
+In C il punto passa con `&` fuori e `*`
+dentro. Chi chiama e vuole cambi passa
+i punti dei dati con `&` sulle celle da
+cambiare. Le file non usano `&` perche il
+nome vale gia come inizio, con **nome fila come inizio**,
+cioe come
+`&nome[0]`. Chi riceve usa `*` per scrivere
+nel punto della chiamante. Vale la
+**e fuori e stella dentro** come coppia
+di lavoro.
+
+Esempio riscritto con altri dati: invece
+di cubo con 5 e 125 si usi quadrato con
+6 e 36. Prima versione per copia con
+`int quadByValue(int k)` e `return k*k`.
+In `main` cella `int dato = 6`, stampa
+del prima con **stampa del prima e del dopo**,
+poi `dato = quadByValue(dato)`,
+poi stampa del dopo. Uscita in righe:
+valore di partenza 6
+valore di arrivo 36.
+La voce lavora su copia `k` e manda
+indietro il nuovo con `return`.
+
+Seconda versione per punto con
+`void quadByReference(int *vPtr)` e
+`*vPtr = *vPtr * *vPtr` dentro. In `main`
+stessa cella `dato = 6`, stampa del prima,
+poi `quadByReference(&dato)` senza assegno,
+poi stampa del dopo. Uscita uguale: 6 poi
+36. Qui la voce tocca la cella vera della
+chiamante tramite il punto. Vale il
+**tocco diretto sulla chiamante**.
+
+Chi riceve un punto deve avere un
+**ingresso a puntatore dichiarato**: la
+testata dice `void quadByReference(int *vPtr)`
+per tenere lindirizzo di un intero senza
+rendere nulla. Lannuncio dice lo stesso con
+`int *` e i nomi si possono omettere con
+**nomi solo per leggere meglio**: quelli
+scritti per leggere meglio il testo vengono
+ignorati dal traduttore.
+
+Per file a una dimensione vale lo stesso
+segno: `int t[]` diventa `int *t` da solo.
+Le due forme sono scambiabili e il
+traduttore non distingue fila da punto
+singolo. La voce deve sapere da sola se
+sta trattando una fila intera o una sola
+cella per punto. Vale la **fila vista come punto**.
+
+Passi per copia con `dato = 6` e `k`:
+prima della chiamata `dato` 6 e `k`
+indefinito, dopo lingresso `k` 6, dopo il
+conto reso 36 in volo con `dato` ancora 6,
+dopo il ritorno reso 36 in attesa, dopo
+lassegno `dato` 36 e `k` sparito. Passi
+per punto con `dato = 6` e `vPtr`:
+prima `dato` 6 e `vPtr` indefinito, dopo
+lingresso `vPtr` punta a `dato`, dopo il
+conto `dato` 36 scritto dalla voce chiamata.
+Vale la **storia dei passi in memoria**.
+
+Meglio la copia salvo vera necessita di
+cambi fuori: evita tocchi per sbaglio e
+rispetta il minimo accesso utile. Vale il
+**privilegio minimo come regola**.
+
+Errore tipico: chiedere punto senza `&`
+o ricevere punto senza `*`, oppure usare
+la copia sperando in cambi fuori che non
+arrivano mai.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Copia per leggere senza toccare fuori.
+- Punto per cambiare fuori piu dati.
+- `&` fuori sulle celle da cambiare.
+- `*` dentro per scrivere nel punto.
+- File senza `&` per nome gia inizio.
+- Ingresso a puntatore per punti in arrivo.
+- Nomi in annuncio solo per leggere.
+- `int t[]` uguale a `int *t` in voce.
+- Copia con `return` e nuovo assegno.
+- Punto con tocco diretto senza `return`.
+- Passi in memoria diversi nei due modi.
+- Copia di base per minimo accesso.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando serve il punto contro la copia?
+a) Mai · b) Per cambiare fuori anche piu dati · c) Solo per leggere · d) Mai in C
+2. Come si chiama per cambiare `dato` dentro?
+a) Senza segni · b) Con `&dato` fuori e `*vPtr` dentro · c) Solo con `return` · d) Mai
+3. Cosa fa `dato = quadByValue(dato)` da 6?
+a) Nulla · b) Copia 6 e assegna 36 con `return` · c) Tocca senza `return` · d) Toglie tutto
+4. Cosa fa `quadByReference(&dato)` da 6?
+a) Nulla · b) Tocca `dato` a 36 senza `return` · c) Solo legge · d) Crea copia
+5. Cosa vale `int t[]` in ingresso voce?
+a) Altro tipo · b) Come `int *t` senza distinzione · c) Nulla · d) Solo misura
+6. Perche copia di base come regola?
+a) Per stile · b) Per minimo accesso senza tocchi per sbaglio · c) Per lentezza · d) Mai
+
+Soluzioni ragionate
+
+1 — b. Punto per cambi fuori anche molti. La a) non serve mai, la c) solo legge, la d) nega il C.
+2 — b. E fuori e stella dentro come coppia. La a) non usa segni, la c) usa solo `return`, la d) non chiama.
+3 — b. Doppione in `k` con nuovo indietro e assegno. La a) non fa nulla, la c) tocca senza reso, la d) toglie tutto.
+4 — b. Punto verso cella vera con scrittura dentro. La a) non fa nulla, la c) solo legge, la d) fa copia.
+5 — b. Fila vista come punto senza differenza. La a) cambia tipo, la c) non vale nulla, la d) tiene misura.
+6 — b. Minimo accesso contro guasti laterali. La a) parla di stile, la c) cerca lentezza, la d) nega tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

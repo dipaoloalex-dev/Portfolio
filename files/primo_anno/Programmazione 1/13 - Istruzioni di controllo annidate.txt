@@ -1,0 +1,139 @@
+[plain-text per Pages — da 13 - Istruzioni di controllo annidate.md]
+
+1. ISTRUZIONI DI CONTROLLO ANNIDATE
+-----------------------------------
+
+Il progetto nasce prima in pseudocodice con
+dettaglio crescente e poi diventa C. I pezzi
+si legano in due soli modi ordinati. Con
+l**accatastamento in sequenza** vanno uno dopo
+laltro come mattoni. Con l**annidamento strutturato**
+un pezzo sta dentro un altro. Non ce altra via.
+
+Esempio riscritto con dati diversi: invece di
+dieci studenti con 1 e 2 si usino otto colli con
+5 per buono e 6 per scarto. Il codice chiede
+otto esiti con invito `Dammi esito`. Conta i
+buoni e gli scarti. Mostra il riepilogo. Se i
+buoni sono oltre 6 stampa premio al turno.
+
+Serve un **ciclo con contatore noto** per otto
+giri. Dentro gira una **doppia scelta interna**
+che guarda il codice letto. Se vale 5 sale il
+**contatore dei buoni**, senno sale il
+**contatore degli scarti**. Serve anche un
+**indice di posizione** che parte da 1 e sale
+fino a 8. Dopo il giro si stampano i due conti
+e si guarda la **soglia di premio** con `> 6`.
+
+Traccia in pseudocodice con 18 righe:
+1 azzera buoni
+2 azzera scarti
+3 indice a uno
+4 riga vuota
+5 finche indice `<= 8`
+6 leggi esito dopo
+7 riga vuota
+8 se esito buono
+9 alza buoni
+10 altrimenti
+11 alza scarti
+12 riga vuota
+13 alza indice
+14 riga vuota
+15 stampa buoni
+16 stampa scarti
+17 se buoni oltre 6
+18 stampa premio.
+
+Nel listato si usa l**inizializzazione in definizione**
+come `ok = 0` dentro la riga di tipo. Vale da
+subito senza righe in piu. Per i conti mai negativi
+si usa tipo senza segno e in stampa il
+**segnaposto per senza segno** `%u`.
+
+Primo giro riscritto: esiti 5 6 6 5 5 5 6 5 danno
+Ok 5 e Scarti 3 senza premio. Secondo giro con
+sette 5 e un 6 danno Ok 7 e Scarti 1 con premio.
+
+Senza pseudocodice si corre al codice e si
+sbaglia lalgoritmo. Il **progetto prima del codice**
+resta la parte dura. Con algoritmo giusto il C
+diventa facile. Il **riepilogo finale** con i due
+conti e la scelta del premio chiude il lavoro.
+
+Errore tipico: mettere la scelta fuori dal ciclo
+e contare una sola volta, oppure scordare
+lavanzamento dellindice e girare senza fine.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Solo fila e dentro come legami ordinati.
+- Ciclo noto fuori e scelta doppia dentro.
+- Se codice buono sale un conto senno laltro.
+- Indice da 1 con `<= 8` per otto giri.
+- Inizio a zero per buoni e scarti.
+- Avvio dentro il tipo per brevita.
+- `%u` per i conti senza segno.
+- Riepilogo con due stampe piu premio oltre soglia.
+- Prima il progetto poi il C.
+- Mai la scelta fuori dal giro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quali sono i due soli legami ordinati?
+a) Solo salti liberi · b) Fila uno dopo laltro e dentro luno dellaltro · c) Solo copie · d) Nessun legame
+
+2. Con otto colli e codici 5 e 6 cosa fa il giro?
+a) Legge otto esiti e alza buoni o scarti · b) Legge una volta sola · c) Non legge nulla · d) Stampa senza contare
+
+3. Dove sta la doppia scelta in questo lavoro?
+a) Fuori dal ciclo dopo le stampe · b) Dentro il ciclo per ogni esito · c) Al posto del ciclo · d) Solo nel titolo
+
+4. Con esiti 5 6 6 5 5 5 6 5 cosa esce?
+a) Ok 7 e premio · b) Ok 5 e Scarti 3 senza premio · c) Ok 0 · d) Solo premio senza conti
+
+5. Con sette 5 e un 6 oltre soglia 6 cosa esce?
+a) Senza premio · b) Ok 7 Scarti 1 con premio · c) Pari senza scelta · d) Solo indice
+
+6. Perche conviene il progetto prima del codice?
+a) Ritarda e basta · b) Fissa lalgoritmo e rende il C facile · c) Toglie i conti · d) Toglie le scelte
+
+Soluzioni ragionate
+
+1 — b. Fila e dentro come uniche vie. La a) torna ai salti, la c) parla di copie, la d) nega i legami.
+
+2 — a. Otto letture con due conti. La b) conta una sola, la c) salta tutto, la d) stampa senza dati.
+
+3 — b. Dentro per ogni pezzo letto. La a) la sposta dopo, la c) la scambia col ciclo, la d) la toglie.
+
+4 — b. Cinque buoni e tre scarti sotto soglia. La a) chiede sette buoni, la c) azzera tutto, la d) salta i conti.
+
+5 — b. Sette oltre sei con premio. La a) nega il premio, la c) parla di pari, la d) mostra solo lindice.
+
+6 — b. Prima lalgoritmo poi la scrittura. La a) vede solo ritardo, la c) toglie i conti, la d) toglie le scelte.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

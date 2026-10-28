@@ -1,0 +1,186 @@
+[plain-text per Pages — da 43 - Esercitazione con array di puntatori.md]
+
+1. STRINGHE DI QUALSIASI LUNGHEZZA
+----------------------------------
+
+Una fila puo tenere punti. Uso tipico:
+fila di parole. Ogni posto sembra una
+parola, ma in C la parola e un punto
+al suo primo segno. Vale la
+**fila di punti a inizio**.
+
+Esempio riscritto con altri dati:
+invece di Hearts Diamonds Clubs Spades
+si usi Rossi Verdi Blu Gialli. Righe:
+`const char *colori[4] = {"Rossi", "Verdi", "Blu", "Gialli"}`
+La parte `colori[4]` dice fila da 4.
+La parte `char *` dice ogni posto e un
+punto a segno. Il `const` dice parole
+non toccate in voce. Vale il
+**solo punti in fila vera**.
+
+Ogni parola sta in memoria con tappo
+finale, lunga di uno in piu dei segni
+fra virgolette. Qui lunghe 5 5 3 6.
+In fila stanno solo i punti, non le
+lettere intere. Ogni punto guarda al
+primo segno della sua parola.
+
+La fila resta fissa a 4 ma apre a
+parole di ogni lunga. Vale il
+**fisso stretto ma elastico**.
+Con tabella fissa a due vie servirebbe
+colonna larga come la parola piu lunga
+e molto spazio perso per parole corte.
+
+Errore tipico: credere che le lettere
+stiano dentro la fila e non i soli
+punti verso fuori.
+
+2. CASO PRATICO: MESCOLARE LE CARTE E SIMULARNE LA DISTRIBUZIONE
+----------------------------------------------------------------
+
+Si usa il caso a carte per mostrare
+numeri a caso con metodo in piu passi
+dal largo al fine. Si mescola un mazzo
+da 52 e poi si da. Il metodo giova per
+problemi grandi e composti. Vale la
+**affina dal largo al fine**.
+
+Mazzo come tabella 4 per 13. Righe per
+semi 0 Rossi 1 Verdi 2 Blu 3 Gialli.
+Colonne per figure 0 9 da Uno a Dieci
+e 10 11 12 per Fante Donna Re. Vale la
+**tabella semi per figure**.
+
+Mescola cosi: prima tutto a zero, poi
+riga e colonna a caso. Si scrive 1 nel
+posto `tav[r][c]` come prima carta da
+dare. Poi 2 3 fino a 52 a caso negli
+spazi vuoti. Vale la
+**ordine che segna il turno**.
+
+Se il posto ha gia numero diverso da
+zero si ignora e si riprova a caso fino
+a posto libero. Alla fine numeri 1 52
+in tutti i 52 posti e mazzo mescolato.
+Vale lo **scarto doppio ignorato**.
+
+Se a caso escono sempre posti pieni il
+giro puo durare senza fine. Vale la
+**attesa senza fine possibile**.
+Il modo spontaneo puo nascondere costi
+sottili: meglio cercare vie che la
+evitano.
+
+Per dare la carta 1 si cerca il posto
+con 1 con due `for` su righe 0 3 e
+colonne 0 12. Poi si stampa parola di
+riga piu parola di colonna. Righe:
+stampa `figure[c]` piu `semi[r]` con
+`di` in mezzo, come Tre di Blu o
+Donna di Rossi. Vale la
+**cerca per numero di turno**.
+
+Stampa con `%s` per parole da punto a
+`char`. Riga `"%5s di %-8s%c"` con 5 a
+destra, 8 a sinistra, `\\n` o `\\t`
+a due a due. Il meno in `%-8s` manda a
+sinistra. Vale la
+**stampa con campi fissi**.
+
+Debolezza: trovata la carta, i due
+`for` dentro vanno avanti a vuoto negli
+altri posti. Vale la
+**cerca che non si ferma**.
+
+Schema in passi: avvia semi, avvia
+figure, azzera mazzo, mescola, dai le
+52. Mescola: per ogni carta scegli a
+caso, finche pieno riprova, poi scrivi
+numero. Dai: per ogni carta scorri
+tutti, se numero uguale stampa figura
+e seme.
+
+Esempio riscritto di codice con altri
+nomi: invece di SUITS FACES CARDS con
+`shuffle` `deal` si usi SEMI FIGURE
+CARTE con `mescola` `dai`. Righe:
+`#define SEMI 4`
+`#define FIGURE 13`
+`#define CARTE 52`
+`unsigned int tav[SEMI][FIGURE] = {0}`
+`const char *semi[SEMI] = {"Rossi", "Verdi", "Blu", "Gialli"}`
+`const char *figure[FIGURE] = {"Uno", "Due", "Tre", "Quattro", "Cinque", "Sei", "Sette", "Otto", "Nove", "Dieci", "Fante", "Donna", "Re"}`
+`mescola(tav)` con `rand() % SEMI` e
+`rand() % FIGURE` in `do` finche diverso
+da zero, poi `tav[r][c] = k`.
+`dai(tav, figure, semi)` con tre `for`
+e `if (tav[r][c] == k)` piu stampa.
+
+Errore tipico: tabelle strette senza
+tappo o giri che escono dai bordi.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Fila di punti verso primi segni.
+- Solo punti dentro la fila vera.
+- `const` per parole non toccate.
+- Tappo finale lungo uno in piu.
+- Fissa a 4 ma con parole libere.
+- Tabella 4 per 13 per semi e figure.
+- Ordine 1 52 come turno di uscita.
+- Doppio ignorato fino a posto libero.
+- Attesa senza fine con pieni ripetuti.
+- Cerca per numero con doppi giri.
+- Stampa destra e sinistra con campi.
+- Cerca che non si ferma dopo il colpo.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa tiene `colori[4]` con 4 parole?
+a) Lettere dentro · b) Solo punti a inizio parola · c) Nulla · d) Solo numeri
+2. Perche fila fissa apre a varie lunghe?
+a) Per magia · b) Per punti fuori con fisso elastico · c) Mai apre · d) Solo tabelle fisse
+3. Come si mescola il mazzo 4 per 13?
+a) A mano · b) Con ordine che segna turno a caso · c) Mai · d) Senza zeri
+4. Cosa si fa su posto gia pieno?
+a) Si scrive sopra · b) Si ignora e si riprova fino a libero · c) Si ferma tutto · d) Nulla
+5. Come si da la carta numero `k`?
+a) A caso · b) Con cerca per numero e stampa figura e seme · c) Mai · d) Senza giri
+6. Cosa fa `%-8s` in stampa?
+a) Nulla · b) Campo 8 a sinistra con meno · c) Campo 5 a destra · d) Toglie tutto
+
+Soluzioni ragionate
+
+1 — b. Punti al primo segno fuori fila. La a) mette lettere dentro, la c) non tiene nulla, la d) vede numeri.
+2 — b. Fisso stretto ma elastico fuori. La a) parla di magia, la c) nega tutto, la d) vuole tabelle fisse.
+3 — b. Zeri poi numeri a caso in posti vuoti. La a) fa a mano, la c) non mescola, la d) toglie gli zeri.
+4 — b. Scarto doppio fino a libero. La a) scrive sopra, la c) ferma tutto, la d) non fa nulla.
+5 — b. Doppi giri piu stampa giusta. La a) va a caso, la c) non da nulla, la d) toglie i giri.
+6 — b. Meno per sinistra in campo 8. La a) non fa nulla, la c) parla di 5 a destra, la d) toglie tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

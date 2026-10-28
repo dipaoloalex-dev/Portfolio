@@ -1,0 +1,168 @@
+[plain-text per Pages — da 44 - Puntatori a funzioni.md]
+
+1. ESEMPIO: ORDINAMENTO CRESCENTE O DECRESCENTE
+----------------------------------------------
+
+Un punto a voce tiene lindirizzo di
+avvio del codice in memoria. Come il
+nome fila vale inizio fila, il nome
+voce vale inizio codice. I punti a voci
+si passano, si rendono, si mettono in
+file e si danno ad altri punti con
+**punti che viaggiano ovunque**. Vale il
+**nome voce come indirizzo**.
+
+Esempio riscritto con altri dati:
+invece di 10 voci 2 6 4 8 10 12 89 68 45 37
+si usi 8 voci 15 3 9 1 12 5 8 2. Righe:
+`#define DIM 8`
+`int v[DIM] = {15, 3, 9, 1, 12, 5, 8, 2}`
+`void ordina(int w[], size_t n, int (*confronta)(int x, int y))`
+`int su(int x, int y)` per salita.
+`int giu(int x, int y)` per discesa.
+
+Il `main` chiede 1 o 2. Con 1 passa
+`su`, con 2 passa `giu`. Poi stampa
+prima e dopo. Uscita in righe:
+partenza
+15 3 9 1 12 5 8 2
+con 1 arrivo
+1 2 3 5 8 9 12 15
+con 2 arrivo
+15 12 9 8 5 3 2 1.
+Vale la **scelta che cambia il verso**.
+
+La voce `su` rende vero se serve lo
+scambio in salita con `return y < x`.
+La voce `giu` rende vero se serve in
+discesa con `return y > x` e
+**due rese per due versi**.
+
+La testata dice
+`int (*confronta)(int x, int y)` come
+punto a voce con due interi e reso
+intero. Servono tonde su `*confronta`
+per dire punto. Senza tonde diventa
+voce che rende punto a intero. Vale la
+**tonda che fa il punto**.
+
+Il terzo ingresso si puo scrivere corto
+come `int (*)(int, int)` senza nomi con
+**forma corta senza nomi**.
+La chiamata in `if` si scrive
+`if ((*confronta)(w[k], w[k + 1]))`.
+Come per dati, il punto a voce si
+scioglie per usare la voce. Si puo
+anche chiamare senza stella con
+`confronta(...)`, ma sembra voce vera
+con **forma senza stella ambigua**
+e confonde chi cerca la voce
+`confronta` mai scritta. Meglio la
+forma con stella per mostrare il punto.
+Vale la **chiamata con stella esplicita**.
+
+Errore tipico: scordare le tonde e
+dichiarare reso a punto, o chiamare
+senza stella e far cercare invano la
+voce col nome del punto.
+
+2. ESEMPIO: USO DEI PUNTATORI A FUNZIONI PER REALIZZARE UN SISTEMA GUIDATO DA MENU
+----------------------------------------------------------------------------------
+
+Nei menu a testo ogni numero chiama una
+voce diversa. I punti alle voci stanno
+in fila e il numero dato fa da indice.
+Vale la **fila di voci per menu**.
+
+Esempio riscritto con altri nomi:
+invece di `function1 function2 function3`
+con `f` si usi `opera1 opera2 opera3`
+con `tab`. Righe:
+`void opera1(int a)`
+`void opera2(int b)`
+`void opera3(int c)`
+`void (*tab[3])(int) = {opera1, opera2, opera3}`
+Si legge da tonde a sinistra come fila
+di 3 punti a voci con un `int` e reso
+`void`. Vale la
+**lettura da tonde a sinistra**.
+
+Giro con `scelta` da 0 a 2 e 3 per
+fine con **scelta come indice di fila**. Riga `(*tab[scelta])(scelta)` per
+prendere punto a `scelta` e passare
+`scelta` dentro. Ogni voce stampa numero
+e nome per prova di chiamata.
+
+Uscita in righe di testo riscritte:
+dai 0 2 con 3 per fine
+0 chiama opera1
+1 chiama opera2
+2 chiama opera3
+fine lavori.
+
+Errore tipico: indice fuori 0 2 o fila
+di punti scritta senza tonde a sinistra.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nome voce come indirizzo di avvio.
+- Punti a voci in file e passaggi.
+- Scelta 1 o 2 per verso di ordine.
+- `su` con `y < x` e `giu` con `y > x`.
+- Tonda su stella per dire punto.
+- Forma corta senza nomi in prototipo.
+- Chiamata con stella per chiarezza.
+- Senza stella sembra voce vera.
+- Fila di punti con scelta come indice.
+- Lettura da tonde piu a sinistra.
+- Stampa di prova per chiamata giusta.
+- Indice sempre dentro i bordi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa tiene un punto a voce?
+a) Dati · b) Indirizzo di avvio codice · c) Nulla · d) Solo testo
+2. Cosa fa scelta 1 o 2 in ordina?
+a) Nulla · b) Passa `su` o `giu` per verso · c) Sempre su · d) Toglie tutto
+3. Perche tonde in `int (*p)(int, int)`?
+a) Per stile · b) Per dire punto e non reso a punto · c) Mai servono · d) Solo per nomi
+4. Come si chiama con punto `confronta`?
+a) Senza regole · b) Con `(*confronta)(x, y)` esplicita · c) Mai possibile · d) Solo con nomi
+5. Come lavora `tab` da menu 0 2?
+a) Senza fila · b) Con scelta come indice e punto chiamato · c) Mai lavora · d) Solo con 3
+6. Come si legge `void (*tab[3])(int)`?
+a) A caso · b) Da tonde a sinistra come fila di punti · c) Mai possibile · d) Come voce sola
+
+Soluzioni ragionate
+
+1 — b. Avvio codice come nome voce. La a) vede dati, la c) non tiene nulla, la d) vede testo.
+2 — b. Scelta che cambia il verso. La a) non fa nulla, la c) fissa su, la d) toglie tutto.
+3 — b. Tonda che fa il punto vero. La a) parla di stile, la c) nega tutto, la d) parla di nomi.
+4 — b. Stella esplicita contro equivoci. La a) non ha regole, la c) nega tutto, la d) chiede nomi.
+5 — b. Fila di voci per menu a indice. La a) toglie la fila, la c) non lavora, la d) usa solo fine.
+6 — b. Fila di 3 punti con `int` e `void`. La a) va a caso, la c) nega tutto, la d) vede voce sola.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

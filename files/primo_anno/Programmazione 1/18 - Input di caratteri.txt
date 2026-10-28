@@ -1,0 +1,186 @@
+[plain-text per Pages — da 18 - Input di caratteri.md]
+
+1. FUNZIONE GETCHAR()
+---------------------
+
+La lettura di un tasto avviene con una
+**lettura con buffer**. Il controllo passa
+allutente e torna solo dopo Invio. Il testo
+digitato resta in memoria temporanea e poi
+passa al programma tutto insieme.
+
+Per questo si possono battere molti tasti senza
+filtro immediato, con qualche rischio in piu.
+Vale il **prelievo di un solo carattere** a ogni
+chiamata: dal cumulo esce un simbolo per volta.
+
+Esempio riscritto con altri simboli: invece di
+a verso b e B verso C si usi m verso n e T verso
+U. Si digita `m`, si mostra il dopo con `%c`,
+si digita `T`, si mostra il dopo. Il ritorno
+resta in attesa di Invio prima di consegnare.
+
+I tasti vivono in un byte come numeri. Vale il
+**doppio uso intero-carattere**: stesso dato visto
+come lettera con `%c` o come numero con `%d` a
+seconda del formato chiesto.
+
+Errore tipico: credere che ogni tasto arrivi
+subito senza Invio, oppure che escano due simboli
+in una sola chiamata.
+
+2. CARATTERI ED EOF
+-------------------
+
+Ogni simbolo ha un **codice numerico del simbolo**
+dentro la macchina. Esempio riscritto: invece di
+`a` con 97 si mostri `k` con 107 e `D` con 68.
+Con `%c` esce la lettera, con `%d` esce il numero.
+
+Righe di testo per tabella ridotta e diversa:
+simbolo D decimale 68 binario 01000100
+simbolo T decimale 84 binario 01010100
+simbolo k decimale 107 binario 01101011
+simbolo m decimale 109 binario 01101101.
+
+La chiamata dentro il test sfrutta una
+**assegnazione che vale**. Il segno `=` non solo
+mette ma rende anche il valore messo. Cosi si puo
+leggere e provare nella stessa riga con tonde
+intorno alla parte di lettura.
+
+La catena a destra vale per zeri multipli.
+Esempio riscritto: invece di `a = b = c = 0` si
+usi `p = q = r = 0`. Prima `r = 0`, poi `q` prende
+lo 0 di quella, poi `p` prende lo 0 della seconda.
+
+Il confronto usa una **costante simbolica di fine**
+detta `EOF` invece del numero diretto. Se il dato
+letto vale come fine, il giro si chiude. Qui i
+simboli stanno in `int` e non in `char` stretto,
+perche la fine e un intero negativo fuori dai
+tasti normali.
+
+Vale la **prova sulla costante** e non sul numero.
+Lo standard dice solo negativo, non sempre lo
+stesso su ogni macchina. Il nome resta uguale
+ovunque e rende il testo portabile.
+
+Errore tipico: provare `-1` diretto invece del
+nome e perdere portabilita fra sistemi.
+
+3. INSERIMENTO DELLINDICATORE EOF
+---------------------------------
+
+Il **tasto di fine diverso** cambia con sistema.
+Su famiglie tipo Unix basta una riga con tasto
+di controllo piu lettera di fine. Su altre come
+Windows serve controllo piu altra lettera e poi
+Invio. Il concetto resta: dite non ho piu dati.
+
+La lettura a simboli singoli porta un **newline spurio**.
+Per inviare bisogna premere Invio e dopo il tasto
+utile entra anche il ritorno. Spesso va scartato
+con un `if` apposito, senno il programma vede un
+tasto in piu e sbaglia il giro.
+
+Errore tipico: trattare il ritorno come dato utile
+e stampare una risposta per una riga vuota.
+
+4. NOTE SUI TIPI INTERI
+-----------------------
+
+Le **virgolette singole contro doppie** decidono
+il tipo. Con apici singoli si ha un simbolo solo,
+come `K`. Con doppi si ha una sequenza di testo.
+I numeri senza apici restano interi semplici.
+
+Il C offre la **famiglia degli interi** con misure
+diverse per usi diversi: oltre a `int` e `char`
+esistono `short` e `long` con forme brevi e forme
+con `unsigned` davanti per soli non negativi.
+
+Lo standard fissa solo il **minimo garantito dallo standard**
+e ogni macchina puo dare di piu. Righe di testo:
+`short` almeno da meno 32767 a piu 32767
+`long` almeno da meno 2147483647 a piu 2147483647
+`int` fra i due estremi detti sopra
+`char` con segno almeno da meno 127 a piu 127.
+Spesso oggi `int` e `long` coincidono nella pratica.
+
+Errore tipico: usare apici doppi per un simbolo
+singolo oppure credere i limiti uguali ovunque.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Invio consegna il cumulo e poi esce un simbolo.
+- Un simbolo per chiamata, mai due insieme.
+- Stesso byte visto come lettera o come numero.
+- Leggi e prova nella stessa riga con tonde.
+- Catene a destra per zeri multipli.
+- Fine con nome `EOF` e tipo `int`.
+- Nome e non numero per restare portabili.
+- Tasto di fine diverso per sistema.
+- Scarta il ritorno dopo Invio.
+- Apici singoli per simboli e doppi per testi.
+- Tipi corti lunghi e senza segno per ogni uso.
+- Solo minimi garantiti, resto per macchina.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando torna il controllo dopo `getchar`?
+a) Subito al tasto · b) Solo dopo Invio con cumulo · c) Mai · d) Solo a fine file
+
+2. Cosa mostra `%c` e `%d` su `k`?
+a) Stessa lettera due volte · b) Lettera e codice 107 · c) Due codici · d) Nulla
+
+3. Perche si scrive `while ((c = lettura()) != EOF)`?
+a) Per stile · b) Perche la lettura vale e si prova subito · c) Per togliere le tonde · d) Per non leggere
+
+4. Cosa fa `p = q = r = 0`?
+a) Solo `r` a zero · b) Tutte a zero da destra · c) Nulla · d) Solo `p` a zero
+
+5. Come si prova la fine in modo portabile?
+a) Con `-1` diretto · b) Col nome `EOF` in `int` · c) Con `char` stretto · d) Senza test
+
+6. Cosa fare del ritorno dopo Invio nella lettura a simboli?
+a) Tenerlo come dato · b) Prevederlo e scartarlo · c) Ignorare tutti i tasti · d) Chiudere subito
+
+Soluzioni ragionate
+
+1 — b. Buffer piu Invio con un simbolo per volta. La a) anticipa senza cumulo, la c) non torna mai, la d) aspetta solo la fine.
+
+2 — b. Doppio uso con due formati. La a) ripete la lettera, la c) ripete il numero, la d) non mostra nulla.
+
+3 — b. Assegnazione che rende il valore. La a) parla di stile, la c) toglie le tonde utili, la d) nega la lettura.
+
+4 — b. Catena da destra con zeri. La a) ferma alla prima, la c) non fa nulla, la d) vede solo lultima.
+
+5 — b. Nome negativo in intero capiente. La a) usa numero fisso, la c) usa tipo stretto, la d) non prova nulla.
+
+6 — b. Ritorno spurio da gestire. La a) lo conta come tasto, la c) butta tutto, la d) chiude senza motivo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

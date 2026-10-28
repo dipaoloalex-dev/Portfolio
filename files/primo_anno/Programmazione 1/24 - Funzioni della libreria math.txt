@@ -1,0 +1,245 @@
+[plain-text per Pages — da 24 - Funzioni della libreria math.md]
+
+1. MODULARIZZAZIONE DEI PROGRAMMI IN C
+--------------------------------------
+
+I lavori veri sono molto piu
+grandi dei primi listati di prova.
+Conviene partire da **piccoli blocchi maneggevoli**
+ognuno piu semplice del tutto,
+come nel metodo dividi e conquista.
+
+In C lo strumento e la funzione.
+Un programma unisce funzioni nuove
+scritte per loccasione e funzioni
+gia pronte della dotazione comune.
+La **raccolta di funzioni pronte**
+copre conti, testi, caratteri,
+ingressi uscite e altre utilita.
+
+Buona abitudine: conoscere bene
+la dotazione comune prima di
+scrivere codice nuovo. Non
+reinventare la ruota: il pronto
+riduce i tempi, e fatto da esperti,
+provato ed efficiente. Aiuta anche
+la portabilita fra sistemi conformi
+allo standard, salvo parti dette
+opzionali.
+
+Si scrive una **funzione definita da chi programma**
+per un compito da riusare in piu
+punti. Le righe stanno scritte una
+sola volta e restano nascoste alle
+altre funzioni. Parte il lavoro con
+un **dialogo con argomenti**: nome
+piu dati fra tonde per il compito.
+
+Esempio riscritto: invece di forme
+generiche si pensi a stampa di una
+misura. La chiamante chiede alla
+esecutrice di stampare, quella
+stampa e poi torna alla chiamante.
+Vale il modello con dirigente ed
+esecutrice, con **dettagli nascosti alla chiamante**
+che non sa come avviene il lavoro.
+Una esecutrice puo chiamarne altre
+senza che la prima lo sappia. Anche
+legami non gerarchici sono possibili.
+
+Errore tipico: copiare lo stesso
+blocco in piu punti invece di farne
+una funzione sola da chiamare.
+
+2. INTRODUZIONE ALLE FUNZIONI
+-----------------------------
+
+Le funzioni rendono il lavoro
+modulare. Ogni **variabile visibile solo dentro**
+vive nella sua funzione e fuori
+non si vede. Anche i parametri in
+ingresso sono locali a quella
+funzione e portano dati fra funzioni
+con argomenti nelle chiamate.
+
+Spesso `main` diventa un elenco di
+chiamate che fanno il grosso del
+lavoro. I motivi per spezzettare
+sono tre. Primo: dividere rende lo
+sviluppo piu fattibile. Secondo: il
+**riuso di blocchi esistenti** crea
+nuovi lavori da pezzi standard con
+nomi ben scelti, senza riscrivere
+tutto. E la via dellastrazione, come
+quando si usano `printf` `scanf`
+e `pow` senza saperne il dentro.
+Terzo: evita ripetizioni, perche un
+blocco impacchettato gira ovunque
+con una semplice chiamata.
+
+Ogni funzione fa un **compito singolo con nome chiaro**:
+il nome dice il fare e aiuta riuso
+e astrazione. Se un nome corto non
+si trova, forse fa troppe cose e
+va rotta in parti piu piccole con
+scomposizione.
+
+La dotazione `math` serve per conti
+comuni e qui introduce lidea di
+funzione. Si chiama con nome piu
+tonda sinistra, poi argomento o
+lista con virgole, poi tonda destra.
+
+Esempio riscritto con altri valori:
+invece di radice di 900 si usi
+radice di 625. Da
+`printf("%.2f", sqrt(625.0))`
+parte `sqrt` e stampa 25.00. Il
+numero dentro e largomento della
+chiamata.
+
+La chiamata rende un `double` da
+un `double` in ingresso. Tutte le
+rese in virgola mobile di `math`
+sono in doppia precisione. Vale il
+**risultato in doppia precisione**
+anche per `float`, e si stampa con
+`%f`. Si puo anche tenere in una
+cella per dopo, come in
+`double esito = sqrt(625.0)`.
+
+Serve la **intestazione matematica obbligatoria**
+con `#include <math.h>` in testa,
+senno manca la dichiarazione utile
+e scattano errori di traduzione.
+
+Vale l**argomento come costante o conto**:
+costante, cella o formula. Esempio
+riscritto: invece di 13 piu 3 per 4
+si usi 7 piu 2 per 9. Con
+`p1 = 7.0` `d = 2.0` `f = 9.0` la
+riga `sqrt(p1 + d * f)` vale radice
+di 25.0 cioe 5.00.
+
+Tabella in righe di testo semplici
+con `x` e `y` in `double` e valori
+diversi dalla fonte:
+sqrt 625.0 rende 25.0
+sqrt 16.0 rende 4.0
+cbrt 64.0 rende 4.0
+cbrt -27.0 rende -3.0
+exp 0.0 rende 1.0
+log 1.0 rende 0.0
+log10 1000.0 rende 3.0
+fabs 11.5 rende 11.5
+fabs -11.5 rende 11.5
+ceil 7.3 rende 8.0
+ceil -6.2 rende -6.0
+floor 7.3 rende 7.0
+floor -6.2 rende -7.0
+pow 3 4 rende 81.0
+pow 16 .5 rende 4.0
+fmod 11.5 2.5 rende 1.5
+sin 1.5708 rende circa 1.0
+cos 3.1416 rende circa -1.0
+tan 0.7854 rende circa 1.0.
+
+La revisione recente aggiunge molte
+voci in virgola mobile e per numeri
+complessi.
+
+Errore tipico: scordare `math.h`
+o usare tipi stretti dove serve
+doppia precisione.
+
+3. ESERCITAZIONI
+----------------
+
+Serve la **traduzione di formula con potenza**
+con `pow` `sqrt` e `fabs`.
+
+Esempio 1 riscritto con altri dati:
+invece di `a` con cubo e quinta su
+`2ab` si usi `b` con quadrato e
+quarta su `3cd`. Formula come
+`w = b x2 - 2 x4 / 3 c d` con
+numeratore e denominatore chiari.
+Righe:
+`w = (b * pow(x, 2) - 2 * pow(x, 4)) / (3 * c * d)`
+oppure
+`w = (b * pow(x, 2) - 2 * pow(x, 4)) / 3 / c / d`.
+
+Esempio 2 riscritto con altri dati:
+invece di quarta meno 3 su `x-1`
+si usi terza meno 5 su `x-2`. Formula
+come `w = radice di x3 - 5 / |x - 2|`.
+Riga:
+`w = sqrt(pow(x, 3) - 5) / fabs(x - 2)`.
+
+Errore tipico: scordare tonde attorno
+a numeratore e denominatore e far
+dividere solo lultimo pezzo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Dividi in pezzi piccoli e maneggevoli.
+- Unisci nuovo e pronto della dotazione.
+- Pronto da esperti e piu portabile.
+- Una funzione per ogni compito da riusare.
+- Nome piu argomenti fra tonde per chiamare.
+- Dettagli dentro e nascosti a chi chiama.
+- Locali e parametri vivi solo dentro.
+- `main` come elenco di chiamate chiare.
+- Un compito per nome senza strafare.
+- `math.h` sempre in testa per i conti.
+- `double` in ingresso e in uscita.
+- Formule con `pow` `sqrt` `fabs` e tonde.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche dividere un lavoro grande?
+a) Per allungare · b) Per pezzi maneggevoli da provare e riusare · c) Per togliere nomi · d) Mai utile
+2. Cosa unisce un programma tipico?
+a) Solo testo · b) Funzioni nuove piu funzioni pronte · c) Solo salti · d) Nulla
+3. Dove vive una locale di funzione?
+a) Ovunque · b) Solo dentro la sua funzione · c) Mai · d) Solo prima
+4. Cosa serve per usare `sqrt` e `pow`?
+a) Nulla · b) `#include <math.h>` in testa · c) Solo `stdio` · d) Solo carta
+5. Cosa stampa `sqrt(625.0)` con `%.2f`?
+a) 30.00 · b) 25.00 come `double` · c) 0 · d) Nulla
+6. Come si scrive `w` con terza meno 5 su `|x-2|`?
+a) Senza funzioni · b) `w = sqrt(pow(x, 3) - 5) / fabs(x - 2)` · c) Solo `pow` · d) Senza tonde
+
+Soluzioni ragionate
+
+1 — b. Dividi e conquista con riuso e prove. La a) allunga senza motivo, la c) toglie i nomi, la d) nega lutilita.
+2 — b. Nuovo piu dotazione comune pronta. La a) vede solo testo, la c) vede salti, la d) non vede nulla.
+3 — b. Visibilita solo dentro con parametri locali. La a) la apre ovunque, la c) la nega, la d) la mette prima.
+4 — b. Intestazione matematica dovuta. La a) non mette nulla, la c) cita solo ingresso uscita, la d) cita carta.
+5 — b. Radice di 625 in doppia con due decimali. La a) copia altro conto, la c) azzera tutto, la d) non stampa.
+6 — b. Potenza dentro radice sopra e modulo sotto. La a) toglie le funzioni, la c) dimezza tutto, la d) rompe lordine.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

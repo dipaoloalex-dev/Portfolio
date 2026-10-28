@@ -1,0 +1,183 @@
+[plain-text per Pages — da 45 - Esercizi con puntatori.md]
+
+1. ESEMPIO: IL POKER
+-------------------
+
+Si da una mano da 5 e si cerca cosa
+vale: coppia, doppia, tris, poker,
+colore, scala. Ogni voce guarda la
+mano e stampa se trova il segno.
+
+Esempio riscritto con altri dati:
+invece di Hearts Diamonds Clubs Spades
+si usi Rossi Verdi Blu Gialli. Invece
+di Ace Deuce Three Four Five Six Seven
+Eight Nine Ten Jack Queen King si usi
+Uno Due Tre Quattro Cinque Sei Sette
+Otto Nove Dieci Fante Donna Re.
+`#define SEMI 4`
+`#define FIGURE 13`
+`#define CARTE 52`.
+Mano come `unsigned int mano[5][2]`
+con riga seme e colonna figura.
+Mazzo come `unsigned int tav[SEMI][FIGURE]`
+a zeri. Vale la **mano da cinque posti**.
+
+Si azzera con doppi `for` su righe e
+colonne. Poi `srand(time(NULL))` per
+seme a caso, `mescola(tav)` e
+`dai(tav, mano, semi, figure)`.
+Poi si chiamano `coppia`, `tris`,
+`poker`, `scala`, `colore`. Vale il
+**mescola e dai poi valuta**.
+
+La voce mescola sceglie riga con
+`rand() % SEMI` e colonna con
+`rand() % FIGURE` in `do` finche posto
+diverso da zero, poi scrive numero da
+1 a 52. Vale il **posto libero a caso**.
+
+La voce dai cerca numeri 1 5 con tre
+`for`: carta, riga, colonna. Se
+`tav[r][c] == k` salva `mano[r][0] = r`
+e `mano[r][1] = c` e stampa
+`figure[c]` piu `semi[r]`. Vale la
+**caccia ai primi cinque numeri**.
+
+Errore tipico: non azzerare il mazzo
+o scordare il seme a caso e avere
+sempre lo stesso giro.
+
+2. ESEMPIO: IL POKER (SECONDA PARTE)
+------------------------------------
+
+La coppia conta figure uguali. Riga
+`unsigned int conta[FIGURE] = {0}` poi
+`++conta[mano[r][1]]` per 5. Se un
+posto vale 2 stampa coppia di quella
+figura. Vale il **conta figure per coppia**.
+Con due posti a 2 si hanno due coppie.
+
+Tris uguale ma cerca 3. Righe con
+`if (conta[t] == 3)` e stampa tris.
+Vale il **tre uguali come tris**.
+
+Poker uguale ma cerca 4. Righe con
+`if (conta[k] == 4)` e stampa poker.
+Vale il **quattro uguali come poker**.
+
+Scala copia colonne in `s[5]`, ordina
+a bolle e prova passi di uno. Righe:
+copia `s[r] = mano[r][1]`, poi doppi
+`for` con scambio se `s[c] > s[c+1]`.
+Poi `if (s[4]-1 == s[3] && s[3]-1 == s[2]`
+`&& s[2]-1 == s[1] && s[1]-1 == s[0])`
+e stampa da `figure[s[0]]` a
+`figure[s[4]]`. Vale la
+**copia ordina e scala di uno**.
+
+Colore conta semi con
+`unsigned int conta[SEMI] = {0}` e
+`++conta[mano[r][0]]`. Se un posto vale
+5 stampa colore di quel seme. Vale il
+**cinque semi come colore**.
+
+Prova consigliata riscritta: dai due
+mani da 5 e di quale vince.
+
+Errore tipico: contare colonna al posto
+di riga fra scala e colore o scordare
+lordine prima della prova di scala.
+
+3. USO DI STRINGHE
+------------------
+
+Esercizio riscritto con altri dati:
+invece di 80 con string1 string2 si usi
+64 con sole e luna. Righe:
+`#define DIM 64`
+`void unisci(char *d1, const char *d2)`
+`char prima[DIM]` e `char seconda[DIM]`
+lettura con `scanf("%63s%63s", prima, seconda)`
+poi `unisci(prima, seconda)` e stampa
+`prima`.
+
+La voce va al tappo con
+`while (*d1 != 0) ++d1` poi copia con
+`for (; *d1 = *d2; ++d1, ++d2)` e corpo
+vuoto. Prima salta in fondo, poi attacca
+la seconda dal tappo in poi. Vale la
+**coda trovata poi copiata**.
+
+Uscita in righe di testo riscritte:
+dai sole luna
+soleluna.
+Quindi la voce concatena parole.
+
+Errore tipico: prima fila corta senza
+posto per somma piu tappo o scordare
+il salto al tappo e tagliare linizio.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Mano da 5 con seme e figura.
+- Mazzo a zeri prima del caso.
+- Posto libero a caso per mescola.
+- Primi cinque numeri come mano.
+- Conta figure per coppia tris poker.
+- Copia e ordina per scala di uno.
+- Conta semi per colore da cinque.
+- Due mani per prova di vincita.
+- Salto al tappo prima di attaccare.
+- Copia fino a tappo con corpo vuoto.
+- Prima fila larga per somma intera.
+- Stampa dopo chiamata di unione.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa tiene `mano[5][2]`?
+a) Nulla · b) Cinque coppie seme figura · c) Solo semi · d) Solo numeri
+2. Come mescola `mescola(tav)`?
+a) A mano · b) Con posto libero a caso da 1 a 52 · c) Mai · d) Senza zeri
+3. Come trova coppia e tris?
+a) A caso · b) Con conta figure a 2 e 3 · c) Mai · d) Con semi
+4. Come trova scala da 5?
+a) Senza ordine · b) Con copia ordina e passi di uno · c) Mai · d) Con semi
+5. Come trova colore da 5?
+a) Con figure · b) Con cinque semi uguali contati · c) Mai · d) Senza conti
+6. Cosa fa `unisci` con sole e luna?
+a) Nulla · b) Trova coda e copia per soleluna · c) Toglie tutto · d) Solo legge
+
+Soluzioni ragionate
+
+1 — b. Righe mano con seme e figura. La a) non tiene nulla, la c) toglie figure, la d) toglie tutto.
+2 — b. Zeri poi caso fino a libero. La a) fa a mano, la c) non mescola, la d) toglie gli zeri.
+3 — b. Conta figure per coppia e tris. La a) va a caso, la c) non trova, la d) conta semi.
+4 — b. Ordina copia poi scala di uno. La a) non ordina, la c) non trova, la d) conta semi.
+5 — b. Cinque semi come colore contato. La a) conta figure, la c) non trova, la d) non conta.
+6 — b. Coda trovata poi copiata intera. La a) non fa nulla, la c) toglie tutto, la d) solo legge.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

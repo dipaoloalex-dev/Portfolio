@@ -1,0 +1,189 @@
+[plain-text per Pages — da 33 - Esempi di ricorsione, Fibonacci e Hanoi.md]
+
+1. SERIE DI FIBONACCI
+--------------------
+
+La fila parte da 0 e 1 e poi ogni
+voce e somma delle due prima. Primi
+passi: 0 1 1 2 3 5 8 13 21 34 ...
+Vale la **regola dei due precedenti**
+come idea di serie.
+
+In forma ricorsiva con nome `fibo`:
+`fibo(0) = 0`, `fibo(1) = 1`,
+`fibo(k) = fibo(k-1) + fibo(k-2)` per
+`k` sopra 1. La prima chiamata da
+`main` non e ricorsiva, le dopo si.
+
+La voce prova subito il **doppio caso minimo**:
+se `k` vale 0 o 1 rende `k` e chiude.
+Sopra 1 apre due copie minori con
+`return fibo(k-1) + fibo(k-2)`. Ogni
+copia tratta un quesito piu corto del
+padre, fino ai minimi che risalgono
+con somme allindietro.
+
+Esempio riscritto di **albero di copie per fibo 4**:
+`fibo(4)` apre `fibo(3)` piu `fibo(2)`.
+`fibo(3)` apre `fibo(2)` piu `fibo(1)`.
+`fibo(2)` apre `fibo(1)` piu `fibo(0)`.
+Foglie 1 0 1 1 0 che sommate danno 3.
+Righe di testo per prove riscritte:
+dato 4 rende 3
+dato 8 rende 21
+dato 12 rende 144
+dato 35 rende 9227465.
+
+Vale la **crescita a raddoppio dei rami**:
+ogni piano quasi raddoppia le copie.
+Lordine resta circa `2` alla `k` con
+**costo esponenziale stimato**. Con
+k = 18 servono circa 262 mila copie,
+con k = 28 circa 268 milioni di copie.
+Si parla di costo esponenziale: idea
+chiara ma lenta per grandi `k`.
+
+Errore tipico: chiedere valori alti con
+la forma a due rami e attendere tempi
+enormi senza via piana di appoggio.
+
+2. SERIE DI FIBONACCI NON RICORSIVA
+----------------------------------
+
+La via piana tiene solo due celle e
+scorre in avanti con `for`. Niente
+albero di copie, solo somme in fila.
+Vale il **ciclo con due celle correnti**
+per salire fino a `k`.
+
+Esempio riscritto con altri nomi e
+limite: invece di `MAX 93` e `fib1 fib2`
+si usi `TOP 80` e `a b` con **limite alto con TOP 80**. Righe:
+`#define TOP 80`
+`for (t = 0; t <= TOP; ++t)` con
+`printf("fibo(%u)=%llu", t, fibo(t))`.
+Dentro: `a = 0` e `b = 1`, poi da
+`j = 2` fino a `k` si fa pari su `a`
+e dispari su `b` con `j % 2`. Alla fine
+se `k` pari si rende `a`, senno `b`.
+
+Con `k = 2` si entra una volta e si
+ottiene 1. Con `k = 12` si scorre fino
+a 12 e si ottiene 144 senza aprire
+copie. La forma resta lineare e sale
+fino a `TOP` senza esplodere come
+quella a due rami.
+
+Errore tipico: confondere le due celle
+pari e dispari e rendere quella sbagliata
+alla fine del ciclo.
+
+3. TORRE DI HANOI
+-----------------
+
+La storia parla di 60 dischi in fila
+calante su un piolo, da portare altrove
+un disco per volta senza mai mettere
+un grande sopra un piccolo, con un terzo
+piolo di appoggio. Con vie normali resta
+duro, con ricorsione diventa lineare.
+Vale la **riduzione a n meno uno** come
+cuore del metodo.
+
+Per `n` dischi da `A` a `C` con `B` di
+appoggio: prima `n-1` da `A` a `B` con
+`C` di appoggio, poi il grande da `A`
+a `C`, poi `n-1` da `B` a `C` con `A`
+di appoggio. Il caso minimo con un disco
+stampa solo `A --> C` e torna.
+
+Serve una **voce a quattro ingressi**:
+conta, inizio, fine e appoggio. Righe
+riscritte con altri nomi e segni:
+`void hanoi(int n, int da, int a, int via)`
+con `if (1 == n)` e stampa
+`printf("%d --> %d", da, a)` poi `return`.
+Poi `hanoi(n-1, da, via, a)`, stampa del
+grande, e `hanoi(n-1, via, a, da)`.
+Il `main` legge `n` e chiama
+`hanoi(n, 1, 3, 2)` per andare da 1 a 3.
+
+Esempio riscritto con 3 dischi e pioli
+1 2 3 in **mosse in sette passi**, testo in righe:
+1 --> 3
+1 --> 2
+3 --> 2
+1 --> 3
+2 --> 1
+2 --> 3
+1 --> 3.
+Con lettere `A B C` le stesse mosse
+restano valide cambiando solo i nomi.
+
+Errore tipico: scambiare fine e appoggio
+nelle due chiamate e rompere il
+**divieto di grande su piccolo**.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Fila come somma dei due prima.
+- Minimi 0 e 1 con reso diretto.
+- Sopra 1 due copie minori sommate.
+- Prima da `main` non ricorsiva.
+- Rami quasi doppi a ogni piano.
+- Costo circa `2` alla `k` in ricorsione.
+- Via piana con due celle e `for`.
+- Pari su una e dispari sullaltra.
+- Hanoi come `n-1` piu grande piu `n-1`.
+- Minimo con un disco e stampa sola.
+- Quattro ingressi per i tre pioli.
+- Mai grande sopra piccolo in mosse.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa rende `fibo(4)` con minimi 0 e 1?
+a) 2 · b) 3 con albero a cinque foglie · c) 0 · d) Nulla
+2. Perche la ricorsiva di Fibonacci pesa tanto?
+a) Per stile · b) Per rami quasi doppi con costo circa `2` alla `k` · c) Per `for` · d) Mai pesa
+3. Cosa tiene la via piana fino a 12?
+a) Albero · b) Due celle `a b` con ciclo fino a 144 · c) Nulla · d) Solo stampa
+4. Come si spostano 3 dischi da 1 a 3?
+a) In una mossa · b) In sette mosse con `n-1` grande `n-1` · c) Mai possibile · d) Senza regole
+5. Cosa fa il minimo di Hanoi con un disco?
+a) Nulla · b) Stampa solo il passo e torna · c) Chiama ancora · d) Sposta due dischi
+6. Quali ingressi servono alla voce torri?
+a) Solo conta · b) Conta inizio fine e appoggio · c) Nulla · d) Solo testo
+
+Soluzioni ragionate
+
+1 — b. Somma dei due prima fino a 3. La a) ferma a 2, la c) azzera tutto, la d) non rende nulla.
+2 — b. Raddoppio per piano con costo esponenziale. La a) parla di stile, la c) cita il ciclo, la d) nega il peso.
+3 — b. Scorrimento lineare con pari e dispari. La a) apre lalbero, la c) non tiene nulla, la d) solo stampa.
+4 — b. Schema con tre fasi e sette passi. La a) vuole una mossa, la c) nega tutto, la d) toglie le regole.
+5 — b. Caso minimo con stampa e ritorno. La a) non fa nulla, la c) chiama ancora, la d) sposta due dischi.
+6 — b. Quattro dati per i tre pioli utili. La a) tiene solo conta, la c) non chiede nulla, la d) chiede testo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

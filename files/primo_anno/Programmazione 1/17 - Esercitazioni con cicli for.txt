@@ -1,0 +1,163 @@
+[plain-text per Pages — da 17 - Esercitazioni con cicli for.md]
+
+1. ESEMPI DI USO DELLISTRUZIONE FOR
+-----------------------------------
+
+Il `for` compatta avvio test e passo. Forme
+riscritte con altri limiti ma stesso metodo.
+
+Un **passo costante positivo** sale di uno o
+di un salto fisso. Esempi riscritti: da 2 a 60
+di 2 con `for (i = 2; i <= 60; i += 2)`. Da 5
+a 65 di 5 con `for (i = 5; i <= 65; i += 5)`.
+Sequenza 3 6 9 fino a 21 con
+`for (j = 3; j <= 21; j += 3)`.
+
+Un **conteggio allindietro** scende col meno.
+Esempi riscritti: da 60 a 2 di meno 2 con
+`for (i = 60; i >= 2; i -= 2)`. Da 18 a 4 di
+meno 2 con `for (i = 18; i >= 4; i -= 2)`.
+Sequenza 39 26 13 0 con
+`for (j = 39; j >= 0; j -= 13)`.
+
+La **somma di una progressione** usa la guida
+dentro il totale. Esempio riscritto con dispari:
+invece di pari 2 100 si sommino dispari 1 49.
+Da `tot = 0` con `for (n = 1; n <= 49; n += 2)`
+e `tot += n` dentro si ottiene 625.
+
+Vale l**intestazione in una riga** quando si puo.
+Una sola riga resta piu chiara di tre righe
+spezzate senza motivo.
+
+Errore tipico: passo di segno errato che non
+raggiunge mai il limite.
+
+2. ESEMPIO PER APPLICAZIONI DI CALCOLO
+--------------------------------------
+
+Una **applicazione con potenza** cresce anno per
+anno. Esempio riscritto: invece di 1000 al 5 per
+10 si usi 800 al 4 per 8. Formula con
+`cap * pow(1.0 + tasso, anno)` e `math` dentro.
+Da 800 a 1094.86 in otto righe con `%.2f`.
+
+La **larghezza di campo** dice quante posizioni
+occupa il numero. La **precisione decimale** dopo
+il punto dice quante cifre mostrare. Con `%18.2f`
+il valore sta in 18 posti con due decimali.
+
+Vale l**allineamento a destra** di base: se il
+testo e corto si riempie a sinistra con spazi e
+i punti si allineano in colonna. Con `-` fra `%`
+e numero si va a sinistra, come in `%-8s` per
+testi o `%-5d` per interi.
+
+Vale l**arrotondamento di stampa**: il video
+arrotonda ma la cella resta uguale. Esempio
+riscritto con altri decimali: invece di 14.234
+e 18.673 si usi 12.415 e 17.582. Con `%.2f` si
+vede 12.42 piu 17.58 uguale 30.00, mentre la
+somma dei testi corti darebbe 29.99. La stampa
+non cambia i valori in memoria.
+
+Errore tipico: fidarsi del video come se fosse
+il valore vero in cella.
+
+3. ERRORI COMUNI CON ISTRUZIONE FOR
+------------------------------------
+
+La **visibilita del contatore** nato in testata
+finisce col ciclo. Esempio riscritto: invece di
+`c` fino a 3 si usi `d` fino a 4. Dentro stampa
+1 2 3 4, fuori non esiste piu. Dichiararlo prima
+permette di leggerlo dopo con valore 5.
+
+Il **separatore sbagliato** rompe la riga. Nel
+`for` servono due `;` fra le tre parti. Le virgole
+servono solo dentro una parte per due nomi. Mettere
+virgole al posto dei `;` blocca tutto.
+
+Un **cubo di caratteri** nasce da tre `for` dentro.
+Esempio riscritto con altri segni e misure: invece
+di 3 3 4 con `*` si usi 2 4 3 con `#`. Esterno 2
+volte, medio 4 volte, interno 3 segni per riga.
+Escono 2 blocchi da 4 righe da 3 `#` con righe
+vuote fra i blocchi. Maiuscole come `Printf`,
+variabili miste, `++j` al posto di `++k` e `]` al
+posto di `}` mandano tutto in errore.
+
+Errore tipico: toccare la guida interna sbagliata
+e creare righe infinite o forme strane.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Avvio test e passo in una sola riga.
+- Passo fisso avanti o indietro con segno giusto.
+- Somma con guida dentro il totale.
+- Nome in testata vive solo nel ciclo.
+- Due `;` fra parti e virgole solo dentro parte.
+- Larghezza per posti e punto piu cifre per decimali.
+- Destra di base e sinistra con `-`.
+- Video arrotonda ma cella resta uguale.
+- Tre `for` dentro per righe colonne e piani.
+- Maiuscole e parentesi sempre esatte.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quale riga conta da 2 a 60 di 2?
+a) Con `< 2` · b) Con `for (i = 2; i <= 60; i += 2)` · c) Con passo 5 · d) Senza test
+
+2. Quanto fa la somma dei dispari 1 49?
+a) 2550 · b) 625 · c) 49 · d) 0
+
+3. Cosa fanno 18 e 2 in `%18.2f`?
+a) Nulla · b) Posti totali e cifre dopo il punto · c) Due interi · d) Solo colore
+
+4. Con 12.415 e 17.582 a due cifre cosa si vede?
+a) Valori veri in cella · b) 12.42 piu 17.58 uguale 30.00 a video · c) Sempre 0 · d) Niente punti
+
+5. Dove vive un contatore nato in testata?
+a) Ovunque dopo · b) Solo fino a fine ciclo · c) Mai · d) Solo prima
+
+6. Cosa stampa il cubo 2 4 3 con `#`?
+a) Una sola riga · b) 2 blocchi da 4 righe da 3 con vuote · c) Solo spazi · d) Nulla perche vietato
+
+Soluzioni ragionate
+
+1 — b. Avvio limite e passo giusti. La a) nega il test, la c) cambia passo, la d) toglie il test.
+
+2 — b. Venticinque dispari fino a 49. La a) copia i pari fino a 100, la c) prende lultimo, la d) azzera tutto.
+
+3 — b. Campo e precisione insieme. La a) non vede nulla, la c) parla di interi, la d) parla di colore.
+
+4 — b. Solo video arrotondato con cella uguale. La a) cambia memoria, la c) azzera tutto, la d) toglie i punti.
+
+5 — b. Visibilita solo dentro. La a) lo porta oltre, la c) lo nega, la d) lo mette prima.
+
+6 — b. Piani righe e colonne con vuote. La a) vede una riga, la c) vede spazi, la d) vieta i dentro.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

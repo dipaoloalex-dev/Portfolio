@@ -1,0 +1,179 @@
+[plain-text per Pages — da 23 - Riepilogo della programmazione strutturata.md]
+
+1. RIEPILOGO DELLA PROGRAMMAZIONE STRUTTURATA
+---------------------------------------------
+
+Il metodo ordinato rende i
+programmi piu facili da leggere,
+da controllare, da correggere,
+da cambiare e anche da ragionare
+come corretti in senso logico.
+
+Fin qui si sono viste le forme
+di guida del C, una per volta,
+con disegni di flusso ed esempi.
+Ora serve un riepilogo breve con
+poche regole di costruzione e di
+verifica delle proprieta.
+
+Ogni forma ha un **unico ingresso e unica uscita**:
+un solo punto per entrare e un
+solo punto per uscire. I tondi
+nel disegno segnano questi due
+punti di ogni blocco.
+
+Unire simboli sparsi a caso puo
+dare schemi disordinati. Per questo
+si usano solo **istruzioni di controllo standard**
+gia pronte: sequenza, scelta e
+ripetizione. Si combinano in due
+soli modi chiari e sicuri.
+
+Il primo modo e mettere in fila:
+luscita di una forma entra nella
+forma dopo. E il **collegamento in sequenza**
+detto anche accatastamento. Il
+secondo modo e mettere dentro:
+una azione diventa una intera
+forma di guida. E il **contenitore con annidamento**.
+
+Il rettangolo vale per ogni fare,
+anche lettura e scrittura. Dal
+**disegno minimo di partenza** con
+inizio, una azione e fine, si cresce
+applicando le due regole quante
+volte si vuole e in ogni ordine.
+
+Esempio riscritto con altri passi:
+invece di partire da figure date,
+si pensi a lettura di due numeri,
+poi somma, poi stampa. Con la
+regola del mettere in fila si passa
+da uno a tre rettangoli in colonna.
+
+Esempio riscritto di dentro: si
+prende il rettangolo centrale e lo
+si cambia in scelta doppia con
+`if...else`. Poi si cambia ancora
+ognuno dei due rami in altra scelta
+doppia. Nasce un **albero di scelte doppie**
+con quattro foglie finali. Il riquadro
+a tratti mostra il pezzo sostituito.
+
+Con uso libero delle regole nasce
+linsieme di tutti gli **schemi ordinati possibili**,
+e quindi di tutti i programmi
+ordinati possibili. Senza salti
+liberi i blocchi non si accavallano
+mai a meta strada. La **assenza di salti liberi**
+tiene ogni blocco intero e separato.
+
+Si vedono cosi tre casi: blocchi
+in fila, blocchi dentro blocchi,
+e blocchi a cavallo vietati. Solo
+i primi due restano permessi nel
+metodo ordinato.
+
+Per capire se uno schema e buono,
+si prova la **riduzione inversa allo schema minimo**:
+si applicano le regole al contrario
+per tornare al disegno minimo. Se
+si torna indietro fino a inizio con
+una azione e fine, lo schema era
+ordinato, senno era disordinato.
+
+Esempio riscritto di prova: schema
+con due rombi che si rientrano a
+vicenda senza un punto comune di
+uscita non si riduce mai al minimo,
+quindi resta fuori dal metodo.
+
+Bastano **tre forme di guida essenziali**:
+sequenza lineare, selezione con
+scelta, iterazione con ciclo. La
+selezione vive come `if` singolo,
+`if...else` doppio, `switch` multiplo.
+La iterazione vive come `while`,
+`do...while`, `for`.
+
+Il solo `if` basta per ogni scelta:
+il doppio e il multiplo si possono
+riscrivere con soli `if`. Il solo
+`while` basta per ogni ciclo: il
+`do...while` e il `for` si possono
+riscrivere con solo `while`.
+
+Resta cosi il **nucleo minimo di tre comandi**:
+sequenza, `if`, `while`. Con solo
+fila e dentro si costruisce ogni
+programma utile. La semplicita
+resta il pregio vero del metodo.
+
+Errore tipico: unire frecce libere
+fra rombi e rettangoli e creare
+incroci che non si possono ridurre
+al disegno minimo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Un ingresso e una uscita per forma.
+- Solo forme pronte di sequenza scelta ciclo.
+- Fila per mettere dopo e dentro per mettere in.
+- Rettangolo per ogni fare anche input output.
+- Da minimo a schemi grandi con due regole.
+- Senza salti liberi i blocchi non si tagliano.
+- Solo fila e dentro sono permessi.
+- Prova inversa per dire se schema e buono.
+- Tre forme essenziali bastano per tutto.
+- Solo `if` per ogni scelta possibile.
+- Solo `while` per ogni ciclo possibile.
+- Nucleo minimo di sequenza `if` `while`.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa ha ogni forma nel metodo ordinato?
+a) Molti ingressi · b) Unico ingresso e unica uscita · c) Nessun legame · d) Solo salti
+2. In quali modi si combinano le forme?
+a) Solo a caso · b) Solo in fila e dentro · c) Solo a cavallo · d) Mai insieme
+3. Cosa fa la regola del mettere dentro?
+a) Toglie tutto · b) Cambia una azione in una forma di guida · c) Rompe i blocchi · d) Aggiunge salti
+4. Come si controlla se uno schema e ordinato?
+a) A occhio · b) Con riduzione inversa fino al minimo · c) Contando i colori · d) Mai possibile
+5. Quale scelta basta per ogni selezione?
+a) Solo `switch` · b) Solo `if` singolo · c) Nessuna · d) Solo `goto`
+6. Quale ciclo basta per ogni iterazione?
+a) Solo `for` · b) Solo `do` · c) Solo `while` · d) Nessuno
+
+Soluzioni ragionate
+
+1 — b. Un punto per entrare e uno per uscire. La a) apre troppi punti, la c) toglie i legami, la d) usa solo salti.
+2 — b. Fila dopo e dentro luno dellaltro. La a) unisce a caso, la c) accavalla i blocchi, la d) vieta ogni unione.
+3 — b. Azione che diventa guida intera. La a) toglie tutto, la c) rompe lordine, la d) mette salti liberi.
+4 — b. Regole al contrario verso il minimo. La a) guarda senza prova, la c) conta i colori, la d) nega ogni prova.
+5 — b. Singolo bastante per doppio e multiplo. La a) tiene solo il multiplo, la c) toglie tutto, la d) torna ai salti.
+6 — c. Ciclo con prova in testa per ogni giro. La a) tiene solo il contato, la b) tiene solo coda garantita, la d) toglie i cicli.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

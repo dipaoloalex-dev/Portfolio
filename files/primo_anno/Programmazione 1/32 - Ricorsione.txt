@@ -1,0 +1,220 @@
+[plain-text per Pages — da 32 - Ricorsione.md]
+
+1. RICORSIONE
+------------
+
+Per alcuni lavori conviene una
+voce che chiama se stessa. Una
+**voce che richiama se stessa** agisce
+da sola o tramite unaltra voce di
+passaggio. Serve per sciogliere un
+quesito a passi.
+
+La voce sa solo i casi facili, detti
+**caso minimo di arresto**. Con quello
+rende subito il numero senza altri
+giri. Con un caso piu duro divide in
+due idee: un pezzo noto da fare subito
+e un pezzo ignoto ma simile al tutto,
+solo piu piccolo o piu semplice.
+
+Sul pezzo simile parte una nuova copia
+della stessa voce. E il **salto verso copia minore**
+detto passo ricorsivo. Porta `return`
+perche il suo reso si unisce al pezzo
+noto e torna alla chiamante di prima.
+La prima copia resta in attesa del reso
+dalla copia dopo. Ogni copia puo aprire
+altre copie dividendo ancora il lavoro.
+
+Per finire serve la **discesa fino al minimo**:
+ogni salto deve accorciare il quesito
+fino al caso minimo. Da li parte la
+risalita dei resi allindietro, copia per
+copia, fino alla prima chiamata che
+consegna il totale alla sua chiamante.
+
+Errore tipico: non far scendere il dato
+verso il minimo e restare in giri senza
+fine fino a memoria esaurita.
+
+2. CALCOLO RICORSIVO DEL FATTORIALE
+-----------------------------------
+
+Il fattoriale di `n` non negativo vale
+prodotto da `n` fino a 1, con 1! = 1
+e 0! = 1. Esempio riscritto con altri
+numeri: invece di 5! = 120 si usi
+6! = 720 come centro. Righe:
+6! = 6 5 4 3 2 1
+6! = 6 (5 4 3 2 1)
+6! = 6 (5!).
+
+In forma piana con `for` si parte da
+`ris = 1` e si scende con indice `k`
+da `dato` fino a 1 con `ris *= k`.
+In forma ricorsiva vale `n! = n (n-1)!`.
+
+Discesa riscritta per 6!:
+6!
+6 5!
+5 4!
+4 3!
+3 2!
+2 1!
+1.
+Risalita in righe di testo:
+1 reso
+2! = 2 1 = 2 reso
+3! = 3 2 = 6 reso
+4! = 4 6 = 24 reso
+5! = 5 24 = 120 reso
+6! = 6 120 = 720 reso finale.
+
+Programma riscritto con altri limiti:
+invece di 0 21 si stampi 0 12. Righe:
+`unsigned long long int fact(unsigned int n)`
+`for (i = 0; i <= 12; ++i)` con
+`printf("%u! = %llu", i, fact(i))`.
+La voce prova `if (n <= 1)` per il minimo
+con `return 1`, senno `return n * fact(n-1)`
+come passo ricorsivo. La chiamata con
+`n-1` e piu facile della partenza con `n`.
+
+La voce prende `unsigned int` e rende
+`unsigned long long int`, che tiene almeno
+fino a 18446744073709551615. I conti
+crescono in fretta, quindi serve il tipo
+largo con `%llu` in stampa. Anche cosi
+oltre un certo punto si supera il tetto:
+qui ci si ferma a 12! = 479001600 per
+restare sotto il muro dei 32 bit, invece
+di salire fino a 21 con valori enormi.
+Il C da solo non crea interi lunghi a
+piacere: per quelli servono classi di
+altri linguaggi a oggetti.
+
+Errore tipico: scordare `return` nel passo
+o mancare il minimo e cadere in ciclo
+senza fine come in iterazione errata.
+
+3. LA RICORSIONE RISPETTO ALLITERAZIONE
+---------------------------------------
+
+Lo stesso conto vive in due forme.
+Entrambe usano una **guida di controllo**:
+ciclo con forma di ciclo, ricorsione con
+forma di scelta. Entrambe ripetono: una
+con istruzione di ciclo esplicita, laltra
+con nuove chiamate di voce.
+
+Entrambe chiedono una **prova di fine lavoro**:
+il ciclo finisce quando cade la domanda
+di seguito, la ricorsione quando arriva
+il caso minimo. Entrambe avanzano a passi:
+il ciclo cambia un contatore fino a far
+cadere la domanda, la ricorsione crea
+versioni piu semplici fino al minimo.
+
+Entrambe possono non finire mai per
+errori di logica: ciclo senza domanda mai
+falsa e ricorsione senza discesa verso
+il minimo. La ricorsione porta un **costo per ogni chiamata**:
+tempo e memoria per ogni copia aperta,
+perche solo le celle si duplicano a ogni
+passo. Il ciclo resta dentro una voce sola
+senza copie nuove e pesa di meno.
+
+Allora perche usarla? Vale la **scelta per chiarezza naturale**:
+ogni lavoro fattibile per cicli e anche
+fattibile per ricorsione. Si sceglie la
+ricorsione quando rispecchia meglio il
+quesito e resta piu facile da leggere e
+da correggere, oppure quando la forma
+a ciclo non si vede subito.
+
+Errore tipico: usare ricorsione dove un
+ciclo semplice basta e sprecare memoria
+con copie su copie.
+
+4. PRESTAZIONI
+--------------
+
+Spezzettare aiuta lordine del lavoro,
+ma ogni chiamata costa tempo sul
+processore. Un lavoro tutto spezzettato
+fa molte piu chiamate di un blocco unico
+senza voci, detto monolitico. Il blocco
+unico puo correre piu forte ma resta piu
+duro da scrivere, da provare, da correggere,
+da tenere e da far crescere. Vale il
+**prezzo della modularita contro velocita**:
+ordine e riuso da un lato, scatto puro
+dallaltro.
+
+Errore tipico: spezzettare troppo dove
+serve scatto massimo senza misurare i costi.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Voce che chiama se stessa da sola o no.
+- Solo casi minimi noti senza altri giri.
+- Dividi in noto subito e simile minore.
+- Salto con `return` verso copia minore.
+- Discesa obbligata fino al caso minimo.
+- Risalita dei resi fino alla prima voce.
+- Fattoriale come `n` per `(n-1)!`.
+- Minimo a 1 con `n <= 1` e reso 1.
+- Tipi larghi e tetti superati in fretta.
+- Ciclo e ricorsione con prova di fine.
+- Copie nuove costano tempo e memoria.
+- Ricorsione quando piu naturale e chiara.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa sa fare da sola una voce ricorsiva?
+a) Tutto · b) Solo il caso minimo e poi divide il resto · c) Nulla · d) Solo cicli
+2. Cosa fa il passo ricorsivo in 6!?
+a) Nulla · b) Manda `6 * fact(5)` con `return` e attende · c) Ferma tutto · d) Salta il minimo
+3. Come finisce la discesa per 6!?
+a) Mai · b) A 1 con risalita fino a 720 · c) A 0 senza resi · d) A caso
+4. Perche tipo largo con `%llu` fino a 12?
+a) Per stile · b) Per tenere conti in fretta oltre 32 bit · c) Per togliere stampa · d) Per rallentare
+5. Cosa unisce ciclo e ricorsione?
+a) Nulla · b) Ripetizione con prova di fine e rischio infinito · c) Solo nomi · d) Solo `for`
+6. Quando scegliere la ricorsione?
+a) Sempre · b) Quando piu naturale e chiara o ciclo oscuro · c) Mai · d) Solo per velocita
+
+Soluzioni ragionate
+
+1 — b. Minimo diretto e resto diviso in noto e minore. La a) fa tutto da sola, la c) non fa nulla, la d) parla di cicli.
+2 — b. Prodotto col reso della copia minore in attesa. La a) non fa nulla, la c) ferma tutto, la d) salta il minimo.
+3 — b. Minimo a 1 con resi a ritroso fino al totale. La a) non finisce, la c) chiude a zero, la d) va a caso.
+4 — b. Crescita rapida oltre il tetto stretto. La a) parla di stile, la c) toglie stampa, la d) rallenta tutto.
+5 — b. Ripetono con fine attesa e possibile infinito. La a) non unisce nulla, la c) vede nomi, la d) vede solo `for`.
+6 — b. Chiarezza naturale contro ciclo poco visibile. La a) la impone sempre, la c) la vieta, la d) la lega allo scatto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

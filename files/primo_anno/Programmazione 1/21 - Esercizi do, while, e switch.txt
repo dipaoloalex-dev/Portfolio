@@ -1,0 +1,214 @@
+[plain-text per Pages — da 21 - Esercizi do, while, e switch.md]
+
+1. IDENTIFICARE GLI ERRORI
+-------------------------
+
+Il primo gruppo chiede di trovare
+guasti tipici e poi correggerli.
+
+Esempio riscritto: invece di `x`
+fino a 10 si usi `y` fino a 12.
+Forma errata con **punto e virgola spurio**:
+`y = 1` poi `while (y <= 12);`
+poi `++y` su riga sola. Quel `;`
+chiude il test e crea attesa senza
+fine, mentre il passo resta fuori.
+
+Correzione: togliere il `;` dopo
+le tonde e unire passo e corpo
+fra graffe, cosi `y` sale da 1
+a 13 ed esce in modo pulito.
+
+Secondo caso con scelta multipla.
+Esempio riscritto con altri valori:
+invece di 1 e 2 si usino 5 e 6.
+Senza salto dopo la prima via si
+ha **caduta senza break**: con
+`n = 5` si stampa sia la riga
+del 5 sia quella del 6. Correzione:
+aggiungere `break` dopo ogni via
+e tenere `default` per gli altri.
+
+Terzo caso con stampa da rivedere.
+Esempio riscritto: invece di 1 10
+si chieda 2 12. Forma errata con
+**limite escluso contro incluso**:
+`n = 2` con `while (n < 12)` stampa
+solo fino a 11. Correzione: usare
+`while (n <= 12)` con `n++` dentro
+e si ottengono undici valori.
+
+Errore tipico: confondere corpo
+vuoto e corpo vero dopo il test.
+
+2. ESERCIZI WHILE
+-----------------
+
+Primo compito con `while` e video
+a colonne. Esempio riscritto con
+altri dati: invece di 1 20 a cinque
+per riga si usi 1 24 a sei per riga.
+Vale la **riga a gruppi fissi** con
+resto della divisione. Da `x = 1`
+con `while (x <= 24)` si stampa
+con `%u` piu `tab` di norma e con
+`a capo` quando `x % 6 == 0`.
+
+Righe di testo per uscita diversa:
+1 2 3 4 5 6 a capo
+7 8 9 10 11 12 a capo
+13 14 15 16 17 18 a capo
+19 20 21 22 23 24 a capo.
+
+Secondo compito con somma e coda
+garantita. Esempio riscritto con
+altri dati: invece di dispari 1 99
+si sommino pari 2 60. Vale la **somma di pari con do**
+con `do` piu `while` finale. Da
+`x = 2` e `somma = 0` con `somma += x`
+e `x += 2` dentro e `while (x <= 60)`
+fuori si ottiene 930 in 30 passi.
+
+Terzo compito con media e fine
+segnale. Esempio riscritto con altri
+dati: invece di 9999 e 10 8 11 7 9
+si usi 7777 e 12 9 14 6 11. Vale la
+**media con sentinella**: si legge
+un valore, finche diverso da 7777
+si somma nel totale e si conta uno
+in piu, poi si rilegge il dopo.
+Totale 52 con 5 valori e media 10.4
+con `(double) totale / conta` e `%.2f`.
+
+Serve la **guardia contro divisione a zero**:
+se `conta != 0` si stampa la media,
+senno messaggio di nessun dato.
+
+Quarto compito con tabella di
+prodotti in crescita. Il fattoriale
+di `n` positivo vale prodotto da
+1 a `n`. Esempio riscritto: invece
+di 1 5 si usi 1 6 con doppio `for`
+o con `while`. Da `fatt = 1` dentro
+per ogni `i` e giro interno su `j`
+fino a `i` con `fatt *= j` escono
+righe di testo semplici:
+1 1
+2 2
+3 6
+4 24
+5 120
+6 720.
+
+Oltre un certo punto scatta il
+**trabocco di intero senza segno**:
+il tipo a 32 bit arriva fino a
+4294967295 e poi riparte da capo,
+cosi un valore dopo sembra minore
+di quello prima. Proposta riscritta:
+usare **uscita anticipata con break**
+per fermarsi prima del limite e
+**salto di un valore con continue**
+per non mostrare ad esempio il 4!.
+
+Errore tipico: stampare con tipo
+stretto e credere il calo come
+conto vero e non come limite.
+
+3. ESERCIZI SWITCH
+------------------
+
+Il compito chiede un **menu a scelta multipla**
+con tre vie di calcolo. Esempio
+riscritto con stessa logica ma nomi
+e costante diversi: invece di `3.14`
+si usi 3.1416 come **costante approssimata di pi greco**.
+Opzioni 1 area cerchio, 2 area
+quadrato, 3 area sfera.
+
+Schema: stampa del menu, lettura
+di `scelta` con `scanf`, poi
+`switch (scelta)` con tre vie. Via 1
+legge raggio `r` e fa
+`a = 3.1416 * r * r`. Via 2 legge
+lato `l` e fa `a = l * l`. Via 3
+legge raggio `r` e fa
+`a = 4 * 3.1416 * r * r`. Ogni via
+chiude con `break` e `default`
+dice opzione non valida.
+
+Proposte riscritte: ripetere la
+richiesta fino a segnale scelto,
+ad esempio 0 o 9, con `while`
+intorno al menu. Poi inserire
+guasti voluti per prova, come `;`
+dopo il test o `break` mancante,
+e osservarne gli effetti sul video.
+
+Errore tipico: scordare `break`
+o mettere il segnale dentro le vie
+valide e non uscire mai.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `;` dopo `while` crea corpo vuoto.
+- Ogni via di scelta vuole `break`.
+- `<` esclude e `<=` include il limite.
+- Resto zero per andare a capo a gruppi.
+- `do` garantisce almeno un passo.
+- Sentinella fuori dai dati utili.
+- Mai dividere se il conto e zero.
+- Intero senza segno ha tetto fisso.
+- `break` ferma e `continue` salta uno.
+- Menu con vie fisse piu via di riserva.
+- Ripeti menu fino a segnale scelto.
+- Prova guasti piccoli per capirne effetto.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `while (y <= 12);` con `++y` fuori?
+a) Conta bene · b) Gira senza fine col corpo vuoto · c) Stampa 2 12 · d) Salta tutto
+2. Cosa manca senza `break` dopo via 5 con vie 5 e 6?
+a) Nulla · b) Stampa sia 5 sia 6 per caduta · c) Chiude tutto · d) Ripete da capo
+3. Come si stampa 2 12 compresi con `n = 2`?
+a) Con `n < 12` · b) Con `n <= 12` e passo dentro · c) Senza passo · d) Senza test
+4. Quanto fa la somma dei pari 2 60 col `do`?
+a) 2500 · b) 930 in 30 passi · c) 0 · d) 60
+5. Con dati 12 9 14 6 11 e fine 7777 cosa esce?
+a) Media 10.4 con 5 valori · b) Media 0 · c) Nulla mai · d) Solo totale senza conta
+6. Cosa fa il menu con 1 2 3 e 3.1416?
+a) Nulla · b) Tre aree con `break` e riserva per altri · c) Solo cerchio · d) Solo errori
+
+Soluzioni ragionate
+
+1 — b. Punto e virgola che chiude il test e passo fuori. La a) conta bene, la c) stampa giusto, la d) salta tutto.
+2 — b. Caduta nella via dopo senza salto. La a) non vede nulla, la c) chiude tutto, la d) ricomincia da capo.
+3 — b. Limite incluso con passo nel corpo. La a) perde lultimo, la c) non avanza, la d) toglie la domanda.
+4 — b. Trenta pari da 2 a 60 con coda garantita. La a) copia altri conti, la c) azzera tutto, la d) prende lultimo.
+5 — a. Totale 52 diviso 5 con guardia anti zero. La b) azzera tutto, la c) non stampa, la d) toglie il conto.
+6 — b. Scelta multipla con tre vie e default. La a) non fa nulla, la c) vede una via, la d) vede solo guasti.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

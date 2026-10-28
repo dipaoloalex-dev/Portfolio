@@ -1,0 +1,190 @@
+[plain-text per Pages — da 7 - Controlli condizionali, If.md]
+
+1. OPERATORI RELAZIONALI E DI UGUAGLIANZA
+-----------------------------------------
+
+Un comando puo fare un conto o una scelta.
+Una **istruzione decisionale** valuta un caso
+e prosegue in modo diverso a seconda del
+risultato. La scelta usa una **condizione**,
+cioe una espressione che risulta vera o falsa.
+
+Se vera si esegue il corpo, se falsa si salta.
+Dopo, in entrambi i casi, si va allistruzione
+che segue la scelta. Il flusso non si ferma.
+
+Esempio riscritto: invece del voto con soglia 18
+si pensi a crediti con soglia 24. Se `cfu >= 24`
+si stampa idoneo al secondo anno, senno nulla
+e si passa oltre.
+
+Le domande si costruiscono con confronti.
+Un **operatore relazionale** confronta grandezze:
+`>` maggiore, `<` minore, `>=` maggiore o uguale,
+`<=` minore o uguale. Tutti hanno pari rango
+e vanno da sinistra a destra.
+Righe di testo per la tabella:
+segno `>` esempio `a > b` senso a oltre b
+segno `<` esempio `a < b` senso a sotto b
+segno `>=` esempio `a >= b` senso a oltre o pari
+segno `<=` esempio `a <= b` senso a sotto o pari
+
+Un **operatore di uguaglianza** dice se uguali
+o diversi: `==` uguale, `!=` diverso. Ha rango
+piu basso dei relazionali e va da sinistra a destra.
+
+In C vale zero come falso e ogni valore diverso
+da zero come vero. Leggere `==` come doppio
+uguale e `=` come assume il valore aiuta a non
+confondere confronto e assegnazione.
+
+Errore tipico: staccare i due segni con spazio
+come `= =` o `! =`, oppure usare `=` al posto
+di `==` e creare un guasto logico difficile da vedere.
+
+2. ISTRUZIONE IF
+----------------
+
+Una **istruzione if** ha forma con tonde e corpo:
+`if (domanda) { azioni }`.
+Se la domanda e vera si fanno le azioni dentro,
+senno si saltano e si va avanti.
+
+Esempio riscritto con dati diversi: invece di
+3 7 e 22 12 e 7 7 si usino 4 9 e 25 14 e 9 9.
+Il programma legge due interi con `"%d %d"`
+e poi prova sei domande in fila:
+`==` `!=` `<` `>` `<=` `>=`.
+Con 4 9 stampa diverso, minore, minore o uguale.
+Con 25 14 stampa diverso, maggiore, maggiore
+o uguale. Con 9 9 stampa uguale, minore o uguale,
+maggiore o uguale. Piu risposte vere possono
+scattare insieme, non solo una.
+
+Il **blocco del corpo** sta fra `{` e `}`.
+Puo contenere quante righe servono, anche una sola.
+Meglio usare sempre le graffe anche con una
+sola riga, per chiarezza e modifiche future.
+
+L**indentazione** con spazi e righe vuote sopra
+e sotto aiuta la lettura. Le righe successive di
+un comando spezzato vanno rientrate. I nomi non
+si spezzano mai a meta. Meglio una sola istruzione
+per riga e tagli dopo punti sensati come la `,`.
+
+La **precedenza mista** dal piu forte al piu debole:
+`()` poi `*` `/` `%` poi `+` `-` poi `<` `<=` `>` `>=`
+poi `==` `!=` poi `=` per ultimo. Tutti vanno da
+sinistra a destra, tranne `=` che va da destra
+a sinistra. Se dubbi usare tonde o spezzare in
+passi piu semplici.
+
+Alcune parole non si possono usare come nomi.
+Una **parola chiave** ha senso fisso per il
+traduttore, come `int` `if` `void` e molte altre
+per tipi cicli scelte e memoria. Usarle come
+variabili crea errore.
+
+Errore tipico: mettere `;` subito dopo `)` della
+domanda e svuotare la scelta, oppure mettere `,`
+fra `%d` e `%d` in `scanf` senza motivo.
+
+3. PROGRAMMAZIONE SICURA IN C
+------------------------------
+
+Scrivere in modo robusto riduce rischi e attacchi.
+La **codifica sicura** preferisce forme semplici
+che evitano trappole note, anche se le forme
+vecchie sembrano ancora funzionare.
+
+Meglio evitare `printf` con un solo argomento
+di testo. Per riga che finisce a capo usare la
+**funzione puts**, che aggiunge da sola il ritorno.
+Esempio riscritto: invece di salutare con C si
+saluti un corso. Da `printf` con testo e `\n`
+a `puts` con solo testo fra tonde. Niente `\n`
+dentro perche lo mette lei.
+
+Per testo senza ritorno usare `printf` con due
+argomenti: formato e testo. Lo **specificatore di stringa**
+`%s` stampa una sequenza di caratteri.
+Esempio riscritto: da stampa fissa di una parola
+a `printf` con `"%s"` e parola come secondo dato.
+
+Queste abitudini tolgono vulnerabilita legate
+al formato e rendono il codice piu uniforme.
+
+Errore tipico: restare alla vecchia stampa a un
+solo argomento per abitudine, oppure togliere
+il formato quando serve davvero.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Scelta con domanda vera o falsa, poi si prosegue oltre.
+- Relazionali per ordine, uguaglianza per pari o diverso.
+- Zero falso, diverso da zero vero.
+- `==` confronto e `=` assegnazione, mai scambiarli.
+- `if (domanda) { corpo }` con graffe sempre.
+- Una istruzione per riga, rientri e tagli sensati.
+- Ordine misto con `=` ultimo e da destra a sinistra.
+- Parole riservate non usate come nomi.
+- `puts` per riga a capo, `printf` con `"%s"` senza capo.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `if (cfu >= 24) { stampa }` se `cfu` vale 21?
+a) Stampa sempre · b) Salta la stampa e va oltre · c) Si ferma il programma · d) Ripete la stampa due volte
+
+2. Quale coppia e scritta in modo corretto?
+a) `= =` con spazio e `! =` con spazio · b) `==` unito e `!=` unito · c) `=` per confronto e `==` per assegnare · d) `=<` e `=>` invertiti
+
+3. Con 4 e 9 quali stampe scattano fra le sei domande?
+a) Solo uguale · b) Diverso minore e minore o uguale · c) Solo maggiore · d) Nessuna delle sei
+
+4. Quale forma del corpo e preferibile?
+a) Senza graffe anche con molte righe · b) Con `;` subito dopo `)` della domanda · c) Con `{` e `}` anche per una sola riga · d) Con nomi spezzati a meta riga
+
+5. Quale ordine di calcolo e giusto?
+a) `=` prima di tutto · b) `==` prima di `<` · c) `*` prima di `+` prima di `<` prima di `==` prima di `=` · d) Tutto da destra a sinistra
+
+6. Come stampare in modo sicuro una riga con capo e una senza?
+a) Sempre `printf` a un solo argomento · b) `puts` per la riga con capo e `printf` con `"%s"` per quella senza · c) Mai usare formati · d) Sempre togliere le graffe
+
+Soluzioni ragionate
+
+1 — b. Domanda falsa quindi corpo saltato e flusso oltre. La a) stampa anche se falsa, la c) blocca tutto, la d) ripete senza motivo.
+
+2 — b. Segni doppi uniti e ruoli giusti. La a) separa i segni, la c) scambia i ruoli, la d) inventa segni invertiti.
+
+3 — b. 4 contro 9 e diverso minore e minore o uguale. La a) chiede pari, la c) chiede oltre, la d) nega tre risposte vere.
+
+4 — c. Graffe costanti e nomi interi. La a) toglie i limiti, la b) svuota la scelta, la d) rompe i nomi.
+
+5 — c. Scala corretta dal piu forte al piu debole. La a) anticipa `=`, la b) inverte due livelli, la d) usa un solo verso per tutto.
+
+6 — b. Distinzione fra capo automatico e formato. La a) resta alla forma fragile, la c) toglie gli strumenti, la d) parla di graffe fuori tema.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

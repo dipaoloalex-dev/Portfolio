@@ -1,0 +1,173 @@
+[plain-text per Pages — da 41 - Aritmetica dei puntatori.md]
+
+1. ESPRESSIONI CON PUNTATORI
+----------------------------
+
+I punti valgono in conti, assegni e
+confronti. Non tutti i segni usuali
+vanno bene con i punti. Si puo usare
+`++` e `--`, `+` e `+=`, `-` e `-=`,
+e meno fra due punti. Vale il
+**gruppo corto di segni leciti**.
+
+Il meno fra punti ha senso solo se i
+due guardano posti della stessa fila.
+Altrimenti il conto non dice nulla di
+sicuro. Vale la **stessa fila per il meno**.
+
+Esempio riscritto con altri dati:
+invece di `v[5]` a 3000 si usi
+`int w[4]` a 5000 con interi da 4 byte.
+Posti in righe di testo:
+5000 5004 5008 5012
+w[0] w[1] w[2] w[3]
+con freccia da `wPtr` verso w[0].
+Si parte con `wPtr` su w[0], cioe a
+5000. Vale il **punto iniziale doppio modo**
+con `wPtr = w` oppure `wPtr = &w[0]`.
+
+Il salto dipende dal tipo puntato,
+quindi cambia da macchina a macchina e
+da traduttore a traduttore. Vale il
+**conto dipendente da macchina**.
+
+Se a 5000 si somma 1 con numeri puri
+si fa 5001. Con i punti no: si avanza
+di interi per taglia del tipo. Righe:
+`wPtr += 3` da 5000 a 5012 con
+5000 + 3 * 4. Ora `wPtr` guarda w[3].
+Vale il **salto di piu celle insieme**
+con passo scalato per tipo.
+
+Con byte da 2 il conto darebbe 5006 con
+5000 + 3 * 2. Con caratteri il passo
+torna come i numeri puri perche ogni
+segno vale 1 byte. Vale il
+**passo scalato per tipo**.
+
+Se `wPtr` sta a 5012 su w[3], la riga
+`wPtr -= 3` lo riporta a 5000 a inizio
+fila. Vale il **ritorno indietro di celle**.
+
+Per uno solo si usa `++` e `--`. Righe:
+`++wPtr` e `wPtr++` vanno alla cella
+dopo, `--wPtr` e `wPtr--` tornano alla
+cella prima. Vale il
+**passo di una cella sola**.
+
+Errore tipico: fare conti su punti
+fuori da ogni fila o uscire dai bordi
+della fila con salti troppo lunghi.
+
+2. ESPRESSIONI CON PUNTATORI - PARTE II
+---------------------------------------
+
+Due punti si possono sottrarre fra loro.
+Esempio riscritto con altri dati:
+invece di 3000 e 3008 con 2 si usi
+5000 e 5012 con 3. Righe:
+`k = qPtr - wPtr` con 5012 meno 5000.
+A `k` vanno 3 posti da `wPtr` a `qPtr`,
+non 12. Vale la
+**distanza in posti non byte**.
+
+Fuori da una sola fila il conto resta
+indefinito. Due celle dello stesso tipo
+non stanno vicine per forza se non sono
+vicine di fila. Vale la
+**vicinanza solo dentro fila**.
+
+Un punto va in un altro punto se i tipi
+sono uguali. Fa eccezione `void *` che
+vale come punto generico per ogni tipo.
+Da `void *` a ogni tipo e da ogni tipo
+a `void *` senza `cast`. Vale lo
+**stesso tipo senza cast** con eccezione
+generica.
+
+Il `void *` non si scioglie con `*`.
+Il traduttore sa che `int *` punta a 4
+byte su macchine a 4, ma con `void *`
+non sa la taglia del tipo ignoto. Senza
+tipo noto non sa quanti byte leggere.
+Vale il **punto generico senza tipo**.
+
+I punti si confrontano con `==` `!=`
+`<` `<=` `>` `>=`. Il confronto ha senso
+solo dentro la stessa fila e guarda i
+punti tenuti dentro, non i dati puntati.
+Puo dire se uno sta piu avanti con
+indice piu alto. Vale il
+**confronto solo nella fila**.
+
+Il test piu usato e contro `NULL` per
+capire se il punto e vuoto. Vale la
+**prova di vuoto con NULL**.
+
+Errore tipico: sottrarre o confrontare
+punti di file diverse, dare tipi diversi
+senza `void *`, o sciogliere `void *`.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Segni leciti corti per i punti.
+- Meno fra punti solo in stessa fila.
+- Avvio con nome o con `&` su zero.
+- Salto per taglia del tipo puntato.
+- Conto legato a macchina usata.
+- `++` e `--` per una cella sola.
+- `+=` e `-=` per piu celle insieme.
+- Meno fra punti in posti non byte.
+- Assegno fra stessi tipi senza cast.
+- `void *` generico ma non scioglibile.
+- Confronti solo dentro stessa fila.
+- Test a `NULL` per punto vuoto.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `wPtr += 3` da 5000 con 4 a cella?
+a) 5003 · b) 5012 con salto scalato · c) 5001 · d) Nulla
+2. Cosa fa `wPtr -= 3` da 5012?
+a) Nulla · b) Torna a 5000 a inizio fila · c) Va a 5009 · d) Toglie la fila
+3. Cosa fanno `++wPtr` e `wPtr++`?
+a) Nulla · b) Vanno alla cella dopo · c) Tolgono uno · d) Azzerano tutto
+4. Cosa da `qPtr - wPtr` con 5012 e 5000?
+a) 12 · b) 3 posti fra i due punti · c) Sempre 0 · d) Nulla
+5. Come va un punto in un altro punto?
+a) Sempre tutto · b) Stesso tipo senza cast con `void *` libero · c) Mai · d) Solo con numeri
+6. Quando ha senso il confronto fra punti?
+a) Sempre · b) Solo dentro stessa fila con test a `NULL` · c) Mai · d) Solo fuori fila
+
+Soluzioni ragionate
+
+1 — b. Tre per quattro oltre il via. La a) somma pura, la c) somma uno, la d) non fa nulla.
+2 — b. Tre passi indietro fino al via. La a) non fa nulla, la c) toglie tre byte, la d) toglie tutto.
+3 — b. Passo di una cella sola avanti. La a) non fa nulla, la c) toglie uno, la d) azzera tutto.
+4 — b. Distanza in posti non in byte. La a) conta byte, la c) fissa zero, la d) non rende nulla.
+5 — b. Tipi uguali e generico libero. La a) apre a tutto, la c) nega tutto, la d) passa numeri.
+6 — b. Stessa fila e vuoto con `NULL`. La a) apre sempre, la c) nega tutto, la d) guarda fuori fila.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

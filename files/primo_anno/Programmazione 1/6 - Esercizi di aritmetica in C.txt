@@ -1,0 +1,186 @@
+[plain-text per Pages — da 6 - Esercizi di aritmetica in C.md]
+
+1. EQUAZIONI
+------------
+
+In C manca il segno di potenza, quindi gli
+esponenti si scrivono come prodotti ripetuti.
+La **potenza ripetuta** di terzo grado diventa
+tre fattori uguali separati da `*`.
+
+Esempio riscritto con dati diversi: invece di
+`y = a x3 + 7` si usi `w = k * y2 + 4`.
+Le forme giuste restano quelle che tengono il
+`+ 4` fuori dal prodotto e ripetono `y` due volte.
+Forme del tipo `k * y * y + 4` o con tonde
+intorno al quadrato sono corrette.
+
+La **precedenza fra prodotti** aiuta a capire
+gli errori. Il `*` lega prima del `+`. Se si
+chiude `+ 4` dentro una tonda legata con `*`,
+il 4 viene moltiplicato e il senso cambia.
+Esempio riscritto di forma errata: portare il
+`+ 4` dentro `y * (y + 4)` trasforma somma
+finale in fattore interno e sbaglia tutto.
+
+Errore tipico: scrivere lesponente come `^`
+o come giustapposizione, oppure inglobare la
+costante finale nel prodotto con tonde inutili.
+
+2. INPUT DA UTENTE
+-------------------
+
+Un **programma a menu aritmetico** chiede due
+interi e poi mostra cinque risultati: somma,
+prodotto, differenza, quoziente e resto.
+
+La traccia in forma di dialogo si descrive cosi:
+mostra invito, leggi `m` e `n`, stampa `m + n`,
+`m * n`, `m - n`, `m / n`, `m % n`, ognuno su
+una riga con il suo `%d`.
+
+La **stringa di formato** guida lettura e stampa.
+In `scanf` ogni `%d` vuole una variabile con
+**indirizzo di lettura** `&` davanti. In `printf`
+ogni `%d` vuole un valore senza `&`.
+
+Esempio riscritto con nomi e testi diversi:
+invece di `x` `y` e frasi in inglese si usino
+`m` `n` e frasi brevi. Lettura con `"%d%d"`
+e due indirizzi. Stampe con `"%d"` e con
+espressione dentro, come somma diretta senza
+variabile di appoggio.
+
+Serve la **corrispondenza formato-argomenti**:
+tanti `%d` nella stringa quanti dati dopo la
+virgola, nello stesso ordine. Se manca un dato
+o ce uno in piu la riga non torna.
+
+Errore tipico: usare `%d` come testo da mostrare
+invece che come segnaposto, oppure scambiare
+lordine fra formato e valori.
+
+3. CORREZIONE DI ERRORI
+------------------------
+
+Correggere significa trovare e riparare ogni
+guasto di forma o di senso, anche piu di uno
+per riga. Gli esempi sotto sono riscritti con
+nomi e testi cambiati ma con gli stessi tipi
+di guasto della lezione.
+
+Caso lettura senza segni giusti: manca `%`
+nel formato e manca `&` sulla variabile.
+Ripara con `"%d"` e con `&misura`.
+
+Caso stampa con conto mancante: tre `%d` nel
+testo ma solo due dati dopo. La terza uscita
+non ha valore. Ripara aggiungendo il prodotto
+come terzo dato dopo la virgola.
+
+Caso con **verso di assegnazione** invertito:
+conto a sinistra e nome a destra. In C a sinistra
+puo stare solo la destinazione. Ripara con nome
+a sinistra, `=` in mezzo, conto a destra e
+**punto e virgola finale** `;`.
+
+Caso con **delimitatore di commento** invertito:
+apre con `* /` e chiude con `/ *`. In C si apre
+con `/*` e si chiude con `*/`. Ripara lordine
+dei due segni alle estremita.
+
+Caso con **sensibilita alle maiuscole**: iniziale
+grande nel nome di funzione e lettura senza `&`.
+Il C distingue grande e piccolo, quindi vale solo
+la forma minuscola. Ripara con minuscola e con
+`&` davanti alla variabile.
+
+Caso con stampa del resto senza segnaposto: due
+`%d` nel testo e tre dati dopo, manca il terzo
+`%d` prima di `\n`. Il resto non ha posto dove
+uscire. Ripara inserendo `%d` dopo la parola
+che annuncia il resto.
+
+Caso con **chiusura delle virgolette** fuori posto:
+testo che si chiude dopo `\n` e stampa con `&`.
+In stampa non serve `&` per un intero semplice.
+Ripara chiudendo le virgolette prima della `,`
+e togliendo `&`.
+
+La **stampa con espressione** dentro e lecita:
+si puo passare `m + n` o `m % n` diretto senza
+creare una variabile in piu.
+
+Errore tipico: fermarsi al primo guasto e non
+ricontrollare formato dati, versi, segni e chiusure.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Potenze come prodotti con `*` ripetuto, mai con `^`.
+- `+` finale fuori dalle tonde del prodotto.
+- Leggi con `%d` e `&`, stampa con `%d` senza `&`.
+- Tanti segnaposto quanti dati, nello stesso ordine.
+- Nome a sinistra di `=` e conto a destra, con `;`.
+- Commenti fra `/*` e `*/` nel verso giusto.
+- Nomi di funzioni in minuscolo, C sensibile al caso.
+- Virgolette chiuse prima della virgola degli argomenti.
+- Si puo stampare il conto diretto senza variabile.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quale riga traduce bene `w = k y2 + 4`?
+a) Con `+ 4` dentro il prodotto · b) Con doppio `y` e `+ 4` fuori · c) Con `^` per la potenza · d) Con `y` una sola volta
+
+2. Cosa stampa un menu con `m = 11` e `n = 4`?
+a) Somma prodotto differenza quoziente e resto corretti · b) Solo la somma · c) Solo testi senza numeri · d) Nulla perche gli interi non si stampano
+
+3. Cosa manca in `scanf` con `"d"` e `misura` senza `&`?
+a) Nulla, va bene · b) `%` nel formato e `&` sulla variabile · c) Solo il punto e virgola · d) Solo un commento
+
+4. Come si ripara un assegnazione rovesciata senza `;`?
+a) Si lascia il conto a sinistra · b) Si mette il nome a sinistra con `=` e `;` finale · c) Si toglie `=` · d) Si aggiunge un `%d`
+
+5. Come si scrive un commento su una riga?
+a) Fra `* /` e `/ *` invertiti · b) Fra `/*` in apertura e `*/` in chiusura · c) Senza segni · d) Solo con `%d`
+
+6. Cosa non va in una stampa con due `%d` e tre dati?
+a) Va sempre bene · b) Manca il terzo segnaposto per il terzo dato · c) Manca solo `&` · d) Manca solo la maiuscola
+
+Soluzioni ragionate
+
+1 — b. Doppio fattore e costante fuori. La a) ingloba la costante, la c) usa un segno non C, la d) dimezza il quadrato.
+
+2 — a. Cinque conti con `15` `44` `7` `2` `3`. La b) mostra un solo conto, la c) toglie i valori, la d) nega la stampa di interi.
+
+3 — b. Doppio guasto di formato e indirizzo. La a) non vede i guasti, la c) vede solo la fine, la d) parla di commenti fuori tema.
+
+4 — b. Verso giusto e chiusura. La a) tiene il rovescio, la c) toglie loperatore, la d) porta un formato fuori posto.
+
+5 — b. Ordine giusto dei delimitatori. La a) li inverte, la c) non delimita, la d) confonde con i formati.
+
+6 — b. Serve un `%d` per ogni dato. La a) ignora il disallineamento, la c) chiede `&` in stampa, la d) parla di maiuscole.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
