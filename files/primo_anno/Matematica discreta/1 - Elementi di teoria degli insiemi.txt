@@ -3,204 +3,123 @@
 1. INSIEMI ED ELEMENTI
 ----------------------
 
-Un insieme è una collezione ben definita di oggetti: deve essere sempre chiaro,
-per ogni oggetto candidato, se fa parte o no della collezione.
-Gli oggetti della collezione si chiamano elementi.
+Un **insieme** è una collezione ben definita di oggetti: per ogni possibile candidato deve essere chiaro, senza ambiguità, se appartiene o no alla collezione. Gli oggetti che ne fanno parte si chiamano **elementi**.
 
-Convenzioni di notazione:
+Per scrivere gli insiemi si seguono alcune convenzioni:
+- le lettere maiuscole (A, B, C, ...) indicano gli insiemi, quelle minuscole (a, b, c, ...) gli elementi;
+- a ∈ A si legge "a appartiene ad A" e significa che a è un elemento di A;
+- a ∉ A indica invece che a non fa parte dell'insieme.
 
-- gli insiemi si indicano con lettere maiuscole: A, B, C, ...;
-- gli elementi con lettere minuscole: a, b, c, ...;
-- a ∈ A significa "a appartiene ad A" (a è elemento di A);
-- a ∉ A significa "a non appartiene ad A".
+Esistono due modi standard per descrivere un insieme. Il primo è per **elencazione**: si scrivono gli elementi tra parentesi graffe, separandoli con una virgola. Per esempio, A = {a, b, r, s} è l'insieme formato dalle quattro lettere a, b, r, s. In questo modo l'ordine non ha importanza e le ripetizioni sono superflue, tanto che {2, 4, 9}, {9, 4, 2} e {4, 2, 9} rappresentano lo stesso insieme.
 
-Ci sono due modi standard per descrivere un insieme.
+Il secondo modo è per proprietà **caratteristica**: invece di elencare gli elementi si descrive la regola che tutti devono rispettare, nella forma X = {x : x soddisfa la proprietà P}. Il simbolo : si legge "tale che". Ad esempio, l'insieme dei numeri interi positivi primi si può scrivere come X = {x intero positivo : x è un numero primo}.
 
-1) Per elencazione. Si scrivono gli elementi fra parentesi graffe, separati da
-virgole. Esempio: A = {a, b, r, s} è l'insieme composto dalle quattro lettere
-a, b, r, s. L'ordine di scrittura non conta e le ripetizioni non aggiungono nulla:
-{2, 4, 9}, {9, 4, 2} e {4, 2, 9} sono lo stesso insieme.
+Tra gli insiemi numerici che useremo più spesso ci sono:
+- N = {0, 1, 2, ...}, formato dagli interi da zero in su;
+- Z, gli interi relativi;
+- Q, i razionali;
+- R, i reali.
 
-2) Per proprietà caratteristica. Si descrive la regola che gli elementi devono
-soddisfare, con la forma:
+Un caso particolare molto utile è quello degli intervalli reali. Presi a, b ∈ R con a < b:
+- (a, b) = {x ∈ R : a < x < b}, aperto;
+- [a, b] = {x ∈ R : a ≤ x ≤ b}, chiuso;
+- [a, b) = {x ∈ R : a ≤ x < b}, aperto a destra;
+- (a, b] = {x ∈ R : a < x ≤ b}, aperto a sinistra.
 
-X = {x : x soddisfa la proprietà P}
+L'unica differenza tra questi insiemi sta nell'includere o escludere gli estremi.
 
-Il simbolo : si legge "tale che". Esempio: l'insieme dei numeri interi positivi
-che sono primi si può descrivere come
-X = {x intero positivo : x è un numero primo}.
+Un aspetto spesso sottovalutato riguarda l'insieme **universo**. Descrivere un insieme attraverso una proprietà, infatti, non è sufficiente: bisogna anche precisare dentro quale "contenitore" stiamo cercando gli elementi. Questo contenitore si indica con U, per cui la scrittura completa diventa X = {x ∈ U : x soddisfa P}.
 
-Insiemi numerici che useremo spesso (senza definirli qui in modo formale):
+L'esempio classico è la proprietà "essere soluzione di x² = 2": i risultati cambiano a seconda dell'universo scelto.
+- in R l'insieme è {√2, −√2};
+- in N non esiste alcuna soluzione e si ottiene l'insieme vuoto ∅, cioè l'insieme privo di elementi.
 
-- N = {0, 1, 2, ...} — interi da zero in su;
-- Z — interi relativi;
-- Q — razionali;
-- R — reali.
-
-Esempi notevoli: gli intervalli reali. Con a, b ∈ R e a < b:
-
-- (a, b) = {x ∈ R : a < x < b} — aperto;
-- [a, b] = {x ∈ R : a ≤ x ≤ b} — chiuso;
-- [a, b) = {x ∈ R : a ≤ x < b} — aperto a destra;
-- (a, b] = {x ∈ R : a < x ≤ b} — aperto a sinistra.
-
-La differenza sta tutta nell'inclusione o esclusione degli estremi.
-
-Un punto delicato: l'insieme universo. Descrivere un insieme tramite una
-proprietà non basta da solo: serve anche dire dentro quale "contenitore" si sta
-cercando. Questo contenitore si chiama insieme universo (indicato con U).
-La scrittura precisa è quindi X = {x ∈ U : x soddisfa P}.
-
-Esempio: la proprietà "essere soluzione di x² = 2" dà risultati diversi a seconda
-dell'universo:
-
-- in R: l'insieme è {√2, −√2};
-- in N: nessuna soluzione, quindi si ottiene l'insieme vuoto ∅
-  (l'insieme senza elementi).
-
-Morale: stessa proprietà + universo diverso = insieme diverso.
+In sintesi, la stessa proprietà applicata a universi diversi produce insiemi diversi.
 
 2. SOTTOINSIEMI E SOPRAINSIEMI
 ------------------------------
 
-Definizione. A è un sottoinsieme di B (e si scrive A ⊆ B) quando ogni
-elemento di A è anche elemento di B:
+Si dice che A è un **sottoinsieme** di B, e si scrive A ⊆ B, quando ogni elemento di A è anche elemento di B, cioè quando vale l'implicazione a ∈ A  ⟹  a ∈ B. In questo caso si dice anche che B è un **soprainsieme** di A (B ⊇ A), oppure che A è contenuto in B o che B contiene A. Le negazioni corrispondenti sono A ⊄ B e B ⊉ A: per far cadere l'inclusione basta un solo elemento di A che non appartenga a B.
 
-a ∈ A  ⟹  a ∈ B
+Un errore frequente consiste nel confondere un elemento con il **singoletto** che lo contiene. Prendiamo A = {1, 2, 3}: è vero che 1 ∈ A e che {1} ⊆ A, ma scrivere 1 ⊆ A oppure {1} ∈ A è sbagliato, perché 1 è un elemento mentre {1} è l'insieme che contiene solo 1: si tratta di due oggetti di tipo diverso.
 
-In tal caso si dice anche che B è un soprainsieme di A (B ⊇ A), che A
-è contenuto in B, o che B contiene A. Le negazioni si scrivono A ⊄ B
-e B ⊉ A: basta un solo elemento di A che non sta in B per far cadere
-l'inclusione.
+Lo stesso ragionamento vale per gli insiemi che contengono altri insiemi. Se B = {0, {4, 5}}, i suoi elementi sono due: il numero 0 e l'insieme {4, 5}. Sono quindi vere 0 ∈ B e {4, 5} ∈ B, mentre 4 ∈ B è falsa, perché il 4 si trova dentro l'elemento {4, 5} e non è un elemento diretto di B.
 
-Errore tipico da evitare: elemento vs singoletto. Se A = {1, 2, 3}, allora
-1 ∈ A è vero, e {1} ⊆ A è vero, ma 1 ⊆ A e {1} ∈ A sono scritture
-sbagliate: 1 è un elemento, {1} è l'insieme che contiene solo 1. Sono due
-oggetti di tipo diverso.
+Una catena importante da ricordare è quella tra gli insiemi numerici: N ⊆ Z ⊆ Q ⊆ R.
 
-Un esempio con insiemi dentro insiemi. Sia B = {0, {4, 5}}: B ha due
-elementi, il numero 0 e l'insieme {4, 5}. Quindi 0 ∈ B e {4, 5} ∈ B sono
-vere, mentre 4 ∈ B è falsa (il 4 è "dentro" l'elemento {4, 5}, non è un
-elemento diretto di B).
+Due insiemi sono uguali quando contengono esattamente gli stessi elementi, ovvero quando valgono entrambe le inclusioni, come riassume la scrittura A = B  ⟺  (A ⊆ B e B ⊆ A). Quando vale una sola delle due si parla di sottoinsieme proprio; da questo fatto segue anche che l'ordine di elencazione non conta.
 
-Catena fondamentale fra insiemi numerici: N ⊆ Z ⊆ Q ⊆ R.
-
-Uguaglianza fra insiemi. Due insiemi sono uguali quando contengono
-esattamente gli stessi elementi, cioè quando valgono entrambe le inclusioni:
-
-A = B  ⟺  (A ⊆ B e B ⊆ A)
-
-Se vale una sola delle due inclusioni si parla di sottoinsieme proprio.
-Da qui segue anche che l'ordine di elencazione non conta, come visto sopra.
-
-Teorema (proprietà dell'inclusione). Per insiemi qualsiasi A, B, C:
-
-1. A ⊆ A (ogni insieme è contenuto in sé stesso);
-2. se A ⊆ B e B ⊆ C, allora A ⊆ C (transitività).
+Per l'inclusione valgono inoltre due proprietà fondamentali, valide per insiemi qualsiasi A, B e C:
+1. A ⊆ A, cioè ogni insieme è contenuto in sé stesso;
+2. se A ⊆ B e B ⊆ C allora A ⊆ C, cioè l'inclusione è transitiva.
 
 3. FAMIGLIE O CLASSI
 --------------------
 
-Gli elementi di un insieme possono essere a loro volta degli insiemi. Un insieme
-i cui elementi sono insiemi si chiama famiglia (o classe); valgono per le
-famiglie gli stessi concetti di sottofamiglia visti per i sottoinsiemi.
+Gli elementi di un insieme possono essere a loro volta degli insiemi. Quando accade, l'insieme prende il nome di **famiglia** (o classe); per le famiglie valgono gli stessi concetti di sottofamiglia che abbiamo visto per i sottoinsiemi.
 
-Esempio: F = {{−2}, {2, 1}, {4, 6, 3}} è una famiglia con tre elementi, che sono
-gli insiemi A = {−2}, B = {2, 1}, C = {4, 6, 3}. Si può scrivere F = {A, B, C}.
+Un esempio è F = {{−2}, {2, 1}, {4, 6, 3}}, una famiglia composta da tre elementi che sono gli insiemi A = {−2}, B = {2, 1} e C = {4, 6, 3}; si può quindi scrivere anche F = {A, B, C}.
 
-Un altro modo tipico di costruire famiglie è per indice: ad esempio, per ogni
-n ∈ N, sia Jn = [3n, 3n+1]; allora G = {Jn : n ∈ N} è la famiglia di tutti
-questi intervalli chiusi di lunghezza unitaria.
+Un altro modo tipico di costruire famiglie è quello per indice. Se per ogni n ∈ N poniamo Jn = [3n, 3n+1], allora G = {Jn : n ∈ N} è la famiglia di tutti questi intervalli chiusi di lunghezza unitaria.
 
-Insieme potenza (insieme delle parti). Dato un insieme X, l'insieme di
-tutti i suoi sottoinsiemi si chiama insieme potenza e si indica con P(X):
+Un insieme di particolare importanza è l'insieme **potenza** (o insieme delle parti). Dato un insieme X, esso raccoglie tutti i suoi sottoinsiemi e si indica con P(X), per cui A ∈ P(X)  ⟺  A ⊆ X.
 
-A ∈ P(X)  ⟺  A ⊆ X
+Se per esempio X = {r, s, t}, allora P(X) contiene i tre singoletti {r}, {s} e {t}, le tre coppie {r, s}, {r, t} e {s, t}, oltre a X stesso e all'insieme vuoto: in tutto 8 elementi. Più in generale, un insieme finito con n elementi ha un insieme potenza con 2ⁿ elementi, e si noti che ∅ ∈ P(X) e X ∈ P(X) valgono sempre.
 
-Esempio: se X = {r, s, t}, allora P(X) contiene i tre singoletti {r}, {s},
-{t}, le tre coppie {r, s}, {r, t}, {s, t}, più X stesso e l'insieme vuoto:
-8 elementi in tutto. In generale, un insieme finito con n elementi ha un insieme
-potenza con 2ⁿ elementi. Nota che ∅ ∈ P(X) e X ∈ P(X) sempre.
-
-Attenzione anche qui al tipo degli oggetti: {s} ∈ P(X) (è un sottoinsieme di X,
-quindi un elemento del potenza), mentre {s} ⊆ P(X) è falso in generale.
+Anche qui occorre fare attenzione al tipo degli oggetti: {s} ∈ P(X) è corretto, perché {s} è un sottoinsieme di X e quindi un elemento dell'insieme potenza, mentre {s} ⊆ P(X) è falso in generale.
 
 4. OPERAZIONI INSIEMISTICHE
 ---------------------------
 
-Fissato un universo X, da due insiemi A, B ⊆ X si costruiscono nuovi insiemi:
+Fissato un universo X, a partire da due insiemi A, B ⊆ X si possono costruire nuovi insiemi:
+- Unione: A ∪ B = {x : x ∈ A oppure x ∈ B}, cioè gli elementi che appartengono ad almeno uno dei due;
+- Intersezione: A ∩ B = {x : x ∈ A e x ∈ B}, cioè gli elementi in comune;
+- Differenza: A − B = {x ∈ A, x ∉ B}, cioè ciò che sta in A ma non in B;
+- **Complementare** rispetto a X: Aᶜ = {x ∈ X : x ∉ A}, che coincide con X − A;
+- Differenza simmetrica: A Δ B = (A − B) ∪ (B − A), cioè gli elementi che stanno in uno solo dei due.
 
-- Unione: A ∪ B = {x : x ∈ A oppure x ∈ B} — gli elementi che stanno in
-  almeno uno dei due;
-- Intersezione: A ∩ B = {x : x ∈ A e x ∈ B} — gli elementi in comune;
-- Differenza: A − B = {x : x ∈ A, x ∉ B} — ciò che sta in A ma non in B;
-- Complementare (rispetto a X): Aᶜ = {x ∈ X : x ∉ A}, cioè X − A;
-- Differenza simmetrica: A Δ B = (A − B) ∪ (B − A) — gli elementi che
-  stanno in uno solo dei due.
+Quando due insiemi hanno intersezione vuota, cioè A ∩ B = ∅, si dicono **disgiunti**. Questa nozione si estende alle famiglie: una famiglia è formata da insiemi a due a due disgiunti quando due suoi elementi distinti qualsiasi non hanno elementi in comune.
 
-Due insiemi con intersezione vuota (A ∩ B = ∅) si dicono disgiunti.
-La nozione si estende alle famiglie: una famiglia è di insiemi **a due a due
-disgiunti** quando due suoi elementi diversi qualsiasi non hanno elementi in
-comune.
+Vediamo due esempi:
+- con gli intervalli chiusi [n, n+1/2] al variare di n ∈ N, due intervalli diversi non si toccano mai, quindi la famiglia è disgiunta;
+- con gli intervalli aperti (n, n+1), anche due intervalli contigui come (0,1) e (1,2) hanno intersezione vuota, perché l'estremo 1 non appartiene a nessuno dei due.
 
-Esempi di lettura rapida:
+Gli insiemi seguono inoltre un'algebra ben precisa. Per A, B, C ⊆ X valgono, tra le altre, le seguenti leggi:
+1. idempotenza: A ∪ A = A e A ∩ A = A;
+2. associatività e commutatività di unione e intersezione;
+3. distributività dell'una sull'altra;
+4. identità: A ∪ ∅ = A, A ∪ X = X, A ∩ X = A e A ∩ ∅ = ∅;
+5. complementazione: A ∪ Aᶜ = X, A ∩ Aᶜ = ∅ e (Aᶜ)ᶜ = A;
+6. leggi di De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ e (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ.
 
-- con intervalli chiusi di tipo [n, n+1/2] al variare di n ∈ N, due intervalli
-  diversi non si toccano mai: è una famiglia disgiunta;
-- con intervalli aperti (n, n+1), anche gli intervalli "contigui" come (0,1)
-  e (1,2) hanno intersezione vuota, perché l'estremo 1 non appartiene a
-  nessuno dei due: famiglia disgiunta anche qui.
-
-Leggi dell'algebra degli insiemi. Per A, B, C ⊆ X valgono, tra le altre:
-
-1. Idempotenza: A ∪ A = A, A ∩ A = A;
-2. Associatività e commutatività di unione e intersezione;
-3. Distributività dell'una sull'altra;
-4. Identità: A ∪ ∅ = A, A ∪ X = X, A ∩ X = A, A ∩ ∅ = ∅;
-5. Complementazione: A ∪ Aᶜ = X, A ∩ Aᶜ = ∅, (Aᶜ)ᶜ = A;
-6. De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ e (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ.
-
-L'idea della seconda legge di De Morgan: stare fuori dall'intersezione significa
-mancare da almeno uno dei due insiemi, cioè stare nel complementare dell'uno
-oppure in quello dell'altro.
+La seconda legge di De Morgan si capisce bene a parole: stare fuori dall'intersezione significa mancare da almeno uno dei due insiemi, cioè trovarsi nel complementare dell'uno oppure in quello dell'altro.
 
 5. INSIEMI PRODOTTO
 -------------------
 
-Dati A e B, l'insieme prodotto A × B è l'insieme di tutte le **coppie
-ordinate** (a, b) con a ∈ A e b ∈ B:
+Dati due insiemi A e B, il **prodotto** A × B è l'insieme di tutte le coppie **ordinate** (a, b) con a ∈ A e b ∈ B, cioè A × B = {(a, b) : a ∈ A, b ∈ B}.
 
-A × B = {(a, b) : a ∈ A, b ∈ B}
+Con N insiemi la definizione si generalizza alle N-uple ordinate. Una coppia ordinata si può definire usando solo gli insiemi, come (a, b) = {{a}, {a, b}}; da questa definizione segue la proprietà chiave, ovvero (a, b) = (c, d) se e solo se a = c e b = d. L'ordine delle componenti conta: in generale, infatti, (a, b) ≠ (b, a).
 
-Con N insiemi si generalizza alle N-uple ordinate. La coppia ordinata si può
-definire con i soli insiemi come (a, b) = {{a}, {a, b}}; da questa definizione
-segue la proprietà chiave: (a, b) = (c, d) se e solo se a = c e b = d.
-L'ordine conta: in generale (a, b) ≠ (b, a).
-
-Due fatti operativi da ricordare:
-
-- il prodotto distribuisce sull'unione: A × (B ∪ C) = (A × B) ∪ (A × C)
-  (verificabile per elencazione diretta nei casi finiti);
-- il prodotto non è commutativo: in generale A × B ≠ B × A. Esempio: con
-  A = {2, 5} e B = {7} si ha A × B = {(2,7), (5,7)} mentre
-  B × A = {(7,2), (7,5)}: insiemi diversi, qui addirittura disgiunti.
+Ci sono due fatti operativi da tenere a mente:
+- il prodotto distribuisce sull'unione, cioè A × (B ∪ C) = (A × B) ∪ (A × C), cosa verificabile per elencazione diretta nei casi finiti;
+- il prodotto non è commutativo: in generale A × B ≠ B × A. Con A = {2, 5} e B = {7}, per esempio, si ha A × B = {(2,7), (5,7)} mentre B × A = {(7,2), (7,5)}, due insiemi diversi e in questo caso addirittura disgiunti.
 
 Concetti chiave da ricordare
 ----------------------------
 
-- ∈ lega un elemento a un insieme; ⊆ lega due insiemi fra loro.
-- Un elemento non va confuso con il singoletto che lo contiene (1 vs {1}).
+- ∈ lega un elemento a un insieme, mentre ⊆ mette in relazione due insiemi.
+- Un elemento non va confuso con il singoletto che lo contiene (1 non è {1}).
 - La stessa proprietà definisce insiemi diversi al variare dell'universo.
-- A = B significa doppia inclusione; l'ordine di elencazione è irrilevante.
+- A = B significa doppia inclusione, e l'ordine di elencazione è irrilevante.
 - P(X) raccoglie tutti i sottoinsiemi di X; se |X| = n, allora |P(X)| = 2ⁿ.
-- De Morgan scambia unione/intersezione passando ai complementari.
+- De Morgan scambia unione e intersezione passando ai complementari.
 - Nel prodotto cartesiano l'ordine delle componenti è essenziale.
 
 TEST di AUTOVALUTAZIONE
 -----------------------
 
-Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
-ragionate in fondo. Nessuna domanda è copiata dal materiale sorgente.
+Queste domande verificano gli stessi argomenti della lezione, con soluzioni ragionate in fondo. Nessuna è copiata dal materiale sorgente.
 
 1. Sia A = {2, 5}. Quale scrittura è corretta?
 a) 2 ⊆ A · b) {2} ∈ A · c) {2} ⊆ A · d) {5} = 5
@@ -208,54 +127,38 @@ a) 2 ⊆ A · b) {2} ∈ A · c) {2} ⊆ A · d) {5} = 5
 2. Sia B = {0, {1}}. Quale affermazione è falsa?
 a) 0 ∈ B · b) {1} ∈ B · c) 1 ∈ B · d) {0} ⊆ B
 
-3. La proprietà è "essere soluzione intera di x² = 9". Al variare
-dell'universo (Z oppure N), cosa cambia?
-a) Niente, l'insieme è sempre {−3, 3} · b) In N si ottiene {3}, in Z si
-ottiene {−3, 3} · c) In entrambi si ottiene l'insieme vuoto · d) In N si
-ottiene {−3, 3}
+3. La proprietà è "essere soluzione intera di x² = 9". Al variare dell'universo (Z oppure N), cosa cambia?
+a) Niente, l'insieme è sempre {−3, 3} · b) In N si ottiene {3}, in Z si ottiene {−3, 3} · c) In entrambi si ottiene l'insieme vuoto · d) In N si ottiene {−3, 3}
 
 4. Se X = {a, b}, quanti elementi ha P(X) e quali sono?
 a) 3 · b) 4: ∅, {a}, {b}, {a, b} · c) 4: a, b, {a}, {b} · d) 2
 
-5. Siano A = {1, 2, 3}, B = {3, 4} dentro X = {1, 2, 3, 4, 5}.
-Quanto valgono (A ∩ B)ᶜ e Aᶜ ∪ Bᶜ?
-a) Sono diversi · b) Entrambi {1, 2, 4, 5} · c) Entrambi {3} ·
-d) Entrambi X
+5. Siano A = {1, 2, 3}, B = {3, 4} dentro X = {1, 2, 3, 4, 5}. Quanto valgono (A ∩ B)ᶜ e Aᶜ ∪ Bᶜ?
+a) Sono diversi · b) Entrambi {1, 2, 4, 5} · c) Entrambi {3} · d) Entrambi X
 
 6. A × B è uguale a B × A?
-a) Sempre · b) Mai · c) Solo se almeno uno dei due è vuoto o in casi particolari
-(ad es. A = B), in generale no · d) Solo per insiemi infiniti
+a) Sempre · b) Mai · c) Solo se almeno uno dei due è vuoto o in casi particolari (ad es. A = B), in generale no · d) Solo per insiemi infiniti
 
 Soluzioni ragionate
 
-1 — c. {2} ⊆ A perché l'unico elemento di {2} sta in A. La a) confonde
-elemento e sottoinsieme, la b) pretende che {2} sia elemento di A, la d)
-uguaglia un insieme a un numero.
+1 — c. {2} ⊆ A perché l'unico elemento di {2} sta in A. La a) confonde elemento e sottoinsieme, la b) pretende che {2} sia elemento di A, mentre la d) uguaglia un insieme a un numero.
 
-2 — c. 1 ∈ B è falsa: gli elementi di B sono 0 e l'insieme {1}; il
-numero 1 da solo non compare come elemento diretto. Tutte le altre sono vere.
+2 — c. 1 ∈ B è falsa: gli elementi di B sono 0 e l'insieme {1}, quindi il numero 1 da solo non compare come elemento diretto. Tutte le altre affermazioni sono vere.
 
-3 — b. Le soluzioni in Z sono −3 e 3; in N resta solo 3. È
-l'esempio tipico di "stessa proprietà, universo diverso".
+3 — b. Le soluzioni in Z sono −3 e 3, mentre in N resta solo 3. È l'esempio tipico di "stessa proprietà, universo diverso".
 
-4 — b. |P(X)| = 2² = 4, e gli elementi sono i sottoinsiemi: vuoto, i due
-singoletti e l'insieme intero. La c) sbaglia perché a e b da soli non sono
-sottoinsiemi.
+4 — b. |P(X)| = 2² = 4, e gli elementi sono i sottoinsiemi: l'insieme vuoto, i due singoletti e l'insieme intero. La c) sbaglia perché a e b da soli non sono sottoinsiemi.
 
-5 — b. A ∩ B = {3}, il cui complementare in X è {1, 2, 4, 5}. Per
-De Morgan (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ: infatti Aᶜ = {4, 5}, Bᶜ = {1, 2, 5}, la cui
-unione è di nuovo {1, 2, 4, 5}.
+5 — b. A ∩ B = {3}, il cui complementare in X è {1, 2, 4, 5}. Per De Morgan (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ: infatti Aᶜ = {4, 5} e Bᶜ = {1, 2, 5}, la cui unione è di nuovo {1, 2, 4, 5}.
 
-6 — c. Il prodotto non è commutativo in generale; coincide solo in casi
-particolari (insiemi uguali, uno dei due vuoto, ecc.).
+6 — c. Il prodotto non è commutativo in generale, ma coincide solo in casi particolari, come quando gli insiemi sono uguali o uno dei due è vuoto.
 
 ----------------------------------------
 
 PROMPT RIUTILIZZABILE
 ---------------------
 
-Prompt usato per generare questa scheda. Copialo in una nuova conversazione
-insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+Questo è il prompt usato per generare la scheda. Copialo in una nuova conversazione insieme al testo della lezione da rielaborare, così da mantenere lo stesso stile:
 
 Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
 
@@ -265,6 +168,6 @@ Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnapos
 - Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
 - Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
 - Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
-- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
-- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 frasi di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 con un intero paragrafo per riga (niente a capo manuali dentro i paragrafi); elenchi e formule restano un elemento per riga.
 - Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
