@@ -1,0 +1,203 @@
+[plain-text per Pages — da 15 - Join conclusioni.md]
+
+1. INTRODUZIONE
+---------------
+
+Si chiude il giro sulla cucitura con
+casi limite e due cuciture a condizione,
+piu scorciatoie fra tagli e cuciture.
+Vale il **chiusura con casi e scorciatoie**.
+
+Errore tipico: usare cucitura a condizione
+dove basta naturale con nomi uguali.
+
+2. JOIN
+-------
+
+Si torna su cucitura con regole utili.
+Taglio su prima di cucitura resta dentro
+prima: `pX1(R1 unisci R2)` dentro `R1`.
+Taglio su due lati e poi cucitura copre
+tutto: `pX1(R) unisci pX2(R)` sopra `R`.
+Vale il **tagli che non perdono vero**.
+
+La cucitura non guarda ordine: `R1 R2`
+uguale `R2 R1`. Vale tre vie e molte vie
+con `R1 (R2 R3)` uguale `(R1 R2) R3` e
+catena `R1 .. Rn` senza parentesi. Vale
+il **ordine libero nella catena**.
+
+Errore tipico: credere che ordine cambi
+risultato nella cucitura naturale.
+
+3. CASI ESTREMI
+---------------
+
+Due casi su teste `X1` e `X2`.
+
+Teste staccate senza pari: ogni riga va
+con ogni altra, numero pari a prodotto
+dei due. La cucitura diventa prodotto
+`x`. Esempio riscritto con altri dati in
+righe di testo: invece di Impiegati con
+Rossi A e Reparti con A Mori si usi
+Addetti e Sedi senza pari:
+Addetto Sede Sigla Capo
+Luca Nord N1 Blu
+Anna Sud N2 Verdi.
+Fuori sei righe con tutte le coppie
+Luca Nord N1 Blu, Luca Nord N2 Verdi e
+via. Vale il **staccate fa tutte coppie**.
+
+Teste uguali del tutto: cucitura vale
+croce fra uguali con `R1 unisci R2`
+uguale `R1 croce R2`. Vale il
+**uguali fa solo croce**.
+
+Errore tipico: cercare pari dove non ce
+ne sono e stupirsi del pieno prodotto.
+
+4. THETA-JOIN
+-------------
+
+Su teste staccate il pieno spesso serve
+solo per poi tagliare. Si fa cucitura
+poi taglio con `sCond(R1 unisci R2)` e
+si dice `R1 Cond R2`. La condizione e
+spesso `e` di pezzi con `=` `>` `<`.
+Vale il **pieno poi taglio mirato**.
+
+Esempio riscritto con altri dati: invece
+di Impiegati Reparti con A B Mori Bruni
+si usi Addetti con Sede e Sedi con Sigla:
+Addetti Luca Nord Anna Sud Marco Sud
+Sedi N1 Blu N2 Verdi.
+Pieno con 3 per 2 pari a sei righe con
+Sede e Sigla vicine, poi taglio con
+`Sede = Sigla` ma qui nomi diversi: si
+cambia prima Sigla in Sede con nomi nuovi
+oppure si chiede con condizione fra
+tratti diversi. Si tolgono a mano le non
+vere e restano Luca Nord N1 Blu, Anna Sud
+N2 Verdi, Marco Sud N2 Verdi. Vale il
+**condizione che tiene pari veri**.
+
+Errore tipico: lasciare pieno senza taglio
+e portare a casa rumore inutile.
+
+5. EQUI-JOIN
+------------
+
+Caso di sopra con solo uguale `=` fra
+tratti. Si tiene testa doppia con i due
+nomi, non si fonde come in naturale.
+Esempio sopra rende Addetto Sede Sigla
+Capo con Luca Nord N1 Blu e via. Vale il
+**uguale che tiene doppio nome**.
+
+Errore tipico: dire naturale quando si
+tiene doppio nome per uguale esplicito.
+
+6. EQUIVALENZA TRA OPERAZIONI
+------------------------------
+
+Due scritte valgono se danno stesso
+fuori per ogni corpo vero. Serve per far
+spendere meno al gestore. Caso noto con
+spinta del taglio dentro: se `A` sta in
+`R2` vale `sA=10(R1 unisci R2)` uguale
+`R1 unisci (sA=10(R2))`. Si taglia prima
+il piccolo e poi si cuce. Vale la
+**spinta del taglio nel piccolo**.
+
+Errore tipico: tagliare dopo cucitura
+grande quando si puo tagliare prima.
+
+7. CONCLUSIONI
+--------------
+
+Tre righe di senso: condizione libera
+con `>=` e segni vari, uguale come caso
+di condizione, naturale come pari nomi.
+Esempio fasce riscritto con altri dati
+in righe di testo: invece di Age Group
+con Arai Baker si usi:
+Fasce PuntiMin PuntiMax Fascia
+0 50 Base
+51 80 Media
+81 100 Alta
+Soci Punti Nome
+20 Luca
+65 Anna
+90 Marco.
+Con `theta-join` fra punti e fasce esce
+Nome Fascia con Luca Base Anna Media
+Marco Alta. Vale la
+**fascia giusta per punti**.
+
+Errore tipico: mixare i tre nomi come
+se fossero la stessa cucitura.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Chiusura con casi e scorciatoie.
+- Tagli che non perdono il vero.
+- Ordine libero nella catena lunga.
+- Staccate con tutte le coppie.
+- Uguali con sola croce stretta.
+- Pieno poi taglio mirato utile.
+- Condizione con `e` di confronti.
+- Uguale con doppio nome tenuto.
+- Spinta del taglio nel piccolo.
+- Fascia giusta per punti dati.
+- Mai pieno senza taglio dopo.
+- Tre nomi tre cuciture diverse.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa vale per ordine in naturale?
+a) Conta · b) Libero senza cambi · c) Mai libero · d) Solo con taglio
+2. Cosa esce con teste staccate?
+a) Vuoto · b) Tutte le coppie come prodotto · c) Solo croce · d) Nulla
+3. Cosa esce con teste uguali?
+a) Tutto · b) Solo croce fra uguali · c) Mai nulla · d) Solo prodotto
+4. Cosa fa theta-join in pratica?
+a) Solo pieno · b) Pieno poi taglio con condizione · c) Mai utile · d) Solo nomi
+5. Cosa tiene equi-join con uguale?
+a) Nulla · b) Doppio nome con pari uguale · c) Solo naturale · d) Solo vuoti
+6. Cosa dice spinta del taglio?
+a) Taglia dopo · b) Taglia piccolo prima di cucire · c) Mai tagliare · d) Solo tutto
+
+Soluzioni ragionate
+
+1 — b. Ordine libero nella catena vera. La a) conta ordine, la c) nega tutto, la d) vuole taglio.
+2 — b. Staccate con prodotto pieno. La a) da vuoto, la c) da croce, la d) non da nulla.
+3 — b. Uguali con croce fra uguali. La a) prende tutto, la c) non da nulla, la d) da prodotto.
+4 — b. Pieno poi taglio mirato utile. La a) ferma a pieno, la c) dice mai, la d) guarda nomi.
+5 — b. Uguale con doppio nome tenuto. La a) non tiene nulla, la c) vuole naturale, la d) vuole vuoti.
+6 — b. Spinta nel piccolo per costi. La a) taglia dopo, la c) non taglia, la d) prende tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

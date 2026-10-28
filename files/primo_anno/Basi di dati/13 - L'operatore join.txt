@@ -1,0 +1,204 @@
+[plain-text per Pages — da 13 - L'operatore join.md]
+
+1. INTRODUZIONE
+---------------
+
+Si apre il ferro piu forte per cucire
+tabelle sparse con idee da insiemi:
+naturale, pieno, mezzo e vuoto, con
+prove vere. Vale il
+**cucire tabelle sparse insieme**.
+
+Errore tipico: cucire a caso senza
+tratti in comune fra le due.
+
+2. JOIN
+-------
+
+Tagli soli non bastano: dicono cose di
+una tabella e non legano tabelle diverse
+ne righe diverse della stessa. Serve
+cucitura fra mondi divisi. Vale il
+**oltre la tabella sola**.
+
+Esempio gara riscritto con altri dati:
+invece di concorso con buste 1 25 Mario
+Rossi si usi corsa con pettorali anonimi
+e buste chiuse con nomi:
+Pettorina Tempo Pettorina Atleta
+11 32 11 Luca Blu
+12 28 12 Anna Verdi
+13 35 13 Marco Gialli.
+Sotto la cucitura voluta Tempo Atleta
+per classifica. Domanda: come passare
+da Tempo per numero e Nome per numero
+a Tempo per nome? Vale la
+**numero che fa da ponte**.
+
+La cucitura in `SQL` lega due o piu
+tabelle su colonne pari e fa nascere
+legami. Le domande dure la usano spesso.
+Il tipo scelto dice quali righe restano.
+
+Errore tipico: credere che tagli soli
+possano legare due tabelle diverse.
+
+3. JOIN NATURALE
+----------------
+
+Prende due tabelle e rende terza su
+somma di teste, con righe nate da coppie
+con pari valori sui tratti in comune.
+Forma `R1 unisci R2` su `X1X2` con
+`t[X1] = t1` e `t[X2] = t2`. Vale il
+**pari in comune fa riga nuova**.
+
+Esempio riscritto con Pettorina sopra:
+`r1(Pettorina, Tempo)` con `r2(Pettorina,`
+`Atleta)` rende `r(Pettorina, Tempo,`
+`Atleta)` con 11 Luca 32 e 12 Anna 28.
+La testa e somma delle teste, le righe
+sono coppie con pari numero. Spesso il
+tratto in comune e prima e resta prima
+anche dopo. Vale la
+**testa somma e ponte primo**.
+
+Altri due casi riscritti con altri dati:
+invece di Esami Corsi con 483 729 si usi
+Prove con CodProva e Turni con CodProva:
+Prove Badge CodProva Punti
+5101 201 26
+5202 305 30.
+Turni CodProva Nome Guida
+201 Yoga Blu
+305 Danza Verdi.
+Comune CodProva prima in Turni, reso con
+Badge Punti Nome Guida. Vale la
+**chiave comune che cuce**.
+
+Invece di Multe con Stato Targa si usi
+Soste con Sigla Posto e Veicoli con
+Sigla Posto: comune doppio Sigla Posto
+prima in Veicoli, reso con unione di tutti i tratti senza
+doppi. Vale il **doppio comune senza doppi**.
+
+Regole: righe da coppie con pari su
+comuni, teste come somma di teste.
+
+Errore tipico: cucire su nomi uguali ma
+mondi diversi e stupirsi di righe strane.
+
+4. JOIN COMPLETO
+----------------
+
+Caso ditta riscritto con altri dati:
+invece di Impiegato Reparto con Rossi A
+Mori si usi Addetti e Sedi:
+Addetto Sede Sede Capo
+Luca Nord Nord Blu
+Anna Sud Sud Verdi
+Marco Sud Sud Verdi.
+Per ogni addetto si trova suo capo con
+cucitura su Sede. Vale il
+**tutti trovano il loro capo**.
+
+Se tutte le righe trovano pari si dice
+pieno. Con `n` e `m` righe, al massimo
+`n x m` righe fuori con `x` per prodotto.
+
+Errore tipico: dire pieno quando alcune
+righe restano sole senza pari.
+
+5. JOIN INCOMPLETO
+------------------
+
+Stesse due con buchi: sede Nord senza
+riga in Sedi e sede Est senza addetti.
+Righe di testo:
+Addetto Sede Sede Capo
+Luca Nord Nord Blu
+Anna Sud Est Verdi.
+Solo Anna trova pari, Luca e Est restano
+soli. Fuori solo una riga con Sud Verdi.
+Vale il **solo chi trova pari resta**.
+
+Errore tipico: contare anche righe sole
+come se fossero cucite davvero.
+
+6. JOIN VUOTO
+-------------
+
+Caso limite con mondi staccati: addetti
+in Nord Sud e sedi in Ovest Est senza
+incroci. Teste restano ma corpo vuoto.
+Righe di testo per teste:
+Addetto Sede Capo
+senza righe sotto. Vale il
+**teste piene corpo vuoto**.
+
+Errore tipico: dire errore di forma
+quando e solo mancanza di pari veri.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Cucire tabelle sparse con pari veri.
+- Oltre la tabella sola per legami.
+- Numero ponte fra tempo e nome.
+- Pari in comune fa riga nuova.
+- Testa somma senza tratti doppi.
+- Chiave comune che cuce due mondi.
+- Tutti trovano capo se pieno.
+- Massimo `n x m` righe fuori.
+- Solo chi trova pari resta dentro.
+- Teste piene e corpo vuoto se stacco.
+- Doppio comune senza doppi in testa.
+- Mai cucire senza tratti in comune.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa cucitura fra tabelle?
+a) Solo taglia · b) Lega mondi su pari in comune · c) Nulla · d) Solo ordina
+2. Come nasce riga in naturale?
+a) A caso · b) Da coppia con pari su comuni · c) Mai nasce · d) Solo da una
+3. Cosa tiene testa dopo cucitura?
+a) Solo prima · b) Somma senza doppi · c) Nulla · d) Solo doppioni
+4. Quando si dice pieno il join?
+a) Sempre · b) Se tutte trovano pari · c) Mai · d) Solo con vuoti
+5. Cosa resta in mezzo con buchi?
+a) Tutto · b) Solo chi trova pari · c) Nulla mai · d) Solo soli
+6. Quando esce corpo vuoto?
+a) Sempre · b) Se nessun pari fra mondi · c) Mai · d) Solo con pieno
+
+Soluzioni ragionate
+
+1 — b. Cucire tabelle sparse con pari. La a) solo taglia, la c) non fa nulla, la d) solo ordina.
+2 — b. Pari in comune fa riga nuova. La a) va a caso, la c) non nasce, la d) usa una sola.
+3 — b. Testa somma senza doppi veri. La a) tiene prima, la c) non tiene nulla, la d) tiene doppi.
+4 — b. Tutti trovano loro pari e capo. La a) dice sempre, la c) dice mai, la d) vuole vuoti.
+5 — b. Solo chi trova pari resta dentro. La a) prende tutto, la c) non da nulla, la d) conta soli.
+6 — b. Teste piene e corpo vuoto. La a) dice sempre, la c) dice mai, la d) vuole pieno.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

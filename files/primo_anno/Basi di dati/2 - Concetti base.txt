@@ -1,0 +1,195 @@
+[plain-text per Pages — da 2 - Concetti base.md]
+
+1. DATA BASE MANAGEMENT SYSTEM
+------------------------------
+
+Il gestore di basi di dati e un
+programma che tiene segni codificati
+su dischi e li porge all utente.
+Schema in righe di testo riscritto:
+utente
+ gestore
+  disco 1 disco 2 disco 3
+Vale il **velo fra utente e dischi**.
+
+Un buon gestore tratta insiemi grandi,
+in comune e nel tempo, con cura e
+riservatezza, in modo utile e rapido.
+
+Riservatezza con permessi: ognuno fa
+solo cio che puo. Esempio riscritto
+con altri dati: invece di A B con X Y
+si usi M con lettura su tutto e scrittura
+su P, N con lettura su P e scrittura
+su Q, con riconoscimento prima di ogni
+atto. Vale il **permessi solo dopo nome**.
+
+Rapidita con tempo e spazio giusti per
+chi usa. Serve macchina ben tagliata e
+disegno ben fatto. Dipende da tecnica
+interna e bravura di progetto.
+
+Tenuta contro guasti di ferri e programmi.
+La base vale molto e deve durare. Via
+maestra con atti sicuri in blocco.
+Si risponde a guasti, sviste e disastri
+con salvataggio e ritorno. Vale la
+**copia che salva dal guasto**.
+Prova con `backup` e `recovery`.
+
+Utilita che rende fruttuoso il lavoro
+di chi usa, in ogni senso pratico.
+
+Funzioni contro doppioni: con molti in
+comune il rischio di copie e alto.
+File in comune tagliano doppioni e
+spazio su memoria e disco. Esempio
+riscritto con altri dati: invece di
+orari e ricevimenti 1999-2000 si usi
+mensa con menu del giorno e turni dei
+tavoli 2024, dove nome pietanza e ora
+appaiono in due fogli ma stanno una
+volta sola nella base. Vale la
+**una volta sola contro copie**.
+
+Le domande sono semplici anche per non
+tecnici con `query` per mettere,
+cambiare, togliere e cercare. Il grande
+resta saldo e non si perde: se cade,
+torna con copia di scorta.
+
+Sicurezza alta con capo base `DBA` che
+crea utenti e limiti per lavoro. Ognuno
+vede solo il suo. Vale il
+**capo unico per accessi**.
+
+Moli oltre la centrale, limite solo nel
+fisico. Esempi riscritti con altri dati:
+invece di 500 10 500 100 si usi 800
+Giga per movimenti, 15 Tera per scelte,
+600 Tera per misure, 120 miliardi di
+righe.
+
+Errore tipico: file privati per ufficio
+con stessi dati discordi, o permessi
+larghi dati a tutti senza nomi.
+
+2. DBMS IN COMMERCIO
+--------------------
+
+Quattro nomi diffusi: primo nordico a
+oggetti con `XML`, secondo storico con
+nuvole e cura da solo, terzo legato a
+sistema noto con tabelle in memoria,
+quarto libero con molti milioni di
+copie. Vale la **quattro strade note**.
+
+Primo di grande casa blu come base a
+tabelle, svelto a tenere, leggere e
+riprendere. Ha forme per impresa media
+e grande su tre sistemi noti, con tagli
+di tabelle, alta prontezza, copie di
+sicurezza e domande pronte. Ha forma
+a costo zero per ogni macchina e forma
+per prove di programmi singoli. Vale il
+**taglio per ogni taglia d impresa**.
+
+Secondo nato da piccolo gruppo anni
+settanta e cresciuto in trenta anni.
+Prima base a domande su piu ferri con
+lingua in C, poi letture coerenti,
+lavoro diviso, blocchi di riga, copie
+di scorta, lingua propria, tabelle
+partite, rete e Java, copie insieme,
+magazzino auto per dati e nuvola con
+cura da sola. Vale la
+**storia lunga verso nuvola**.
+
+Terzo nato fine anni ottanta da accordo
+a tre per sistema noto, poi vie divise
+anni novanta. Ha tabelle tutte in
+memoria per corse veloci, cache su
+dischi rapidi, copie sempre accese e
+legami con nuvola nota. Riparazioni in
+pacchi di fix nel 2015. Vale il
+**memoria veloce piu nuvola**.
+
+Quarto libero anni novanta da nord
+Europa, con milioni di copie e due
+milioni di messe in opera nel 2001.
+Aperto nel 2000 con licenza libera e
+aiuti da fuori. Motori dentro per atti
+sicuri e legami fra tabelle. Poi rete
+propria e forme per imprese. Passato a
+sole e poi a grande casa nel 2010.
+Ora anche su nuvole note con immagini
+pronte e cura per conto d altri. Vale
+il **libero che cresce con rete**.
+
+Errore tipico: prendere forma a caso
+senza taglia e fini, o credere che
+libero voglia dire senza cura e copie.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Velo software fra utente e dischi.
+- Grande in comune e nel tempo.
+- Permessi dopo riconoscimento.
+- Tempo e spazio giusti per uso.
+- Atti sicuri contro ogni guasto.
+- Copie di scorta per ritorno.
+- Una volta sola contro doppioni.
+- Domande semplici per non tecnici.
+- Capo unico che crea e limita.
+- Moli oltre centrale su fisico.
+- Taglio giusto per ogni impresa.
+- Memoria nuvola e libero in gara.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa un gestore di basi di dati?
+a) Solo calcoli · b) Tiene segni su dischi per utenti · c) Solo video · d) Nulla
+2. Cosa vale per riservatezza?
+a) Tutti tutto · b) Ognuno solo suo dopo nome · c) Mai nomi · d) Nulla
+3. Come si evita doppione?
+a) Piu copie · b) File in comune una volta sola · c) Mai si evita · d) Solo carta
+4. Chi puo vedere tutto?
+a) Ognuno · b) Solo capo base che crea limiti · c) Nessuno mai · d) Solo ospiti
+5. Quale taglio per impresa media?
+a) A caso · b) Forma media con tagli e prontezza · c) Solo zero · d) Mai esiste
+6. Cosa porta nuvola e memoria veloce?
+a) Nulla · b) Corse e copie con legami esterni · c) Solo lentezza · d) Solo carta
+
+Soluzioni ragionate
+
+1 — b. Velo fra utente e dischi con cura. La a) fa solo calcoli, la c) fa solo video, la d) non fa nulla.
+2 — b. Permessi solo dopo nome chiaro. La a) apre tutto, la c) toglie nomi, la d) non dice nulla.
+3 — b. Una volta sola contro copie. La a) fa piu copie, la c) nega tutto, la d) torna a carta.
+4 — b. Capo unico per accessi e limiti. La a) apre a tutti, la c) chiude a tutti, la d) guarda ospiti.
+5 — b. Taglio per ogni taglia d impresa. La a) va a caso, la c) ferma a zero, la d) nega tutto.
+6 — b. Memoria veloce piu nuvola legata. La a) non porta nulla, la c) porta lentezza, la d) torna a carta.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

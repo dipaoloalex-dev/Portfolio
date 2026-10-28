@@ -1,0 +1,240 @@
+[plain-text per Pages — da 10 - Esercizi.md]
+
+1. INTRODUZIONE
+---------------
+
+Si sciolgono casi via via piu duri con
+almeno una via buona per ognuno. Vale
+il **salita dolce con via buona**.
+
+Errore tipico: cercare forma unica
+quando bastano vie diverse ma giuste.
+
+2. ESERCIZIO 1
+--------------
+
+Caso prestiti di attrezzi fra vicini con
+nomi senza doppi e pezzi senza doppi,
+piu data di resa attesa. Basta una sola
+tabella perche non servono altri dati su
+chi e cosa. Vale il **uno basta se non sai altro**.
+
+Forma riscritta con altri dati: invece
+di libri con Titolo Nome Data si usi
+`PRESTITO(Attrezzo, Vicino, DataResa)`
+con chiave `Attrezzo` perche ogni pezzo
+e solo. Un vicino puo tenere molti pezzi
+in date varie. Righe di testo:
+Attrezzo Vicino DataResa
+Trapano Luca 02-03-2024
+Scala Anna 10-03-2024
+Sega Marco 18-03-2024.
+Variante con anche `DataDono` se serve
+per allenarsi, anche se non chiesta.
+Vale la **chiave sul pezzo solo**.
+
+Errore tipico: dare chiave a vicino che
+puo tornare molte volte.
+
+3. ESERCIZIO 2
+--------------
+
+Caso corse di bus con numero, ora, meta,
+tipo e soste varie per corsa. Servono due
+tabelle perche soste cambiano e forma
+vuole posti fissi. Vale il
+**due tabelle per liste varie**.
+
+Forme riscritte con altri dati: invece
+di PARTENZE FERMATE con 567 Messina si
+usi `CORSE(Numero, Ora, Meta, Tipo)` con
+chiave `Numero` e `SOSTE(Bus, Ferma, Ora)`
+con chiave `Bus Ferma` e filo da `Bus`
+verso `Numero`. Righe di testo:
+12 08:20 Nord Blu
+21 09:05 Sud Verde
+Soste 12 Centro 08:40
+Soste 21 Ovest 09:30.
+
+Errore tipico: mettere soste dentro corse
+con colonne che cambiano sempre.
+
+4. ESERCIZIO 3
+--------------
+
+Caso ditta con addetti e sedi: ognuno
+ha sigla, cognome, nome, nascita. Sede
+ha sigla, luogo e capo che e addetto.
+Ognuno sta in una sede. Servono fili nei
+due versi. Vale il **fili incrociati fra sedi**.
+
+Forme riscritte con altri dati: invece
+di IMPIEGATI FILIALI con Roma si usi
+`ADDETTI(Sigla, Cognome, Nome, Nascita,`
+`Sede)` e `SEDI(Codice, Luogo, Capo)`
+con filo da Sede verso Codice e da Capo
+verso Sigla. Righe corte con sigle A11
+B22 e capi che stanno in addetti.
+
+Errore tipico: scordare uno dei due fili
+o far puntare capi fuori tabella.
+
+5. ESERCIZIO 4
+--------------
+
+Dieci frasi su chiavi e sopra-chiavi da
+dire vere o false in senso stretto. Qui
+non si copiano, si ragiona sul senso:
+almeno una, non una sola, tratti liberi
+fuori chiavi, nessuna chiave dentro
+altra, tutto puo fare chiave, sopra
+sempre almeno una e spesso molte. Vale
+il **vero per forma non per caso**.
+
+Esito in breve: vere almeno una chiave,
+tratti fuori chiavi, tutto puo fare
+chiave anche con doppia totale, almeno
+una sopra e molte sopra con totale.
+False una sola per forza, un tratto in
+una sola chiave, chiave dentro chiave,
+una sola sopra per forza.
+
+Errore tipico: dire chiave per caso del
+corpo come se fosse regola di forma.
+
+6. ESERCIZIO 5
+--------------
+
+Caso palinsesto tv con reti, ore e nomi:
+ogni rete ha anche banda e sede. Vale il
+**rete madre di messe in onda**.
+
+Forme riscritte con altri dati: invece
+di STAZIONE PROGRAMMA con RadioDJ si usi
+`RETE(Nome, Banda, Sede)` con chiave
+`Nome` e `MESSA(Titolo, Rete, Ora)` con
+chiave `Titolo` e filo da Rete verso Nome.
+Se stesso nome va su due reti serve chiave
+doppia Titolo Rete. Righe di testo:
+Rete Nord 88,1 Trento
+Rete Sud 91,5 Bari
+Messa Alba Nord 07:30
+Messa Sera Sud 21:15.
+
+Errore tipico: tenere Titolo solo quando
+stesso nome gira su due reti diverse.
+
+7. ESERCIZIO 6
+--------------
+
+Caso avvisi di prove con codice, nome,
+guida e date per appelli, piu un corso
+senza date. Non sta in una tabella sola
+perche appelli sono molti per corso.
+Vale il **uno con molti sotto**.
+
+Forme riscritte con altri dati: invece
+di Corsi Appelli con Fisica Neri si usi
+`MODULI(Codice, Nome, Guida)` con chiave
+`Codice` e `DATE(Corso, Giro, Giorno)`
+con chiave `Corso Giro` e filo da Corso
+verso Codice. Righe di testo:
+Moduli 11 Reti Blu
+Moduli 12 Basi Verdi
+Date 11 1 03-06-2024
+Date 11 2 04-07-2024
+Date 12 1 05-06-2024.
+Il modulo senza date resta senza figlie.
+
+Errore tipico: schiacciare tutto in una
+riga con appelli in colonne variabili.
+
+8. ESERCIZIO 7
+--------------
+
+Caso dischi e voci con festa doppia:
+stesso disco ha piu voci e stessa voce
+canta in piu dischi. Servono tre tabelle
+con ponte in mezzo. Vale il
+**ponte per molti a molti**.
+
+Forme riscritte con altri dati: invece
+di Libri Autori con Leggende si usi
+`DISCHI(Codice, Nome, Uscita)` con chiave
+`Codice`, `VOCI(Nome, Cognome, Fono)` con
+chiave `Nome Cognome`, `CANTI(Nome,`
+`Cognome, Disco)` con filo doppio verso
+voci e verso dischi. Righe di testo:
+Dischi 1 Alba 04-05-2023
+Dischi 2 Sera 03-03-2024
+Voci Luca Blu 3331
+Voci Anna Verdi 3332
+Canti Luca Blu 1
+Canti Anna Verdi 2.
+
+Errore tipico: legare disco a voce con
+nomi sciolti senza ponte e senza fili.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Salita dolce con vie buone varie.
+- Uno basta se non sai altro.
+- Chiave sul pezzo unico vero.
+- Liste varie in tabella figlia.
+- Fili incrociati fra sedi e capi.
+- Vero per forma non per caso corpo.
+- Rete madre di messe in onda.
+- Uno con molti sotto in figlie.
+- Ponte per molti a molti doppi.
+- Fili sempre verso madri vere.
+- Date figlie senza madre mai.
+- Nomi doppi solo con chiavi doppie.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando basta una tabella sola?
+a) Sempre · b) Se non sai altro oltre nomi · c) Mai · d) Solo con figli
+2. Dove vanno soste varie di corse?
+a) Dentro corse · b) In figlia con filo a madre · c) Mai messe · d) Solo in testo
+3. Quali fili servono fra sedi e addetti?
+a) Uno solo · b) Sede a sede e capo ad addetto · c) Mai fili · d) Solo nomi
+4. Cosa vale per chiavi in senso stretto?
+a) Una sola sempre · b) Almeno una e sopra molte · c) Mai chiavi · d) Solo totali
+5. Come si parte avviso con molti appelli?
+a) Tutto in riga · b) Madre corsi piu figlie date · c) Mai parte · d) Solo testo
+6. Come si lega disco a molte voci?
+a) Con nomi sciolti · b) Con ponte e doppi fili · c) Mai legato · d) Solo con date
+
+Soluzioni ragionate
+
+1 — b. Uno basta se non sai altro. La a) dice sempre, la c) dice mai, la d) vuole figli.
+2 — b. Liste varie in figlia con filo. La a) rompe atomi, la c) non mette nulla, la d) resta a testo.
+3 — b. Fili incrociati fra sedi vere. La a) dimezza tutto, la c) toglie fili, la d) guarda nomi.
+4 — b. Vero per forma con molte sopra. La a) fissa una sola, la c) toglie chiavi, la d) vuole totali.
+5 — b. Uno con molti sotto in figlie. La a) schiaccia tutto, la c) non parte, la d) resta a testo.
+6 — b. Ponte per molti a molti veri. La a) lascia sciolto, la c) non lega, la d) usa date.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

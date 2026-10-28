@@ -1,0 +1,184 @@
+[plain-text per Pages — da 11 - Operatori.md]
+
+1. INTRODUZIONE
+---------------
+
+Si aprono i ferri per chiedere a tabelle:
+unione, incrocio, meno e nomi nuovi,
+con prove chiare. Vale il
+**quattro ferri per chiedere**.
+
+Errore tipico: usare ferri su tabelle
+con teste diverse senza pari forma.
+
+2. LINGUAGGI DEI DATABASE
+-------------------------
+
+Il gestore parla a ogni tipo di utente
+per chiedere e mutare, anche a casa.
+Molte lingue in giro, ma qui `SQL` con
+forme `DDL` e mosse `DML`. Vale il
+**volti giusti per ogni utente**.
+
+Forme `DDL` dicono dati e legami con
+altri: file, base, libro dati, tabelle,
+tratti, mondi, regole, scudi e posti su
+disco. Vale la **forma che disegna casa**.
+
+Mosse `DML` mettono, cambiano, tolgono
+e riprendono. La parte che riprende si
+dice lingua di domande `query`. Vale la
+**mosse che toccano righe**.
+
+Domande seguono due vie: dire cosa con
+dichiarativi, dire come con procedurali.
+In pratica: algebra come passi, calcolo
+come idea, `SQL` mezzo vero, `QBE` con
+esempi vero. Vale il
+**cosa contro come nelle domande**.
+
+Errore tipico: chiedere tutto a `DDL`
+o disegnare tutto con `DML`.
+
+3. ALGEBRA RELAZIONALE
+----------------------
+
+Lingua a passi su idee di conti. Prende
+tabelle e rende tabelle, cosi si legano
+molti ferri per domande dure. Tabelle
+come insiemi di righe, quindi anche
+mosse da insiemi. Vale il
+**tabelle dentro tabelle fuori**.
+
+Famiglie di ferri: unione incrocio meno,
+nomi nuovi, tagli per righe, tagli per
+colonne, cuciture con `join` e prodotto
+`x` e `theta-join`.
+
+Ferri da insiemi solo fra pari forma:
+stessi tratti nelle due. Vale il
+**solo fra pari forma**.
+
+Errore tipico: comporre ferri senza
+controllare teste uguali e mondi uguali.
+
+4. OPERATORI INSIEMISTICI
+-------------------------
+
+Tre classici da insiemi puri.
+
+Somma con `U`: tutto cio che sta in `R`
+o in `S` in sigla `R U S = {t | t in R`
+`o t in S}`. Esempio riscritto con altri
+dati in righe di testo separate da spazi:
+invece di Laureati Specialisti con 7274
+Rossi si usi Iscritti e Agonisti:
+Iscritti Tessera Cognome Anni
+3105 Blu 27
+3110 Verdi 31
+3122 Gialli 29
+Agonisti Tessera Cognome Anni
+4102 Rossi 24
+3110 Verdi 31
+3122 Gialli 29.
+Somma tiene 3105 3110 3122 4102 senza
+doppi. Vale la **somma senza doppi**.
+
+Croce con `n`: solo cio che sta in tutte
+e due in sigla `R n S = {t | t in R`
+`e t in S}`. Con dati sopra tiene 3110
+3122. Vale la **croce solo in comune**.
+
+Meno con `-`: cio che sta in `R` ma non
+in `S` in sigla `R - S = {t | t in R`
+`e t non in S}`. Con dati sopra tiene
+solo 3105. Vale il **meno toglie i comuni**.
+
+Nomi nuovi con `p` per unire teste
+diverse ma senso uguale. Senza pari nome
+non si somma anche se giusto. Esempio
+riscritto con altri dati: invece di
+Paternita Maternita con Adamo Abele si
+usi TutoriUomo e TutoriDonna:
+Tutore Figlio
+Marco Luca
+Marco Anna
+Paolo Sara
+Tutrice Figlio
+Sara Luca
+Sara Elena
+Elena Sara.
+Somma diretta non va per Tutore contro
+Tutrice. Si passa con
+`p Genitore da Tutore` e
+`p Genitore da Tutrice` e poi si somma.
+Vale il **nomi pari per sommare**.
+Segno `p` tocca solo testa e non corpo.
+
+Errore tipico: sommare teste diverse
+senza nomi nuovi o credere che `p`
+cambi anche le righe dentro.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Quattro ferri per chiedere a tabelle.
+- Volti giusti per ogni utente vero.
+- Forma che disegna casa e regole.
+- Mosse che toccano righe vive.
+- Cosa contro come nelle domande.
+- Tabelle dentro e tabelle fuori.
+- Solo fra pari forma e mondi.
+- Somma senza doppi in giro.
+- Croce solo in comune stretto.
+- Meno toglie i comuni da prima.
+- Nomi pari per sommare giusto.
+- Segno `p` solo su testa fissa.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa algebra con tabelle?
+a) Solo video · b) Prende e rende tabelle a passi · c) Nulla · d) Solo dischi
+2. Quando vanno somma e croce?
+a) Sempre · b) Solo fra pari forma · c) Mai · d) Solo con nomi
+3. Cosa tiene somma 3105 3110 3122 4102?
+a) Solo comuni · b) Tutto senza doppi · c) Nulla · d) Solo prima
+4. Cosa tiene croce con dati sopra?
+a) Tutto · b) Solo 3110 3122 in comune · c) Nulla · d) Solo 3105
+5. Cosa tiene meno Iscritti meno Agonisti?
+a) Tutto · b) Solo 3105 fuori da seconda · c) Nulla · d) Solo comuni
+6. Perche serve `p` su tutori?
+a) Per gioco · b) Per pari nomi prima di somma · c) Mai serve · d) Cambia righe
+
+Soluzioni ragionate
+
+1 — b. Tabelle dentro e fuori a passi. La a) guarda video, la c) non fa nulla, la d) guarda dischi.
+2 — b. Solo fra pari forma e mondi. La a) dice sempre, la c) dice mai, la d) vuole nomi.
+3 — b. Somma senza doppi in giro. La a) vede comuni, la c) non da nulla, la d) vede prima.
+4 — b. Croce solo in comune stretto. La a) prende tutto, la c) non da nulla, la d) vuole prima.
+5 — b. Meno toglie i comuni veri. La a) prende tutto, la c) non da nulla, la d) vuole comuni.
+6 — b. Nomi pari per sommare giusto. La a) parla di gioco, la c) nega tutto, la d) tocca righe.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

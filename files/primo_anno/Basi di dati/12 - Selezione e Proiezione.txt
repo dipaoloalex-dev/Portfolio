@@ -1,0 +1,192 @@
+[plain-text per Pages — da 12 - Selezione e Proiezione.md]
+
+1. INTRODUZIONE
+---------------
+
+Si aprono due ferri forti: taglio per
+righe e taglio per colonne. Entrambi
+rendono tabelle da tabella. Uno va in
+largo, laltro va in alto. Vale il
+**largo contro alto in tabella**.
+
+Errore tipico: chiedere colonne a chi
+taglia righe e viceversa senza accorgersi.
+
+2. OPERATORE DI SELEZIONE
+-------------------------
+
+Taglio per righe con un solo ingresso.
+Tiene stessa testa e solo righe vere
+alla prova `F`. Segno `s` con formula
+`sF(R) = {t | t in R e F(t) vera}`.
+Vale il **stessa testa poche righe**.
+
+Esempi riscritti con altri dati in righe
+di testo separate da spazi: invece di
+Impiegati 7309 Rossi Roma 55 si usi
+Addetti Badge Cognome Sede Paga
+4101 Blu Nord 42
+4202 Verdi Sud 51
+4303 Nord Sud 38
+4401 Verdi Ovest 51.
+
+1 Con paga oltre 48 e sede Sud:
+`sPaga > 48 e Sede = Sud (Addetti)`
+tiene solo 4202. Vale la
+**doppia prova in riga**.
+
+2 Con paga oltre 48:
+`sPaga > 48 (Addetti)`
+tiene 4202 e 4401 e non 4101 4303.
+
+3 Con cognome uguale a sede:
+`sCognome = Sede (Addetti)`
+tiene 4303 Nord Nord.
+
+4 Su Prove con altri dati: invece di
+Esami 29323 483 28 NO e 729 30 si usi
+Prove Badge CodProva Punti Merito
+5101 201 26 NO
+5202 305 30 SI
+5101 402 24 NO
+5303 402 30 NO
+5401 305 30 NO.
+Con punti 30 senza merito:
+`sPunti = 30 e Merito = NO (Prove)`
+tiene 5303 e 5401.
+Con corso 305 o punti 30:
+`sCodProva = 305 o Punti = 30 (Prove)`
+tiene 5202 5303 5401. Vale la
+**o larga e e stretta in prova**.
+
+Errore tipico: scordare `e` contro `o`
+o confrontare tratti di mondi diversi.
+
+3. SELEZIONE E PROIEZIONE
+-------------------------
+
+I due sono soli con un ingresso. Stanno
+dritti fra loro: uno taglia in largo e
+tiene tutte le colonne, laltro taglia in
+alto e tiene tutte le righe. Righe di
+testo per mappa:
+mosse sole s p
+mosse doppie unione meno croce.
+Vale il **ortogonali per verso opposto**.
+
+Errore tipico: dire che uno fa tutto e
+laltro non serve mai.
+
+4. OPERATORE PROIEZIONE
+-----------------------
+
+Taglio per colonne con segno `p`. Tiene
+pochi tratti ma con aiuto da tutte le
+righe. Forma `pY(r) = {t[Y] | t in r}`.
+Vale il **poche colonne tutte righe**.
+
+1 Con Badge Cognome da Addetti:
+`pBadge, Cognome (Addetti)`
+tiene quattro righe anche con due Verdi,
+perche Badge diversi salvano. Vale la
+**doppi nomi salvi con chiave**.
+
+2 Con Cognome Sede da Addetti:
+`pCognome, Sede (Addetti)`
+tiene Blu Nord, Verdi Sud, Nord Sud,
+Verdi Ovest: quattro e non tre, ma se
+due fossero uguali in tutto cadrebbe
+una. Senza Badge non si dice chi e chi.
+Vale il **senza chiave cadono doppi**.
+
+3 Su Turni con altri dati: invece di
+Corsi 483 Analisi Biondi si usi:
+Turni CodTurno Nome Guida Anno
+201 Yoga Blu 1
+305 Danza Verdi 1
+402 Mensa Gialli 2.
+`pCodTurno, Guida (Turni)` tiene tre
+righe pari pari.
+
+4 Con CodTurno Anno tiene 201 1, 305 1,
+402 2 senza scarti.
+
+5 Con sola Guida tiene Blu Verdi Gialli
+senza doppi da togliere qui. Vale la
+**lista secca senza doppi**.
+
+Regola: righe dopo taglio pari o meno
+di prima, perche toglie doppi. Pari
+sicuro solo se tratti sono sopra-chiave:
+senza due uguali su `Y` non si fonde
+nulla. Se non e sopra puo fondere, ma
+per caso puo restare pari lo stesso.
+Vale il **pari con sopra sicuro**.
+
+Errore tipico: credere che taglio tenga
+sempre stesso numero di righe anche
+senza sopra-chiave nei tratti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Largo contro alto in tabella vera.
+- Stessa testa con poche righe elette.
+- Doppia prova con `e` stretto.
+- `o` larga contro `e` stretta.
+- Ortogonali per verso opposto netto.
+- Poche colonne con tutte le righe.
+- Doppi nomi salvi con chiave unica.
+- Senza chiave cadono i doppi uguali.
+- Lista secca di guide senza doppioni.
+- Pari con sopra sicuro garantito.
+- Caso pari anche senza sopra possibile.
+- Simboli `s` per righe e `p` per colonne.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa taglio con `s` su Addetti?
+a) Toglie colonne · b) Stessa testa poche righe · c) Nulla · d) Solo ordina
+2. Cosa tiene `Paga > 48 e Sud`?
+a) Tutto · b) Solo 4202 con doppia prova · c) Nulla · d) Solo nomi
+3. Cosa fa taglio con `p` su Addetti?
+a) Toglie righe · b) Poche colonne tutte righe · c) Nulla · d) Solo conta
+4. Quando cade una riga in `p`?
+a) Mai · b) Se gemella senza chiave · c) Sempre · d) Solo con `s`
+5. Cosa tiene `pGuida (Turni)`?
+a) Nulla · b) Lista Blu Verdi Gialli · c) Tutto doppio · d) Solo date
+6. Quando resta pari sicuro in `p`?
+a) Mai · b) Solo con sopra nei tratti · c) Sempre · d) Solo a caso
+
+Soluzioni ragionate
+
+1 — b. Stessa testa con prove vere. La a) toglie colonne, la c) non fa nulla, la d) solo ordina.
+2 — b. Doppia prova stretta in riga. La a) prende tutto, la c) non da nulla, la d) guarda nomi.
+3 — b. Colonne poche da tutte le righe. La a) toglie righe, la c) non fa nulla, la d) solo conta.
+4 — b. Senza chiave cadono i doppi. La a) dice mai, la c) dice sempre, la d) chiama `s`.
+5 — b. Lista secca senza doppi veri. La a) non da nulla, la c) raddoppia, la d) guarda date.
+6 — b. Pari con sopra sicuro garantito. La a) dice mai, la c) dice sempre, la d) dice caso.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,232 @@
+[plain-text per Pages — da 8 - Vincoli e chiavi.md]
+
+1. INTRODUZIONE
+---------------
+
+Si vedono con prove tre voci: regole
+sane di base, regole di riga sola,
+segni unici per trovare righe. Vale il
+tre voci per dati sani.
+
+Errore tipico: pensare che basti forma
+senza regole per avere dati giusti.
+
+2. VINCOLI DI INTEGRITA
+-----------------------
+
+Le forme da sole non bastano: insiemi
+giusti per sintassi possono dire cose
+false per il lavoro vero, anche senza
+vuoti. Servono proprieta vere per corpi
+giusti. Vale il **vera oltre giusta forma**.
+
+Esempio base errata riscritto con altri
+dati in righe di testo separate da spazi:
+invece di 200768 Verdi e 937653 doppi
+con voti 36 e 28 e lode si usi:
+Soci Badge Cognome Nome Nascita
+7102 Blu Luca 15-03-2001
+7205 Blu Luca 22-06-2002
+7205 Gialli Sara 30-01-2000
+Prove Socio Punti Merito Turno
+7102 105 03
+7205 92 Merito 01
+7205 100 Merito 04
+8130 78 01.
+Quattro guasti:
+1 punti 105 oltre tetto 0 100, con passo
+solo da 60 in su
+2 merito con 92 mentre merito solo a 100
+3 due soci diversi con stesso badge 7205
+che deve dire uno solo
+4 socio 8130 in Prove senza riga in Soci,
+filo verso vuoto. Vale il
+**quattro guasti da non fare**.
+
+Regola come prova vera o falsa su ogni
+corpo. Perche servono:
+foto piu vera del mondo, dati migliori,
+aiuto a disegno, aiuto a domande, parte
+fermata da gestore e parte a cura di chi
+scrive. Vale il **parte auto parte a mano**.
+
+Errore tipico: lasciare badge doppi e
+punti fuori tetto senza prove attive.
+
+3. CLASSIFICAZIONE DEI VINCOLI
+------------------------------
+
+Si parte per dove toccano i dati.
+
+Dentro una tabella sola. A volte tocca
+righe sole una per una. Vale il
+**dentro una sola tabella**.
+Su valori o domini: taglia su un tratto
+solo, come punti fra 60 e 100. Vale il
+**taglio su un tratto solo**.
+Su riga sola: si giudica senza altre
+righe, e i due casi sopra ci stanno.
+
+Fra tabelle diverse: come socio in Prove
+solo se sta in Soci. Vale il
+**filo fra due tabelle**.
+
+Prova riscritta con altri dati: invece
+di fisco con LBRRSS e tasse 2018 si usi
+mensa con tessere e pasti 2024:
+Soci Tessera Nome Sala Tessera
+corta T22 errata contro forma lunga 5
+Pasti Tessera Anno Speso Versato
+doppia riga T11 2024 con 40 e 55 come
+stessa chiave due volte
+tessera K99 in Pasti senza riga in Soci.
+Si chiede di dire per ognuna se dentro
+o fra tabelle. Vale la
+**caccia al guasto per tipo**.
+
+Errore tipico: dire dentro quando serve
+filo fra tabelle, o viceversa.
+
+4. VINCOLI DI TUPLA
+-------------------
+
+Dicono cosa vale riga per riga da sola.
+Sotto caso con un tratto solo. Sintassi
+con vero o falso su confronti e conti.
+Esempio su Prove riscritto:
+`(Punti >= 60) AND (Punti <= 100)` per
+tetto di punti
+`(Punti = 100) OR NOT (Merito = Merito)`
+per merito solo a 100. Vale il
+**riga giudicata da sola**.
+
+Altro caso con tre voci di paga:
+Lordo uguale Trattenute piu Netto.
+Righe di testo riscritte con altri dati:
+Compensi Nome Lordo Tratte Netto
+Blu 52000 11000 41000
+Verdi 43000 9000 34000
+Rossi 44500 10000 34500
+Formula `Lordo = (Tratte + Netto)`.
+Se Rossi passa a 48000 con stesse voci
+rompe il conto. Vale il
+**conto che deve tornare**.
+
+Verso chiavi: se Badge mai doppio e se
+mai due righe uguali su Cognome Nome
+Nascita, si apre strada a segni unici.
+
+Errore tipico: scrivere merito senza
+legarlo a 100 o far tornare conti con
+somme errate.
+
+5. CHIAVI
+---------
+
+Le piu forti del modo a tabelle. Badge
+diverso per ogni riga dice chi e chi.
+Segno unico come tratti che trovano
+righe sole. Vale il **segni che trovano righe**.
+
+Insieme `K` e sopra-chiave se non ha due
+righe diverse con stessi valori su `K`
+in sigla `t1[K] = t2[K]`. E chiave se
+sopra-chiave piu corta possibile senza
+altra dentro. Vale la
+**corta possibile come chiave**.
+
+Con Soci Badge e solo un tratto e minima.
+Insieme Cognome Nome Nascita e sopra e
+anche chiave se mai doppia. Insieme
+Badge Turno e sopra ma larga perche
+tiene Badge che basta da solo. Insieme
+Nome Turno non e sopra se due righe
+hanno stesso nome e turno. Vale il
+**larga contro stretta giusta**.
+
+Prova con altri dati in righe di testo:
+Badge Cognome Nome Nascita Turno
+7011 Blu Dario 29-04-2002 Yoga
+7022 Blu Luca 01-05-2003 Danza
+7033 Neri Luca 01-05-2003 Danza
+7044 Neri Luca 05-03-2001 Danza.
+Qui Cognome Turno trova sole per caso,
+ma con omonimi puo cadere: si dice chiave
+per caso, non per forma. Vale la
+**chiave per caso non per forma**.
+
+Regole finali: segni unici dicono mondo
+vero a livello di forma, corpi giusti
+sono quelli con tutte le regole, ma un
+corpo puo averne altre per caso. Niente
+righe doppie uguali, ogni tabella ha
+almeno chiave di tutti i tratti, chiavi
+aprono ogni dato e legano tabelle con
+valori. Vale il **valori che legano tutto**.
+
+Errore tipico: prendere per chiave cio
+che vale solo in quel corpo per caso.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Tre voci per dati sani e veri.
+- Vera oltre giusta forma di sintassi.
+- Quattro guasti da non fare mai.
+- Parte auto e parte a mano nei gestori.
+- Dentro tabella contro fra tabelle.
+- Taglio su tratto e riga da sola.
+- Conto di paga che deve tornare.
+- Segni che trovano righe sole.
+- Corta possibile come chiave vera.
+- Larga con dentro la stretta non va.
+- Chiave per caso contro per forma.
+- Valori che legano tutto il giro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa mostra base con 105 e merito a 92?
+a) Tutto bene · b) Quattro guasti da non fare · c) Mai guasti · d) Solo forme
+2. Dove tocca taglio su punti 60 100?
+a) Fra tabelle · b) Dentro tabella su tratto · c) Mai tocca · d) Solo nomi
+3. Cosa dice filo Socio in Prove?
+a) Nulla · b) Solo se sta in Soci · c) Sempre libero · d) Solo numeri
+4. Come suona regola merito giusta?
+a) Sempre merito · b) Merito solo se 100 · c) Mai merito · d) Solo punti
+5. Quando `K` e chiave vera?
+a) Sempre · b) Sopra e corta possibile · c) Mai · d) Solo larga
+6. Cosa vale Cognome Turno in prova?
+a) Sempre chiave · b) Chiave per caso non per forma · c) Mai chiave · d) Solo Badge
+
+Soluzioni ragionate
+
+1 — b. Vera oltre giusta forma con tetti. La a) dice bene, la c) nega guasti, la d) vede forme.
+2 — b. Taglio su tratto dentro tabella. La a) va fra tabelle, la c) non tocca, la d) guarda nomi.
+3 — b. Filo fra due tabelle con valori. La a) non dice nulla, la c) apre sempre, la d) guarda numeri.
+4 — b. Riga giudicata da sola con 100. La a) da sempre, la c) toglie merito, la d) guarda punti.
+5 — b. Sopra piu corta possibile vera. La a) dice sempre, la c) dice mai, la d) vuole larga.
+6 — b. Vale in corpo ma cade con omonimi. La a) dice sempre, la c) dice mai, la d) vuole Badge.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

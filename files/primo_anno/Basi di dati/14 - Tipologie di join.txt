@@ -1,0 +1,164 @@
+[plain-text per Pages — da 14 - Tipologie di join.md]
+
+1. INTRODUZIONE
+---------------
+
+Dopo misura di quante righe escono si
+vedono cuciture larghe e mezze cuciture:
+fuori a sinistra destra e tutto, piu
+mezza che tiene un lato solo. Vale il
+**larghe fuori e mezze dentro**.
+
+Errore tipico: usare dentro quando serve
+fuori e perdere righe sole senza `NULL`.
+
+2. CARDINALITA
+--------------
+
+Conta righe fuori da cucitura fra `R1`
+e `R2` con `|R1 unisci R2|`. In genere
+sta fra zero e prodotto dei due:
+`0 <= |J| <= |R1| x |R2|`. Vale il
+**tetto a prodotto di righe**.
+
+Se cuci su prima di `R2` ogni riga di
+`R1` trova al massimo una: tetto a `R1`
+con `0 <= |J| <= |R1|`. Vale il
+**tetto a prima se prima unica**.
+
+Se in piu ce filo da `B` in `R1` verso
+`R2` ognuna trova la sua: pari a `R1`
+con `|J| = |R1|`. Vale il
+**pieno pari se filo vero**.
+
+Errore tipico: dire pieno pari senza
+filo vero o senza prima unica.
+
+3. JOIN ESTERNO
+---------------
+
+Dentro tiene solo pari su tratti uguali
+e taglia sole e vuoti. Esempio riscritto
+con altri dati in righe di testo: invece
+di Persone Automobili con AASSGG e Paolo
+Neri si usi Soci e Bici:
+Soci Badge Nome Cognome
+11 Luca Blu
+12 Anna Verdi
+13 Sara Gialli
+Bici Telaio Modello BadgeID
+T11 M1 11
+T22 M2 11
+T33 M3 12
+T44 M4 vuoto.
+Dentro tiene T11 T22 T33 e taglia T44
+vuota e Sara 13 sola. Le sole si dicono
+sospese. Vale il **dentro taglia le sole**.
+
+Altro caso con Addetti Sedi riscritto:
+Addetto Sede Sede Capo
+Luca Nord Nord Blu
+Anna Sud Est Verdi.
+Dentro tiene solo Anna Sud Blu e taglia
+resto. Vale la **prova doppia con buchi**.
+
+Fuori allarga con `NULL` dove manca pari.
+Tre vie: sinistra tiene tutta prima,
+destra tiene tutta seconda, piena tiene
+tutte e due. Vale il
+**fuori salva con vuoti**.
+
+Sinistra tiene prima con vuoti a destra.
+Esempio: Luca Nord resta come Luca Nord
+vuoto anche senza sede Nord in Sedi.
+Destra specchio: tiene seconda con vuoti
+a sinistra. Piena somma le due vie con
+tutti i vuoti dei due lati. Vale il
+**sinistra destra e tutto pieni**.
+
+Errore tipico: mettere `NULL` anche dove
+ce pari vero o scambiare lati in testa.
+
+4. SEMI-JOIN
+------------
+
+Mezza cucitura che torna a testa di
+prima con solo righe che trovano pari
+in seconda, senza dati di seconda.
+Forma `{t | t in R1 e ce t2 in R2 con`
+`pari su comuni}`. Vale il
+**solo prima se trova pari**.
+
+Esempio riscritto: Addetti contro Sedi
+con Nord Sud Est come sopra tiene solo
+Anna Sud e non Luca Nord. Al contrario
+Sedi contro Addetti tiene solo Sud Blu.
+Il verso conta e cambia tutto. Vale il
+**verso che cambia tutto**.
+
+Errore tipico: dare fuori dati di seconda
+quando mezza torna solo prima.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Larghe fuori e mezze dentro in fila.
+- Tetto a prodotto di righe vere.
+- Tetto a prima se prima unica.
+- Pieno pari se filo vero esiste.
+- Dentro taglia sole e vuoti.
+- Sole sospese fuori dal dentro.
+- Fuori salva con vuoti mirati.
+- Sinistra destra e tutto pieni.
+- Solo prima se trova pari vero.
+- Verso che cambia tutto il reso.
+- Mai fuori senza pari comune.
+- `NULL` solo dove manca pari.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quanto puo uscire da cucitura base?
+a) Sempre pieno · b) Fra zero e prodotto · c) Mai nulla · d) Solo prima
+2. Quando tetto scende a prima sola?
+a) Mai · b) Se cuci su prima di seconda · c) Sempre · d) Solo con vuoti
+3. Quando esce pari a prima intera?
+a) Mai · b) Con prima unica e filo vero · c) Sempre · d) Solo a caso
+4. Cosa fa dentro con T44 vuota?
+a) La tiene · b) La taglia come sola · c) Mai taglia · d) La cambia
+5. Cosa tiene sinistra su Addetti?
+a) Solo pari · b) Tutta prima con vuoti · c) Solo seconda · d) Nulla
+6. Cosa rende mezza su Addetti?
+a) Tutto misto · b) Solo prima con pari · c) Solo seconda · d) Nulla
+
+Soluzioni ragionate
+
+1 — b. Tetto a prodotto di righe. La a) dice pieno, la c) dice mai, la d) vede prima.
+2 — b. Tetto a prima se prima unica. La a) dice mai, la c) dice sempre, la d) vuole vuoti.
+3 — b. Pieno pari se filo vero esiste. La a) dice mai, la c) dice sempre, la d) va a caso.
+4 — b. Dentro taglia sole e vuoti. La a) la tiene, la c) non taglia, la d) la cambia.
+5 — b. Sinistra piena con vuoti mirati. La a) tiene pari, la c) guarda seconda, la d) non da nulla.
+6 — b. Solo prima se trova pari vero. La a) fa misto, la c) guarda seconda, la d) non da nulla.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

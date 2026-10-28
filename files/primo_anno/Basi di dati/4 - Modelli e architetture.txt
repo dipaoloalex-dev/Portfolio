@@ -1,0 +1,228 @@
+[plain-text per Pages — da 4 - Modelli e architetture.md]
+
+1. INTRODUZIONE
+---------------
+
+Si presentano forme dei dati con il
+disegno ente-legame usato nel corso,
+forme dei gestori moderni e due scudi:
+scudo di forma e scudo di disco. Vale
+il **mappa di forme e scudi**.
+
+Errore tipico: confondere forma dei
+dati con dischi e fili dove stanno.
+
+2. I MODELLI
+------------
+
+Forma astratta che dice pezzi e legami
+in modo uguale per tutti. Vale in due
+sensi: foto di una ditta vera e cassetta
+di idee per fare foto, come ente,
+tratto, legame, tabella. Vale il
+**foto e cassetta di idee**.
+
+Esso fissa ossatura, mosse e regole dei
+dati tenuti in gestore. Non tocca carte
+sciolte come testi, mail, foto, suoni,
+video. Serve per fare programmi che
+vanno d accordo: stesse forme per tenere
+e leggere danno dati in comune. Se le
+forme sono povere, i costi salgono e
+frenano ditta invece di aiutarla. Vale
+il **forme povere frenano ditta**.
+
+Esempio riscritto con altri dati:
+invece di auto con colore e misura si
+usi bici con tinta e taglia e con nome
+del socio che la tiene.
+
+Forma per programmi senza dire marca o
+dischi, ma con tabelle e colonne,
+classi a oggetti o segni `XML`. Sta nei
+gestori d oggi per tenere i dati. Vale
+la **forma per programmi senza dischi**.
+Voci note: a tabelle, a rete, ad albero,
+a oggetti, a segni `XML`.
+
+Forma di senso senza tecnica, per dire
+idee del mondo vero a inizio disegno.
+La piu nota e ente-legame `ER` come
+disegno di cose e fili fra loro per
+banche di dati. Esempio riscritto con
+altri dati in righe di testo:
+Lettore Tes_Num Tes_Nome Tes_Sede
+Prestito
+Sede Sed_Cod Sed_Nome
+Lettore filo Prestito filo Sede.
+Invece di allievo e college con Stu Id
+Name Addr e Col ID Name si usano lettore
+e sede con tessere e codici diversi.
+Vale il **disegno di cose e fili**.
+
+Errore tipico: usare forma per programmi
+quando serve prima senso del mondo, o
+mettere testi e video dentro tabelle.
+
+3. ARCHITETTURE DI UN DBMS
+---------------------------
+
+Il disegno segue una o piu quote.
+Quote a parte ma legate, da cambiare
+sole senza guasti alle altre.
+
+A una quota solo gestore diretto senza
+aiuti per utenti finali. Buona per chi
+disegna e scrive codice.
+
+A due quote serve un volto sopra per
+entrare. Il volto vive di vita propria
+per moto, disegno e codice. Quote sono
+logica e interna: logica dice tabella
+in forma, interna dice file con record
+e punti in ordine dato. Righe di testo:
+utente
+ forma logica
+ forma interna
+ base. Vale il **volto sopra base sotto**.
+
+A tre quote si parte per uso e fatica
+di chi guarda. E la piu usata. Fondo
+con base e lingue per domande, con
+legami e vincoli. Mezzo con server e
+programmi che danno vista astratta:
+sotto non vede utenti oltre mezzo,
+sopra non vede base oltre volto. Cima
+con utenti finali e molte viste nate
+dal mezzo. Righe di testo:
+utenti a vista uno vista due vista tre
+ forma logica
+ forma interna
+ base. Vale il **mezzo che fa da ponte**.
+
+Piu quote vuol dire cambio sciolto e
+viste proprie per ognuno sugli stessi
+dati: tocchi una vista senza guasti ad
+altre. Chi guarda non vede dischi: chi
+cura puo mutare dischi senza toccare
+viste. Vale il **viste proprie su dati uguali**.
+
+Guida astratta del 1975 mai legge vera.
+Nessun gestore la segue tutta, ma idea
+di scudo di forma resta ovunque.
+
+Esempio viste riscritto con altri dati
+in righe di testo separate da spazi:
+Turni Corso Guida Sala
+Yoga Verdi S1
+Danza Blu S2
+Pilates Gialli S1
+Sale Nome Palazzo Piano
+S1 Nord Terra
+S2 Nord Terra
+G Sud Primo
+Turni Sedi Corso Sala Palazzo Piano
+Yoga S1 Nord Terra
+Danza S2 Nord Terra
+Invece di Basi Sistemi Reti Controlli
+con Rossi Neri Bruni si usano sport e
+guide diverse. Vale la
+**stessa base molte facce**.
+
+Errore tipico: far toccare dischi a chi
+guarda o legare viste fra loro senza
+mezzo in mezzo.
+
+4. INDIPENDENZA DEI DATI
+-------------------------
+
+Scudo di programmi da mutamenti di forme
+e posti. Il gestore mostra faccia astratta
+e nasconde dentro. Due scudi: forma e
+disco. Vale il **scudo doppio di programmi**.
+
+Scudo di forma: muta idea di mezzo senza
+toccare facce fuori. Vivi a contatto con
+utente. Si mettono facce nuove o si muta
+mezzo tenendo vecchie. Vale il
+**facce salve se muta mezzo**.
+
+Scudo di disco: muta dentro senza toccare
+idea di mezzo. Vivi a contatto di logica.
+Si cambia disco o macchina tenendo forma
+uguale, anche su piu macchine. Righe di
+testo:
+faccia
+ scudo di forma
+ forma
+ scudo di disco
+ dentro
+ dischi. Vale il
+**forma salva se muta disco**.
+
+Errore tipico: credere che basti un solo
+scudo o rompere facce per un disco nuovo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Forme e scudi come mappa iniziale.
+- Foto vera e cassetta di idee.
+- Forme povere alzano costi e freni.
+- Forma per programmi senza dischi.
+- Disegno di cose e fili a inizio.
+- Volto sopra e base sotto a quote.
+- Mezzo ponte fra utenti e fondo.
+- Viste proprie su dati uguali.
+- Stessa base con molte facce.
+- Guida astratta mai legge piena.
+- Facce salve se muta mezzo.
+- Forma salva se muta disco.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa dice forma dei dati?
+a) Solo dischi · b) Pezzi e legami in modo uguale · c) Nulla · d) Solo video
+2. Cosa fa forma per programmi?
+a) Dice marca · b) Dice tabelle senza dischi · c) Mai serve · d) Solo testi
+3. Cosa mostra disegno ente-legame?
+a) Nulla · b) Cose e fili del mondo vero · c) Solo dischi · d) Solo quote
+4. Cosa fa quota di mezzo a tre?
+a) Nulla · b) Ponte fra facce e fondo · c) Solo dischi · d) Solo utenti
+5. Cosa tiene scudo di forma?
+a) Dischi · b) Facce salve se muta mezzo · c) Nulla · d) Solo fili
+6. Cosa tiene scudo di disco?
+a) Facce · b) Forma salva se muta disco · c) Nulla · d) Solo idee
+
+Soluzioni ragionate
+
+1 — b. Foto e cassetta per ossatura e moto. La a) guarda dischi, la c) non dice nulla, la d) guarda video.
+2 — b. Tabelle e classi senza marca. La a) chiede marca, la c) nega tutto, la d) vuole testi.
+3 — b. Senso a inizio senza tecnica. La a) non mostra nulla, la c) guarda dischi, la d) guarda quote.
+4 — b. Mezzo che fa da ponte ignaro. La a) non fa nulla, la c) guarda dischi, la d) guarda utenti.
+5 — b. Esterno fermo con dentro mosso. La a) guarda dischi, la c) non tiene nulla, la d) guarda fili.
+6 — b. Logica ferma con dentro mosso. La a) guarda facce, la c) non tiene nulla, la d) guarda idee.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
