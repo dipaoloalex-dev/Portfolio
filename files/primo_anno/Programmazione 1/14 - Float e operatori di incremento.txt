@@ -1,0 +1,201 @@
+[plain-text per Pages — da 14 - Float e operatori di incremento.md]
+
+1. FLOAT E CONVERSIONI FRA TIPI
+-------------------------------
+
+Le medie spesso hanno decimali e non bastano
+gli interi. Un **numero in virgola mobile** con
+`float` tiene la parte frazionaria. Senza, il
+taglio intero perde i decimali prima di salvare.
+
+Esempio riscritto con dati diversi: invece di
+voti 75 94 97 88 70 64 83 89 con -1 si usino
+incassi 62 81 74 90 69 77 85 con 0 finale.
+Somma 538 su 7 pezzi, media 76.86. Il segnale 0
+chiude e non entra nel conto. Invito chiaro con
+segnale dentro per guidare chi digita.
+
+Se somma e conto sono interi, `somma / conto`
+taglia prima e poi mette in `float`. Serve una
+copia provvisoria decimale. La **conversione esplicita**
+con `(float)` crea una copia temporanea di un
+operando senza cambiare loriginale. Poi il conto
+diventa fra intero e decimale.
+
+Il traduttore pareggia i tipi da solo con la
+**conversione implicita**. Copia lintero rimasto
+in decimale e poi divide in decimale. Le regole
+coprono molti tipi. Il cast si scrive con tipo fra
+tonde ed e unario con rango alto come `+` e `-`.
+
+La **precisione di stampa** con `%.2f` mostra due
+cifre dopo il punto. La `f` dice decimale. Senza
+numero vale 6 come `%.6f`. Vale solo per `printf`,
+mai per `scanf`.
+
+Vale l**arrotondamento video**: il testo mostra
+arrotondato ma la cella resta uguale. Esempio
+riscritto: con 2.718 stampa 2.72 a due cifre e
+2.7 a una cifra. I decimali lunghi come 10 su 3
+restano solo approssimati perche lo spazio e fisso.
+Mai chiedere uguaglianza esatta fra decimali.
+
+Errore tipico: mettere la precisione in `scanf`
+oppure fidarsi di decimali come se fossero esatti.
+
+2. OPERATORI DI ASSEGNAZIONE, DI INCREMENTO E DI DECREMENTO
+-----------------------------------------------------------
+
+Un **operatore abbreviato** unisce conto e
+salvataggio. Da `k = k + 4` si passa a `k += 4`.
+Vale per `+` `-` `*` `/` `%` nella forma con
+`=` dopo il segno.
+
+Tabella riscritta in righe con altri valori.
+Base `k = 4` `m = 6` `n = 5` `p = 7` `q = 14`:
+segno `+=` esempio `k += 6` vale `k = k + 6` da 10
+segno `-=` esempio `m -= 4` vale `m = m - 4` da 2
+segno `*=` esempio `n *= 4` vale `n = n * 4` da 20
+segno `/=` esempio `p /= 3` vale `p = p / 3` da 2
+segno `%=` esempio `q %= 9` vale `q = q % 9` da 5
+
+Il `++` sale di uno e il `--` scende di uno.
+Prima del nome fanno **preincremento**: prima
+cambiano e poi usano il nuovo. Dopo il nome
+fanno **postincremento**: prima usano il vecchio
+e poi cambiano. Stesso discorso per giu.
+
+Esempio riscritto con `k = 7`: stampa 7, poi
+`k++` stampa 7 e sale a 8, poi stampa 8. Poi da
+7 `++k` stampa 8 e resta 8. Gli unari vogliono
+contatto diretto senza spazi. Vale solo un nome
+semplice come operando, non un conto come `++(x+1)`.
+
+Se la riga ha solo la variabile, prima e dopo
+valgono uguale. La differenza esce solo dentro
+un discorso piu ampio. Vale l**ordine non garantito**
+degli operandi: usare `++` solo con una variabile
+per riga per evitare sorprese di calcolo.
+
+Tabella dei ranghi in righe di testo semplici:
+postfissi `++` `--` da destra a sinistra tipo postfisso
+unari tipo e prefissi da destra a sinistra tipo unario
+moltiplicativi `*` `/` `%` da sinistra a destra
+additivi `+` `-` da sinistra a destra
+relazionali `<` `<=` `>` `>=` da sinistra a destra
+uguaglianza `==` `!=` da sinistra a destra
+condizionale `?:` da destra a sinistra
+assegnazione `=` `+=` `-=` `*=` `/=` `%=` destra sinistra
+
+Errore tipico: mettere `++` su un conto fra
+tonde oppure usarlo due volte nella stessa riga.
+
+3. OVERFLOW ARITMETICO - PROGRAMMAZIONE SICURA IN C
+---------------------------------------------------
+
+Anche `tot = a + b` puo rompersi. Se il risultato
+non entra nel tipo nasce l**overflow aritmetico**
+con esito indefinito e rischi per il sistema.
+
+I limiti dipendono dalla macchina e stanno in
+`limits` con nomi come `INT_MAX` e `INT_MIN`.
+Esistono simili per altri interi. Buona norma:
+controllare prima del conto con guide note e
+con `&&` e `||` dove serve, specie nel codice
+usato da molti.
+
+Un **intero senza segno** con `unsigned` tiene
+solo zero e oltre e arriva quasi al doppio del
+positivo con segno. Il massimo sta in `UINT_MAX`.
+Si usa per conti che non scendono mai sotto zero.
+Ma se lutente puo dare negativi o se il segnale
+e negativo o se si usa fine file negativo, il
+senza segno e sbagliato per quella variabile.
+
+Una **funzione sicura con suffisso** come tipo
+`scanf_s` e `printf_s` nasce con lo standard nuovo
+come forma piu protetta. Non tutti i fornitori
+la danno perche resta facoltativa. Alcuni avvisano
+che `scanf` e vecchia e spingono verso la forma
+con suffisso. Si puo cambiare chiamata oppure
+tacere lavviso nelle opzioni del progetto. Meglio
+non tacere gli avvisi nel codice serio e tenere
+compilazione pulita.
+
+Errore tipico: sommare senza guardare i limiti
+oppure mettere senza segno dove serve anche il
+segnale negativo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Decimali con `float` e cast prima di dividere.
+- Compilatore pareggia i tipi da solo dopo il cast.
+- `%.2f` per due cifre solo in stampa con arrotondamento.
+- Mai uguaglianza esatta fra decimali.
+- Forme brevi con `+=` `-=` `*=` `/=` `%=`.
+- Prima cambia poi usa contro prima usa poi cambia.
+- `++` solo su nome semplice e una volta per riga.
+- Ranghi con unari e assegnazioni da destra a sinistra.
+- Limiti in `limits` e controlli prima dei conti.
+- `unsigned` solo se mai negativi e segnale non negativo.
+- Forme con suffisso piu sicure dove date.
+- Mai tacere avvisi nel codice serio.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Con somma 538 e conto 7 come si ha 76.86?
+a) Con interi senza cast · b) Con `(float)` su un operando e stampa `%.2f` · c) Con `%d` soltanto · d) Senza variabili
+
+2. Cosa fa `%.1f` su 2.718 in stampa?
+a) Cambia la cella · b) Mostra 2.7 e lascia la cella · c) Blocca tutto · d) Toglie il punto
+
+3. Con base 4 6 5 7 14 cosa danno le forme brevi?
+a) 10 2 20 2 5 · b) Sempre zero · c) Solo testi · d) Nulla perche vietate
+
+4. Con `k = 7` cosa mostrano `k++` e `++k`?
+a) Stesso uso · b) Primo usa 7 poi sale, secondo sale poi usa 8 · c) Entrambi bloccano · d) Entrambi scendono
+
+5. Quando scatta loverflow in `tot = a + b`?
+a) Mai · b) Se il risultato non entra nel tipo con esito indefinito · c) Solo con zero · d) Solo in stampa
+
+6. Quando va bene `unsigned` per una lettura con segnale?
+a) Sempre · b) Mai guardare il segnale · c) Solo se segnale e dati mai negativi · d) Solo con decimali
+
+Soluzioni ragionate
+
+1 — b. Copia decimale piu formato a due cifre. La a) taglia prima, la c) stampa interi, la d) toglie gli operandi.
+
+2 — b. Solo video arrotondato con cella uguale. La a) cambia memoria, la c) blocca, la d) toglie il segno.
+
+3 — a. Conti giusti con le cinque forme brevi. La b) azzera tutto, la c) non calcola, la d) vieta forme lecite.
+
+4 — b. Dopo contro prima nelluso. La a) li unisce, la c) blocca, la d) inverte il verso.
+
+5 — b. Fuori limite uguale rischio. La a) lo nega, la c) guarda solo zero, la d) guarda solo video.
+
+6 — c. Senza segno solo se tutto resta a zero e oltre. La a) lo usa sempre, la b) ignora il segnale, la d) parla di decimali.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

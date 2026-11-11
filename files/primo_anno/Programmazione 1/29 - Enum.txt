@@ -1,0 +1,177 @@
+[plain-text per Pages — da 29 - Enum.md]
+
+1. ESEMPIO DI UN GIOCO DAZZARDO: INTRODUZIONE DI ENUM
+-----------------------------------------------------
+
+Un noto gioco di dadi chiede di
+lanciare due dadi da sei facce con
+punti da 1 a 6. Si somma il sopra
+dei due dadi fermi. Al primo tiro
+7 o 11 danno vittoria subito, 2 3
+o 12 danno perdita subito, 4 5 6 8
+9 o 10 fissano il **traguardo da inseguire**. Poi si
+tira finche torna il traguardo per
+vincere, mentre un 7 prima chiude
+con perdita.
+
+Il listato usa due voci: `main` e
+lancio, piu `switch` `while` `if`
+annidati. La **funzione di lancio riusata**
+nasce una volta e gira in due punti:
+primo tiro e tiri dopo. Non prende
+nulla, quindi lista con `void`, e
+rende la somma come `int`.
+
+Esempio riscritto con altri nomi:
+invece di `rollDice` e `myPoint` si
+usi `throwDice` e `target`. Righe:
+`int d1 = 1 + rand() % 6` per primo
+`int d2 = 1 + rand() % 6` per secondo
+stampa del tiro e `return d1 + d2`.
+Avvio con `srand(time(NULL))` per
+**seme nuovo a ogni corsa**.
+
+Serve un **tipo stato con tre nomi**
+per la fase in corso. Riga:
+`enum Phase { GO_ON, WIN, FAIL }`.
+La **cella di fase corrente** tiene
+il passo del gioco. Al primo tiro
+uno `switch` mette `WIN` con 7 o 11,
+`FAIL` con 2 3 o 12, senno `GO_ON`
+con salvataggio del traguardo e
+stampa del valore. Poi un **ciclo finche fase continua**:
+nuovo tiro,
+se uguale al traguardo `WIN`, se 7
+`FAIL`. Alla fine un `if...else`
+stampa esito buono o cattivo.
+
+Prove riscritte con altri tiri validi:
+vittoria al primo con 3 + 4 = 7
+traguardo 6 con 4 + 2 = 6 poi
+2 + 5 = 7 poi 1 + 5 = 6 con vittoria
+perdita al primo con 1 + 2 = 3
+perdita dopo con traguardo 9 da
+4 + 5 = 9 poi 3 + 4 = 7 con perdita.
+
+Una **raccolta di interi con nomi**
+nata da `enum` rende tutto leggibile.
+Ogni nome vale un intero. Di base
+parte da 0 e sale di 1: qui `GO_ON`
+vale 0, `WIN` vale 1, `FAIL` vale 2.
+Si puo anche fissare a mano ogni
+valore. I nomi devono restare unici,
+mentre i numeri possono ripetersi.
+Dopo la nascita non si assegna piu
+nulla ai nomi, senno scatta errore
+di sintassi. Meglio **solo maiuscole per costanti**
+per distinguerle dalle celle variabili.
+
+Se al primo tiro tutto finisce, il
+`while` salta perche la fase non e
+`GO_ON` e si va subito al messaggio
+finale. Se resta `GO_ON`, il tiro si
+salva nel traguardo e il `while` gira:
+ogni giro chiama il lancio, confronta
+con traguardo e con 7, aggiorna la
+fase e alla fine stampa lesito.
+
+Esempio riscritto per mesi: invece di
+`months` inglese da 0 a 11 si usi
+`stagioni` con quattro voci da 0 a 3.
+Righe:
+`enum stagioni { PRI, EST, AUT, INV }`.
+Per partire da 1 si fissa il primo:
+`enum livelli { BASE = 1, MED, ALT }`
+con `MED` a 2 e `ALT` a 3. Vale la
+**partenza fissata a mano** con salita
+di 1 per le voci dopo.
+
+Esercizi riscritti con altri nomi:
+primo con `enum giorno { LUN, MAR, MER }`
+e `day = MER` stampa 2 con `%d`.
+Secondo con `enum turno { UNO, DUE, TRE, QUATTRO }`
+e ciclo da `UNO` a `QUATTRO` stampa
+0 1 2 3. La logica resta, i nomi e i
+numeri cambiano.
+
+Proposta riscritta con altri dati:
+invece di saldo 1000 si parta da 800.
+Si impacchetta il giro in `play()` che
+rende la fase finale. Si chiede puntata con **saldo e puntata validata**,
+`bet`, con `while` finche `bet <= 0`
+o `bet > saldo` si richiede di nuovo.
+Poi un giro solo: se `FAIL` si toglie
+`bet` dal saldo, se zero si stampa
+riga di cassa vuota, se `WIN` si aggiunge
+`bet` e si stampa il nuovo saldo. Una
+**voce di contorno a caso** stampa frasi
+brevi con `1 + rand() % 4` e quattro vie
+con testi propri diversi dalla fonte.
+
+Errore tipico: cambiare un nome `enum`
+dopo la definizione o riusare lo stesso
+nome per due voci diverse.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Due dadi con somma e traguardo chiaro.
+- Lancio in voce sola riusata due volte.
+- `void` in ingresso e `int` in uscita.
+- Stato in tre nomi per fase corrente.
+- Nomi da 0 a salire salvo fisso a mano.
+- Nomi unici e maiuscole per costanti.
+- Mai assegni dopo la definizione.
+- `switch` al primo e `while` dopo.
+- `WIN` con traguardo e `FAIL` con 7.
+- Seme nuovo con ora di sistema.
+- Saldo e puntata con controllo `while`.
+- Giro in funzione per riuso pulito.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `throwDice` con `void` e `int`?
+a) Nulla · b) Tira due dadi e rende la somma · c) Solo stampa · d) Solo legge
+2. Cosa tiene la cella di fase?
+a) Solo numeri · b) `GO_ON` `WIN` o `FAIL` del passo · c) Nulla · d) Solo testo
+3. Cosa vale `WIN` in `GO_ON WIN FAIL` base?
+a) 0 · b) 1 con salita di 1 da 0 · c) 9 · d) Mai numero
+4. Come si parte da 1 in `BASE MED ALT`?
+a) Senza nulla · b) Con `BASE = 1` e resto a salire · c) Con zeri · d) Mai possibile
+5. Cosa stampa `day = MER` con tre voci da 0?
+a) 0 · b) 2 come terzo da zero · c) Testo · d) Nulla
+6. Come si valida `bet` con saldo 800?
+a) Senza prove · b) Con `while` finche fuori 1 800 · c) Solo una volta · d) Mai
+
+Soluzioni ragionate
+
+1 — b. Doppio caso piu somma con reso intero. La a) non fa nulla, la c) solo stampa, la d) solo legge.
+2 — b. Tre nomi per fase in corso del gioco. La a) vede numeri soli, la c) non tiene nulla, la d) vede testo.
+3 — b. Base zero con passo uno per voce. La a) copia il primo, la c) inventa 9, la d) nega il numero.
+4 — b. Fisso a mano con salita dopo. La a) lascia tutto base, la c) mette zeri, la d) nega tutto.
+5 — b. Terza voce da zero vale due. La a) prende la prima, la c) stampa testo, la d) non stampa.
+6 — b. Ciclo di richiesta fino a valore buono. La a) non prova nulla, la c) prova una volta, la d) non prova mai.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

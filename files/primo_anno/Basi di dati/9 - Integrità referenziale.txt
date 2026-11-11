@@ -1,0 +1,224 @@
+[plain-text per Pages — da 9 - Integrità referenziale.md]
+
+1. INTRODUZIONE
+---------------
+
+Si vedono segni primi, fili che devono
+tornare, fili con vuoti e fili doppi su
+piu tratti, con prove per pensare.
+Vale il **fili che debbono tornare**.
+
+Errore tipico: mettere fili verso nomi
+che non stanno in nessuna tabella madre.
+
+2. CHIAVI E VALORI NULLI
+------------------------
+
+Il vuoto rompe segni unici: senza valore
+non si dice chi e chi e non si punta da
+fuori. Vale il **vuoto che toglie nome**.
+
+Esempio tabella riscritto con altri dati
+in righe di testo separate da spazi:
+invece di Rossi Mario Ing Inf con NULL
+e 78763 87654 si usi Soci con Badge:
+Badge Cognome Nome Turno Nascita
+vuoto Blu Luca Yoga vuoto
+7011 Blu Luca Danza 03-05-2001
+7022 Neri Piero Mensa 10-07-2002
+7033 Neri Luca vuoto vuoto
+vuoto Neri Luca Danza 05-03-2001.
+Chiavi 1 Badge, 2 Cognome Nome Nascita.
+
+La riga `t = (vuoto, Blu, Luca, Yoga,`
+`vuoto)` non si trova mai: ha vuoto su
+entrambe le chiavi. Non si mette altro
+Luca Blu e non si punta da fuori. Vale
+la **riga senza appigli**.
+
+Anche con chiavi piene il vuoto altrove
+confonde: riga con Badge pieno ma Nascita
+vuota e riga con Turno vuoto ma Badge
+pieno possono dire stesso socio o due
+omonimi. Non si decide. Vale il
+**pieno che non basta mai**.
+
+Serve limite ai vuoti con segno primo:
+mai vuoto sopra, segno con riga sotto,
+se manca si fa codice nuovo. Esempio
+sigla `SOCIO(Badge, Cognome, Nome,`
+`Turno, Nascita)` con Badge sempre pieno.
+Vale il **primo mai vuoto**.
+
+La prima non e diversa per forma da altre
+chiavi: la scelta dice uso per fili da
+fuori con `FOREIGN KEY` o modi di macchina
+con `PRIMARY KEY` in `SQL`.
+
+Errore tipico: dare vuoto a segno primo
+o credere che tre tratti senza vuoto
+facciano sempre segno primo.
+
+3. VINCOLI E INTEGRITA REFERENZIALE
+-----------------------------------
+
+Tutti i rimandi debbono cadere su vero.
+Se tratto in tabella figlia dice valore
+di madre, quel valore deve stare in
+madre. Figlia con chiave fuori `X` verso
+madre `R2` porta solo vuoti o valori di
+segno primo di madre. Se cade madre con
+figli che la dicono, cade verita. Si puo
+fermare tutto con errore o tirare via
+anche figli. Vale il **figli solo se madre ce**.
+
+Senza verita tornano risposte monche
+senza avvisi. Sono fili fra tabelle con
+valori in comune di segni primi e debbono
+restare coerenti. Vale il
+**fili con valori comuni**.
+
+Regola in segni con `t1` in `R1` e `t2`
+in `R2`: se `t1[A]` non vuoto allora ce
+`t2[B]` uguale. Si scrive `X` in `R1`
+verso prima di `R2`.
+
+Esempio base riscritto con altri dati:
+invece di AUTO AGENTE INFRAZIONE con
+143256 567 AB 234 ZK si usi:
+VEICOLI Targa Tipo Guida Sede
+TV 101 AA Bici Luca Nord
+TV 202 BB Auto Anna Sud
+ORDINI Codice Data Addetto Voce Targa Tipo
+5001 10-03-2023 701 12 I TV 101 AA
+5002 11-03-2023 702 15 F TV 202 BB.
+Fili fra Addetto in ORDINI e ADDETTI e
+fra Targa Tipo in ORDINI e VEICOLI.
+Esempio rotto: ordine con sigla ZZ 999 QQ
+senza riga in VEICOLI. Vale il
+**esempio che torna e che rompe**.
+
+Note: cuore del modo a valori, con vuoti
+si ammorbidisce, con cadute servono atti
+di riparo, con due tratti serve ordine
+giusto. Vale il **ordine giusto nei doppi**.
+
+Errore tipico: aggiungere figlia senza
+madre o togliere madre lasciando figli
+orfani senza atti di riparo.
+
+4. INTEGRITA REFERENZIALE E VALORI NULLI
+-----------------------------------------
+
+Il vuoto nei fili pesa molto. Se cade
+riga e rompe fili si puo fare:
+stop secco, o ripari con via in cascata
+e con vuoto messo al posto. Vale il
+**stop o riparo dopo caduta**.
+
+Esempio riscritto con altri dati:
+invece di IMPIEGATI 34321 Rossi IDEA e
+PROGETTI IDEA XYZ si usi:
+ADDETTI Badge Cognome Turno
+7011 Blu Yoga
+7022 Verdi vuoto
+7031 Gialli Yoga.
+TURNI Sigla Avvio Mesi Costo
+YOGA 01-2023 12 200
+DANZA 07-2022 10 120.
+Il vuoto in Turno dice senza turno.
+
+Se cade addetto cade anche suo turno in
+cascata. Se cade turno si mette vuoto
+in Addetti al suo posto. Vale la
+**cascata che tira e vuoto che tappa**.
+
+Errore tipico: lasciare vuoti dove serve
+filo pieno o fare cascata senza volerla.
+
+5. VINCOLI MULTIPLI SU PIU ATTRIBUTI
+------------------------------------
+
+A volte servono due tratti insieme come
+uno. Esempio riscritto con altri dati in
+righe di testo: invece di INCIDENTI con
+34321 TO E39548 si usi:
+SOSTE Codice Data SiglaA PostoA SiglaB PostoB
+6001 02-03-2023 TV 101 TV 202
+6002 05-04-2023 TV 202 TV 101.
+POSTI Sigla Posto Cognome Nome
+TV 101 Blu Luca
+TV 202 Verdi Anna.
+
+Fili doppi fra SiglaA PostoA in SOSTE e
+POSTI e fra SiglaB PostoB in SOSTE e
+POSTI. Vale il **doppio filo verso madre**.
+Conta ordine dei tratti: prima con prima
+e seconda con seconda.
+
+Errore tipico: scambiare ordine dei due
+tratti e far tornare fili storti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Fili che debbono sempre tornare.
+- Vuoto che toglie nome ai segni.
+- Riga senza appigli se vuota in chiavi.
+- Pieno altrove che non basta mai.
+- Primo segno mai vuoto in tabella.
+- Figli solo se madre esiste vera.
+- Fili con valori comuni coerenti.
+- Ordine giusto nei fili doppi.
+- Stop secco contro ripari utili.
+- Cascata che tira via con se.
+- Vuoto che tappa dopo caduta.
+- Doppio filo con ordine fermo.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa vuoto su segno primo?
+a) Aiuta · b) Toglie nome e fili fuori · c) Nulla · d) Solo ordina
+2. Cosa dice riga con doppi vuoti?
+a) Tutto chiaro · b) Senza appigli per punti · c) Mai righe · d) Solo nomi
+3. Come deve stare segno primo?
+a) Con vuoti · b) Primo mai vuoto con riga sotto · c) Mai serve · d) Solo fuori
+4. Quando vale filo figlia madre?
+a) Sempre · b) Solo se valore sta in madre · c) Mai · d) Solo con vuoti
+5. Cosa fare se cade madre con figli?
+a) Nulla · b) Stop o riparo in cascata · c) Solo festa · d) Solo carta
+6. Come stanno doppi fili in SOSTE?
+a) A caso · b) Doppi verso madre con ordine · c) Mai fili · d) Solo uno
+
+Soluzioni ragionate
+
+1 — b. Vuoto che toglie nome e punti. La a) aiuta, la c) non fa nulla, la d) solo ordina.
+2 — b. Riga senza appigli in chiavi. La a) vede chiaro, la c) nega righe, la d) guarda nomi.
+3 — b. Mai vuoto con codice nuovo se manca. La a) vuole vuoti, la c) nega tutto, la d) guarda fuori.
+4 — b. Figli solo se madre esiste vera. La a) dice sempre, la c) dice mai, la d) vuole vuoti.
+5 — b. Stop o riparo dopo caduta vera. La a) non fa nulla, la c) fa festa, la d) torna a carta.
+6 — b. Doppio filo con ordine fermo. La a) va a caso, la c) nega fili, la d) vede uno solo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

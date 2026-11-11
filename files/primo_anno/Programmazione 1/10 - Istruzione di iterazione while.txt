@@ -1,0 +1,162 @@
+[plain-text per Pages — da 10 - Istruzione di iterazione while.md]
+
+1. ISTRUZIONE WHILE
+-------------------
+
+Una **istruzione di iterazione** ripete un passo
+finche una domanda resta vera. Si dice anche
+ripetizione. In pseudocodice suona come finche
+resta qualcosa da fare, fallo e toglilo.
+
+La **condizione di permanenza** puo essere vera
+o falsa. Se vera si fa il passo, poi si torna
+a controllare. Si va avanti cosi finche resta vera.
+Il **corpo del ciclo** raccoglie le righe da
+ripetere e puo essere una sola riga o un blocco
+fra graffe. Alla fine la domanda diventa falsa
+e si passa alla riga dopo il ciclo.
+
+Esempio riscritto con dati diversi: invece della
+spesa si pensi a una pila di piatti da lavare.
+Finche restano piatti in pila, lava il primo e
+toglilo. Quando la pila e vuota ci si ferma e si
+asciuga tutto.
+
+Serve sempre un **avanzamento garantito** dentro
+il corpo, cioe un passo che avvicina alla fine.
+Senza, la domanda resta vera per sempre e nasce
+il **ciclo infinito** che non termina mai.
+
+Le parole di comando vogliono la **parola riservata minuscola**.
+Il C distingue grande e piccolo e accetta solo
+`while` e `if` in piccolo. Scrivere `While` o `If`
+blocca la compilazione.
+
+Esempio riscritto di potenze: invece di 3 oltre
+100 con `product` si usi base 4 oltre 90 con `tot`.
+Da `tot = 2` con `while (tot <= 90)` e passo
+`tot = 4 * tot` si passa per 8 32 e si esce a 128.
+Lo **schema rombo-rettangolo** mostra il giro:
+il rombo chiede, il rettangolo aggiorna, la freccia
+torna indietro al rombo finche diventa falso.
+
+Errore tipico: corpo senza avanzamento o con
+comando scritto in maiuscolo.
+
+2. ESERCITAZIONE #1 CON CICLI WHILE
+-----------------------------------
+
+Il **conteggio delle ripetizioni** si fa seguendo
+il valore giro per giro senza saltare passi.
+
+Esempio riscritto con dati diversi: invece di
+`n = 1` con `n < 5` si usi `p = 2` con `p < 7`
+e **stampa con incremento** dentro.
+Il corpo mostra `p` e poi lo aumenta di uno.
+Valori stampati: 2 3 4 5 6. Sono cinque giri.
+Poi `p` vale 7 e la domanda diventa falsa.
+
+Traccia passo passo:
+inizio `p = 2`, domanda vera, stampa 2, sale a 3
+domanda vera, stampa 3, sale a 4
+domanda vera, stampa 4, sale a 5
+domanda vera, stampa 5, sale a 6
+domanda vera, stampa 6, sale a 7
+domanda falsa, stop.
+
+Errore tipico: contare anche il giro in cui la
+domanda e gia falsa, oppure confondere valore
+stampato e valore dopo laumento.
+
+3. ESERCITAZIONE CON IF...ELSE
+------------------------------
+
+Il titolo richiama la scelta ma il corpo chiede
+il **valore finale di uscita** di un ciclo che
+conta senza stampare dentro.
+
+Esempio riscritto con dati diversi: invece di
+`n = 1` fino a 100 si usi `t = 10` fino a 60.
+Da `t = 10` con `while (t < 60)` e passo con
+**incremento unitario** `t++` non si stampa
+dentro. Alla fine si stampa `t` una sola volta.
+
+Traccia: si parte da 10, si sale di uno a ogni
+giro, ci si ferma quando si arriva a 60 perche
+la domanda non e piu vera. Uscita stampata: 60.
+
+Errore tipico: pensare che lultimo valore sia 59
+perche il ciclo si ferma prima, mentre la stampa
+avviene dopo luscita con il valore che ha rotto
+la condizione.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Ripeti finche vero, fermati al primo falso.
+- Corpo da una o piu righe, anche blocco.
+- Dentro serve un passo che avvicina alla fine.
+- Senza passo nasce il ciclo infinito.
+- Comandi solo in minuscolo.
+- Disegno con rombo per domanda e rettangolo per passo.
+- Conta i giri veri, non quello di uscita.
+- Stampa dentro mostra i passi, stampa dopo mostra la fine.
+- Ultimo valore e quello che rompe la domanda.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa ripete `while (piatti > 0)` con lava e togli dentro?
+a) Una sola volta · b) Finche restano piatti poi passa oltre · c) Mai · d) Allinfinito per forza
+
+2. Cosa manca se il corpo non cambia mai la domanda?
+a) Nulla · b) Le graffe · c) Lavanzamento verso il falso con rischio di ciclo infinito · d) La stampa
+
+3. Come si scrive il comando di ciclo in C?
+a) `While` con maiuscola · b) `while` in minuscolo · c) `WHILE` tutto grande · d) `WhiLe` misto
+
+4. Con `tot = 2` e `while (tot <= 90)` con `tot = 4 * tot` dove si esce?
+a) A 32 · b) A 90 · c) A 128 dopo 8 e 32 · d) Mai
+
+5. Con `p = 2` e `while (p < 7)` con stampa e aumento quanti giri?
+a) Quattro · b) Cinque con 2 3 4 5 6 · c) Sei · d) Uno solo
+
+6. Con `t = 10` e `while (t < 60)` con `t++` e stampa dopo cosa esce?
+a) 59 · b) 10 · c) 60 · d) 0
+
+Soluzioni ragionate
+
+1 — b. Test prima e passo che svuota, poi oltre. La a) ferma troppo presto, la c) non parte mai, la d) nega lavanzamento.
+
+2 — c. Senza passo verso il falso non si esce. La a) non vede il guasto, la b) parla di graffe, la d) parla di video.
+
+3 — b. Solo minuscolo vale come comando. La a) la c) e la d) usano maiuscole vietate.
+
+4 — c. Passi 2 8 32 128 con uscita oltre 90. La a) si ferma presto, la b) crede al limite esatto, la d) nega la fine.
+
+5 — b. Cinque test veri con cinque stampe. La a) copia un vecchio conto, la c) aggiunge il giro falso, la d) vede un solo giro.
+
+6 — c. Ultimo valore dopo luscita. La a) stampa il penultimo, la b) stampa linizio, la d) stampa zero.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

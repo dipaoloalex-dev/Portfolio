@@ -1,0 +1,194 @@
+[plain-text per Pages — da 35 - Esercizi con array.md]
+
+1. LANCIO DADI CON ARRAY
+-----------------------
+
+Esempio riscritto con altri dati:
+invece di dado a 6 con 60 milioni si
+usi dado a 8 con 40 milioni. Righe:
+`#include <stdio.h>`
+`#include <stdlib.h>`
+`#include <time.h>`
+`#define DIM 9`
+`#define TIRI 40000000`
+`int main(void)` con
+`unsigned int conti[DIM] = {0}` per
+azzerare tutto, poi
+`srand(time(NULL))` come seme nuovo,
+poi `for` lungo con **tiro con resto e scatto**
+`size_t faccia = 1 + rand() % 8` e
+`++conti[faccia]` dentro.
+
+Stampa con titoli e secondo `for` da
+1 a 8 con `%4d` e `%u` per faccia e
+conto. Uscita indicativa in righe di
+testo, diversa per seme e sistema:
+faccia conto
+1 circa 5000000
+2 circa 5000000
+3 circa 5000000
+4 circa 5000000
+5 circa 5000000
+6 circa 5000000
+7 circa 5000000
+8 circa 5000000.
+
+Si usa una **fila di nove per otto facce**
+e si lascia `conti[0]` inutilizzato.
+La faccia 1 va allindice 1, non allo 0.
+Vale la **risposta usata come indice**:
+`++conti[faccia]` con esito diretto come
+posto, senza scali strani. Il testo resta
+piu leggibile anche se una cella resta
+vuota. Vale il **chiaro prima del risparmio**:
+a volte si sacrifica una cella o qualche
+ciclo per una scrittura piu pulita.
+
+Errore tipico: usare `conti[0]` per la
+faccia 1 e sfasare tutti i conti di uno.
+
+2. STRINGHE CON ARRAY
+---------------------
+
+Una fila di `char` si avvia con una
+**frase fra doppi apici**. Esempio riscritto
+con altra parola: invece di `first` si
+usi `second`. Riga:
+`char parola[] = "second"`.
+La misura la trova il traduttore dalla
+lunghezza della frase.
+
+La frase `second` tiene sei segni piu
+un segno speciale di fine detto
+**segnale di fine stringa** con forma
+`'\0'`. La fila tiene quindi sette posti,
+non sei. Ogni scritta C chiude con quel
+segno. Serve **posto per testo piu fine**:
+la fila deve tenere segni piu uno per
+il tappo finale. La forma a pezzi con
+`{'s','e','c','o','n','d','\0'}` vale uguale
+ma resta piu pesante da scrivere.
+
+La scritta resta una fila di segni:
+ogni segno si tocca con quadre. Esempio
+riscritto: `parola[0]` vale `s` e
+`parola[4]` vale `n`. Si puo anche leggere
+da tastiera con `scanf` e `%s`. Esempio
+riscritto: invece di 20 posti si usino 16.
+Riga: `char testo[16]` per al massimo 15
+segni piu tappo. Poi `scanf("%s", testo)`.
+
+Errore tipico: dimenticare il posto per
+il tappo e tagliare lultimo segno utile.
+
+3. MANIPOLAZIONE DI STRINGHE CON ARRAY
+--------------------------------------
+
+La riga `scanf("%15s", testo)` legge da
+tastiera e mette in `testo`. Il nome della
+fila passa senza `&`, diverso dalle celle
+semplici con `scanf("%d", &num)`. Il `&`
+serve per dare il punto di memoria dove
+scrivere, ma il nome di fila vale gia come
+**indirizzo di inizio fila**: punta da solo
+al primo posto, quindi `&` non serve.
+
+La lettura prende segni fino a spazio,
+tab, a capo o fine file con **stop a spazi e fine**. La fila da 16
+tiene al massimo 15 segni piu tappo. Se
+arrivano 16 o piu segni scatta il
+**troppo pieno oltre la fine** con arresto
+o falla di sicurezza. Per questo si usa
+`%15s` e non `%s` libero: al massimo 15
+segni dentro e niente oltre la fine. Resta
+cura di chi scrive dare posto bastante a
+ogni scritta possibile. La `scanf` non
+controlla la misura e puo scrivere oltre.
+
+In uscita si usa `%s` con `printf` come
+**stampa fino al tappo finale**. La
+voce stampa fino al tappo senza guardare
+la misura. Esempio intero riscritto con
+altri dati: invece di 20 e `string literal`
+si usi 16 e `testo prova`. Righe:
+`#define DIM 16`
+`char dato[DIM]`
+`char fisso[] = "testo prova"`.
+Si chiede scritta fino a 15 segni, si legge
+con `%15s`, si stampano le due file, poi
+si stampano i segni uno a uno con
+`for (i = 0; i < DIM && dato[i] != '\0'; ++i)`
+e `printf("%c ", dato[i])`.
+
+Prova riscritta: utente scrive `Ciao mondo`,
+la lettura prende `Ciao`, la fissa resta
+`testo prova`, i segni escono come
+C i a o. Qui si leggono solo scritte senza
+spazi: lo spazio chiude la presa.
+
+Errore tipico: usare `%s` senza numero e
+lasciare entrare piu segni dei posti.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Faccia come indice diretto nel conto.
+- Una cella vuota per testo piu chiaro.
+- Seme nuovo con ora prima dei tiri.
+- Frase con doppi apici per avvio fila.
+- Sei segni piu tappo fanno sette posti.
+- Posto bastante per testo piu fine.
+- Quadre per singoli segni dentro fila.
+- Nome fila come indirizzo di inizio.
+- `%15s` per non oltrepassare la fine.
+- Spazio tab e a capo chiudono la presa.
+- `%s` stampa fino al tappo finale.
+- Solo scritte senza spazi in questo giro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche `conti` da 9 per dado a 8?
+a) Per caso · b) Per faccia come indice con zero vuoto · c) Per errore · d) Mai serve
+2. Cosa fa `++conti[faccia]` con 1 8?
+a) Nulla · b) Conta la faccia uscita al posto giusto · c) Azzera tutto · d) Toglie la fila
+3. Quanti posti per `second` con tappo?
+a) 6 · b) 7 con sei segni piu fine · c) 0 · d) Sempre 20
+4. Cosa vale il nome di fila in `scanf`?
+a) Nulla · b) Indirizzo di inizio senza `&` · c) Solo testo · d) Sempre `&`
+5. Perche `%15s` in fila da 16?
+a) Per stile · b) Per al massimo 15 piu tappo senza oltre · c) Per rallentare · d) Mai serve
+6. Cosa prende `scanf` da `Ciao mondo`?
+a) Tutto · b) Solo `Ciao` fino allo spazio · c) Nulla · d) Solo spazio
+
+Soluzioni ragionate
+
+1 — b. Otto facce agli indici 1 8 con zero libero. La a) parla di caso, la c) vede errore, la d) nega tutto.
+2 — b. Esito diretto come posto senza scali. La a) non fa nulla, la c) azzera tutto, la d) toglie tutto.
+3 — b. Sei segni piu tappo finale da contare. La a) scorda il tappo, la c) azzera tutto, la d) fissa 20.
+4 — b. Nome fila come punto di inizio scrittura. La a) non vale nulla, la c) vede testo, la d) chiede sempre `&`.
+5 — b. Tetto di presa con posto salvo per fine. La a) parla di stile, la c) rallenta tutto, la d) nega tutto.
+6 — b. Spazio come fine della presa con resto perso. La a) prende tutto, la c) non prende nulla, la d) prende spazio.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

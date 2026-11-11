@@ -1,0 +1,178 @@
+[plain-text per Pages — da 31 - Esercitazioni con classi di memoria.md]
+
+1. ESEMPIO: CAMPI DAZIONE
+------------------------
+
+Si prova un listato con tre casi
+insieme: **globale fuori da ogni voce**,
+**automatica nuova a ogni giro** e
+**statica che ricorda fra giri**.
+
+Esempio riscritto con altri dati:
+invece di `x` con 1 5 7 25 50 si usi
+`y` con 2 6 9 30 60. Globale
+`int y = 2` fuori. In `main` locale
+`int y = 6`. Dentro un blocco locale
+`int y = 9`. Uscite in righe di testo:
+esterno di main 6
+interno di main 9
+esterno di main 6.
+
+Poi sei chiamate in fila: auto, memo,
+larga, auto, memo, larga, con **stampe uguali per giri auto**.
+Alla fine
+ristampa del 6 di `main`. Le tre voci
+non prendono nulla e non rendono nulla,
+con `void` nei due sensi.
+
+La voce auto dichiara `int y = 30`
+ogni volta: stampa 30, sale a 31,
+ristampa 31 e al giro dopo riparte
+da 30. La voce memo dichiara
+`static int y = 60` una sola volta:
+stampa 60, sale a 61, al giro dopo
+entra a 61 ed esce a 62. La voce larga
+non dichiara nulla e tocca la globale:
+entra a 2 ed esce a 10 con `y *= 5`,
+al giro dopo entra a 10 ed esce a 50.
+
+Righe di testo per **uscita in righe semplici**:
+esterno di main 6
+interno di main 9
+esterno di main 6
+auto in entrata 30
+auto in uscita 31
+memo in entrata 60
+memo in uscita 61
+larga in entrata 2
+larga in uscita 10
+auto in entrata 30
+auto in uscita 31
+memo in entrata 61
+memo in uscita 62
+larga in entrata 10
+larga in uscita 50
+locale di main 6.
+
+Errore tipico: credere che la auto
+tenga il conto fra i giri o che la
+larga non cambi mai la globale.
+
+2. CAMPO DAZIONE GLOBALE
+------------------------
+
+La globale nasce fuori e vale 2.
+Resta coperta ovunque nasce una
+locale con lo stesso nome. In `main`
+la locale 6 copre la globale 2 e la
+stampa mostra 6 esterno. Nel **blocco dentro che copre fuori**
+la locale 9 copre la 6 e la
+stampa mostra 9 interno.
+
+La cella da 9 muore alluscita dal
+blocco interno. Dopo la graffa torna
+visibile la 6 del blocco esterno e
+la ristampa mostra 6 esterno. Il giro
+6 poi 9 poi 6 prova la **copertura del nome esterno**
+e il ritorno dopo fine blocco.
+
+Errore tipico: usare fuori il nome
+nato dentro dopo la graffa di chiusura.
+
+3. CAMPO DAZIONE NELLE FUNZIONI
+-------------------------------
+
+La voce auto riparte sempre: stampa
+ingresso, sale di uno, stampa uscita,
+e al giro dopo dimentica tutto. Vale
+la **ripartenza da capo ogni volta**
+con 30 poi 31 per due volte uguali.
+
+La voce memo tiene il passo: la cella
+lunga nasce una volta prima del via.
+Stampa ingresso, sale di uno, stampa
+uscita, e al giro dopo ritrova il punto
+lasciato. Vale la **memoria fra chiamate vicine**
+con 60 poi 61 e dopo 61 poi 62.
+
+La voce larga lavora sulla globale:
+senza locali propri, ogni `y` dentro
+e la globale fuori. Stampa ingresso,
+moltiplica per 5, stampa uscita, e al
+giro dopo ritrova il prodotto lasciato.
+Vale il **prodotto tenuto fra giri** con
+2 poi 10 e dopo 10 poi 50.
+
+Alla fine `main` ristampa la sua locale
+6 per mostrare che nessuno la tocca:
+ogni voce guarda altrove, in campi
+diversi dal suo. Vale la **separazione dei campi diversi**
+fra auto, memo, larga e `main`.
+
+Errore tipico: pensare che larga cambi
+la locale di `main` mentre tocca solo
+la globale fuori da ogni voce.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Globale fuori per tutta la corsa.
+- Locale dentro copre quella fuori.
+- Blocco dentro copre blocco fuori.
+- Uscita dal blocco toglie la locale.
+- Auto riparte uguale a ogni giro.
+- Memo tiene il conto fra i giri.
+- Larga senza locali tocca la globale.
+- Prodotto globale resta per il dopo.
+- Ogni voce guarda il proprio campo.
+- `main` finale prova la separazione.
+- Nomi uguali non uniscono le celle.
+- Stesse stampe per giri auto uguali.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa mostra `main` con 6 fuori e 9 dentro?
+a) Solo 9 · b) 6 poi 9 poi di nuovo 6 · c) Solo 2 · d) Nulla
+2. Cosa fa auto da 30 due volte?
+a) Sale sempre · b) 30 poi 31 per due volte uguali · c) Resta 0 · d) Non parte
+3. Cosa fa memo da 60 due volte?
+a) Come auto · b) 60 poi 61 e dopo 61 poi 62 · c) Sempre 60 · d) Nulla
+4. Cosa fa larga da 2 con per 5 due volte?
+a) Resta 2 · b) 2 poi 10 e dopo 10 poi 50 · c) Va a 0 · d) Non tocca nulla
+5. Perche `main` resta a 6 alla fine?
+a) Per caso · b) Per campi diversi senza tocchi incrociati · c) Per errore · d) Mai resta
+6. Cosa copre cosa con stessi nomi?
+a) Nulla · b) Dentro copre fuori fino a fine blocco · c) Fuori copre dentro · d) Tutto insieme
+
+Soluzioni ragionate
+
+1 — b. Esterno poi interno poi esterno di nuovo. La a) vede solo dentro, la c) vede la globale, la d) non mostra nulla.
+2 — b. Ripartenza uguale a ogni ingresso. La a) sale senza fine, la c) azzera tutto, la d) non parte mai.
+3 — b. Memoria lunga fra giri vicini. La a) copia la auto, la c) ferma tutto, la d) non fa nulla.
+4 — b. Prodotto globale tenuto per il dopo. La a) resta ferma, la c) azzera tutto, la d) non tocca nulla.
+5 — b. Separazione dei campi senza incroci. La a) parla di caso, la c) parla di errore, la d) nega il fatto.
+6 — b. Copertura interna fino a graffa destra. La a) non copre nulla, la c) inverte il verso, la d) unisce tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

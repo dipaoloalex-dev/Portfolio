@@ -1,0 +1,172 @@
+[plain-text per Pages — da 9 - Istruzione di selezione if else.md]
+
+1. ISTRUZIONE IF...ELSE
+-----------------------
+
+Il solo `if` fa un passo se vero e salta se falso.
+La **selezione doppia** con `if` piu `else` fa
+un passo se vero e un altro passo se falso.
+Dopo luna o laltra via si va alla riga dopo.
+
+Esempio riscritto con dati diversi: invece di
+soglia 18 con Passed e Failed si usi soglia 24
+con Ok e No. Se `media >= 24` stampa `Ok`,
+senno stampa `No`. Poi si prosegue oltre in
+entrambi i casi.
+
+Anche la parte dopo `else` va rientrata. Serve
+**indentazione uniforme** con stessi spazi a
+ogni livello. Il disegno usa solo tondini e
+frecce piu rettangoli per fare e un rombo per
+decidere fra le due vie.
+
+Errore tipico: rientrare solo il ramo `if` e
+lasciare piatto il ramo `else`, cosi la doppia
+via non si legge piu.
+
+2. OPERATORE CONDIZIONALE ?:
+-----------------------------
+
+Il segno `?:` e detto **operatore ternario**
+perche lega tre dati. Insieme ai tre dati forma
+una **espressione condizionale** che vale un
+risultato invece di comandare un salto.
+
+Primo dato domanda, secondo dato valore se vera,
+terzo dato valore se falsa. Esempio riscritto:
+`puts(punti >= 60 ? "Ok" : "No")`. Se domanda
+vera vale la prima scritta, senno la seconda.
+Stesso effetto della doppia scelta ma in forma
+di valore da passare a `puts`.
+
+I due risultati possono anche essere due chiamate,
+come domanda con `puts` da un lato e `puts`
+dallaltro. Torna utile dove `if` non puo stare,
+cioe dentro conti o dentro argomenti come in
+`printf`.
+
+Serve **omogeneita dei tipi** fra secondo e terzo
+dato. Tipi diversi nello stesso `?:` creano
+conversioni strane e guasti difficili da vedere.
+
+Errore tipico: mescolare testo e numero nei due
+rami e scoprire solo in corsa un valore assurdo.
+
+3. ISTRUZIONI ANNIDATE IF...ELSE
+--------------------------------
+
+Una **selezione annidata** mette una scelta
+dentro laltra per coprire molti casi in fila.
+Si entra solo nella prima via vera e si saltano
+le altre, anche se le domande dopo sarebbero
+vere da sole.
+
+Esempio riscritto con fasce diverse: invece di
+27 24 21 18 con A B C D F si usino 28 25 22 19
+con Eccellente Bravo Ok Debito Stop.
+Se `punteggio >= 28` stampa primo livello,
+senno prova `>= 25`, senno `>= 22`, senno
+`>= 19`, senno ultimo livello. Con 29 scattano
+tutte le domande ma stampa solo la prima.
+
+Meglio la **forma else if** in colonna invece
+della scala tutta spostata a destra. Per il
+traduttore sono uguali, ma la colonna lascia
+spazio e resta leggibile senza spezzare righe.
+
+Un `if` vuole una sola riga nel corpo. Per piu
+righe serve un **istruzione composta** fra `{`
+e `}` detta anche blocco. Il blocco puo stare
+dovunque starebbe una riga sola. Esiste anche
+**istruzione vuota** fatta dal solo `;`.
+
+Esempio riscritto: con punteggio basso stampa
+due righe in `else`, avviso e invito al recupero.
+Senza graffe la seconda riga uscirebbe dal ramo
+e girerebbe sempre, anche con voto alto.
+
+Un guasto di forma si vede in compilazione.
+Un **errore logico** gira ma sbaglia il risultato.
+Se blocca tutto e irreversibile, se prosegue con
+numeri errati e non irreversibile.
+
+Serve cura con l**else sospeso** e con il
+**punto e virgola intruso** dopo `)` della
+domanda. Nel singolo crea un salto logico, nel
+doppio crea anche un guasto di forma. Conviene
+scrivere prima le graffe e poi riempirle.
+
+Errore tipico: dimenticare le graffe nel ramo
+con due stampe e far girare la seconda sempre.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `if` da solo salta, `if` piu `else` sceglie fra due vie.
+- Rientri uguali per `if` ed `else` a ogni livello.
+- `?:` da un valore con domanda vero e falso.
+- Stesso tipo nei due rami del `?:`.
+- Annidare per fasce, entra solo la prima vera.
+- Meglio `else if` in colonna che scala a destra.
+- Graffe per piu righe, blocco come riga sola.
+- `;` da solo vale istruzione vuota.
+- Niente `;` dopo `)` della domanda.
+- Graffe sempre per evitare else sospeso.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa la doppia scelta con soglia 24?
+a) Salta sempre tutto · b) Stampa `Ok` se vera e `No` se falsa poi prosegue · c) Ripete due volte · d) Si ferma prima della stampa
+
+2. Quando conviene `?:` al posto di `if` piu `else`?
+a) Mai · b) Dentro un valore o un argomento dove serve un risultato · c) Solo per saltare · d) Solo senza domande
+
+3. Con fasce 28 25 22 19 e punteggio 29 cosa stampa?
+a) Tutti i livelli · b) Solo il primo livello vero · c) Solo lultimo · d) Nulla
+
+4. Perche la forma `else if` in colonna e preferita?
+a) Cambia il senso · b) Evita scala a destra e righe spezzate · c) Toglie le domande · d) Aggiunge casi da sola
+
+5. Cosa succede senza graffe in `else` con due stampe?
+a) Tutto resta dentro · b) La seconda stampa esce e gira sempre · c) Nulla gira piu · d) Il programma non parte mai
+
+6. Cosa provoca `;` dopo `)` della domanda?
+a) Nulla di male · b) Svuota la scelta e crea guasto logico o di forma · c) Chiude tutto bene · d) Aggiunge un ramo `else`
+
+Soluzioni ragionate
+
+1 — b. Due vie con uscita comune dopo. La a) salta tutto, la c) duplica senza motivo, la d) blocca prima.
+
+2 — b. Valore dentro conti o chiamate. La a) lo nega, la c) parla di salti, la d) toglie la domanda.
+
+3 — b. Entra la prima vera e salta il resto. La a) stampa tutto, la c) prende lultima, la d) non stampa nulla.
+
+4 — b. Stesso senso ma piu spazio e lettura. La a) dice che cambia, la c) toglie domande, la d) aggiunge casi.
+
+5 — b. Solo la prima resta nel ramo. La a) tiene tutto dentro, la c) ferma tutto, la d) blocca lavvio.
+
+6 — b. Corpo svuotato con effetti diversi fra singolo e doppio. La a) non vede il guasto, la c) lo approva, la d) inventa un ramo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

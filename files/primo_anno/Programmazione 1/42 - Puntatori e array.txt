@@ -1,0 +1,196 @@
+[plain-text per Pages — da 42 - Puntatori e array.md]
+
+1. RELAZIONI TRA PUNTATORI E ARRAY
+----------------------------------
+
+File e punti in C si scambiano spesso
+i ruoli senza problemi. Il nome solo
+vale come punto fisso verso la prima
+cella. Con un punto mobile si fa tutto
+cio che si fa con indici. Vale il
+**nome come punto fisso**.
+
+Esempio riscritto con altri nomi:
+invece di `b[5]` e `bPtr` si usi
+`int m[5]` e `int *mPtr`. Riga
+`mPtr = m` per puntare al via, uguale
+a `mPtr = &m[0]`.
+
+La cella m[2] si legge anche con
+`*(mPtr + 2)`. Il 2 e lo scarto dal
+via: con punto al via coincide con
+lindice. Servono tonde perche `*`
+lega piu di `+`. Senza tonde si somma
+al dato e non ci si sposta. Vale lo
+**scarto dal via fra tonde**.
+
+Anche lindirizzo `&m[2]` si scrive
+`mPtr + 2`. Lo stesso vale con il nome
+come punto: `*(m + 2)` legge m[2]
+senza muovere `m` dal via. Vale il
+**nome usato come punto**.
+
+Un punto si puo usare con quadre come
+una fila. Se `mPtr` vale `m`, la riga
+`mPtr[1]` legge m[1]. Vale la
+**quadra anche sul punto**.
+
+Il nome non si sposta mai: `m += 2`
+sbaglia perche tocca un punto fisso.
+Da errore a compila. Vale il
+**nome fisso non spostabile**.
+
+Errore tipico: scordare le tonde in
+`*(p + k)` o provare a muovere il nome
+della fila con conti sui punti.
+
+2. DIMOSTRARE INDICIZZAZIONE E OFFSET CON UN PUNTATORE
+------------------------------------------------------
+
+Programma riscritto con altri dati:
+invece di 10 20 30 40 si usi
+7 14 21 28. Righe:
+`#define LEN 4`
+`int m[] = {7, 14, 21, 28}`
+`int *mPtr = m`.
+
+Quattro modi per le stesse stampe.
+Primo con indici di fila in giro `i`:
+`m[i]` con `i` da 0 a sotto `LEN`.
+Secondo con nome e scarto in giro
+`offset`: `*(m + offset)`.
+Terzo con punto e quadre in giro `i`:
+`mPtr[i]`. Quarto con punto e scarto
+in giro `offset`: `*(mPtr + offset)`.
+Vale il **quattro modi per stesse celle**.
+
+Uscita in righe di testo riscritte:
+m[0] = 7
+m[1] = 14
+m[2] = 21
+m[3] = 28
+*(m + 0) = 7
+*(m + 1) = 14
+*(m + 2) = 21
+*(m + 3) = 28
+mPtr[0] = 7
+mPtr[1] = 14
+mPtr[2] = 21
+mPtr[3] = 28
+*(mPtr + 0) = 7
+*(mPtr + 1) = 14
+*(mPtr + 2) = 21
+*(mPtr + 3) = 28.
+
+Errore tipico: mescolare i giri o
+scrivere male i segnaposto di stampa
+fra indici e scarti.
+
+3. COPIARE STRINGHE CON ARRAY E PUNTATORI
+-----------------------------------------
+
+Due voci fanno lo stesso lavoro in due
+modi: copia con quadre e copia con
+punti. I prototipi sembrano uguali ma
+dentro cambiano. Vale il
+**doppia via per stessa copia**.
+
+Esempio riscritto con altri dati:
+invece di 10 con Hello e Good Bye si usi
+12 con Mare e Sole alto. Righe:
+`#define DIM 12`
+`char txt1[DIM]` con `char *txt2 = "Mare"`
+poi `copia1(txt1, txt2)` e stampa.
+`char txt3[DIM]` con `char txt4[] = "Sole alto"`
+poi `copia2(txt3, txt4)` e stampa.
+Uscita in righe:
+txt1 = Mare
+txt3 = Sole alto.
+
+Prima voce con quadre e conta `i`:
+`for (size_t i = 0; (d1[i] = d2[i]) != 0; ++i)`
+con corpo vuoto. Copia un segno da
+seconda a prima e si ferma al tappo
+preso dalla seconda. Vale la
+**copia con conta e tappo**.
+
+Seconda voce con punti senza `i`:
+`for (; (*d1 = *d2) != 0; ++d1, ++d2)`
+con corpo vuoto. Scioglie, copia, poi
+avanza entrambi al segno dopo, fino al
+tappo preso dalla seconda. Vale la
+**copia con punti che avanzano**.
+
+Servono tre cure: prima fila larga per
+tappo incluso, mai scrivere fuori fila,
+seconda vista sola in lettura con
+`const` per minimo accesso. Vale la
+**seconda in sola lettura**.
+
+Errore tipico: prima fila troppo corta
+senza posto per tappo o togliere
+`const` e toccare la sorgente per sbaglio.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nome solo come punto verso prima cella.
+- Punto mobile per ogni uso con indici.
+- Scarto dal via con tonde obbligate.
+- Indirizzo di cella come punto piu scarto.
+- Nome come punto senza muovere il nome.
+- Quadre valide anche sopra un punto.
+- Nome fisso contro conti che lo spostano.
+- Quattro modi per stesse quattro celle.
+- Copia con quadre e conta fino a tappo.
+- Copia con punti che avanzano insieme.
+- Prima fila larga con tappo incluso.
+- Seconda in sola lettura con `const`.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa vale `mPtr = m` con `m[5]`?
+a) Nulla · b) Punto al via come `&m[0]` · c) Copia fila · d) Toglie fila
+2. Come si legge m[2] con scarto?
+a) Con `mPtr + 2` solo · b) Con `*(mPtr + 2)` fra tonde · c) Mai · d) Senza punti
+3. Cosa fa `m += 2` sul nome?
+a) Va avanti · b) Errore a compila per nome fisso · c) Nulla di male · d) Copia tutto
+4. Quali sono i quattro modi di stampa?
+a) Uno solo · b) Indici, nome piu scarto, punto piu quadre, punto piu scarto · c) Mai quattro · d) Solo punti
+5. Come copia `copia1` con quadre?
+a) Senza ciclo · b) Con conta `i` fino a tappo copiato · c) Mai copia · d) Solo con punti
+6. Come copia `copia2` con punti?
+a) Senza ciclo · b) Con `*d1 = *d2` e punti che avanzano · c) Mai copia · d) Solo con quadre
+
+Soluzioni ragionate
+
+1 — b. Nome come punto fisso al via. La a) non fa nulla, la c) copia tutto, la d) toglie tutto.
+2 — b. Scarto fra tonde per via di lega. La a) da indirizzo, la c) nega tutto, la d) toglie i punti.
+3 — b. Fisso non spostabile dal conto. La a) va avanti, la c) vede nulla, la d) copia tutto.
+4 — b. Quattro notazioni per stesse celle. La a) vede uno solo, la c) nega tutto, la d) toglie gli indici.
+5 — b. Conta e tappo con corpo vuoto. La a) toglie il ciclo, la c) non copia, la d) passa ai punti.
+6 — b. Scioglie copia avanza fino a tappo. La a) toglie il ciclo, la c) non copia, la d) passa alle quadre.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

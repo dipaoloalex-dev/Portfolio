@@ -1,0 +1,173 @@
+[plain-text per Pages — da 12 - Iterazioni controllate da sentinella.md]
+
+1. ITERAZIONI CONTROLLATE DA SENTINELLA
+---------------------------------------
+
+Se il numero di dati non si sa prima, non si
+puo contare fino a un limite fisso. Serve un
+segnale di fine dentro il flusso di ingresso.
+
+Un **valore sentinella** e un dato speciale che
+dice stop e non entra nei conti. Si leggono dati
+validi uno alla volta e quando arriva il segnale
+si calcola e si stampa il risultato.
+
+Si parla di **iterazione indefinita** perche i
+giri non sono noti prima di partire. Il segnale
+deve essere impossibile come dato valido.
+
+Esempio riscritto con dati diversi: invece di
+voti con -1 si usino incassi con 0. Sequenza
+68 83 77 91 72 e poi 0. Lo 0 chiude e non entra
+nella media. Totale 391 su 5 pezzi, media 78.
+
+Errore tipico: scegliere un segnale che puo
+essere anche un dato buono, cosi si taglia un
+valore vero o si conta il segnale per sbaglio.
+
+2. AFFINAMENTO GRADUALE TOP-DOWN
+--------------------------------
+
+L**affinamento top-down** parte dallalto e
+scende nei dettagli a passi. Ogni passo resta
+una descrizione completa, cambia solo quanto
+e precisa.
+
+Il **livello top** e una sola frase con lo scopo:
+trova la media degli incassi di giornata.
+Troppo povero per scrivere in C, serve aprire.
+
+Il **primo affinamento** spezza in tre compiti
+in fila con sola sequenza:
+prepara le variabili
+leggi somma e conta gli incassi
+calcola e mostra la media.
+
+Il **secondo affinamento** mette i nomi veri.
+Servono somma corrente, quanti pezzi, singolo
+dato in ingresso e media finale. Si azzerano
+solo somma e contatore. Media e singolo dato
+arrivano dopo da conto e da tastiera.
+
+La lettura usa un ciclo con segnale. Si legge
+il primo dato che puo gia essere il segnale.
+Finche non e segnale si aggiunge alla somma,
+si sale di uno nel conto e si legge il prossimo.
+Nello pseudocodice basta il rientro sotto il
+`while`, senza graffe.
+
+La chiusura guarda se il conto e diverso da
+zero. Se si fa media come somma su conto e si
+stampa. Senno si stampa nessun dato inserito.
+Serve la **guardia contro zero** prima di
+dividere, perche dividere per zero blocca tutto.
+
+Il metodo segue tre fasi. La **fase di inizializzazione**
+azzera le variabili. La **fase di elaborazione**
+legge e aggiorna. La **fase di chiusura**
+calcola e mostra. Si finisce quando il dettaglio
+basta per passare diretto in C.
+
+Errore tipico: dividere senza guardare il conto
+a zero, oppure rientrare male i passi del ciclo.
+
+3. PROGRAMMA IN C PER CONTROLLO CON SENTINELLA
+----------------------------------------------
+
+Il listato lavora con interi ma la media chiede
+decimali. In forma semplice si usa la **media intera**
+con divisione fra interi e stampa senza decimali.
+
+Traccia con nomi diversi: `somma` per il totale,
+`quanti` per il conto, `valore` per il dato,
+`media` per il risultato. Prima si azzerano somma
+e conto. Poi invito leggi il primo valore. Poi
+`while (valore != 0)` con dentro somma conto
+invito e lettura. Poi `if (quanti != 0)` con
+media come `somma / quanti` e stampa, senno
+messaggio di nessun dato.
+
+Esempio riscritto di giro: inviti con 68 83 77
+91 72 e poi 0. Media stampata 78. Giro con solo
+0 stampa nessun dato inserito.
+
+Serve l**istruzione composta nel ciclo** con
+graffe intorno alle quattro righe interne. Senza
+graffe resta dentro solo la prima e le altre tre
+escono. Lettura e conto fuori dal giro fermano
+il segnale e nasce un ciclo senza fine se il
+primo dato non e segnale.
+
+Errore tipico: lasciare tre righe fuori dalle
+graffe e non far avanzare mai la lettura dentro.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Senza numero noto si chiude con segnale fuori dai conti.
+- Segnale mai uguale a un dato valido.
+- Dallalto al dettaglio con passi completi.
+- Solo somma e conto partono da zero.
+- Prima lettura prima del ciclo, poi dentro fino al segnale.
+- Rientro per il corpo in pseudocodice, graffe in C.
+- Mai dividere con conto a zero.
+- Tre fasi: prepara elabora e chiudi.
+- Graffe su tutte le righe del ciclo.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando serve un segnale di fine?
+a) Sempre anche con numero noto · b) Quando i pezzi non sono noti prima · c) Mai nei cicli · d) Solo senza media
+
+2. Quale segnale va bene per incassi positivi con 0 libero?
+a) 68 come dato vero · b) 0 fuori dai dati validi · c) Un valore valido a caso · d) Nessun segnale
+
+3. Cosa fa il primo affinamento?
+a) Scrive il C finale · b) Divide lo scopo in prepara elabora e chiudi in fila · c) Toglie la sequenza · d) Salta i dettagli per sempre
+
+4. Quali variabili partono da zero?
+a) Tutte e quattro · b) Solo media e singolo dato · c) Solo somma e conto · d) Nessuna
+
+5. Perche serve la guardia prima della divisione?
+a) Per bellezza · b) Per evitare divisione per zero con blocco · c) Per saltare la media · d) Per contare di piu
+
+6. Cosa succede senza graffe sulle quattro righe del ciclo?
+a) Resta tutto dentro · b) Solo la prima resta dentro e le altre escono con possibile ciclo senza fine · c) Il programma finisce prima · d) La media migliora
+
+Soluzioni ragionate
+
+1 — b. Solo con giri ignoti serve stop interno. La a) lo usa anche col noto, la c) lo nega, la d) lo lega alla media.
+
+2 — b. Fuori dai validi e non contato. La a) prende un dato vero, la c) confonde valido e stop, la d) non chiude.
+
+3 — b. Tre compiti in sequenza. La a) anticipa il codice, la c) toglie lordine, la d) ferma il dettaglio.
+
+4 — c. Solo accumulatori iniziali. La a) azzera anche risultati futuri, la b) inverte la scelta, la d) non prepara nulla.
+
+5 — b. Conto zero uguale arresto. La a) parla di stile, la c) salta il conto, la d) aumenta i giri.
+
+6 — b. Una sola riga nel ciclo senza graffe. La a) tiene tutto dentro, la c) anticipa la fine, la d) migliora senza motivo.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

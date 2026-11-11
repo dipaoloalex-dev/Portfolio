@@ -1,0 +1,207 @@
+[plain-text per Pages — da 2 - Sviluppo, compilazione ed esecuzione.md]
+
+1. AMBIENTI DI SVILUPPO
+----------------------
+
+La precisione richiesta dal C rende utile un buon
+**ambiente di sviluppo**: produttivita e qualita
+del codice cambiano in modo sensibile. Se ne
+considerano tre esempi diffusi.
+
+Il primo e **Eclipse CDT**, **IDE multipiattaforma**
+e multilinguaggio, che raccoglie in una sola
+interfaccia tutti gli strumenti essenziali.
+
+Esempio riscritto: invece di ricordare sigle, si
+pensi a scrivere un piccolo programma di prova in
+ununica finestra con correzione, compilazione ed
+esecuzione senza cambiare strumento.
+
+Il secondo e **Visual Studio**, al meglio con
+librerie grafiche e interfacce Windows. La forma
+completa e a pagamento, ma esiste una edizione
+**Express** gratuita.
+
+Il terzo e **Code Blocks**, **IDE open source** storico per C e
+C++, amato da appassionati e professionisti per i
+molti wizard ed estensioni di terzi. Interfaccia
+un po datata ma ancora sorvegliata con interesse.
+
+Errore tipico: scrivere tutto nel blocco note e
+perdersi fra salvataggi, percorsi e comandi quando
+basterebbe un ambiente integrato.
+
+2. FASI DI COMPILAZIONE
+-----------------------
+
+Il **preprocessore** elabora direttive come
+`#include` e `#define` e modifica il sorgente.
+Il **compilatore** traduce in macchina con
+ottimizzazione di velocita o dimensione oppure
+senza ottimizzazione per il debug. Il **linker**
+fonde in un solo eseguibile gli oggetti da
+sorgenti diversi e le librerie di ingresso-uscita,
+matematiche, di rete e simili.
+
+Il compilatore distingue **Error** sintattici che
+bloccano leseguibile e **Warning** non sintattici
+che lasciano nascere leseguibile ma avvisano di
+un problema probabile risolto con regole generiche
+che potrebbero non essere giuste. Un codice pulito
+ha zero errori e zero warning.
+
+Esempio riscritto con caso diverso: un progetto
+con due sorgenti e una libreria di calcolo. Il
+primo passo espande le inclusioni, il secondo crea
+due oggetti, il terzo li unisce con la libreria.
+
+Errore tipico: trascurare un warning perche tanto
+compila. Spesso e li il bug logico futuro.
+
+3. COMPILAZIONE ED ESECUZIONE
+-----------------------------
+
+Anche un semplice editor basta per scrivere, ma
+il file va salvato con estensione `.c` come
+`prova.c`. Poi serve compilare.
+
+La catena e: controllo del sorgente da parte del
+preprocessore che toglie commenti, legge le righe
+con `#` e controlla errori; sorgente pulito ed
+espanso tradotto in assembly; **assembler** che
+crea loggetto in `.o` o `.obj`; **link editor**
+che collega oggetti e dipendenze e crea
+leseguibile.
+
+Questi passi trovano bene gli errori di sintassi,
+mai quelli logici come un ciclo infinito, anche se
+spesso i warning indicano punti strani da guardare.
+Per la logica serve il **debugger** con **breakpoint**
+e punti di osservazione.
+
+Esempio riscritto: invece di `main.c` e cartella
+originale, si usi `prova.c` in una cartella di
+lavoro personale. Stessi comandi, nomi diversi.
+
+Con un ambiente integrato basta Compila o Esegui
+e il risultato appare a video. Da riga di comando
+con `gcc` bisogna compilare dalla shell e poi
+lanciare leseguibile, che di base si chiama
+`a.out` oppure prende il nome del sorgente con
+`.exe` su Windows.
+
+Errore tipico: credere che compilato significhi
+corretto. La sintassi passa, la logica va provata
+col debugger.
+
+4. INSTALLAZIONE ED USO DI GCC
+------------------------------
+
+Il **compilatore GCC** multi-target nasce nel
+progetto libero GNU ed e incluso nelle principali
+distribuzioni Linux, mentre su Mac arriva con gli
+strumenti a riga di comando e lambiente di sviluppo
+ufficiale.
+
+Su Windows con **MinGW** si suggerisce: scaricare
+larchivio, estrarre la cartella nella radice
+come `C:\MinGW` e aggiungere `C:\MinGW\bin`
+alla **variabile PATH**, che elenca dove il sistema
+cerca gli eseguibili. Poi Pannello di controllo,
+Sistema, Avanzate, Variabili di ambiente, Modifica
+di PATH con aggiunta in fondo e OK.
+
+Esempio riscritto: invece dei percorsi originali,
+si immagini una cartella di lavoro diversa con lo
+stesso schema radice piu cartella piu bin.
+
+Su Linux si usano i **gestori di pacchetti** con
+installazione e aggiornamento automatici, senza
+compilare a mano. Su Mac si installano gli strumenti
+a riga di comando dal disco o dal sito sviluppatori
+e si segue la guida con doppio clic sul pacchetto.
+
+Per compilare in Linux si entra nella cartella con
+`cd percorso` poi `gcc prova.c -o Saluto` e si
+avvia con `./Saluto`. Per dettagli si usa
+`gcc -Wall -o registro prova.c` e si legge con
+`cat registro`. Per piu sorgenti
+`gcc -o uscita file1.c file2.c` e per soli oggetti
+`gcc -c file1.c file2.c`.
+
+Su Windows si apre il prompt come amministratore,
+si entra con `cd cartella` poi
+`gcc saluto.c -o saluto.exe` correggendo ogni
+errore, e si avvia scrivendo `saluto.exe`.
+
+Errore tipico: dimenticare il PATH, lanciare da
+cartella sbagliata o confondere `-o` con `-c`.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Un buon IDE alza produttivita e qualita in C.
+- Ordine: preprocessore, compilatore, assembler, linker.
+- Error blocca, Warning avvisa ma va azzerato.
+- File `.c`, catena fino a `.o` o `.obj` poi eseguibile.
+- Sintassi trovata in automatico, logica solo col debugger.
+- PATH dice dove cercare gli eseguibili.
+- Con gcc prima compila con `-o` o `-c`, poi avvia con nome o percorso.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche conviene un IDE per il C?
+a) Perche elimina la compilazione · b) Perche precisione e complessita premiano strumenti integrati · c) Perche vieta i warning · d) Perche scrive il codice da solo
+
+2. Cosa fa il linker in un progetto con due oggetti e una libreria?
+a) Toglie i commenti · b) Traduce in assembly · c) Fonde oggetti e librerie in un eseguibile · d) Avvia il debugger
+
+3. Hai zero Error e due Warning. Cosa fai?
+a) Ignori tutto · b) Correggi comunque, il codice pulito vuole zero warning · c) Cancelli gli oggetti · d) Cambi IDE
+
+4. Quale sequenza di file e corretta?
+a) `.c` poi `.o` poi eseguibile · b) `.exe` poi `.c` poi `.o` · c) Solo `.c` senza passi · d) Solo `.o` senza sorgente
+
+5. A cosa serve il debugger con breakpoint?
+a) A tradurre in macchina · b) A trovare errori logici che la catena non vede · c) A installare gcc · d) A modificare il PATH
+
+6. Su Linux compili `prova.c` in `Saluto` e lo avvii. Quali comandi usi?
+a) `cd percorso` poi `gcc prova.c -o Saluto` poi `./Saluto` · b) Solo `./Saluto` senza compilare · c) `gcc -c` e basta · d) `cat registro` per avviare
+
+Soluzioni ragionate
+
+1 — b. Strumenti integrati aiutano con precisione e complessita. La a) nega la catena, la c) promette troppo, la d) esagera.
+
+2 — c. Unisce oggetti e librerie. La a) e il preprocessore, la b) e il compilatore, la d) e fase successiva.
+
+3 — b. Anche i warning si azzerano. La a) li sottovaluta, la c) e inutile, la d) non risolve.
+
+4 — a. Sorgente, oggetto, eseguibile. Le altre invertono o saltano passi.
+
+5 — b. Logica e cicli infiniti sfuggono alla traduzione. La a) e la compilazione, c) e d) sono installazione.
+
+6 — a. Entra, compila con `-o`, avvia con percorso. La b) salta la creazione, la c) fa solo oggetti, la d) legge un registro.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

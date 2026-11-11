@@ -1,0 +1,189 @@
+[plain-text per Pages — da 27 - Stack e record di attivazione.md]
+
+1. STACK
+--------
+
+Per capire le chiamate serve una
+raccolta ordinata di dati legati
+fra loro, detta pila o stack.
+Pensa a una **pila di piatti in cima**:
+si appoggia sopra e si prende da
+sopra. Mettere sopra si chiama `push`,
+togliere da sopra si chiama `pop`.
+
+Le pile seguono la regola del
+**ultimo dentro primo fuori** detta
+`LIFO`: cio che entra per ultimo
+esce per primo. Solo la cima si
+tocca di volta in volta.
+
+Dietro le quinte gira la **pila di esecuzione nascosta**
+delle chiamate. Regge andata e
+ritorno fra funzioni. Regge anche
+nascita, tenuta e fine delle
+**variabili automatiche temporanee**
+di ogni funzione chiamata.
+
+La regola `LIFO` torna utile proprio
+al ritorno: chi ha chiamato per
+ultimo riprende per primo il filo.
+Una funzione puo chiamarne altre,
+quelle altre ancora, tutto prima che
+ognuna renda il controllo a chi
+lha chiamata. Alla fine ognuna deve
+tornare indietro al punto di invio.
+
+Serve un **indirizzo per tornare indietro**
+per ogni salto. La pila delle chiamate
+e lo strumento giusto per tenerli
+in ordine. A ogni nuova chiamata si
+fa `push` e nasce in cima una
+**scheda di chiamata in cima** detta
+record di attivazione. Dentro ce
+lindirizzo per tornare alla chiamante.
+
+Se la chiamata torna senza aprire
+altre chiamate nel mezzo, si fa `pop`:
+la scheda esce dalla cima e il filo
+passa allindirizzo scritto dentro.
+
+Ogni chiamata trova lassenziale per
+il ritorno sempre in cima. Se dentro
+parte unaltra chiamata, la nuova
+scheda sale sopra e il suo indirizzo
+diventa il primo utile per il passo
+dopo.
+
+Le schede tengono anche lo **spazio per locali nella scheda**:
+ingressi e celle automatiche della
+funzione in corso. Le automatiche
+devono vivere mentre la funzione
+gira, anche se nel mezzo partono
+altre chiamate. Al ritorno invece
+devono sparire dal programma.
+
+La scheda vive solo finche serve,
+con **vita legata alla chiamata**.
+Al `pop` la scheda esce e le sue
+locali non esistono piu per nessuno.
+
+La memoria resta limitata, quindi
+solo un certo numero di schede sta
+nella pila. Se le chiamate superano
+i posti liberi scatta il **troppo pieno della pila**
+detto `stack overflow`, con errore
+senza recupero.
+
+Esempio riscritto con altri dati:
+invece di quadrato con 10 e 100 si
+usi cubo con 7 e 343. Righe:
+`#include <stdio.h>`
+`int cube(int)` come annuncio
+`int main()` con `int m = 7` locale
+e `printf("%d cubed: %d", m, cube(m))`
+`int cube(int k)` con `return k*k*k`.
+Uscita in riga di testo:
+7 cubed: 343.
+
+Passo 1 come **avvio con scheda del main**:
+il sistema chiama `main` e fa `push`.
+La scheda dice come tornare al sistema
+a indirizzo `S1` e tiene `m = 7`.
+Righe di testo per pila dopo passo 1:
+cima scheda main
+ritorno S1
+locale m 7.
+
+Passo 2 come **seconda scheda per la chiamata**:
+`main` chiama `cube` e fa `push`.
+La nuova scheda sale in cima con
+ritorno `S2` verso `main` e locale
+`k = 7`. Righe di testo dopo passo 2:
+cima scheda cube
+ritorno S2
+locale k 7
+sotto scheda main
+ritorno S1
+locale m 7.
+
+Passo 3 come **rimozione con perdita dei locali**:
+dopo il conto `cube` non serve piu
+`k`. Si fa `pop` verso `S2` e `k`
+si perde. Resta solo la scheda `main`.
+Poi `main` stampa il reso. Alla graffa
+destra anche la scheda `main` esce
+verso `S1` e `m` non si puo piu
+raggiungere.
+
+La pila resta cosi lo strumento chiave
+per far girare i programmi. Le raccolte
+di dati hanno usi centrali nel settore.
+
+Errore tipico: credere che le locali
+restino vive dopo il `pop`, oppure
+ignorare il limite e cadere nel troppo
+pieno con chiamate senza fine.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Solo la cima si tocca con `push` e `pop`.
+- Ultimo dentro e primo fuori come regola.
+- Pila nascosta per andata e ritorno.
+- Scheda in cima con indirizzo di ritorno.
+- Spazio per locali dentro ogni scheda.
+- Locali vive solo durante la chiamata.
+- `pop` cancella scheda e locali insieme.
+- Memoria finita per le schede attive.
+- Troppe chiamate danno troppo pieno.
+- `main` parte per prima dal sistema.
+- Ogni chiamata aggiunge una scheda sopra.
+- Ritorno segue lordine inverso ai salti.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `push` nella pila delle chiamate?
+a) Toglie in mezzo · b) Mette una scheda in cima · c) Svuota tutto · d) Nulla
+2. Cosa dice la regola `LIFO`?
+a) Primo dentro primo fuori · b) Ultimo dentro primo fuori · c) Senza ordine · d) Solo un posto
+3. Cosa tiene una scheda di chiamata?
+a) Solo testo · b) Indirizzo di ritorno e spazio locali · c) Nulla · d) Solo il nome
+4. Quando spariscono le automatiche di `cube` con `k = 7`?
+a) Mai · b) Al `pop` verso `S2` dopo il conto · c) Prima della chiamata · d) Solo a fine disco
+5. Cosa mostra luscita dellesempio riscritto?
+a) 10 squared: 100 · b) 7 cubed: 343 · c) 0 · d) Nulla
+6. Quando scatta il troppo pieno della pila?
+a) Mai · b) Con chiamate oltre i posti per schede · c) Con una sola chiamata · d) Solo senza `main`
+
+Soluzioni ragionate
+
+1 — b. Nuovo elemento sopra per la chiamata. La a) toglie in mezzo, la c) svuota tutto, la d) non fa nulla.
+2 — b. Cima come unico punto di tocco. La a) inverte lordine, la c) toglie lordine, la d) limita a un posto.
+3 — b. Via del ritorno piu celle vive in corso. La a) vede solo testo, la c) non tiene nulla, la d) tiene il nome.
+4 — b. Vita legata alla chiamata con perdita al ritorno. La a) le tiene per sempre, la c) le toglie prima, la d) parla di disco.
+5 — b. Cubo di 7 con 343 in uscita. La a) copia il vecchio conto, la c) azzera tutto, la d) non mostra nulla.
+6 — b. Memoria finita per schede attive. La a) nega il caso, la c) scatta con una sola, la d) parla senza `main`.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

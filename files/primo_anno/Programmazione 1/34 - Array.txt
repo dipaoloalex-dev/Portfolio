@@ -1,0 +1,238 @@
+[plain-text per Pages — da 34 - Array.md]
+
+1. ARRAY IN C
+------------
+
+Un array tiene dati legati fra loro
+dello stesso tipo. E una **fila di celle vicine**
+con unico tipo per
+tutte. Per toccare una cella servono
+nome della fila e posto dentro la fila.
+
+Esempio riscritto con altri dati:
+invece di `c` da 12 si usi `d` da 10.
+I dieci nomi sono `d[0]` fino a `d[9]`.
+Righe di testo per valori diversi:
+d 0 12
+d 1 -7
+d 2 4
+d 3 51
+d 4 1200
+d 5 -34
+d 6 9
+d 7 40
+d 8 -5
+d 9 61.
+
+Il primo posto vale sempre 0. Il nome
+segue le regole solite: lettere cifre
+e `_`, mai cifra iniziale. Il numero
+fra quadre si chiama **numero di posto intero**:
+solo intero o conto intero.
+
+Esempio riscritto: invece di
+`c[2] = 1000` si usi `d[3] = 500` per
+mettere 500 nella quarta cella. Invece
+di `a = 5` e `b = 6` si usi `p = 4` e
+`q = 3`: da `d[p + q] += 5` si aggiunge
+5 alla cella `d[7]`. Un nome con indice
+vale come **casella scrivibile a sinistra**:
+puo stare a sinistra di `=`.
+
+Per somma dei primi tre di `d` si scrive
+`printf("%d", d[0] + d[1] + d[2])` con
+12 meno 7 piu 4 uguale 9. Per meta del
+settimo si scrive `y = d[6] / 2` con
+9 diviso 2 uguale 4 intero. Le quadre
+sono un vero operatore con **precedenza massima come chiamata**:
+stesso rango delle tonde di chiamata
+di voce, con lettura da sinistra a destra.
+
+Errore tipico: partire da 1 invece di
+0 e perdere lultima cella utile.
+
+2. DEFINIRE GLI ARRAY
+---------------------
+
+Le file occupano memoria vera. Serve
+**misura scritta alla nascita** con tipo
+e conta, cosi il sistema tiene il posto giusto.
+Esempio riscritto: invece di `c[12]` si
+usi `int d[10]` per dieci interi da 0
+a 9. Invece di `b[100]` e `x[27]` si usi
+`int m[80]` e `int y[20]` con posti 0 79
+e 0 19. Meglio **una fila per ogni riga**
+con nota di scopo accanto, non molte
+file insieme senza spiegazioni. Vale anche
+per altri tipi: un `char` in fila tiene
+una stringa di segni.
+
+Errore tipico: dichiarare meno celle di
+quelle poi toccate nel programma.
+
+3. ESEMPI DI ARRAY
+------------------
+
+Le celle senza avvio tengono spazzatura.
+Serve un giro per pulirle con **azzeramento con ciclo for**. Esempio
+riscritto con altri dati: invece di `n`
+da 5 a zero si usi `m` da 6 a uno. Righe:
+`int m[6]` poi `for` con `size_t i = 0`
+fino a 6 con `m[i] = 1` dentro. Poi titoli
+e secondo `for` con stampa di `i` e `m[i]`.
+Uscita in righe di testo:
+indice valore
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1.
+
+Vale il **contatore senza segno per indici**:
+`size_t` per misure e posti, da testata
+`stddef` spesso gia dentro `stdio`. Se il
+traduttore protesta, si aggiunge
+`#include <stddef.h>`. Su alcuni sistemi
+`size_t` vale `unsigned int`, su altri
+`unsigned long`: nel secondo caso si stampa
+con `%lu` e non `%u` per togliere avvisi.
+
+Errore tipico: usare `int` con segno per
+misure e inciampare in avvisi di formato.
+
+4. INIZIALIZZAZIONE DI UN ARRAY IN UNA DEFINIZIONE CON UNA LISTA DI INIZIALIZZAZIONE
+------------------------------------------------------------------------------------
+
+Si puo dare lavvio alla nascita con `=`
+e graffe con lista e virgole. Esempio
+riscritto con altri valori: invece di
+32 27 64 18 95 si usi 41 15 73 29 86.
+Riga: `int m[5] = {41, 15, 73, 29, 86}`.
+Poi titoli e `for` con stampa di `i` e
+`m[i]`. Uscita in righe di testo:
+0 41
+1 15
+2 73
+3 29
+4 86.
+
+Se mancano voci, il resto va a zero.
+Esempio riscritto: invece di `n[10]`
+si usi `int m[8] = {0}` per otto zeri:
+primo a zero scritto e altri sette a zero
+da soli. Ma senza alcun avvio non ce
+zero da solo: serve almeno il primo a zero
+per azzerare il resto. Le statiche partono
+prima del via, le automatiche al momento
+del giro. Vale il **resto a zero se lista corta**
+solo con primo scritto.
+
+Troppi valori oltre le celle rompono la
+sintassi. Esempio riscritto: invece di
+tre celle con quattro numeri si usi
+`int m[2] = {41, 15, 73}` con tre voci
+per due posti: errore di forma. Senza
+misura scritta vale la conta della lista.
+Esempio riscritto: invece di 1 2 3 4 5
+si usi `int m[] = {2, 4, 6}` per tre celle
+da 2 4 6.
+
+Esempio riscritto con costante e conti:
+invece di `SIZE 5` e 2 4 6 8 10 si usi
+`LEN 6` e 3 6 9 12 15 18. Righe:
+`#define LEN 6` senza `;` finale
+`int t[LEN]` poi `for` con
+`t[j] = 3 + 3 * j`. Uscita in righe:
+0 3
+1 6
+2 9
+3 12
+4 15
+5 18.
+
+La riga `#define LEN 6` crea una
+**parola fissa del preprocessore** che
+sostituisce ogni `LEN` con 6 prima del
+compilatore. Cambiando un solo punto da
+6 a 800 si allarga tutto senza toccare
+le righe 10 12 19 del giro. La parola
+resta piu chiara del numero nudo con
+molti sensi possibili. Mai `;` dopo
+`#define` o `#include`: il testo `6;`
+entra ovunque e rompe conti e forme.
+Il preprocessore non e il compilatore.
+La misura con parola fissa rende tutto
+piu facile da cambiare e da leggere.
+Vale lo **stile maiuscolo con linee basse**:
+solo maiuscole per costanti e `_` fra
+parole, mai assegni in corsa alle parole
+che non tengono posto come le celle.
+
+Errore tipico: lista troppo lunga, `;`
+dopo `#define`, o assegno a parola fissa
+in una riga eseguibile.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Fila di celle vicine con unico tipo.
+- Primo posto sempre a zero.
+- Solo interi come posti fra quadre.
+- Nome con indice scrivibile a sinistra.
+- Quadre al top come chiamata di voce.
+- Una fila per riga con nota di scopo.
+- `size_t` per misure e posti senza segno.
+- Lista con graffe alla nascita della fila.
+- Resto a zero solo con primo scritto.
+- Misura dalla lista se numero omesso.
+- Parola fissa per misure facili da cambiare.
+- Mai `;` dopo `#define` e mai assegni a essa.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa e `d` da 10 con `d[0]` a `d[9]`?
+a) Solo un numero · b) Fila di celle vicine stesso tipo · c) Solo testo · d) Nulla
+2. Cosa fa `d[3] = 500`?
+a) Nulla · b) Mette 500 nella quarta cella · c) Legge solo · d) Toglie la fila
+3. Come si dichiara `d` da 10?
+a) Senza tipo · b) Con `int d[10]` per 0 9 · c) Solo con lista · d) Mai
+4. A cosa serve `size_t i` nei giri?
+a) A nulla · b) A indici senza segno per misure · c) A testi · d) A errori
+5. Cosa fa `int m[8] = {0}`?
+a) Nulla · b) Otto zeri con resto da solo · c) Solo uno zero · d) Errore
+6. Cosa fa `#define LEN 6` senza `;`?
+a) Nulla · b) Sostituisce `LEN` con 6 prima del compilatore · c) Crea cella · d) Rompe tutto
+
+Soluzioni ragionate
+
+1 — b. Gruppo vicino con unico tipo e posti. La a) vede un numero, la c) vede testo, la d) non vede nulla.
+2 — b. Casella a sinistra con scrittura diretta. La a) non fa nulla, la c) solo legge, la d) toglie tutto.
+3 — b. Tipo piu conta per posti 0 9. La a) toglie il tipo, la c) chiede lista, la d) nega tutto.
+4 — b. Misure e posti senza segno e senza avvisi. La a) non serve, la c) parla di testi, la d) parla di errori.
+5 — b. Primo scritto e resto azzerato da solo. La a) non fa nulla, la c) ferma a uno, la d) vede errore.
+6 — b. Parola fissa con scambio prima del compila. La a) non fa nulla, la c) crea cella, la d) rompe tutto.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

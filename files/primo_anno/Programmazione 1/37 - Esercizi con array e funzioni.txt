@@ -1,0 +1,182 @@
+[plain-text per Pages — da 37 - Esercizi con array e funzioni.md]
+
+1. REVISIONE CONCETTI DI BASE
+----------------------------
+
+Si dice se vero o falso con motivo.
+Primo: una fila puo tenere molti tipi
+diversi. Falso, perche vale la
+**fila di un solo tipo**: solo valori
+dello stesso tipo nella stessa fila.
+
+Secondo: un posto puo essere `double`.
+Falso, perche vale il **posto solo con intero**:
+serve intero o conto intero fra quadre.
+
+Terzo: con lista corta il resto prende
+lultimo valore scritto. Falso, perche
+vale il **resto a zero da solo**: gli
+altri posti vanno a zero senza scriverli.
+
+Quarto: troppi valori oltre le celle danno
+errore con **lista lunga oltre misura**. Vero, perche la lista non puo
+superare la misura detta alla nascita.
+
+Quinto: un singolo `v[k]` cambiato in
+voce torna cambiato fuori. Falso, perche
+vale il **singolo per copia privata**: il
+pezzo solo passa per valore e fuori resta
+uguale. Se passa tutta la fila, i tocchi
+dentro si vedono anche fuori perche la
+voce lavora sulle celle vere.
+
+Pratica riscritta con altri dati e **parola fissa per misura**:
+invece
+di `fractions` da 10 con 1.667 si usi
+`rates` da 8 con 2.425. Righe:
+`#define LEN 8`
+`double rates[LEN] = {0.0}` per otto zeri.
+`rates[7] = 2.425` per settima cella.
+Stampa di `rates[3]` e `rates[7]` con una
+cifra dopo il punto:
+`printf("Uno:%.1f Due:%.1f", rates[3], rates[7])`
+con uscita Uno 0.0 e Due 2.4. Giro pieno
+con `for (k = 0; k < LEN; k++)` e
+`printf("rates[%d] = %f", k, rates[k])`.
+
+Errore tipico: credere che lista corta
+ripeta lultimo o che singolo passato
+cambi loriginale fuori.
+
+2. ESERCIZI CON ARRAY BIDIMENSIONALI
+-----------------------------------
+
+Esempio riscritto con altri dati e **tabella da prodotto righe**:
+invece
+di `table` 3 per 3 con somma si usi
+`grid` 4 per 4 con prodotto. Righe:
+`#define DIM 4`
+`int grid[DIM][DIM]` per 16 celle.
+Il conto delle celle vale
+`DIM * DIM` = 16. Doppio `for` con
+`grid[r][c] = r * c` per ogni posto.
+Poi doppio `for` con
+`printf("grid[%d][%d] = %d", r, c, grid[r][c])`.
+Uscita in righe di testo:
+0 0 0 0
+0 1 2 3
+0 2 4 6
+0 3 6 9.
+
+Caso di errore riscritto: invece di
+`a` con 1 2 3 4 si usi
+`int b[2][2] = {{5, 6}, {7, 8}}`.
+La riga `b[0, 1] = 9` sbaglia perche usa
+la virgola dentro una sola coppia di
+quadre. Vale la **doppia quadra per tabella**:
+ogni indice vuole le sue quadre. Correzione
+con `b[0][1] = 9` per riga 0 colonna 1.
+
+Errore tipico: scrivere due indici in una
+sola quadra con virgola al posto di due
+coppie di quadre.
+
+3. ESERCIZI SU RICORSIONE CON ARRAY
+----------------------------------
+
+Una scritta uguale nei due versi si dice
+palindroma. Esempi riscritti con altre
+parole: invece di frasi inglesi si usi
+`osso`, `otto` e, senza spazi, `ai lati`.
+Serve una **voce che rientra su se stessa**
+che rende 1 se palindroma e 0 senno,
+saltando spazi e segni come virgole punti
+e punti con ammirazione.
+
+Schema riscritto con altri nomi e **copia pulita senza segni**:
+invece di
+`testPalindrome` con 80 si usi `isMirror`
+con 64. Righe:
+`#define LIM 64`
+`int isMirror(char testo[], int l, int r)`.
+In `main` due file `char frase[LIM]` e
+`char pulita[LIM]`, lettura a segni con
+`getchar` fino a `\n` e tappo `'\0'`.
+Poi copia senza ` ` `,` `.` `!` con `for`
+e conta pulita. Poi `if (isMirror(pulita, 0, n-1))`
+stampa esito buono senno esito cattivo.
+
+La voce confronta gli estremi con
+**estremi che si chiudono dentro**: se
+`l == r` o `l > r` rende 1 per fine,
+se `testo[l] != testo[r]` rende 0 per
+rottura, senno torna con `l+1` e `r-1`.
+Ogni giro toglie una coppia fuori e il
+problema si accorcia fino al centro.
+
+Errore tipico: scordare il tappo finale o
+confrontare senza pulire spazi e segni.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Fila con un solo tipo dentro.
+- Posti solo con interi o conti interi.
+- Lista corta con resto a zero.
+- Lista lunga oltre misura come errore.
+- Singolo per copia e fila per indirizzo.
+- Parola fissa per misure facili da cambiare.
+- Doppia quadra per righe e colonne.
+- Celle come righe per colonne in tutto.
+- Prodotto o somma dagli indici in giri.
+- Virgola sola in quadra come errore.
+- Pulizia di spazi e segni prima del test.
+- Estremi che si chiudono fino al centro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Puo una fila tenere tipi diversi insieme?
+a) Si · b) No, solo un tipo per fila · c) Sempre tutto · d) Mai nulla
+2. Puo un posto essere `double`?
+a) Si · b) No, solo intero o conto intero · c) Sempre tutto · d) Mai nulla
+3. Cosa fa lista corta in fila da 8?
+a) Ripete lultimo · b) Mette zero nei resti · c) Errore certo · d) Nulla
+4. Cosa fa `rates[7] = 2.425` con `%.1f`?
+a) Nulla · b) Settima a 2.4 con una cifra · c) Tutte a 2.4 · d) Errore
+5. Come si scrive cella 0 1 di tabella `b`?
+a) Con `b[0, 1]` · b) Con `b[0][1]` a doppia quadra · c) Mai possibile · d) Senza quadre
+6. Come prova `isMirror` con `l r`?
+a) Senza prove · b) Con estremi che si chiudono a 1 0 o richiamo · c) Sempre 1 · d) Sempre 0
+
+Soluzioni ragionate
+
+1 — b. Un solo tipo per tutte le celle. La a) apre a tutto, la c) dice sempre tutto, la d) non tiene nulla.
+2 — b. Posti solo interi fra quadre. La a) apre ai decimali, la c) dice sempre tutto, la d) non tiene nulla.
+3 — b. Resto a zero senza scriverlo. La a) ripete lultimo, la c) vede errore certo, la d) non fa nulla.
+4 — b. Settima scritta e letta con una cifra. La a) non fa nulla, la c) tocca tutte, la d) vede errore.
+5 — b. Un paio di quadre per ogni indice. La a) usa virgola sola, la c) nega tutto, la d) toglie le quadre.
+6 — b. Fine a 1, rottura a 0, centro con richiamo. La a) non prova nulla, la c) dice sempre 1, la d) dice sempre 0.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,170 @@
+[plain-text per Pages — da 1 - Il linguaggio C.md]
+
+1. STORIA E VERSIONI
+-------------------
+
+Il **linguaggio C** nasce nei primi anni Settanta
+in un laboratorio telefonico americano per scrivere
+un nuovo sistema operativo. La prima diffusione
+avviene con un celebre manuale di fine anni
+Settanta, poi arrivano gli standard: prima quello
+americano di fine anni Ottanta, poi quello
+internazionale quasi identico dei primi anni
+Novanta, poi laggiomamento di fine anni Novanta.
+
+Il C ha un **compilatore** quasi ovunque, produce
+codice rapido ed efficiente e regge programmi
+complessi di alto livello, pur restando vicino
+alla macchina e capace di sfruttarne i dettagli
+di architettura. Dispone di moltissime librerie
+che aggiungono funzioni pronte.
+
+Esempio riscritto: invece di ricordare sigle ed
+anni a memoria, si pensi a tre tappe logiche:
+nascita in laboratorio, manuale divulgativo,
+standard ufficiali americano, internazionale e
+aggiornato. Lordine resta lo stesso, cambiano
+solo le parole per fissarlo.
+
+E il linguaggio piu usato per il **software di sistema**,
+con interfaccia testuale piu eventuali librerie
+grafiche. Non e orientato agli oggetti e usa
+**gestione manuale della memoria** dinamica,
+senza raccoglitore automatico.
+
+Errore tipico: confondere il C con un linguaggio
+ad oggetti con memoria automatica. Qui la memoria
+va gestita dal programmatore.
+
+2. FASI DI COMPILAZIONE
+-----------------------
+
+Dal sorgente alleseguibile servono tre attori.
+Il **preprocessore** elabora le direttive come
+`#include` e `#define` e modifica il testo prima
+della traduzione. Il compilatore traduce in
+macchina, con ottimizzazione per velocita o per
+dimensione, oppure senza ottimizzazione per
+facilitare il debug. Il **linker** unisce in un
+solo eseguibile i file oggetto da sorgenti diversi
+e le librerie di ingresso-uscita, matematiche,
+di rete e simili.
+
+Esempio riscritto con caso diverso: un progetto
+con due sorgenti piu una libreria matematica.
+Il preprocessore espande le inclusioni, il
+compilatore crea due oggetti, il linker li fonde
+con la libreria in un solo programma avviabile.
+
+Il compilatore segnala due famiglie di problemi.
+Gli **Error** sono errori sintattici e bloccano
+leseguibile. I **Warning** non bloccano ma
+avvisano di un problema molto probabile risolto
+con una regola generica che potrebbe non essere
+quella voluta. Un codice pulito ha zero errori
+e zero warning.
+
+Errore tipico: ignorare i warning perche tanto
+leseguibile nasce lo stesso. Spesso nascondono
+il bug vero.
+
+3. SINTASSI
+-----------
+
+Il C e **case sensitive**: maiuscole e minuscole
+sono caratteri diversi. Le istruzioni sono sequenze
+di caratteri chiuse da `;`. La sola `;` e detta
+**istruzione nulla** e non fa nulla.
+
+I commenti sono note del programmatore da `/*`
+a `*/` e il compilatore li tratta come un solo
+spazio. Le istruzioni possono stare su piu righe:
+si puo andare a capo dove starebbe uno spazio,
+tranne dentro le stringhe fra doppi apici come
+`"buongiorno"`.
+
+Esempio riscritto: invece di `"ciao ciao"` si pensi
+a `"buongiorno"`. Stessa regola, scritta diversa.
+Andare a capo dentro gli apici resta vietato,
+fuori dagli apici e libero dove andrebbe uno spazio.
+
+Un **blocco di codice** e fra parentesi graffe
+`{` e `}` e ha due parti in ordine: prima la zona
+opzionale con le definizioni delle variabili locali
+al blocco, poi le istruzioni eseguibili. Le graffe
+si possono omettere con una sola istruzione, ma
+restano obbligatorie per il corpo di una funzione
+e quindi per `main`.
+
+Errore tipico: dimenticare `;` a fine istruzione
+o aprire una graffa senza chiuderla, e credere
+che maiuscole e minuscole siano uguali.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Il C unisce efficienza e vicinanza alla macchina con librerie e compilatori ovunque.
+- Dal sorgente alleseguibile: preprocessore, compilatore, linker in questordine.
+- Error blocca, Warning avvisa ma va azzerato anche lui.
+- Maiuscole diverse da minuscole, ogni istruzione finisce con punto e virgola.
+- Commenti da slash-asterisco a asterisco-slash valgono come uno spazio.
+- A capo libero tranne dentro le stringhe fra doppi apici.
+- Blocco fra graffe con prima variabili locali poi istruzioni eseguibili.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Perche il C e adatto al software di sistema?
+a) Perche ha garbage collector e oggetti · b) Perche unisce codice efficiente, vicinanza alla macchina e librerie con compilatori diffusi · c) Perche non serve mai compilare · d) Perche ignora lhardware
+
+2. Cosa fa il linker in un progetto con due sorgenti e una libreria?
+a) Espande solo le direttive · b) Traduce in macchina · c) Fonde oggetti e librerie in un solo eseguibile · d) Ignora le librerie
+
+3. Un programma compila con due Warning e zero Error. Cosa concludi?
+a) Codice pulito, tutto a posto · b) Niente eseguibile · c) Eseguibile nato ma da controllare, i Warning possono nascondere errori logici · d) Warning e Error sono la stessa cosa
+
+4. Quale scritta mostra il case sensitive?
+a) `Cont` e `cont` sono la stessa variabile · b) `Cont` e `cont` sono nomi diversi · c) Il punto e virgola e facoltativo · d) Le graffe non servono mai
+
+5. Dove puoi andare a capo in una istruzione lunga?
+a) Ovunque, anche dentro `"buongiorno"` · b) Solo a fine file · c) Dove starebbe uno spazio, tranne dentro le stringhe · d) Mai, tutto su una riga
+
+6. Quando puoi omettere le graffe di un blocco?
+a) Sempre, anche per il main · b) Con una sola istruzione, ma non per il corpo di funzione come main · c) Mai · d) Solo se ci sono commenti
+
+Soluzioni ragionate
+
+1 — b. Efficienza, controllo hardware, librerie e portabilita del compilatore. La a) descrive altri linguaggi, la c) nega la traduzione, la d) nega il punto di forza.
+
+2 — c. Unisce oggetti e librerie in un eseguibile. La a) e il preprocessore, la b) e il compilatore, la d) nega il suo compito.
+
+3 — c. Leseguibile nasce ma i Warning vanno azzerati. La a) li sottovaluta, la b) confonde con Error, la d) li identifica.
+
+4 — b. Maiuscole e minuscole distinguono i nomi. La a) nega la regola, c) e d) parlano di altro.
+
+5 — c. Regola corretta su spazi e stringhe. La a) rompe le stringhe, la b) e troppo rigida, la d) vieta tutto.
+
+6 — b. Solo monoriga non-funzione. La a) include il main che resta obbligatorio, la c) vieta sempre, la d) inventa una eccezione.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

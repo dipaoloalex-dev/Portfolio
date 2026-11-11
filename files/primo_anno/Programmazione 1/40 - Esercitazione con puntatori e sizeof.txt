@@ -1,0 +1,200 @@
+[plain-text per Pages — da 40 - Esercitazione con puntatori e sizeof.md]
+
+1. BUBBLE SORT CON PASSAGGIO PER RIFERIMENTO
+--------------------------------------------
+
+Si riprende lordinamento a bolle con
+due voci: una che ordina e una che
+scambia. La prima scorre la fila, la
+seconda cambia di posto due vicini
+fuori ordine. Vale lo
+**scambio per punti vicini**.
+
+Esempio riscritto con altri dati:
+invece di 10 voci 2 6 4 8 10 12 89 68 45 37
+si usi 8 voci 15 3 9 1 12 5 8 2. Righe:
+`#define DIM 8`
+`int v[DIM] = {15, 3, 9, 1, 12, 5, 8, 2}`
+stampa in riga, poi
+`ordina(v, DIM)` senza `&` sul nome,
+poi ristampa in riga.
+
+La voce ordina si annuncia con
+`void ordina(int * const fila, size_t n)`.
+Qui vale la **fila vista come punto fisso**:
+punto a inizio fila che non si sposta
+piu durante la voce.
+
+Dentro due `for` annidati: fuori `pass`
+da 0 a sotto `n - 1`, dentro `j` da 0
+a sotto `n - 1`, con
+`if (fila[j] > fila[j + 1])` e poi
+`cambia(&fila[j], &fila[j + 1])`.
+La voce cambia si annuncia con
+`void cambia(int *aPtr, int *bPtr)` e
+fa tre mosse con appoggio `tmp`.
+Vale la **appoggio per tre mosse**.
+
+Uscita in righe di testo riscritte:
+ordine di partenza
+15 3 9 1 12 5 8 2
+ordine di arrivo
+1 2 3 5 8 9 12 15.
+
+Errore tipico: passare i singoli per
+copia e vedere la fila sempre uguale
+fuori dalla voce di scambio.
+
+2. BUBBLE SORT - ANALISI
+------------------------
+
+Il C nasconde i dati fra voci diverse.
+La voce ordina non mostra le sue celle
+alla voce cambia per impostazione.
+Per farle toccare serve il punto.
+Vale il **punto dato per toccare fuori**.
+
+La fila intera passa da sola per punto
+con il solo nome. I singoli posti no:
+vanno dati con `&` esplicita. Righe:
+`cambia(&fila[j], &fila[j + 1])`.
+Vale il **singolo per punto esplicito**.
+
+Dentro la voce cambia gli accessi con
+`*` toccano le celle vere di chi ordina.
+Con `*aPtr` si tocca `fila[j]`, con
+`*bPtr` si tocca `fila[j + 1]`.
+
+La misura resta fissa in corsa. Per
+questo `n` si dice `const`: copia che
+non deve cambiare mai in voce. Vale la
+**misura fissa non toccata** come minimo
+accesso utile.
+
+Lannuncio di cambia sta dentro ordina
+perche solo ordina la chiama. Cosi si
+vede che serve solo li. Vale la
+**annuncio locale di scambio**.
+
+La voce deve sapere la misura perche
+dal solo punto non si ricava. Il punto
+dice dove inizia, non quante celle ha.
+Vale la **indirizzo del primo posto**.
+Dando anche `n` la stessa voce ordina
+file intere di ogni misura.
+
+Errore tipico: scordare `&` sui singoli
+o scordare `n` credendo che dal punto
+si ricavi anche la lunga della fila.
+
+3. SIZEOF
+---------
+
+Il C da `sizeof` per sapere i byte di
+fila o tipo o valore. Agisce a compila
+salvo file a lunga variabile. Con nome
+di fila rende tutti i byte della fila
+come `size_t`. Vale la
+**misura in byte a compila**.
+
+Esempio riscritto con altri dati:
+invece di `float` da 20 con 80 e 4 si usi
+`float` da 12 e `double` da 10. Righe:
+`#define LEN 12`
+`float tab[LEN]` per 12 celle.
+`printf(\"%u\", sizeof(tab))` per 48 in tutto,
+con 4 a cella per 12 celle.
+Voce `size_t getSize(float *ptr)` con
+`return sizeof(ptr)` dentro.
+`printf(\"%u\", getSize(tab))` per 4 o 8
+a seconda del sistema, non 48. Vale il
+**punto contro fila intera**: dentro la
+voce resta solo un punto e `sizeof`
+misura il punto, non la fila vera.
+
+Altro esempio riscritto: invece di
+`double real[22]` con 176 si usi
+`double vals[10]` con 80 in tutto,
+con 8 a cella per 10 celle. Per i posti
+si usa `sizeof(vals) / sizeof(vals[0])`
+con 80 diviso 8 pari a 10. Vale la
+**conta posti da quoziente**.
+
+I byte per tipo cambiano da sistema a
+sistema. Per scritti che girano altrove
+serve `sizeof` e non numeri fissi a mano.
+Vale la **portabilita con misura vera**.
+
+`sizeof` va anche su nomi, tipi e valori,
+pure su esiti di conti. Le tonde servono
+con tipi scritti come `int` o `double`.
+Con nomi bastano anche senza tonde.
+
+Errore tipico: usare `sizeof` sul punto
+in voce credendo di avere i byte della
+fila intera passata da fuori.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Ordina scorre e cambia scambia vicini.
+- Fila intera con solo nome senza `&`.
+- Singoli con `&` per punto esplicito.
+- Cambio con `*` sulle celle vere fuori.
+- Tre mosse con appoggio per scambio.
+- Punto a fila fisso che non si sposta.
+- Misura `const` che non cambia in corsa.
+- Annuncio locale se serve a una sola voce.
+- Punto dice inizio ma non dice lunga.
+- `sizeof` a compila per byte totali.
+- Punto in voce misura solo il punto.
+- Posti come totale diviso prima cella.
+- Misura vera per scritti portabili.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Come ordina 15 3 9 1 con due voci?
+a) A caso · b) Con scambi di vicini per punti · c) Mai ordina · d) Solo stampa
+2. Come si passa la fila a `ordina`?
+a) Con `&` sul nome · b) Con solo nome come punto fisso · c) Per copia · d) Mai
+3. Come si danno i singoli a `cambia`?
+a) Senza segni · b) Con `&` esplicita sui due posti · c) Mai possibile · d) Solo misura
+4. Perche `n` si dice `const` in ordina?
+a) Per stile · b) Per misura fissa non toccata · c) Per cambiarla · d) Mai serve
+5. Cosa rende `sizeof(tab)` con `float tab[12]`?
+a) 12 · b) 48 come byte totali a compila · c) Sempre 4 · d) Nulla
+6. Cosa rende `getSize(tab)` con `float *ptr`?
+a) 48 · b) Misura del punto non della fila · c) 12 · d) Sempre 48
+
+Soluzioni ragionate
+
+1 — b. Scorre con coppie vicine e scambia in calo per punti. La a) va a caso, la c) non ordina, la d) solo stampa.
+2 — b. Nome come inizio fisso senza `&`. La a) aggiunge `&`, la c) fa copie, la d) nega tutto.
+3 — b. Punto esplicito per toccare fuori. La a) non usa segni, la c) nega tutto, la d) passa misura sola.
+4 — b. Fissa in corsa con minimo accesso. La a) parla di stile, la c) vuole cambiarla, la d) la dice inutile.
+5 — b. Dodici per quattro pari a totale. La a) conta posti, la c) conta un punto, la d) non rende nulla.
+6 — b. Punto contro fila intera in voce. La a) da totale fila, la c) conta posti, la d) fissa 48 sempre.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

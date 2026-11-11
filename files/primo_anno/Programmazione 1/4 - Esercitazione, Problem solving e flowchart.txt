@@ -1,0 +1,182 @@
+[plain-text per Pages — da 4 - Esercitazione, Problem solving e flowchart.md]
+
+1. PROBLEM SOLVING - RIPASSIAMO
+-------------------------------
+Il metodo procede in sei passi ordinati.
+Ogni passo prepara quello successivo.
+Saltarne uno rende fragile il risultato.
+L'ordine aiuta a ragionare con calma.
+Prima si chiarisce il **problema** da risolvere.
+Poi si fa l'**analisi** di dati e risultati.
+Poi si disegna l'**algoritmo** risolutivo.
+Poi si passa alla **codifica** in linguaggio C.
+Poi si fa il **collaudo** con prove ed errori.
+Infine si scrive la **documentazione** del lavoro.
+Esempio riscritto: obiettivo diverso dal totale
+di cinque valori, per esempio calcolare
+il totale di sei importi inseriti da tastiera.
+Errore tipico: scrivere codice prima di avere
+chiarito dati in ingresso e uscita attesa.
+
+2. PROBLEM SOLVING - ESERCITAZIONE
+----------------------------------
+Si vuole totalizzare una serie di numeri
+chiesti all'utente durante l'esecuzione.
+La descrizione deve dire quanti valori
+leggere e quale risultato mostrare.
+Serve una **variabile accumulatore** per il totale.
+Serve una **variabile contatore** per le letture.
+Entrambe partono da zero prima del lavoro.
+Serve anche una variabile di appoggio
+per conservare di volta in volta il numero
+appena digitato sulla tastiera.
+La logica usa un **ciclo** di ripetizione.
+Il **pseudocodice** descrive i passi in parole
+semplici, senza sintassi di un linguaggio.
+Una possibile traccia con sei immissioni:
+azzerare totale e contatore, leggere un valore,
+aggiungerlo al totale e aumentare il contatore,
+verificare la **condizione** con `count < 6`,
+tornare a leggere se vera, stampare se falsa.
+La versione in C usa `while` con la stessa
+condizione, poi `scanf` per leggere, poi
+aggiornamento del totale, poi `printf` finale.
+Errore tipico: non azzerare il totale
+oppure non aggiornare il contatore,
+cosi il ciclo non finisce mai.
+
+3. FLOWCHART - RIPASSIAMO
+-------------------------
+Il **diagramma di flusso** mostra i passi
+con forme diverse unite da frecce.
+L'ovale allungato apre e chiude il percorso.
+Il parallelogramma indica lettura o stampa.
+Il rettangolo indica un calcolo o un'assegnazione.
+Il **blocco decisionale** a rombo pone una domanda
+con due uscite diverse, si oppure no.
+Il cerchio piccolo collega parti lontane
+dello schema senza incrociare le frecce.
+Il rettangolo con bande laterali richiama
+una parte gia definita altrove.
+Due schemi base vanno riconosciuti subito.
+La sequenza e una catena diritta di azioni,
+una dopo l'altra senza ritorni indietro.
+La ripetizione invece ha un ritorno indietro:
+dopo un'azione si torna a una domanda
+che decide se ripetere o proseguire.
+Errore tipico: usare il rettangolo per
+una lettura, oppure il rombo senza due uscite.
+
+4. FLOWCHART - ESERCITAZIONE
+----------------------------
+Primo esempio riscritto: sommare due interi
+diversi dall'originale, per esempio 7 e 15.
+Si parte da inizio, poi si azzera la somma,
+poi si leggono i due valori insieme,
+poi si calcola il totale con `sum = 7 + 15`,
+poi si stampa il risultato e si finisce.
+Lo schema e una sequenza semplice:
+ovale, rettangolo, parallelogramma,
+rettangolo, parallelogramma, ovale.
+Secondo esempio riscritto: totalizzare sei
+valori dati dall'utente, non cinque.
+Si azzerano somma e contatore insieme.
+Si legge un valore con un parallelogramma.
+Si aggiorna la somma e si aumenta il contatore
+con `sum = sum + n` e `count = count + 1`.
+Poi il rombo chiede se `count < 6`.
+Se si torna alla lettura del valore successivo.
+Se no si stampa la somma e si chiude.
+Errore tipico: collegare il si e il no
+al contrario, oppure stampare dentro il ciclo
+a ogni giro invece che solo alla fine.
+
+5. CONCETTI CHIAVE DA RICORDARE
+--------------------------------
+- Sei fasi in ordine: definizione, esame dati,
+progetto passi, scrittura C, prove, note finali.
+- Totale e contatore partono da zero e si
+aggiornano a ogni lettura da tastiera.
+- Il ciclo ripete lettura e somma finche la
+condizione sul contatore resta vera.
+- Ovale per inizio e fine, parallelogramma per
+ingresso e uscita, rettangolo per calcoli.
+- Rombo per le scelte con due strade alternative.
+- Sequenza senza ritorni, ripetizione con
+freccia che riporta indietro al controllo.
+- In C: `while`, `scanf`, `printf` coordinati
+con la stessa condizione del diagramma.
+
+6. TEST DI AUTOVALUTAZIONE
+--------------------------
+Scegli per ogni domanda la sola risposta corretta.
+1. Quale ordine delle fasi e corretto?
+a) codifica, analisi, progetto, prove, definizione, note
+b) definizione, analisi, progetto, codifica, prove, note
+c) definizione, codifica, analisi, progetto, note, prove
+d) analisi, definizione, codifica, progetto, note, prove
+2. A cosa servono totale e contatore in un esercizio
+di somma ripetuta di sei valori?
+a) il totale conta le letture e il contatore accumula
+b) il totale accumula la somma e il contatore conta le letture
+c) entrambi memorizzano l'ultimo valore digitato
+d) entrambi contengono la condizione di uscita
+3. Cosa deve fare il programma quando il contatore
+raggiunge il limite previsto, per esempio 6?
+a) azzerare di nuovo il totale e continuare
+b) tornare subito a leggere un altro numero
+c) interrompere le letture e mostrare il totale
+d) ricominciare il ciclo dall'inizializzazione
+4. Quale simbolo useresti per leggere un numero
+da tastiera nel diagramma?
+a) ovale allungato
+b) rettangolo semplice
+c) parallelogramma
+d) cerchio piccolo
+5. Come riconosci una ripetizione in un diagramma?
+a) da una catena diritta senza bivi ne ritorni
+b) da un ovale seguito subito dall'ovale di fine
+c) da un rombo con una freccia che torna indietro
+d) da due parallelogrammi senza rettangoli
+6. In un esercizio con due valori fissi, per esempio
+7 e 15, quale struttura basta?
+a) una ripetizione con contatore fino a sei
+b) una scelta con due rami alternativi
+c) una semplice sequenza di azioni in fila
+d) un modulo esterno richiamato in ciclo
+
+SOLUZIONI RAGIONATE
+1 — B. La sequenza corretta parte dalla richiesta
+chiara, passa per dati e passi, poi codice, prove e
+note. Le altre mescolano l'ordine e mettono il codice
+prima dell'analisi o le prove prima del programma.
+2 — B. I ruoli sono distinti: accumulo da una parte
+e conteggio letture dall'altra. La A li scambia, la C
+confonde con la variabile di appoggio, la D con la domanda.
+3 — C. Raggiunto il limite, le letture sono complete
+e si mostra il risultato. La A cancella il lavoro, la B
+legge un valore di troppo, la D riparte senza motivo.
+4 — C. L'ingresso e l'uscita usano il parallelogramma.
+L'ovale apre e chiude, il rettangolo calcola, il cerchio
+collega punti lontani dello stesso schema.
+5 — C. Il ritorno indietro guidato da domanda e il
+segno del ciclo. La A descrive la sequenza, la B non ha
+azioni, la D elenca simboli senza legame logico.
+6 — C. Con due valori noti basta una fila di azioni.
+La A serve per molte letture, la B per una scelta vera,
+la D per richiami ripetuti di parti esterne.
+
+----------------------------------------
+PROMPT RIUTILIZZABILE
+---------------------
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o universita, ne avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati pero a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione cosi per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." piu 2-3 righe di spiegazione, motivando anche perche le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

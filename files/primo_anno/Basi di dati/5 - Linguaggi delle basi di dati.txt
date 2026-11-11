@@ -1,0 +1,219 @@
+[plain-text per Pages — da 5 - Linguaggi delle basi di dati.md]
+
+1. INTRODUZIONE
+---------------
+
+Si tratta delle lingue per tenere i
+dati in base. La via comune e `SQL`
+per parlare in diretta con i dati.
+Non e codice che gira da solo, ma
+lingua per dire forme e per muovere
+righe. Vale la **lingua per forme e righe**.
+
+Errore tipico: dire che `SQL` e un
+linguaggio di programmi come gli altri.
+
+2. IL LINGUAGGIO SQL
+--------------------
+
+`SQL` e norma comune per basi a tabelle
+e per mosse dentro di esse. Nato anni
+settanta, lo usano capi base, chi scrive
+ponti fra dati e chi legge numeri.
+
+Usi: mutare tabelle e cartelle, mettere
+e togliere righe, prendere parti per
+conti e studi. Le mosse sono ordini con
+verbi noti. Vale il **ordini brevi per tabelle**.
+
+Esempio tabelle riscritto con altri
+dati in righe di testo separate da
+spazi: invece di Basi Sistemi Reti
+Controlli con Rossi Neri Bruni si usi
+Turni con Yoga Danza Pilates Mensa:
+Turno Guida Sala
+Yoga Verdi S1
+Danza Blu S2
+Pilates Gialli S1
+Mensa Rossi M1
+Sale Nome Palazzo Piano
+S1 Nord Terra
+S2 Nord Terra
+M1 Sud Primo
+Colonna per tipo, riga per caso vero
+all incrocio. Vale la
+**colonna per tipo riga per caso**.
+
+La norma nasce meta anni ottanta in due
+enti noti, poi molti ritocchi insieme.
+Molti gestori la parlano con aggiunte
+proprie per passi e funzioni, non tutte
+uguali fra loro. Resta lingua per
+cambiare, togliere e chiedere, per basi
+grandi e ostiche in ditte e scuole.
+Vale la **norma con dialetti diversi**.
+
+Errore tipico: credere che ogni dialetto
+vada ovunque senza cambi.
+
+3. DDL E DML
+------------
+
+Gli ordini si partono in forme e mosse,
+piu scudi per atti e ingressi. Forme per
+dire ossatura, mosse per toccare dati.
+Atti sicuri chiudono tutto o nulla se
+cade. Scudi danno ruoli e permessi.
+Vale il **forme contro mosse in coppia**.
+
+Forme dicono struttura e domini dei
+tratti, con vincoli per tenere tutto
+sano. Tabella come griglia con righe
+`record` e colonne `attributi`: ogni
+riga e un caso del mondo vero.
+
+Cinque verbi per forme:
+`CREATE` per fare base o tabella
+`ALTER` per mutare dentro tabella
+`DROP` per togliere base o tabella
+`TRUNCATE` per vuotare tabella
+`RENAME` per mutare nome in base.
+Vale il **cinque verbi per ossatura**.
+
+Esempio forma riscritto con altri dati:
+invece di orario con insegnamento CHAR20
+docente CHAR20 aula CHAR4 ora CHAR5 si
+usi turno con:
+`CREATE TABLE turno (`
+`attivita CHAR(20),`
+`guida CHAR(20),`
+`sala CHAR(4),`
+`ora CHAR(5) )`
+
+Mosse riempiono righe dette `tuple` con
+mettere, mutare, togliere e chiedere.
+Quattro verbi noti:
+`SELECT` per chiedere da tabella
+`INSERT` per mettere in tabella
+`UPDATE` per mutare in tabella
+`DELETE` per togliere da tabella.
+Servono entrambi: forme senza mosse
+restano vuote. Vale il
+**quattro verbi per righe vive**.
+
+Esempio mossa riscritto con altri dati:
+invece di Corso Aula Piano da Aule Corsi
+con Terra si usi:
+`SELECT Attivita, Sala, Piano`
+`FROM Sale, Turni`
+`WHERE Nome = Sala`
+`AND Piano = Terra`
+Uscita in righe di testo:
+Attivita Sala Piano
+Yoga S1 Terra
+Pilates S1 Terra.
+
+Errore tipico: chiedere senza forme
+pronte o vuotare con `DROP` al posto
+di `TRUNCATE` senza scampo.
+
+4. PERSONAGGI E INTERPRETI
+--------------------------
+
+Oggi ditte vivono di dati furbi da rete
+e ordini in linea per studi su clienti
+e affari. Servono cure al centro e in
+giro su `LAN` e reti. Vale il
+**dati al centro di ditta**.
+
+Il capo base `DBA` cura beni delicati
+fra uffici: fa nascere, tiene pronto,
+mette al sicuro, ridona a chi chiede.
+Aiuta a fare, tenere, riprendere e
+mutare. Esempio riscritto con altri
+dati: invece di venditori clienti team
+si usi mensa con pietanze, tessere,
+turni e scorte: a mano sarebbe mole
+dura, con volti del gestore ognuno
+chiede il suo. Fa piani, sente gente,
+scioglie nodi, guarda resa e flusso,
+cerca modi migliori e giudica ferri e
+programmi. Vale il
+**custode che fa girare tutto**.
+
+Utili del gestore contro file sciolti:
+meno copie doppie in un centro unico,
+anche se un po resta per buoni fini.
+Regole che tengono dati giusti e senza
+voci false. Se togli doppioni, togli
+sfasature fra sedi non allineate. Dati
+in comune per molte liste senza rifare
+file ogni volta. Vale il
+**centro unico senza sfasature**.
+
+Errore tipico: dare a tutti tutto senza
+ruoli o tenere copie sparse che litigano.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Lingua per forme e per righe.
+- Ordini brevi per tabelle vere.
+- Colonne per tipi e righe per casi.
+- Norma unica con dialetti vari.
+- Forme contro mosse sempre in coppia.
+- Cinque verbi per ossatura fissa.
+- Quattro verbi per righe vive.
+- Dati al centro di ogni ditta.
+- Custode che fa girare il flusso.
+- Centro unico contro file sparsi.
+- Regole per dati giusti e sani.
+- Meno copie meno sfasature in giro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa e `SQL` per basi a tabelle?
+a) Gioco · b) Lingua per forme e righe · c) Solo ferro · d) Nulla
+2. Come sono fatte tabelle vere?
+a) Solo righe · b) Colonne per tipi e righe per casi · c) Mai chiare · d) Solo video
+3. Cosa fa `CREATE TABLE turno`?
+a) Chiede dati · b) Fa ossatura con cinque verbi · c) Toglie tutto · d) Nulla
+4. Cosa chiede esempio con Terra?
+a) Tutto · b) Yoga e Pilates in S1 · c) Solo Mensa · d) Nulla
+5. Chi e il capo base `DBA`?
+a) Ospite · b) Custode che fa girare tutto · c) Mai esiste · d) Solo cliente
+6. Perche centro unico batte file?
+a) Piu copie · b) Meno doppioni e sfasature · c) Mai batte · d) Solo costi
+
+Soluzioni ragionate
+
+1 — b. Ordini brevi per forme e mosse. La a) vede gioco, la c) vede ferro, la d) non dice nulla.
+2 — b. Tipi in colonna e casi in riga. La a) toglie colonne, la c) non dice mai, la d) guarda video.
+3 — b. Cinque verbi per ossatura fissa. La a) chiede dati, la c) toglie tutto, la d) non fa nulla.
+4 — b. Filtro su sala e piano chiesto. La a) prende tutto, la c) ferma a mensa, la d) non da nulla.
+5 — b. Cura beni fra uffici e flusso. La a) vede ospite, la c) nega tutto, la d) vede cliente.
+6 — b. Centro unico senza sfasature. La a) fa copie, la c) nega tutto, la d) guarda costi.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

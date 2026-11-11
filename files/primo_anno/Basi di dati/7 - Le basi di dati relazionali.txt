@@ -1,0 +1,211 @@
+[plain-text per Pages — da 7 - Le basi di dati relazionali.md]
+
+1. INTRODUZIONE
+---------------
+
+Si fissano voci chiave del modo a
+tabelle, poi casi con dentro altre
+righe, poi il segno di vuoto `NULL`.
+Vale il **chiavi poi nidi poi vuoto**.
+
+Errore tipico: usare `NULL` come zero
+o stringa vuota senza pensarci.
+
+2. DEFINIZIONI
+--------------
+
+Nomi di legami per non mixare tabelle
+fra loro in base.
+
+Forma di legame come nome `R` piu tratti
+`A1` .. `An` in sigla `R(A1, .., An)`.
+Forma di base come insieme di forme di
+legame in sigla `R = {R1(X1), .., Rn(Xn)}`.
+Vale il **nome piu tratti per forma**.
+
+Esempio forma riscritto con altri dati
+in righe di testo separate da spazi:
+invece di Studenti con 02345 Antonio
+Rossi 10-02-1999 si usi:
+Soci Badge Nome Cognome Nascita
+7102 Luca Blu 15-03-2001
+7205 Anna Verdi 22-06-2002
+7308 Marco Gialli 30-01-2000.
+
+Riga sola come mappa da tratto a valore
+del suo mondo. Segno `t[A]` per valore
+di riga `t` su tratto `A`. Esempio: con
+riga prima, `t(Badge)` vale 7102. Vale
+la **riga come mappa di valori**.
+
+Corpo vero come insieme di righe sulla
+stessa forma: insieme `r` su `X`. Base
+vera come insieme di corpi sulle forme.
+Quindi legame come righe uguali per
+forma. Vale il **corpo di righe uguali**.
+
+Esempio base riscritto con altri dati:
+Soci Badge Cognome Nome Nascita
+Prove Socio Voto Turno
+Turni Codice Titolo Guida.
+Sigla `R = {Soci(Badge, Cognome, Nome,`
+`Nascita), Prove(Socio, Voto, Turno),`
+`Turni(Codice, Titolo, Guida)}`.
+
+Caso a un tratto solo: tabella SociSerali
+con solo Badge 7102 7308. Anche se corta,
+serve per trovare serali fra soci. Vale
+la **tabella corta che filtra**.
+
+Errore tipico: dire forma quando serve
+corpo, o mettere righe di forme diverse
+nella stessa tabella.
+
+3. STRUTTURE NIDIFICATE
+-----------------------
+
+A volte sotto stesso capo stanno molte
+righe figlie. Esempio scontrini di bar
+riscritto con altri dati: invece di Da
+Filippo Via Roma 1235 1240 con coperti
+antipasti primi si usi Bar Verde Via
+Mare con scontrini 2101 del 04-03-2023
+e 2102 del 05-03-2023 con acque, panini,
+dolci e caffe e conti diversi 18,50 e
+21,00. Righe di testo:
+Scontrino 2101 04-03-2023
+2 Acque 3,00
+1 Panini 6,50
+2 Dolci 9,00
+Totale 18,50.
+
+Una ricevuta non sta in una riga sola
+perche le righe cambiano: i valori
+debbono restare semplici, non insiemi.
+Mettere figlie dentro madre rompe regola
+di atomi. Vale il **solo atomi non insiemi**.
+
+Via giusta con due tabelle legate da
+stesso numero:
+Scontrini Numero Data Totale
+Voci Numero Qta Voce Importo.
+Esempio righe:
+Scontrini 2101 04-03-2023 18,50
+Scontrini 2102 05-03-2023 21,00
+Voci 2101 2 Acque 3,00
+Voci 2101 1 Panini 6,50.
+Vale il **madre piu figlie con numero**.
+
+Servono due patti: ordine delle voci
+non conta, e in uno scontrino non stanno
+due voci uguali.
+
+Errore tipico: incassare lista dentro
+cella o tenere ordine come se contasse.
+
+4. LA GESTIONE DELL'INFORMAZIONE INCOMPLETA
+--------------------------------------------
+
+Il modo a tabelle e rigido: solo righe
+nei formati delle forme. Ma dati veri
+possono uscire dal formato o mancare.
+
+Esempio vuoto riscritto con altri dati:
+invece di Franklin Delano Roosevelt con
+Winston senza secondo si usi:
+Persona Nome SecondoNome Citta
+Luca Marco Roma
+Paolo vuoto Milano
+Sara vuoto Torino.
+Come dire vuoto al posto di secondo?
+
+Non va bene usare zero o stringa vuota
+o 99: forse non esistono liberi, o i
+liberi tornano utili, e i programmi
+devono ogni volta ricordare il trucco.
+Vale il **trucco con zero non va**.
+
+Via rozza ma buona con segno `NULL`:
+dice manca valore ma non e valore del
+mondo. Per ogni tratto `t[A]` vale mondo
+`dom(A)` oppure `NULL`. Vale il
+**vuoto fuori dal mondo**.
+
+Tre sensi del vuoto: non noto ma ce,
+non ce proprio, o non si sa fra i due.
+Vale il **tre sensi di vuoto**.
+
+Attenzione con `NULL` nei fili: se Socio
+in Prove e `NULL` non si risale ai dati
+della persona. Esempio righe con `NULL`
+su Badge e Turno mostra buchi che rompono
+legami fra tabelle. Vale il
+**buchi che rompono fili**.
+
+Errore tipico: mettere `NULL` dove serve
+filo di legame o leggerlo come zero nei
+conti e nelle prove.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Chiavi poi nidi poi vuoto in fila.
+- Nome piu tratti per ogni forma.
+- Riga come mappa verso mondi.
+- Corpo di righe uguali per forma.
+- Tabella corta per filtrare casi.
+- Solo atomi mai insiemi in cella.
+- Madre piu figlie con stesso numero.
+- Ordine libero e voci non doppie.
+- Trucco con zero non va bene.
+- Vuoto fuori dal mondo con `NULL`.
+- Tre sensi di vuoto da non mixare.
+- Buchi nei fili rompono legami.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa e forma `Soci(Badge, Nome)`?
+a) Corpo · b) Nome piu tratti per forma · c) Nulla · d) Solo video
+2. Cosa e `t(Badge)` con prima riga?
+a) Nulla · b) Mappa a 7102 su tratto · c) Tutta tabella · d) Solo forma
+3. Come si scioglie scontrino con voci?
+a) Tutto in cella · b) Madre piu figlie con numero · c) Mai possibile · d) Solo carta
+4. Quali patti per voci giuste?
+a) Ordine conta · b) Ordine libero e voci uniche · c) Mai patti · d) Solo doppie
+5. Perche non va zero per vuoto?
+a) Va sempre · b) Trucco fragile che torna utile · c) Mai usato · d) Solo`NULL` vietato
+6. Cosa fa `NULL` in filo Socio?
+a) Aiuta · b) Buchi che rompono fili veri · c) Nulla · d) Solo conti
+
+Soluzioni ragionate
+
+1 — b. Nome piu tratti per dire forma. La a) vede corpo, la c) non dice nulla, la d) guarda video.
+2 — b. Riga come mappa verso mondo. La a) non da nulla, la c) prende tutto, la d) vede forma.
+3 — b. Solo atomi con due tabelle legate. La a) mette insiemi, la c) nega tutto, la d) torna a carta.
+4 — b. Ordine libero e voci non doppie. La a) conta ordine, la c) toglie patti, la d) vuole doppie.
+5 — b. Liberi che tornano utili e trucco. La a) dice sempre, la c) dice mai, la d) vieta `NULL`.
+6 — b. Buchi nei fili senza risalita. La a) aiuta, la c) non fa nulla, la d) guarda conti.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

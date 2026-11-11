@@ -1,0 +1,210 @@
+[plain-text per Pages — da 3 - Introduzione ai modelli dei dati.md]
+
+1. INTRODUZIONE
+---------------
+
+Si apre lo studio dei modi per dire
+i dati: prima latto sicuro in blocco,
+poi pregi e difetti del gestore,
+poi le forme base per modellarli.
+Vale il **percorso in tre tappe**.
+
+Errore tipico: saltare latto sicuro
+e andare dritto alle tabelle senza
+capire tenuta e viste comuni.
+
+2. LA TRANSAZIONE
+-----------------
+
+Atto logico solo, per leggere o per
+scrivere, con quattro doti in sigla
+`ACID`. Vale il **blocco tutto o niente**.
+
+Tutto o niente: o finisce e resta, o
+si annulla del tutto con `ROLLBACK`.
+Esempio riscritto con altri dati:
+invece di negozio con scorta e cassa
+si usi mensa con pasti e scontrini:
+meno porzioni e piu incasso insieme,
+o nulla dei due.
+
+Regola sana: latto non rompe i vincoli
+gia fermi. Esempio riscritto: invece di
+telefono solo cifre si usi `CAP` di 5
+cifre in anagrafe: se entra lettera,
+latto non passa.
+
+Solo fra pari: cio che cambia resta
+nascosto agli altri fino a via libera
+con `COMMIT` o stop con `ROLLBACK`.
+Vale il **nascosto fino al via libera**.
+
+Tenuta nel tempo: cio che resta scritto
+sale su disco prima del via, e regge
+anche a guasto dopo uscita. Vale la
+**scrittura che resta su disco**.
+
+Esempio banca riscritto con altri dati:
+invece di 100 da Rossi a Neri con Verdi
+si usi 75 da Bianchi a Blu con Gialli.
+Righe in `SQL`:
+`BEGIN`
+`UPDATE conti SET saldo = saldo - 75`
+`WHERE nome = Bianchi`
+`UPDATE conti SET saldo = saldo + 75`
+`WHERE nome = Blu`
+`COMMIT`
+Se a meta si cambia idea per rosso in
+conto, si da `ROLLBACK` e cade tutto.
+Senza `BEGIN` ogni riga fa da sola con
+via implicita. Vale il
+**via o stop a fine blocco**.
+
+Punti di scorta con `SAVEPOINT` per
+tenere un pezzo e buttare il resto.
+Esempio riscritto:
+`BEGIN`
+togli 75 a Bianchi
+`SAVEPOINT mia_sosta`
+dai 75 a Blu
+`ROLLBACK TO mia_sosta`
+dai 75 a Gialli
+`COMMIT`
+Si puo tornare piu volte, o lasciare
+il punto per liberare memoria. Solo
+`ROLLBACK TO` riparte dopo stop di
+sistema. Vale il
+**sosta per buttare un pezzo**.
+
+Errore tipico: mostrare mezzi passi
+agli altri o credere che via detta
+a voce valga senza disco scritto.
+
+3. DBMS
+-------
+
+In gara serve dato giusto al tempo
+giusto per scelta giusta. Il gestore
+deve usare bene spazio e tempo e dare
+frutto a chi lavora. Vale il
+**bene e in fretta con poco**.
+
+File semplici vanno per carte povere
+di regole. Il gestore sale dove servono
+vincoli e sicurezze, con meno doppioni.
+
+File danno tutto o niente in comune.
+Il gestore da di piu e tutto insieme.
+Nei vecchi programmi ogni lista tiene
+copia della forma del file, con forme
+discordi. Nel gestore una sola
+descrizione in catalogo serve a tutti.
+Vale il **catalogo unico per tutti**.
+
+Tabella a parole in righe di testo:
+gestore pochi doppioni file molti doppioni
+gestore senza sfasature file con sfasature
+gestore facile da leggere file duro
+gestore con atti pieni file senza atti
+gestore con corse insieme file da solo
+gestore con scudi file aperto
+gestore con tabelle file con cartelle.
+
+Errore tipico: usare file sciolti per
+dati grossi in comune e cercare atti
+sicuri dove non possono stare.
+
+4. IL MODELLO DEI DATI
+-----------------------
+
+Modo per dire forma e moto dei dati
+con pochi attrezzi chiari.
+
+Struttura fissa che dice vista logica
+e legami, senza dati dentro, con sole
+regole. Vale lo **scheletro senza dati**.
+Valori vivi che cambiano in fretta.
+Vale il **corpo vivo che cambia**.
+Esempio riscritto con altri dati in
+righe di testo separate da spazi:
+Corso Tutor Sala Ora
+Reti Anna A1 9:00
+Basi Carlo B2 10:30
+Fisica Anna A1 11:30
+Le teste sono scheletro, le righe sono
+corpo. Il gestore tiene le forme in
+catalogo come `metadati` per ogni uso.
+
+Attrezzi per fare nuovi tipi, come in
+codice con nuovi tipi. Nel modo a
+tabelle ce la relazione che fa insiemi
+di righe uguali per forma. Vale il
+**mattone che fa insiemi uguali**.
+
+Errore tipico: dire corpo quando serve
+testa, o cambiare teste ogni giorno
+come fossero valori.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Percorso da atti a forme dei dati.
+- Blocco solo con via o stop.
+- Regole sane mai rotte in corsa.
+- Nascosto agli altri fino al via.
+- Scritto su disco prima del via.
+- Soste per buttare un pezzo solo.
+- Bene e in fretta con poco costo.
+- Catalogo unico contro copie sparse.
+- Atti pieni solo con gestore vero.
+- Testa fissa contro corpo vivo.
+- Metadati tenuti per ogni uso.
+- Mattone a tabelle per righe uguali.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa un atto con 75 da Bianchi a Blu?
+a) Mezzo resta · b) Tutto o niente con via · c) Nulla mai · d) Solo legge
+2. Cosa impone regola sana su `CAP`?
+a) Tutto entra · b) Lettere non passano mai · c) Mai regole · d) Solo voci
+3. Quando vedono gli altri i passi?
+a) Subito · b) Solo dopo via libera in blocco · c) Mai · d) A meta
+4. Cosa fa `ROLLBACK TO mia_sosta`?
+a) Chiude tutto · b) Butta solo dopo sosta e tiene prima · c) Nulla · d) Scrive disco
+5. Cosa da il gestore contro file sciolti?
+a) Piu doppioni · b) Catalogo unico e atti pieni · c) Nulla · d) Solo carta
+6. Cosa e testa e corpo in tabella corsi?
+a) Uguali · b) Teste fisse e righe vive · c) Solo corpo · d) Solo teste
+
+Soluzioni ragionate
+
+1 — b. Blocco tutto o niente con disco. La a) lascia mezzi, la c) non fa mai, la d) solo legge.
+2 — b. Vincoli fermi non si rompono. La a) apre a tutto, la c) toglie regole, la d) guarda voci.
+3 — b. Nascosto fino al via libera. La a) mostra subito, la c) non mostra mai, la d) mostra a meta.
+4 — b. Sosta per buttare un pezzo solo. La a) chiude tutto, la c) non fa nulla, la d) scrive disco.
+5 — b. Bene e in fretta con poco e scudi. La a) fa doppioni, la c) non da nulla, la d) torna a carta.
+6 — b. Scheletro senza dati e corpo vivo. La a) li dice uguali, la c) vede solo corpo, la d) vede solo teste.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

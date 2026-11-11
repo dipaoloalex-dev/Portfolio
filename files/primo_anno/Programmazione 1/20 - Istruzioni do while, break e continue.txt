@@ -1,0 +1,150 @@
+[plain-text per Pages — da 20 - Istruzioni do while, break e continue.md]
+
+1. ISTRUZIONI DO...WHILE
+------------------------
+
+Il `while` prova prima e poi fa. Il `do` con
+`while` fa prima e poi prova. Questo **test in coda**
+da una **prima esecuzione garantita** anche se la
+domanda e falsa subito. Il **corpo con almeno un giro**
+parte sempre una volta e poi decide se tornare.
+
+Forma: `do` con corpo fra graffe e poi
+`while (domanda)` con **punto e virgola obbligatorio**
+alla fine. Dopo la chiusura si va alla riga dopo
+il ciclo. Il disegno mette prima il rettangolo e
+poi il rombo, con freccia vera che torna sopra e
+falsa che esce sotto.
+
+Esempio riscritto con altri limiti: invece di 1 10
+si stampi 2 12. Da `k = 2` con `do printf k` e
+`while (++k <= 12)` escono 2 3 4 5 6 7 8 9 10 11
+12. Il passo sta dentro il test e sale prima di
+chiedere se restare.
+
+Errore tipico: scordare il `;` dopo il `while`
+finale e rompere la forma.
+
+2. ISTRUZIONE BREAK
+-------------------
+
+Il comando `break` crea una **uscita immediata dal ciclo**.
+Vale in `while` `for` `do` e `switch`. Appena gira
+si salta tutto il resto e si va alla prima riga dopo
+il blocco chiuso. Serve per fermarsi prima del limite
+o per uscire dalla scelta multipla.
+
+Esempio riscritto con altri valori: invece di 1 10
+con stop a 5 si usi 2 12 con stop a 7. Da `t = 2`
+con `for (t = 2; t <= 12; ++t)` e `if (t == 7)`
+con `break` dentro si stampa 2 3 4 5 6 e poi
+messaggio di uscita a 7. Il giro fa solo cinque
+passi pieni e non arriva in fondo.
+
+Serve una **variabile visibile dopo** se il valore
+finale deve restare. Nata fuori resta anche dopo,
+nata in testata muore a fine ciclo e dopo non si
+legge piu.
+
+Errore tipico: dichiarare dentro e cercare fuori
+il valore finale dopo la fine.
+
+3. ISTRUZIONE CONTINUE
+----------------------
+
+Il comando `continue` crea un **salto al giro dopo**.
+Non chiude tutto ma salta solo il resto del corpo
+e riparte dal giro dopo.
+
+Nei `while` vale il **test subito dopo nel while**:
+dopo il salto si chiede subito se restare. Nel `for`
+vale il **passo prima del test nel for**: prima si
+fa il passo e poi si chiede se restare.
+
+Esempio riscritto con altri valori: invece di 1 10
+senza 5 si usi 2 12 senza 7. Da `t = 2` con
+`if (t == 7)` e `continue` dentro si stampa
+2 3 4 5 6 8 9 10 11 12 e poi messaggio di salto
+del 7. Il giro tocca tutti ma stampa tutti meno uno.
+
+Resta la **qualita contro velocita**: i salti
+immediati girano piu forte delle forme tutte
+ordinate ma rompono lordine chiaro. Vale il
+**semplice e corretto prima**: prima testo facile
+e giusto, poi piu rapido e corto solo se serve.
+Il C resta un **linguaggio per prestazioni** dove
+questo conto pesa piu che altrove.
+
+Errore tipico: usare salti per ogni scelta e
+perdere la struttura leggibile del programma.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `while` prova prima, `do` prova dopo.
+- `do` gira almeno una volta sempre.
+- `;` finale sempre dopo `while` di chiusura.
+- `break` esce subito dal blocco intero.
+- Nome fuori se serve dopo la fine.
+- `continue` salta al giro dopo.
+- Nel `for` passo e poi test, altrove test subito.
+- Prima giusto e semplice, poi veloce se serve.
+- Troppi salti rompono lordine chiaro.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `do stampa while (domanda)` da 2?
+a) Nulla mai · b) Stampa almeno 2 e poi decide · c) Prova prima senza stampare · d) Salta tutto
+
+2. Cosa manca senza `;` dopo `while (domanda)` finale?
+a) Nulla · b) La forma corretta del `do` · c) Il corpo · d) La domanda
+
+3. Cosa fa `break` a 7 in 2 12?
+a) Salta solo il 7 · b) Ferma tutto a 6 con messaggio a 7 · c) Non fa nulla · d) Ripete da 2
+
+4. Dove nasce un nome per leggerlo dopo la fine?
+a) In testata · b) Fuori prima del ciclo · c) Mai · d) Solo dentro
+
+5. Cosa fa `continue` a 7 in 2 12?
+a) Ferma tutto · b) Stampa tutti meno 7 e va avanti · c) Non stampa nulla · d) Torna a 2
+
+6. Quando usare salti immediati?
+a) Sempre ovunque · b) Poco e dopo un testo giusto, per velocita mirata · c) Mai · d) Solo senza cicli
+
+Soluzioni ragionate
+
+1 — b. Test in coda con primo giro fisso. La a) non fa nulla, la c) descrive `while`, la d) salta tutto.
+
+2 — b. Chiusura dovuta della forma. La a) non vede nulla, la c) toglie il corpo, la d) toglie la domanda.
+
+3 — b. Uscita subito con cinque stampe. La a) salta solo un giro, la c) non fa nulla, la d) ricomincia.
+
+4 — b. Fuori resta vivo dopo. La a) muore a fine, la c) non nasce mai, la d) parla di dentro.
+
+5 — b. Salto del resto con giro dopo. La a) ferma tutto, la c) non stampa, la d) ricomincia da capo.
+
+6 — b. Qualita prima e scatto dopo se serve. La a) li abusa, la c) li vieta, la d) li toglie dai cicli.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,184 @@
+[plain-text per Pages — da 15 - Esercitazione con iterazioni.md]
+
+1. ASPETTI ESSENZIALI DELLITERAZIONE
+------------------------------------
+
+Quasi ogni programma ripete un blocco finche
+una **condizione di continuazione** resta vera.
+Due famiglie coprono tutti i casi.
+
+La **iterazione definita** sa prima quanti giri
+fara. La **iterazione indefinita** non lo sa e
+si ferma con un segnale dentro i dati.
+
+La **variabile di controllo** conta i giri e sale
+di solito di uno a ogni passaggio. Quando tocca
+il limite il giro finisce e si va alla riga dopo
+il ciclo. Con segnale servono invece letture
+dentro il giro e segnale diverso dai dati validi.
+
+Servono quattro dati per il ciclo contato: nome
+del contatore, valore iniziale, passo di cambio,
+domanda sul valore finale.
+
+Esempio riscritto con intervallo diverso: invece
+di 1 10 si conti 3 9. Da `passo = 3` con
+`while (passo <= 9)` stampa 3 4 5 6 7 8 9 e poi
+esce a 10. Il corpo gira anche con valore finale
+e si ferma solo oltre il limite.
+
+La **definizione contro assegnazione** va distinta:
+la prima dice il tipo e non gira, la seconda
+mette il valore e gira. Si possono usare unite
+oppure staccate in due righe.
+
+Si puo usare un **incremento in condizione** con
+`while (++passo <= 9)` partendo da 2. Risparmia
+una riga ma resta criptico ai principianti.
+
+Serve un **contatore intero** e non decimale.
+I decimali sono approssimati e i test di fine
+diventano imprecisi. Meglio non oltre tre livelli
+di dentro e curare l**impaginazione del codice**
+con spazi verticali e rientri utili.
+
+Errore tipico: contatore decimale o troppi
+dentro senza rientri chiari.
+
+2. ESERCIZI CON OPERATORI
+-------------------------
+
+La **forma compatta di incremento** somma uno
+in quattro modi uguali. Esempio riscritto con
+nome diverso: invece di `x` si usi `k`.
+Righe: `k = k + 1` `k += 1` `++k` `k++`.
+
+Leggere e stampare un senza segno con passo
+dentro si fa cosi. Esempio riscritto: leggi `k`
+con `"%u"` e `&k`, stampa `--k` con `"%u"`.
+Il primo prende, il secondo cala di uno e mostra.
+
+Un **confronto che restituisce intero** vale 1 se
+vero e 0 se falso. Esempio riscritto con valori
+diversi: invece di 4 4 si usi 7 7. Stampa 1 per
+uguale e 0 per diverso, poi `k++` e stampa 0 per
+uguale e 1 per diverso. Sequenza 1 0 0 1 con
+altri numeri di partenza.
+
+Esempio riscritto di scelta con passi dentro:
+invece di `x = 4` `y = 5` si usi `p = 7` `q = 3`.
+Domanda esterna con `++p` vero, interna con `q--`
+falsa. Esce `+` e poi `#`. Qui il post cala dopo
+il test e il pre sale prima del test.
+
+Errore tipico: confondere pre che cambia prima
+con post che cambia dopo il test.
+
+3. ESERCIZI CON ITERAZIONI WHILE
+--------------------------------
+
+Un **accumulatore di potenza** parte da 1 e
+moltiplica per la base a ogni giro. Esempio
+riscritto: invece di generico si calcoli 3 alla 4.
+Leggi base 3 ed esponente 4. Da `i = 1` e
+`ris = 1` con `while (i <= 4)` fai `ris *= 3`
+e `++i`. Risultato 81. Il giro fa tanti passi
+quanto dice lesponente.
+
+Il pari dispari con scelta dentro mostra il resto.
+Esempio riscritto con altri segni e limiti: invece
+di 1 10 con `*` e `+` si usi 2 8 con `@` e `#`.
+Da `d = 2` con `d <= 8` stampa `@` se dispari con
+`d % 2` e `#` se pari. Sequenza da 2 a 8 con
+alternanza `#` `@` `#` `@` `#` `@` `#`.
+
+Se alla domanda si aggiunge `+ 1` il test non e
+mai zero e stampa sempre il primo segno per tutti
+i giri. Utile per capire che zero vale falso e
+ogni altro vale vero.
+
+Un **ciclo dentro ciclo** stampa tabelle. Esempio
+riscritto piu piccolo: invece di 10 10 si faccia
+6 6. Riga esterna da 1 a 6, colonna interna da 1
+a 6 con `r * c` e tabulazione, poi a capo e passo
+esterno. Prime righe:
+1 2 3 4 5 6
+2 4 6 8 10 12
+3 6 9 12 15 18.
+
+Errore tipico: non azzerare lindice interno a
+ogni riga esterna e ottenere una sola riga piena.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Ripeti finche la domanda resta vera.
+- Noto prima uguale contato, ignoto uguale segnale.
+- Quattro dati: nome avvio passo e domanda finale.
+- Corpo anche col valore limite, stop oltre il limite.
+- Definizione non gira, assegnazione si.
+- Interi per contare, mai decimali.
+- Max tre dentro con rientri e spazi.
+- Quattro forme per salire di uno.
+- Confronto vero 1 e falso 0.
+- Pre prima e post dopo il test.
+- Potenza con accumulatore da 1.
+- Tabella con dentro azzerato a ogni riga.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Quando usare ciclo contato e quando segnale?
+a) Sempre segnale · b) Contato con giri noti, segnale con giri ignoti e letture · c) Mai cicli · d) Solo senza domande
+
+2. Con `passo = 3` e `passo <= 9` quanti giri?
+a) Sei · b) Sette con 3 4 5 6 7 8 9 · c) Nove · d) Infiniti
+
+3. Cosa fa `while (++passo <= 9)` da 2?
+a) Nulla · b) Sale prima del test e risparmia una riga · c) Toglie il test · d) Stampa senza ciclo
+
+4. Con `p = 7` e `q = 3` in doppia scelta cosa esce?
+a) `*` e `#` · b) `+` e `#` · c) Nulla · d) Solo `*`
+
+5. Con 7 7 poi scatto cosa danno i quattro confronti?
+a) 0 0 0 0 · b) 1 0 0 1 · c) 1 1 1 1 · d) 0 1 1 0
+
+6. Quanto vale 3 alla 4 con accumulatore da 1?
+a) 12 · b) 64 · c) 81 con quattro passi · d) 27
+
+Soluzioni ragionate
+
+1 — b. Noto contro ignoto con letture. La a) usa sempre segnale, la c) nega i cicli, la d) toglie le domande.
+
+2 — b. Dal primo allultimo compresi sono sette. La a) ne toglie uno, la c) parte da 1, la d) non ha fine.
+
+3 — b. Pre sale prima di chiedere. La a) non fa nulla, la c) toglie il test, la d) salta il ciclo.
+
+4 — b. Esterna vera e interna falsa con `#` finale. La a) copia vecchi segni, la c) non stampa, la d) prende solo il primo.
+
+5 — b. Uguale poi diverso dopo scatto. La a) azzera tutto, la c) mette tutto vero, la d) inverte lordine.
+
+6 — c. Quattro moltiplicazioni per 3. La a) somma invece di potenza, la b) fa 4 alla 3, la d) si ferma a tre passi.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

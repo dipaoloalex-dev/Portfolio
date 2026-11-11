@@ -1,0 +1,207 @@
+[plain-text per Pages — da 36 - Array e funzioni.md]
+
+1. ARRAY LOCALI STATICI E ARRAY LOCALI AUTOMATICI
+-------------------------------------------------
+
+Una locale `static` vive per tutta la
+corsa ma si vede solo nella sua voce.
+Vale anche per le file: con `static` la
+fila non nasce e non muore a ogni giro,
+ma resta fra le chiamate. Cosi cala il
+tempo per voci spesso chiamate con file
+grandi dentro. Vale la **fila ferma contro fila rifatta**:
+statica una volta sola, automatica ogni
+volta.
+
+Le statiche partono allavvio una volta
+sola con **avvio unico prima del via**. Senza avvio scritto vanno a zero
+da sole. Esempio riscritto con altri dati:
+invece di 3 celle con +5 e 1 2 3 si usi
+4 celle con +4 e 2 4 6 8. Voci
+`keepVec` con `static int tab1[4]` e
+`freshVec` con `int tab2[4] = {2, 4, 6, 8}`.
+Ognuna stampa in entrata, aggiunge 4 a
+ogni cella e ristampa in uscita. Il `main`
+chiama prima luna poi laltra, poi di nuovo
+luna poi laltra.
+
+Uscita in righe di testo riscritte:
+primo giro a entrambe
+entrata fissa 0 0 0 0
+uscita fissa 4 4 4 4
+entrata fresca 2 4 6 8
+uscita fresca 6 8 10 12
+secondo giro a entrambe
+entrata fissa 4 4 4 4 con valori tenuti
+uscita fissa 8 8 8 8
+entrata fresca 2 4 6 8 con valori rifatti
+uscita fresca 6 8 10 12.
+
+Per dare una fila a una voce basta il
+**nome senza quadre in chiamata**. Esempio riscritto:
+invece di temperature orarie si usi
+`int dailySteps[DAYS_IN_WEEK]` con
+`updateSteps(dailySteps, DAYS_IN_WEEK)`
+per fila piu misura. Il C passa le file
+per indirizzo: la chiamata tocca le celle
+vere della chiamante, non copie. Il nome
+vale come **indirizzo della prima cella**:
+punto di inizio noto alla voce chiamata,
+che scrive nei posti originari.
+
+Prova con `char buf[6]` e `%p`: le tre
+stampe `buf` `&buf[0]` e `&buf` coincidono
+fra loro a ogni corsa, con cifre 0 9 e
+lettere A F per base 16, ma il numero
+cambia da sistema a sistema. Passare per
+indirizzo evita copie enormi di file grandi
+e salva tempo e memoria. Vale il
+**passo per indirizzo per file grandi**.
+
+Errore tipico: aspettarsi copia privata
+della fila dentro la voce e stupirsi dei
+cambi visti anche fuori.
+
+2. ORDINAMENTO E RICERCA
+-----------------------
+
+Si ordina una fila di 8 in senso crescente
+con metodo a bolle: i piccoli salgono di un
+passo e i grandi scendono anche di molti
+posti in un giro. Ogni passata confronta
+coppie vicine 0 1 poi 1 2 e cosi via. Se
+in ordine o uguali si lascia stare, se in
+calo si scambiano i due valori con **scambio solo in calo**. Vale la
+**salita dei piccoli a bolle**.
+
+Esempio riscritto con altri valori:
+invece di 10 voci 2 6 4 8 10 12 89 68 45 37
+si usi 8 voci 9 3 7 1 8 2 6 4. Righe:
+`#define DIM 8`
+`int b[DIM] = {9, 3, 7, 1, 8, 2, 6, 4}`
+stampa in riga, poi due `for` annidati:
+fuori `pass` da 1 a sotto `DIM`, dentro
+`i` da 0 a sotto `DIM - 1`, con
+`if (b[i] > b[i + 1])` e scambio in tre
+mosse con appoggio `tmp`. Poi ristampa.
+
+Uscita in righe di testo:
+ordine di partenza
+9 3 7 1 8 2 6 4
+ordine di arrivo
+1 2 3 4 6 7 8 9.
+
+Con 8 voci servono 7 confronti a passata
+e 7 passate in tutto: il massimo scende in
+fondo al primo giro, il secondo massimo al
+giro dopo, fino al settimo che sistema la
+seconda cella, mentre lo 0 resta il minimo
+da solo. Lo scambio usa la **cella di appoggio temporanea**
+per tenere un valore durante le tre mosse.
+
+Errore tipico: fermarsi a troppe poche
+passate e lasciare code fuori posto.
+
+3. ARRAY MULTIDIMENSIONALI
+-------------------------
+
+Si possono usare piu indici in una fila.
+Con due indici nasce la tabella per righe
+e colonne. Esempio riscritto: invece di
+`b[2][2]` con 1 2 3 4 si usi
+`int m[2][2] = {{5, 6}, {7, 8}}`.
+Vale la **tabella per righe e colonne**
+con primo indice riga e secondo colonna.
+
+Programma riscritto con altri valori:
+`void showTable(int t[][3])` come annuncio.
+In `main` tre tabelle 2 per 3:
+`int grid1[2][3] = {{2, 4, 6}, {8, 10, 12}}`
+`int grid2[2][3] = {2, 4, 6, 8}`
+`int grid3[2][3] = {{3}, {9, 11}}`.
+La voce scorre con due `for` e stampa con
+`%d` piu spazio e a capo a fine riga. Qui
+serve la misura delle colonne in annuncio
+con **colonne fisse in annuncio**:
+`int t[][3]` con 3 fisso e righe libere.
+
+Uscita in righe di testo:
+tabella 1 per righe
+2 4 6
+8 10 12
+tabella 2 per righe
+2 4 6
+8 0 0
+tabella 3 per righe
+3 0 0
+9 11 0.
+I posti senza voce vanno a zero da soli.
+Vale il **riempimento a zero dei vuoti**.
+
+Errore tipico: omettere la misura delle
+colonne in annuncio o leggere oltre i
+posti della tabella.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `static` vive sempre ma si vede in voce.
+- Automatiche nascono e muoiono ogni giro.
+- Statiche a zero senza avvio scritto.
+- Nome fila senza quadre per passare tutto.
+- Nome come indirizzo della prima cella.
+- Passo per indirizzo per file grandi.
+- Bolle con coppie vicine e scambi in calo.
+- Passate pari a voci meno uno in tutto.
+- Appoggio a tre mosse per ogni scambio.
+- Tabelle con righe e colonne da due indici.
+- Colonne fisse in annuncio di stampa.
+- Vuoti senza voce riempiti a zero.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa la fissa 0 0 0 0 con +4 due volte?
+a) Sempre 0 · b) 4 poi 8 con valori tenuti · c) Come fresca · d) Nulla
+2. Cosa fa la fresca 2 4 6 8 con +4 due volte?
+a) Come fissa · b) 6 8 10 12 per due volte uguali · c) Sempre 0 · d) Non parte
+3. Come si passa una fila a una voce?
+a) Con copia · b) Con nome senza quadre per indirizzo · c) Mai possibile · d) Solo misura
+4. Come ordina il metodo a bolle 9 3 7 1?
+a) A caso · b) Con coppie vicine e scambi in calo · c) Mai ordina · d) Solo una passata
+5. Quante passate per 8 voci?
+a) 8 · b) 7 con minimo fermo a zero · c) 1 · d) Zero
+6. Cosa stampa tabella 2 da {2, 4, 6, 8}?
+a) Tutto pieno · b) 2 4 6 piu 8 0 0 · c) Solo zeri · d) Nulla
+
+Soluzioni ragionate
+
+1 — b. Fila ferma con memoria fra i giri. La a) resta a zero, la c) copia la fresca, la d) non fa nulla.
+2 — b. Rifatta uguale a ogni ingresso. La a) copia la fissa, la c) azzera tutto, la d) non parte mai.
+3 — b. Nome come punto di inizio piu misura. La a) fa copie enormi, la c) nega tutto, la d) passa misura sola.
+4 — b. Piccoli su di uno e grandi giu veloci. La a) va a caso, la c) non ordina, la d) ferma a una.
+5 — b. Voci meno uno con zero a posto da solo. La a) conta una in piu, la c) ferma a una, la d) non gira.
+6 — b. Piene le prime e zeri i vuoti rimasti. La a) riempie tutto, la c) azzera tutto, la d) non stampa.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

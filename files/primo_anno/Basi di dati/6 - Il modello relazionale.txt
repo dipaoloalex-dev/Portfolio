@@ -1,0 +1,246 @@
+[plain-text per Pages — da 6 - Il modello relazionale.md]
+
+1. INTRODUZIONE
+---------------
+
+Si presenta il modo a tabelle: prima
+il senso di forma logica, poi i mattoni
+di legame e tabella con prove vere.
+Vale il **senso logico poi mattoni**.
+
+Errore tipico: partire da tabelle senza
+capire forma logica che le regge.
+
+2. IL MODELLO LOGICO DEI DATI
+------------------------------
+
+Modo per dire e pesare i bisogni di
+dati per i flussi di ditta, con chi
+disegna vicino a chi usa e decide.
+
+Forma senza marca che dice cose, fatti
+e fili: enti e tratti, legami, segni
+unici, figli e padri di tipo, regole
+fra legami. Poi si passa a forma vera
+su disco. Si lavora senza guardare
+piattaforma sotto. Vale la
+**forma senza marca prima**.
+
+Tre vie vecchie: ad albero, a rete, a
+tabelle. Tre vie nuove: a oggetti poco
+usata, a segni `XML` vicina a tabelle,
+senza forma fissa `NoSQL`.
+
+Ad albero tutto a rami da una radice
+sola. Esempio riscritto con altri dati:
+invece di Fornitore X si usi Magazzino
+A come radice sola di scorte.
+
+Ogni padre molti figli, ogni figlio un
+padre solo, in sigla `1:N`. Esempio
+riscritto con altri dati: invece di
+Dipendenti con Figli si usi Reparti con
+Addetti. Reparto padre con sigla, sede,
+piano. Addetto figlio con nome, cognome,
+turno, nascita. Uno tiene molti, ognuno
+ha uno. Vale il **uno per molti ad albero**.
+
+Altro caso noto sono cartelle di dischi,
+con radice e sotto cartelle a cascata.
+
+Le vie ad albero corrono dove il mondo
+e ad albero, ma arrancano su molti a
+molti. Esempio riscritto: invece di
+venditori e merci si usi soci e corsi:
+socio segue molti corsi, corso ha molti
+soci, duro da dire ad albero. Vale il
+**molti a molti senza albero**.
+
+Guasto tipico ad albero riscritto con
+altri dati: invece di conto 5100 con
+Gialli e Verdi si usi badge 7200 con
+Blu e Rossi in soci e quote: un figlio
+con due padri rompe albero e chiede
+doppio ramo uguale.
+
+A rete non ha cima fissa: insiemi di
+righe piu fili nei due versi. Il figlio
+puo avere molti padri e non si ripete
+uguale. Vale la **rete senza cima fissa**.
+
+A tabelle nasce anni settanta per scudo
+dei dati, su idea di legame in matematica
+con veste grafica di tabella. Tiene una
+o piu tabelle con righe e colonne e con
+segno unico per riga. Righe dette
+`record` o `tuple`, colonne dette
+`attributi`. Vale la
+**tabelle con segno unico**.
+
+Esempio tabella riscritto con altri dati
+in righe di testo separate da spazi:
+Tessera Nome Cognome Nascita
+10203 Luca Blu 15-3-2001
+10407 Anna Verdi 22-6-2002
+10981 Marco Gialli 30-1-2000
+Invece di 01234 Roberto Rossi si usano
+tessere e date diverse. Ogni tabella e
+un tipo, ogni riga un caso, ogni colonna
+un tratto del caso.
+
+Senza ordine fra righe e fra colonne.
+Si chiede con `SELECT`, si muta con
+mettere, togliere e cambiare. Nuove
+righe da valori o da domande. Vale il
+**senza ordine ma con domande**.
+
+Errore tipico: chiedere ordine fisso a
+tabelle o mettere doppie righe uguali.
+
+3. LA RELAZIONE
+---------------
+
+Il cuore del modo a tabelle ha tre sensi:
+legame in matematica, legame in tabelle,
+classe di fatti in disegno ente-legame.
+Vale il **tre sensi di legame**.
+
+In matematica parte da insiemi anche
+uguali e fa tutti i casi possibili con
+prodotto `x`. Poi prende solo alcuni casi
+come sottoinsieme. Domini sono gli insiemi
+di via. Vale il **casi possibili poi scelti**.
+
+Esempio piccolo riscritto con altri dati:
+invece di a b con x y z si usi p q con
+m n. Righe di testo:
+D1 p q
+D2 m n
+tutti p m p n q m q n
+scelti p m q n.
+Nessun ordine fra righe scelte, righe
+diverse, ogni posto nel suo dominio.
+Vale il **posti giusti in ogni riga**.
+
+Esempio gare riscritto con altri dati in
+righe di testo: invece di Juve Lazio Milan
+Roma con 3 1 2 0 si usi Orsi Lupi Volpi
+Cervi con altri gol:
+Incontri sotto `string x string x int x int`
+Orsi Lupi 2 1
+Lupi Volpi 1 1
+Orsi Cervi 0 2
+Volpi Cervi 3 0.
+La forma resta posizionale: posti fissi
+per domini. Vale la
+**forma con posti fissi**.
+
+In tabelle ogni dominio ha nome di ruolo
+`attributo`. Con nomi, anche se muovi
+colonne il senso resta. Righe di testo:
+Casa Fuori GolCasa GolFuori
+Orsi Lupi 2 1
+Lupi Volpi 1 1.
+Vale la **nomi che tengono senso**.
+
+Errore tipico: dire tabella quando serve
+classe di fatti, o togliere nomi e poi
+muovere colonne a caso.
+
+4. LA TABELLA
+-------------
+
+Disegno di legame a tabelle con righe
+`tuple` e colonne `attributi`. In essa
+ordine di righe e di colonne non conta.
+
+Vale come legame se e solo se righe
+diverse, teste diverse, valori uguali
+per colonna, e fili fra tabelle con
+valori uguali nei posti. Esempio fili
+riscritto con altri dati in righe di
+testo: invece di Studenti Esami con 6554
+si usi Soci Corsi con 7200:
+Soci Badge Cognome Nome Nascita
+7102 Blu Luca 15-3-2001
+7200 Rossi Maria 02-02-2002
+Corsi Badge Voto Turno
+7200 28 03
+7200 25 05
+7102 30 03
+Il filo e Badge 7200 fra le due. Vale il
+**fili con valori uguali**.
+
+Utili dei fili con valori: scudo da
+dischi che mutano, solo cio che serve
+al lavoro, stessi dati a tutti, porto
+facile fra macchine, frecce a un verso.
+Vale il **valori che liberano dischi**.
+
+Errore tipico: fili con frecce fisiche
+al posto di valori o teste uguali che
+confondono colonne.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Senso logico prima dei mattoni.
+- Forma senza marca per bisogni.
+- Uno per molti ad albero stretto.
+- Molti a molti contro albero.
+- Rete senza cima contro doppioni.
+- Tabelle con segno unico per riga.
+- Senza ordine ma con domande.
+- Tre sensi di legame da non mixare.
+- Casi possibili poi scelti in parte.
+- Posti fissi senza nomi, nomi con moto.
+- Fili con valori uguali fra tabelle.
+- Valori che liberano dai dischi.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa dice forma logica dei dati?
+a) Solo dischi · b) Cose fatti e fili senza marca · c) Nulla · d) Solo video
+2. Come lega via ad albero?
+a) Molti a molti · b) Uno per molti con padre solo · c) Nulla · d) Senza regole
+3. Cosa scioglie via a rete?
+a) Nulla · b) Figlio con molti padri senza doppioni · c) Solo albero · d) Solo tabelle
+4. Cosa tiene tabella con segno unico?
+a) Solo colonne · b) Righe casi con tratti e chiave · c) Nulla · d) Solo dischi
+5. Come sta legame in matematica?
+a) A caso · b) Casi possibili poi scelti con posti · c) Mai certo · d) Senza domini
+6. Come si legano Soci e Corsi?
+a) Con frecce · b) Con Badge uguale fra tabelle · c) Mai legate · d) Con dischi
+
+Soluzioni ragionate
+
+1 — b. Forma senza marca prima del fisico. La a) guarda dischi, la c) non dice nulla, la d) guarda video.
+2 — b. Uno per molti ad albero stretto. La a) vuole molti, la c) non dice nulla, la d) toglie regole.
+3 — b. Rete senza cima contro doppioni. La a) non scioglie nulla, la c) torna ad albero, la d) salta a tabelle.
+4 — b. Tabelle con segno unico e domande. La a) toglie righe, la c) non tiene nulla, la d) guarda dischi.
+5 — b. Posti giusti con domini fermi. La a) va a caso, la c) non dice mai, la d) toglie domini.
+6 — b. Fili con valori uguali visibili. La a) usa frecce, la c) nega tutto, la d) usa dischi.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

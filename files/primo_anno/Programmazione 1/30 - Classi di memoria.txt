@@ -1,0 +1,210 @@
+[plain-text per Pages — da 30 - Classi di memoria.md]
+
+1. CLASSI DI MEMORIA
+-------------------
+
+Si usano nomi per celle e per voci
+nuove. Ogni nome ha nome tipo misura
+e valore, piu altri tre aspetti: la
+**classe di memoria del nome**, la
+**vita del dato in memoria**, il
+**punto dove si puo citare** e il
+legame fra file diversi.
+
+I segni di classe sono `auto`
+`extern` `static` piu voce per fili
+paralleli da non trattare qui. La
+classe decide vita, punto di uso e
+legame del nome.
+
+La vita dice per quanto esiste in
+memoria: alcuni per poco, alcuni con
+crea e distruggi ripetuti, altri per
+tutta la corsa del lavoro.
+
+Il punto dice dove si puo citare nel
+testo: alcuni ovunque, altri solo in
+pezzi del testo. Il legame dice, con
+piu file sorgente, se vale solo nel
+file corrente o anche altrove con
+giuste dichiarazioni.
+
+Le classi si dividono in vita breve
+automatica e vita lunga statica. La
+**nascita allingresso del blocco**
+con `auto` crea la cella quando si
+entra e la toglie quando si esce.
+Solo le celle possono essere brevi.
+
+Le locali con ingressi e corpo sono
+di norma brevi senza scriverlo, quindi
+`auto` resta raro. Da qui si dicono
+solo automatiche. La tecnica fa
+**risparmio con vita breve**: esiste
+solo quando serve, nasce entrando
+e muore uscendo dalla voce.
+
+La **vita lunga da avvio a termine**
+con `extern` e `static` esiste da inizio
+a fine corsa. Per le statiche la cella
+nasce e parte una sola volta prima
+del via. Per le voci il nome esiste da
+avvio. Ma esistere non vuol dire poter
+citare sempre: vita e punto restano
+separati.
+
+Le **globali fuori da ogni voce** con
+`extern` di base tengono il valore per
+tutta la corsa. Voci e globali si citano
+da ogni voce posta dopo annuncio o
+definizione nello stesso file. Per questo
+servono gli annunci, come testata che
+rende noto un nome al resto del file.
+Meglio poche globali salvo dure esigenze
+di scatto: una voce lontana puo toccare
+per sbaglio e creare guasti. Le celle di
+una sola voce restino locali.
+
+La **locale che ricorda fra giri** con
+`static` si vede solo nella sua voce ma
+non perde il dato alluscita. Al giro dopo
+ritrova il valore lasciato al giro prima.
+Riga riscritta con altri dati: invece di
+`count = 1` si usi `static int giri = 2`.
+Senza avvio scritto, le numeriche lunghe
+partono da zero da sole.
+
+Il punto di uso ha quattro ampiezze:
+voce, file, blocco e annuncio. Solo le
+**etichette vive in tutta la voce**
+come `avvio:` valgono ovunque nella voce
+e mai fuori. Servono in `switch` come
+`case`. Restano nascoste nella voce, come
+**minimo accesso per ogni compito**: solo
+privilegi utili al fare, mai di piu.
+
+Chi sta fuori da ogni voce ha punto a
+file: noto da li fino a fine file. Globali,
+voci e annunci fuori voce valgono a file.
+Chi sta dentro un blocco vale a blocco,
+fino alla `}` di chiusura. Locali a inizio
+voce e ingressi valgono a blocco. Ogni
+blocco puo aprire celle. Se dentro e fuori
+usano lo stesso nome, il dentro copre il
+fuori fino a fine blocco interno, poi il
+fuori torna visibile. Le locali statiche
+restano a blocco anche se vivono da prima
+del via: la vita non cambia il punto.
+
+Solo i nomi in lista di annuncio hanno
+punto ad annuncio. Bastano i tipi, i nomi
+si possono omettere. Se scritti, il
+traduttore li ignora e si possono riusare
+altrove senza confusione.
+
+Errore tipico: riusare per sbaglio dentro
+un nome gia usato fuori quando serviva
+il fuori per tutto il dentro, o scegliere
+nomi che coprono nomi esterni utili.
+
+Esempio riscritto con altri dati: invece
+di `x` con 1 5 7 25 50 e per 10 si usi
+`y` con 2 6 9 30 60 e per 5. Globale
+`int y = 2` fuori da ogni voce. In `main`
+locale `int y = 6` che copre la globale.
+Stampa 6 esterno. Poi blocco dentro con
+`int y = 9` che copre il 6. Stampa 9
+interno. Usciti, torna 6 esterno. Poi
+`useAuto` con **azzerata a ogni ingresso**
+`int y = 30` che stampa 30, sale a 31
+e ristampa 31, e al giro dopo riparte
+da 30. Poi `useMemo` con `static int y = 60`
+che stampa 60, sale a 61, al giro dopo
+entra a 61 ed esce a 62. Poi `useWide`
+senza locali che usa la globale: entra
+a 2 ed esce a 10 con `y *= 5`, al giro
+dopo entra a 10 ed esce a 50. Alla fine
+`main` ristampa 6: nessuna voce ha toccato
+la sua locale perche ognuna guarda altrove.
+
+Righe di testo per uscita riscritta:
+locale esterno di main 6
+locale interno di main 9
+locale esterno di main 6
+auto in entrata 30
+auto in uscita 31
+memo in entrata 60
+memo in uscita 61
+larga in entrata 2
+larga in uscita 10
+auto in entrata 30
+auto in uscita 31
+memo in entrata 61
+memo in uscita 62
+larga in entrata 10
+larga in uscita 50
+locale di main 6.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Nomi con vita punto e legame oltre tipo.
+- `auto` breve nel blocco e poi distrutta.
+- Breve solo per celle e rara da scrivere.
+- Lunga con `extern` e `static` da avvio.
+- Vita e punto come aspetti separati.
+- Globali fuori voce per tutta la corsa.
+- Poche globali per guasti laterali.
+- `static` locale ricorda fra i giri.
+- Quattro punti: voce file blocco annuncio.
+- Dentro copre fuori fino a fine blocco.
+- Nomi in annuncio solo per i tipi.
+- Evita nomi che coprono nomi utili.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa decide la classe di un nome?
+a) Solo il tipo · b) Vita punto e legame oltre al resto · c) Nulla · d) Solo il colore
+2. Quando vive una `auto` di blocco?
+a) Sempre · b) Da ingresso a uscita del blocco · c) Mai · d) Solo a fine disco
+3. Cosa fa `static int giri = 2` in voce?
+a) Nulla · b) Ricorda il valore fra i giri · c) Cancella tutto · d) Apre a tutti
+4. Dove vale un nome fuori da ogni voce?
+a) Solo dentro · b) A file fino in fondo dopo lannuncio · c) Mai · d) Solo in annuncio
+5. Cosa stampa il secondo giro di auto da 30?
+a) 60 61 · b) 30 in entrata e 31 in uscita di nuovo · c) 0 · d) Nulla
+6. Cosa fa larga da 2 con `y *= 5` due volte?
+a) Resta 2 · b) Va a 10 poi a 50 fra i giri · c) Va a 0 · d) Non parte
+
+Soluzioni ragionate
+
+1 — b. Vita punto e legame con classe. La a) vede solo il tipo, la c) non decide nulla, la d) parla di colore.
+2 — b. Nascita allingresso e morte alluscita. La a) tiene per sempre, la c) non crea nulla, la d) parla di disco.
+3 — b. Locale con memoria fra chiamate. La a) non fa nulla, la c) cancella tutto, la d) apre a tutti.
+4 — b. Noto a tutto il dopo nello stesso file. La a) chiude dentro, la c) non vale mai, la d) limita allannuncio.
+5 — b. Azzerata a ogni ingresso con stesso giro. La a) copia la memo, la c) azzera tutto, la d) non stampa.
+6 — b. Globale che tiene il conto fra i giri. La a) resta ferma, la c) azzera tutto, la d) non parte.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

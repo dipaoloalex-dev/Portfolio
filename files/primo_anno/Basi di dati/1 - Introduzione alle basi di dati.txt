@@ -1,0 +1,224 @@
+[plain-text per Pages — da 1 - Introduzione alle basi di dati.md]
+
+1. INTRODUZIONE: L'INFORMATICA
+------------------------------
+
+La parola nasce nel 1957 da unione di
+informazione piu automatica. Al centro
+sta il **trattamento automatico dei segni**
+con metodi eseguibili da macchina.
+
+Spesso si lega ai calcolatori e alla
+scrittura di programmi. Questa vista e
+stretta perche guarda solo la tecnica.
+Ma senza computer resta quasi vuota:
+molte scelte di codifica vivono per
+uso pratico. Esempio riscritto: invece
+di bit e compressione si usi alfabeto
+ridotto per scontrini e sigle corte per
+magazzino, nate per velocita a cassa.
+
+Qui si fissano parole chiave per il
+corso: dato contro informazione,
+sistema per carte contro sistema con
+macchine, cura dei dati contro cura
+delle notizie, per leggere bene i Data
+Base. Vale la mappa iniziale del corso.
+
+Errore tipico: dire che informatica e
+solo uso del computer o solo teoria
+senza prove pratiche.
+
+2. I PRIMI CONCETTI
+-------------------
+
+Si chiariscono quattro voci base del
+settore: flusso di carte, flusso con
+macchine, notizia utile, segno pronto.
+
+Il flusso di carte d azienda vive anche
+senza hardware e software. Conta il
+giro di notizie fra uffici per fini di
+lavoro, anche a mano. Esempio riscritto:
+invece di agenda giornaliera si usi
+registro cartaceo delle presenze in
+palestra con firma in entrata e spunta
+del turno. Vale il
+**flusso senza computer dentro**.
+
+Il flusso con macchine e la parte resa
+automatica del primo. Usa `ICT` per
+registrare, tenere, elaborare e cercare
+in fretta. Comprende ferri, programmi,
+archivi e schermi di confine con parte
+a mano. Vale la **parte automatica del flusso**.
+Esempio riscritto: sportello che da
+carta a video per prenotare un campo,
+con operatore solo per i casi dubbi.
+
+La notizia utile da sapere piu o meno
+precisa su fatti e modi di essere.
+Oppure dati legati fra loro che danno
+forma a idea e la portano ad altri.
+Si misura anche con matematica delle
+probabilita dal 1948, base per reti di
+trasmissione. Vale la
+**notizia che fa sapere**.
+
+Il segno pronto sta prima di ogni
+conto ed e fatto per macchina. Spesso
+e descrizione breve e codificata di
+fatti, atti o persone. Vale il
+**segno pronto per macchina**.
+Esempio riscritto con altri dati:
+invece di anagrafe con fiscale si usi
+schedario corsi con note libere, nome
+e cognome, estremi di iscrizione,
+tessera socio. Ogni voce resta segno
+da trattare in automatico.
+
+Codifiche riscritte con altri dati:
+invece di ISBN con 817525766-0 si usi
+`978-88-12-34567-8` come
+**codice a barre per scaffali** letto
+alla cassa della biblioteca per carico
+e reso rapido. Invece di sito scuola si
+usi `www.orari-mensa.it` come
+**quadro rapido da telefono** letto con
+cellulare per aprire orario del giorno.
+
+Errore tipico: mettere il computer
+dentro il flusso di carte per forza,
+o dire dato e notizia come sinonimi.
+
+3. GESTIONE DELLE INFORMAZIONI
+-------------------------------
+
+Il giro si fa in quattro mosse: presa,
+tenuta, lavoro e scambio. Vale il
+**quattro passi del ciclo**.
+
+Le notizie date a chi decide valgono
+per quattro tratti: cosa dice e se e
+giusta, quando arriva, dove arriva,
+come si mostra. Vale il
+**quattro tratti della notizia utile**.
+
+Chi lavora al giro sono cinque voci:
+segni grezzi non ancora trattati,
+notizie gia legate con un fine,
+persone che raccolgono e poi leggono,
+mezzi che portano e cambiano i segni,
+modi scelti per ogni fine d azienda.
+Esempio riscritto: squadra mensa con
+ordini grezzi, menu del giorno pronto,
+cuochi e camerieri, vassoi e rete ordini,
+ricetta diversa per dieta e turno.
+
+Mappa con scatole una dentro laltra in
+righe di testo:
+azienda
+ organizzazione
+  flusso di carte
+   flusso con macchine
+Vale il **gusci dentro gusci d azienda**:
+il cuore automatico sta nel flusso di
+carte, che sta nel lavoro di tutti,
+che sta nell azienda intera.
+
+Errore tipico: saltare la tenuta o lo
+scambio e tenere dati senza data, luogo
+e forma chiara per chi decide.
+
+4. BASI DI DATI
+---------------
+
+Base di dati come insieme ordinato di
+segni per lavoro di ente o persona.
+Vale in senso di metodo. Oppure come
+insieme omogeneo per forma e senso in
+macchina e chiesto da terminale con
+sigla `DB`. Vale il **un solo archivio in comune**.
+
+Esempio riscritto con altri dati:
+invece di Magazzino Vendite Acquisti si
+usi Biblioteca Prestiti Ordini. Prima
+ogni ufficio tiene file propri:
+Biblioteca a Dati Biblioteca
+Prestiti a Dati Prestiti
+Ordini a Dati Ordini.
+Poi con base unica tutti vedono anche
+fuori settore:
+Prestiti a Database
+Ordini a Database
+Biblioteca a Database.
+Righe di testo separate da spazi come
+sopra, senza tabelle copiate.
+
+Errore tipico: tenere tre copie divise
+uguali e discordi invece di una base
+unica condivisa e interrogabile.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Informatica come lavoro automatico.
+- Pratica guida codifiche e scelte.
+- Flusso di carte anche senza macchine.
+- Flusso con macchine come parte auto.
+- Notizia come sapere legato e mandato.
+- Segno pronto in forma per macchina.
+- Barre e quadri come codifiche rapide.
+- Presa tenuta lavoro scambio in giro.
+- Notizia utile per cosa quando dove come.
+- Gusci dal cuore auto a azienda intera.
+- Base unica contro file divisi.
+- Sigla `DB` per insieme interrogabile.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa mette al centro la parola del 1957?
+a) Solo computer · b) Lavoro automatico su segni · c) Solo reti · d) Nulla
+2. Cosa vale per flusso di carte d azienda?
+a) Serve sempre software · b) Vive anche a mano fra uffici · c) Mai esiste · d) Solo ferri
+3. Cosa aggiunge flusso con macchine?
+a) Nulla · b) Parte auto con ferri programmi e schermi · c) Solo carta · d) Solo voci
+4. Come si riconosce segno pronto?
+a) Frase libera · b) Breve e codificato per macchina · c) Mai chiaro · d) Solo voce
+5. Quali sono i passi del giro?
+a) Solo presa · b) Presa tenuta lavoro scambio · c) Solo scambio · d) Mai detti
+6. Cosa cambia con base unica?
+a) Nulla · b) File divisi in uno condiviso · c) Piu copie divise · d) Meno domande
+
+Soluzioni ragionate
+
+1 — b. Unione di notizia e auto con macchina. La a) guarda solo ferri, la c) guarda solo reti, la d) non dice nulla.
+2 — b. Giro di notizie anche a mano. La a) chiede software, la c) nega tutto, la d) chiede ferri.
+3 — b. Auto di registri archivi e ricerche. La a) non aggiunge nulla, la c) torna a carta, la d) vede solo voci.
+4 — b. Forma breve per conto automatico. La a) resta libera, la c) non dice mai, la d) resta a voce.
+5 — b. Quattro mosse in ordine di giro. La a) ferma a presa, la c) ferma a scambio, la d) nega tutto.
+6 — b. Uno in comune aperto a tutti. La a) non cambia nulla, la c) fa piu copie, la d) chiude domande.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

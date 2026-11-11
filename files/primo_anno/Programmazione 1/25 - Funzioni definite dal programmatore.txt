@@ -1,0 +1,191 @@
+[plain-text per Pages — da 25 - Funzioni definite dal programmatore.md]
+
+1. DEFINIZIONI DI FUNZIONI
+-------------------------
+
+Ogni lavoro visto finora parte da
+`main` che chiede aiuto alle voci
+gia pronte della dotazione comune.
+Ora si crea una **funzione creata per un compito**
+nuova, scritta per un uso proprio.
+
+Esempio riscritto con altri dati:
+invece di quadrati da 1 a 10 si
+usino cubi da 1 a 8. Programma con
+`#include <stdio.h>`, poi annuncio
+`int cube(int y)`, poi `main` con
+`for` da 1 a 8 e stampa di
+`cube(x)` con `%d`, poi definizione
+`int cube(int y)` con `return y*y*y`.
+
+Uscita in riga di testo semplice:
+1 8 27 64 125 216 343 512.
+
+La chiamata sta dentro `printf`
+in `main`. Arriva una **copia locale del dato**:
+`x` resta fuori e `y` dentro prende
+solo il valore copiato. Poi si fa
+`y * y * y` e si manda indietro un
+**valore reso alla chiamante** alla
+riga di chiamata. La stampa riceve
+quel numero e lo mostra. Il giro
+si ripete otto volte col `for`.
+
+La definizione dice che serve un
+intero `y`. La parola `int` prima
+del nome dice che torna un intero.
+La riga `return` manda indietro il
+conto alla chiamante.
+
+Serve un **annuncio prima delluso**
+detto anche dichiarazione. La riga
+`int cube(int y)` prima di `main`
+dice al traduttore cosa entra e
+cosa esce. L`int` dentro le tonde
+dice che entra un intero. L`int`
+prima del nome dice che esce un
+intero. Il controllo verifica numero
+e tipo e ordine degli argomenti e
+coerenza del tipo reso col punto
+di chiamata.
+
+Il modello generale e tipo reso piu
+nome piu lista fra tonde, poi graffe
+con istruzioni. Il nome segue le
+regole degli identificatori. Vale la
+**intestazione con tipo nome e ingressi**
+come somma delle tre parti iniziali.
+La lista elenca gli ingressi separati
+da virgole. Se non entra nulla si
+mette `void`. Il `void` come uscita
+dice che nulla torna indietro.
+
+Serve il **segnale di nessun dato**
+nei due sensi: `void` in ingresso
+per zero dati in entrata e `void`
+in uscita per zero dati in uscita.
+Controllare che chi deve rendere
+renda davvero, e chi non deve non
+renda nulla.
+
+Vale il **tipo scritto per ogni ingresso**:
+ogni voce vuole il suo tipo, come
+in `int p, int q`. La forma corta
+con un solo tipo per due nomi non
+passa la traduzione. Niente `;` dopo
+la tonda di chiusura nella definizione.
+Non ridefinire un ingresso come
+locale dentro la stessa funzione.
+
+Meglio tenere **nomi diversi fra dentro e fuori**
+per argomenti e parametri. Non e
+vietato riusare lo stesso nome, ma
+nomi diversi tolgono ambiguiti.
+
+Le righe fra graffe formano il
+**blocco fra graffe** detto anche
+corpo. Le celle si possono aprire
+in ogni blocco e i blocchi stanno
+dentro altri blocchi, ma le funzioni
+non stanno dentro altre funzioni.
+Definire una funzione dentro
+unaltra rompe la sintassi.
+
+Nomi chiari per funzioni e ingressi
+rendono tutto leggibile ed evitano
+troppi commenti. Servono **piccole unita riusabili**
+e lavori fatti da molte piccole voci:
+piu facili da scrivere, da correggere
+e da cambiare nel tempo.
+
+Serve un **accordo su numero tipo e ordine**
+fra annuncio, intestazione e chiamate,
+compreso il tipo reso. Se una parte
+dice una cosa e unaltra ne dice
+unaltra, il lavoro non quadra.
+
+Vale la **uscita con o senza valore**
+in tre modi. Senza risultato si torna
+alla graffa destra di chiusura oppure
+con `return` senza nulla. Con
+risultato si usa
+`return espressione` che manda il
+valore alla chiamante.
+
+La `main` rende `int`. Il numero dice
+se tutto e andato bene. Lo zero
+finale vale come successo. Nelle
+vecchie forme si scriveva `return 0`
+in fondo. Ora lo standard mette zero
+da solo se manca la riga. Valori
+diversi da zero segnalano un problema
+durante la corsa del programma.
+
+Errore tipico: scordare `return`
+dove serve, oppure metterlo dove
+non deve stare, o chiudere la
+definizione con `;` di troppo.
+
+Concetti chiave da ricordare
+----------------------------
+
+- `main` chiama voci pronte o nuove.
+- Ingresso come copia locale del dato.
+- `return` manda il conto alla chiamante.
+- Annuncio prima per numero tipo ordine.
+- Modello con tipo nome lista e graffe.
+- `void` per zero dati in o out.
+- Tipo esplicito per ogni singolo ingresso.
+- Mai `;` dopo la testata di definizione.
+- Corpo come blocco, mai funzioni dentro.
+- Nomi chiari e voci piccole da riusare.
+- Annuncio testata e chiamate in accordo.
+- `main` a `int` con zero come successo.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa fa `cube(x)` dentro `printf` con `for` 1 8?
+a) Nulla · b) Manda cubi 1 512 in otto giri · c) Solo pari · d) Ferma tutto
+2. Cosa riceve `y` in `int cube(int y)`?
+a) Lindirizzo fisso · b) Una copia del valore di `x` · c) Nulla mai · d) Tutto il programma
+3. A cosa serve `int cube(int y)` prima di `main`?
+a) A nulla · b) Ad annunciare ingresso e uscita per i controlli · c) A stampare · d) A chiudere
+4. Come si scrive lista con due interi `p` e `q`?
+a) Con `int p, q` · b) Con `int p, int q` con tipo per ognuno · c) Senza tipi · d) Con `;` finale
+5. Dove puo stare una definizione di funzione?
+a) Dentro unaltra · b) Fuori e mai dentro unaltra · c) Solo dentro `printf` · d) Mai
+6. Come torna `main` se tutto va bene?
+a) Sempre 5 · b) Con `int` e zero come successo anche implicito · c) Senza tipo · d) Mai torna
+
+Soluzioni ragionate
+
+1 — b. Chiamata con copia e reso per ogni giro. La a) non fa nulla, la c) filtra i pari, la d) blocca tutto.
+2 — b. Copia locale senza toccare `x` fuori. La a) parla di indirizzo fisso, la c) non passa nulla, la d) passa tutto.
+3 — b. Annuncio per numero tipo ordine e reso. La a) non serve, la c) stampa da sola, la d) chiude il lavoro.
+4 — b. Tipo ripetuto per ogni voce. La a) usa forma corta errata, la c) toglie i tipi, la d) aggiunge `;` vietato.
+5 — b. Fuori al livello superiore e mai annidata. La a) la mette dentro, la c) la chiude in stampa, la d) la vieta.
+6 — b. Tipo `int` con zero per successo. La a) fissa 5, la c) toglie il tipo, la d) nega il ritorno.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

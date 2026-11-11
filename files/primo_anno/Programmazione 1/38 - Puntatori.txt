@@ -1,0 +1,182 @@
+[plain-text per Pages — da 38 - Puntatori.md]
+
+1. DEFINIZIONE E INIZIALIZZAZIONE DI VARIABILI PUNTATORE
+-------------------------------------------------------
+
+Un puntatore tiene indirizzi, non
+valori diretti. La cella normale tiene
+il dato, il puntatore tiene il punto dove
+sta il dato. Il nome guarda dritto al
+dato, il puntatore guarda di traverso
+tramite un altro posto. Vale la
+**via traversa verso il dato** detta
+indirezione.
+
+Serve sempre la definizione prima
+delluso. Esempio riscritto con altri
+nomi: invece di `countPtr count` si usi
+`int *totPtr, tot`. Si legge da destra a
+sinistra come puntatore a intero: `totPtr`
+punta a zona con intero dentro, mentre
+`tot` resta intero semplice. Il `*` vale
+solo per il nome che tocca, non per tutta
+la riga. Vale la **stella solo sul nome toccato**.
+
+I puntatori coprono ogni tipo di dato con
+**tipo libero per ogni punto**.
+Meglio **una sola voce per ogni riga** per
+non mescolare stelle e nomi semplici.
+Ogni stella vuole il suo nome: per due
+puntatori a intero si scrive
+`int *pPtr, *qPtr` con due stelle, non
+una sola. Meglio **suffisso Ptr nei nomi**
+per capire al volo che vanno trattati
+come indirizzi e non come numeri.
+
+Serve lavvio subito, alla nascita o con
+assegno dopo. Vale il **vuoto che non punta**:
+`NULL` o 0 o indirizzo vero. Con `NULL`
+non si punta a nulla. `NULL` vive in
+`stddef` e anche in `stdio`. Lo 0 vale
+come `NULL` ma `NULL` mostra meglio
+lintento puntatore. Lo 0 passa al tipo
+giusto da solo ed e lunico intero dato
+libero verso puntatori. Senza avvio si
+rischia spazzatura e guasti imprevisti.
+
+Errore tipico: una sola stella per due
+nomi o uso senza aver dato un punto vero.
+
+2. OPERATORI PER I PUNTATORI
+----------------------------
+
+Qui vivono `&` per punto e `*` per dato come
+**due segni per due versi**.
+La `&` unaria rende lindirizzo del suo
+nome. Esempio riscritto con altri dati:
+invece di `y = 5` e `yPtr` si usi
+`int z = 9` e `int *zPtr`. Riga
+`zPtr = &z` per mettere il punto di `z`
+dentro `zPtr`. Da qui `zPtr` punta a `z`.
+Disegno in righe di testo: `zPtr` freccia
+verso `z` con 9 dentro.
+
+Vale la **e commerciale solo su nomi**:
+solo celle vere dopo `&`, mai costanti
+o conti. Per memoria si pensi a `z` in
+700000 e `zPtr` in 400000: dentro `zPtr`
+sta 700000 come punto verso il 9.
+
+La `*` unaria rende il dato puntato,
+detta anche dereferenziazione. Esempio
+riscritto: `printf("%d", *zPtr)` stampa 9
+di `z` passando per `zPtr`. Usare `*` cosi
+equivale a sciogliere il puntatore verso
+il dato. Vale il **senso sciolto verso il dato**.
+Guai a sciogliere voci senza punto vero:
+si toccano zone a caso con blocchi o dati
+rotti e conti sbagliati anche se il giro
+finisce.
+
+Errore tipico: `&` su conti o costanti,
+oppure `*` su voci mai avviate a un punto.
+
+3. RELAZIONI TRA GLI OPERATORI PER PUNTATORI & E *
+-------------------------------------------------
+
+Programma riscritto con altri dati:
+invece di `a = 7` e `aPtr` si usi
+`int b = 4` con `int *bPtr = &b`.
+Righe con `%p` per punti in base 16 con **cifre e lettere esadecimali**:
+cifre 0 9 e lettere A F per 10 15:
+stampa di `&b` e di `bPtr` con stesso
+valore a ogni corsa, stampa di `b`
+e di `*bPtr` con 4 in entrambi, frase
+sui due segni complementari, stampa di
+`&*bPtr` e di `*&bPtr` con stesso punto
+di partenza. I numeri cambiano da sistema
+a sistema ma restano uguali fra loro a
+parita di corsa. Vale la **coppia che si annulla**:
+`&` e `*` in fila nei due versi tornano
+al punto di avvio.
+
+Scala in righe di testo con verso e tipo:
+`() [] ++ --` postfissi sinistra-destra
+`+ - ++ -- ! * &` unari destra-sinistra
+`* / %` moltiplicativi sinistra-destra
+`+ -` additivi sinistra-destra
+`< <= > >=` forma sinistra-destra
+`== !=` uguaglianza sinistra-destra
+`&&` e logico sinistra-destra
+`||` o logico sinistra-destra
+`?:` scelta destra-sinistra
+`= += -= *= /= %=` assegno destra-sinistra
+`,` virgola sinistra-destra.
+
+Errore tipico: leggere `&*` e `*&` come
+cose diverse invece che come ritorno allo
+stesso punto di partenza.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Dato diretto contro punto indiretto.
+- Definizione prima di ogni uso.
+- Stella solo sul nome che tocca.
+- Una voce per riga senza mischiare.
+- `Ptr` nel nome per intento chiaro.
+- Avvio subito a `NULL` o punto vero.
+- `&` solo su celle vere esistenti.
+- `*` per sciogliere verso il dato vero.
+- Mai sciogliere voci senza punto dato.
+- `&` e `*` in fila tornano al punto.
+- `%p` per punti in base sedici.
+- Punti uguali fra loro a parita di corsa.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Cosa tiene `totPtr` contro `tot`?
+a) Entrambi dati · b) Punto verso dato contro dato diretto · c) Nulla · d) Solo testo
+2. Come si scrivono `pPtr` e `qPtr` a intero?
+a) Con una stella sola · b) Con `int *pPtr, *qPtr` e stella per ognuno · c) Senza stelle · d) Mai
+3. Come si avvia un puntatore senza punto?
+a) A caso · b) A `NULL` o 0 come vuoto che non punta · c) Mai si avvia · d) Con testo
+4. Cosa fa `zPtr = &z` con `z = 9`?
+a) Nulla · b) Mette punto di `z` in `zPtr` che punta a 9 · c) Copia 9 dentro `zPtr` · d) Toglie `z`
+5. Cosa stampa `*zPtr` dopo il legame?
+a) Il punto · b) Il 9 di `z` per via traversa · c) Nulla · d) Sempre 0
+6. Cosa fanno `&*bPtr` e `*&bPtr`?
+a) Cose diverse · b) Tornano allo stesso punto come complementi · c) Nulla · d) Solo errori
+
+Soluzioni ragionate
+
+1 — b. Indirizzo contro valore diretto. La a) vede dati, la c) non tiene nulla, la d) vede testo.
+2 — b. Stella ripetuta per ogni nome puntatore. La a) usa una sola stella, la c) toglie le stelle, la d) nega tutto.
+3 — b. Vuoto chiaro prima del punto vero. La a) lascia a caso, la c) non avvia mai, la d) mette testo.
+4 — b. Punto preso con `&` e legame verso 9. La a) non fa nulla, la c) copia il dato, la d) toglie tutto.
+5 — b. Dato sciolto con `*` verso 9. La a) stampa il punto, la c) non stampa, la d) fissa zero.
+6 — b. Coppia che si annulla nei due versi. La a) li separa, la c) non fa nulla, la d) vede errori.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

@@ -1,0 +1,178 @@
+[plain-text per Pages — da 4 - Programmazione interattiva.md]
+
+1. UN SEMPLICE PROGRAMMA IN C PER ADDIZIONARE DUE INTERI
+--------------------------------------------------------
+
+Un **programma interattivo** dialoga con chi lo usa:
+mostra richieste, legge risposte e stampa risultati.
+Il caso guida somma due numeri chiesti da tastiera.
+
+Lesecuzione parte sempre dalla **funzione main**.
+Le graffe segnano inizio e fine del suo corpo.
+Dentro stanno definizioni e istruzioni in ordine.
+
+Ogni **variabile** e uno spazio in memoria con nome,
+dove tenere un valore da usare dopo.
+Con **tipo int** si dicono interi come 23 o -4 o 0.
+Il nome va dichiarato prima del primo uso.
+Meglio dichiarare vicino al punto dove serve.
+Piu nomi dello stesso tipo possono stare in una
+sola riga, ma i commenti restano piu chiari
+con una dichiarazione per riga.
+
+Il nome ammesso si chiama **identificatore**:
+lettere, cifre e `_`, mai cifra iniziale.
+Maiuscole e minuscole contano, quindi `main`
+e diverso da `Main` e solo il primo avvia.
+
+Esempio riscritto con dati diversi: invece di 45
+e 72 si pensi a 28 e 36. Da `START` si mostra
+invito primo valore, si legge 28, si mostra
+invito secondo valore, si legge 36, si calcola
+`Tot = 28 + 36`, si mostra 64 e si va a `END`.
+
+Il **prompt** e il messaggio che guida lutente,
+come scrivi il primo numero e poi vai a capo.
+Si stampa con `printf` e poi si attende input.
+
+Errore tipico: scrivere `Main` con maiuscola,
+dimenticare una graffa o usare la variabile
+senza averla prima definita.
+
+2. LA FUNZIONE SCANF E GLI INPUT FORMATTATI
+-------------------------------------------
+
+Per leggere da tastiera si usa `scanf`.
+Legge dallo standard input, di solito la tastiera,
+e mette il valore dentro la variabile indicata.
+
+La **stringa di controllo del formato** dice che
+tipo attendere. Lo **specificatore di conversione**
+`%d` indica un intero decimale. Il `%` apre
+sempre lo specificatore sia in `scanf` che dopo
+in `printf` per gli interi.
+
+Il secondo argomento usa l**operatore di indirizzo**
+`&` prima del nome. Comunica la posizione in
+memoria dove scrivere il numero digitato.
+Senza `&` il valore non arriva al posto giusto.
+Il programma attende, lutente scrive le cifre
+e preme Invio, poi il numero resta in memoria
+e ogni uso dopo trova quello stesso valore.
+
+Esempio riscritto con dati diversi: leggere due
+conteggi come 23 e 19 con nomi `numA` e `numB`.
+Si puo usare una sola chiamata con `"%d %d"`
+e due indirizzi. Il primo `%d` riempie `numA`,
+il secondo `%d` riempie `numB`.
+
+Si puo definire la somma vicino al suo uso,
+prima del calcolo, per tenere assieme cose
+legate. Lasciare uno spazio dopo ogni `,`
+rende la riga piu leggibile.
+
+Errore tipico: dimenticare `&` in `scanf` e avere
+un arresto in esecuzione, oppure mettere `&`
+in `printf` dove non serve.
+
+3. ISTRUZIONE DI ASSEGNAZIONE
+-----------------------------
+
+Il calcolo vero sta nellassegnazione con
+l**operatore di assegnazione** `=`.
+Si legge da destra a sinistra: a sinistra va
+solo il nome che riceve, a destra il conto.
+Esempio riscritto: `tot = numA + numB` mette
+in `tot` il totale dei due valori letti.
+
+Sia `=` che `+` sono detti **operatore binario**
+perche uniscono due operandi. In `+` sono i due
+addendi. In `=` sono la variabile a sinistra
+e il risultato dellespressione a destra.
+Lasciare spazi attorno agli operatori binari
+mette in evidenza il segno e aiuta la lettura.
+
+Per mostrare si usa `printf` con formato e valore.
+La stringa contiene testo fisso e `%d` al posto
+del numero. Il secondo argomento dice quale
+valore mettere al posto di `%d`.
+
+Si puo unire definizione e conto con
+l**inizializzazione**, come `int tot = numA + numB`.
+Si puo anche fare il conto dentro `printf`,
+come stampare `numA + numB` senza tenere `tot`.
+Utile per stampe al volo senza riuso dopo.
+
+Errore tipico: mettere il conto a sinistra di `=`
+e avere errore in compilazione, perche a sinistra
+puo stare solo la destinazione.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Dialogo in tre passi: prompt con `printf`, lettura con `scanf`, stampa con `printf`.
+- Dichiarare ogni variabile prima delluso, meglio vicino al primo uso.
+- Nomi con lettere cifre e `_`, non da cifra, minuscole e maiuscole diverse.
+- `%d` per gli interi in lettura e in stampa.
+- `&` solo in `scanf` per dare lindirizzo, mai in `printf` per valori semplici.
+- In `=` a sinistra solo la destinazione, a destra lespressione.
+- Spazi attorno a `=` `+` e dopo `,` per leggere meglio.
+- Si puo inizializzare alla definizione o calcolare dentro `printf`.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Da dove parte lesecuzione e cosa segnano le graffe?
+a) Da `printf` e le graffe sono commenti · b) Da `main` e le graffe aprono e chiudono il suo corpo · c) Da `scanf` e le graffe sono formati · d) Da `&` e le graffe sono operatori
+
+2. Quale dichiarazione e corretta per due interi da leggere?
+a) Solo uso senza dichiarazione · b) Dichiarazione dopo luso con tipo misto · c) Dichiarazione prima delluso con `int` e nomi validi · d) Dichiarazione con nome che inizia per cifra
+
+3. Cosa indicano `"%d"` e `&numA` in `scanf`?
+a) Testo libero e somma · b) Formato intero e indirizzo dove scrivere · c) Stampa e indirizzo da ignorare · d) Commento e operatore binario
+
+4. Quale uso di `&` e giusto?
+a) Sempre in `printf` e mai in `scanf` · b) Mai da nessuna parte · c) In `scanf` per ogni variabile da leggere, non in `printf` per stampare · d) Prima di ogni `%d` nella stringa formato
+
+5. Cosa fa `tot = numA + numB` e come si legge?
+a) Confronta i tre nomi · b) Mette in `tot` il risultato di `numA + numB` · c) Mette in `numA` il valore di `tot` · d) Stampa senza memorizzare
+
+6. Quale forma e lecita per semplificare somma e stampa?
+a) `int tot = numA + numB` oppure `printf` con `numA + numB` dentro · b) Conto a sinistra di `=` come `numA + numB = tot` · c) `printf` con `&tot` per stampare il numero · d) `scanf` senza `&` per leggere piu in fretta
+
+Soluzioni ragionate
+
+1 — b. Solo `main` avvia e le graffe delimitano. La a) scambia avvio e commenti, la c) scambia avvio e formato, la d) usa un simbolo al posto dellavvio.
+
+2 — c. Tipo prima, nomi validi, uso dopo. La a) usa senza definire, la b) inverte lordine, la d) rompe la regola sulla cifra iniziale.
+
+3 — b. Formato per intero e posizione di memoria. La a) parla di somma, la c) parla di stampa, la d) parla di commenti e binari.
+
+4 — c. Regola base degli indirizzi in lettura. La a) inverte le funzioni, la b) toglie tutto, la d) mette `&` nel posto del formato.
+
+5 — b. Destra calcolata, sinistra destinataria. La a) parla di confronto, la c) inverte il verso, la d) confonde con stampa diretta.
+
+6 — a. Inizializzazione e calcolo in stampa sono ammessi. La b) mette il conto a sinistra, la c) aggiunge `&` in stampa, la d) toglie `&` in lettura.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.

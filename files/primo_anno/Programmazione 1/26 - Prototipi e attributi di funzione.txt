@@ -1,0 +1,205 @@
+[plain-text per Pages — da 26 - Prototipi e attributi di funzione.md]
+
+1. ESEMPIO: LA FUNZIONE MAXIMUM
+------------------------------
+
+Esempio riscritto con altri nomi
+ma stessa logica: invece di
+`maximum` con `num1 num2 num3`
+si usi `largest` con `a1 a2 a3`.
+La funzione trova il maggiore di
+tre interi letti da tastiera.
+
+Schema: `#include <stdio.h>` poi
+**annuncio prima del main** come
+`int largest(int p, int q, int r)`
+con `;` finale. Poi `main` legge
+con `scanf` tre interi e stampa con
+`printf` il reso di
+`largest(a1, a2, a3)`. Poi viene la
+definizione vera della funzione.
+
+La **partenza dal primo valore** dice
+che `top = p` allinizio, come se il
+primo fosse il maggiore. Poi due
+`if` separati: se `q > top` allora
+`top = q`, se `r > top` allora
+`top = r`. Alla fine `return top`
+manda il maggiore alla chiamante.
+
+Prove riscritte con altri numeri:
+invece di 22 85 17 si usi
+14 63 29 con reso 63.
+Invece di 47 32 14 si usi
+51 28 19 con reso 51.
+Invece di 35 8 79 si usi
+27 12 84 con reso 84.
+
+Il **controllo sui tipi in chiamata**
+nasce col prototipo. Il traduttore
+confronta ogni chiamata con lannuncio
+e segnala numero, tipo e ordine
+sbagliati. Senza questo schermo le
+vecchie forme lasciavano passare
+errori poi duri da trovare in corsa,
+a volte bloccanti e a volte vaghi.
+
+Buona regola: mettere sempre gli
+annunci per tutte le funzioni. Le
+voci pronte arrivano con `#include`
+dei file di testata. Le voci proprie
+arrivano con testate scritte dal
+gruppo di lavoro. Lannuncio dice
+tre ingressi `int` e uscita `int`
+e coincide con la prima riga della
+definizione, salvo il `;` finale.
+
+I nomi dentro lannuncio servono come
+**nomi solo per documentare**: il
+traduttore li ignora, quindi anche
+`int largest(int, int, int)` passa.
+Ma tenerli aiuta la lettura. Il `;`
+finale resta dovuto: senza scatta
+errore di sintassi.
+
+Ogni **disaccordo fra annuncio e uso**
+blocca la traduzione. Vale sia per
+chiamata contro annuncio, sia per
+annuncio contro definizione. Esempio
+riscritto: se lannuncio dicesse
+`void largest(int p, int q, int r)`
+mentre la testata dice `int`, il
+tipo di uscita non torna e parte
+lerrore.
+
+Vale poi la **forzatura al tipo atteso**
+detta coercizione. Se serve `double`
+ma arriva `int`, la copia passa al
+tipo giusto da sola. Esempio riscritto
+con altri valori: invece di `sqrt(4)`
+si usi `sqrt(9)` con `%.3f`. Il 9
+intero diventa 9.0 decimale e stampa
+3.000 in modo corretto.
+
+In genere ogni scarto fra dato e
+parametro si aggiusta prima dellingresso.
+Ma le **regole di promozione mista**
+vanno seguite, senno il conto sbaglia.
+Salire di rango tiene il valore, come
+da `int` a `double` che allarga senza
+perdere nulla. Scendere di rango taglia,
+come da `double` a `int` che tronca i
+decimali. Anche fra interi il passo da
+largo a stretto puo cambiare il numero.
+
+Nelle formule con due tipi diversi il
+traduttore copia il dato da cambiare
+e lo porta al **tipo piu alto nella formula**.
+Se ce `long double` si sale li, senno
+a `double`, senno a `float`. Fra soli
+interi valgono le promozioni intere,
+di norma dal basso verso lalto.
+
+Righe di testo per specifiche diverse
+ma stesso uso:
+tipo printf scanf
+`long double` `%Lf` `%Lf`
+`double` `%f` `%lf`
+`float` `%f` `%f`
+`int` `%d` `%d`
+`short` `%hd` `%hd`
+`char` `%c` `%c`.
+
+Si scende di rango solo con assegno
+esplicito a cella piu piccola oppure
+con `cast`. Gli argomenti in chiamata
+si trattano come assegni diretti ai
+parametri del tipo detto in annuncio.
+
+Esempio riscritto con altri valori:
+invece di `square(4.5)` con reso 16
+si usi `cube2(5.5)` che fa quadrato
+con `int`. Il 5.5 diventa 5 e rende
+25 e non 30.25. Il **taglio dei decimali in discesa**
+cambia il risultato e spesso il
+traduttore manda solo un avviso.
+
+Senza annuncio il traduttore crea
+da solo una forma al primo incontro,
+sia chiamata sia definizione, con
+avvisi o errori a seconda dei casi.
+Meglio mettere sempre gli annunci
+per prevenire rumori in traduzione.
+
+Vale infine la **visibilita legata al punto**:
+fuori da ogni funzione vale per tutto
+il file dopo lannuncio, dentro una
+funzione vale solo per quella funzione.
+
+Errore tipico: scordare lannuncio o il
+`;` finale, oppure chiamare con tipi
+e ordine diversi da quelli annunciati.
+
+Concetti chiave da ricordare
+----------------------------
+
+- Annuncio prima con `;` come schermo.
+- Prima riga uguale a testata di definizione.
+- Nomi in annuncio solo per leggere meglio.
+- Chiamata e definizione in accordo totale.
+- Ingressi adattati al tipo atteso da soli.
+- Salire tiene, scendere taglia i dati.
+- In formula mista vince il tipo piu alto.
+- Solo assegno o `cast` per scendere.
+- Senza annuncio scattano avvisi ed errori.
+- Annuncio fuori vale per tutto il dopo.
+- Annuncio dentro vale solo per quella voce.
+- Taglio in discesa spesso solo avvisato.
+
+TEST di AUTOVALUTAZIONE
+-----------------------
+
+Domande originali di verifica sugli stessi argomenti della lezione, con soluzioni
+ragionate in fondo. Nessuna domanda e copiata dal materiale sorgente.
+
+1. Come lavora `largest` su 14 63 29?
+a) Rende 14 · b) Parte da 14 e sale a 63 con `if` · c) Rende 29 · d) Non rende nulla
+2. A cosa serve lannuncio prima di `main`?
+a) A stampare · b) A far controllare numero tipo e ordine · c) A nulla · d) A chiudere
+3. Cosa vale `int largest(int, int, int)` senza nomi?
+a) Errore certo · b) Valido con nomi solo per doc · c) Nulla · d) Solo commento
+4. Cosa fa `sqrt(9)` intero con prototipo `double`?
+a) Errore · b) Converte copia a 9.0 e stampa 3.000 · c) Rende 0 · d) Salta tutto
+5. Cosa fa `cube2(5.5)` con parametro `int`?
+a) Rende 30.25 · b) Tronca a 5 e rende 25 · c) Rende 0 · d) Non parte
+6. Dove vale un annuncio messo dentro una funzione?
+a) Ovunque · b) Solo per quella funzione · c) Mai · d) Solo prima del file
+
+Soluzioni ragionate
+
+1 — b. Primo come base poi sorpassi con `if`. La a) ferma al primo, la c) prende lultimo, la d) non rende nulla.
+2 — b. Schermo sui tipi in chiamata e definizione. La a) stampa da sola, la c) non serve, la d) chiude tutto.
+3 — b. Nomi ignorati ma utili per leggere. La a) vede errore certo, la c) non vede nulla, la d) vede commento.
+4 — b. Forzatura al tipo atteso con copia promossa. La a) blocca tutto, la c) azzera tutto, la d) salta tutto.
+5 — b. Taglio in discesa con parte frazionaria persa. La a) tiene i decimali, la c) azzera tutto, la d) non parte.
+6 — b. Visibilita legata al punto di scrittura. La a) apre ovunque, la c) non vale mai, la d) vale prima del file.
+
+----------------------------------------
+
+PROMPT RIUTILIZZABILE
+---------------------
+
+Prompt usato per generare questa scheda. Copialo in una nuova conversazione
+insieme al testo della lezione da rielaborare per mantenere lo stesso stile:
+
+Rielabora la lezione fornita in una sintesi originale in italiano, senza copiare frasi, esempi con gli stessi dati/valori, domande del test, immagini, tabelle, nomi di docenti o università, né avvisi di copyright del materiale sorgente. I contenuti tecnici devono restare fedeli all'originale, spiegati però a parole tue.
+
+Struttura obbligatoria del file .txt (plain-text per Pages, con ** come segnaposto per il grassetto):
+- Prima riga: [plain-text per Pages — da <Titolo>.md], poi una riga vuota.
+- Niente frontmatter, niente titolo H1, niente frase introduttiva: parti direttamente dalla prima sezione con "N. TITOLO SEZIONE" in maiuscolo, con sotto una riga di trattini, usando gli stessi titoli delle sezioni originali.
+- Una sezione così per ogni sezione della lezione, con spiegazioni chiare in testo semplice. Usa **termine** (10-15 per file, solo prima/seconda occorrenza, mai nei titoli, mai spezzato su due righe) per i termini chiave da ritrovare poi in Pages con Cerca > **. Usa `code` con backtick solo per formule/simboli brevi se serve. Niente ##, niente altro Markdown. Matrici/tabelle solo come righe di testo separate da spazi. Evidenzia esempi riscritti ed errori tipici da evitare.
+- Poi una sezione "Concetti chiave da ricordare" con sotto una riga di trattini e elenco puntato con "- ".
+- Poi una sezione "TEST di AUTOVALUTAZIONE" con sotto una riga di trattini, con 6 domande numerate "1., 2., ..." a scelta multipla (a/b/c/d) originali sugli stessi argomenti, mai copiate dal materiale sorgente, con breve frase introduttiva standard.
+- Poi una sezione "Soluzioni ragionate" come titolo semplice senza trattini, con per ogni domanda "N — X." più 2-3 righe di spiegazione, motivando anche perché le altre opzioni sono sbagliate.
+- Tono didattico preciso, in italiano, testo semplice UTF-8 a righe brevi.
+- Alla fine: una riga separatrice di trattini, poi "PROMPT RIUTILIZZABILE" con sotto una riga di trattini e questo stesso prompt.
