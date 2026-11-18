@@ -2,14 +2,14 @@
 
 # Portfolio
 
-**Il portfolio online di Alex Di Paolo — Software Developer & IT System Designer**
+**Alex Di Paolo — Software Developer & IT System Designer**
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/it/docs/Web/HTML)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/it/docs/Web/JavaScript)
 [![Live](https://img.shields.io/badge/sito-online-4ade80?logo=githubpages&logoColor=white)](https://dipaoloalex-dev.github.io/Portfolio/)
 
-🔗 **[Visita il sito →](https://dipaoloalex-dev.github.io/Portfolio/)**
+🔗 **[Visita il portfolio →](https://dipaoloalex-dev.github.io/Portfolio/)**
 
 `⭐ Aggiungi una stella su GitHub per supportare il progetto!`
 
