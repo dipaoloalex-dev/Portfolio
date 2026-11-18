@@ -74,14 +74,17 @@
 
 /*
  * Fix rendering mobile: quando l'animazione è terminata (classe aggiunta da
- * script.js) azzera l'animazione, così `filter` e `transform` non restano
- * applicati. Senza questo, il testo degli elementi animati può risultare
- * sfuocato sui telefoni (layer rasterizzato a risoluzione inferiore).
+ * script.js) azzera l'animazione, così `filter` non resta applicato.
+ * Senza questo, il testo degli elementi animati può risultare sfuocato
+ * sui telefoni (layer rasterizzato a risoluzione inferiore).
+ * Nota: NON si azzera `transform` qui, altrimenti `!important` bloccherebbe
+ * anche le trasformazioni di hover (es. .project-card:hover), impedendo il
+ * sollevamento delle card. Rimuovere l'animazione basta già a ripristinare
+ * il transform naturale dell'elemento.
  */
 .animate-on-scroll.anim-complete {
     animation: none !important;
     filter: none !important;
-    transform: none !important;
 }
 
 /*
@@ -160,4 +163,104 @@
 .dash-scroll::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+}
+
+/*
+ * ============================================================================
+ * 4) MY PROJECTS - FEEDBACK HOVER FLUIDO DELLE CARD
+ * ============================================================================
+ * Sollevamento leggero + ombra dinamica + micro-movimento degli interni.
+ * Solo transform/opacity/border-color/box-shadow per restare a 60fps.
+ * L'hover è abilitato solo su dispositivi con vero mouse (hover:hover),
+ * così sui touch nessun effetto resta "attaccato" dopo il tap.
+ */
+
+.project-card {
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s ease,
+        border-color 0.5s ease,
+        background-color 0.5s ease;
+    will-change: transform;
+}
+
+/* Anteprima superiore e blocco testo: transizioni pronte, stato fermo. */
+.project-card .project-media {
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.project-card .project-media > div.relative {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card .project-body > a,
+.project-card .project-body > h3 {
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.3s ease;
+}
+
+.project-card .project-body > p {
+    transition: color 0.3s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* Sollevamento leggero + bordo più luminoso + ombra dinamica. */
+    .project-card:hover,
+    .project-card:focus-within {
+        transform: translateY(-6px) scale(1.02);
+        z-index: 10;
+        border-color: rgba(255, 255, 255, 0.12);
+        background-color: rgba(255, 255, 255, 0.02);
+        box-shadow:
+            0 24px 60px -12px rgba(0, 0, 0, 0.65),
+            0 8px 24px rgba(0, 0, 0, 0.35),
+            0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    /* L'anteprima respira: bordo schiarito e contenuto che sale di poco. */
+    .project-card:hover .project-media,
+    .project-card:focus-within .project-media {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .project-card:hover .project-media > div.relative,
+    .project-card:focus-within .project-media > div.relative {
+        transform: translateY(-3px) scale(1.015);
+    }
+
+    /* Titolo: micro-spostamento laterale per dare direzione al gesto. */
+    .project-card:hover .project-body > a,
+    .project-card:hover .project-body > h3,
+    .project-card:focus-within .project-body > a,
+    .project-card:focus-within .project-body > h3 {
+        transform: translateX(2px);
+    }
+
+    .project-card:hover .project-body > p,
+    .project-card:focus-within .project-body > p {
+        color: #a1a1aa;
+    }
+}
+
+/* Rispetta chi ha ridotto le animazioni: nessun sollevamento. */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-card .project-media,
+    .project-card .project-media > div.relative,
+    .project-card .project-body > a,
+    .project-card .project-body > h3,
+    .project-card .project-body > p {
+        transition: none;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within,
+    .project-card:hover .project-media > div.relative {
+        transform: none;
+    }
 }
