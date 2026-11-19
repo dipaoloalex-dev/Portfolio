@@ -19,6 +19,80 @@
 
 /*
  * ============================================================================
+ * 0) COLOR SYSTEM — BOZZA (solo commento, nessun codice modificato)
+ * ============================================================================
+ * Foto attuale della palette usata in index.html + style.css + banner,
+ * rimappata sulla nomenclatura semantica richiesta.
+ * Non serve una scala 50-900 estesa: bastano questi token.
+ * Promemoria scala 50 (chiarissimo) -> 900 (scurissimo).
+ *
+ * --fg-primary .... text-white / #fafafa .............. titoli, testo forte
+ *                   text-white/95 ...................... H1
+ * --fg-sec ........ zinc-400 #a1a1aa .................. body, paragrafi
+ *                   zinc-300 #d4d4d8 .................. label attive
+ *                   zinc-200 #e4e4e7 .................. sottotitoli forti
+ * --fg-muted ....... zinc-500 #71717a .................. icone, meta, help
+ *                   zinc-600 #52525b .................. separatori "|", caption
+ *
+ * --bg-base ....... #09090b ........................... pagina, ticket, pill
+ * --bg-elevated ... #0e0e11 ........................... card progetti, footer
+ * --bg-overlay .... #131316 ........................... anteprima media card
+ *                   #18181b / #1f1f22 ................. blocchi processo
+ *                   white/[0.02] [0.04] [0.05] ........ overlay vetro
+ *                   black/40 .......................... badge ovali
+ *
+ * --border-subtle . white/5, zinc-500/10, zinc-600/5 .. bordi card/media
+ * --border-strong . white/10, white/15 ................ bordi attivi/hover
+ *
+ * --accent ........ #4ade80 (green-400) ............... NLP, granted, ok
+ *                   bg #4ade80/10 /15 /20 ............. pill verdi
+ * --accent-gold ... #fffbd6 #fef08a #facc15 #d4a017 ... badge shiny gold
+ *                   text yellow-950 #422006 ........... testo su oro
+ *
+ * --status ........ red #f87171 #fca5a5 (High/Rejected)
+ *                   yellow #facc15 (Medium/Pending)
+ *                   green #4ade80 (Low/Access)
+ *                   blue-400 / purple-400 / sky #7dd3fc (icone, KPI, bump)
+ *                   orange-400 / emerald-400 / cyan-400 (lista benefici)
+ * --brand ......... #25D366 WhatsApp .................. contatti
+ *
+ * Da decidere dopo il check: teniamo questi valori e li fissiamo come
+ * variabili --fg-primary, --fg-sec, --bg-base, --bg-elevated, --bg-overlay,
+ * --border-subtle, --border-strong? Per ora solo bozza, niente refactor.
+ * ============================================================================
+ */
+
+/*
+ * Fissaggio variabili — SOLO CSS custom (Tailwind in index.html invariato).
+ * Stessi valori della bozza, nessun colore cambiato o perso.
+ */
+:root {
+    --fg-primary: #fafafa;
+    --fg-sec: #a1a1aa;
+    --fg-muted: #71717a;
+    --bg-base: #09090b;
+    --bg-elevated: #0e0e11;
+    --bg-overlay: #131316;
+    --bg-hover: #101014;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-strong: rgba(255, 255, 255, 0.1);
+    --border-active: rgba(255, 255, 255, 0.12);
+    --accent: #4ade80;
+    --gold-1: #fffbd6;
+    --gold-2: #fef08a;
+    --gold-3: #facc15;
+    --gold-4: #d4a017;
+    --gold-border: rgba(113, 63, 18, 0.35);
+    --gold-text: #422006;
+    --status-red: #f87171;
+    --status-red-soft: #fca5a5;
+    --status-red-bg: rgba(248, 113, 113, 0.15);
+    --status-red-border: rgba(248, 113, 113, 0.4);
+    --info-blue: #7dd3fc;
+}
+
+/*
+ * ============================================================================
  * 1) ANIMAZIONI CSS
  * ============================================================================
  * La pagina anima gli elementi in ingresso (fade + slide + blur) sfruttando
@@ -109,7 +183,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Bordo chiaro sottile che definisce il perimetro del vetro. */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-strong);
 
     /*
      * Mix di ombre:
@@ -161,7 +235,7 @@
 
 /* Il "cursore" è bianco semitrasparente con angoli arrotondati. */
 .dash-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-strong);
     border-radius: 4px;
 }
 
@@ -177,43 +251,35 @@
 
 .project-card {
     transition:
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.5s ease,
         border-color 0.5s ease,
         background-color 0.5s ease;
-    will-change: transform;
 }
 
-/* Anteprima superiore e blocco testo: transizioni pronte, stato fermo. */
+/* Anteprima superiore e blocco testo: solo colori/ombre, niente movimenti
+   per tenere il testo sempre nitido (ogni translate/scale sul contenitore
+   con testo causa raster GPU sfocato su Windows/Chrome). */
 .project-card .project-media {
     transition:
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.5s ease,
         box-shadow 0.5s ease;
 }
 
-.project-card .project-media > div.relative {
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 .project-card .project-body > a,
 .project-card .project-body > h3 {
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .project-card .project-body > p {
-    transition: color 0.3s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: color 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* Sollevamento leggero + bordo più luminoso + ombra dinamica. */
+    /* Solo luce/bordo/ombra, nessun sollevamento: testo sempre fermo e nitido. */
     .project-card:hover,
     .project-card:focus-within {
-        transform: translateY(-6px) scale(1.02);
         z-index: 10;
-        border-color: rgba(255, 255, 255, 0.12);
+        border-color: var(--border-active);
         background-color: rgba(255, 255, 255, 0.02);
         box-shadow:
             0 24px 60px -12px rgba(0, 0, 0, 0.65),
@@ -221,46 +287,574 @@
             0 0 0 1px rgba(255, 255, 255, 0.06);
     }
 
-    /* L'anteprima respira: bordo schiarito e contenuto che sale di poco. */
+    /* L'anteprima respira: solo bordo schiarito. */
     .project-card:hover .project-media,
     .project-card:focus-within .project-media {
-        border-color: rgba(255, 255, 255, 0.1);
+        border-color: var(--border-strong);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    }
-
-    .project-card:hover .project-media > div.relative,
-    .project-card:focus-within .project-media > div.relative {
-        transform: translateY(-3px) scale(1.015);
-    }
-
-    /* Titolo: micro-spostamento laterale per dare direzione al gesto. */
-    .project-card:hover .project-body > a,
-    .project-card:hover .project-body > h3,
-    .project-card:focus-within .project-body > a,
-    .project-card:focus-within .project-body > h3 {
-        transform: translateX(2px);
     }
 
     .project-card:hover .project-body > p,
     .project-card:focus-within .project-body > p {
-        color: #a1a1aa;
+        color: var(--fg-sec);
     }
 }
 
-/* Rispetta chi ha ridotto le animazioni: nessun sollevamento. */
+/* Rispetta chi ha ridotto le animazioni. */
 @media (prefers-reduced-motion: reduce) {
     .project-card,
     .project-card .project-media,
-    .project-card .project-media > div.relative,
     .project-card .project-body > a,
     .project-card .project-body > h3,
     .project-card .project-body > p {
         transition: none;
     }
+}
 
-    .project-card:hover,
-    .project-card:focus-within,
-    .project-card:hover .project-media > div.relative {
+/*
+ * ============================================================================
+ * 5) SHINY GOLDEN BADGE
+ * ============================================================================
+ * Pillola oro/champagne con riflesso luminoso che scorre (sheen).
+ * Usata sotto le skills nella hero per evidenziare la specializzazione.
+ * Solo gradienti + transform/opacity per restare a 60fps.
+ */
+
+.gold-badge {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg,
+            var(--gold-1) 0%,
+            var(--gold-2) 22%,
+            var(--gold-3) 45%,
+            var(--gold-4) 55%,
+            var(--gold-2) 78%,
+            var(--gold-1) 100%);
+    border: 1px solid var(--gold-border);
+    box-shadow:
+        0 10px 30px -10px rgba(250, 204, 21, 0.45),
+        0 2px 10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(113, 63, 18, 0.25);
+}
+
+/* Riflesso che attraversa il badge in diagonale. */
+.gold-badge::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: -30%;
+    width: 45%;
+    background: linear-gradient(105deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0.85) 50%,
+            rgba(255, 255, 255, 0) 80%,
+            transparent 100%);
+    transform: skewX(-20deg);
+    z-index: 1;
+    pointer-events: none;
+    animation: gold-sheen 3.8s ease-in-out infinite;
+}
+
+@keyframes gold-sheen {
+    0% { left: -60%; opacity: 0; }
+    15% { opacity: 1; }
+    55% { left: 130%; opacity: 1; }
+    70%, 100% { left: 130%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gold-badge::after {
+        animation: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 6) AUTOTRIAGE - TICKET VIVI (LIVE ROWS)
+ * ============================================================================
+ * Le 3 righe ticket si comportano come mini-app: hover/focus = sollevamento,
+ * glow nel colore della priorità, icona che scala, freccia che appare e
+ * riga dettaglio che si espande. Solo transform/opacity/border/box-shadow.
+ */
+
+.triage-ticket {
+    position: relative;
+    cursor: pointer;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.35s ease;
+}
+
+.triage-low {
+    opacity: 1;
+}
+
+.triage-ticket .triage-icon {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
+}
+
+.triage-ticket .triage-go {
+    opacity: 0;
+    width: 0;
+    margin-left: -0.5rem;
+    transform: translateX(-6px);
+    color: var(--fg-muted);
+    transition:
+        opacity 0.3s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.3s ease,
+        margin 0.3s ease;
+    overflow: hidden;
+}
+
+/* Riga dettaglio nascosta: si espande solo a hover/focus (effetto "ready automated"). */
+.triage-ticket .triage-detail {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-size: 10px;
+    line-height: 1.3;
+    color: var(--accent);
+    transition:
+        max-height 0.35s ease,
+        opacity 0.3s ease,
+        margin 0.3s ease;
+    margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.triage-ticket:focus-visible {
+    outline: 2px solid rgba(74, 222, 128, 0.6);
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .triage-ticket:hover,
+    .triage-ticket:focus-visible {
+        background-color: var(--bg-hover);
+        z-index: 2;
+    }
+
+    .triage-high:hover,
+    .triage-high:focus-visible {
+        border-color: rgba(248, 113, 113, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(248, 113, 113, 0.4), 0 0 0 1px rgba(248, 113, 113, 0.12);
+    }
+
+    .triage-medium:hover,
+    .triage-medium:focus-visible {
+        border-color: rgba(250, 204, 21, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(250, 204, 21, 0.35), 0 0 0 1px rgba(250, 204, 21, 0.12);
+    }
+
+    .triage-low:hover,
+    .triage-low:focus-visible {
+        border-color: rgba(74, 222, 128, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(74, 222, 128, 0.35), 0 0 0 1px rgba(74, 222, 128, 0.12);
+    }
+
+    .triage-ticket:hover .triage-icon,
+    .triage-ticket:focus-visible .triage-icon {
+        transform: scale(1.14) rotate(-5deg);
+    }
+
+    .triage-ticket:hover .triage-go,
+    .triage-ticket:focus-visible .triage-go {
+        opacity: 1;
+        width: 1rem;
+        margin-left: 0;
+        transform: translateX(0);
+    }
+
+    .triage-ticket:hover .triage-detail,
+    .triage-ticket:focus-visible .triage-detail {
+        max-height: 1.4em;
+        opacity: 1;
+        margin-top: 2px;
+    }
+
+    /* Niente attenuazione delle sorelle: restano tutte uguali e nitide,
+       si illumina solo quella sotto il cursore. L'opacity <1 le faceva
+       sembrare sfocate per via della rasterizzazione GPU. */
+}
+
+@media (hover: none) {
+    .triage-ticket .triage-detail {
+        max-height: none;
+        opacity: 0.9;
+        margin-top: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .triage-ticket,
+    .triage-ticket .triage-icon,
+    .triage-ticket .triage-go,
+    .triage-ticket .triage-detail {
+        transition: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 7) ATHENA QR + EASY WORK APPROVAL TOGGLE
+ * ============================================================================
+ * Micro-interazioni cliccabili nelle card. Solo transform/opacity/colori.
+ */
+
+.athena-qr {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.athena-qr:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Zoom senza sfocare il testo: il bottone NON scala (niente transform),
+   si ingrandisce solo l'icona SVG interna. Il testo resta nitido. */
+.athena-qr svg {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.athena-qr.qr-zoomed {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.7);
+    cursor: zoom-out;
+}
+
+.athena-qr.qr-zoomed svg {
+    transform: scale(1.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .athena-qr:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .athena-qr:hover svg {
+        transform: scale(1.12);
+    }
+    .athena-qr.qr-zoomed:hover svg {
+        transform: scale(1.3);
+    }
+}
+
+/* Toggle approvazione manager: verde approved <-> rosso not approved. */
+.approval-toggle {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.approval-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.approval-toggle .approval-icon {
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.approval-toggle .approval-text,
+.approval-toggle .approval-sub {
+    transition: color 0.3s ease;
+}
+
+/* Stato denied: nascondi check, mostra X rossa. */
+.approval-toggle.is-approved .icon-denied {
+    display: none;
+}
+
+.approval-toggle.is-denied .icon-approved {
+    display: none;
+}
+
+.approval-toggle.is-denied .approval-icon {
+    background-color: var(--status-red-bg);
+    border-color: var(--status-red-border);
+    color: var(--status-red);
+}
+
+.approval-toggle.is-denied .approval-text {
+    color: var(--status-red-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .approval-toggle:hover .approval-icon {
+        transform: scale(1.15);
+    }
+    .approval-toggle:active .approval-icon {
+        transform: scale(0.95);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .athena-qr,
+    .approval-toggle .approval-icon {
+        transition: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 8) SKY FLY STEPPER + ESGATE BARS + SMOOTH SCROLL
+ * ============================================================================
+ */
+
+/* Scroll morbido per l'ancora #contact di Kairos (disattivato se motion ridotta). */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Akerus: la riga PDF è full-width, niente scale sul bottone (sfoca il testo).
+   Si evidenzia solo con bordo/sfondo + icona ingrandita, come per Athena. */
+#akerusPdfBtn.qr-zoomed {
+    transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #akerusPdfBtn:hover {
         transform: none;
     }
+    #akerusPdfBtn.qr-zoomed:hover {
+        transform: none;
+    }
+}
+
+/* Sky Fly: frecce su/giù per i due contatori. */
+.sky-controls {
+    gap: 1px;
+}
+
+.sky-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 14px;
+    border-radius: 4px;
+    color: var(--fg-muted);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sky-btn:hover {
+    color: var(--fg-primary);
+    background-color: var(--border-strong);
+}
+
+.sky-btn:active {
+    transform: scale(0.9);
+}
+
+.sky-btn:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 1px;
+}
+
+.sky-value {
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s ease;
+}
+
+/* Flash breve quando il numero cambia (classe aggiunta da JS). */
+.sky-value.bump {
+    color: var(--info-blue);
+}
+
+/* ESGATE: hover sulle tre righe KPI. */
+.esg-row {
+    cursor: default;
+    transition: background-color 0.3s ease;
+}
+
+.esg-row .esg-fill {
+    transition: filter 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    transform-origin: left center;
+}
+
+.esg-row .esg-value {
+    transition: color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .esg-row:hover,
+    .esg-row:focus-visible {
+        background-color: rgba(255, 255, 255, 0.04);
+        outline: none;
+    }
+
+    .esg-row:hover .esg-fill,
+    .esg-row:focus-visible .esg-fill {
+        filter: brightness(1.25) saturate(1.15);
+        transform: scaleY(1.6);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    }
+
+    .esg-row:hover .esg-value,
+    .esg-row:focus-visible .esg-value {
+        color: #fff;
+    }
+}
+
+.esg-row:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .sky-btn,
+    .sky-value,
+    .esg-row,
+    .esg-row .esg-fill,
+    .esg-row .esg-value {
+        transition: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 9) SISTEMA 393 / 830 / 1440 (tipografia, touch, contenitore)
+ * ============================================================================
+ * Spec adottata:
+ *   H1 80 | H2 56 | H3 32 | body 18 | body-s 16
+ *   H1: 80→64→44 | H2: 56→56→32 | H3: 32→32→28 | H4: 20→20→18
+ *   Body-large: 18→18→16, più piccole invariate.
+ *   Pesi: body 16-20 regular/medium, accenti semibold/bold,
+ *   titoli 24+ semibold/bold.
+ *   Interlinea: body 140-175%, titoli 100-120%.
+ *   Riga: 50-60 caratteri. Tracking: body -2%, titoli -6%, CAPS 1%.
+ */
+
+/* H1: 44 -> 64 -> 80. Titolo 24+ => semibold, interlinea 100-120%, tracking -6%. */
+.type-h1 {
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: -0.06em;
+}
+
+.type-h1-sub {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-top: 10px;
+}
+
+/* H2: 32 -> 56 -> 56. H3: 28 -> 32 -> 32. Body-large: 16 -> 18 -> 18. */
+.type-h2 {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.06em;
+}
+
+.type-h3 {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.06em;
+}
+
+.type-body-lg {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    max-width: 60ch;
+}
+
+/* H4 (titoli card, 4° livello): 18 mobile -> 20 tablet/desktop. */
+.project-body > a,
+.project-body > h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+/* TUTTO MAIUSCOLO (badge/etichette): tracking 1%. */
+.eyebrow-caps {
+    letter-spacing: 0.01em;
+}
+
+@media (min-width: 830px) {
+    .type-h1 {
+        font-size: 64px;
+        line-height: 1.06;
+    }
+    .type-h1-sub {
+        font-size: 24px;
+    }
+    .type-h2 {
+        font-size: 56px;
+        line-height: 1.08;
+    }
+    .type-h3 {
+        font-size: 32px;
+        line-height: 1.12;
+    }
+    .type-body-lg {
+        font-size: 18px;
+    }
+    .project-body > a,
+    .project-body > h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .type-h1 {
+        font-size: 80px;
+        line-height: 1.05;
+    }
+    .type-h1-sub {
+        font-size: 28px;
+    }
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* Pulsanti full-width su mobile (hug su desktop), area tocco >=44px. */
+#contact a {
+    width: 100%;
+    min-height: 56px;
+    justify-content: center;
+}
+
+/* Stepper Sky: hit-area a tutta larghezza, 44px di larghezza minima. */
+.sky-btn {
+    width: 44px;
+    height: 24px;
+}
+
+.sky-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.approval-toggle,
+.athena-qr {
+    min-height: 44px;
 }
