@@ -264,3 +264,65 @@
         transform: none;
     }
 }
+
+/*
+ * ============================================================================
+ * 5) SHINY GOLDEN BADGE
+ * ============================================================================
+ * Pillola oro/champagne con riflesso luminoso che scorre (sheen).
+ * Usata sotto le skills nella hero per evidenziare la specializzazione.
+ * Solo gradienti + transform/opacity per restare a 60fps.
+ */
+
+.gold-badge {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg,
+            #fffbd6 0%,
+            #fef08a 22%,
+            #facc15 45%,
+            #d4a017 55%,
+            #fef08a 78%,
+            #fffbd6 100%);
+    border: 1px solid rgba(113, 63, 18, 0.35);
+    box-shadow:
+        0 10px 30px -10px rgba(250, 204, 21, 0.45),
+        0 2px 10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(113, 63, 18, 0.25);
+}
+
+/* Riflesso che attraversa il badge in diagonale. */
+.gold-badge::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: -30%;
+    width: 45%;
+    background: linear-gradient(105deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0.85) 50%,
+            rgba(255, 255, 255, 0) 80%,
+            transparent 100%);
+    transform: skewX(-20deg);
+    z-index: 1;
+    pointer-events: none;
+    animation: gold-sheen 3.8s ease-in-out infinite;
+}
+
+@keyframes gold-sheen {
+    0% { left: -60%; opacity: 0; }
+    15% { opacity: 1; }
+    55% { left: 130%; opacity: 1; }
+    70%, 100% { left: 130%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gold-badge::after {
+        animation: none;
+    }
+}

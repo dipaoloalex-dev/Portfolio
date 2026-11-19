@@ -56,7 +56,7 @@
     <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
@@ -168,6 +168,21 @@
                                 class="text-zinc-600 mx-2.5">|</span>I build custom management platforms that combine
                             structural robustness, scalability, and interoperability with an excellent end-user
                             experience.</span>
+                    </div>
+                </div>
+
+                <!-- Shiny Golden Badge: specializzazione, sotto le skills.
+                     Stile oro/champagne con sheen animato (vedi .gold-badge in style.css).
+                     Testo scuro su fondo chiaro per massimo contrasto e leggibilità. -->
+                <div
+                    class="gold-badge flex items-center gap-3 rounded-2xl px-5 py-4 w-fit max-w-full [animation:animationIn_0.8s_ease-out_0.45s_both] animate-on-scroll">
+                    <div
+                        class="relative z-[2] w-10 h-10 rounded-full bg-yellow-950/15 border border-yellow-950/20 flex items-center justify-center shrink-0">
+                        <i data-lucide="award" class="w-5 h-5 text-yellow-950" stroke-width="1.8"></i>
+                    </div>
+                    <div class="relative z-[2] flex flex-col leading-tight min-w-0">
+                        <span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-yellow-950/70">Specialization</span>
+                        <span class="text-base sm:text-lg font-semibold text-yellow-950 tracking-tight truncate">Enterprise Platforms • SDLC • Scalable</span>
                     </div>
                 </div>
             </div>
