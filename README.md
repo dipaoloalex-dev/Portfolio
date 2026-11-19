@@ -17,63 +17,105 @@
 
 ---
 
-## 📌 Panoramica del Progetto
+## 👋 Chi Sono
 
-Questo è il mio **portfolio online**: una vetrina web che raccoglie il mio profilo professionale, i progetti a cui ho lavorato e i miei canali di contatto.
+Sono **Alex Di Paolo**, Software Developer e IT System Designer di Napoli, Italia. Progetto e sviluppo ecosistemi web complessi in contesti ingegneristici, gestendo **l'intero ciclo di vita del software (SDLC)** — dall'architettura al rilascio in produzione.
 
-Un sito **statico, veloce e senza tempi di caricamento superflui**, progettato con un'estetica scura e futuristica per mettere in risalto il lavoro, non l'interfaccia.
+Realizzo piattaforme gestionali su misura, coniugando solidità strutturale, scalabilità, interoperabilità e un'ottima esperienza utente finale. Attualmente in **NETCaring s.r.l.**, laureato con **110 e lode** in Informatica per le Aziende Digitali (L-31).
 
 ---
 
 ## ✨ Cosa Trovi sul Sito
 
-* **Presentazione** — Chi sono, cosa faccio e le mie competenze principali (Full-Stack, Architettura Software, Piattaforme scalabili).
-* **Progetti** — Una selezione dei software che ho sviluppato, con una descrizione e, dove disponibile, il link al progetto.
-* **Come lavoro** — Un percorso in tre passi che spiega il valore del passaggio "offline → online" per un'azienda.
-* **Contatti** — Accesso diretto ai miei canali: **WhatsApp**, **Email**, **LinkedIn** e **GitHub**.
+* **Hero** — Chi sono, cosa faccio e le mie competenze principali (Full-Stack, architettura software, piattaforme scalabili), con cluster visivo fluttuante interattivo e badge di specializzazione.
+* **I Miei Progetti** — Sette card interattive, ognuna una miniatura viva del sistema reale: triage ticket, validazione pass museali, approvazioni ferie, firme dei registri di impianto, tracciabilità LLP, mockup one-page e KPI ESG.
+* **Da Offline a Online** — Un percorso in 3 passi che spiega perché un'azienda ha bisogno di un sito (benefici → problemi comuni → automazione).
+* **Contatti** — Canali diretti: **WhatsApp**, **Email**, **LinkedIn** e **GitHub**.
 
 ---
 
-## 🎨 Design & Esperienza
+## 🧩 Progetti in Evidenza
 
-* Tema **dark** con effetti **glassmorphism** (pannelli in vetro smerigliato e bagliori).
-* **Animazioni fluide** in ingresso, attivate allo scroll per una lettura progressiva.
-* Layout **responsive** e curato sia su desktop che su mobile.
-* Icone vettoriali e tipografia **Inter** per un aspetto pulito e professionale.
+| Progetto | Cos'è | Dettagli tecnici |
+|---|---|---|
+| **AutoTriage NLP** ([repo](https://github.com/dipaoloalex-dev/AutoTriageNLP)) | Tesi universitaria: pipeline ML/NLP per l'automazione del supporto clienti enterprise | Python, Scikit-Learn, Pandas, vettorizzazione TF-IDF + bigrammi, MultiOutputClassifier, LIME (Explainable AI), FastAPI, Next.js/Streamlit, Docker |
+| **Athena** | Piattaforma multi-livello per vendita, gestione e controllo accessi museali (Abbonamento Musei, Turismo Torino) | Laravel 11, PHP 8.3, MS SQL Server, MySQL 8, Apache, Tomcat 8.5, app Android in Modalità Kiosk, QR code, anti-passback, MFA, SSL/TLS, audit log GDPR |
+| **Easy Work** | Soluzione cloud all-in-one per la digitalizzazione dei processi aziendali (web + app native iOS/Android) | Motore di workflow (ferie/permessi/malattie), dashboard Gantt, timbratura geolocalizzata, integrazioni ERP/paghe, autenticazione RBAC |
+| **Akerus** | Digitalizzazione di registri operativi e richieste di intervento per un impianto di depurazione | Compilazione collaborativa fedele al cartaceo, validazione real-time, "Firma" irreversibile delle misurazioni, report PDF automatici |
+| **Sky Fly** | Gestionale verticale per il trading internazionale di ricambi aeronautici | Tracciabilità LLP (Time/Cycles Remaining), conformità EAR/ITAR, moduli ATA 106, fatture USD, invio SMTP automatizzato |
+| **Kairos Tech Lab** | Sito aziendale WordPress con navigazione single-page | Template personalizzato, form di contatto, pagine Privacy e Termini |
+| **ESGATE** | Piattaforma di raccolta, valutazione e tracciabilità dei parametri ESG | Librerie KPI versionate, Applicabilità Dinamica, RBAC, registro immutabile, dossier CSRD/ESRS/VSME |
 
 ---
 
-## 🧰 Stack Tecnologico
+## 🛠️ Stack Tecnologico
 
 | Ambito | Tecnologie |
 |---|---|
 | **Markup** | HTML5 semantico |
-| **Stile** | TailwindCSS + CSS personalizzato |
-| **Interattività** | JavaScript vanilla |
-| **Tipografia** | Font *Inter* |
-| **Icone** | Iconify + Lucide |
-| **Ospitato su** | GitHub Pages |
+| **Stile** | TailwindCSS (CDN) + `style.css` personalizzato (design token, animazioni, glassmorphism) |
+| **Interattività** | JavaScript vanilla (`script.js`: animazioni allo scroll, micro-interazioni delle card) |
+| **Tipografia** | Inter self-hosted (latin 400/500/600) |
+| **Icone** | Lucide self-hosted (pinnato) + Iconify |
+| **Sfondo** | Aura UnicornStudio + livelli glow in CSS |
+| **Analytics** | Google Analytics 4, caricato solo dopo consenso GDPR esplicito |
+| **Hosting** | GitHub Pages (statico, senza build) |
 
 ---
 
-## 🔒 Privacy & Cookie
+## 🚀 Avvio in Locale
 
-* Il sito **non raccoglie dati personali propri**.
-* Le statistiche (Google Analytics 4) sono anonime e partono **solo dopo il consenso esplicito** dell'utente.
-* Il consenso è gestito da un banner personalizzato, revocabile in qualsiasi momento dal footer del sito.
+Nessuna build, nessuna dipendenza — è statico:
+
+```powershell
+# dalla root del progetto
+python -m http.server 8000
+# poi apri http://localhost:8000
+```
+
+oppure con Node:
+
+```powershell
+npx serve .
+```
+
+> In VS Code apri direttamente la cartella **`Portfolio`** (non la sua parent) così Live Server trova `index.html` nella root.
+
+```
+Portfolio/
+├── index.html              # tutte le sezioni + meta SEO/OG + favicon
+├── style.css               # token, animazioni, glass, tipografia responsive
+├── script.js               # animazioni scroll, logica QR/approval/stepper
+├── images/                 # visual hero + favicons/
+├── fonts/                  # Inter latin self-hosted
+├── vendor/                 # Lucide self-hosted e pinnato
+└── banner/                 # banner cookie GDPR + loader GA4
+```
 
 ---
 
-## 📄 License
+## 🔒 Privacy, Cookie & Licenza
 
-Vedi [LICENSE](LICENSE) per dettagli.
+* Il sito **non raccoglie dati personali propri** e non usa cookie di profilazione.
+* Le statistiche Google Analytics 4 (ID `G-2M6V79H761`) sono anonime e partono **solo dopo il consenso esplicito** dell'utente, tramite il banner personalizzato in `banner/`.
+* Il consenso è revocabile in qualsiasi momento dal link "Cookie preferences" nel footer del sito.
+* Font (Inter) e icone (Lucide) sono self-hosted: nessuna chiamata esterna a Google Fonts o CDN di icone.
+
+**Licenza:** vedi [LICENSE](LICENSE) per i dettagli.
+
+---
+
+## 📬 Contatti
+
+* **Email:** [dipaoloalex.dev@gmail.com](mailto:dipaoloalex.dev@gmail.com)
+* **LinkedIn:** [linkedin.com/in/alex-di-paolo](https://www.linkedin.com/in/alex-di-paolo)
+* **GitHub:** [github.com/dipaoloalex-dev](https://github.com/dipaoloalex-dev)
+* **Telefono/WhatsApp:** +39 331 464 3804
 
 ---
 
 <div align="center">
 
 **Alex Di Paolo — Software Developer & IT System Designer**
-
-[Email](mailto:dipaoloalex.dev@gmail.com) · [LinkedIn](https://www.linkedin.com/in/alex-di-paolo) · [GitHub](https://github.com/dipaoloalex-dev)
 
 </div>
