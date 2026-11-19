@@ -177,41 +177,33 @@
 
 .project-card {
     transition:
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.5s ease,
         border-color 0.5s ease,
         background-color 0.5s ease;
-    will-change: transform;
 }
 
-/* Anteprima superiore e blocco testo: transizioni pronte, stato fermo. */
+/* Anteprima superiore e blocco testo: solo colori/ombre, niente movimenti
+   per tenere il testo sempre nitido (ogni translate/scale sul contenitore
+   con testo causa raster GPU sfocato su Windows/Chrome). */
 .project-card .project-media {
     transition:
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.5s ease,
         box-shadow 0.5s ease;
 }
 
-.project-card .project-media > div.relative {
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 .project-card .project-body > a,
 .project-card .project-body > h3 {
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .project-card .project-body > p {
-    transition: color 0.3s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: color 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* Sollevamento leggero + bordo più luminoso + ombra dinamica. */
+    /* Solo luce/bordo/ombra, nessun sollevamento: testo sempre fermo e nitido. */
     .project-card:hover,
     .project-card:focus-within {
-        transform: translateY(-6px) scale(1.02);
         z-index: 10;
         border-color: rgba(255, 255, 255, 0.12);
         background-color: rgba(255, 255, 255, 0.02);
@@ -221,24 +213,11 @@
             0 0 0 1px rgba(255, 255, 255, 0.06);
     }
 
-    /* L'anteprima respira: bordo schiarito e contenuto che sale di poco. */
+    /* L'anteprima respira: solo bordo schiarito. */
     .project-card:hover .project-media,
     .project-card:focus-within .project-media {
         border-color: rgba(255, 255, 255, 0.1);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    }
-
-    .project-card:hover .project-media > div.relative,
-    .project-card:focus-within .project-media > div.relative {
-        transform: translateY(-3px) scale(1.015);
-    }
-
-    /* Titolo: micro-spostamento laterale per dare direzione al gesto. */
-    .project-card:hover .project-body > a,
-    .project-card:hover .project-body > h3,
-    .project-card:focus-within .project-body > a,
-    .project-card:focus-within .project-body > h3 {
-        transform: translateX(2px);
     }
 
     .project-card:hover .project-body > p,
@@ -247,21 +226,14 @@
     }
 }
 
-/* Rispetta chi ha ridotto le animazioni: nessun sollevamento. */
+/* Rispetta chi ha ridotto le animazioni. */
 @media (prefers-reduced-motion: reduce) {
     .project-card,
     .project-card .project-media,
-    .project-card .project-media > div.relative,
     .project-card .project-body > a,
     .project-card .project-body > h3,
     .project-card .project-body > p {
         transition: none;
-    }
-
-    .project-card:hover,
-    .project-card:focus-within,
-    .project-card:hover .project-media > div.relative {
-        transform: none;
     }
 }
 
@@ -324,5 +296,369 @@
 @media (prefers-reduced-motion: reduce) {
     .gold-badge::after {
         animation: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 6) AUTOTRIAGE - TICKET VIVI (LIVE ROWS)
+ * ============================================================================
+ * Le 3 righe ticket si comportano come mini-app: hover/focus = sollevamento,
+ * glow nel colore della priorità, icona che scala, freccia che appare e
+ * riga dettaglio che si espande. Solo transform/opacity/border/box-shadow.
+ */
+
+.triage-ticket {
+    position: relative;
+    cursor: pointer;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.35s ease;
+}
+
+.triage-low {
+    opacity: 1;
+}
+
+.triage-ticket .triage-icon {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
+}
+
+.triage-ticket .triage-go {
+    opacity: 0;
+    width: 0;
+    margin-left: -0.5rem;
+    transform: translateX(-6px);
+    color: #71717a;
+    transition:
+        opacity 0.3s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.3s ease,
+        margin 0.3s ease;
+    overflow: hidden;
+}
+
+/* Riga dettaglio nascosta: si espande solo a hover/focus (effetto "ready automated"). */
+.triage-ticket .triage-detail {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-size: 10px;
+    line-height: 1.3;
+    color: #4ade80;
+    transition:
+        max-height 0.35s ease,
+        opacity 0.3s ease,
+        margin 0.3s ease;
+    margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.triage-ticket:focus-visible {
+    outline: 2px solid rgba(74, 222, 128, 0.6);
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .triage-ticket:hover,
+    .triage-ticket:focus-visible {
+        background-color: #101014;
+        z-index: 2;
+    }
+
+    .triage-high:hover,
+    .triage-high:focus-visible {
+        border-color: rgba(248, 113, 113, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(248, 113, 113, 0.4), 0 0 0 1px rgba(248, 113, 113, 0.12);
+    }
+
+    .triage-medium:hover,
+    .triage-medium:focus-visible {
+        border-color: rgba(250, 204, 21, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(250, 204, 21, 0.35), 0 0 0 1px rgba(250, 204, 21, 0.12);
+    }
+
+    .triage-low:hover,
+    .triage-low:focus-visible {
+        border-color: rgba(74, 222, 128, 0.5);
+        box-shadow: 0 10px 28px -10px rgba(74, 222, 128, 0.35), 0 0 0 1px rgba(74, 222, 128, 0.12);
+    }
+
+    .triage-ticket:hover .triage-icon,
+    .triage-ticket:focus-visible .triage-icon {
+        transform: scale(1.14) rotate(-5deg);
+    }
+
+    .triage-ticket:hover .triage-go,
+    .triage-ticket:focus-visible .triage-go {
+        opacity: 1;
+        width: 1rem;
+        margin-left: 0;
+        transform: translateX(0);
+    }
+
+    .triage-ticket:hover .triage-detail,
+    .triage-ticket:focus-visible .triage-detail {
+        max-height: 1.4em;
+        opacity: 1;
+        margin-top: 2px;
+    }
+
+    /* Niente attenuazione delle sorelle: restano tutte uguali e nitide,
+       si illumina solo quella sotto il cursore. L'opacity <1 le faceva
+       sembrare sfocate per via della rasterizzazione GPU. */
+}
+
+@media (hover: none) {
+    .triage-ticket .triage-detail {
+        max-height: none;
+        opacity: 0.9;
+        margin-top: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .triage-ticket,
+    .triage-ticket .triage-icon,
+    .triage-ticket .triage-go,
+    .triage-ticket .triage-detail {
+        transition: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 7) ATHENA QR + EASY WORK APPROVAL TOGGLE
+ * ============================================================================
+ * Micro-interazioni cliccabili nelle card. Solo transform/opacity/colori.
+ */
+
+.athena-qr {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.athena-qr:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Zoom senza sfocare il testo: il bottone NON scala (niente transform),
+   si ingrandisce solo l'icona SVG interna. Il testo resta nitido. */
+.athena-qr svg {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.athena-qr.qr-zoomed {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.7);
+    cursor: zoom-out;
+}
+
+.athena-qr.qr-zoomed svg {
+    transform: scale(1.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .athena-qr:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .athena-qr:hover svg {
+        transform: scale(1.12);
+    }
+    .athena-qr.qr-zoomed:hover svg {
+        transform: scale(1.3);
+    }
+}
+
+/* Toggle approvazione manager: verde approved <-> rosso not approved. */
+.approval-toggle {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.approval-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.approval-toggle .approval-icon {
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.approval-toggle .approval-text,
+.approval-toggle .approval-sub {
+    transition: color 0.3s ease;
+}
+
+/* Stato denied: nascondi check, mostra X rossa. */
+.approval-toggle.is-approved .icon-denied {
+    display: none;
+}
+
+.approval-toggle.is-denied .icon-approved {
+    display: none;
+}
+
+.approval-toggle.is-denied .approval-icon {
+    background-color: rgba(248, 113, 113, 0.15);
+    border-color: rgba(248, 113, 113, 0.4);
+    color: #f87171;
+}
+
+.approval-toggle.is-denied .approval-text {
+    color: #fca5a5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .approval-toggle:hover .approval-icon {
+        transform: scale(1.15);
+    }
+    .approval-toggle:active .approval-icon {
+        transform: scale(0.95);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .athena-qr,
+    .approval-toggle .approval-icon {
+        transition: none;
+    }
+}
+
+/*
+ * ============================================================================
+ * 8) SKY FLY STEPPER + ESGATE BARS + SMOOTH SCROLL
+ * ============================================================================
+ */
+
+/* Scroll morbido per l'ancora #contact di Kairos (disattivato se motion ridotta). */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Akerus: la riga PDF è full-width, niente scale sul bottone (sfoca il testo).
+   Si evidenzia solo con bordo/sfondo + icona ingrandita, come per Athena. */
+#akerusPdfBtn.qr-zoomed {
+    transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #akerusPdfBtn:hover {
+        transform: none;
+    }
+    #akerusPdfBtn.qr-zoomed:hover {
+        transform: none;
+    }
+}
+
+/* Sky Fly: frecce su/giù per i due contatori. */
+.sky-controls {
+    gap: 1px;
+}
+
+.sky-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 14px;
+    border-radius: 4px;
+    color: #71717a;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sky-btn:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sky-btn:active {
+    transform: scale(0.9);
+}
+
+.sky-btn:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 1px;
+}
+
+.sky-value {
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s ease;
+}
+
+/* Flash breve quando il numero cambia (classe aggiunta da JS). */
+.sky-value.bump {
+    color: #7dd3fc;
+}
+
+/* ESGATE: hover sulle tre righe KPI. */
+.esg-row {
+    cursor: default;
+    transition: background-color 0.3s ease;
+}
+
+.esg-row .esg-fill {
+    transition: filter 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    transform-origin: left center;
+}
+
+.esg-row .esg-value {
+    transition: color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .esg-row:hover,
+    .esg-row:focus-visible {
+        background-color: rgba(255, 255, 255, 0.04);
+        outline: none;
+    }
+
+    .esg-row:hover .esg-fill,
+    .esg-row:focus-visible .esg-fill {
+        filter: brightness(1.25) saturate(1.15);
+        transform: scaleY(1.6);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    }
+
+    .esg-row:hover .esg-value,
+    .esg-row:focus-visible .esg-value {
+        color: #fff;
+    }
+}
+
+.esg-row:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .sky-btn,
+    .sky-value,
+    .esg-row,
+    .esg-row .esg-fill,
+    .esg-row .esg-value {
+        transition: none;
     }
 }

@@ -4,9 +4,10 @@
  * ============================================================================
  * Logica interattiva del portfolio di Alex Di Paolo.
  *
- * Contiene due responsabilità separate:
+ * Contiene tre responsabilità separate:
  *   1) Le animazioni "animate-on-scroll" (fade/slide in ingresso).
  *   2) L'inizializzazione delle icone della libreria Lucide.
+ *   3) Le micro-interazioni delle card (QR Athena + approval Easy Work).
  *
  * Il file è caricato con `defer` (vedi index.html), quindi viene eseguito
  * dopo il parsing dell'HTML ma prima dell'evento DOMContentLoaded.
@@ -122,3 +123,88 @@
  * script incluso nell'<head> e non richiedono inizializzazione.
  */
 lucide.createIcons();
+
+/*
+ * ============================================================================
+ * 3) MICRO-INTERAZIONI CARD (Athena QR + Easy Work approval + Akerus + Sky Fly)
+ * ============================================================================
+ * Toggle semplici e reversibili, accessibili da tastiera (sono <button> nativi).
+ * Nessuna dipendenza: solo classList + testi. Le icone Lucide sono già
+ * entrambe nel DOM (check + x) e si alternano via CSS, così non serve
+ * richiamare createIcons dopo il toggle.
+ */
+(function () {
+    // Zoom generico tipo QR: usato da Athena QR e Akerus PDF.
+    function bindZoom(id, labelZoom, labelUnzoom) {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+            const zoomed = btn.classList.toggle("qr-zoomed");
+            btn.setAttribute("aria-pressed", String(zoomed));
+            btn.setAttribute("aria-label", zoomed ? labelUnzoom : labelZoom);
+        });
+    }
+
+    bindZoom("athenaQrBtn", "Ingrandisci QR Museum Pass", "Rimpicciolisci QR Museum Pass");
+    bindZoom("akerusPdfBtn", "Ingrandisci anteprima PDF report", "Rimpicciolisci anteprima PDF report");
+
+    // Easy Work: click sulla riga manager = approved <-> not approved.
+    const approvalBtn = document.getElementById("managerApprovalBtn");
+    const statusPill = document.getElementById("leaveStatusPill");
+    if (approvalBtn) {
+        const textEl = approvalBtn.querySelector(".approval-text");
+        const subEl = approvalBtn.querySelector(".approval-sub");
+
+        approvalBtn.addEventListener("click", () => {
+            const isApproved = approvalBtn.classList.contains("is-approved");
+            const nowApproved = !isApproved;
+
+            approvalBtn.classList.toggle("is-approved", nowApproved);
+            approvalBtn.classList.toggle("is-denied", !nowApproved);
+            approvalBtn.setAttribute("aria-pressed", String(nowApproved));
+
+            if (textEl) textEl.textContent = nowApproved ? "Manager approved" : "Manager not approved";
+            if (subEl) subEl.textContent = nowApproved ? "09 Jun · 10:12" : "09 Jun · 10:14 · Rejected";
+
+            // Pill di stato coerente: Pending (giallo) <-> Rejected (rosso).
+            if (statusPill) {
+                statusPill.textContent = nowApproved ? "Pending" : "Rejected";
+                statusPill.classList.toggle("bg-yellow-500/15", nowApproved);
+                statusPill.classList.toggle("text-yellow-400", nowApproved);
+                statusPill.classList.toggle("bg-red-500/15", !nowApproved);
+                statusPill.classList.toggle("text-red-400", !nowApproved);
+            }
+        });
+    }
+
+    // Sky Fly: stepper su/giù per Time e Cycles remaining.
+    function formatSky(value, unit) {
+        const grouped = Number(value).toLocaleString("en-US");
+        return grouped + unit;
+    }
+
+    document.querySelectorAll(".sky-metric").forEach((metric) => {
+        const valueEl = metric.querySelector(".sky-value");
+        if (!valueEl) return;
+        const step = parseInt(metric.dataset.step || "1", 10);
+        const min = parseInt(metric.dataset.min || "0", 10);
+        const max = parseInt(metric.dataset.max || "9999", 10);
+        const unit = metric.dataset.unit || "";
+        let current = parseInt(metric.dataset.value || "0", 10);
+
+        metric.querySelectorAll(".sky-btn").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const dir = parseInt(btn.dataset.dir || "1", 10);
+                current = Math.min(max, Math.max(min, current + dir * step));
+                metric.dataset.value = String(current);
+                valueEl.textContent = formatSky(current, unit);
+                // Micro-feedback: flash azzurro breve sul numero.
+                valueEl.classList.remove("bump");
+                void valueEl.offsetWidth;
+                valueEl.classList.add("bump");
+                window.setTimeout(() => valueEl.classList.remove("bump"), 350);
+            });
+        });
+    });
+})();

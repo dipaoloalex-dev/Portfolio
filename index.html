@@ -56,11 +56,11 @@
     <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=13">
     <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
-    <script src="script.js?v=5" defer></script>
+    <script src="script.js?v=7" defer></script>
     <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
          cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
 </head>
@@ -294,56 +294,72 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: classificazione e prioritizzazione automatica dei ticket -->
-                    <div class="relative w-[90%] max-w-[300px] flex flex-col gap-2.5 z-10">
+                    <!-- Inner Graphic: classificazione e prioritizzazione automatica dei ticket.
+                         Righe interattive: ogni ticket è focusabile e reagisce a hover/focus
+                         come una mini-app viva (sollevamento + glow colore priorità). -->
+                    <div class="triage-live relative w-[90%] max-w-[300px] flex flex-col gap-2.5 z-10">
                         <div class="flex items-center gap-2 text-xs text-zinc-500 px-1">
+                            <span class="relative flex w-2 h-2">
+                                <span
+                                    class="absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-60 animate-ping"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#4ade80]"></span>
+                            </span>
                             <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#4ade80]" stroke-width="1.5"></i>
                             <span>AutoTriage engine</span>
                             <span
                                 class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-[#4ade80]/10 text-[#4ade80]">NLP</span>
                         </div>
 
-                        <div
-                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
+                        <div tabindex="0" role="button" aria-label="Ticket Printer not working, priorità alta"
+                            class="triage-ticket triage-high bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                                class="triage-icon w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                                 <i data-lucide="printer" class="w-4 h-4" stroke-width="1.5"></i>
                             </div>
                             <div class="flex flex-col flex-1 min-w-0">
                                 <span class="text-xs font-medium text-zinc-200 truncate">Printer not working · Floor
                                     3</span>
                                 <span class="text-[10px] text-zinc-500">Classified as Hardware</span>
+                                <span class="triage-detail">Auto-assign to Hardware queue · 98% confidence</span>
                             </div>
                             <span
                                 class="text-[10px] font-medium px-2 py-0.5 rounded bg-red-500/15 text-red-400 shrink-0">High</span>
+                            <i data-lucide="chevron-right" class="triage-go w-4 h-4 shrink-0"
+                                stroke-width="2"></i>
                         </div>
 
-                        <div
-                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
+                        <div tabindex="0" role="button" aria-label="Ticket VPN access request, priorità media"
+                            class="triage-ticket triage-medium bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                                class="triage-icon w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
                                 <i data-lucide="key-round" class="w-4 h-4" stroke-width="1.5"></i>
                             </div>
                             <div class="flex flex-col flex-1 min-w-0">
                                 <span class="text-xs font-medium text-zinc-200 truncate">VPN access request</span>
                                 <span class="text-[10px] text-zinc-500">Classified as IT / Access</span>
+                                <span class="triage-detail">Ready for auto-approval · 94% confidence</span>
                             </div>
                             <span
                                 class="text-[10px] font-medium px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400 shrink-0">Medium</span>
+                            <i data-lucide="chevron-right" class="triage-go w-4 h-4 shrink-0"
+                                stroke-width="2"></i>
                         </div>
 
-                        <div
-                            class="bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3 opacity-50">
+                        <div tabindex="0" role="button" aria-label="Ticket Password reset, priorità bassa"
+                            class="triage-ticket triage-low bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-zinc-400 shrink-0">
+                                class="triage-icon w-8 h-8 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-zinc-400 shrink-0">
                                 <i data-lucide="mail" class="w-4 h-4" stroke-width="1.5"></i>
                             </div>
                             <div class="flex flex-col flex-1 min-w-0">
                                 <span class="text-xs font-medium text-zinc-200 truncate">Password reset</span>
                                 <span class="text-[10px] text-zinc-500">Classified as Account</span>
+                                <span class="triage-detail">All automated · self-service link sent</span>
                             </div>
                             <span
                                 class="text-[10px] font-medium px-2 py-0.5 rounded bg-green-500/15 text-green-400 shrink-0">Low</span>
+                            <i data-lucide="chevron-right" class="triage-go w-4 h-4 shrink-0"
+                                stroke-width="2"></i>
                         </div>
                     </div>
                 </div>
@@ -369,7 +385,8 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: validazione accesso museo -->
+                    <!-- Inner Graphic: validazione accesso museo.
+                         QR cliccabile: si ingrandisce leggermente (toggle, anche da tastiera). -->
                     <div class="relative w-[90%] max-w-[280px] flex flex-col items-center gap-3 z-10">
                         <div
                             class="w-full bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3">
@@ -378,10 +395,12 @@
                                 <span class="text-[10px] text-zinc-500 font-mono">#01842</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <div
-                                    class="w-14 h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                                    <i data-lucide="qr-code" class="w-8 h-8 text-zinc-300" stroke-width="1.5"></i>
-                                </div>
+                                <button type="button" id="athenaQrBtn"
+                                    class="athena-qr w-14 h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 cursor-zoom-in"
+                                    aria-pressed="false" aria-label="Ingrandisci QR Museum Pass">
+                                    <i data-lucide="qr-code" class="w-8 h-8 text-zinc-300 pointer-events-none"
+                                        stroke-width="1.5"></i>
+                                </button>
                                 <div class="flex flex-col gap-1">
                                     <span class="text-[11px] text-zinc-300 font-medium">Valid · Adult</span>
                                     <span class="text-[11px] text-zinc-400">Abbonamento Musei</span>
@@ -412,12 +431,14 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: workflow di approvazione e gestione presenze -->
+                    <!-- Inner Graphic: workflow di approvazione e gestione presenze.
+                         Toggle approvazione: click sulla riga manager per passare
+                         da approved (verde) a not approved (rosso), e viceversa. -->
                     <div
                         class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-4 z-10">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-medium text-zinc-200">Leave request</span>
-                            <span
+                            <span id="leaveStatusPill"
                                 class="text-[10px] px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400">Pending</span>
                         </div>
                         <div class="flex items-center gap-3 text-xs text-zinc-400">
@@ -425,16 +446,21 @@
                             <span>3 days · 12–14 Jun</span>
                         </div>
                         <div class="flex flex-col gap-3 mt-1">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-[#4ade80]/15 border border-[#4ade80]/30 flex items-center justify-center text-[#4ade80] shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3" stroke-width="2"></i>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span class="text-xs text-zinc-300">Manager approved</span>
-                                    <span class="text-[10px] text-zinc-600">09 Jun · 10:12</span>
-                                </div>
-                            </div>
+                            <button type="button" id="managerApprovalBtn"
+                                class="approval-toggle is-approved flex items-center gap-3 text-left rounded-lg cursor-pointer"
+                                aria-pressed="true" aria-label="Toggle manager approval">
+                                <span
+                                    class="approval-icon w-6 h-6 rounded-full bg-[#4ade80]/15 border border-[#4ade80]/30 flex items-center justify-center text-[#4ade80] shrink-0 pointer-events-none">
+                                    <i data-lucide="check" class="icon-approved w-3 h-3 pointer-events-none"
+                                        stroke-width="2.5"></i>
+                                    <i data-lucide="x" class="icon-denied w-3 h-3 pointer-events-none"
+                                        stroke-width="2.5"></i>
+                                </span>
+                                <span class="flex flex-col pointer-events-none">
+                                    <span class="approval-text text-xs text-zinc-300">Manager approved</span>
+                                    <span class="approval-sub text-[10px] text-zinc-600">09 Jun · 10:12</span>
+                                </span>
+                            </button>
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 shrink-0">
@@ -483,11 +509,16 @@
                             <span>Operator · M. Rossi</span>
                             <span class="font-mono">09 Jun 14:22</span>
                         </div>
-                        <div
-                            class="flex items-center gap-2 text-[11px] text-zinc-400 bg-white/[0.02] border border-white/5 rounded-lg px-2.5 py-1.5">
-                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-500" stroke-width="1.5"></i>
-                            PDF report generated
-                        </div>
+                        <button type="button" id="akerusPdfBtn"
+                            class="athena-qr flex items-center gap-2 text-[11px] text-zinc-400 bg-white/[0.02] border border-white/5 rounded-lg px-2.5 py-1.5 text-left w-full cursor-zoom-in"
+                            aria-pressed="false" aria-label="Ingrandisci anteprima PDF report">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-500 shrink-0 pointer-events-none"
+                                stroke-width="1.5"></i>
+                            <span class="pointer-events-none">PDF report generated</span>
+                            <i data-lucide="maximize-2"
+                                class="w-3 h-3 ml-auto text-zinc-600 shrink-0 pointer-events-none"
+                                stroke-width="2"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
@@ -520,13 +551,43 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-2">
-                            <div class="bg-white/[0.02] border border-white/5 rounded-lg p-2">
+                            <div class="sky-metric bg-white/[0.02] border border-white/5 rounded-lg p-2"
+                                data-value="1240" data-step="10" data-min="0" data-max="9999" data-unit=" h">
                                 <span class="block text-[10px] text-zinc-500">Time remaining</span>
-                                <span class="text-sm font-semibold text-white">1,240 h</span>
+                                <div class="flex items-center justify-between gap-1">
+                                    <span class="sky-value text-sm font-semibold text-white">1,240 h</span>
+                                    <span class="sky-controls flex flex-col shrink-0">
+                                        <button type="button" class="sky-btn" data-dir="1"
+                                            aria-label="Aumenta time remaining">
+                                            <i data-lucide="chevron-up" class="w-3.5 h-3.5 pointer-events-none"
+                                                stroke-width="2.5"></i>
+                                        </button>
+                                        <button type="button" class="sky-btn" data-dir="-1"
+                                            aria-label="Diminuisci time remaining">
+                                            <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none"
+                                                stroke-width="2.5"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="bg-white/[0.02] border border-white/5 rounded-lg p-2">
+                            <div class="sky-metric bg-white/[0.02] border border-white/5 rounded-lg p-2"
+                                data-value="860" data-step="1" data-min="0" data-max="9999" data-unit="">
                                 <span class="block text-[10px] text-zinc-500">Cycles remaining</span>
-                                <span class="text-sm font-semibold text-white">860</span>
+                                <div class="flex items-center justify-between gap-1">
+                                    <span class="sky-value text-sm font-semibold text-white">860</span>
+                                    <span class="sky-controls flex flex-col shrink-0">
+                                        <button type="button" class="sky-btn" data-dir="1"
+                                            aria-label="Aumenta cycles remaining">
+                                            <i data-lucide="chevron-up" class="w-3.5 h-3.5 pointer-events-none"
+                                                stroke-width="2.5"></i>
+                                        </button>
+                                        <button type="button" class="sky-btn" data-dir="-1"
+                                            aria-label="Diminuisci cycles remaining">
+                                            <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none"
+                                                stroke-width="2.5"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div
@@ -571,10 +632,11 @@
                                 <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
                                 <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
                             </div>
-                            <div
-                                class="h-8 rounded-lg bg-[#4ade80]/20 border border-[#4ade80]/20 mt-1 flex items-center justify-center">
+                            <a href="#contact"
+                                class="h-8 rounded-lg bg-[#4ade80]/20 border border-[#4ade80]/20 mt-1 flex items-center justify-center hover:bg-[#4ade80]/30 hover:border-[#4ade80]/40 transition-colors duration-300 cursor-pointer"
+                                aria-label="Vai alla sezione contatti">
                                 <span class="text-[10px] font-medium text-[#4ade80]">Contact</span>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -602,26 +664,26 @@
                             <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-zinc-400">CSRD · ESRS</span>
                         </div>
                         <div class="flex flex-col gap-2.5 mt-1">
-                            <div class="flex items-center gap-3">
+                            <div class="esg-row flex items-center gap-3 rounded-md px-1 -mx-1 py-0.5" tabindex="0">
                                 <span class="text-[10px] text-zinc-500 w-12">Environment</span>
                                 <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                                    <div class="h-full bg-[#4ade80] rounded-full" style="width: 82%"></div>
+                                    <div class="esg-fill h-full bg-[#4ade80] rounded-full" style="width: 82%"></div>
                                 </div>
-                                <span class="text-[10px] text-zinc-300 w-7 text-right">82</span>
+                                <span class="esg-value text-[10px] text-zinc-300 w-7 text-right">82</span>
                             </div>
-                            <div class="flex items-center gap-3">
+                            <div class="esg-row flex items-center gap-3 rounded-md px-1 -mx-1 py-0.5" tabindex="0">
                                 <span class="text-[10px] text-zinc-500 w-12">Social</span>
                                 <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                                    <div class="h-full bg-blue-400 rounded-full" style="width: 74%"></div>
+                                    <div class="esg-fill h-full bg-blue-400 rounded-full" style="width: 74%"></div>
                                 </div>
-                                <span class="text-[10px] text-zinc-300 w-7 text-right">74</span>
+                                <span class="esg-value text-[10px] text-zinc-300 w-7 text-right">74</span>
                             </div>
-                            <div class="flex items-center gap-3">
+                            <div class="esg-row flex items-center gap-3 rounded-md px-1 -mx-1 py-0.5" tabindex="0">
                                 <span class="text-[10px] text-zinc-500 w-12">Governance</span>
                                 <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                                    <div class="h-full bg-purple-400 rounded-full" style="width: 91%"></div>
+                                    <div class="esg-fill h-full bg-purple-400 rounded-full" style="width: 91%"></div>
                                 </div>
-                                <span class="text-[10px] text-zinc-300 w-7 text-right">91</span>
+                                <span class="esg-value text-[10px] text-zinc-300 w-7 text-right">91</span>
                             </div>
                         </div>
                         <div class="flex items-center gap-2 text-[10px] text-zinc-500 border-t border-white/5 pt-2">
@@ -942,7 +1004,7 @@
          WhatsApp, Email, LinkedIn e GitHub.
          Ogni link apre in una nuova scheda (target="_blank") con
          rel="noopener noreferrer" per motivi di sicurezza. -->
-    <footer class="relative z-20 container mx-auto px-6 md:px-12 pt-8 pb-20 pointer-events-auto">
+    <footer id="contact" class="relative z-20 container mx-auto px-6 md:px-12 pt-8 pb-20 pointer-events-auto scroll-mt-8">
         <div
             class="bg-[#0e0e11] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <div class="flex flex-col items-center gap-4">
