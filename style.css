@@ -19,6 +19,80 @@
 
 /*
  * ============================================================================
+ * 0) COLOR SYSTEM — BOZZA (solo commento, nessun codice modificato)
+ * ============================================================================
+ * Foto attuale della palette usata in index.html + style.css + banner,
+ * rimappata sulla nomenclatura semantica richiesta.
+ * Non serve una scala 50-900 estesa: bastano questi token.
+ * Promemoria scala 50 (chiarissimo) -> 900 (scurissimo).
+ *
+ * --fg-primary .... text-white / #fafafa .............. titoli, testo forte
+ *                   text-white/95 ...................... H1
+ * --fg-sec ........ zinc-400 #a1a1aa .................. body, paragrafi
+ *                   zinc-300 #d4d4d8 .................. label attive
+ *                   zinc-200 #e4e4e7 .................. sottotitoli forti
+ * --fg-muted ....... zinc-500 #71717a .................. icone, meta, help
+ *                   zinc-600 #52525b .................. separatori "|", caption
+ *
+ * --bg-base ....... #09090b ........................... pagina, ticket, pill
+ * --bg-elevated ... #0e0e11 ........................... card progetti, footer
+ * --bg-overlay .... #131316 ........................... anteprima media card
+ *                   #18181b / #1f1f22 ................. blocchi processo
+ *                   white/[0.02] [0.04] [0.05] ........ overlay vetro
+ *                   black/40 .......................... badge ovali
+ *
+ * --border-subtle . white/5, zinc-500/10, zinc-600/5 .. bordi card/media
+ * --border-strong . white/10, white/15 ................ bordi attivi/hover
+ *
+ * --accent ........ #4ade80 (green-400) ............... NLP, granted, ok
+ *                   bg #4ade80/10 /15 /20 ............. pill verdi
+ * --accent-gold ... #fffbd6 #fef08a #facc15 #d4a017 ... badge shiny gold
+ *                   text yellow-950 #422006 ........... testo su oro
+ *
+ * --status ........ red #f87171 #fca5a5 (High/Rejected)
+ *                   yellow #facc15 (Medium/Pending)
+ *                   green #4ade80 (Low/Access)
+ *                   blue-400 / purple-400 / sky #7dd3fc (icone, KPI, bump)
+ *                   orange-400 / emerald-400 / cyan-400 (lista benefici)
+ * --brand ......... #25D366 WhatsApp .................. contatti
+ *
+ * Da decidere dopo il check: teniamo questi valori e li fissiamo come
+ * variabili --fg-primary, --fg-sec, --bg-base, --bg-elevated, --bg-overlay,
+ * --border-subtle, --border-strong? Per ora solo bozza, niente refactor.
+ * ============================================================================
+ */
+
+/*
+ * Fissaggio variabili — SOLO CSS custom (Tailwind in index.html invariato).
+ * Stessi valori della bozza, nessun colore cambiato o perso.
+ */
+:root {
+    --fg-primary: #fafafa;
+    --fg-sec: #a1a1aa;
+    --fg-muted: #71717a;
+    --bg-base: #09090b;
+    --bg-elevated: #0e0e11;
+    --bg-overlay: #131316;
+    --bg-hover: #101014;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-strong: rgba(255, 255, 255, 0.1);
+    --border-active: rgba(255, 255, 255, 0.12);
+    --accent: #4ade80;
+    --gold-1: #fffbd6;
+    --gold-2: #fef08a;
+    --gold-3: #facc15;
+    --gold-4: #d4a017;
+    --gold-border: rgba(113, 63, 18, 0.35);
+    --gold-text: #422006;
+    --status-red: #f87171;
+    --status-red-soft: #fca5a5;
+    --status-red-bg: rgba(248, 113, 113, 0.15);
+    --status-red-border: rgba(248, 113, 113, 0.4);
+    --info-blue: #7dd3fc;
+}
+
+/*
+ * ============================================================================
  * 1) ANIMAZIONI CSS
  * ============================================================================
  * La pagina anima gli elementi in ingresso (fade + slide + blur) sfruttando
@@ -109,7 +183,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Bordo chiaro sottile che definisce il perimetro del vetro. */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-strong);
 
     /*
      * Mix di ombre:
@@ -161,7 +235,7 @@
 
 /* Il "cursore" è bianco semitrasparente con angoli arrotondati. */
 .dash-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-strong);
     border-radius: 4px;
 }
 
@@ -205,7 +279,7 @@
     .project-card:hover,
     .project-card:focus-within {
         z-index: 10;
-        border-color: rgba(255, 255, 255, 0.12);
+        border-color: var(--border-active);
         background-color: rgba(255, 255, 255, 0.02);
         box-shadow:
             0 24px 60px -12px rgba(0, 0, 0, 0.65),
@@ -216,13 +290,13 @@
     /* L'anteprima respira: solo bordo schiarito. */
     .project-card:hover .project-media,
     .project-card:focus-within .project-media {
-        border-color: rgba(255, 255, 255, 0.1);
+        border-color: var(--border-strong);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     .project-card:hover .project-body > p,
     .project-card:focus-within .project-body > p {
-        color: #a1a1aa;
+        color: var(--fg-sec);
     }
 }
 
@@ -252,13 +326,13 @@
     overflow: hidden;
     background:
         linear-gradient(135deg,
-            #fffbd6 0%,
-            #fef08a 22%,
-            #facc15 45%,
-            #d4a017 55%,
-            #fef08a 78%,
-            #fffbd6 100%);
-    border: 1px solid rgba(113, 63, 18, 0.35);
+            var(--gold-1) 0%,
+            var(--gold-2) 22%,
+            var(--gold-3) 45%,
+            var(--gold-4) 55%,
+            var(--gold-2) 78%,
+            var(--gold-1) 100%);
+    border: 1px solid var(--gold-border);
     box-shadow:
         0 10px 30px -10px rgba(250, 204, 21, 0.45),
         0 2px 10px rgba(0, 0, 0, 0.4),
@@ -330,7 +404,7 @@
     width: 0;
     margin-left: -0.5rem;
     transform: translateX(-6px);
-    color: #71717a;
+    color: var(--fg-muted);
     transition:
         opacity 0.3s ease,
         transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -347,7 +421,7 @@
     overflow: hidden;
     font-size: 10px;
     line-height: 1.3;
-    color: #4ade80;
+    color: var(--accent);
     transition:
         max-height 0.35s ease,
         opacity 0.3s ease,
@@ -365,7 +439,7 @@
 @media (hover: hover) and (pointer: fine) {
     .triage-ticket:hover,
     .triage-ticket:focus-visible {
-        background-color: #101014;
+        background-color: var(--bg-hover);
         z-index: 2;
     }
 
@@ -515,13 +589,13 @@
 }
 
 .approval-toggle.is-denied .approval-icon {
-    background-color: rgba(248, 113, 113, 0.15);
-    border-color: rgba(248, 113, 113, 0.4);
-    color: #f87171;
+    background-color: var(--status-red-bg);
+    border-color: var(--status-red-border);
+    color: var(--status-red);
 }
 
 .approval-toggle.is-denied .approval-text {
-    color: #fca5a5;
+    color: var(--status-red-soft);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -578,7 +652,7 @@ html {
     width: 20px;
     height: 14px;
     border-radius: 4px;
-    color: #71717a;
+    color: var(--fg-muted);
     background: transparent;
     border: 0;
     padding: 0;
@@ -587,8 +661,8 @@ html {
 }
 
 .sky-btn:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--fg-primary);
+    background-color: var(--border-strong);
 }
 
 .sky-btn:active {
@@ -607,7 +681,7 @@ html {
 
 /* Flash breve quando il numero cambia (classe aggiunta da JS). */
 .sky-value.bump {
-    color: #7dd3fc;
+    color: var(--info-blue);
 }
 
 /* ESGATE: hover sulle tre righe KPI. */
