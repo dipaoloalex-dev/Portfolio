@@ -60,19 +60,17 @@
     </script>
     <!-- Iconify: icone vettoriali usate tramite <iconify-icon icon="...">. -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <!-- Lucide: icone SVG usate tramite <i data-lucide="...">. -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Preconnect: apre in anticipo le connessioni verso Google Fonts. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Lucide pinnato in locale (v1.76.0): niente più unpkg @latest che cambia da solo. -->
+    <script src="vendor/lucide.min.js" defer></script>
+    <!-- Font Inter self-hosted (solo latin 400/500/600): niente più Google Fonts esterni. -->
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="stylesheet" href="fonts/inter.css">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=18">
     <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
-    <script src="script.js?v=7" defer></script>
+    <script src="script.js?v=8" defer></script>
     <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
          cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
 </head>

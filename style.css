@@ -56,9 +56,8 @@
  *                   orange-400 / emerald-400 / cyan-400 (lista benefici)
  * --brand ......... #25D366 WhatsApp .................. contatti
  *
- * Da decidere dopo il check: teniamo questi valori e li fissiamo come
- * variabili --fg-primary, --fg-sec, --bg-base, --bg-elevated, --bg-overlay,
- * --border-subtle, --border-strong? Per ora solo bozza, niente refactor.
+ * Deciso: valori fissati come variabili in :root qui sotto (solo CSS custom,
+ * Tailwind in index.html invariato). Nessun colore cambiato o perso.
  * ============================================================================
  */
 
@@ -89,6 +88,19 @@
     --status-red-bg: rgba(248, 113, 113, 0.15);
     --status-red-border: rgba(248, 113, 113, 0.4);
     --info-blue: #7dd3fc;
+    --dur-fast: 0.2s;
+    --dur: 0.3s;
+    --dur-med: 0.35s;
+    --dur-slow: 0.5s;
+    --dur-sheen: 3.8s;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --radius-card: 1.5rem;
+    --shadow-card: 0 24px 60px -12px rgba(0, 0, 0, 0.65), 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    --shadow-media: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --shadow-glass: 0 30px 60px -15px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+    --z-card: 10;
+    --z-live: 2;
+    --layout-max: 1440px;
 }
 
 /*
@@ -190,11 +202,8 @@
      *  - la prima è un'ombra esterna profonda (dà distacco dal fondo);
      *  - le due `inset` sono luci/ombre interne (danno rilievo 3D).
      */
-    box-shadow:
-        0 30px 60px -15px rgba(0, 0, 0, 0.8),
-        inset 0 1px 1px rgba(255, 255, 255, 0.15),
-        inset 0 -1px 1px rgba(0, 0, 0, 0.3);
-    border-radius: 1.5rem;
+    box-shadow: var(--shadow-glass);
+    border-radius: var(--radius-card);
 }
 
 /*
@@ -207,9 +216,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 100%);
-    border-radius: 1.5rem;
+    border-radius: var(--radius-card);
     /* Sopra il contenuto, ma sotto eventuali elementi con z-index maggiore. */
-    z-index: 10;
+    z-index: var(--z-card);
     /* Lascia passare i click: è puramente decorativo. */
     pointer-events: none;
 }
@@ -251,9 +260,9 @@
 
 .project-card {
     transition:
-        box-shadow 0.5s ease,
-        border-color 0.5s ease,
-        background-color 0.5s ease;
+        box-shadow var(--dur-slow) ease,
+        border-color var(--dur-slow) ease,
+        background-color var(--dur-slow) ease;
 }
 
 /* Anteprima superiore e blocco testo: solo colori/ombre, niente movimenti
@@ -261,37 +270,34 @@
    con testo causa raster GPU sfocato su Windows/Chrome). */
 .project-card .project-media {
     transition:
-        border-color 0.5s ease,
-        box-shadow 0.5s ease;
+        border-color var(--dur-slow) ease,
+        box-shadow var(--dur-slow) ease;
 }
 
 .project-card .project-body > a,
 .project-card .project-body > h3 {
-    transition: color 0.3s ease;
+    transition: color var(--dur) ease;
 }
 
 .project-card .project-body > p {
-    transition: color 0.3s ease;
+    transition: color var(--dur) ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
     /* Solo luce/bordo/ombra, nessun sollevamento: testo sempre fermo e nitido. */
     .project-card:hover,
     .project-card:focus-within {
-        z-index: 10;
+        z-index: var(--z-card);
         border-color: var(--border-active);
         background-color: rgba(255, 255, 255, 0.02);
-        box-shadow:
-            0 24px 60px -12px rgba(0, 0, 0, 0.65),
-            0 8px 24px rgba(0, 0, 0, 0.35),
-            0 0 0 1px rgba(255, 255, 255, 0.06);
+        box-shadow: var(--shadow-card);
     }
 
     /* L'anteprima respira: solo bordo schiarito. */
     .project-card:hover .project-media,
     .project-card:focus-within .project-media {
         border-color: var(--border-strong);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        box-shadow: var(--shadow-media);
     }
 
     .project-card:hover .project-body > p,
@@ -357,7 +363,7 @@
     transform: skewX(-20deg);
     z-index: 1;
     pointer-events: none;
-    animation: gold-sheen 3.8s ease-in-out infinite;
+    animation: gold-sheen var(--dur-sheen) ease-in-out infinite;
 }
 
 @keyframes gold-sheen {
@@ -386,9 +392,9 @@
     position: relative;
     cursor: pointer;
     transition:
-        border-color 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.35s ease;
+        border-color var(--dur) ease,
+        background-color var(--dur) ease,
+        box-shadow var(--dur-med) ease;
 }
 
 .triage-low {
@@ -396,7 +402,7 @@
 }
 
 .triage-ticket .triage-icon {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
+    transition: transform var(--dur-med) var(--ease-out), background-color var(--dur) ease;
 }
 
 .triage-ticket .triage-go {
@@ -406,10 +412,10 @@
     transform: translateX(-6px);
     color: var(--fg-muted);
     transition:
-        opacity 0.3s ease,
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        width 0.3s ease,
-        margin 0.3s ease;
+        opacity var(--dur) ease,
+        transform var(--dur-med) var(--ease-out),
+        width var(--dur) ease,
+        margin var(--dur) ease;
     overflow: hidden;
 }
 
@@ -423,9 +429,9 @@
     line-height: 1.3;
     color: var(--accent);
     transition:
-        max-height 0.35s ease,
-        opacity 0.3s ease,
-        margin 0.3s ease;
+        max-height var(--dur-med) ease,
+        opacity var(--dur) ease,
+        margin var(--dur) ease;
     margin-top: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -440,7 +446,7 @@
     .triage-ticket:hover,
     .triage-ticket:focus-visible {
         background-color: var(--bg-hover);
-        z-index: 2;
+        z-index: var(--z-live);
     }
 
     .triage-high:hover,
@@ -513,10 +519,10 @@
 
 .athena-qr {
     transition:
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform var(--dur-med) var(--ease-out),
+        background-color var(--dur) ease,
+        border-color var(--dur) ease,
+        box-shadow var(--dur) ease;
 }
 
 .athena-qr:focus-visible {
@@ -527,7 +533,7 @@
 /* Zoom senza sfocare il testo: il bottone NON scala (niente transform),
    si ingrandisce solo l'icona SVG interna. Il testo resta nitido. */
 .athena-qr svg {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform var(--dur-med) var(--ease-out);
 }
 
 .athena-qr.qr-zoomed {
@@ -569,15 +575,15 @@
 
 .approval-toggle .approval-icon {
     transition:
-        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease;
+        transform var(--dur) var(--ease-out),
+        background-color var(--dur) ease,
+        border-color var(--dur) ease,
+        color var(--dur) ease;
 }
 
 .approval-toggle .approval-text,
 .approval-toggle .approval-sub {
-    transition: color 0.3s ease;
+    transition: color var(--dur) ease;
 }
 
 /* Stato denied: nascondi check, mostra X rossa. */
@@ -658,7 +664,7 @@ html {
     border: 0;
     padding: 0;
     cursor: pointer;
-    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease, transform var(--dur-fast) ease;
 }
 
 .sky-btn:hover {
@@ -677,7 +683,7 @@ html {
 
 .sky-value {
     font-variant-numeric: tabular-nums;
-    transition: color 0.2s ease;
+    transition: color var(--dur-fast) ease;
 }
 
 /* Flash breve quando il numero cambia (classe aggiunta da JS). */
@@ -688,16 +694,16 @@ html {
 /* ESGATE: hover sulle tre righe KPI. */
 .esg-row {
     cursor: default;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--dur) ease;
 }
 
 .esg-row .esg-fill {
-    transition: filter 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    transition: filter var(--dur) ease, transform var(--dur-med) var(--ease-out), box-shadow var(--dur) ease;
     transform-origin: left center;
 }
 
 .esg-row .esg-value {
-    transition: color 0.3s ease;
+    transition: color var(--dur) ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -833,7 +839,7 @@ html {
         font-size: 28px;
     }
     .container {
-        max-width: 1440px;
+        max-width: var(--layout-max);
     }
 }
 
