@@ -14,6 +14,19 @@
  * ============================================================================
  */
 
+/* Valori hardcoded centralizzati: stessi numeri di prima, un solo punto. */
+window.__CONFIG = Object.assign(
+    {
+        inViewThreshold: 0.2,
+        inViewRootMargin: "0px 0px -10% 0px",
+        bumpMs: 350,
+        skyDefaultStep: 1,
+        skyDefaultMin: 0,
+        skyDefaultMax: 9999,
+    },
+    window.__CONFIG || {}
+);
+
 /*
  * ============================================================================
  * 1) ANIMAZIONI ALLO SCROLL ("animate-on-scroll")
@@ -93,7 +106,7 @@
             });
         // threshold 0.2 = scatta quando è visibile almeno il 20% dell'elemento.
         // rootMargin negativo in basso = anticipa/ritarda il trigger sotto il bordo.
-        }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+        }, { threshold: window.__CONFIG.inViewThreshold, rootMargin: window.__CONFIG.inViewRootMargin });
     }
 
     /*
@@ -186,9 +199,9 @@ lucide.createIcons();
     document.querySelectorAll(".sky-metric").forEach((metric) => {
         const valueEl = metric.querySelector(".sky-value");
         if (!valueEl) return;
-        const step = parseInt(metric.dataset.step || "1", 10);
-        const min = parseInt(metric.dataset.min || "0", 10);
-        const max = parseInt(metric.dataset.max || "9999", 10);
+        const step = parseInt(metric.dataset.step || String(window.__CONFIG.skyDefaultStep), 10);
+        const min = parseInt(metric.dataset.min || String(window.__CONFIG.skyDefaultMin), 10);
+        const max = parseInt(metric.dataset.max || String(window.__CONFIG.skyDefaultMax), 10);
         const unit = metric.dataset.unit || "";
         let current = parseInt(metric.dataset.value || "0", 10);
 
@@ -203,7 +216,7 @@ lucide.createIcons();
                 valueEl.classList.remove("bump");
                 void valueEl.offsetWidth;
                 valueEl.classList.add("bump");
-                window.setTimeout(() => valueEl.classList.remove("bump"), 350);
+                window.setTimeout(() => valueEl.classList.remove("bump"), window.__CONFIG.bumpMs);
             });
         });
     });
