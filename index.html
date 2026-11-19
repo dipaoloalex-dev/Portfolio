@@ -90,17 +90,37 @@
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="fonts/inter.css">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=19">
     <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
-    <script src="script.js?v=8" defer></script>
+    <script src="script.js?v=10" defer></script>
     <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
          cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
 </head>
 
 <body class="min-h-screen overflow-x-hidden selection:bg-white/10 text-white font-sans bg-[#09090b] relative"
     style="font-family: 'Inter', sans-serif;">
+
+    <!-- ==========================================
+         NAVIGAZIONE FISSA (MENU)
+         ==========================================
+         Pill centrata con ancore alle 4 sezioni. Stesso linguaggio
+         dei badge ovali (bordo white/10, blur). Lo stato attivo
+         (link della sezione visibile) è gestito da script.js. -->
+    <header id="siteNav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+        <nav aria-label="Sezioni del portfolio"
+            class="flex items-center gap-1 rounded-full border border-white/10 bg-black/50 backdrop-blur-md px-2 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <a href="#home" data-nav="home"
+                class="site-nav-link rounded-full px-3 tablet:px-4 min-h-[44px] flex items-center text-xs tablet:text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">Home</a>
+            <a href="#projects" data-nav="projects"
+                class="site-nav-link rounded-full px-3 tablet:px-4 min-h-[44px] flex items-center text-xs tablet:text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">Projects</a>
+            <a href="#process" data-nav="process"
+                class="site-nav-link rounded-full px-3 tablet:px-4 min-h-[44px] flex items-center text-xs tablet:text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">Process</a>
+            <a href="#contact" data-nav="contact"
+                class="site-nav-link rounded-full px-3 tablet:px-4 min-h-[44px] flex items-center text-xs tablet:text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">Contact</a>
+        </nav>
+    </header>
 
     <!-- ==========================================
          SFONDO E GLOW (BACKGROUND)
@@ -154,8 +174,8 @@
            - Destra  : composizione di immagini "glass" sovrapposte e ruotate.
          Note: il <main> ha pointer-events-none per lasciar passare il mouse
          verso lo sfondo; i figli interattivi lo riattivano pointer-events-auto. -->
-    <main
-        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] flex flex-col justify-center pt-16 tablet:pt-20 desktop:pt-[120px] pb-5 tablet:pb-14 desktop:pb-16 pointer-events-none">
+    <main id="home"
+        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] flex flex-col justify-center pt-28 tablet:pt-28 desktop:pt-[120px] pb-5 tablet:pb-14 desktop:pb-16 pointer-events-none scroll-mt-24">
 
         <div
             class="grid grid-cols-1 desktop:grid-cols-2 desktop:gap-12 pointer-events-auto gap-x-16 gap-y-16 items-center min-h-[70vh]">
@@ -308,7 +328,7 @@
            - breve descrizione.
          Ogni scheda entra con un ritardo d'animazione leggermente diverso
          (0.1s, 0.2s, ...) per creare un effetto a cascata. -->
-    <section class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-16 pointer-events-auto">
+    <section id="projects" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-16 pointer-events-auto scroll-mt-24">
         <!-- Badge/Etichetta ovale "My Projects" sopra le schede -->
         <div class="flex justify-center mb-10 [animation:animationIn_0.8s_ease-out_0.05s_both] animate-on-scroll">
             <div
@@ -747,8 +767,8 @@
              percorso diagonale (i posizionamenti tablet:top/left li dispongono).
          Lo z-index crescente (10 -> 20 -> 30) e hover:z-40 fanno emergere
          il blocco sotto il mouse. -->
-    <section
-        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-20 tablet:py-20 desktop:py-[120px] pointer-events-auto flex flex-col items-center">
+    <section id="process"
+        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-20 tablet:py-20 desktop:py-[120px] pointer-events-auto flex flex-col items-center scroll-mt-24">
 
         <!-- Intestazione della sezione (Titoli) -->
         <div
@@ -1040,7 +1060,7 @@
          WhatsApp, Email, LinkedIn e GitHub.
          Ogni link apre in una nuova scheda (target="_blank") con
          rel="noopener noreferrer" per motivi di sicurezza. -->
-    <footer id="contact" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] pt-5 tablet:pt-14 desktop:pt-20 pb-5 tablet:pb-14 desktop:pb-20 pointer-events-auto scroll-mt-8">
+    <footer id="contact" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] pt-5 tablet:pt-14 desktop:pt-20 pb-5 tablet:pb-14 desktop:pb-20 pointer-events-auto scroll-mt-24">
         <div
             class="bg-[#0e0e11] border border-white/5 rounded-3xl p-5 tablet:p-14 desktop:p-[80px] flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <div class="flex flex-col items-center gap-4">
