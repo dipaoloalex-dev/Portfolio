@@ -486,11 +486,12 @@
        sembrare sfocate per via della rasterizzazione GPU. */
 }
 
-@media (hover: none) {
+/* Su schermi piccoli (<830px) la card torna compatta come prima:
+   righe auto-assign / ready for / all automated nascoste,
+   così tutto sta nei 256px della media. Da tablet in su restano su hover/focus. */
+@media (max-width: 829px) {
     .triage-ticket .triage-detail {
-        max-height: none;
-        opacity: 0.9;
-        margin-top: 2px;
+        display: none;
     }
 }
 
