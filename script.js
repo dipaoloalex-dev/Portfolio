@@ -8,6 +8,7 @@
  *   1) Le animazioni "animate-on-scroll" (fade/slide in ingresso).
  *   2) L'inizializzazione delle icone della libreria Lucide.
  *   3) Le micro-interazioni delle card (QR Athena + approval Easy Work).
+ *   4) Il menu fisso (link attivo + nascondi allo scroll).
  *
  * Il file è caricato con `defer` (vedi index.html), quindi viene eseguito
  * dopo il parsing dell'HTML ma prima dell'evento DOMContentLoaded.
@@ -220,4 +221,82 @@ lucide.createIcons();
             });
         });
     });
+})();
+
+/*
+ * ============================================================================
+ * 4) MENU — LINK ATTIVO DELLA SEZIONE VISIBILE
+ * ============================================================================
+ * Observer dedicato (separato da quello delle animazioni): quando una
+ * sezione occupa il centro del viewport, il suo link prende lo stato
+ * attivo (testo bianco + pill). Solo classList, niente layout.
+ */
+(function () {
+    const links = Array.from(document.querySelectorAll(".site-nav-link"));
+    if (!links.length || !("IntersectionObserver" in window)) return;
+
+    const byId = {};
+    links.forEach((a) => {
+        byId[a.getAttribute("data-nav")] = a;
+    });
+
+    function setActive(id) {
+        links.forEach((a) => {
+            const on = a.getAttribute("data-nav") === id;
+            a.classList.toggle("bg-white/10", on);
+            a.classList.toggle("text-white", on);
+            a.classList.toggle("text-zinc-400", !on);
+            if (on) a.setAttribute("aria-current", "true");
+            else a.removeAttribute("aria-current");
+        });
+    }
+
+    const io = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) setActive(entry.target.id);
+            });
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    ["home", "projects", "process", "contact"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) io.observe(el);
+    });
+})();
+
+/*
+ * ============================================================================
+ * 5) MENU — NASCONDI SCROLLANDO GIÙ, MOSTRA RISALENDO
+ * ============================================================================
+ * Listener passivo + rAF (nessun jank). Soglia di 120px così in cima
+ * il menu resta sempre visibile; sotto, sparisce in discesa e torna in salita.
+ */
+(function () {
+    const nav = document.getElementById("siteNav");
+    if (!nav) return;
+    const HIDE_AFTER = 120;
+    let lastY = window.scrollY || 0;
+    let ticking = false;
+
+    function update() {
+        ticking = false;
+        const y = window.scrollY || 0;
+        const goingDown = y > lastY;
+        if (y > HIDE_AFTER && goingDown) nav.classList.add("nav-hidden");
+        else nav.classList.remove("nav-hidden");
+        lastY = y;
+    }
+
+    window.addEventListener(
+        "scroll",
+        () => {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        },
+        { passive: true }
+    );
 })();

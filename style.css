@@ -739,7 +739,8 @@ html {
     .sky-value,
     .esg-row,
     .esg-row .esg-fill,
-    .esg-row .esg-value {
+    .esg-row .esg-value,
+    #siteNav {
         transition: none;
     }
 }
@@ -848,6 +849,18 @@ html {
     width: 100%;
     min-height: 56px;
     justify-content: center;
+}
+
+/* Menu fisso: si nasconde scrollando giù, ricompare risalendo.
+   Solo top/opacity (niente transform: il centramento -translate-x resta intatto). */
+#siteNav {
+    transition: top var(--dur-med) var(--ease-out), opacity var(--dur) ease;
+}
+
+#siteNav.nav-hidden {
+    top: -90px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Stepper Sky: hit-area a tutta larghezza, 44px di larghezza minima. */
