@@ -39,12 +39,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         /*
-         * Sui dispositivi touch gli effetti `hover:` non devono rimanere
-         * "attaccati" dopo un tap: la card resterebbe scalata e con sfondo
-         * trasparente, facendo apparire il testo sfuocato. Con questo flag
-         * gli `hover:` si applicano solo dove esiste un vero mouse.
+         * Breakpoint di progetto (mobile-first):
+         *   base ............ 393px mobile
+         *   tablet: ......... 830px tablet
+         *   desktop: ........ 1440px desktop
+         * Stesso contenuto, gerarchia diversa. Gli tablet:/tablet:/desktop: di default
+         * non si usano più: solo base / tablet: / desktop:.
          */
-        tailwind.config = { future: { hoverOnlyWhenSupported: true } };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        tablet: '830px',
+                        desktop: '1440px',
+                    },
+                },
+            },
+            future: { hoverOnlyWhenSupported: true }
+        };
     </script>
     <!-- Iconify: icone vettoriali usate tramite <iconify-icon icon="...">. -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -56,7 +68,7 @@
     <!-- Font Inter (pesi 400/500/600), font principale del sito. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=15">
     <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
     <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
@@ -121,20 +133,20 @@
          Note: il <main> ha pointer-events-none per lasciar passare il mouse
          verso lo sfondo; i figli interattivi lo riattivano pointer-events-auto. -->
     <main
-        class="relative z-20 container mx-auto px-6 md:px-12 flex flex-col justify-center pt-32 pb-10 md:pb-16 pointer-events-none">
+        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] flex flex-col justify-center pt-16 tablet:pt-20 desktop:pt-[120px] pb-5 tablet:pb-14 desktop:pb-16 pointer-events-none">
 
         <div
-            class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 pointer-events-auto gap-x-16 gap-y-16 items-center min-h-[70vh]">
+            class="grid grid-cols-1 desktop:grid-cols-2 desktop:gap-12 pointer-events-auto gap-x-16 gap-y-16 items-center min-h-[70vh]">
 
             <!-- Colonna Sinistra (Testo e Competenze) -->
-            <div class="flex flex-col gap-10 text-left lg:pr-8">
+            <div class="flex flex-col gap-10 text-left desktop:pr-8">
                 <!-- Titolo principale: nome + ruolo (ruolo in grigio, più piccolo).
                      Le classi arbitrarie [animation:...] e `animate-on-scroll`
                      attivano l'animazione d'ingresso gestita da script.js. -->
                 <h1
-                    class="sm:text-6xl md:text-7xl leading-[1.1] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate text-5xl font-medium text-white/95 tracking-tight">
+                    class="type-h1 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate font-semibold text-white/95 tracking-tight">
                     Alex Di Paolo <br>
-                    <span class="block text-2xl sm:text-3xl md:text-4xl leading-snug text-zinc-500">Software Developer
+                    <span class="type-h1-sub block text-zinc-500">Software Developer
                         - IT System Designer</span>
                 </h1>
 
@@ -142,7 +154,7 @@
                      di spunta. Il `group` sul contenitore permette all'icona
                      di cambiare colore al passaggio del mouse (group-hover). -->
                 <div class="flex flex-col gap-5 pt-4 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                    <div class="flex items-start gap-4 type-body-lg font-normal text-zinc-400 group">
                         <iconify-icon icon="solar:check-circle-linear"
                             class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
                             style="stroke-width: 1.5;"></iconify-icon>
@@ -151,7 +163,7 @@
                             experience in designing and developing complex web ecosystems within engineering
                             environments.</span>
                     </div>
-                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                    <div class="flex items-start gap-4 type-body-lg font-normal text-zinc-400 group">
                         <iconify-icon icon="solar:check-circle-linear"
                             class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
                             style="stroke-width: 1.5;"></iconify-icon>
@@ -160,7 +172,7 @@
                             professional background, I manage the entire software development life cycle (SDLC), from
                             architecture to production deployment.</span>
                     </div>
-                    <div class="flex items-start gap-4 text-lg font-normal text-zinc-400 group">
+                    <div class="flex items-start gap-4 type-body-lg font-normal text-zinc-400 group">
                         <iconify-icon icon="solar:check-circle-linear"
                             class="w-6 h-6 flex items-center justify-center text-zinc-500 mt-0.5 group-hover:text-zinc-300 transition-colors flex-shrink-0"
                             style="stroke-width: 1.5;"></iconify-icon>
@@ -181,8 +193,8 @@
                         <i data-lucide="award" class="w-5 h-5 text-yellow-950" stroke-width="1.8"></i>
                     </div>
                     <div class="relative z-[2] flex flex-col leading-tight min-w-0">
-                        <span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-yellow-950/70">Specialization</span>
-                        <span class="text-base sm:text-lg font-semibold text-yellow-950 tracking-tight truncate">Enterprise Platforms • SDLC • Scalable</span>
+                        <span class="eyebrow-caps text-[11px] font-semibold uppercase text-yellow-950/70">Specialization</span>
+                        <span class="text-base tablet:text-lg font-semibold text-yellow-950 tracking-tight truncate">Enterprise Platforms • SDLC • Scalable</span>
                     </div>
                 </div>
             </div>
@@ -193,12 +205,12 @@
                  Al passaggio del mouse, ogni card si ingrandisce e sale in
                  primo piano tramite hover:scale-105 e hover:z-[100]. -->
             <div
-                class="lg:h-[650px] block [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate w-full h-[500px] z-50 pointer-events-auto relative">
+                class="desktop:h-[650px] block [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate w-full h-[500px] z-50 pointer-events-auto relative">
                 <!-- Immagine 1: in alto a sinistra. Ogni blocco segue lo stesso
                      schema: glass-card > contenitore immagine + overlay scuro
                      sfumato + riflesso .glass-highlight. -->
                 <div
-                    class="glass-card absolute top-[5%] left-[5%] w-40 lg:w-48 aspect-square rotate-[-4deg] p-2 md:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card absolute top-[5%] left-[5%] w-40 desktop:w-48 aspect-square rotate-[-4deg] p-2 tablet:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_1.png" alt=""
@@ -210,7 +222,7 @@
                     <div class="glass-highlight"></div>
                 </div>
                 <div
-                    class="glass-card absolute top-[15%] right-[5%] w-48 lg:w-56 aspect-[4/3] rotate-[3deg] p-2 md:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card absolute top-[15%] right-[5%] w-48 desktop:w-56 aspect-[4/3] rotate-[3deg] p-2 tablet:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_2.png" alt=""
@@ -220,7 +232,7 @@
                     <div class="glass-highlight"></div>
                 </div>
                 <div
-                    class="glass-card lg:w-44 aspect-[3/4] md:p-3 w-36 z-[63] pt-2 pr-2 pb-2 pl-2 absolute top-[40%] left-[0%] rotate-[-2deg] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card desktop:w-44 aspect-[3/4] tablet:p-3 w-36 z-[63] pt-2 pr-2 pb-2 pl-2 absolute top-[40%] left-[0%] rotate-[-2deg] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_3.png" alt=""
@@ -230,7 +242,7 @@
                     <div class="glass-highlight"></div>
                 </div>
                 <div
-                    class="glass-card absolute top-[35%] right-[15%] w-52 lg:w-64 aspect-square rotate-[2deg] p-2 md:p-3 z-[64] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card absolute top-[35%] right-[15%] w-52 desktop:w-64 aspect-square rotate-[2deg] p-2 tablet:p-3 z-[64] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_4.png" alt=""
@@ -240,7 +252,7 @@
                     <div class="glass-highlight"></div>
                 </div>
                 <div
-                    class="glass-card absolute bottom-[5%] left-[20%] w-44 lg:w-52 aspect-square rotate-[4deg] p-2 md:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card absolute bottom-[5%] left-[20%] w-44 desktop:w-52 aspect-square rotate-[4deg] p-2 tablet:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_5.png" alt=""
@@ -250,7 +262,7 @@
                     <div class="glass-highlight"></div>
                 </div>
                 <div
-                    class="glass-card absolute bottom-[0%] right-[10%] w-36 lg:w-44 aspect-[4/3] rotate-[-3deg] p-2 md:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
+                    class="glass-card absolute bottom-[0%] right-[10%] w-36 desktop:w-44 aspect-[4/3] rotate-[-3deg] p-2 tablet:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
                         class="relative w-full h-full rounded-xl overflow-hidden bg-zinc-900 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         <img src="images/image_6.png" alt=""
@@ -274,16 +286,16 @@
            - breve descrizione.
          Ogni scheda entra con un ritardo d'animazione leggermente diverso
          (0.1s, 0.2s, ...) per creare un effetto a cascata. -->
-    <section class="relative z-20 container mx-auto px-6 md:px-12 py-16 pointer-events-auto">
+    <section class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-16 pointer-events-auto">
         <!-- Badge/Etichetta ovale "My Projects" sopra le schede -->
         <div class="flex justify-center mb-10 [animation:animationIn_0.8s_ease-out_0.05s_both] animate-on-scroll">
             <div
-                class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
+                class="eyebrow-caps inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
                 MY PROJECTS
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6">
 
             <!-- Scheda: AutoTriage NLP -->
             <div
@@ -371,7 +383,7 @@
                             class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                             style="stroke-width: 1.5;"></iconify-icon>
                     </a>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Intelligent system for ticket
+                    <p class="type-body-lg font-normal text-zinc-400">Intelligent system for ticket
                         classification and prioritization for enterprise support.</p>
                 </div>
             </div>
@@ -417,7 +429,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">Athena</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Multi-level platform centralizing
+                    <p class="type-body-lg font-normal text-zinc-400">Multi-level platform centralizing
                         sales, management, and access control for museum services.</p>
                 </div>
             </div>
@@ -476,7 +488,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">Easy Work</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">All-in-one cloud platform for
+                    <p class="type-body-lg font-normal text-zinc-400">All-in-one cloud platform for
                         business process digitization, with web and native mobile apps.</p>
                 </div>
             </div>
@@ -523,7 +535,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">Akerus</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Software modules for digitizing
+                    <p class="type-body-lg font-normal text-zinc-400">Software modules for digitizing
                         operational logs and service requests in wastewater treatment.</p>
                 </div>
             </div>
@@ -599,7 +611,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">Sky Fly</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">End-to-end management system for the
+                    <p class="type-body-lg font-normal text-zinc-400">End-to-end management system for the
                         international trading of aeronautical spare parts.</p>
                 </div>
             </div>
@@ -642,7 +654,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">Kairos Tech Lab</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Corporate WordPress website with
+                    <p class="type-body-lg font-normal text-zinc-400">Corporate WordPress website with
                         single-page navigation and a fully custom contact form.</p>
                 </div>
             </div>
@@ -694,7 +706,7 @@
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
                     <h3 class="text-xl font-medium text-white tracking-tight">ESGATE</h3>
-                    <p class="text-base font-normal text-zinc-400 leading-relaxed">Platform for collecting, assessing,
+                    <p class="type-body-lg font-normal text-zinc-400">Platform for collecting, assessing,
                         and tracing ESG parameters with deterministic reproducibility.</p>
                 </div>
             </div>
@@ -709,30 +721,30 @@
          numerati (1, 2, 3) collegati da frecce decorative SVG.
          Layout:
            - su mobile: i blocchi sono impilati in verticale;
-           - su desktop (md:): i blocchi diventano `absolute` e formano un
-             percorso diagonale (i posizionamenti md:top/left li dispongono).
+           - su desktop (tablet:): i blocchi diventano `absolute` e formano un
+             percorso diagonale (i posizionamenti tablet:top/left li dispongono).
          Lo z-index crescente (10 -> 20 -> 30) e hover:z-40 fanno emergere
          il blocco sotto il mouse. -->
     <section
-        class="relative z-20 container mx-auto px-6 md:px-8 py-24 md:py-32 pointer-events-auto flex flex-col items-center">
+        class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-20 tablet:py-20 desktop:py-[120px] pointer-events-auto flex flex-col items-center">
 
         <!-- Intestazione della sezione (Titoli) -->
         <div
-            class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 md:mb-28 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+            class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 tablet:mb-28 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <!-- Badge/Etichetta ovale decorativa -->
             <div
-                class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white mb-8">
+                class="eyebrow-caps inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white mb-8">
                 FROM OFFLINE TO ONLINE
             </div>
 
             <!-- Titolo (Heading) -->
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 leading-tight">
+            <h2 class="type-h2 font-semibold tracking-tight mb-6">
                 <span class="text-white">A website is essential</span> <span class="text-zinc-500">for your
                     business</span>
             </h2>
 
             <!-- Sottotitolo -->
-            <p class="text-lg md:text-xl font-normal text-zinc-400 max-w-2xl leading-relaxed">
+            <p class="type-body-lg font-normal text-zinc-400 leading-relaxed">
                 It increases your chances of selling your products and services. Here are the main advantages of going
                 online.
             </p>
@@ -740,15 +752,15 @@
 
         <!-- Sezione Layout Dimostrativo (A step/passaggi visivi) -->
         <div
-            class="relative w-full max-w-5xl mx-auto flex flex-col md:block gap-20 md:gap-0 h-auto md:h-[650px] px-4 md:px-0">
+            class="relative w-full max-w-5xl mx-auto flex flex-col desktop:block gap-5 tablet:gap-14 desktop:gap-0 h-auto desktop:h-[650px]">
 
             <!-- Effetto Glow di sfumatura posteriore -->
             <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)] pointer-events-none hidden md:block">
+                class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)] pointer-events-none hidden desktop:block">
             </div>
 
             <!-- Freccia decorativa dal Nodo 1 al 2 -->
-            <div class="absolute top-[30%] left-[32%] w-16 h-16 hidden md:block z-0">
+            <div class="absolute top-[30%] left-[32%] w-16 h-16 hidden desktop:block z-0">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
                     <div class="w-full h-full text-zinc-700 -rotate-12">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -762,7 +774,7 @@
             </div>
 
             <!-- Freccia decorativa dal Nodo 2 al 3 -->
-            <div class="absolute bottom-[20%] right-[32%] w-16 h-16 hidden md:block z-0">
+            <div class="absolute bottom-[20%] right-[32%] w-16 h-16 hidden desktop:block z-0">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
                     <div class="w-full h-full text-zinc-700 -rotate-[10deg]">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -779,10 +791,10 @@
                  Elenca i vantaggi di avere un sito (statistiche, credibilità,
                  monetizzazione, SEO...). -->
             <div
-                class="relative md:absolute md:left-0 lg:left-[5%] md:top-[12%] w-full max-w-[340px] mx-auto z-10 hover:z-40">
+                class="relative desktop:absolute desktop:left-[5%] desktop:top-[12%] w-full max-w-[340px] mx-auto z-10 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
                     <div
-                        class="w-full h-full md:-rotate-3 transition-transform hover:-translate-y-2 duration-300 group">
+                        class="w-full h-full group">
                         <div class="absolute -top-10 left-4 flex items-center gap-3">
                             <div
                                 class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
@@ -795,7 +807,7 @@
                             <div class="flex items-center gap-3">
                                 <iconify-icon icon="solar:monitor-bold-duotone"
                                     class="text-red-500 w-6 h-6 text-2xl flex items-center justify-center"></iconify-icon>
-                                <span class="text-white font-semibold text-xl tracking-tight">Benefits of going
+                                <span class="type-h3 text-white font-semibold tracking-tight">Benefits of going
                                     online</span>
                             </div>
 
@@ -847,12 +859,12 @@
                  Elenca i problemi tipici della gestione offline manuale
                  (cancellazioni last-minute, sovrapposizioni, ecc.). -->
             <div
-                class="relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-[55%] w-full max-w-[360px] mx-auto z-20 hover:z-40">
+                class="relative desktop:absolute desktop:left-1/2 desktop:-translate-x-1/2 desktop:top-[55%] w-full max-w-[360px] mx-auto z-20 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-                    <div class="w-full h-full md:rotate-2 transition-transform hover:-translate-y-2 duration-300 group">
+                    <div class="w-full h-full group">
                         <!-- L'etichetta cambia posizione fra Mobile e Desktop -->
                         <div
-                            class="absolute -top-10 md:top-auto md:-bottom-12 left-4 md:left-1/2 md:-translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
+                            class="absolute -top-10 desktop:top-auto desktop:-bottom-12 left-4 desktop:left-1/2 desktop:-translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
                             <div
                                 class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
                                 2</div>
@@ -864,7 +876,7 @@
                             <div class="flex items-center gap-3">
                                 <iconify-icon icon="solar:user-speak-bold-duotone"
                                     class="text-red-500 w-6 h-6 text-2xl flex items-center justify-center"></iconify-icon>
-                                <span class="text-white font-semibold text-xl tracking-tight">Common
+                                <span class="type-h3 text-white font-semibold tracking-tight">Common
                                     problems</span>
                             </div>
 
@@ -906,10 +918,10 @@
                  Mostra un feed di elementi automatizzati (Web App, Website,
                  ecc.) con lo stato di completamento. -->
             <div
-                class="relative md:absolute md:right-0 lg:right-[5%] md:top-[5%] w-full max-w-[380px] mx-auto z-30 hover:z-40">
+                class="relative desktop:absolute desktop:right-[5%] desktop:top-[5%] w-full max-w-[380px] mx-auto z-30 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
-                    <div class="w-full h-full md:rotate-2 transition-transform hover:-translate-y-2 duration-300 group">
-                        <div class="absolute -top-10 left-4 md:left-10 flex items-center gap-3">
+                    <div class="w-full h-full group">
+                        <div class="absolute -top-10 left-4 desktop:left-10 flex items-center gap-3">
                             <div
                                 class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-medium">
                                 3</div>
@@ -919,7 +931,7 @@
                         <div
                             class="bg-[#1f1f22] border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] flex flex-col gap-6 backdrop-blur-2xl relative overflow-hidden transition-colors group-hover:bg-[#222226]">
 
-                            <h3 class="text-2xl tracking-tight font-semibold text-white flex items-center gap-2">
+                            <h3 class="type-h3 font-semibold text-white flex items-center gap-2">
                                 <span class="text-red-500">All</span> automated
                             </h3>
 
@@ -1004,21 +1016,21 @@
          WhatsApp, Email, LinkedIn e GitHub.
          Ogni link apre in una nuova scheda (target="_blank") con
          rel="noopener noreferrer" per motivi di sicurezza. -->
-    <footer id="contact" class="relative z-20 container mx-auto px-6 md:px-12 pt-8 pb-20 pointer-events-auto scroll-mt-8">
+    <footer id="contact" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] pt-5 tablet:pt-14 desktop:pt-20 pb-5 tablet:pb-14 desktop:pb-20 pointer-events-auto scroll-mt-8">
         <div
-            class="bg-[#0e0e11] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+            class="bg-[#0e0e11] border border-white/5 rounded-3xl p-5 tablet:p-14 desktop:p-[80px] flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <div class="flex flex-col items-center gap-4">
                 <div
-                    class="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
+                    class="eyebrow-caps inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
                     CONTACT
                 </div>
-                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white">Let's build something together
+                <h2 class="type-h2 font-semibold tracking-tight text-white">Let's build something together
                 </h2>
-                <p class="text-base font-normal text-zinc-400 max-w-xl leading-relaxed">Whether it's a project, a
+                <p class="type-body-lg font-normal text-zinc-400 leading-relaxed">Whether it's a project, a
                     collaboration, or just a hello, I'd love to hear from you.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
+            <div class="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-4 w-full max-w-3xl">
                 <!-- WhatsApp -->
                 <a href="https://wa.me/393314643804?text=Hi%20Alex!%20I%20visited%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you."
                     target="_blank" rel="noopener noreferrer"

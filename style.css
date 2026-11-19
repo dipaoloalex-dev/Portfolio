@@ -662,3 +662,125 @@ html {
         transition: none;
     }
 }
+
+/*
+ * ============================================================================
+ * 9) SISTEMA 393 / 830 / 1440 (tipografia, touch, contenitore)
+ * ============================================================================
+ * Spec adottata:
+ *   H1 80 | H2 56 | H3 32 | body 18 | body-s 16
+ *   H1: 80→64→44 | H2: 56→56→32 | H3: 32→32→28 | H4: 20→20→18
+ *   Body-large: 18→18→16, più piccole invariate.
+ *   Pesi: body 16-20 regular/medium, accenti semibold/bold,
+ *   titoli 24+ semibold/bold.
+ *   Interlinea: body 140-175%, titoli 100-120%.
+ *   Riga: 50-60 caratteri. Tracking: body -2%, titoli -6%, CAPS 1%.
+ */
+
+/* H1: 44 -> 64 -> 80. Titolo 24+ => semibold, interlinea 100-120%, tracking -6%. */
+.type-h1 {
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: -0.06em;
+}
+
+.type-h1-sub {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-top: 10px;
+}
+
+/* H2: 32 -> 56 -> 56. H3: 28 -> 32 -> 32. Body-large: 16 -> 18 -> 18. */
+.type-h2 {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.06em;
+}
+
+.type-h3 {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.06em;
+}
+
+.type-body-lg {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    max-width: 60ch;
+}
+
+/* H4 (titoli card, 4° livello): 18 mobile -> 20 tablet/desktop. */
+.project-body > a,
+.project-body > h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+/* TUTTO MAIUSCOLO (badge/etichette): tracking 1%. */
+.eyebrow-caps {
+    letter-spacing: 0.01em;
+}
+
+@media (min-width: 830px) {
+    .type-h1 {
+        font-size: 64px;
+        line-height: 1.06;
+    }
+    .type-h1-sub {
+        font-size: 24px;
+    }
+    .type-h2 {
+        font-size: 56px;
+        line-height: 1.08;
+    }
+    .type-h3 {
+        font-size: 32px;
+        line-height: 1.12;
+    }
+    .type-body-lg {
+        font-size: 18px;
+    }
+    .project-body > a,
+    .project-body > h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .type-h1 {
+        font-size: 80px;
+        line-height: 1.05;
+    }
+    .type-h1-sub {
+        font-size: 28px;
+    }
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* Pulsanti full-width su mobile (hug su desktop), area tocco >=44px. */
+#contact a {
+    width: 100%;
+    min-height: 56px;
+    justify-content: center;
+}
+
+/* Stepper Sky: hit-area a tutta larghezza, 44px di larghezza minima. */
+.sky-btn {
+    width: 44px;
+    height: 24px;
+}
+
+.sky-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.approval-toggle,
+.athena-qr {
+    min-height: 44px;
+}
