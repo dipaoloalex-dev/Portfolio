@@ -28,7 +28,7 @@ Realizzo piattaforme gestionali su misura, coniugando solidità strutturale, sca
 ## ✨ Cosa Trovi sul Sito
 
 * **Hero** — Chi sono, cosa faccio e le mie competenze principali (Full-Stack, architettura software, piattaforme scalabili), con cluster visivo fluttuante interattivo e badge di specializzazione.
-* **I Miei Progetti** — Sette card interattive, ognuna una miniatura viva del sistema reale: triage ticket, validazione pass museali, approvazioni ferie, firme dei registri di impianto, tracciabilità LLP, mockup one-page e KPI ESG.
+* **I Miei Progetti** — Otto card interattive, ognuna una miniatura viva del sistema reale: triage ticket, validazione pass museali, approvazioni ferie, firme dei registri di impianto, tracciabilità LLP, mockup one-page, KPI ESG e mappa IoT live.
 * **Da Offline a Online** — Un percorso in 3 passi che spiega perché un'azienda ha bisogno di un sito (benefici → problemi comuni → automazione).
 * **Contatti** — Canali diretti: **WhatsApp**, **Email**, **LinkedIn** e **GitHub**.
 
@@ -45,6 +45,7 @@ Realizzo piattaforme gestionali su misura, coniugando solidità strutturale, sca
 | **Sky Fly** | Gestionale verticale per il trading internazionale di ricambi aeronautici | Tracciabilità LLP (Time/Cycles Remaining), conformità EAR/ITAR, moduli ATA 106, fatture USD, invio SMTP automatizzato |
 | **Kairos Tech Lab** | Sito aziendale WordPress con navigazione single-page | Template personalizzato, form di contatto, pagine Privacy e Termini |
 | **ESGATE** | Piattaforma di raccolta, valutazione e tracciabilità dei parametri ESG | Librerie KPI versionate, Applicabilità Dinamica, RBAC, registro immutabile, dossier CSRD/ESRS/VSME |
+| **MAGIS** | Piattaforma IoT multi-tenant geografica per dispositivi, telemetria, allarmi e mappe live | Go (BFF/API Gateway), React + TS + Vite + MapLibre, Magistrala, Keycloak OIDC, SpiceDB, TimescaleDB, PostgreSQL, Redis, FluxMQ MQTT, GeoServer, SeaweedFS S3, collector OPC-UA/Modbus/S7, ingress MQTT/SenML/LoRaWAN |
 
 ---
 
