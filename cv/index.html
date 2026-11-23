@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================
+     HEAD - Metadati e risorse esterne
+     ============================================ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Di Paolo - CV ATS</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Foglio di stile personalizzato -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ============================================
+     BODY - Contenuto principale
+     ============================================ -->
+
+<body class="bg-slate-100 text-slate-600 antialiased selection:bg-blue-100 selection:text-blue-700 py-10 px-4 md:px-0">
+
+    <!-- ============================================
+         PULSANTI STAMPA E LINGUA (fissi in alto a destra)
+         ============================================ -->
+
+    <div class="fixed top-6 right-6 z-50 flex gap-3 print-hidden">
+
+        <a href="index_it.html"
+            class="flex items-center gap-2 px-3 py-2 bg-white text-slate-900 rounded-lg shadow-lg hover:bg-slate-50 transition-all font-medium text-sm ring-1 ring-slate-200">
+            <i data-lucide="globe" class="w-4 h-4"></i>
+            <span>IT</span>
+        </a>
+
+        <button onclick="window.print()"
+            class="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg shadow-lg hover:bg-slate-800 transition-all font-medium text-sm ring-1 ring-white/20">
+            <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+            <span>Print</span>
+        </button>
+
+    </div>
+
+    <!-- ============================================
+         FOGLIO CV
+         ============================================ -->
+
+    <div class="resume-sheet max-w-5xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden min-h-[1200px]">
+        <div class="w-full p-8 md:p-12">
+
+            <!-- ============================================
+                 SEZIONE HEADER: Nome, contatti e profilo
+                 ============================================ -->
+
+            <div class="mb-10 pb-6">
+
+                <!-- Nome -->
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-2 text-center">
+                    Alex Di Paolo
+                </h1>
+
+                <!-- Contatti principali -->
+                <div class="mt-3 text-sm text-slate-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                    <a href="mailto:dipaoloalex.dev@gmail.com" class="hover:text-blue-600 transition-colors">
+                        dipaoloalex.dev@gmail.com
+                    </a>
+                    <span class="text-slate-300">|</span>
+                    <a href="tel:+393314643804" class="hover:text-blue-600 transition-colors">
+                        (+39) 331 464 3804
+                    </a>
+                    <span class="text-slate-300">|</span>
+                    <span>03/11/1999 - Naples, Italy</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-3 text-sm text-slate-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                    <a href="https://www.linkedin.com/in/alex-di-paolo" class="hover:text-blue-600 transition-colors">
+                        linkedin.com/in/alex-di-paolo
+                    </a>
+                    <span class="text-slate-300">|</span>
+                    <a href="https://github.com/dipaoloalex-dev" class="hover:text-blue-600 transition-colors">
+                        github.com/dipaoloalex-dev
+                    </a>
+                </div>
+
+                <!-- Profilo professionale -->
+                <p class="mt-4 text-base leading-relaxed text-slate-600 text-center">
+                    Software Developer and IT System Designer with experience in designing and developing complex web
+                    ecosystems within engineering environments. Backed by a strong academic and professional background,
+                    I manage the entire software development life cycle (SDLC), from architecture to production
+                    deployment. I build custom management platforms that combine structural robustness, scalability, and
+                    interoperability with an excellent end-user experience.
+                </p>
+
+                <!-- Soft Skills -->
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Critical thinking
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Clear communication
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Teamwork
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Feedback management
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Time management and deadlines
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Focus ability
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Continuous improvement
+                    </span>
+                    <span
+                        class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
+                        Stress management
+                    </span>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SEZIONE ESPERIENZE LAVORATIVE
+                 ============================================ -->
+
+            <div class="mb-12">
+
+                <!-- Header sezione -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="p-1.5 bg-slate-900 text-white rounded-md">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 tracking-tight">Work Experience</h3>
+                </div>
+
+                <!-- Esperienza 1: NETCaring -->
+                <div class="space-y-5 border-l border-slate-200 ml-3.5 pl-8 relative">
+                    <div class="relative group">
+
+                        <!-- Indicatore timeline -->
+                        <span
+                            class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-blue-600 shadow-sm group-hover:scale-125 transition-transform"></span>
+
+                        <!-- Azienda e periodo -->
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                            <h4 class="text-lg font-semibold text-slate-800">NETCaring s.r.l.</h4>
+                            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+                                09/2025 - Present
+                            </span>
+                        </div>
+
+                        <!-- Progetto Athena -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - Athena</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of a multi-level web-based platform for
+                                    centralizing sales, management, and access control for museum services, adopted by
+                                    the Associazione Abbonamento Musei and Turismo Torino e Provincia.</li>
+                                <li class="pl-1">Built a scalable infrastructure based on Laravel 11, PHP 8.2, and
+                                    relational databases (MS SQL Server, MySQL 8.0), with server environments distributed
+                                    across Apache and Tomcat 8.5 and a centralized ticketing ecosystem (e-commerce,
+                                    points of sale, kiosks) integrated via web services with websites, banking POS
+                                    systems, and third-party platforms.</li>
+                                <li class="pl-1">Engineered an Android app with "Kiosk Mode" and a validation engine based
+                                    on QR codes, anti-passback, and online/offline synchronization, supported by
+                                    enterprise security protocols (MFA, SSL/TLS, and audit logs for GDPR compliance).</li>
+                            </ul>
+                        </div>
+
+                        <!-- Progetto EasyWork -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - EasyWork</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of an all-in-one cloud solution for business
+                                    process digitization, with a distributed web infrastructure and native mobile apps
+                                    (iOS and Android) for real-time push notifications and secure access to corporate
+                                    communications and payslips.</li>
+                                <li class="pl-1">Engineered management modules (personnel records, contracts,
+                                    organizational charts, and shift scheduling) and a workflow engine for the multi-level
+                                    approval of leave, time-off, and sick leave requests, with digital time-tracking and
+                                    secure geolocation for remote work.</li>
+                                <li class="pl-1">Developed interactive dashboards with Gantt charts for assigning and
+                                    tracking tasks, milestones, and project timelines, integrated via web services with
+                                    third-party ERP and payroll systems, with role-based authentication and comprehensive
+                                    audit logs for GDPR compliance.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Progetto Akerus S.C.A.R.L -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - Akerus S.C.A.R.L</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of software modules for the digitization of
+                                    operational logs and service requests within the EasyWork management system, designed
+                                    for a wastewater treatment plant.</li>
+                                <li class="pl-1">Built an interface that faithfully replicates the original paper layout
+                                    for collaborative, synchronized data entry by teams working across multiple shifts,
+                                    with real-time data validation, color-coded visual alerts, and dynamic management of
+                                    configurable thresholds.</li>
+                                <li class="pl-1">Engineered an irreversible "signing" system for plant measurements
+                                    (read-only state, timestamp, and operator ID) with granular permissions, historical
+                                    archiving, and automated PDF report generation, including blank support templates for
+                                    the facility.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Project SkyFly -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - SkyFly</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of a specialized web-based management system
+                                    built on the EasyWork platform for the end-to-end international trading of
+                                    aeronautical spare parts, cloud-hosted on a Linux virtual machine with a MySQL
+                                    database, HTTPS communication, and RBAC authentication.</li>
+                                <li class="pl-1">Engineered component traceability (Part Number and Serial Number) with
+                                    automatic calculation of remaining useful life (Time/Cycles Remaining) for
+                                    Life-Limited Parts (LLPs) and unified historical tracking of component valuations and
+                                    physical conditions.</li>
+                                <li class="pl-1">Integrated modules for international export compliance (alerts on customs
+                                    classifications, EAR/ITAR regulations, and End-User Certificates) and a server-side
+                                    engine for automated PDF documentation generation (ATA 106 forms, aeronautical
+                                    packing lists, and USD invoices), with typed document management and automated SMTP
+                                    delivery.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Project ESGATE -->
+                        <div class="relative group">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - ESGATE</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of an advanced software platform for the
+                                    collection, assessment, and traceability of ESG (Environmental, Social, Governance)
+                                    parameters, aimed at the deterministic reproducibility of technical results.</li>
+                                <li class="pl-1">Developed an evaluation engine based on versioned KPI libraries, with
+                                    automated weighting and normalization, and a "Dynamic Applicability" system for
+                                    requirements with validation of documentary evidence across six hierarchical levels.</li>
+                                <li class="pl-1">Designed an RBAC architecture separating data entry from technical
+                                    assessment, with an immutable operations log and rule versioning, and created a
+                                    reporting module for technical dossiers aligned with the CSRD, ESRS, and VSME
+                                    frameworks, mitigating greenwashing risks.</li>
+                            </ul>
+                        </div><br>
+
+                        <!-- Project MAGIS -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - MAGIS</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of MAGIS, a multi-tenant IoT platform
+                                    for managing connected devices, live telemetry, alarms and geographic maps, with
+                                    dedicated tenant and admin dashboards and a fully containerized deployment.</li>
+                                <li class="pl-1">Built the platform around a Go API gateway (login via Keycloak,
+                                    fine-grained permissions with SpiceDB, integration with the Magistrala IoT backend)
+                                    and a React + MapLibre web app with live maps and 6-language support, on top of
+                                    time-series and relational storage, real-time MQTT messaging, map services and
+                                    S3-compatible backup storage.</li>
+                                <li class="pl-1">Engineered the edge and automation layer: an MQTT bridge normalizing
+                                    device payloads including LoRaWAN networks, an industrial poller for factory
+                                    protocols (OPC-UA, Modbus, Siemens S7) with offline buffering, plus automated
+                                    provisioning, token renewal and scheduled backups, released through a tag-based
+                                    build pipeline with GitOps deployment.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Project Kairos TechLab -->
+                        <div class="relative group mb-6">
+                            <div class="text-sm font-medium text-slate-700 mb-2">Project - Kairos TechLab</div>
+                            <ul
+                                class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                                <li class="pl-1">Design and development of a corporate website in WordPress for
+                                    Kairos TechLab, with single-page navigation and automatic scrolling between sections,
+                                    optimizing graphics and navigation experience.</li>
+                                <li class="pl-1">Implemented a fully functional contact form and customized the template
+                                    based on client requirements.</li>
+                                <li class="pl-1">Developed dedicated Privacy Policy and Terms &amp; Conditions of Service
+                                    pages, integrated with the site content.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SEZIONE FORMAZIONE
+                 ============================================ -->
+
+            <div class="mb-12">
+
+                <!-- Header sezione -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="p-1.5 bg-slate-900 text-white rounded-md">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 tracking-tight">Education</h3>
+                </div>
+
+                <!-- Timeline formazione -->
+                <div class="space-y-5 border-l border-slate-200 ml-3.5 pl-8 relative">
+
+                    <!-- Laurea -->
+                    <div class="relative group mb-6">
+                        <span
+                            class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 shadow-sm group-hover:bg-slate-400 transition-colors"></span>
+
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                            <h4 class="text-lg font-semibold text-slate-800">Pegaso Telematic University</h4>
+                            <span class="text-xs font-medium text-slate-400">09/2023 - 04/2026</span>
+                        </div>
+
+                        <div class="text-sm font-medium text-slate-700 mb-2">
+                            Bachelor's Degree in Computer Science for Digital Companies (L-31) -> Grade: 110/110
+                            with
+                            honors
+                        </div>
+
+                        <div class="text-sm font-medium text-slate-700 mb-2">
+                            <a href="https://github.com/dipaoloalex-dev/AutoTriageNLP"
+                                class="hover:text-blue-600 transition-colors">Project - AutoTriage NLP</a>
+                        </div>
+                        <ul
+                            class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
+                            <li class="pl-1">University thesis project focused on engineering a full-stack solution for
+                                automating corporate customer support using Machine Learning and Natural Language
+                                Processing (NLP).</li>
+                            <li class="pl-1">Developed a predictive pipeline in Python (Scikit-Learn, Pandas) with TF-IDF
+                                vectorization and bigrams and a MultiOutputClassifier model for the simultaneous
+                                prediction of ticket Category and Priority, following Regex cleaning of over 20,000
+                                real-world tickets and bulk asynchronous translation via API.</li>
+                            <li class="pl-1">Integrated LIME for model interpretability (Explainable AI) and a hybrid
+                                evaluation system with deterministic, keyword-based logic; a microservices architecture
+                                with a FastAPI backend, Next.js/Streamlit frontends, and Docker/Docker Compose
+                                containerization for real-time analysis, CSV imports, and performance monitoring.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Diploma -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 shadow-sm group-hover:bg-slate-400 transition-colors"></span>
+
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                            <h4 class="text-lg font-semibold text-slate-800">Technical Commercial Institute - Enrico
+                                Caruso</h4>
+                            <span class="text-xs font-medium text-slate-400">09/2013 - 07/2018</span>
+                        </div>
+
+                        <div class="text-sm font-medium text-slate-700">
+                            Secondary education diploma in Business Information Systems
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SEZIONE LINGUE
+                 ============================================ -->
+
+            <div>
+
+                <!-- Header sezione -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="p-1.5 bg-slate-900 text-white rounded-md">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 tracking-tight">Languages</h3>
+                </div>
+
+                <!-- Lista lingue con indicatore livello -->
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+
+                    <!-- Italiano -->
+                    <div class="flex items-center gap-2">
+                        <span class="font-medium text-slate-700">Italian</span>
+                        <div class="flex gap-0.5">
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                        </div>
+                    </div>
+
+                    <!-- Spagnolo -->
+                    <div class="flex items-center gap-2">
+                        <span class="font-medium text-slate-700">Spanish</span>
+                        <div class="flex gap-0.5">
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                        </div>
+                    </div>
+
+                    <!-- Inglese -->
+                    <div class="flex items-center gap-2">
+                        <span class="font-medium text-slate-700">English</span>
+                        <div class="flex gap-0.5">
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================
+         SCRIPT ESTERNI
+         ============================================ -->
+    <script src="script.js"></script>
+</body>
+
+</html>

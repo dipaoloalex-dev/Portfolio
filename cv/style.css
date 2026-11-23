@@ -1,0 +1,50 @@
+/* ============================================
+   STILI PRINCIPALI
+   ============================================ */
+
+/* Font family */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================================
+   STILI DI STAMPA
+   ============================================ */
+
+@media print {
+
+    /* Rimuovi margini pagina */
+    @page {
+        margin: 0;
+        size: auto;
+    }
+
+    /* Sfondo bianco per la stampa */
+    body {
+        background-color: white;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Nascondi elementi con classe print-hidden */
+    .print-hidden {
+        display: none !important;
+    }
+
+    /* Rimuovi ombra e margini dal foglio CV */
+    .resume-sheet {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+    }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+/* Posizionamento punto timeline */
+.timeline-dot {
+    left: -33px;
+}
