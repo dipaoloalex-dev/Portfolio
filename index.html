@@ -1,51 +1,43 @@
 <!--
-  ============================================================================
-  index.html - Portfolio di Alex Di Paolo
-  ============================================================================
-  Struttura della pagina (dall'alto verso il basso):
-    - <head>          : metadati e dipendenze esterne (Tailwind, font, icone).
-    - Sfondo/glow     : effetti decorativi dietro al contenuto.
-    - Hero section    : presentazione principale con immagine "glass".
-    - Progetti        : griglia delle schede "My Projects".
-    - Processo        : spiegazione in 3 step.
-    - Footer          : contatti (WhatsApp, Email, LinkedIn, GitHub).
-    - Cookie banner   : consenso GDPR + modal preferenze.
-
-  Tecnologie: TailwindCSS (CDN), font Inter, icone Iconify + Lucide,
-  animazioni custom definite in style.css e gestite da script.js.
-  ============================================================================
+  File: index.html
+  Description: Single-page portfolio for Alex Di Paolo, presenting his profile,
+               selected projects, process and contact links on a dark animated layout.
+  Structure: Head / Fixed nav / Hero (#home) / Projects (#projects) / Process (#process) /
+             Contact footer (#contact) / Cookie consent banner + preferences modal
+  Linked files: style.css (custom visuals and animations), script.js (scroll, nav and card interactions),
+                banner/cookie_banner.css + banner/cookie_banner.js (GDPR consent),
+                fonts/inter.css (Inter font), vendor/lucide.min.js (Lucide icons)
 -->
+
+<!-- Root element: the page is in English and uses Tailwind's antialiased text rendering. -->
 <html lang="en" class="antialiased">
 
+<!-- ===== Head: SEO/social metadata, third-party libraries, fonts and stylesheets ===== -->
 <head>
-    <!-- ==========================================
-         METADATI E DIPENDENZE ESTERNE (HEAD)
-         ==========================================
-         - Referral Promotekit: comunica al sito host il codice di invito,
-           ma solo se la pagina è dentro un iframe (window.parent !== window).
-           Il try/catch evita errori quando l'accesso cross-origin è bloccato.
-         - TailwindCSS: framework utility-first per lo stile.
-         - Iconify + Lucide: due librerie di icone (sintassi diverse).
-         - Font Inter da Google Fonts (con preconnect per la performance).
-         - style.css: stili personalizzati; script.js: logica interattiva.
-         - La pagina è in singolo file HTML con asset locali ed esterni. -->
+    <!-- Referral snippet: when this page is embedded in an iframe, store the Promotekit
+         referral id on the parent window and in a .aura.build cookie. The try/catch
+         silently ignores cross-origin access errors. -->
     <script>
         try { if (window.parent && window.parent !== window) { window.parent.promotekit_referral = "1fd2949a-d22c-431b-92bf-02d4ad04ee24"; window.parent.document.cookie = "promotekit_referral=1fd2949a-d22c-431b-92bf-02d4ad04ee24;path=/;domain=.aura.build;max-age=31536000" } } catch (e) { }
     </script>
+    <!-- Character encoding, responsive viewport and the browser/SEO title. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Di Paolo — Software Developer & IT System Designer</title>
+    <!-- SEO description and theme colour (dark browser UI on mobile). -->
     <meta name="description"
         content="Alex Di Paolo — Software Developer and IT System Designer. Full-stack development, software architecture (SDLC) and scalable management platforms: projects, process and contacts.">
     <meta name="theme-color" content="#09090b">
+    <!-- Canonical URL: tells search engines the preferred address of this page. -->
     <link rel="canonical" href="https://dipaoloalex-dev.github.io/Portfolio/">
-    <!-- Favicon dalla tua foto (800px): set completo in images/favicons/. -->
+    <!-- Favicons and the web app manifest used by tabs, bookmarks and mobile home screens. -->
     <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
     <link rel="manifest" href="images/favicons/site.webmanifest">
-    <!-- Open Graph -->
+    <!-- Open Graph and Twitter Card metadata: control the preview shown when the
+         portfolio is shared on social networks or messaging apps. -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Alex Di Paolo — Software Developer & IT System Designer">
     <meta property="og:description"
@@ -53,23 +45,17 @@
     <meta property="og:url" content="https://dipaoloalex-dev.github.io/Portfolio/">
     <meta property="og:image" content="https://dipaoloalex-dev.github.io/Portfolio/images/hero-neon-ring.png">
     <meta property="og:locale" content="en_US">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Alex Di Paolo — Software Developer & IT System Designer">
     <meta name="twitter:description"
         content="Full-stack development, software architecture and scalable platforms: explore projects, process and contacts.">
     <meta name="twitter:image" content="https://dipaoloalex-dev.github.io/Portfolio/images/hero-neon-ring.png">
-    <!-- Tailwind via CDN: genera le utility a runtime nel browser. -->
+    <!-- Tailwind CSS (CDN): provides the utility classes used throughout the markup. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind configuration: custom breakpoints (tablet 830px, desktop 1440px)
+         and hoverOnlyWhenSupported to avoid sticky hover styles on touch devices. -->
     <script>
-        /*
-         * Breakpoint di progetto (mobile-first):
-         *   base ............ 393px mobile
-         *   tablet: ......... 830px tablet
-         *   desktop: ........ 1440px desktop
-         * Stesso contenuto, gerarchia diversa. Gli tablet:/tablet:/desktop: di default
-         * non si usano più: solo base / tablet: / desktop:.
-         */
+
         tailwind.config = {
             theme: {
                 extend: {
@@ -82,35 +68,37 @@
             future: { hoverOnlyWhenSupported: true }
         };
     </script>
-    <!-- Iconify: icone vettoriali usate tramite <iconify-icon icon="...">. -->
+    <!-- Iconify: web component used by the <iconify-icon> elements in the page. -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <!-- Lucide pinnato in locale (v1.76.0): niente più unpkg @latest che cambia da solo. -->
+    <!-- Local Lucide bundle. script.js -> lucide.createIcons() replaces every
+         <i data-lucide="..."> placeholder with the corresponding SVG icon. -->
     <script src="vendor/lucide.min.js" defer></script>
-    <!-- Font Inter self-hosted (solo latin 400/500/600): niente più Google Fonts esterni. -->
+    <!-- Preload the Inter font file used above the fold, then load its @font-face rules. -->
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="fonts/inter.css">
-    <!-- Stili personalizzati (animazioni, glassmorphism, scrollbar). -->
+    <!-- Custom design system/animations and cookie banner styles. The ?v= values
+         are cache-busting version numbers. -->
     <link rel="stylesheet" href="style.css?v=19">
-    <!-- Stili del banner di consenso cookie (GDPR). -->
     <link rel="stylesheet" href="banner/cookie_banner.css?v=5">
-    <!-- Defer: eseguito dopo il parsing dell'HTML, prima di DOMContentLoaded. -->
+    <!-- Main script (deferred): scroll animations, Lucide icons, card micro-interactions
+         and the fixed navigation behaviour. -->
     <script src="script.js?v=10" defer></script>
-    <!-- Google Analytics 4 (G-2M6V79H761) viene caricato dinamicamente da
-         cookie_banner.js SOLO dopo il consenso esplicito dell'utente. -->
 </head>
 
+<!-- ===== Body: dark full-height page, white text and Inter as the base font ===== -->
+<!-- overflow-x-hidden prevents horizontal scrollbars caused by decorative elements. -->
 <body class="min-h-screen overflow-x-hidden selection:bg-white/10 text-white font-sans bg-[#09090b] relative"
     style="font-family: 'Inter', sans-serif;">
 
-    <!-- ==========================================
-         NAVIGAZIONE FISSA (MENU)
-         ==========================================
-         Pill centrata con ancore alle 4 sezioni. Stesso linguaggio
-         dei badge ovali (bordo white/10, blur). Lo stato attivo
-         (link della sezione visibile) è gestito da script.js. -->
+    <!-- ===== Fixed Navigation Bar (#siteNav) ===== -->
+    <!-- Centered at the top and kept above the content with z-50. script.js -> update()
+         adds .nav-hidden when scrolling down; style.css animates top/opacity. -->
     <header id="siteNav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+        <!-- aria-label gives the navigation a name for screen readers. -->
         <nav aria-label="Sezioni del portfolio"
             class="flex items-center gap-1 rounded-full border border-white/10 bg-black/50 backdrop-blur-md px-2 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <!-- Each link jumps to a section id. data-nav is read by script.js -> setActive()
+                 to highlight the link of the section currently in view. -->
             <a href="#home" data-nav="home"
                 class="site-nav-link rounded-full px-3 tablet:px-4 min-h-[44px] flex items-center text-xs tablet:text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">Home</a>
             <a href="#projects" data-nav="projects"
@@ -122,32 +110,26 @@
         </nav>
     </header>
 
-    <!-- ==========================================
-         SFONDO E GLOW (BACKGROUND)
-         ==========================================
-         Due livelli decorativi fissi, sempre dietro al contenuto (-z-10):
-           1) "aura-background-component": sfondo animato di UnicornStudio
-              (inizializzato dallo script inline qui sotto).
-           2) Glow: linee e aloni sfumati che danno profondità futuristica.
-         `pointer-events-none` assicura che non blocchino i click. -->
-    <!-- Sfondo animato di terze parti (UnicornStudio). La mask-image lo
-         dissolvenza in alto e in basso per fonderlo col nero di fondo. -->
+    <!-- ===== Animated WebGL Background (UnicornStudio) ===== -->
+    <!-- Decorative full-screen layer behind everything (-z-10), with a mask that
+         fades its top and bottom edges into the page background. -->
     <div class="aura-background-component top-0 w-full h-screen -z-10 brightness-75 mix-blend-screen absolute"
         data-alpha-mask="80"
         style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <!-- data-us-project identifies the UnicornStudio scene to render. -->
         <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-            <!-- Contenitore del progetto UnicornStudio (identificato dal data-us-project). -->
             <div data-us-project="uFY4IYPs2LU8fWm96Im2" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-            <!-- Carica e inizializza UnicornStudio una sola volta (evita doppio init). -->
+            <!-- Loads the UnicornStudio UMD bundle once, then calls UnicornStudio.init()
+                 to start the WebGL animation. -->
             <script type="text/javascript">
                 !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
             </script>
         </div>
     </div>
 
-    <!-- Effetti di luminescenza (Glow) di sfondo.
-         Insieme di linee verticali, anelli ellittici e sfere sfocate che
-         creano l'alone luminoso centrale. Tutto puramente decorativo. -->
+    <!-- ===== Decorative Background Layers (pure CSS) ===== -->
+    <!-- fixed + inset-0 + pointer-events-none: covers the viewport but never blocks
+         clicks; z-0 puts it behind the main content (z-20). -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-[60vh] bg-gradient-to-b from-zinc-400/30 via-zinc-500/5 to-transparent z-10">
@@ -165,26 +147,21 @@
         <div class="absolute bottom-[20%] right-[20%] w-80 h-80 bg-zinc-400/5 blur-[100px] rounded-full"></div>
     </div>
 
-    <!-- ==========================================
-         SEZIONE EROE (HERO SECTION)
-         ==========================================
-         Contenuto principale "above the fold". È una griglia a 2 colonne
-         (su desktop, 1 colonna su mobile):
-           - Sinistra: nome, ruolo e lista delle competenze.
-           - Destra  : composizione di immagini "glass" sovrapposte e ruotate.
-         Note: il <main> ha pointer-events-none per lasciar passare il mouse
-         verso lo sfondo; i figli interattivi lo riattivano pointer-events-auto. -->
+    <!-- ===== Hero Section (#home) ===== -->
+    <!-- id="home" is the nav target; scroll-mt-24 offsets the fixed navbar.
+         The section ignores pointer events so decorative layers show through, while
+         the inner hero grid re-enables them with pointer-events-auto. -->
     <main id="home"
         class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] flex flex-col justify-center pt-28 tablet:pt-28 desktop:pt-[120px] pb-5 tablet:pb-14 desktop:pb-16 pointer-events-none scroll-mt-24">
 
+        <!-- Two-column hero on desktop, one column below; items-center aligns text and collage. -->
         <div
             class="grid grid-cols-1 desktop:grid-cols-2 desktop:gap-12 pointer-events-auto gap-x-16 gap-y-16 items-center min-h-[70vh]">
 
-            <!-- Colonna Sinistra (Testo e Competenze) -->
+            <!-- Left column: headline, three value propositions and specialization badge. -->
             <div class="flex flex-col gap-10 text-left desktop:pr-8">
-                <!-- Titolo principale: nome + ruolo (ruolo in grigio, più piccolo).
-                     Le classi arbitrarie [animation:...] e `animate-on-scroll`
-                     attivano l'animazione d'ingresso gestita da script.js. -->
+                <!-- Main headline. .animate-on-scroll starts paused; script.js adds .animate
+                     when the element enters the viewport. -->
                 <h1
                     class="type-h1 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate font-semibold text-white/95 tracking-tight">
                     Alex Di Paolo <br>
@@ -192,9 +169,7 @@
                         - IT System Designer</span>
                 </h1>
 
-                <!-- Lista delle funzionalità (Features): 3 punti con icona
-                     di spunta. Il `group` sul contenitore permette all'icona
-                     di cambiare colore al passaggio del mouse (group-hover). -->
+                <!-- Value propositions: Iconify icons; group-hover lightens each icon. -->
                 <div class="flex flex-col gap-5 pt-4 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
                     <div class="flex items-start gap-4 type-body-lg font-normal text-zinc-400 group">
                         <iconify-icon icon="solar:check-circle-linear"
@@ -225,9 +200,8 @@
                     </div>
                 </div>
 
-                <!-- Shiny Golden Badge: specializzazione, sotto le skills.
-                     Stile oro/champagne con sheen animato (vedi .gold-badge in style.css).
-                     Testo scuro su fondo chiaro per massimo contrasto e leggibilità. -->
+                <!-- Specialization badge. .gold-badge (style.css) adds the gold gradient
+                     and the moving sheen. -->
                 <div
                     class="gold-badge flex items-center gap-3 rounded-2xl px-5 py-4 w-fit max-w-full [animation:animationIn_0.8s_ease-out_0.45s_both] animate-on-scroll">
                     <div
@@ -241,16 +215,12 @@
                 </div>
             </div>
 
-            <!-- Colonna Destra: Gruppo di Immagini Fluttuanti (Floating Image Cluster)
-                 Sei "glass-card" posizionate in modo assoluto, con rotazioni
-                 e z-index diversi per dare l'effetto di foto sparse su un piano.
-                 Al passaggio del mouse, ogni card si ingrandisce e sale in
-                 primo piano tramite hover:scale-105 e hover:z-[100]. -->
+            <!-- Right column: floating image collage. Each .glass-card is absolutely
+                 positioned with its own z-index; hover scales it and lifts it to z-[100].
+                 .glass-card/.glass-highlight (style.css) create the glassmorphism look. -->
             <div
                 class="desktop:h-[650px] block [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate w-full h-[500px] z-50 pointer-events-auto relative">
-                <!-- Immagine 1: in alto a sinistra. Ogni blocco segue lo stesso
-                     schema: glass-card > contenitore immagine + overlay scuro
-                     sfumato + riflesso .glass-highlight. -->
+                <!-- VR visor image card (z-61). -->
                 <div
                     class="glass-card absolute top-[5%] left-[5%] w-40 desktop:w-48 aspect-square rotate-[-4deg] p-2 tablet:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -263,6 +233,7 @@
                     </div>
                     <div class="glass-highlight"></div>
                 </div>
+                <!-- Neon box image card (z-62). -->
                 <div
                     class="glass-card absolute top-[15%] right-[5%] w-48 desktop:w-56 aspect-[4/3] rotate-[3deg] p-2 tablet:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -273,6 +244,7 @@
                     </div>
                     <div class="glass-highlight"></div>
                 </div>
+                <!-- Chrome spike image card (z-63). -->
                 <div
                     class="glass-card desktop:w-44 aspect-[3/4] tablet:p-3 w-36 z-[63] pt-2 pr-2 pb-2 pl-2 absolute top-[40%] left-[0%] rotate-[-2deg] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -283,6 +255,7 @@
                     </div>
                     <div class="glass-highlight"></div>
                 </div>
+                <!-- Neon ring image card (z-64). -->
                 <div
                     class="glass-card absolute top-[35%] right-[15%] w-52 desktop:w-64 aspect-square rotate-[2deg] p-2 tablet:p-3 z-[64] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -293,6 +266,7 @@
                     </div>
                     <div class="glass-highlight"></div>
                 </div>
+                <!-- Glass pebble image card (z-62). -->
                 <div
                     class="glass-card absolute bottom-[5%] left-[20%] w-44 desktop:w-52 aspect-square rotate-[4deg] p-2 tablet:p-3 z-[62] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -303,6 +277,7 @@
                     </div>
                     <div class="glass-highlight"></div>
                 </div>
+                <!-- Particle hand image card (z-61). -->
                 <div
                     class="glass-card absolute bottom-[0%] right-[10%] w-36 desktop:w-44 aspect-[4/3] rotate-[-3deg] p-2 tablet:p-3 z-[61] transition-all duration-500 ease-out hover:scale-105 hover:z-[100]">
                     <div
@@ -317,19 +292,12 @@
         </div>
     </main>
 
-    <!-- ==========================================
-         SEZIONE PROGETTI ("My Projects")
-         ==========================================
-         Griglia responsive (1 / 2 / 3 colonne) di schede progetto.
-         Ogni scheda ha la stessa struttura:
-           - un'anteprima visiva (mockup HTML/CSS, non un'immagine reale)
-             che illustra il funzionamento del software;
-           - titolo + link esterno (dove disponibile);
-           - breve descrizione.
-         Ogni scheda entra con un ritardo d'animazione leggermente diverso
-         (0.1s, 0.2s, ...) per creare un effetto a cascata. -->
+    <!-- ===== Projects Section (#projects) ===== -->
+    <!-- Responsive project grid: 1 column on mobile, 2 on tablet, 3 on desktop.
+         Each .project-card has its own animation delay and hover styling (style.css). -->
     <section id="projects" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-16 pointer-events-auto scroll-mt-24">
-        <!-- Badge/Etichetta ovale "My Projects" sopra le schede -->
+        
+        <!-- Small uppercase section label. -->
         <div class="flex justify-center mb-10 [animation:animationIn_0.8s_ease-out_0.05s_both] animate-on-scroll">
             <div
                 class="eyebrow-caps inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white">
@@ -337,9 +305,10 @@
             </div>
         </div>
 
+        <!-- Project cards: hover/focus styles come from .project-card in style.css. -->
         <div class="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6">
 
-            <!-- Scheda: AutoTriage NLP -->
+            <!-- Project 1: AutoTriage NLP. The mock-up below is built with HTML/CSS, not an image. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
                 <div
@@ -348,9 +317,7 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: classificazione e prioritizzazione automatica dei ticket.
-                         Righe interattive: ogni ticket è focusabile e reagisce a hover/focus
-                         come una mini-app viva (sollevamento + glow colore priorità). -->
+                    <!-- Live ticket-classification mock-up. -->
                     <div class="triage-live relative w-[90%] max-w-[300px] flex flex-col gap-2.5 z-10">
                         <div class="flex items-center gap-2 text-xs text-zinc-500 px-1">
                             <span class="relative flex w-2 h-2">
@@ -364,6 +331,8 @@
                                 class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-[#4ade80]/10 text-[#4ade80]">NLP</span>
                         </div>
 
+                        <!-- Ticket rows are focusable (tabindex) so keyboard users get the same
+                             hover expansion; .triage-detail and .triage-go are revealed by style.css. -->
                         <div tabindex="0" role="button" aria-label="Ticket Printer not working, priorità alta"
                             class="triage-ticket triage-high bg-[#09090b] border border-white/10 rounded-xl p-3 shadow-lg flex items-center gap-3">
                             <div
@@ -418,6 +387,8 @@
                     </div>
                 </div>
                 <div class="project-body px-5 py-6 flex flex-col gap-2">
+                    <!-- External repository link: target=_blank opens a new tab; rel=noopener
+                         noreferrer protects this page from the opened tab. -->
                     <a href="https://github.com/dipaoloalex-dev/AutoTriageNLP" target="_blank" rel="noopener noreferrer"
                         class="group/link inline-flex items-center gap-1.5 text-xl font-medium text-white tracking-tight hover:text-zinc-300 transition-colors">AutoTriage
                         NLP
@@ -430,7 +401,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: Athena -->
+            <!-- Project 2: Athena museum platform. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
                 <div
@@ -439,8 +410,6 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: validazione accesso museo.
-                         QR cliccabile: si ingrandisce leggermente (toggle, anche da tastiera). -->
                     <div class="relative w-[90%] max-w-[280px] flex flex-col items-center gap-3 z-10">
                         <div
                             class="w-full bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3">
@@ -449,6 +418,8 @@
                                 <span class="text-[10px] text-zinc-500 font-mono">#01842</span>
                             </div>
                             <div class="flex items-center gap-3">
+                                <!-- #athenaQrBtn: script.js -> bindZoom() toggles .qr-zoomed, aria-pressed
+                                     and the aria-label; style.css scales the QR icon. -->
                                 <button type="button" id="athenaQrBtn"
                                     class="athena-qr w-14 h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 cursor-zoom-in"
                                     aria-pressed="false" aria-label="Ingrandisci QR Museum Pass">
@@ -476,7 +447,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: Easy Work -->
+            <!-- Project 3: Easy Work HR/workflow platform. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
                 <div
@@ -485,13 +456,12 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: workflow di approvazione e gestione presenze.
-                         Toggle approvazione: click sulla riga manager per passare
-                         da approved (verde) a not approved (rosso), e viceversa. -->
                     <div
                         class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-4 z-10">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-medium text-zinc-200">Leave request</span>
+                            <!-- #leaveStatusPill: its text and colours are updated by the approval
+                                 toggle handled in script.js. -->
                             <span id="leaveStatusPill"
                                 class="text-[10px] px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400">Pending</span>
                         </div>
@@ -500,6 +470,9 @@
                             <span>3 days · 12–14 Jun</span>
                         </div>
                         <div class="flex flex-col gap-3 mt-1">
+                            <!-- #managerApprovalBtn: starts with .is-approved. Clicking toggles
+                                 approved/denied, swaps the check/x icons via CSS and updates
+                                 aria-pressed and the status pill. -->
                             <button type="button" id="managerApprovalBtn"
                                 class="approval-toggle is-approved flex items-center gap-3 text-left rounded-lg cursor-pointer"
                                 aria-pressed="true" aria-label="Toggle manager approval">
@@ -535,7 +508,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: Akerus -->
+            <!-- Project 4: Akerus plant measurement system. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
                 <div
@@ -544,7 +517,6 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: log operativo firmato per impianto di depurazione -->
                     <div
                         class="relative w-[92%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
                         <div class="flex items-center justify-between">
@@ -563,6 +535,8 @@
                             <span>Operator · M. Rossi</span>
                             <span class="font-mono">09 Jun 14:22</span>
                         </div>
+                        <!-- #akerusPdfBtn: uses the same bindZoom() helper as Athena; toggles
+                             .qr-zoomed and the aria state. -->
                         <button type="button" id="akerusPdfBtn"
                             class="athena-qr flex items-center gap-2 text-[11px] text-zinc-400 bg-white/[0.02] border border-white/5 rounded-lg px-2.5 py-1.5 text-left w-full cursor-zoom-in"
                             aria-pressed="false" aria-label="Ingrandisci anteprima PDF report">
@@ -582,7 +556,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: Sky Fly -->
+            <!-- Project 5: Sky Fly aviation parts management. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
                 <div
@@ -591,7 +565,6 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: tracciabilità ricambio aeronautico -->
                     <div
                         class="relative w-[92%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
                         <div class="flex items-center gap-3">
@@ -604,7 +577,11 @@
                                 <span class="text-[10px] text-zinc-500 font-mono">P/N A320-32-11 · S/N 0042</span>
                             </div>
                         </div>
+                        <!-- Editable metrics: each .sky-metric stores its current value and limits
+                             in data-* attributes read by script.js. -->
                         <div class="grid grid-cols-2 gap-2">
+                            <!-- script.js reads data-value/step/min/max/unit and updates the number
+                                 with the arrow buttons, clamping it inside min..max. -->
                             <div class="sky-metric bg-white/[0.02] border border-white/5 rounded-lg p-2"
                                 data-value="1240" data-step="10" data-min="0" data-max="9999" data-unit=" h">
                                 <span class="block text-[10px] text-zinc-500">Time remaining</span>
@@ -624,6 +601,7 @@
                                     </span>
                                 </div>
                             </div>
+                            <!-- Second metric: cycles remaining, step 1 and no unit. -->
                             <div class="sky-metric bg-white/[0.02] border border-white/5 rounded-lg p-2"
                                 data-value="860" data-step="1" data-min="0" data-max="9999" data-unit="">
                                 <span class="block text-[10px] text-zinc-500">Cycles remaining</span>
@@ -658,7 +636,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: Kairos Tech Lab -->
+            <!-- Project 6: Kairos Tech Lab WordPress site. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
                 <div
@@ -667,17 +645,15 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Mockup di un sito web a pagina singola -->
                     <div
                         class="relative w-[90%] max-w-[300px] bg-[#09090b] border border-white/10 rounded-xl overflow-hidden shadow-2xl z-10">
-                        <!-- Barra del browser -->
+
                         <div class="flex items-center gap-1.5 px-3 py-2 border-b border-white/5 bg-white/[0.02]">
                             <span class="w-2 h-2 rounded-full bg-red-400/60"></span>
                             <span class="w-2 h-2 rounded-full bg-yellow-400/60"></span>
                             <span class="w-2 h-2 rounded-full bg-green-400/60"></span>
                             <span class="ml-2 flex-1 h-2 rounded-full bg-white/5"></span>
                         </div>
-                        <!-- Contenuto della pagina -->
                         <div class="p-4 flex flex-col gap-3">
                             <div class="h-3 w-2/5 rounded-full bg-white/10"></div>
                             <div class="h-2 w-3/5 rounded-full bg-white/5"></div>
@@ -686,6 +662,8 @@
                                 <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
                                 <div class="h-10 rounded-lg bg-white/[0.04] border border-white/5"></div>
                             </div>
+                            <!-- Internal link to the contact section; smooth scrolling comes
+                                 from style.css. -->
                             <a href="#contact"
                                 class="h-8 rounded-lg bg-[#4ade80]/20 border border-[#4ade80]/20 mt-1 flex items-center justify-center hover:bg-[#4ade80]/30 hover:border-[#4ade80]/40 transition-colors duration-300 cursor-pointer"
                                 aria-label="Vai alla sezione contatti">
@@ -701,7 +679,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: ESGATE -->
+            <!-- Project 7: ESGATE ESG reporting platform. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll">
                 <div
@@ -710,7 +688,6 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: cruscotto KPI ESG -->
                     <div
                         class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
                         <div class="flex items-center justify-between">
@@ -718,6 +695,8 @@
                             <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-zinc-400">CSRD · ESRS</span>
                         </div>
                         <div class="flex flex-col gap-2.5 mt-1">
+                            <!-- ESG rows are focusable and highlighted on hover/focus; each bar width
+                                 is set inline, while style.css handles the brighten/scale effect. -->
                             <div class="esg-row flex items-center gap-3 rounded-md px-1 -mx-1 py-0.5" tabindex="0">
                                 <span class="text-[10px] text-zinc-500 w-12">Environment</span>
                                 <div class="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
@@ -753,7 +732,7 @@
                 </div>
             </div>
 
-            <!-- Scheda: MAGIS -->
+            <!-- Project 8: MAGIS IoT platform. -->
             <div
                 class="project-card flex flex-col bg-[#0e0e11] border border-white/5 rounded-3xl p-1.5 relative group shadow-[0_20px_40px_rgba(0,0,0,0.3)] [animation:animationIn_0.8s_ease-out_0.8s_both] animate-on-scroll">
                 <div
@@ -762,7 +741,8 @@
                         class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_60%)] pointer-events-none">
                     </div>
 
-                    <!-- Inner Graphic: mappa live multi-tenant con sensori IoT -->
+                    <!-- Decorative live-map mock-up: CSS grid lines, roads and pulsing status
+                         dots; no real map library is loaded for this preview. -->
                     <div
                         class="relative w-[92%] max-w-[290px] bg-[#09090b] border border-white/10 rounded-xl p-4 shadow-lg flex flex-col gap-3 z-10">
                         <div class="flex items-center gap-2 text-xs text-zinc-500 px-1">
@@ -776,7 +756,6 @@
                             <span
                                 class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-400">MQTT</span>
                         </div>
-                        <!-- Finta mappa: griglia + strade + pin sensori pulsanti -->
                         <div
                             class="relative h-28 rounded-lg overflow-hidden bg-[#0c0e12] border border-white/5">
                             <div class="absolute inset-0 opacity-40"
@@ -815,6 +794,7 @@
                                 class="absolute bottom-1.5 left-1.5 text-[10px] px-1.5 py-0.5 rounded bg-black/60 border border-white/10 text-zinc-400">GeoServer ·
                                 MapLibre</span>
                         </div>
+                        <!-- Small KPI strip below the map. -->
                         <div class="grid grid-cols-3 gap-2">
                             <div class="bg-white/[0.02] border border-white/5 rounded-lg p-2">
                                 <span class="block text-[10px] text-zinc-500">Devices</span>
@@ -841,54 +821,42 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         SEZIONE "IL PROCESSO IN 3 STEP"
-         ==========================================
-         Spiega il valore del passaggio "offline -> online" in tre blocchi
-         numerati (1, 2, 3) collegati da frecce decorative SVG.
-         Layout:
-           - su mobile: i blocchi sono impilati in verticale;
-           - su desktop (tablet:): i blocchi diventano `absolute` e formano un
-             percorso diagonale (i posizionamenti tablet:top/left li dispongono).
-         Lo z-index crescente (10 -> 20 -> 30) e hover:z-40 fanno emergere
-         il blocco sotto il mouse. -->
+    <!-- ===== Process Section (#process) ===== -->
+    <!-- Explains why a website matters and presents three steps. On desktop the
+         cards are absolutely positioned and connected by decorative arrows. -->
     <section id="process"
         class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] py-20 tablet:py-20 desktop:py-[120px] pointer-events-auto flex flex-col items-center scroll-mt-24">
 
-        <!-- Intestazione della sezione (Titoli) -->
+        <!-- Section heading: badge, two-tone title and intro paragraph. -->
         <div
             class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 tablet:mb-28 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
-            <!-- Badge/Etichetta ovale decorativa -->
+
             <div
                 class="eyebrow-caps inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm text-sm font-medium text-white mb-8">
                 FROM OFFLINE TO ONLINE
             </div>
 
-            <!-- Titolo (Heading) -->
             <h2 class="type-h2 font-semibold tracking-tight mb-6">
                 <span class="text-white">A website is essential</span> <span class="text-zinc-500">for your
                     business</span>
             </h2>
 
-            <!-- Sottotitolo -->
             <p class="type-body-lg font-normal text-zinc-400 leading-relaxed">
                 It increases your chances of selling your products and services. Here are the main advantages of going
                 online.
             </p>
         </div>
 
-        <!-- Sezione Layout Dimostrativo (A step/passaggi visivi).
-             Su mobile i 3 blocchi sono impilati con spazio extra per le
-             etichette -top-10, così non si sovrappongono. -->
+        <!-- Cards container: desktop uses absolute positioning; mobile stacks the cards
+             with flex + gap. -->
         <div
             class="relative w-full max-w-5xl mx-auto flex flex-col desktop:block gap-14 tablet:gap-16 desktop:gap-0 h-auto desktop:h-[650px] pt-10 desktop:pt-0">
 
-            <!-- Effetto Glow di sfumatura posteriore -->
             <div
                 class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)] pointer-events-none hidden desktop:block">
             </div>
 
-            <!-- Freccia decorativa dal Nodo 1 al 2 -->
+            <!-- Decorative curved arrow (desktop only), drawn with inline SVG. -->
             <div class="absolute top-[30%] left-[32%] w-16 h-16 hidden desktop:block z-0">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
                     <div class="w-full h-full text-zinc-700 -rotate-12">
@@ -902,7 +870,7 @@
                 </div>
             </div>
 
-            <!-- Freccia decorativa dal Nodo 2 al 3 -->
+            <!-- Second decorative arrow, pointing to the next card. -->
             <div class="absolute bottom-[20%] right-[32%] w-16 h-16 hidden desktop:block z-0">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
                     <div class="w-full h-full text-zinc-700 -rotate-[10deg]">
@@ -916,9 +884,7 @@
                 </div>
             </div>
 
-            <!-- Blocco 1 - "Benefits of going online"
-                 Elenca i vantaggi di avere un sito (statistiche, credibilità,
-                 monetizzazione, SEO...). -->
+            <!-- Step 1 card: "Benefits of going online" with an Iconify icon list. -->
             <div
                 class="relative desktop:absolute desktop:left-[5%] desktop:top-[12%] w-full max-w-[340px] mx-auto z-10 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
@@ -984,14 +950,11 @@
                 </div>
             </div>
 
-            <!-- Blocco 2 - "Managing a service business?" / "Common problems"
-                 Elenca i problemi tipici della gestione offline manuale
-                 (cancellazioni last-minute, sovrapposizioni, ecc.). -->
+            <!-- Step 2 card: "Common problems" that a website helps solve. -->
             <div
                 class="relative desktop:absolute desktop:left-1/2 desktop:-translate-x-1/2 desktop:top-[55%] w-full max-w-[360px] mx-auto z-20 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
                     <div class="w-full h-full group">
-                        <!-- L'etichetta cambia posizione fra Mobile e Desktop -->
                         <div
                             class="absolute -top-10 desktop:top-auto desktop:-bottom-12 left-4 desktop:left-1/2 desktop:-translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
                             <div
@@ -1043,9 +1006,7 @@
                 </div>
             </div>
 
-            <!-- Blocco 3 - "All automated"
-                 Mostra un feed di elementi automatizzati (Web App, Website,
-                 ecc.) con lo stato di completamento. -->
+            <!-- Step 3 card: "All automated", showing Web App / Website / Manual booking rows. -->
             <div
                 class="relative desktop:absolute desktop:right-[5%] desktop:top-[5%] w-full max-w-[380px] mx-auto z-30 hover:z-40">
                 <div class="w-full h-full [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
@@ -1065,7 +1026,6 @@
                             </h3>
 
                             <div class="flex flex-col gap-3 relative z-10">
-                                <!-- Elemento del Feed #1 -->
                                 <div
                                     class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-pointer group/card">
                                     <div
@@ -1085,7 +1045,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Elemento del Feed #2 -->
                                 <div
                                     class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-pointer group/card">
                                     <div
@@ -1105,7 +1064,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Elemento del Feed #3 -->
                                 <div
                                     class="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-pointer group/card relative">
                                     <div
@@ -1126,7 +1084,6 @@
                                 </div>
                             </div>
 
-                            <!-- Ombra sfumata dal basso verso l'alto (Effetto fade-out) -->
                             <div
                                 class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#1f1f22] to-transparent pointer-events-none group-hover:from-[#222226] transition-colors">
                             </div>
@@ -1138,13 +1095,8 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         FOOTER / CONTATTI
-         ==========================================
-         Sezione finale con i canali di contatto:
-         WhatsApp, Email, LinkedIn e GitHub.
-         Ogni link apre in una nuova scheda (target="_blank") con
-         rel="noopener noreferrer" per motivi di sicurezza. -->
+    <!-- ===== Contact Footer (#contact) ===== -->
+    <!-- Also the contact section linked from the nav; scroll-mt-24 offsets the fixed navbar. -->
     <footer id="contact" class="relative z-20 container mx-auto px-5 tablet:px-16 desktop:px-[120px] pt-5 tablet:pt-14 desktop:pt-20 pb-5 tablet:pb-14 desktop:pb-20 pointer-events-auto scroll-mt-24">
         <div
             class="bg-[#0e0e11] border border-white/5 rounded-3xl p-5 tablet:p-14 desktop:p-[80px] flex flex-col items-center text-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
@@ -1159,8 +1111,10 @@
                     collaboration, or just a hello, I'd love to hear from you.</p>
             </div>
 
+            <!-- Contact methods: 1 column on mobile, 2 on tablet, 4 on desktop. -->
             <div class="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-4 w-full max-w-3xl">
-                <!-- WhatsApp -->
+                
+                <!-- WhatsApp: opens a chat with a prefilled message in a new tab. -->
                 <a href="https://wa.me/393314643804?text=Hi%20Alex!%20I%20visited%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you."
                     target="_blank" rel="noopener noreferrer"
                     class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
@@ -1172,7 +1126,7 @@
                     <span class="text-sm font-medium text-zinc-200">WhatsApp</span>
                 </a>
 
-                <!-- Email: apre Gmail in composizione con destinatario e oggetto precompilati -->
+                <!-- Email: Gmail compose with prefilled recipient and subject. -->
                 <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dipaoloalex.dev@gmail.com&amp;su=Let%27s%20work%20together"
                     target="_blank" rel="noopener noreferrer"
                     class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
@@ -1183,7 +1137,7 @@
                     <span class="text-sm font-medium text-zinc-200">Email</span>
                 </a>
 
-                <!-- LinkedIn -->
+                <!-- LinkedIn profile (external, new tab). -->
                 <a href="https://www.linkedin.com/in/alex-di-paolo" target="_blank" rel="noopener noreferrer"
                     class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
                     <span
@@ -1194,7 +1148,7 @@
                     <span class="text-sm font-medium text-zinc-200">LinkedIn</span>
                 </a>
 
-                <!-- GitHub -->
+                <!-- GitHub profile (external, new tab). -->
                 <a href="https://github.com/dipaoloalex-dev" target="_blank" rel="noopener noreferrer"
                     class="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300">
                     <span
@@ -1206,7 +1160,8 @@
                 </a>
             </div>
 
-            <!-- Riga finale: riapertura preferenze cookie + copyright -->
+            <!-- Cookie preferences reopens the consent modal through the public API
+                 exposed by banner/cookie_banner.js. -->
             <div class="flex flex-col items-center gap-2">
                 <button type="button"
                     class="text-xs text-zinc-500 hover:text-zinc-300 underline underline-offset-2 transition-colors"
@@ -1216,12 +1171,9 @@
         </div>
     </footer>
 
-    <!-- ==========================================
-         BANNER DI CONSENSO COOKIE (GDPR)
-         Banner in basso a sinistra + modal "Preferenze Cookie".
-         La logica di consenso e il caricamento di Google Analytics
-         sono gestiti da cookie_banner.js.
-         ========================================== -->
+    <!-- ===== Cookie Consent Banner ===== -->
+    <!-- Hidden by CSS until cookie_banner.js -> showBanner() adds .is-visible.
+         role/aria-live make the banner announce itself to assistive technology. -->
     <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
         <h3 class="cookie-banner__title">Cookies &amp; Privacy</h3>
         <p class="cookie-banner__text">
@@ -1230,6 +1182,8 @@
             <a href="https://wa.me/393314643804" target="_blank" rel="noopener noreferrer">WhatsApp</a> or your email
             address — your details are used only to reply to you.
         </p>
+        <!-- IDs read by cookie_banner.js -> wireEvents(): accept all, necessary only,
+             open preferences. -->
         <div class="cookie-banner__actions">
             <button class="cookie-btn cookie-btn--primary" id="cookieBannerAcceptAll">Accept all</button>
             <button class="cookie-btn cookie-btn--ghost" id="cookieBannerNecessary">Only necessary</button>
@@ -1237,14 +1191,14 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         MODAL "PREFERENZE COOKIE"
-         Permette di scegliere categoria per categoria.
-         ========================================== -->
+    <!-- ===== Cookie Preferences Modal ===== -->
+    <!-- Shown by cookie_banner.js -> openPrefs(); the dark overlay closes on backdrop click.
+         #cookiePrefsAnalytics is the checkbox read when saving preferences. -->
     <div class="cookie-prefs" id="cookiePreferences" role="dialog" aria-modal="true" aria-label="Cookie preferences">
         <div class="cookie-prefs__modal">
             <div class="cookie-prefs__header">
                 <h3 class="cookie-prefs__title">Cookie Preferences</h3>
+                <!-- #cookiePrefsClose: wired by cookie_banner.js -> closePrefs(). -->
                 <button class="cookie-prefs__close" id="cookiePrefsClose" aria-label="Close">&times;</button>
             </div>
             <p class="cookie-prefs__intro">
@@ -1252,7 +1206,6 @@
                 without them.
             </p>
 
-            <!-- Categoria: cookie necessari (sempre attivi) -->
             <div class="cookie-prefs__item">
                 <div>
                     <p class="cookie-prefs__item-name">Necessary</p>
@@ -1262,7 +1215,8 @@
                 <span class="cookie-prefs__badge">Always active</span>
             </div>
 
-            <!-- Categoria: cookie analitici (opzionali) -->
+            <!-- Analytics category: a native checkbox rendered as a toggle by .cookie-switch
+                 in banner/cookie_banner.css. -->
             <div class="cookie-prefs__item">
                 <div>
                     <p class="cookie-prefs__item-name">Analytics</p>
@@ -1275,6 +1229,7 @@
                 </label>
             </div>
 
+            <!-- #cookiePrefsSave saves the switch state; #cookiePrefsAcceptAll grants everything. -->
             <div class="cookie-prefs__footer">
                 <button class="cookie-btn cookie-btn--primary" id="cookiePrefsSave">Save preferences</button>
                 <button class="cookie-btn cookie-btn--ghost" id="cookiePrefsAcceptAll">Accept all</button>
@@ -1282,7 +1237,7 @@
         </div>
     </div>
 
-    <!-- Logica del banner di consenso cookie -->
+    <!-- Cookie consent logic; loaded at the end so all banner elements already exist. -->
     <script src="banner/cookie_banner.js?v=5"></script>
 
 </body>

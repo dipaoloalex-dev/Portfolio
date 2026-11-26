@@ -1,36 +1,66 @@
-/* ============================================
-   STILI PRINCIPALI
-   ============================================ */
+/**
+ * File: style.css
+ * Description: Global styles shared by the English and Italian CV pages
+ *              (index.html and index_it.html). It sets the Inter typeface and
+ *              defines the print rules that turn the on-screen CV sheet into a
+ *              clean paper/PDF document without shadows or screen-only controls.
+ * Sections: 1. Base typography  2. Print layout  3. Utilities
+ */
 
-/* Font family */
+/* ============================================================
+   1. BASE TYPOGRAPHY
+   ============================================================ */
+
+/* Purpose: apply the Inter font to the whole page.
+   Inter is loaded from Google Fonts in the HTML <head>; sans-serif is the
+   fallback so text stays readable if the web font fails to load. */
 body {
     font-family: 'Inter', sans-serif;
 }
 
-/* ============================================
-   STILI DI STAMPA
-   ============================================ */
+/* ============================================================
+   2. PRINT LAYOUT
+   Everything inside @media print applies only when the user prints the page
+   or saves it as PDF (Ctrl/Cmd + P). It does not affect the screen version.
+   ============================================================ */
 
 @media print {
 
-    /* Rimuovi margini pagina */
+    /* Purpose: configure the physical printed page box.
+       margin: 0 removes the browser's default page margins so the CV can use
+       the full paper area; size: auto keeps the paper size chosen by the user
+       in the print dialog (A4, Letter, etc.). */
     @page {
         margin: 0;
         size: auto;
     }
 
-    /* Sfondo bianco per la stampa */
+    /* Purpose: force a white page background when printing.
+       -webkit-print-color-adjust: exact tells WebKit/Chromium browsers to
+       keep the specified colours instead of applying "ink saving" adjustments,
+       so the text/background contrast matches what was designed. */
     body {
         background-color: white;
         -webkit-print-color-adjust: exact;
     }
 
-    /* Nascondi elementi con classe print-hidden */
+    /* Purpose: hide screen-only controls (the language switch and the Print
+       button in the top-right toolbar).
+       !important is needed because those elements also carry Tailwind display
+       utilities; it guarantees this rule wins in the print stylesheet.
+       Controlled by: .print-hidden on the toolbar in index.html / index_it.html. */
     .print-hidden {
         display: none !important;
     }
 
-    /* Rimuovi ombra e margini dal foglio CV */
+    /* Purpose: make the CV sheet fill the printed page.
+       The screen version is a centred card with a shadow and rounded corners;
+       for paper those decorations are meaningless, so they are removed.
+       width/max-width: 100% and margin: 0 remove the desktop width limit and
+       centring gap; border-radius: 0 removes the rounded paper corners.
+       !important overrides the Tailwind utility classes (max-w-5xl, mx-auto,
+       shadow-2xl, rounded-lg) applied to the same element in the HTML.
+       Controlled by: .resume-sheet in index.html / index_it.html. */
     .resume-sheet {
         box-shadow: none !important;
         margin: 0 !important;
@@ -40,11 +70,15 @@ body {
     }
 }
 
-/* ============================================
-   UTILITIES
-   ============================================ */
+/* ============================================================
+   3. UTILITIES
+   ============================================================ */
 
-/* Posizionamento punto timeline */
+/* Purpose: reusable helper for a timeline dot.
+   A negative left offset pulls the dot out of the content column and onto the
+   vertical timeline line drawn by the parent container.
+   Note: the current CV pages use Tailwind's arbitrary -left-[37px] value
+   instead, so this class is kept as an optional utility for other pages. */
 .timeline-dot {
     left: -33px;
 }

@@ -1,97 +1,115 @@
+<!--
+  File: index.html
+  Description: English one-page CV (ATS-friendly) for Alex Di Paolo. It presents
+               the professional profile, contact links, work experience, education
+               and language levels using Tailwind CSS utility classes.
+  Structure: Toolbar / Profile header / Main (Experience, Education, Languages) / Scripts
+  Linked files: style.css (custom font + print rules), script.js (Lucide icon setup),
+                index_it.html (Italian version of the same CV)
+-->
 <!DOCTYPE html>
+<!-- lang="en" declares English to browsers, screen readers and search engines. -->
 <html lang="en">
 
-<!-- ============================================
-     HEAD - Metadati e risorse esterne
-     ============================================ -->
-
+<!-- ===== Head Section: metadata, external libraries and stylesheets ===== -->
 <head>
+    <!-- UTF-8 ensures accented characters and symbols render correctly. -->
     <meta charset="UTF-8">
+    <!-- Makes the layout responsive: the page width follows the device width. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title shown in the browser tab, search results and print headers. -->
     <title>Alex Di Paolo - CV ATS</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (CDN): supplies every utility class used in this page
+         (spacing, colours, flexbox, responsive prefixes such as md:). -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Icons -->
+    <!-- Lucide (CDN): icon library. The <i data-lucide="..."> placeholders
+         in the page are replaced with SVG icons by script.js -> lucide.createIcons(). -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts: loads the Inter family, applied to <body> by style.css. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Foglio di stile personalizzato -->
+    <!-- Custom stylesheet: body font and the @media print rules that format
+         this page for paper/PDF and hide elements marked with .print-hidden. -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- ============================================
-     BODY - Contenuto principale
-     ============================================ -->
-
+<!-- ===== Body: page background, fixed toolbar and the CV sheet ===== -->
+<!-- Tailwind classes: light grey page background, slate text, antialiased text,
+     blue text selection, vertical padding, and mobile side padding (removed on md+). -->
 <body class="bg-slate-100 text-slate-600 antialiased selection:bg-blue-100 selection:text-blue-700 py-10 px-4 md:px-0">
 
-    <!-- ============================================
-         PULSANTI STAMPA E LINGUA (fissi in alto a destra)
-         ============================================ -->
-
+    <!-- ===== Fixed Toolbar: language switch and print button ===== -->
+    <!-- fixed + top/right keep it in the viewport while scrolling; z-50 puts it
+         above the CV sheet; .print-hidden is hidden by style.css when printing. -->
     <div class="fixed top-6 right-6 z-50 flex gap-3 print-hidden">
 
+        <!-- Language switch: leads to index_it.html, the Italian version of this CV. -->
         <a href="index_it.html"
             class="flex items-center gap-2 px-3 py-2 bg-white text-slate-900 rounded-lg shadow-lg hover:bg-slate-50 transition-all font-medium text-sm ring-1 ring-slate-200">
+            <!-- Icon placeholder handled by script.js -> lucide.createIcons(). -->
             <i data-lucide="globe" class="w-4 h-4"></i>
             <span>IT</span>
         </a>
 
+        <!-- Print button: window.print() opens the browser print dialog. The print
+             stylesheet then hides this toolbar and removes the sheet shadow/margins. -->
         <button onclick="window.print()"
             class="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg shadow-lg hover:bg-slate-800 transition-all font-medium text-sm ring-1 ring-white/20">
+            <!-- Icon placeholder handled by script.js -> lucide.createIcons(). -->
             <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
             <span>Print</span>
         </button>
 
     </div>
 
-    <!-- ============================================
-         FOGLIO CV
-         ============================================ -->
-
+    <!-- ===== CV Sheet: white "paper" container ===== -->
+    <!-- .resume-sheet is targeted by style.css -> @media print to remove the
+         shadow, rounded corners and max-width so the CV fills the printed page. -->
     <div class="resume-sheet max-w-5xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden min-h-[1200px]">
+        <!-- Inner padding: smaller on mobile (p-8), larger on desktop (md:p-12). -->
         <div class="w-full p-8 md:p-12">
 
-            <!-- ============================================
-                 SEZIONE HEADER: Nome, contatti e profilo
-                 ============================================ -->
-
+            <!-- ===== Profile Header Section: name, contacts, summary and soft skills ===== -->
             <div class="mb-10 pb-6">
 
-                <!-- Nome -->
+                <!-- Full name: main page heading, centred and responsive (text-4xl -> md:text-5xl). -->
                 <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-2 text-center">
                     Alex Di Paolo
                 </h1>
 
-                <!-- Contatti principali -->
+                <!-- Primary contacts: mailto opens the email client, tel opens the phone dialer.
+                     flex-wrap keeps the line readable on narrow screens. -->
                 <div class="mt-3 text-sm text-slate-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                     <a href="mailto:dipaoloalex.dev@gmail.com" class="hover:text-blue-600 transition-colors">
                         dipaoloalex.dev@gmail.com
                     </a>
+                    <!-- Visual separator between contact items (decorative only). -->
                     <span class="text-slate-300">|</span>
                     <a href="tel:+393314643804" class="hover:text-blue-600 transition-colors">
                         (+39) 331 464 3804
                     </a>
+                    <!-- Another decorative separator. -->
                     <span class="text-slate-300">|</span>
                     <span>03/11/1999 - Naples, Italy</span>
                 </div>
 
-                <!-- Social Links -->
+                <!-- Social profiles: absolute URLs, so they open the external sites. -->
                 <div class="mt-3 text-sm text-slate-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                     <a href="https://www.linkedin.com/in/alex-di-paolo" class="hover:text-blue-600 transition-colors">
                         linkedin.com/in/alex-di-paolo
                     </a>
+                    <!-- Decorative separator. -->
                     <span class="text-slate-300">|</span>
                     <a href="https://github.com/dipaoloalex-dev" class="hover:text-blue-600 transition-colors">
                         github.com/dipaoloalex-dev
                     </a>
                 </div>
 
-                <!-- Profilo professionale -->
+                <!-- Professional summary: a short paragraph recruiters can scan quickly.
+                     leading-relaxed improves readability; text-center matches the header. -->
                 <p class="mt-4 text-base leading-relaxed text-slate-600 text-center">
                     Software Developer and IT System Designer with experience in designing and developing complex web
                     ecosystems within engineering environments. Backed by a strong academic and professional background,
@@ -100,7 +118,8 @@
                     interoperability with an excellent end-user experience.
                 </p>
 
-                <!-- Soft Skills -->
+                <!-- Soft skills: small badge-style chips. flex-wrap lets them flow
+                     onto multiple lines on narrow screens instead of overflowing. -->
                 <div class="mt-4 flex flex-wrap justify-center gap-2">
                     <span
                         class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700">
@@ -137,13 +156,11 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 SEZIONE ESPERIENZE LAVORATIVE
-                 ============================================ -->
-
+            <!-- ===== Work Experience Section: timeline of jobs and projects ===== -->
             <div class="mb-12">
 
-                <!-- Header sezione -->
+                <!-- Section header: dark rounded icon box + title. The icon placeholder
+                     is turned into an SVG by script.js -> lucide.createIcons(). -->
                 <div class="flex items-center gap-3 mb-8">
                     <div class="p-1.5 bg-slate-900 text-white rounded-md">
                         <i data-lucide="briefcase" class="w-4 h-4"></i>
@@ -151,15 +168,22 @@
                     <h3 class="text-lg font-bold text-slate-900 tracking-tight">Work Experience</h3>
                 </div>
 
-                <!-- Esperienza 1: NETCaring -->
+                <!-- Timeline container: border-l draws the vertical line; ml-3.5 + pl-8
+                     place the content to the right of it; position: relative lets each
+                     child position its dot on the line with absolute coordinates. -->
                 <div class="space-y-5 border-l border-slate-200 ml-3.5 pl-8 relative">
+                    <!-- Job entry: "relative group" lets the dot use absolute positioning
+                         and lets group-hover enlarge the dot when the entry is hovered. -->
                     <div class="relative group">
 
-                        <!-- Indicatore timeline -->
+                        <!-- Timeline dot: absolute, shifted left onto the vertical border.
+                             -left-[37px] is an arbitrary Tailwind value (negative left offset);
+                             group-hover:scale-125 animates it when the entry is hovered. -->
                         <span
                             class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-blue-600 shadow-sm group-hover:scale-125 transition-transform"></span>
 
-                        <!-- Azienda e periodo -->
+                        <!-- Company and period: stacked on mobile, on one row (company left,
+                             period right) from the sm breakpoint upwards. -->
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
                             <h4 class="text-lg font-semibold text-slate-800">NETCaring s.r.l.</h4>
                             <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
@@ -167,9 +191,11 @@
                             </span>
                         </div>
 
-                        <!-- Progetto Athena -->
+                        <!-- Project: Athena - multi-level museum ticketing and access platform. -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - Athena</div>
+                            <!-- Bullet list: list-disc + list-outside keep standard ATS-friendly
+                                 bullets; marker:text-slate-300 softens the bullet colour. -->
                             <ul
                                 class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
                                 <li class="pl-1">Design and development of a multi-level web-based platform for
@@ -186,7 +212,7 @@
                             </ul>
                         </div>
 
-                        <!-- Progetto EasyWork -->
+                        <!-- Project: EasyWork - all-in-one cloud platform for HR and company workflows. -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - EasyWork</div>
                             <ul
@@ -206,7 +232,7 @@
                             </ul>
                         </div>
 
-                        <!-- Progetto Akerus S.C.A.R.L -->
+                        <!-- Project: Akerus - digital operational logs for a wastewater treatment plant. -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - Akerus S.C.A.R.L</div>
                             <ul
@@ -225,7 +251,7 @@
                             </ul>
                         </div>
 
-                        <!-- Project SkyFly -->
+                        <!-- Project: SkyFly - aviation spare-parts trading management system. -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - SkyFly</div>
                             <ul
@@ -246,7 +272,8 @@
                             </ul>
                         </div>
 
-                        <!-- Project ESGATE -->
+                        <!-- Project: ESGATE - ESG data collection, scoring and reporting platform.
+                             This entry has no mb-6; the <br> right after it adds spacing before MAGIS. -->
                         <div class="relative group">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - ESGATE</div>
                             <ul
@@ -264,7 +291,7 @@
                             </ul>
                         </div><br>
 
-                        <!-- Project MAGIS -->
+                        <!-- Project: MAGIS - multi-tenant IoT platform with live telemetry and maps. -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - MAGIS</div>
                             <ul
@@ -285,7 +312,7 @@
                             </ul>
                         </div>
 
-                        <!-- Project Kairos TechLab -->
+                        <!-- Project: Kairos TechLab - WordPress corporate website (last project entry). -->
                         <div class="relative group mb-6">
                             <div class="text-sm font-medium text-slate-700 mb-2">Project - Kairos TechLab</div>
                             <ul
@@ -304,13 +331,10 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 SEZIONE FORMAZIONE
-                 ============================================ -->
-
+            <!-- ===== Education Section: university degree and high-school diploma ===== -->
             <div class="mb-12">
 
-                <!-- Header sezione -->
+                <!-- Section header: dark icon box + title; icon handled by script.js. -->
                 <div class="flex items-center gap-3 mb-8">
                     <div class="p-1.5 bg-slate-900 text-white rounded-md">
                         <i data-lucide="book-open" class="w-4 h-4"></i>
@@ -318,29 +342,37 @@
                     <h3 class="text-lg font-bold text-slate-900 tracking-tight">Education</h3>
                 </div>
 
-                <!-- Timeline formazione -->
+                <!-- Education timeline: same border-left line and relative positioning pattern
+                     used by the work experience section. -->
                 <div class="space-y-5 border-l border-slate-200 ml-3.5 pl-8 relative">
 
-                    <!-- Laurea -->
+                    <!-- University degree entry. The dot is grey (bg-slate-300) instead of blue
+                         to visually separate education from work experience. -->
                     <div class="relative group mb-6">
+                        <!-- Timeline dot: absolute on the border; hover changes its colour. -->
                         <span
                             class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 shadow-sm group-hover:bg-slate-400 transition-colors"></span>
 
+                        <!-- University name and study period (stacked on mobile, row on sm+). -->
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
                             <h4 class="text-lg font-semibold text-slate-800">Pegaso Telematic University</h4>
                             <span class="text-xs font-medium text-slate-400">09/2023 - 04/2026</span>
                         </div>
 
+                        <!-- Degree name and final grade. -->
                         <div class="text-sm font-medium text-slate-700 mb-2">
                             Bachelor's Degree in Computer Science for Digital Companies (L-31) -> Grade: 110/110
                             with
                             honors
                         </div>
 
+                        <!-- Thesis project link: opens the public GitHub repository. No target
+                             attribute is set, so the page loads in the same browser tab. -->
                         <div class="text-sm font-medium text-slate-700 mb-2">
                             <a href="https://github.com/dipaoloalex-dev/AutoTriageNLP"
                                 class="hover:text-blue-600 transition-colors">Project - AutoTriage NLP</a>
                         </div>
+                        <!-- Thesis details, written as ATS-friendly bullet points. -->
                         <ul
                             class="list-disc list-outside ml-4 space-y-1.5 text-base text-slate-600 marker:text-slate-300">
                             <li class="pl-1">University thesis project focused on engineering a full-stack solution for
@@ -357,17 +389,20 @@
                         </ul>
                     </div>
 
-                    <!-- Diploma -->
+                    <!-- High-school diploma entry (no mb-6 because it is the last timeline item). -->
                     <div class="relative group">
+                        <!-- Timeline dot with the same grey hover effect as the degree entry. -->
                         <span
                             class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 shadow-sm group-hover:bg-slate-400 transition-colors"></span>
 
+                        <!-- School name and attendance period. -->
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
                             <h4 class="text-lg font-semibold text-slate-800">Technical Commercial Institute - Enrico
                                 Caruso</h4>
                             <span class="text-xs font-medium text-slate-400">09/2013 - 07/2018</span>
                         </div>
 
+                        <!-- Diploma title. -->
                         <div class="text-sm font-medium text-slate-700">
                             Secondary education diploma in Business Information Systems
                         </div>
@@ -376,13 +411,10 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 SEZIONE LINGUE
-                 ============================================ -->
-
+            <!-- ===== Languages Section: language names with a 5-dot proficiency scale ===== -->
             <div>
 
-                <!-- Header sezione -->
+                <!-- Section header: dark icon box + title; icon handled by script.js. -->
                 <div class="flex items-center gap-3 mb-8">
                     <div class="p-1.5 bg-slate-900 text-white rounded-md">
                         <i data-lucide="globe" class="w-4 h-4"></i>
@@ -390,10 +422,12 @@
                     <h3 class="text-lg font-bold text-slate-900 tracking-tight">Languages</h3>
                 </div>
 
-                <!-- Lista lingue con indicatore livello -->
+                <!-- Language list: flex-wrap keeps the three languages on one line on desktop
+                     and lets them stack on narrow screens. Each language has five dots;
+                     dark dots (bg-slate-800) = level reached, light dots (bg-slate-200) = missing. -->
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
 
-                    <!-- Italiano -->
+                    <!-- Italian: 5 filled dots out of 5 (native level). -->
                     <div class="flex items-center gap-2">
                         <span class="font-medium text-slate-700">Italian</span>
                         <div class="flex gap-0.5">
@@ -405,7 +439,7 @@
                         </div>
                     </div>
 
-                    <!-- Spagnolo -->
+                    <!-- Spanish: 4 filled dots out of 5. -->
                     <div class="flex items-center gap-2">
                         <span class="font-medium text-slate-700">Spanish</span>
                         <div class="flex gap-0.5">
@@ -417,7 +451,7 @@
                         </div>
                     </div>
 
-                    <!-- Inglese -->
+                    <!-- English: 3 filled dots out of 5. -->
                     <div class="flex items-center gap-2">
                         <span class="font-medium text-slate-700">English</span>
                         <div class="flex gap-0.5">
@@ -435,9 +469,10 @@
         </div>
     </div>
 
-    <!-- ============================================
-         SCRIPT ESTERNI
-         ============================================ -->
+    <!-- ===== Scripts Section ===== -->
+    <!-- Loaded at the end of <body> so all [data-lucide] placeholders already exist.
+         script.js calls lucide.createIcons({ attrs: { "stroke-width": 1.5 } }) to
+         replace them with SVG icons; the print button uses window.print() directly. -->
     <script src="script.js"></script>
 </body>
 

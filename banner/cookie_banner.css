@@ -1,15 +1,31 @@
 /**
- * cookie_banner.css
- *
- * Stili del banner di consenso cookie (GDPR) e del modal
- * "Preferenze Cookie". Il banner compare in basso a sinistra
- * e usa lo stesso linguaggio visivo scuro del portfolio.
+ * File: cookie_banner.css
+ * Description: Styles for the GDPR cookie consent banner and the cookie preferences modal.
+ *              It defines the fixed bottom-left banner, its buttons, the full-screen
+ *              preferences overlay with toggle switches, and the mobile layout.
+ * Sections: 1. Banner  2. Buttons  3. Preferences modal  4. Toggle switch  5. Responsive
+ * Linked files: cookie_banner.js toggles the "is-visible" classes and reads the switches;
+ *               the markup lives in the main HTML page (e.g. index.html).
  */
 
-/* ==========================================================================
-   1) BANNER DI CONSENSO (IN BASSO A SINISTRA)
-   ========================================================================== */
+/* =====================================================================
+   1. BANNER
+   Small card fixed to the bottom-left corner. It is hidden by default
+   and revealed by cookie_banner.js -> showBanner(), which adds .is-visible.
+   ===================================================================== */
 
+/* Purpose: the banner container (the card the user sees on first visit).
+   position: fixed + left/bottom pin it to the viewport, so it stays in
+   place while the page scrolls.
+   z-index: 9999 keeps it above normal page content; the preferences
+   modal uses 10000 so it can open on top of the banner.
+   width: 100% with max-width: 380px makes the card fluid on small
+   screens but never wider than 380px on desktop.
+   background is semi-transparent (rgba) so the blurred page shows through.
+   opacity: 0 + translateY(16px) is the hidden state; the transition
+   animates the card into view when .is-visible is added.
+   pointer-events: none makes the invisible card ignore clicks, so it
+   cannot block the page behind it. */
 .cookie-banner {
     position: fixed;
     left: 1.5rem;
@@ -28,20 +44,24 @@
         inset 0 1px 1px rgba(255, 255, 255, 0.05);
     color: #fafafa;
     font-family: "Inter", sans-serif;
-    /* Stato iniziale nascosto: viene rivelato via JS con una transizione */
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.4s ease, transform 0.4s ease;
     pointer-events: none;
 }
 
-/* Classe aggiunta da JS quando il banner deve essere mostrato */
+/* Purpose: visible state of the banner.
+   Added by cookie_banner.js -> showBanner() and removed by hideBanner().
+   opacity: 1 + translateY(0) fades/slides the card in; pointer-events:
+   auto restores clicks so the buttons inside become usable. */
 .cookie-banner.is-visible {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
 
+/* Purpose: banner heading (for example "We value your privacy").
+   margin-bottom separates it from the description text below. */
 .cookie-banner__title {
     font-size: 1rem;
     font-weight: 600;
@@ -49,6 +69,9 @@
     margin: 0 0 0.5rem;
 }
 
+/* Purpose: short explanation paragraph inside the banner.
+   Muted grey (#a1a1aa) keeps it secondary to the title; the bottom
+   margin creates space before the action buttons. */
 .cookie-banner__text {
     font-size: 0.8125rem;
     line-height: 1.6;
@@ -56,22 +79,32 @@
     margin: 0 0 1.25rem;
 }
 
-/* Il link eredita lo stile del testo circostante (nessun colore bianco né sottolineatura) */
+/* Purpose: links inside the description (e.g. privacy policy).
+   color: inherit keeps them the same grey as the surrounding text;
+   text-decoration: none removes the default underline. */
 .cookie-banner__text a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Purpose: row that holds the banner buttons.
+   display: flex + flex-wrap: wrap lets the buttons sit side by side and
+   drop onto a new line when the card is too narrow; gap spaces them. */
 .cookie-banner__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-/* ==========================================================================
-   2) PULSANTI
-   ========================================================================== */
+/* =====================================================================
+   2. BUTTONS
+   Shared button styles plus the primary, ghost and link variants.
+   ===================================================================== */
 
+/* Purpose: base style shared by every button in the banner and modal.
+   flex: 1 1 auto lets buttons grow to fill the row and shrink if needed;
+   min-width: 110px stops them becoming too small to read.
+   border-radius: 9999px gives the fully rounded "pill" shape. */
 .cookie-btn {
     flex: 1 1 auto;
     min-width: 110px;
@@ -85,28 +118,42 @@
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Purpose: primary button ("Accept all"). Light background with dark
+   text creates the strongest contrast on the dark card.
+   The border matches the background so both states keep the same size. */
 .cookie-btn--primary {
     background: #fafafa;
     color: #09090b;
     border: 1px solid #fafafa;
 }
 
+/* Purpose: hover feedback for the primary button: the light background
+   drops to a soft grey, and the border follows to avoid a colour edge. */
 .cookie-btn--primary:hover {
     background: #d4d4d8;
     border-color: #d4d4d8;
 }
 
+/* Purpose: ghost (secondary) button ("Only necessary").
+   transparent background + subtle border makes it clearly less
+   prominent than the primary button while staying visible. */
 .cookie-btn--ghost {
     background: transparent;
     color: #e4e4e7;
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Purpose: hover feedback for the ghost button: a very light white tint
+   and a slightly brighter border show that it is interactive. */
 .cookie-btn--ghost:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Purpose: text-style button ("Manage preferences").
+   flex: 1 0 100% forces it onto its own full-width row under the other
+   two buttons. No background or border; underline + offset make it read
+   as a link while keeping it a real <button>. */
 .cookie-btn--link {
     flex: 1 0 100%;
     background: transparent;
@@ -117,14 +164,28 @@
     text-underline-offset: 2px;
 }
 
+/* Purpose: hover feedback for the link-style button: the grey lightens
+   to show it can be clicked. */
 .cookie-btn--link:hover {
     color: #a1a1aa;
 }
 
-/* ==========================================================================
-   3) MODAL "PREFERENZE COOKIE"
-   ========================================================================== */
+/* =====================================================================
+   3. PREFERENCES MODAL
+   Full-screen overlay that contains a centred dialog with the cookie
+   categories. cookie_banner.js -> openPrefs()/closePrefs() toggle
+   the .is-visible class.
+   ===================================================================== */
 
+/* Purpose: full-screen dimming overlay behind the preferences dialog.
+   inset: 0 is shorthand for top/right/bottom/left: 0, so it covers the
+   whole viewport; z-index: 10000 puts it above the banner (9999).
+   display: flex + align-items/justify-content: center centre the modal
+   both vertically and horizontally.
+   opacity: 0 + visibility: hidden is the closed state. visibility is
+   used (not just opacity) so the invisible overlay cannot catch clicks
+   and stays out of the accessibility tree; both are transitioned.
+   backdrop-filter blurs the page behind for focus. */
 .cookie-prefs {
     position: fixed;
     inset: 0;
@@ -141,11 +202,18 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Purpose: open state of the overlay, added by cookie_banner.js ->
+   openPrefs(). Makes the dimmed layer visible and clickable. */
 .cookie-prefs.is-visible {
     opacity: 1;
     visibility: visible;
 }
 
+/* Purpose: the dark dialog card inside the overlay.
+   max-height: 90vh + overflow-y: auto keep the dialog on screen and let
+   its content scroll internally on short viewports.
+   transform: scale(0.96) is a subtle "closed" size; it grows to scale(1)
+   when the parent gets .is-visible (see next rule). */
 .cookie-prefs__modal {
     width: 100%;
     max-width: 460px;
@@ -162,10 +230,15 @@
     transition: transform 0.3s ease;
 }
 
+/* Purpose: grows the dialog to full size when the overlay is open,
+   producing a small "pop" animation. */
 .cookie-prefs.is-visible .cookie-prefs__modal {
     transform: scale(1);
 }
 
+/* Purpose: top row of the dialog: title on the left, close button on the
+   right. align-items: flex-start keeps the close button at the top even
+   if the title wraps onto two lines. */
 .cookie-prefs__header {
     display: flex;
     align-items: flex-start;
@@ -174,6 +247,8 @@
     margin-bottom: 0.5rem;
 }
 
+/* Purpose: dialog heading ("Cookie preferences"). margin: 0 removes the
+   default heading gap because the header row controls spacing. */
 .cookie-prefs__title {
     font-size: 1.125rem;
     font-weight: 600;
@@ -181,6 +256,9 @@
     margin: 0;
 }
 
+/* Purpose: the "x" close button in the dialog header.
+   Resets native button styling (transparent background, no border) and
+   uses a muted grey that turns white on hover. */
 .cookie-prefs__close {
     cursor: pointer;
     background: transparent;
@@ -192,10 +270,13 @@
     transition: color 0.2s ease;
 }
 
+/* Purpose: hover feedback for the close button (brighter text). */
 .cookie-prefs__close:hover {
     color: #fafafa;
 }
 
+/* Purpose: short introduction paragraph under the dialog header; muted
+   grey and extra bottom margin separate it from the category list. */
 .cookie-prefs__intro {
     font-size: 0.8125rem;
     line-height: 1.6;
@@ -203,6 +284,10 @@
     margin: 0 0 1.5rem;
 }
 
+/* Purpose: one cookie category row (name/description on the left,
+   switch or badge on the right).
+   flex + justify-content: space-between pushes the control to the far
+   right; border-top draws a divider between consecutive rows. */
 .cookie-prefs__item {
     display: flex;
     align-items: flex-start;
@@ -212,12 +297,15 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Purpose: category name (e.g. "Necessary", "Analytics"). */
 .cookie-prefs__item-name {
     font-size: 0.875rem;
     font-weight: 500;
     margin: 0 0 0.25rem;
 }
 
+/* Purpose: small explanation under each category name; smaller and
+   dimmer than the name so the list stays easy to scan. */
 .cookie-prefs__item-desc {
     font-size: 0.75rem;
     line-height: 1.55;
@@ -225,6 +313,9 @@
     margin: 0;
 }
 
+/* Purpose: read-only status label (e.g. "Always active") for categories
+   that cannot be switched off. white-space: nowrap keeps it on one line;
+   padding-top aligns it optically with the category name. */
 .cookie-prefs__badge {
     font-size: 0.6875rem;
     color: #52525b;
@@ -232,16 +323,23 @@
     padding-top: 0.125rem;
 }
 
+/* Purpose: bottom row of the dialog with the save/accept buttons. */
 .cookie-prefs__footer {
     display: flex;
     gap: 0.5rem;
     margin-top: 1.5rem;
 }
 
-/* ==========================================================================
-   4) SWITCH (INTERRUTTORE ON/OFF)
-   ========================================================================== */
+/* =====================================================================
+   4. TOGGLE SWITCH
+   A checkbox styled as a sliding switch, used for the Analytics category.
+   Structure: <label class="cookie-switch"> <input> <span slider> </label>
+   ===================================================================== */
 
+/* Purpose: wrapper for one switch. position: relative anchors the
+   absolutely positioned slider and knob; inline-flex keeps it compact.
+   flex-shrink: 0 stops the switch being squashed in the flex row.
+   Fixed 42x24 size is the track; cursor: pointer shows it is clickable. */
 .cookie-switch {
     position: relative;
     display: inline-flex;
@@ -251,6 +349,9 @@
     cursor: pointer;
 }
 
+/* Purpose: the real checkbox. It is visually hidden (opacity: 0, zero
+   size) but still works: clicking the wrapping label toggles it and it
+   remains reachable with the keyboard. The visible part is the slider. */
 .cookie-switch input {
     position: absolute;
     opacity: 0;
@@ -258,6 +359,10 @@
     height: 0;
 }
 
+/* Purpose: the visible track of the switch (the "pill").
+   inset: 0 stretches it over the whole wrapper; the grey colour is the
+   unchecked state. Only the background is transitioned because the knob
+   is animated separately by ::before. */
 .cookie-switch__slider {
     position: absolute;
     inset: 0;
@@ -266,6 +371,9 @@
     transition: background-color 0.25s ease;
 }
 
+/* Purpose: the round knob drawn inside the track.
+   Positioned 3px from the top/left; 18px diameter fits the 24px track
+   with a 3px gap all around. transform is transitioned for the slide. */
 .cookie-switch__slider::before {
     content: "";
     position: absolute;
@@ -278,24 +386,37 @@
     transition: transform 0.25s ease;
 }
 
+/* Purpose: checked state of the track. The "+" selector targets the
+   slider that immediately follows the checked input inside the label. */
 .cookie-switch input:checked + .cookie-switch__slider {
     background: #fafafa;
 }
 
+/* Purpose: checked state of the knob. translateX(18px) moves it to the
+   right end (42px track - 18px knob - 3px left - 3px right = 18px).
+   The dark colour keeps contrast against the now-light track. */
 .cookie-switch input:checked + .cookie-switch__slider::before {
     transform: translateX(18px);
     background: #09090b;
 }
 
+/* Purpose: disabled state (used for the "Necessary" cookies switch, which
+   cannot be turned off). Dims the track and shows a "not allowed" cursor
+   so the user understands the control is locked. */
 .cookie-switch input:disabled + .cookie-switch__slider {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-/* ==========================================================================
-   5) RESPONSIVE (MOBILE)
-   ========================================================================== */
+/* =====================================================================
+   5. RESPONSIVE
+   Mobile adjustments. 640px is the breakpoint used across the portfolio.
+   ===================================================================== */
 
+/* Purpose: on phones the banner should span the screen width instead of
+   being a narrow card in the corner. left/right: 1rem create equal side
+   margins, width: auto lets those two offsets define the width, and
+   max-width: none removes the 380px desktop limit. */
 @media (max-width: 640px) {
     .cookie-banner {
         left: 1rem;

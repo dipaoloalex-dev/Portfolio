@@ -1,81 +1,34 @@
 /**
- * ============================================================================
- * style.css
- * ============================================================================
- * Fogli di stile personalizzati del portfolio di Alex Di Paolo.
- *
- * La pagina usa TailwindCSS (caricato via CDN) per la stragrande maggioranza
- * del layout e delle utility. Questo file contiene SOLO ciò che Tailwind non
- * copre agevolmente, ovvero:
- *
- *   1) Le animazioni @keyframes (usate inline da Tailwind).
- *   2) Gli effetti "glassmorphism" (vetro sfumato).
- *   3) La personalizzazione della scrollbar dei browser WebKit.
- *
- * Nota: le classi definite qui NON hanno prefissi Tailwind, quindi vanno
- * usate direttamente come `class="glass-card"`, ecc.
- * ============================================================================
+ * File: style.css
+ * Description: Custom visual system for the portfolio: design tokens, entrance
+ *              animations, glassmorphism, project-card hover effects, interactive
+ *              mock-ups, responsive typography and the fixed navigation states.
+ * Sections: 1. Design tokens  2. Animations  3. Glass effects  4. Scrollbar
+ *           5. Project cards  6. Gold badge  7. Triage tickets  8. QR/approval
+ *           9. Sky/ESG  10. Typography  11. Layout/responsive
  */
 
-/*
- * ============================================================================
- * 0) COLOR SYSTEM — BOZZA (solo commento, nessun codice modificato)
- * ============================================================================
- * Foto attuale della palette usata in index.html + style.css + banner,
- * rimappata sulla nomenclatura semantica richiesta.
- * Non serve una scala 50-900 estesa: bastano questi token.
- * Promemoria scala 50 (chiarissimo) -> 900 (scurissimo).
- *
- * --fg-primary .... text-white / #fafafa .............. titoli, testo forte
- *                   text-white/95 ...................... H1
- * --fg-sec ........ zinc-400 #a1a1aa .................. body, paragrafi
- *                   zinc-300 #d4d4d8 .................. label attive
- *                   zinc-200 #e4e4e7 .................. sottotitoli forti
- * --fg-muted ....... zinc-500 #71717a .................. icone, meta, help
- *                   zinc-600 #52525b .................. separatori "|", caption
- *
- * --bg-base ....... #09090b ........................... pagina, ticket, pill
- * --bg-elevated ... #0e0e11 ........................... card progetti, footer
- * --bg-overlay .... #131316 ........................... anteprima media card
- *                   #18181b / #1f1f22 ................. blocchi processo
- *                   white/[0.02] [0.04] [0.05] ........ overlay vetro
- *                   black/40 .......................... badge ovali
- *
- * --border-subtle . white/5, zinc-500/10, zinc-600/5 .. bordi card/media
- * --border-strong . white/10, white/15 ................ bordi attivi/hover
- *
- * --accent ........ #4ade80 (green-400) ............... NLP, granted, ok
- *                   bg #4ade80/10 /15 /20 ............. pill verdi
- * --accent-gold ... #fffbd6 #fef08a #facc15 #d4a017 ... badge shiny gold
- *                   text yellow-950 #422006 ........... testo su oro
- *
- * --status ........ red #f87171 #fca5a5 (High/Rejected)
- *                   yellow #facc15 (Medium/Pending)
- *                   green #4ade80 (Low/Access)
- *                   blue-400 / purple-400 / sky #7dd3fc (icone, KPI, bump)
- *                   orange-400 / emerald-400 / cyan-400 (lista benefici)
- * --brand ......... #25D366 WhatsApp .................. contatti
- *
- * Deciso: valori fissati come variabili in :root qui sotto (solo CSS custom,
- * Tailwind in index.html invariato). Nessun colore cambiato o perso.
- * ============================================================================
- */
+/* ============================================================
+   1. DESIGN TOKENS
+   Single source of truth for colours, timing, shadows and z-index.
+   ============================================================ */
 
-/*
- * Fissaggio variabili — SOLO CSS custom (Tailwind in index.html invariato).
- * Stessi valori della bozza, nessun colore cambiato o perso.
- */
+/* Root custom properties are inherited by every element in the page. */
 :root {
+    /* Text colours: primary titles, secondary body text, muted meta text. */
     --fg-primary: #fafafa;
     --fg-sec: #a1a1aa;
     --fg-muted: #71717a;
+    /* Surface colours: page background, raised cards, media preview, hover. */
     --bg-base: #09090b;
     --bg-elevated: #0e0e11;
     --bg-overlay: #131316;
     --bg-hover: #101014;
+    /* Border strengths, from barely visible to active/hover. */
     --border-subtle: rgba(255, 255, 255, 0.05);
     --border-strong: rgba(255, 255, 255, 0.1);
     --border-active: rgba(255, 255, 255, 0.12);
+    /* Accent green and the gold palette used by the specialization badge. */
     --accent: #4ade80;
     --gold-1: #fffbd6;
     --gold-2: #fef08a;
@@ -83,52 +36,46 @@
     --gold-4: #d4a017;
     --gold-border: rgba(113, 63, 18, 0.35);
     --gold-text: #422006;
+    /* Status colours for rejected/error states and the Sky Fly value flash. */
     --status-red: #f87171;
     --status-red-soft: #fca5a5;
     --status-red-bg: rgba(248, 113, 113, 0.15);
     --status-red-border: rgba(248, 113, 113, 0.4);
     --info-blue: #7dd3fc;
+    /* Animation durations and the shared deceleration curve. */
     --dur-fast: 0.2s;
     --dur: 0.3s;
     --dur-med: 0.35s;
     --dur-slow: 0.5s;
     --dur-sheen: 3.8s;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    /* Reusable radius and shadow recipes for cards and glass panels. */
     --radius-card: 1.5rem;
     --shadow-card: 0 24px 60px -12px rgba(0, 0, 0, 0.65), 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
     --shadow-media: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     --shadow-glass: 0 30px 60px -15px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+    /* Stacking levels and the maximum content width at desktop size. */
     --z-card: 10;
     --z-live: 2;
     --layout-max: 1440px;
 }
 
-/*
- * ============================================================================
- * 1) ANIMAZIONI CSS
- * ============================================================================
- * La pagina anima gli elementi in ingresso (fade + slide + blur) sfruttando
- * la sintassi arbitraria di Tailwind, ad esempio:
- *
- *     class="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll"
- *
- * dove i parametri sono: <nome> <durata> <curva> <ritardo> <fill-mode>.
- * Il "play/pause" dell'animazione è invece gestito da script.js tramite la
- * classe `.animate` (vedi in fondo al commento).
- */
+/* ============================================================
+   2. ANIMATIONS
+   Entrance animation used inline by Tailwind utility classes.
+   ============================================================ */
 
-/* Animazione d'ingresso: l'elemento compare dal basso, sfocato e trasparente. */
+/* Fade + rise + blur: elements enter from below and sharpen into place. */
 @keyframes animationIn {
-    /* 0%: stato iniziale -> invisibile, spostato in basso di 30px e sfocato di 8px. */
-    0% {
+     /* Start: invisible, 30px lower than final position, blurred. */
+     0% {
         opacity: 0;
         transform: translateY(30px);
         filter: blur(var(--animation-blur, 8px));
     }
 
-    /* 100%: stato finale -> pienamente visibile, in posizione e a fuoco.
-       Usare `none` (e non `blur(0px)`/`translateY(0)`) evita che il layer
-       resti applicato dopo l'animazione, causa del testo sfuocato su mobile. */
+    /* End: fully visible and sharp. Using none (instead of blur(0)/translate(0))
+       prevents the filter layer from staying active after the animation. */
     100% {
         opacity: 1;
         transform: none;
@@ -136,128 +83,85 @@
     }
 }
 
-/*
- * Sugli schermi piccoli (e sui dispositivi touch) disattiva il blur
- * d'ingresso: su alcuni dispositivi mobile il `filter` dell'animazione
- * rende il testo poco nitido.
- */
+/* On phones and touch devices, remove the entrance blur: the filter layer can
+   make text look soft on some mobile GPUs. */
 @media (max-width: 767px), (hover: none) {
     :root {
         --animation-blur: 0px;
     }
 }
 
-/*
- * Rete di sicurezza per i touch: se per qualche motivo un effetto
- * `hover:scale-*` resta attivo dopo un tap, annulla la scala (che rende
- * il testo sfocato).
- */
+/* Touch safety: a tap can leave a hover:scale transform applied. Cancel the
+   transform on hover-less devices so text does not stay scaled/blurred. */
 @media (hover: none) {
     [class*="hover:scale-"]:hover {
         transform: none !important;
     }
 }
 
-/*
- * Fix rendering mobile: quando l'animazione è terminata (classe aggiunta da
- * script.js) azzera l'animazione, così `filter` non resta applicato.
- * Senza questo, il testo degli elementi animati può risultare sfuocato
- * sui telefoni (layer rasterizzato a risoluzione inferiore).
- * Nota: NON si azzera `transform` qui, altrimenti `!important` bloccherebbe
- * anche le trasformazioni di hover (es. .project-card:hover), impedendo il
- * sollevamento delle card. Rimuovere l'animazione basta già a ripristinare
- * il transform naturale dell'elemento.
- */
+
+/* Added by script.js after animationend. It removes the animation/filter layer
+   but deliberately leaves transform alone, so hover effects still work. */
 .animate-on-scroll.anim-complete {
     animation: none !important;
     filter: none !important;
 }
 
-/*
- * ============================================================================
- * 2) EFFETTI VETRO (GLASSMORPHISM)
- * ============================================================================
- * Coppia di classi che, combinate, simulano una superficie di vetro:
- *  - `.glass-card`      -> il pannello (sfondo, bordi, ombre, raggio).
- *  - `.glass-highlight` -> il riflesso di luce sovrapposto.
- * Le immagini della hero section usano entrambe.
- */
 
-/*
- * `.glass-card`
- * Pannello semitrasparente con sfocatura dello sfondo (backdrop-filter).
- * Nota: `-webkit-backdrop-filter` è il prefisso per Safari.
- */
+/* ============================================================
+   3. GLASS EFFECTS
+   A translucent card plus a separate highlight overlay.
+   ============================================================ */
+
+/* Glass panel: very subtle white tint, blurred backdrop and a deep shadow. */
 .glass-card {
-    /* Sfondo bianco quasi impercettibile (3% di opacità). */
     background: rgba(255, 255, 255, 0.03);
-    /* Sfoca ciò che sta dietro al pannello per l'effetto "vetro smerigliato". */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* Bordo chiaro sottile che definisce il perimetro del vetro. */
     border: 1px solid var(--border-strong);
-
-    /*
-     * Mix di ombre:
-     *  - la prima è un'ombra esterna profonda (dà distacco dal fondo);
-     *  - le due `inset` sono luci/ombre interne (danno rilievo 3D).
-     */
     box-shadow: var(--shadow-glass);
     border-radius: var(--radius-card);
 }
 
-/*
- * `.glass-highlight`
- * Riflesso diagonale (dall'alto a sinistra verso il basso a destra) che
- * simula la luce che colpisce il vetro. Va posizionato dentro un contenitore
- * `relative` perché usa `position: absolute`.
- */
+/* Light reflection laid over a .glass-card. absolute + inset:0 fills the card;
+   z-index keeps it above the image, pointer-events:none lets clicks pass through. */
 .glass-highlight {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 100%);
     border-radius: var(--radius-card);
-    /* Sopra il contenuto, ma sotto eventuali elementi con z-index maggiore. */
     z-index: var(--z-card);
-    /* Lascia passare i click: è puramente decorativo. */
     pointer-events: none;
 }
 
-/*
- * ============================================================================
- * 3) SCROLLBAR PERSONALIZZATA (classe ".dash-scroll")
- * ============================================================================
- * Personalizza la barra di scorrimento dei contenitori con classe
- * `.dash-scroll`. Funziona solo su browser basati su WebKit/Blink
- * (Chrome, Edge, Safari). Firefox e altri useranno la scrollbar di sistema.
- */
+/* ============================================================
+   4. CUSTOM SCROLLBAR
+   Thin scrollbar for containers with .dash-scroll (WebKit/Blink only).
+   ============================================================ */
 
-/* Rende la barra molto sottile (4px). */
+/* Shrink the scrollbar to 4px so it stays unobtrusive. */
 .dash-scroll::-webkit-scrollbar {
     width: 4px;
 }
 
-/* Rende trasparente il binario (la pista) della scrollbar. */
+/* Transparent track: only the thumb should be visible. */
 .dash-scroll::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Il "cursore" è bianco semitrasparente con angoli arrotondati. */
+/* Translucent rounded thumb, matching the subtle border colour. */
 .dash-scroll::-webkit-scrollbar-thumb {
     background: var(--border-strong);
     border-radius: 4px;
 }
 
-/*
- * ============================================================================
- * 4) MY PROJECTS - FEEDBACK HOVER FLUIDO DELLE CARD
- * ============================================================================
- * Sollevamento leggero + ombra dinamica + micro-movimento degli interni.
- * Solo transform/opacity/border-color/box-shadow per restare a 60fps.
- * L'hover è abilitato solo su dispositivi con vero mouse (hover:hover),
- * così sui touch nessun effetto resta "attaccato" dopo il tap.
- */
 
+/* ============================================================
+   5. PROJECT CARDS
+   Hover/focus effects that avoid moving text (prevents GPU blur).
+   ============================================================ */
+
+/* Base card: animate only colour/shadow properties, never layout. */
 .project-card {
     transition:
         box-shadow var(--dur-slow) ease,
@@ -265,26 +169,26 @@
         background-color var(--dur-slow) ease;
 }
 
-/* Anteprima superiore e blocco testo: solo colori/ombre, niente movimenti
-   per tenere il testo sempre nitido (ogni translate/scale sul contenitore
-   con testo causa raster GPU sfocato su Windows/Chrome). */
+/* Media preview: only border and shadow change, so the image/text stays still. */
 .project-card .project-media {
     transition:
         border-color var(--dur-slow) ease,
         box-shadow var(--dur-slow) ease;
 }
 
+/* Card links and titles fade their colour on hover. */
 .project-card .project-body > a,
 .project-card .project-body > h3 {
     transition: color var(--dur) ease;
 }
 
+/* Body paragraph colour transition. */
 .project-card .project-body > p {
     transition: color var(--dur) ease;
 }
 
+/* Only devices with a real mouse get hover effects; touch devices skip them. */
 @media (hover: hover) and (pointer: fine) {
-    /* Solo luce/bordo/ombra, nessun sollevamento: testo sempre fermo e nitido. */
     .project-card:hover,
     .project-card:focus-within {
         z-index: var(--z-card);
@@ -293,7 +197,6 @@
         box-shadow: var(--shadow-card);
     }
 
-    /* L'anteprima respira: solo bordo schiarito. */
     .project-card:hover .project-media,
     .project-card:focus-within .project-media {
         border-color: var(--border-strong);
@@ -306,7 +209,7 @@
     }
 }
 
-/* Rispetta chi ha ridotto le animazioni. */
+/* Users who prefer reduced motion get instant changes instead of transitions. */
 @media (prefers-reduced-motion: reduce) {
     .project-card,
     .project-card .project-media,
@@ -317,15 +220,12 @@
     }
 }
 
-/*
- * ============================================================================
- * 5) SHINY GOLDEN BADGE
- * ============================================================================
- * Pillola oro/champagne con riflesso luminoso che scorre (sheen).
- * Usata sotto le skills nella hero per evidenziare la specializzazione.
- * Solo gradienti + transform/opacity per restare a 60fps.
- */
+/* ============================================================
+   6. GOLD BADGE
+   Champagne gradient pill with a moving diagonal highlight.
+   ============================================================ */
 
+/* isolation creates a local stacking context; overflow:hidden clips the sheen. */
 .gold-badge {
     position: relative;
     isolation: isolate;
@@ -346,7 +246,8 @@
         inset 0 -1px 0 rgba(113, 63, 18, 0.25);
 }
 
-/* Riflesso che attraversa il badge in diagonale. */
+/* Pseudo-element that sweeps a light reflection across the badge. It is wider
+   and taller than the badge, then skewed, so the highlight looks diagonal. */
 .gold-badge::after {
     content: "";
     position: absolute;
@@ -366,6 +267,7 @@
     animation: gold-sheen var(--dur-sheen) ease-in-out infinite;
 }
 
+/* Move the reflection from left to right, fading in and out. */
 @keyframes gold-sheen {
     0% { left: -60%; opacity: 0; }
     15% { opacity: 1; }
@@ -373,21 +275,19 @@
     70%, 100% { left: 130%; opacity: 0; }
 }
 
+/* Respect reduced-motion preferences: keep the badge, stop the animation. */
 @media (prefers-reduced-motion: reduce) {
     .gold-badge::after {
         animation: none;
     }
 }
 
-/*
- * ============================================================================
- * 6) AUTOTRIAGE - TICKET VIVI (LIVE ROWS)
- * ============================================================================
- * Le 3 righe ticket si comportano come mini-app: hover/focus = sollevamento,
- * glow nel colore della priorità, icona che scala, freccia che appare e
- * riga dettaglio che si espande. Solo transform/opacity/border/box-shadow.
- */
+/* ============================================================
+   7. TRIAGE TICKETS
+   AutoTriage mock-up: expandable rows with priority colours.
+   ============================================================ */
 
+/* Base ticket row: relative for the details; transitions for hover feedback. */
 .triage-ticket {
     position: relative;
     cursor: pointer;
@@ -397,14 +297,18 @@
         box-shadow var(--dur-med) ease;
 }
 
+/* Low-priority row is explicitly fully opaque: opacity < 1 would force a
+   separate GPU layer and make small text look blurry. */
 .triage-low {
     opacity: 1;
 }
 
+/* Circular icon that grows and tilts on hover/focus. */
 .triage-ticket .triage-icon {
     transition: transform var(--dur-med) var(--ease-out), background-color var(--dur) ease;
 }
 
+/* Arrow is collapsed (width 0, transparent) until the row is hovered/focused. */
 .triage-ticket .triage-go {
     opacity: 0;
     width: 0;
@@ -419,7 +323,7 @@
     overflow: hidden;
 }
 
-/* Riga dettaglio nascosta: si espande solo a hover/focus (effetto "ready automated"). */
+/* Detail line uses max-height for a smooth reveal without animating height. */
 .triage-ticket .triage-detail {
     display: block;
     max-height: 0;
@@ -437,11 +341,13 @@
     text-overflow: ellipsis;
 }
 
+/* Visible keyboard focus ring using the accent green. */
 .triage-ticket:focus-visible {
     outline: 2px solid rgba(74, 222, 128, 0.6);
     outline-offset: 2px;
 }
 
+/* Hover/focus effects only for mouse users; keyboard focus-visible is included. */
 @media (hover: hover) and (pointer: fine) {
     .triage-ticket:hover,
     .triage-ticket:focus-visible {
@@ -449,29 +355,34 @@
         z-index: var(--z-live);
     }
 
+    /* High priority: red glow. */
     .triage-high:hover,
     .triage-high:focus-visible {
         border-color: rgba(248, 113, 113, 0.5);
         box-shadow: 0 10px 28px -10px rgba(248, 113, 113, 0.4), 0 0 0 1px rgba(248, 113, 113, 0.12);
     }
 
+    /* Medium priority: yellow glow. */
     .triage-medium:hover,
     .triage-medium:focus-visible {
         border-color: rgba(250, 204, 21, 0.5);
         box-shadow: 0 10px 28px -10px rgba(250, 204, 21, 0.35), 0 0 0 1px rgba(250, 204, 21, 0.12);
     }
 
+    /* Low priority: green glow. */
     .triage-low:hover,
     .triage-low:focus-visible {
         border-color: rgba(74, 222, 128, 0.5);
         box-shadow: 0 10px 28px -10px rgba(74, 222, 128, 0.35), 0 0 0 1px rgba(74, 222, 128, 0.12);
     }
 
+    /* Icon reacts to the row hover/focus. */
     .triage-ticket:hover .triage-icon,
     .triage-ticket:focus-visible .triage-icon {
         transform: scale(1.14) rotate(-5deg);
     }
 
+    /* Reveal the arrow by giving it width and removing the negative offset. */
     .triage-ticket:hover .triage-go,
     .triage-ticket:focus-visible .triage-go {
         opacity: 1;
@@ -480,6 +391,7 @@
         transform: translateX(0);
     }
 
+    /* Expand the hidden detail line. */
     .triage-ticket:hover .triage-detail,
     .triage-ticket:focus-visible .triage-detail {
         max-height: 1.4em;
@@ -487,20 +399,16 @@
         margin-top: 2px;
     }
 
-    /* Niente attenuazione delle sorelle: restano tutte uguali e nitide,
-       si illumina solo quella sotto il cursore. L'opacity <1 le faceva
-       sembrare sfocate per via della rasterizzazione GPU. */
 }
 
-/* Su schermi piccoli (<830px) la card torna compatta come prima:
-   righe auto-assign / ready for / all automated nascoste,
-   così tutto sta nei 256px della media. Da tablet in su restano su hover/focus. */
+/* Below 830px the detail line is hidden so the ticket fits the fixed media height. */
 @media (max-width: 829px) {
     .triage-ticket .triage-detail {
         display: none;
     }
 }
 
+/* Reduced motion: disable all ticket transitions. */
 @media (prefers-reduced-motion: reduce) {
     .triage-ticket,
     .triage-ticket .triage-icon,
@@ -510,13 +418,12 @@
     }
 }
 
-/*
- * ============================================================================
- * 7) ATHENA QR + EASY WORK APPROVAL TOGGLE
- * ============================================================================
- * Micro-interazioni cliccabili nelle card. Solo transform/opacity/colori.
- */
+/* ============================================================
+   8. QR ZOOM + APPROVAL TOGGLE
+   Athena/Akerus preview buttons and Easy Work approval state.
+   ============================================================ */
 
+/* QR/PDF button: transitions only paint properties. */
 .athena-qr {
     transition:
         transform var(--dur-med) var(--ease-out),
@@ -525,17 +432,19 @@
         box-shadow var(--dur) ease;
 }
 
+/* Keyboard focus ring for the zoom buttons. */
 .athena-qr:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.5);
     outline-offset: 2px;
 }
 
-/* Zoom senza sfocare il testo: il bottone NON scala (niente transform),
-   si ingrandisce solo l'icona SVG interna. Il testo resta nitido. */
+/* Scale only the SVG icon, not the button: transforming the whole button
+   would also transform its text and make it blurry. */
 .athena-qr svg {
     transition: transform var(--dur-med) var(--ease-out);
 }
 
+/* Zoomed state: brighter border/background and a zoom-out cursor. */
 .athena-qr.qr-zoomed {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.25);
@@ -543,10 +452,12 @@
     cursor: zoom-out;
 }
 
+/* Enlarge the icon itself while zoomed. */
 .athena-qr.qr-zoomed svg {
     transform: scale(1.3);
 }
 
+/* Mouse-only hover feedback. */
 @media (hover: hover) and (pointer: fine) {
     .athena-qr:hover {
         border-color: rgba(255, 255, 255, 0.2);
@@ -559,7 +470,7 @@
     }
 }
 
-/* Toggle approvazione manager: verde approved <-> rosso not approved. */
+/* Approval button reset: it behaves as a full-width row, not a default button. */
 .approval-toggle {
     background: transparent;
     border: 0;
@@ -567,12 +478,14 @@
     width: 100%;
 }
 
+/* Keyboard focus ring for the approval row. */
 .approval-toggle:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.4);
     outline-offset: 4px;
     border-radius: 8px;
 }
 
+/* Icon circle animates its colours and slight scale. */
 .approval-toggle .approval-icon {
     transition:
         transform var(--dur) var(--ease-out),
@@ -581,30 +494,35 @@
         color var(--dur) ease;
 }
 
+/* Text lines animate their colour when the state changes. */
 .approval-toggle .approval-text,
 .approval-toggle .approval-sub {
     transition: color var(--dur) ease;
 }
 
-/* Stato denied: nascondi check, mostra X rossa. */
+/* Approved state shows the check and hides the x icon. */
 .approval-toggle.is-approved .icon-denied {
     display: none;
 }
 
+/* Denied state shows the x and hides the check icon. */
 .approval-toggle.is-denied .icon-approved {
     display: none;
 }
 
+/* Denied state recolours the icon circle red. */
 .approval-toggle.is-denied .approval-icon {
     background-color: var(--status-red-bg);
     border-color: var(--status-red-border);
     color: var(--status-red);
 }
 
+/* Denied state recolours the label red. */
 .approval-toggle.is-denied .approval-text {
     color: var(--status-red-soft);
 }
 
+/* Mouse-only hover/press feedback. */
 @media (hover: hover) and (pointer: fine) {
     .approval-toggle:hover .approval-icon {
         transform: scale(1.15);
@@ -614,6 +532,7 @@
     }
 }
 
+/* Reduced motion: no transitions on the QR button or approval icon. */
 @media (prefers-reduced-motion: reduce) {
     .athena-qr,
     .approval-toggle .approval-icon {
@@ -621,23 +540,23 @@
     }
 }
 
-/*
- * ============================================================================
- * 8) SKY FLY STEPPER + ESGATE BARS + SMOOTH SCROLL
- * ============================================================================
- */
+/* ============================================================
+   9. SKY FLY + ESGATE + SMOOTH SCROLL
+   Counter steppers, KPI bars and anchor scrolling.
+   ============================================================ */
 
-/* Scroll morbido per l'ancora #contact di Kairos (disattivato se motion ridotta). */
+/* Anchor links (#contact) scroll smoothly; reduced-motion disables this below. */
 html {
     scroll-behavior: smooth;
 }
 
-/* Akerus: la riga PDF è full-width, niente scale sul bottone (sfoca il testo).
-   Si evidenzia solo con bordo/sfondo + icona ingrandita, come per Athena. */
+/* Akerus PDF row must not scale: it contains text, and transforms make text
+   blurry on Windows/Chrome. Only colours change instead. */
 #akerusPdfBtn.qr-zoomed {
     transform: none;
 }
 
+/* Keep the Akerus row still on hover/zoom; visual feedback comes from colours. */
 @media (hover: hover) and (pointer: fine) {
     #akerusPdfBtn:hover {
         transform: none;
@@ -647,11 +566,12 @@ html {
     }
 }
 
-/* Sky Fly: frecce su/giù per i due contatori. */
+/* Tight vertical stack for the up/down arrows. */
 .sky-controls {
     gap: 1px;
 }
 
+/* Small arrow button with a transparent background and muted colour. */
 .sky-btn {
     display: flex;
     align-items: center;
@@ -667,45 +587,53 @@ html {
     transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease, transform var(--dur-fast) ease;
 }
 
+/* Hover: brighten the icon and add a faint surface. */
 .sky-btn:hover {
     color: var(--fg-primary);
     background-color: var(--border-strong);
 }
 
+/* Press feedback: slightly shrink the button. */
 .sky-btn:active {
     transform: scale(0.9);
 }
 
+/* Keyboard focus ring. */
 .sky-btn:focus-visible {
     outline: 1px solid rgba(255, 255, 255, 0.5);
     outline-offset: 1px;
 }
 
+/* tabular-nums keeps all digits the same width, so the number does not jump
+   when values change from 999 to 1,000. */
 .sky-value {
     font-variant-numeric: tabular-nums;
     transition: color var(--dur-fast) ease;
 }
 
-/* Flash breve quando il numero cambia (classe aggiunta da JS). */
+/* .bump is added by script.js for 350ms to flash the new value blue. */
 .sky-value.bump {
     color: var(--info-blue);
 }
 
-/* ESGATE: hover sulle tre righe KPI. */
+/* Each ESG row is a focusable KPI line with a subtle hover background. */
 .esg-row {
     cursor: default;
     transition: background-color var(--dur) ease;
 }
 
+/* Bars grow from the left (transform-origin) and animate filter/scale/shadow. */
 .esg-row .esg-fill {
     transition: filter var(--dur) ease, transform var(--dur-med) var(--ease-out), box-shadow var(--dur) ease;
     transform-origin: left center;
 }
 
+/* KPI number colour transition. */
 .esg-row .esg-value {
     transition: color var(--dur) ease;
 }
 
+/* Mouse-only hover/focus highlight for ESG rows. */
 @media (hover: hover) and (pointer: fine) {
     .esg-row:hover,
     .esg-row:focus-visible {
@@ -726,11 +654,13 @@ html {
     }
 }
 
+/* Visible focus ring for keyboard users on ESG rows. */
 .esg-row:focus-visible {
     outline: 1px solid rgba(255, 255, 255, 0.3);
     outline-offset: 2px;
 }
 
+/* Reduced motion: disable smooth scrolling and the Sky/ESG/Navbar transitions. */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -745,27 +675,19 @@ html {
     }
 }
 
-/*
- * ============================================================================
- * 9) SISTEMA 393 / 830 / 1440 (tipografia, touch, contenitore)
- * ============================================================================
- * Spec adottata:
- *   H1 80 | H2 56 | H3 32 | body 18 | body-s 16
- *   H1: 80→64→44 | H2: 56→56→32 | H3: 32→32→28 | H4: 20→20→18
- *   Body-large: 18→18→16, più piccole invariate.
- *   Pesi: body 16-20 regular/medium, accenti semibold/bold,
- *   titoli 24+ semibold/bold.
- *   Interlinea: body 140-175%, titoli 100-120%.
- *   Riga: 50-60 caratteri. Tracking: body -2%, titoli -6%, CAPS 1%.
- */
+/* ============================================================
+   10. TYPOGRAPHY SYSTEM
+   Mobile-first sizes; 830px and 1440px are the custom breakpoints.
+   ============================================================ */
 
-/* H1: 44 -> 64 -> 80. Titolo 24+ => semibold, interlinea 100-120%, tracking -6%. */
+/* H1: 44px on mobile, 64px on tablet, 80px on desktop. */
 .type-h1 {
     font-size: 44px;
     line-height: 1.08;
     letter-spacing: -0.06em;
 }
 
+/* Subtitle under the H1: smaller, looser line-height, slight top gap. */
 .type-h1-sub {
     font-size: 20px;
     line-height: 1.4;
@@ -773,19 +695,21 @@ html {
     margin-top: 10px;
 }
 
-/* H2: 32 -> 56 -> 56. H3: 28 -> 32 -> 32. Body-large: 16 -> 18 -> 18. */
+/* H2 section title: 32px -> 56px. */
 .type-h2 {
     font-size: 32px;
     line-height: 1.12;
     letter-spacing: -0.06em;
 }
 
+/* H3 card title: 28px -> 32px. */
 .type-h3 {
     font-size: 28px;
     line-height: 1.15;
     letter-spacing: -0.06em;
 }
 
+/* Body copy: 16px -> 18px; max-width 60ch keeps lines readable (about 50-60 chars). */
 .type-body-lg {
     font-size: 16px;
     line-height: 1.6;
@@ -793,7 +717,7 @@ html {
     max-width: 60ch;
 }
 
-/* H4 (titoli card, 4° livello): 18 mobile -> 20 tablet/desktop. */
+/* Project card titles (H4 level): 18px -> 20px. */
 .project-body > a,
 .project-body > h3 {
     font-size: 18px;
@@ -801,11 +725,12 @@ html {
     letter-spacing: -0.02em;
 }
 
-/* TUTTO MAIUSCOLO (badge/etichette): tracking 1%. */
+/* All-caps labels: slight positive tracking improves legibility. */
 .eyebrow-caps {
     letter-spacing: 0.01em;
 }
 
+/* Tablet breakpoint (matches Tailwind's tablet: 830px). */
 @media (min-width: 830px) {
     .type-h1 {
         font-size: 64px;
@@ -831,6 +756,7 @@ html {
     }
 }
 
+/* Desktop breakpoint (matches Tailwind's desktop: 1440px). */
 @media (min-width: 1440px) {
     .type-h1 {
         font-size: 80px;
@@ -844,36 +770,45 @@ html {
     }
 }
 
-/* Pulsanti full-width su mobile (hug su desktop), area tocco >=44px. */
+/* ============================================================
+   11. LAYOUT / RESPONSIVE DETAILS
+   Contact cards, navigation states and touch target sizes.
+   ============================================================ */
+
+/* Contact cards fill their grid cell and keep a 56px touch-friendly height. */
 #contact a {
     width: 100%;
     min-height: 56px;
     justify-content: center;
 }
 
-/* Menu fisso: si nasconde scrollando giù, ricompare risalendo.
-   Solo top/opacity (niente transform: il centramento -translate-x resta intatto). */
+/* Navbar transition used by script.js when .nav-hidden is toggled. Only top
+   and opacity change, so the centring transform stays intact. */
 #siteNav {
     transition: top var(--dur-med) var(--ease-out), opacity var(--dur) ease;
 }
 
+/* Hidden navbar: moved above the viewport, transparent and non-interactive.
+   pointer-events:none prevents invisible links from catching clicks. */
 #siteNav.nav-hidden {
     top: -90px;
     opacity: 0;
     pointer-events: none;
 }
 
-/* Stepper Sky: hit-area a tutta larghezza, 44px di larghezza minima. */
+/* Larger hit area for the Sky Fly stepper arrows (44x24px). */
 .sky-btn {
     width: 44px;
     height: 24px;
 }
 
+/* Icon size inside the enlarged stepper buttons. */
 .sky-btn svg {
     width: 18px;
     height: 18px;
 }
 
+/* Minimum 44px touch targets for the approval row and QR/PDF buttons. */
 .approval-toggle,
 .athena-qr {
     min-height: 44px;

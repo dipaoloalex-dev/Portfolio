@@ -1,11 +1,4 @@
-/* Inter self-hosted — solo subset latin (pesi 400/500/600).
- * File: fonts/inter-latin.woff2 (48KB). Niente più chiamate a
- * fonts.googleapis.com / fonts.gstatic.com. Rimosso anche latin-ext,
- * cyrillic, greek, vietnamese: per italiano/inglese basta il latin
- * (U+0000-00FF copre àèéìòù € © ecc.).
- * Nota: Google serve lo stesso file per 400/500/600 latin, quindi le tre
- * @font-face puntano allo stesso woff2 con peso dichiarato diverso.
- */
+
 @font-face {
     font-family: 'Inter';
     font-style: normal;
